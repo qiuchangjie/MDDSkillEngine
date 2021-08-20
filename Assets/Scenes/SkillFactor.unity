@@ -419,6 +419,67 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1001 &1622690412
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 180434, guid: 122c0971554d4e24c8232585387bb2fc, type: 3}
+      propertyPath: m_Name
+      value: Aki_Bikini
+      objectReference: {fileID: 0}
+    - target: {fileID: 484916, guid: 122c0971554d4e24c8232585387bb2fc, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 484916, guid: 122c0971554d4e24c8232585387bb2fc, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 484916, guid: 122c0971554d4e24c8232585387bb2fc, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -6.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 484916, guid: 122c0971554d4e24c8232585387bb2fc, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 484916, guid: 122c0971554d4e24c8232585387bb2fc, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 484916, guid: 122c0971554d4e24c8232585387bb2fc, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 484916, guid: 122c0971554d4e24c8232585387bb2fc, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 484916, guid: 122c0971554d4e24c8232585387bb2fc, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 484916, guid: 122c0971554d4e24c8232585387bb2fc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 484916, guid: 122c0971554d4e24c8232585387bb2fc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 484916, guid: 122c0971554d4e24c8232585387bb2fc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9510546, guid: 122c0971554d4e24c8232585387bb2fc, type: 3}
+      propertyPath: m_WarningMessage
+      value: 
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 122c0971554d4e24c8232585387bb2fc, type: 3}
 --- !u!1 &1667604905
 GameObject:
   m_ObjectHideFlags: 0
@@ -543,7 +604,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 1
   data:
-    dataString: UEsDBBQAAAgIAABAIeyGSFUEcwIAAFQFAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQGFVNtu2kAQ/RW0z01lrFyavrWG0FZKgkKrPtR5GNZjvGK9a+0lQCL+vbNrgw2pVAlpzZnbOTOz+8aEsg1yp83MiOJeF8g+j1j4Zh9GDKLtCZzQBI8JEVbX6IzgX9RKBt+EQK9EqU09LVaYaesswSVIi2Qy2oVoRdDbiG27gF13voZztKcvjsqh+Z+XV1xC3WCxEK/YO4+Tgzt9RUdFQjqfwJprKYXtaDC3a6LKDBrrSQQ5FAJIViQQ/CsUq8rRn3QY/FiWFl1HysBuIgx1p83KvmpXhUw12HXL7AWkxyP1NuX9O+vFOJpLo+tvh6qtHlcJvn6CHQfrBh0dwpNT2l5tQK5hKfF3hepBz4z2qiCjMz6EeovpZJDqqCyrkK97v5brGeib99MZ99PZR+3bTIp6GZCPly2wkDp2+zbEoKG5fCfCcSdsl4nQQOKXxZ+wGi5PZ7gTxjoydQVVYLfU3gRXNo09C2K8y7RRGOGOc4MKpNvNKY07H+CZbVD2zHIH4Xp0xTvbYfvPQiLc+yfJmWmuN/2wLP7wdTPXQrkFguHVIJ+t9OYebfXonRQKe0XB8EBNzLRS7fLZf4QtvCmBD8Icbp03OAEH8QoQJ9qSYhhKDY0RyksZFjKqCMn/kIrwew5NroDqygizB63i5Tk5n8MirLwoTtecXae4TDD5xFO4wpvb5OLqKrlO0/E4XeLlDaTXLN4DoajnIOdt07pR0QapXouinT88UqOZgSbeu8LAZiZeaz0Yv1ClXnCDqB7bDEexaKgIvQ/FtBAkc4HOCRV3j73lTGq+xiI/JspjY6dbZyDvs+SsES/aBSRnWXy/crZn+79QSwMEFAAACAgAAEAh7On8tERsAAAAdwAAAAkAJABtZXRhLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQGrVipLLSrOzM9TslIw0TPSM9JRUEovSizIKAYKGII4pZkpIHa0kplRapJBqoFFslGiaaq5pYGuqamBmZGRoaFRUqqJeaKRmVIsUH1JZUGqX2JuKkRPQGJJRlpmXkpmXrqee1FmijvIaKXYWgBQSwECLQAUAAAICAAAQCHshkhVBHMCAABUBQAACwAkAAAAAAAAAAAAAAAAAAAAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFQSwECLQAUAAAICAAAQCHs6fy0RGwAAAB3AAAACQAkAAAAAAAAAAAAAADAAgAAbWV0YS5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0BUEsFBgAAAAACAAIAuAAAAHcDAAAAAA==
+    dataString: UEsDBBQAAAgIAABAIew96yWjcgIAAFQFAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQGFVNtuGjEQ/RXk56YCmja0b+1CaCslQaFVH7p5GOxZ1sJrr3wJkIh/z9i7sBtSqRKSlzO3c2bGfmZSuxq5N3ZupbgxAtmXAYvf7N2AQbLdg5eG4BEh0pkKvZX8q16r6DskMGhZGFvNxBoz47wjuADlkEzW+BitCXoesF0bsG/Pp3gODvTFUXu0//MKmiuoahRL+YSd82h4dKev5KhJSOsTWXOjlHQtDeb3dVKZQe0CiSAHIYFkJQLRv0S5Lj39GfeD74rCoW9JWdhPpaXuNFnZN+PLmKkCt2mYPYIKeKLepLx5Y70YJXNhTfX9WLXR40vJN/ew5+B8r6N9ePqadtBbUBtYKfxTor41c2uCFmT0NsTQ4HA87aU6KctK5JvOr+F6Bob67XRG3XQOSfsuU7JaReT9ZQMslUnd/hxj0NJcfhDhtBOuzURoJPHb4S9Y95enNVxL6zyZ2oI6sluZYKMrm6WeRTHBZ8ZqTHDLuUYNyu8XlMafD/DM1it7ZrmGeD3a4q3tuP1nIQnu/IfDM9PCbLthOfwZqnphpPZLBMvLXj5Xmu0NuvIueCU1doqi4ZaamBmtm+Vz/whbBlsA74V53PlgcQoe0hUgTrQloh9KDU0ROigVFzKpiMn/kor4e4hNLoHqqgSzW6PT5Xl1PsRFWAcpXq85W8GwGE0mKzEkYldXHy7w4+TTBLkoxsWl4KuCpXsgNfUc1KJpWjsq2iDdadG088dHajC3UKd7Jyxs5/KpMr3xS12YJbeI+q7JcBKLlorQ+yBmQpLMJXovddo99pwzZfgGRX5KlKfGznbeQt5lyVktH42PSM6y9H7l7MAOL1BLAwQUAAAICAAAQCHspgCzwGwAAAB3AAAACQAkAG1ldGEuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAatWKkstKs7Mz1OyUjDRM9Iz0lFQSi9KLMgoBgoYgjilmSkgdrRSUqJBmqGFRVKKQWJyqrm5sW6qqYWZRWpySppRmklKclKaUixQfUllQapfYm4qRE9AYklGWmZeSmZeup57UWaKO8hopdhaAFBLAQItABQAAAgIAABAIew96yWjcgIAAFQFAAALACQAAAAAAAAAAAAAAAAAAABncmFwaDAuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAVBLAQItABQAAAgIAABAIeymALPAbAAAAHcAAAAJACQAAAAAAAAAAAAAAL8CAABtZXRhLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFQSwUGAAAAAAIAAgC4AAAAdgMAAAAA
     upgradeData: 
     file_cachedStartup: {fileID: 0}
     data_cachedStartup: 
