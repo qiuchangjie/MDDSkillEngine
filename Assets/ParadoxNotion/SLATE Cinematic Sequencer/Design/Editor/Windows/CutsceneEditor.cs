@@ -317,8 +317,8 @@ namespace Slate
             SceneView.duringSceneGui -= OnSceneGUI;
             SceneView.duringSceneGui += OnSceneGUI;
 #else
-            SceneView.onSceneGUIDelegate -= OnSceneGUI;
-            SceneView.onSceneGUIDelegate += OnSceneGUI;
+            SceneView.duringSceneGui -= OnSceneGUI;
+            SceneView.duringSceneGui += OnSceneGUI;
 #endif
 
             Tools.hidden = false;
@@ -346,7 +346,7 @@ namespace Slate
 #if UNITY_2019_3_OR_NEWER
             SceneView.duringSceneGui -= OnSceneGUI;
 #else
-            SceneView.onSceneGUIDelegate -= OnSceneGUI;
+            SceneView.duringSceneGui -= OnSceneGUI;
 #endif
             Tools.hidden = false;
             if ( cutscene != null && !Application.isPlaying ) {
