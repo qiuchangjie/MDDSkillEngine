@@ -10,6 +10,8 @@ namespace Pathfinding
     {
         public Transform target;
 
+        public GameObject clickPrefab;
+
         public LayerMask mask;
         IAstarAI[] ais;
         Camera main;
@@ -45,6 +47,10 @@ namespace Pathfinding
                 if (Physics.Raycast(main.ScreenPointToRay(Input.mousePosition), out hit, Mathf.Infinity, mask))
                 {
                     target.position = hit.point;
+
+                    GameObject obj = Instantiate(clickPrefab);
+                    obj.transform.position = hit.point;
+                    
 
                     for (int i = 0; i < ais.Length; i++)
                     {

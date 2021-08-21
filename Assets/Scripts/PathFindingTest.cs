@@ -5,14 +5,16 @@ using UnityEngine;
 namespace Pathfinding
 {
     public class PathFindingTest : VersionedMonoBehaviour
-    {
-
+    {      
         public Transform target;
+
+        
+
         IAstarAI ai;
 
         private void OnTriggerEnter(Collider other)
         {
-            
+            Debug.LogError(other.name);
         }
 
         void OnEnable()
