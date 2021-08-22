@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Animancer Settings
   m_EditorClassIdentifier: 
   _TransitionPreviewWindow:
-    _InspectorWidth: 300
+    _InspectorWidth: 375
     _AutoClose: 1
     _ShowTransition: 1
     _MovementSensitivity: 1
