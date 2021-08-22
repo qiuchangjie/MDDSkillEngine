@@ -18,7 +18,7 @@ namespace Pathfinding {
 	public abstract class AIBase : VersionedMonoBehaviour {
 		/// <summary>\copydoc Pathfinding::IAstarAI::radius</summary>
 		public float radius = 0.5f;
-
+		
 		/// <summary>\copydoc Pathfinding::IAstarAI::height</summary>
 		public float height = 2;
 

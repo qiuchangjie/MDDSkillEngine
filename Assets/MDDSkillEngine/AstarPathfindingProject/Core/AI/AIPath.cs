@@ -2,9 +2,11 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
+
 namespace Pathfinding {
 	using Pathfinding.RVO;
 	using Pathfinding.Util;
+	using Pathfinding;
 
 	/// <summary>
 	/// AI for following paths.
@@ -72,7 +74,7 @@ namespace Pathfinding {
 		/// In the Custom mode you can set the acceleration to any positive value.
 		/// </summary>
 		public float maxAcceleration = -2.5f;
-
+	
 		/// <summary>
 		/// Rotation speed in degrees per second.
 		/// Rotation is calculated using Quaternion.RotateTowards. This variable represents the rotation speed in degrees per second.
@@ -236,9 +238,10 @@ namespace Pathfinding {
 		/// <summary>\copydoc Pathfinding::IAstarAI::canMove</summary>
 		bool IAstarAI.canMove { get { return canMove; } set { canMove = value; } }
 
-		#endregion
 
-		protected override void OnDisable () {
+        #endregion
+
+        protected override void OnDisable () {
 			base.OnDisable();
 
 			// Release current path so that it can be pooled
@@ -254,8 +257,9 @@ namespace Pathfinding {
 		///
 		/// This method will be called again if a new path is calculated as the destination may have changed.
 		/// So when the agent is close to the destination this method will typically be called every <see cref="repathRate"/> seconds.
-		/// </summary>
+		/// </summary>	
 		public virtual void OnTargetReached () {
+			PathFindingTest.idleAction.Invoke();
 		}
 
 		/// <summary>
@@ -313,7 +317,7 @@ namespace Pathfinding {
 			var distanceToEnd = remainingDistance;
 			if (distanceToEnd <= endReachedDistance) {
 				reachedEndOfPath = true;
-				OnTargetReached();
+				//OnTargetReached();
 			}
 		}
 

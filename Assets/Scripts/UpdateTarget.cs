@@ -1,4 +1,6 @@
-﻿using System.Collections;
+﻿using Animancer;
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -16,6 +18,8 @@ namespace Pathfinding
         IAstarAI[] ais;
         Camera main;
 
+        public AnimancerComponent animancer;
+
         private void Awake()
         {
             main = GetComponent<Camera>();
@@ -23,6 +27,7 @@ namespace Pathfinding
         }
 
         bool isClick = false;
+        bool isAttact = false;
 
         public void Update()
         {
@@ -37,6 +42,11 @@ namespace Pathfinding
                 Debug.LogError("点击点击点击点击点击点击");
                 isClick = true;
             }
+
+            if (Input.GetKeyDown(KeyCode.X))
+            {
+                isAttact = true;
+            }
         }
 
         public void LateUpdate()
@@ -50,7 +60,9 @@ namespace Pathfinding
 
                     GameObject obj = Instantiate(clickPrefab);
                     obj.transform.position = hit.point;
-                    
+
+                    PathFindingTest.workAction.Invoke();
+
 
                     for (int i = 0; i < ais.Length; i++)
                     {
@@ -60,6 +72,12 @@ namespace Pathfinding
                     //positionFound = true;
                 }
                 isClick = false;
+            }
+
+            if (isAttact)
+            {
+                PathFindingTest.attackAction.Invoke();
+                isAttact = false;
             }
 
            
