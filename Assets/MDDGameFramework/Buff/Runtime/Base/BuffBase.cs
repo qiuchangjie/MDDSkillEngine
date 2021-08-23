@@ -2,17 +2,23 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BuffBase : MonoBehaviour
+namespace MDDGameFramework
 {
-    // Start is called before the first frame update
-    void Start()
+    public abstract class BuffBase<T>  where T: BuffBase<T>
     {
-        
-    }
+        public BuffDatabase buffData;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        public abstract void OnInit(int bufId);
+
+        public abstract void OnExecute();
+
+        public virtual void OnUpdate() { }
+
+        public abstract void OnFininsh();
+
+        public virtual void OnRefresh() { }
+       
     }
 }
+
+
