@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace MDDGameFramework
+namespace MDDGameFramework.Runtime
 {
     public abstract class MDDGameFrameworkComponent : MonoBehaviour
     {

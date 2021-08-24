@@ -14,7 +14,6 @@ namespace MDDGameFramework
             m_BuffSystems = new Dictionary<string, BuffSystem>();
         }
 
-
         internal override void Shutdown()
         {
             
@@ -26,7 +25,6 @@ namespace MDDGameFramework
             {
                 return;
             }
-
 
             foreach(var bufsystem in m_BuffSystems)
             {

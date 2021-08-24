@@ -1,9 +1,10 @@
-﻿using System.Collections;
+﻿using MDDGameFramework;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 
-namespace MDDGameFramework
+namespace MDDSkillEngine
 {
     public class Buff : BuffBase
     {

@@ -21,11 +21,11 @@ namespace MDDGameFramework
         {
             if (buffs.Count == 0)
             {
-                currentNode = buffs.AddFirst(BuffFactory.AcquireBuff());
+                currentNode = buffs.AddFirst(BuffFactory.AcquireBuff("Buff"));
             }
             else
             {
-                currentNode = buffs.AddAfter(currentNode,BuffFactory.AcquireBuff());
+                currentNode = buffs.AddAfter(currentNode,BuffFactory.AcquireBuff("Buff"));
             }
         }
 

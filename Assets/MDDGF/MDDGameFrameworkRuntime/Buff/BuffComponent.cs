@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace MDDGameFramework
+
+namespace MDDGameFramework.Runtime
 {
     public sealed class BuffComponent : MDDGameFrameworkComponent
     {
