@@ -2,17 +2,34 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Buff : MonoBehaviour
-{
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
+namespace MDDGameFramework
+{
+    public class Buff : BuffBase
     {
-        
+        public override void OnInit(IBuffSystem buffSystem, BuffDatabase buffData)
+        {
+           
+        }
+
+        public override void OnUpdate(IBuffSystem buffSystem, float elapseSeconds, float realElapseSeconds)
+        {
+            base.OnUpdate(buffSystem, elapseSeconds, realElapseSeconds);
+            Debug.LogError("buff系统开始运转啦");
+        }
+
+        public override void OnExecute(IBuffSystem buffSytem)
+        {
+           
+        }
+
+        public override void OnFininsh(IBuffSystem buffSystem)
+        {
+            
+        }
+
+       
     }
 }
+
+

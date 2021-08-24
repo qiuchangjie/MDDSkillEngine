@@ -4,19 +4,28 @@ using UnityEngine;
 
 namespace MDDGameFramework
 {
-    public abstract class BuffBase<T>  where T: BuffBase<T>
+    public abstract class BuffBase 
     {
+        public BuffBase()
+        {
+            
+        }
+
         public BuffDatabase buffData;
 
-        public abstract void OnInit(int bufId);
+        public object target;
 
-        public abstract void OnExecute();
+        public object from;
 
-        public virtual void OnUpdate() { }
+        public abstract void OnInit(IBuffSystem buffSystem,BuffDatabase buffData);
 
-        public abstract void OnFininsh();
+        public abstract void OnExecute(IBuffSystem buffSytem);
 
-        public virtual void OnRefresh() { }
+        public virtual void OnUpdate(IBuffSystem buffSystem,float elapseSeconds, float realElapseSeconds) { }
+
+        public abstract void OnFininsh(IBuffSystem buffSystem);
+
+        public virtual void OnRefresh(IBuffSystem buffSystem) { }
        
     }
 }

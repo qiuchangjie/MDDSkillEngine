@@ -2,17 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BuffFactory : MonoBehaviour
+namespace MDDGameFramework
 {
-    // Start is called before the first frame update
-    void Start()
+    public class BuffFactory
     {
-        
-    }
+        public static BuffBase AcquireBuff()
+        {
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+            Buff buf = new Buff();
+
+
+            return buf;
+        }
     }
 }

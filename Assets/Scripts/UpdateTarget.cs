@@ -4,12 +4,14 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
-
+using MDDGameFramework;
 
 namespace Pathfinding
 {
     public class UpdateTarget : MonoBehaviour
     {
+        IBuffSystem buffSystem;
+
         public Transform target;
 
         public GameObject clickPrefab;
@@ -21,9 +23,15 @@ namespace Pathfinding
         public AnimancerComponent animancer;
 
         private void Awake()
-        {
+        {          
             main = GetComponent<Camera>();
             ais = FindObjectsOfType<MonoBehaviour>().OfType<IAstarAI>().ToArray();
+        }
+
+        private void Start()
+        {
+            buffSystem = GameEnter.Buff.CreatBuffSystem();
+            buffSystem.AddBuff(1);
         }
 
         bool isClick = false;

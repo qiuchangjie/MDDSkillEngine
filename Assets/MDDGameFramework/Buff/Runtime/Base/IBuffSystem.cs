@@ -2,17 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class IBuffSystem : MonoBehaviour
+namespace MDDGameFramework
 {
-    // Start is called before the first frame update
-    void Start()
+    public interface IBuffSystem
     {
-        
-    }
+        void AddBuff(int bufID);
 
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
+
+
