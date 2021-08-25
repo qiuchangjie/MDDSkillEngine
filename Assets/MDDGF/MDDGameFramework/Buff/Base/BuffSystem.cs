@@ -34,6 +34,10 @@ namespace MDDGameFramework
 
         public void RemoveBuff()
         {
+            currentNode.Value.Clear();
+
+            ReferencePool.EnableStrictCheck = true;
+
             ReferencePool.Release(currentNode.Value);
         }
 
