@@ -28,7 +28,13 @@ namespace MDDSkillEngine
             Debug.LogError("buff系统开始运转啦");
         }
 
-       
+
+        public override void Clear()
+        {
+            target = null;
+            from = null;
+            Debug.LogError("clear");
+        }
 
         public override void OnFininsh(IBuffSystem buffSystem)
         {

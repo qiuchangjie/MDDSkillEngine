@@ -1,14 +1,9 @@
-﻿//------------------------------------------------------------
-// Game Framework
-// Copyright © 2013-2021 Jiang Yin. All rights reserved.
-// Homepage: https://gameframework.cn/
-// Feedback: mailto:ellan@gameframework.cn
-//------------------------------------------------------------
-
-using System;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using UnityEngine;
 
-namespace GameFramework
+namespace MDDGameFramework
 {
     /// <summary>
     /// 引用池。
@@ -17,7 +12,6 @@ namespace GameFramework
     {
         private static readonly Dictionary<Type, ReferenceCollection> s_ReferenceCollections = new Dictionary<Type, ReferenceCollection>();
         private static bool m_EnableStrictCheck = false;
-
 
         /// <summary>
         /// 获取或设置是否开启强制检查。
@@ -111,7 +105,7 @@ namespace GameFramework
         {
             if (reference == null)
             {
-                throw new GameFrameworkException("Reference is invalid.");
+                throw new MDDGameFrameworkException("Reference is invalid.");
             }
 
             Type referenceType = reference.GetType();
@@ -189,17 +183,17 @@ namespace GameFramework
 
             if (referenceType == null)
             {
-                throw new GameFrameworkException("Reference type is invalid.");
+                throw new MDDGameFrameworkException("Reference type is invalid.");
             }
 
             if (!referenceType.IsClass || referenceType.IsAbstract)
             {
-                throw new GameFrameworkException("Reference type is not a non-abstract class type.");
+                throw new MDDGameFrameworkException("Reference type is not a non-abstract class type.");
             }
 
             if (!typeof(IReference).IsAssignableFrom(referenceType))
             {
-                throw new GameFrameworkException(Utility.Text.Format("Reference type '{0}' is invalid.", referenceType.FullName));
+                throw new MDDGameFrameworkException(Utility.Text.Format("Reference type '{0}' is invalid.", referenceType.FullName));
             }
         }
 
@@ -207,7 +201,7 @@ namespace GameFramework
         {
             if (referenceType == null)
             {
-                throw new GameFrameworkException("ReferenceType is invalid.");
+                throw new MDDGameFrameworkException("ReferenceType is invalid.");
             }
 
             ReferenceCollection referenceCollection = null;
@@ -223,4 +217,6 @@ namespace GameFramework
             return referenceCollection;
         }
     }
+
 }
+

@@ -57,6 +57,21 @@ namespace Pathfinding
             {
                 isAttact = true;
             }
+
+            if (Input.GetKeyDown(KeyCode.C))
+            {
+                Debug.LogError(ReferencePool.GetAllReferencePoolInfos()[0].UnusedReferenceCount);
+                buffSystem.RemoveBuff();
+                Debug.LogError(ReferencePool.GetAllReferencePoolInfos()[0].UnusedReferenceCount);
+            }
+
+            if (Input.GetKeyDown(KeyCode.F))
+            {
+                entiity entiity = GameObject.Find("GameObject").GetComponent<entiity>();
+                buffSystem.AddBuff(1, entiity.obj[0], entiity.obj[1]);
+
+                Debug.LogError(ReferencePool.GetAllReferencePoolInfos()[0].UnusedReferenceCount);
+            }
         }
 
         public void LateUpdate()

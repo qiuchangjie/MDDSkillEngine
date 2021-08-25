@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace MDDGameFramework
 {
-    public abstract class BuffBase 
+    public abstract class BuffBase : IReference
     {
         public BuffBase()
         {
@@ -26,7 +26,8 @@ namespace MDDGameFramework
         public abstract void OnFininsh(IBuffSystem buffSystem);
 
         public virtual void OnRefresh(IBuffSystem buffSystem) { }
-       
+
+        public abstract void Clear();
     }
 }
 

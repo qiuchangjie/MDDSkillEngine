@@ -32,6 +32,11 @@ namespace MDDGameFramework
             }
         }
 
+        public void RemoveBuff()
+        {
+            ReferencePool.Release(currentNode.Value);
+        }
+
         internal override void OnUpdate(float elapseSeconds, float realElapseSeconds)
         {
             m_TempBuffs.Clear();
