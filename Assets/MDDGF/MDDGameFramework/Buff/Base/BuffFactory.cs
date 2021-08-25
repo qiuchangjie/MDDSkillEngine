@@ -26,9 +26,11 @@ namespace MDDGameFramework
         }
 
 
-        public static BuffBase AcquireBuff(string bufName)
+        public static BuffBase AcquireBuff(string bufName,int bufID)
         {          
-            object buf = SkillAssembly.CreateInstance(SkillAssembly.GetName().Name +"."+bufName);
+            object buf = SkillAssembly.CreateInstance(SkillAssembly.GetName().Name +"."+bufName);           
+
+            //((BuffBase)buf).OnInit(null,null,testm);
 
             return (BuffBase)buf;
         }

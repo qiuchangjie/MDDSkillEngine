@@ -19,7 +19,7 @@ namespace MDDGameFramework
 
         public abstract void OnInit(IBuffSystem buffSystem,BuffDatabase buffData);
 
-        public abstract void OnExecute(IBuffSystem buffSytem);
+        public abstract void OnExecute(IBuffSystem buffSytem,object target, object from);
 
         public virtual void OnUpdate(IBuffSystem buffSystem,float elapseSeconds, float realElapseSeconds) { }
 

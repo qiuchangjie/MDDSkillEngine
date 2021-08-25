@@ -17,15 +17,18 @@ namespace MDDGameFramework
             m_TempBuffs = new List<BuffBase>();
         }
 
-        public void AddBuff(int bufID)
+        public void AddBuff(int bufID,object target,object from)
         {
             if (buffs.Count == 0)
             {
-                currentNode = buffs.AddFirst(BuffFactory.AcquireBuff("Buff"));
+                currentNode = buffs.AddFirst(BuffFactory.AcquireBuff("Buff",1));
+                currentNode.Value.OnExecute(this,target,from);
+                //currentNode.Value.OnInit()
             }
             else
             {
-                currentNode = buffs.AddAfter(currentNode,BuffFactory.AcquireBuff("Buff"));
+                currentNode = buffs.AddAfter(currentNode,BuffFactory.AcquireBuff("Buff",1));
+                currentNode.Value.OnExecute(this,target,from);
             }
         }
 

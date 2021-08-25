@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using MDDGameFramework;
+using MDDSkillEngine;
 
 namespace Pathfinding
 {
@@ -31,7 +32,8 @@ namespace Pathfinding
         private void Start()
         {
             buffSystem = GameEnter.Buff.CreatBuffSystem();
-            buffSystem.AddBuff(1);
+            entiity entiity = GameObject.Find("GameObject").GetComponent<entiity>();
+            buffSystem.AddBuff(1,entiity.obj[0],entiity.obj[1]);
         }
 
         bool isClick = false;

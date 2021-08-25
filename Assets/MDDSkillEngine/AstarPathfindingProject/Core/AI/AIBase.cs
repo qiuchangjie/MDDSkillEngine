@@ -376,7 +376,7 @@ namespace Pathfinding {
 			// For example when a non-kinematic rigidbody is used then the rigidbody will apply the gravity itself
 			// Note that the gravity can contain NaN's, which is why the comparison uses !(a==b) instead of just a!=b.
 			usingGravity = !(gravity == Vector3.zero) && (!updatePosition || ((rigid == null || rigid.isKinematic) && (rigid2D == null || rigid2D.isKinematic)));
-			if (rigid == null && rigid2D == null && canMove) {
+			if (!(rigid == null && rigid2D == null) && canMove) {
 				Vector3 nextPosition;
 				Quaternion nextRotation;
 				MovementUpdate(Time.deltaTime, out nextPosition, out nextRotation);
@@ -389,7 +389,7 @@ namespace Pathfinding {
 		/// If rigidbodies are used then all movement happens here.
 		/// </summary>
 		protected virtual void FixedUpdate () {
-			if (!(rigid == null && rigid2D == null) && canMove) {
+			if ((rigid == null && rigid2D == null) && canMove) {
 				Vector3 nextPosition;
 				Quaternion nextRotation;
 				MovementUpdate(Time.fixedDeltaTime, out nextPosition, out nextRotation);
@@ -400,7 +400,7 @@ namespace Pathfinding {
 		/// <summary>\copydoc Pathfinding::IAstarAI::MovementUpdate</summary>
 		public void MovementUpdate (float deltaTime, out Vector3 nextPosition, out Quaternion nextRotation) {
 			lastDeltaTime = deltaTime;
-			MovementUpdateInternal(deltaTime, out nextPosition, out nextRotation);
+			MovementUpdateInternal(deltaTime , out nextPosition, out nextRotation);
 		}
 
 		/// <summary>Called during either Update or FixedUpdate depending on if rigidbodies are used for movement or not</summary>
