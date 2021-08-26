@@ -33,7 +33,7 @@ namespace Pathfinding
         {
             buffSystem = GameEnter.Buff.CreatBuffSystem();
             entiity entiity = GameObject.Find("GameObject").GetComponent<entiity>();
-            buffSystem.AddBuff(1,entiity.obj[0],entiity.obj[1]);
+            //buffSystem.AddBuff(1,entiity.obj[0],entiity.obj[1]);
         }
 
         bool isClick = false;

@@ -11,6 +11,11 @@ namespace MDDGameFramework
     /// <typeparam name="T">有限状态机持有者类型。</typeparam>
     public abstract class FsmState<T> where T : class
     {
+        public virtual bool StrongState
+        {
+            get { return false; }
+        }
+
         /// <summary>
         /// 初始化有限状态机状态基类的新实例。
         /// </summary>
@@ -61,12 +66,24 @@ namespace MDDGameFramework
         {
         }
 
+        public void Finish<TState>(IFsm<T> fsm) where TState : FsmState<T>
+        {
+            Fsm<T> fsmImplement = (Fsm<T>)fsm;
+
+            if (fsmImplement == null)
+            {
+                throw new MDDGameFrameworkException("FSM is invalid.");
+            }
+
+            fsmImplement.FinishState<TState>();
+        }
+
         /// <summary>
         /// 切换当前有限状态机状态。
         /// </summary>
         /// <typeparam name="TState">要切换到的有限状态机状态类型。</typeparam>
         /// <param name="fsm">有限状态机引用。</param>
-        protected void ChangeState<TState>(IFsm<T> fsm) where TState : FsmState<T>
+        public void ChangeState<TState>(IFsm<T> fsm) where TState : FsmState<T>
         {
             Fsm<T> fsmImplement = (Fsm<T>)fsm;
             if (fsmImplement == null)
@@ -82,7 +99,7 @@ namespace MDDGameFramework
         /// </summary>
         /// <param name="fsm">有限状态机引用。</param>
         /// <param name="stateType">要切换到的有限状态机状态类型。</param>
-        protected void ChangeState(IFsm<T> fsm, Type stateType)
+        public void ChangeState(IFsm<T> fsm, Type stateType)
         {
             Fsm<T> fsmImplement = (Fsm<T>)fsm;
             if (fsmImplement == null)

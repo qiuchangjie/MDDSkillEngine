@@ -16,9 +16,16 @@ public class GameEnter : MonoBehaviour
         private set;
     }
 
+    public static FsmComponent Fsm
+    {
+        get;
+        private set;
+    }
+
 
     private void InitMDDComponent()
     {
         Buff = MDDGameEntry.GetComponent<BuffComponent>();
+        Fsm = MDDGameEntry.GetComponent<FsmComponent>();
     }
 }

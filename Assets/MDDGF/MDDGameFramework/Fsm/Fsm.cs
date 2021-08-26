@@ -28,6 +28,7 @@ namespace MDDGameFramework
             m_CurrentState = null;
             m_CurrentStateTime = 0f;
             m_IsDestroyed = true;
+            m_StateStack = new Stack<FsmState<T>>();
         }
 
         /// <summary>
@@ -92,7 +93,7 @@ namespace MDDGameFramework
         {
             get
             {
-                return m_CurrentState;
+                return m_StateStack.Peek();
             }
         }
 
@@ -562,6 +563,18 @@ namespace MDDGameFramework
             ChangeState(typeof(TState));
         }
 
+        internal void FinishState<TState>() where TState : FsmState<T>
+        {
+            if (m_CurrentState == null)
+            {
+                throw new MDDGameFrameworkException("Current state is invalid.");
+            }
+
+            m_StateStack.Pop();
+            m_StateStack.Peek().OnEnter(this);
+        }
+
+
         /// <summary>
         /// 切换当前有限状态机状态。
         /// </summary>
@@ -579,10 +592,25 @@ namespace MDDGameFramework
                 throw new MDDGameFrameworkException(Utility.Text.Format("FSM '{0}' can not change state to '{1}' which is not exist.", new TypeNamePair(typeof(T), Name), stateType.FullName));
             }
 
-            m_CurrentState.OnLeave(this, false);
-            m_CurrentStateTime = 0f;
-            m_CurrentState = state;
-            m_CurrentState.OnEnter(this);
+            if (!m_StateStack.Peek().StrongState)
+            {
+                m_StateStack.Peek().OnLeave(this, false);
+                m_CurrentStateTime = 0f;
+                m_StateStack.Pop();
+                m_StateStack.Push(state);
+                m_StateStack.Peek().OnEnter(this);
+            }
+            else
+            {
+                m_StateStack.Push(state);
+                m_StateStack.Peek().OnEnter(this);
+            }
+
+
+            //m_CurrentState.OnLeave(this, false);
+            //m_CurrentStateTime = 0f;
+            //m_CurrentState = state;
+            //m_CurrentState.OnEnter(this);
         }
     }
 }
