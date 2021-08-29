@@ -22,10 +22,17 @@ public class GameEnter : MonoBehaviour
         private set;
     }
 
+    public static EventComponent Event
+    {
+        get;
+        private set;
+    }
+
 
     private void InitMDDComponent()
     {
         Buff = MDDGameEntry.GetComponent<BuffComponent>();
         Fsm = MDDGameEntry.GetComponent<FsmComponent>();
+        Event = MDDGameEntry.GetComponent<EventComponent>();
     }
 }
