@@ -1,13 +1,12 @@
-﻿using GameFramework.ObjectPool;
-using System;
+﻿using System;
 
-namespace GameFramework.ObjectPool
+namespace MDDGameFramework
 {
     /// <summary>
     /// 对象池接口。
     /// </summary>
     /// <typeparam name="T">对象类型。</typeparam>
-    public interface IObjectPool<T> where T : GameFramework.ObjectPool.ObjectBase
+    public interface IObjectPool<T> where T : ObjectBase
     {
         /// <summary>
         /// 获取对象池名称。

@@ -1,14 +1,7 @@
-﻿//------------------------------------------------------------
-// Game Framework
-// Copyright © 2013-2021 Jiang Yin. All rights reserved.
-// Homepage: https://gameframework.cn/
-// Feedback: mailto:ellan@gameframework.cn
-//------------------------------------------------------------
-
-using System;
+﻿using System;
 using System.Collections.Generic;
 
-namespace GameFramework
+namespace MDDGameFramework
 {
     public static partial class Utility
     {
@@ -57,7 +50,7 @@ namespace GameFramework
             {
                 if (results == null)
                 {
-                    throw new GameFrameworkException("Results is invalid.");
+                    throw new MDDGameFrameworkException("Results is invalid.");
                 }
 
                 results.Clear();
@@ -76,14 +69,14 @@ namespace GameFramework
             {
                 if (string.IsNullOrEmpty(typeName))
                 {
-                    throw new GameFrameworkException("Type name is invalid.");
+                    throw new MDDGameFrameworkException("Type name is invalid.");
                 }
 
                 Type type = null;
                 if (s_CachedTypes.TryGetValue(typeName, out type))
                 {
                     return type;
-                }  
+                }
 
                 type = Type.GetType(typeName);
                 if (type != null)
