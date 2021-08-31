@@ -1,8 +1,8 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using MDDGameFramework;
 using System;
+using CatAsset;
 
 namespace MDDSkillEngine
 {
@@ -13,6 +13,7 @@ namespace MDDSkillEngine
         EventHandler<GameEventArgs> testEvent;
         EventHandler<GameEventArgs> testEvent1;
 
+        Action<object> LoadAssetSucess;
 
         public List<GameObject> obj = new List<GameObject>();
 
@@ -35,22 +36,41 @@ namespace MDDSkillEngine
         {
             testEvent += LogString;
             testEvent1 += debugstring;
+            LoadAssetSucess += loadsucess;
             //fsm = GameEnter.Fsm.CreateFsm<entiity>(this, new GoAround(), new GoOn());
             //  fsm = GameEnter.Fsm.CreateFsm<entiity>(this,new GoAround(),new GoOn());
         }
 
-        
+        List<GameObject> objs = new List<GameObject>();  
+
+        public void loadsucess(object obj)
+        {
+            objs.Add(Instantiate((GameObject)obj));
+
+            Debug.LogError(CatAssetManager.assetBundleInfoDict.Count);
+        }
+
 
         private void Update()
         {
-
-
             if (Input.GetKeyDown(KeyCode.E))
             {
-                GameEnter.Event.Subscribe(TestEventArgs.EventId, testEvent);
-                GameEnter.Event.Subscribe(TestEventArgs.EventId, testEvent1);
+                CatAssetManager.LoadAsset("Assets/Prefab/Model1/Akiiii.prefab", LoadAssetSucess);
+            }
 
-                GameEnter.Event.Fire(this, TestEventArgs.Create("wulalalalalallalalalalalal"));
+            if (Input.GetKeyDown(KeyCode.K))
+            {
+                CatAssetManager.LoadAsset("Assets/Prefab/Model1/Aki1.prefab", LoadAssetSucess);
+            }
+
+
+            if (Input.GetKeyDown(KeyCode.J))
+            {
+                AssetRuntimeInfo dependencyInfo = CatAssetManager.assetInfoDict["Assets/Prefab/Model1/Akiiii.prefab"];
+
+                CatAssetManager.UnloadAsset(dependencyInfo.Asset);
+
+                Debug.LogError(CatAssetManager.assetBundleInfoDict.Count);
             }
 
             if (Input.GetKeyDown(KeyCode.G))

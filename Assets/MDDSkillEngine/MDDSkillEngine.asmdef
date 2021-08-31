@@ -1,6 +1,6 @@
 {
     "name": "MDDSkillEngine",
-    "references": ["MDDGameFramework","MDDGameFrameworkRuntime"],
+    "references": ["MDDGameFramework","MDDGameFrameworkRuntime","CatAsset.Runtime"],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": true,

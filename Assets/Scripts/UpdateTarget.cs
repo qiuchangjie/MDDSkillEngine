@@ -6,6 +6,7 @@ using System.Linq;
 using UnityEngine;
 using MDDGameFramework;
 using MDDSkillEngine;
+using CatAsset;
 
 namespace Pathfinding
 {
@@ -55,6 +56,7 @@ namespace Pathfinding
 
             if (Input.GetKeyDown(KeyCode.X))
             {
+
                 isAttact = true;
             }
 
