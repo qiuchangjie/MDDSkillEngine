@@ -112,7 +112,7 @@ namespace MDDGameFramework.Runtime
         {
             if (MDDGameFrameworkComponent == null)
             {
-                //Log.Error("Game Framework component is invalid.");
+                Log.Error("Game Framework component is invalid.");
                 return;
             }
 
@@ -123,7 +123,7 @@ namespace MDDGameFramework.Runtime
             {
                 if (current.Value.GetType() == type)
                 {
-                    //Log.Error("Game Framework component type '{0}' is already exist.", type.FullName);
+                    Log.Error("Game Framework component type '{0}' is already exist.", type.FullName);
                     return;
                 }
 
