@@ -28,11 +28,25 @@ public class GameEnter : MonoBehaviour
         private set;
     }
 
+    public static ObjectPoolComponent ObjectPool
+    {
+        get;
+        private set;
+    }
+
+    public static EntityComponent Entity
+    {
+        get;
+        private set;
+    }
+
 
     private void InitMDDComponent()
     {
         Buff = MDDGameEntry.GetComponent<BuffComponent>();
         Fsm = MDDGameEntry.GetComponent<FsmComponent>();
         Event = MDDGameEntry.GetComponent<EventComponent>();
+        ObjectPool = MDDGameEntry.GetComponent<ObjectPoolComponent>();
+        Entity = MDDGameEntry.GetComponent<EntityComponent>();
     }
 }
