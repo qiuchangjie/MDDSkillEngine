@@ -1,6 +1,7 @@
 ﻿
 //------------------------------------------------------------
 
+using CatAsset;
 using MDDGameFramework;
 using UnityEngine;
 
@@ -52,7 +53,8 @@ namespace MDDGameFramework.Runtime
         /// <param name="entityInstance">要释放的实体实例。</param>
         public override void ReleaseEntity(object entityAsset, object entityInstance)
         {
-           // m_ResourceComponent.UnloadAsset(entityAsset);
+            //m_ResourceComponent.UnloadAsset(entityAsset);
+            CatAssetManager.UnloadAsset((Object)entityAsset);
             Destroy((Object)entityInstance);
         }
 

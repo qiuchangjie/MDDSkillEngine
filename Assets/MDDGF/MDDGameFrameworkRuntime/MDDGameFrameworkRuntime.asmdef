@@ -1,6 +1,6 @@
 {
     "name": "MDDGameFrameworkRuntime",
-    "references": ["GameFramework","MDDGameFramework"],
+    "references": ["GameFramework","MDDGameFramework","CatAsset.Runtime"],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": true,

@@ -3,6 +3,7 @@ using UnityEngine;
 using MDDGameFramework;
 using System;
 using CatAsset;
+using MDDGameFramework.Runtime;
 
 namespace MDDSkillEngine
 {
@@ -55,12 +56,14 @@ namespace MDDSkillEngine
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
-                CatAssetManager.LoadAsset("Assets/Prefab/Model1/Akiiii.prefab", LoadAssetSucess);
+
+                GameEnter.Entity.ShowEntity<Cubes>(100,"Assets/Prefab/Model1/Akiiii.prefab", "player");
             }
 
             if (Input.GetKeyDown(KeyCode.K))
             {
-                CatAssetManager.LoadAsset("Assets/Prefab/Model1/Aki1.prefab", LoadAssetSucess);
+                //CatAssetManager.LoadAsset("Assets/Prefab/Model1/Aki1.prefab", LoadAssetSucess);
+                GameEnter.Entity.AddEntityGroup("player", 10, 10, 10, 10);
             }
 
 
@@ -92,6 +95,16 @@ namespace MDDSkillEngine
                 }            
             }
         }
+
+    }
+
+
+    /// <summary>
+    /// GF需要的实体逻辑脚本
+    /// 在运行时会动态的添加到实体身上
+    /// </summary>
+    public class Cubes : EntityLogic
+    {
 
     }
 }
