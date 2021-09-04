@@ -28,13 +28,13 @@ namespace MDDGameFramework.Runtime
         private Transform m_InstanceRoot = null;
 
         [SerializeField]
-        private string m_EntityHelperTypeName = "UnityGameFramework.Runtime.DefaultEntityHelper";
+        private string m_EntityHelperTypeName = "MDDGameFramework.Runtime.DefaultEntityHelper";
 
         [SerializeField]
         private EntityHelperBase m_CustomEntityHelper = null;
 
         [SerializeField]
-        private string m_EntityGroupHelperTypeName = "UnityGameFramework.Runtime.DefaultEntityGroupHelper";
+        private string m_EntityGroupHelperTypeName = "MDDGameFramework.Runtime.DefaultEntityGroupHelper";
 
         [SerializeField]
         private EntityGroupHelperBase m_CustomEntityGroupHelper = null;

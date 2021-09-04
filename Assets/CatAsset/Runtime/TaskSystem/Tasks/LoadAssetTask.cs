@@ -14,6 +14,8 @@ namespace CatAsset
     {
         protected AssetRuntimeInfo assetInfo;
         protected AssetBundleRuntimeInfo abInfo;
+        protected LoadAssetCallbacks loadAssetCallbacks;
+        protected object userData;
 
         protected AsyncOperation asyncOp;
 
@@ -30,9 +32,11 @@ namespace CatAsset
             }
         }
 
-        public LoadAssetTask(TaskExcutor owner, string name, int priority, Action<object> completed, object userData) : base(owner, name, priority, completed, userData)
+        public LoadAssetTask(TaskExcutor owner, string name, int priority, Action<object> completed, object userData,LoadAssetCallbacks loadAssetCallbacks=null,object euserData=null) : base(owner, name, priority, completed, userData)
         {
             assetInfo = (AssetRuntimeInfo)userData;
+            this.loadAssetCallbacks = loadAssetCallbacks;
+            this.userData = euserData;
         }
 
 
@@ -117,6 +121,11 @@ namespace CatAsset
                 assetInfo.Asset = abAsyncOp.asset;
                 CatAssetManager.AddAssetToRuntimeInfo(assetInfo);  //添加Asset和AssetRuntimeInfo的关联
                 Completed?.Invoke(assetInfo.Asset);
+
+                if (loadAssetCallbacks != null)
+                {
+                    loadAssetCallbacks.LoadAssetSuccessCallback(assetInfo.ManifestInfo.AssetName,assetInfo.Asset,0,userData);
+                }
 
                 Debug.Log("Asset加载完毕：" + Name);
             }

@@ -1,6 +1,7 @@
-﻿using GameFramework.Resource;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using CatAsset;
+
 
 namespace MDDGameFramework
 {
@@ -16,7 +17,7 @@ namespace MDDGameFramework
         private readonly Queue<EntityInfo> m_RecycleQueue;
         private readonly LoadAssetCallbacks m_LoadAssetCallbacks;
         private IObjectPoolManager m_ObjectPoolManager;
-        private IResourceManager m_ResourceManager;
+        //private IResourceManager m_ResourceManager;
         private IEntityHelper m_EntityHelper;
         private int m_Serial;
         private bool m_IsShutdown;
@@ -25,6 +26,7 @@ namespace MDDGameFramework
         private EventHandler<ShowEntityUpdateEventArgs> m_ShowEntityUpdateEventHandler;
         private EventHandler<ShowEntityDependencyAssetEventArgs> m_ShowEntityDependencyAssetEventHandler;
         private EventHandler<HideEntityCompleteEventArgs> m_HideEntityCompleteEventHandler;
+
 
         /// <summary>
         /// 初始化实体管理器的新实例。
@@ -36,9 +38,9 @@ namespace MDDGameFramework
             m_EntitiesBeingLoaded = new Dictionary<int, int>();
             m_EntitiesToReleaseOnLoad = new HashSet<int>();
             m_RecycleQueue = new Queue<EntityInfo>();
-            m_LoadAssetCallbacks = new LoadAssetCallbacks(LoadAssetSuccessCallback, LoadAssetFailureCallback, LoadAssetUpdateCallback, LoadAssetDependencyAssetCallback);
+            m_LoadAssetCallbacks = new LoadAssetCallbacks(LoadAssetSuccessCallback);
             m_ObjectPoolManager = null;
-            m_ResourceManager = null;
+            //m_ResourceManager = null;
             m_EntityHelper = null;
             m_Serial = 0;
             m_IsShutdown = false;
@@ -207,15 +209,15 @@ namespace MDDGameFramework
         /// 设置资源管理器。
         /// </summary>
         /// <param name="resourceManager">资源管理器。</param>
-        public void SetResourceManager(IResourceManager resourceManager)
-        {
-            if (resourceManager == null)
-            {
-                throw new MDDGameFrameworkException("Resource manager is invalid.");
-            }
+        //public void SetResourceManager()
+        //{
+        //    if (resourceManager == null)
+        //    {
+        //        throw new MDDGameFrameworkException("Resource manager is invalid.");
+        //    }
 
-            m_ResourceManager = resourceManager;
-        }
+        //    m_ResourceManager = resourceManager;
+        //}
 
         /// <summary>
         /// 设置实体辅助器。
@@ -599,10 +601,10 @@ namespace MDDGameFramework
         /// <param name="userData">用户自定义数据。</param>
         public void ShowEntity(int entityId, string entityAssetName, string entityGroupName, int priority, object userData)
         {
-            if (m_ResourceManager == null)
-            {
-                throw new MDDGameFrameworkException("You must set resource manager first.");
-            }
+            //if (m_ResourceManager == null)
+            //{
+            //    throw new MDDGameFrameworkException("You must set resource manager first.");
+            //}
 
             if (m_EntityHelper == null)
             {
@@ -640,7 +642,10 @@ namespace MDDGameFramework
             {
                 int serialId = ++m_Serial;
                 m_EntitiesBeingLoaded.Add(entityId, serialId);
-                m_ResourceManager.LoadAsset(entityAssetName, priority, m_LoadAssetCallbacks, ShowEntityInfo.Create(serialId, entityId, entityGroup, userData));
+                
+                //m_ResourceManager.LoadAsset(entityAssetName, priority, m_LoadAssetCallbacks, ShowEntityInfo.Create(serialId, entityId, entityGroup, userData));
+
+                CatAssetManager.LoadAsset(entityAssetName,null,priority, m_LoadAssetCallbacks, ShowEntityInfo.Create(serialId,entityId,entityGroup,userData));
                 return;
             }
 
@@ -1257,32 +1262,32 @@ namespace MDDGameFramework
             ReferencePool.Release(showEntityInfo);
         }
 
-        private void LoadAssetFailureCallback(string entityAssetName, LoadResourceStatus status, string errorMessage, object userData)
-        {
-            ShowEntityInfo showEntityInfo = (ShowEntityInfo)userData;
-            if (showEntityInfo == null)
-            {
-                throw new MDDGameFrameworkException("Show entity info is invalid.");
-            }
+        //private void LoadAssetFailureCallback(string entityAssetName, LoadResourceStatus status, string errorMessage, object userData)
+        //{
+        //    ShowEntityInfo showEntityInfo = (ShowEntityInfo)userData;
+        //    if (showEntityInfo == null)
+        //    {
+        //        throw new MDDGameFrameworkException("Show entity info is invalid.");
+        //    }
 
-            if (m_EntitiesToReleaseOnLoad.Contains(showEntityInfo.SerialId))
-            {
-                m_EntitiesToReleaseOnLoad.Remove(showEntityInfo.SerialId);
-                return;
-            }
+        //    if (m_EntitiesToReleaseOnLoad.Contains(showEntityInfo.SerialId))
+        //    {
+        //        m_EntitiesToReleaseOnLoad.Remove(showEntityInfo.SerialId);
+        //        return;
+        //    }
 
-            m_EntitiesBeingLoaded.Remove(showEntityInfo.EntityId);
-            string appendErrorMessage = Utility.Text.Format("Load entity failure, asset name '{0}', status '{1}', error message '{2}'.", entityAssetName, status, errorMessage);
-            if (m_ShowEntityFailureEventHandler != null)
-            {
-                ShowEntityFailureEventArgs showEntityFailureEventArgs = ShowEntityFailureEventArgs.Create(showEntityInfo.EntityId, entityAssetName, showEntityInfo.EntityGroup.Name, appendErrorMessage, showEntityInfo.UserData);
-                m_ShowEntityFailureEventHandler(this, showEntityFailureEventArgs);
-                ReferencePool.Release(showEntityFailureEventArgs);
-                return;
-            }
+        //    m_EntitiesBeingLoaded.Remove(showEntityInfo.EntityId);
+        //    string appendErrorMessage = Utility.Text.Format("Load entity failure, asset name '{0}', status '{1}', error message '{2}'.", entityAssetName, status, errorMessage);
+        //    if (m_ShowEntityFailureEventHandler != null)
+        //    {
+        //        ShowEntityFailureEventArgs showEntityFailureEventArgs = ShowEntityFailureEventArgs.Create(showEntityInfo.EntityId, entityAssetName, showEntityInfo.EntityGroup.Name, appendErrorMessage, showEntityInfo.UserData);
+        //        m_ShowEntityFailureEventHandler(this, showEntityFailureEventArgs);
+        //        ReferencePool.Release(showEntityFailureEventArgs);
+        //        return;
+        //    }
 
-            throw new MDDGameFrameworkException(appendErrorMessage);
-        }
+        //    throw new MDDGameFrameworkException(appendErrorMessage);
+        //}
 
         private void LoadAssetUpdateCallback(string entityAssetName, float progress, object userData)
         {

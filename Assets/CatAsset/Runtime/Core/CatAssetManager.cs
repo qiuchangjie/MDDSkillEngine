@@ -137,7 +137,7 @@ namespace CatAsset
         /// <summary>
         /// 加载Asset
         /// </summary>
-        public static void LoadAsset(string assetName, Action<object> loadedCallback, int priority = 0)
+        public static void LoadAsset(string assetName, Action<object> loadedCallback ,int priority = 0, LoadAssetCallbacks loadAssetCallbacks = null,object userdata=null)
         {
 #if UNITY_EDITOR
             if (IsEditorMode)
@@ -180,11 +180,17 @@ namespace CatAsset
             {
                 //已加载过 直接调用回调方法
                 loadedCallback?.Invoke(assetInfo.Asset);
+
+                if (loadAssetCallbacks != null)
+                {
+                    loadAssetCallbacks.LoadAssetSuccessCallback(assetInfo.ManifestInfo.AssetName, assetInfo.Asset, 0, userdata);
+                }
+
                 return;
             }
 
             //未加载 创建加载Asset的任务
-            LoadAssetTask task = new LoadAssetTask(taskExcutor, assetName, priority, loadedCallback, assetInfo);
+            LoadAssetTask task = new LoadAssetTask(taskExcutor, assetName, priority, loadedCallback, assetInfo, loadAssetCallbacks, userdata);
             taskExcutor.AddTask(task);
         }
 

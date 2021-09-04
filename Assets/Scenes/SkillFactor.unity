@@ -8330,6 +8330,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c952c062405894b47b8777375ba58938, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_TextHelperTypeName: MDDGameFramework.Runtime.DefaultTextHelper
+  m_VersionHelperTypeName: MDDGameFramework.Runtime.DefaultVersionHelper
+  m_LogHelperTypeName: MDDGameFramework.Runtime.DefaultLogHelper
+  m_CompressionHelperTypeName: MDDGameFramework.Runtime.DefaultCompressionHelper
+  m_JsonHelperTypeName: MDDGameFramework.Runtime.DefaultJsonHelper
 --- !u!1 &668589076
 GameObject:
   m_ObjectHideFlags: 0
@@ -8527,7 +8532,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7777778, y: 1}
+    m_SensorSize: {x: 1.8896, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -9248,8 +9253,8 @@ MonoBehaviour:
   m_EnableShowEntityUpdateEvent: 0
   m_EnableShowEntityDependencyAssetEvent: 0
   m_InstanceRoot: {fileID: 0}
-  m_EntityHelperTypeName: UnityGameFramework.Runtime.DefaultEntityHelper
+  m_EntityHelperTypeName: MDDGameFramework.Runtime.DefaultEntityHelper
   m_CustomEntityHelper: {fileID: 0}
-  m_EntityGroupHelperTypeName: UnityGameFramework.Runtime.DefaultEntityGroupHelper
+  m_EntityGroupHelperTypeName: MDDGameFramework.Runtime.DefaultEntityGroupHelper
   m_CustomEntityGroupHelper: {fileID: 0}
   m_EntityGroups: []
