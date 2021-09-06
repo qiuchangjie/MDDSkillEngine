@@ -29,7 +29,7 @@ namespace MDDGameFramework.Runtime
 
             base.Awake();
 
-            //InitTextHelper();
+            InitTextHelper();
             InitLogHelper();
         }
 
