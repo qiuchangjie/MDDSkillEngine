@@ -446,6 +446,8 @@ namespace XNodeEditor {
                 //Get node position
                 Vector2 nodePos = GridToWindowPositionNoClipped(node.position);
 
+               // Debug.LogError(NodeEditor.portPositions.Count);
+
                 GUILayout.BeginArea(new Rect(nodePos, new Vector2(nodeEditor.GetWidth(), 4000)));
 
                 bool selected = selectionCache.Contains(graph.nodes[n]);
@@ -465,19 +467,23 @@ namespace XNodeEditor {
                     GUILayout.BeginVertical(style);
                 }
 
+               // Debug.LogError(NodeEditor.portPositions.Count);
+
                 GUI.color = guiColor;
                 EditorGUI.BeginChangeCheck();
 
                 //Draw node contents
                 nodeEditor.OnHeaderGUI();
                 nodeEditor.OnBodyGUI();
-
+                
                 //If user changed a value, notify other scripts through onUpdateNode
                 if (EditorGUI.EndChangeCheck()) {
                     if (NodeEditor.onUpdateNode != null) NodeEditor.onUpdateNode(node);
                     EditorUtility.SetDirty(node);
                     nodeEditor.serializedObject.ApplyModifiedProperties();
                 }
+
+                //Debug.LogError(NodeEditor.portPositions.Count);
 
                 GUILayout.EndVertical();
 
@@ -494,6 +500,7 @@ namespace XNodeEditor {
                         portConnectionPoints[kvp.Key] = rect;
                     }
                 }
+                //Debug.LogError(NodeEditor.portPositions.Count);
 
                 if (selected) GUILayout.EndVertical();
 

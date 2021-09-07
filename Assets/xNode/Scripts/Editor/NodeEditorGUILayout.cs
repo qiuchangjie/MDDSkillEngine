@@ -208,6 +208,36 @@ namespace XNodeEditor {
         }
 
         /// <summary> Make a simple port field. </summary>
+        public static void PortField(bool isBehave, XNode.NodePort port, params GUILayoutOption[] options)
+        {
+            if (port == null) return;
+            if (options == null) options = new GUILayoutOption[] { GUILayout.MinWidth(30) };
+            Vector2 position = Vector3.zero;
+            GUIContent content = new GUIContent(ObjectNames.NicifyVariableName(port.fieldName));
+
+            // If property is an input, display a regular property field and put a port handle on the left side
+            if (port.direction == XNode.NodePort.IO.Input)
+            {
+                // Display a label
+                EditorGUILayout.LabelField(content, options);
+
+                Rect rect = GUILayoutUtility.GetLastRect();
+                position =new Vector2( rect.center.x,rect.center.y);
+            }
+            // If property is an output, display a text label and put a port handle on the right side
+            else if (port.direction == XNode.NodePort.IO.Output)
+            {
+                // Display a label
+                EditorGUILayout.LabelField(content, NodeEditorResources.OutputPort, options);
+
+                Rect rect = GUILayoutUtility.GetLastRect();
+                position = new Vector2(rect.center.x, rect.center.y);
+
+            }
+            PortField(position, port);
+        }
+
+        /// <summary> Make a simple port field. </summary>
         public static void PortField(Vector2 position, XNode.NodePort port) {
             if (port == null) return;
 

@@ -49,8 +49,8 @@ namespace MDDSkillEngine
             objs.Add(Instantiate((GameObject)obj));
 
             Debug.LogError(CatAssetManager.assetBundleInfoDict.Count);
+           
         }
-
 
         private void Update()
         {
