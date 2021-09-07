@@ -31,8 +31,7 @@ namespace MDDGameFramework.Runtime
             m_FsmManager = MDDGameFrameworkEntry.GetModule<IFsmManager>();
             if (m_FsmManager == null)
             {
-                //Log.Fatal("FSM manager is invalid.");
-                Debug.LogError("FSM manager is invalid.");
+                Log.Fatal("FSM manager is invalid.");
                 return;
             }
         }

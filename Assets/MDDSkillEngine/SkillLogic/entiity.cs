@@ -4,12 +4,15 @@ using MDDGameFramework;
 using System;
 using CatAsset;
 using MDDGameFramework.Runtime;
+using NPBehave;
 
 namespace MDDSkillEngine
 {
     public class entiity : MonoBehaviour
     {
         IFsm<entiity> fsm = null;
+
+        private Root behaviorTree;
 
         EventHandler<GameEventArgs> testEvent;
         EventHandler<GameEventArgs> testEvent1;
@@ -93,6 +96,14 @@ namespace MDDSkillEngine
                 {
                     fsm.CurrentState.ChangeState<GoOn>(fsm);
                 }            
+            }
+
+            if (Input.GetKeyDown(KeyCode.B))
+            {
+                behaviorTree = GameEnter.NPBehave.CreatBehaviourTree(
+                    new NPBehave.Action(()=> { Debug.LogError("CreatBehaviourTree"); }));
+
+                behaviorTree.Start();
             }
         }
 

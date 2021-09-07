@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using NPBehave;
 
+
 public class NPBehaveExampleHelloWorldAI : MonoBehaviour
 {
     private Root behaviorTree;

@@ -264,6 +264,7 @@ namespace MDDGameFramework.Runtime
                 m_EntityLogic.OnUpdate(elapseSeconds, realElapseSeconds);
             }
             catch (Exception exception)
+         
             {
                 Log.Error("Entity '[{0}]{1}' OnUpdate with exception '{2}'.", m_Id, m_EntityAssetName, exception);
             }
