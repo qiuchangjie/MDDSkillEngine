@@ -5,6 +5,8 @@ using System;
 using CatAsset;
 using MDDGameFramework.Runtime;
 using NPBehave;
+using XNode;
+using NPBehave.node;
 
 namespace MDDSkillEngine
 {
@@ -13,6 +15,10 @@ namespace MDDSkillEngine
         IFsm<entiity> fsm = null;
 
         private Root behaviorTree;
+
+      
+
+        public NodeGraph nodeGraph;
 
         EventHandler<GameEventArgs> testEvent;
         EventHandler<GameEventArgs> testEvent1;
@@ -59,8 +65,13 @@ namespace MDDSkillEngine
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
+                Debug.LogError("nodeGraph.nodes.Count" + nodeGraph.nodes.Count);
 
-                GameEnter.Entity.ShowEntity<Cubes>(100,"Assets/Prefab/Model1/Akiiii.prefab", "player");
+                Debug.LogError($"{((RootNode)nodeGraph.nodes[0]).root.Name}------------{((RootNode)nodeGraph.nodes[0]).Outputs}----------");
+
+                ((RootNode)nodeGraph.nodes[0]).root.Start();
+
+                //GameEnter.Entity.ShowEntity<Cubes>(100,"Assets/Prefab/Model1/Akiiii.prefab", "player");
             }
 
             if (Input.GetKeyDown(KeyCode.K))

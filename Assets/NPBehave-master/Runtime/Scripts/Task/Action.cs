@@ -25,6 +25,11 @@ namespace NPBehave
         private System.Action action = null;
         private bool bWasBlocked = false;
 
+        public Action() : base("Action")
+        {
+            
+        }
+
         public Action(System.Action action) : base("Action")
         {
             this.action = action;
@@ -44,6 +49,11 @@ namespace NPBehave
         public Action(System.Func<bool> singleFrameFunc) : base("Action")
         {
             this.singleFrameFunc = singleFrameFunc;
+        }
+
+        public void SetAction(System.Action action)
+        {
+            this.action = action;
         }
 
         protected override void DoStart()

@@ -8411,6 +8411,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 764c38b3143145d40b10dca30b10bb2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nodeGraph: {fileID: 11400000, guid: 970369bb0c08fdb48b01ea0367be6f70, type: 2}
   obj:
   - {fileID: 509508665}
   - {fileID: 1667604905}
@@ -8533,7 +8534,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7777778, y: 1}
+    m_SensorSize: {x: 2.170103, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0

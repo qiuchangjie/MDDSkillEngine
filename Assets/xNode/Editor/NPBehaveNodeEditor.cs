@@ -7,7 +7,7 @@ using XNodeEditor;
 namespace NPBehave.node
 {
   
-    [CustomNodeEditor(typeof(RootNode))]
+    [CustomNodeEditor(typeof(BehaviourNode))]
     public class NPBehaveNodeEditor : NodeEditor
     {
         private RootNode node;

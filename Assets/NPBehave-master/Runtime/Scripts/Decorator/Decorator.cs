@@ -5,6 +5,11 @@
     {
         protected Node Decoratee;
 
+        public Decorator(string name) : base(name)
+        {
+            //this.Decoratee.SetParent(this);
+        }
+
         public Decorator(string name, Node decoratee) : base(name)
         {
             this.Decoratee = decoratee;

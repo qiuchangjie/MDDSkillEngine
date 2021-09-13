@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: And
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 392, y: -184}
+  position: {x: 408, y: -104}
   ports:
     keys:
     - input
@@ -33,6 +33,48 @@ MonoBehaviour:
       _dynamic: 0
     - _fieldName: output
       _node: {fileID: -4978235970467682279}
+      _typeQualifiedName: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  input: 1
+  output: 1
+--- !u!114 &-3987591138272462583
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c88b3b7abe7eb324baec5d03dfa998ab, type: 3}
+  m_Name: And
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 232, y: -40}
+  ports:
+    keys:
+    - input
+    - output
+    values:
+    - _fieldName: input
+      _node: {fileID: -3987591138272462583}
+      _typeQualifiedName: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: output
+        node: {fileID: 114558631167130670}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: output
+      _node: {fileID: -3987591138272462583}
       _typeQualifiedName: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
       connections: []
@@ -64,6 +106,7 @@ MonoBehaviour:
   - {fileID: 114481634605117190}
   - {fileID: 114463302483022418}
   - {fileID: -4978235970467682279}
+  - {fileID: -3987591138272462583}
 --- !u!114 &114046633862954194
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -109,7 +152,7 @@ MonoBehaviour:
   m_Name: Toggle
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -72, y: -8}
+  position: {x: -168, y: -24}
   ports:
     keys:
     - input
@@ -142,7 +185,7 @@ MonoBehaviour:
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 0
-  input: 1
+  input: 0
   output: 1
 --- !u!114 &114463302483022418
 MonoBehaviour:
@@ -157,7 +200,7 @@ MonoBehaviour:
   m_Name: Not
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 280, y: -328}
+  position: {x: 280, y: -440}
   ports:
     keys:
     - input
@@ -187,8 +230,8 @@ MonoBehaviour:
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 0
-  input: 1
-  output: 0
+  input: 0
+  output: 1
 --- !u!114 &114481634605117190
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -202,7 +245,7 @@ MonoBehaviour:
   m_Name: Pulse
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -168, y: -312}
+  position: {x: -296, y: -232}
   ports:
     keys:
     - output
@@ -219,8 +262,8 @@ MonoBehaviour:
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 0
-  interval: -1.55
-  output: 1
+  interval: -0.77
+  output: 0
 --- !u!114 &114558631167130670
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -234,7 +277,7 @@ MonoBehaviour:
   m_Name: Toggle
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 328, y: -88}
+  position: {x: 136, y: -216}
   ports:
     keys:
     - input
@@ -256,12 +299,15 @@ MonoBehaviour:
       _node: {fileID: 114558631167130670}
       _typeQualifiedName: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
-      connections: []
+      connections:
+      - fieldName: input
+        node: {fileID: -3987591138272462583}
+        reroutePoints: []
       _direction: 1
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 0
-  input: 1
+  input: 0
   output: 0
 --- !u!114 &114880916489599218
 MonoBehaviour:
@@ -310,7 +356,7 @@ MonoBehaviour:
       _typeConstraint: 0
       _dynamic: 0
   input: 0
-  output: 1
+  output: 0
 --- !u!114 &114944478030018250
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -324,7 +370,7 @@ MonoBehaviour:
   m_Name: Pulse
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -264, y: -184}
+  position: {x: -440, y: -88}
   ports:
     keys:
     - output
@@ -356,7 +402,7 @@ MonoBehaviour:
   m_Name: And
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 168, y: -136}
+  position: {x: 120, y: -360}
   ports:
     keys:
     - input
@@ -389,5 +435,5 @@ MonoBehaviour:
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 0
-  input: 1
-  output: 1
+  input: 0
+  output: 0

@@ -33,6 +33,24 @@ namespace NPBehave
         public int TotalNumStoppedCalls = 0;
 #endif
 
+        public Root() : base("Root")
+        {
+            this.clock = UnityContext.GetClock();
+            this.blackboard = new Blackboard(this.clock);
+            //Decoratee = this;
+            //this.SetRoot(this);
+        }
+
+        public void SetMainNode(Node mainNode)
+        {
+            this.mainNode = mainNode;
+        }
+
+        public void SetDecoratee()
+        {
+            Decoratee = this.mainNode;
+        }
+
         public Root(Node mainNode) : base("Root", mainNode)
         {
             this.mainNode = mainNode;
