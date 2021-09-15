@@ -20,7 +20,7 @@ namespace NPBehave.node
 		protected override void Init()
 		{
 			base.Init();
-			root = new Root();
+			root = new Root(false);
 		}
 
         public override void OnCreateConnection(NodePort from, NodePort to)

@@ -48,6 +48,7 @@ namespace XNodeEditor {
         [InitializeOnLoadMethod]
         private static void OnReloadEditor () {
             // Find all NodeGraph assets
+            return;
             string[] guids = AssetDatabase.FindAssets ("t:" + typeof (XNode.NodeGraph));
             for (int i = 0; i < guids.Length; i++) {
                 string assetpath = AssetDatabase.GUIDToAssetPath (guids[i]);

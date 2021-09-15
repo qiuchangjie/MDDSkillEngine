@@ -24,7 +24,7 @@ namespace NPBehave
             get
             {
                 return clock;
-            }
+            }          
         }
 
 #if UNITY_EDITOR
@@ -33,12 +33,18 @@ namespace NPBehave
         public int TotalNumStoppedCalls = 0;
 #endif
 
-        public Root() : base("Root")
+        public Root(bool isEditor) : base("Root")
+        {
+             //this.clock = UnityContext.GetClock();
+             //this.blackboard = new Blackboard(this.clock);
+            //Decoratee = this;
+            //this.SetRoot(this);
+        }
+
+        public void SetClock()
         {
             this.clock = UnityContext.GetClock();
             this.blackboard = new Blackboard(this.clock);
-            //Decoratee = this;
-            //this.SetRoot(this);
         }
 
         public void SetMainNode(Node mainNode)
