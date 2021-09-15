@@ -61,15 +61,35 @@ namespace MDDSkillEngine
            
         }
 
+        private void TestBehaviourTreeFactory()
+        {
+            List<NodePort> nodePorts = new List<NodePort>();
+
+            foreach (var item in ((RootNode)nodeGraph.nodes[0]).Outputs)
+            {
+                nodePorts.Add(item);
+            }
+
+            ((RootNode)nodeGraph.nodes[0]).root.SetMainNode(((ActionTest)nodePorts[0].Connection.node).action);
+
+            ((RootNode)nodeGraph.nodes[0]).root.SetDecoratee();
+
+            ((RootNode)nodeGraph.nodes[0]).root.SetRoot(((RootNode)nodeGraph.nodes[0]).root);
+
+            ((ActionTest)nodePorts[0].Connection.node).action.SetAction(((ActionTest)nodePorts[0].Connection.node).debug);
+
+            ((RootNode)nodeGraph.nodes[0]).root.Start();
+        }
+
         private void Update()
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
                 Debug.LogError("nodeGraph.nodes.Count" + nodeGraph.nodes.Count);
 
-                Debug.LogError($"{((RootNode)nodeGraph.nodes[0]).root.Name}------------{((RootNode)nodeGraph.nodes[0]).Outputs}----------");
+               // Debug.LogError($"{((RootNode)nodeGraph.nodes[0]).root.Name}------------{((RootNode)nodeGraph.nodes[0]).Outputs}----------");
 
-                ((RootNode)nodeGraph.nodes[0]).root.Start();
+                TestBehaviourTreeFactory();
 
                 //GameEnter.Entity.ShowEntity<Cubes>(100,"Assets/Prefab/Model1/Akiiii.prefab", "player");
             }
