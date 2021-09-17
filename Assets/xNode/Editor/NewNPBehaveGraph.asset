@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Action Test
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -8, y: -56}
+  position: {x: 24, y: -120}
   ports:
     keys:
     - input
@@ -59,7 +59,7 @@ MonoBehaviour:
   m_Name: Root
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -392, y: -56}
+  position: {x: -376, y: -88}
   ports:
     keys:
     - output

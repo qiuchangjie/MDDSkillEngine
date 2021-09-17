@@ -6,7 +6,7 @@ using NPBehave;
 
 namespace NPBehave.node
 {
-	public class ActionTest : BehaviourNode
+	public class ActionTest : NP_NodeBase
 	{
 
 		public Action action;
@@ -33,6 +33,11 @@ namespace NPBehave.node
 		{
 			Debug.LogError("fuckTEst");
 		}
-	}
+
+        public override void Initialize()
+        {
+            throw new System.NotImplementedException();
+        }
+    }
 }
 

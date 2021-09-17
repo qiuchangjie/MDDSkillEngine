@@ -6,11 +6,11 @@ using NPBehave;
 
 namespace NPBehave.node
 {
-	public class BehaviourNode : XNode.Node
+	public abstract class NP_NodeBase : XNode.Node
 	{
-		
+	    public Node node;
 
-		
+		public abstract void Initialize();
 	}
 }
 

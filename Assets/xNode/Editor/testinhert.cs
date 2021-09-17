@@ -6,13 +6,13 @@ using XNodeEditor;
 
 namespace NPBehave.node
 {
-  
-    [CustomNodeEditor(typeof(NP_NodeBase))]
-    public class NPBehaveNodeEditor : NodeEditor
+
+    [CustomNodeEditor(typeof(RootNode))]
+    public class testinhert : NodeEditor
     {
         private RootNode node;
         private NPBehaveNodeEditor graphEditor;
-     
+
         public override void OnBodyGUI()
         {
             if (target == null)
@@ -30,7 +30,7 @@ namespace NPBehave.node
 
             EditorGUIUtility.labelWidth = 60;
 
-            //base.OnBodyGUI();                   
+            //base.OnBodyGUI();
         }
     }
 }

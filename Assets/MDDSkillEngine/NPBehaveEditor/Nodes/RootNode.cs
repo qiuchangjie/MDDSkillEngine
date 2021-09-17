@@ -6,7 +6,7 @@ using NPBehave;
 
 namespace NPBehave.node
 {
-	public class RootNode : BehaviourNode
+	public class RootNode : NP_NodeBase
 	{ 
 
 		public Root root;
@@ -21,6 +21,7 @@ namespace NPBehave.node
 		{
 			base.Init();
 			root = new Root(false);
+			node = new Root(false);
 		}
 
         public override void OnCreateConnection(NodePort from, NodePort to)
@@ -42,6 +43,11 @@ namespace NPBehave.node
 			//Debug.LogError("wuhu");
 			return null; // Replace this
 		}
-	}
+
+        public override void Initialize()
+        {
+            //throw new System.NotImplementedException();
+        }
+    }
 }
 
