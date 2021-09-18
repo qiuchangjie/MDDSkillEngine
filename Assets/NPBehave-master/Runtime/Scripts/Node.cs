@@ -4,6 +4,7 @@ namespace NPBehave
 {
     public abstract class Node
     {
+        
         public enum State
         {
             INACTIVE,
