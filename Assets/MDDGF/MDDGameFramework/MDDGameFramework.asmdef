@@ -1,6 +1,6 @@
 {
     "name": "MDDGameFramework",
-    "references": ["GameFramework","UnityGameFramework","CatAsset.Runtime","NPBehave"],
+    "references": ["GameFramework","UnityGameFramework","CatAsset.Runtime","NPBehave","NUnit.Framework"],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": true,

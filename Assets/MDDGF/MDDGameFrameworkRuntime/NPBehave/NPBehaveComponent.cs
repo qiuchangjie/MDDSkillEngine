@@ -1,4 +1,4 @@
-﻿using NPBehave;
+﻿using MDDGameFramework.Runtime;
 
 namespace MDDGameFramework.Runtime
 {
@@ -13,7 +13,7 @@ namespace MDDGameFramework.Runtime
             m_NPBehaveManager = MDDGameFrameworkEntry.GetModule<INPBehaveManager>();
             if (m_NPBehaveManager == null)
             {
-                Log.Fatal("NPBehave manager is invalid.");
+                Log.Fatal("MDDGameFramework.Runtime manager is invalid.");
                 return;
             }
         }

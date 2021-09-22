@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using XNode;
 using NPBehave;
+using MDDGameFramework;
+using MDDGameFramework.Runtime;
 
 namespace NPBehave.node
 {

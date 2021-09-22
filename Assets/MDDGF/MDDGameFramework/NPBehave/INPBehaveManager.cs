@@ -1,4 +1,4 @@
-﻿using NPBehave;
+﻿using MDDGameFramework;
 
 namespace MDDGameFramework
 {

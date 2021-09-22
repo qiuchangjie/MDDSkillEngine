@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using XNode;
 using NPBehave;
+using MDDGameFramework;
+using MDDGameFramework.Runtime;
 
 namespace NPBehave.node
 {
@@ -21,7 +23,7 @@ namespace NPBehave.node
 		{
 			base.Init();
 			root = new Root(false);
-			node = new Root(false);
+			//node = new Root(false);
 		}
 
         public override void OnCreateConnection(NodePort from, NodePort to)
