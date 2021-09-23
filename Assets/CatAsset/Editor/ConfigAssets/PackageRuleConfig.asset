@@ -16,6 +16,3 @@ MonoBehaviour:
   - Directory: Assets/Prefab/Model1
     Mode: 2
     Group: model1
-  - Directory: Assets/Prefab/Model2
-    Mode: 2
-    Group: model2

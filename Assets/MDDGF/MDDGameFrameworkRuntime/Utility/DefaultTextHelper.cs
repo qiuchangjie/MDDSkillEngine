@@ -1,8 +1,7 @@
-﻿using MDDGameFramework;
-using System;
+﻿using System;
 using System.Text;
 
-namespace MDDUnityGameFramework.Runtime
+namespace MDDGameFramework.Runtime
 {
     /// <summary>
     /// 默认字符辅助器。

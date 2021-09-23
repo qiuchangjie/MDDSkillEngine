@@ -1,11 +1,11 @@
 {
 	"GameVersion":"0.1",
-	"ManifestVersion":18,
+	"ManifestVersion":19,
 	"AssetBundles":[
 		{
 			"AssetBundleName":"prefab_model1_akiiii.bundle",
-			"Length":27462,
-			"Hash":"5b7bf6301ebc86e177de0cc942ca9b20",
+			"Length":27461,
+			"Hash":"77f0ce1336dc4b3698414377419d5282",
 			"Group":"model1",
 			"Assets":[
 				{
@@ -32,13 +32,62 @@
 			]
 		},
 		{
-			"AssetBundleName":"prefab_model2_aki2.bundle",
-			"Length":27478,
-			"Hash":"da6a72505c9e5af2bb0a91a6ee13cb96",
-			"Group":"model2",
+			"AssetBundleName":"prefab_model1_clickmove.bundle",
+			"Length":181208,
+			"Hash":"0c17dcde244e56295ac735865abb00d5",
+			"Group":"model1",
 			"Assets":[
 				{
-					"AssetName":"Assets/Prefab/Model2/Aki2.prefab",
+					"AssetName":"Assets/Prefab/Model1/ClickMove.prefab",
+					"Dependencies":[
+						"Assets/Effect/RTS Effects/Materials/ring.mat",
+						"Assets/Effect/RTS Effects/Models/ClickArrow01.FBX",
+						"Assets/Effect/RTS Effects/Materials/arrow.mat"
+					]
+				},
+				{
+					"AssetName":"Assets/Effect/RTS Effects/Materials/ring.mat",
+					"Dependencies":[
+						"Assets/Effect/RTS Effects/Textures/ringgreen.png"
+					]
+				},
+				{
+					"AssetName":"Assets/Effect/RTS Effects/Models/Materials/No Name.mat",
+					"Dependencies":[
+					]
+				},
+				{
+					"AssetName":"Assets/Effect/RTS Effects/Textures/ringgreen.png",
+					"Dependencies":[
+					]
+				},
+				{
+					"AssetName":"Assets/Effect/RTS Effects/Textures/arrowgreen.png",
+					"Dependencies":[
+					]
+				},
+				{
+					"AssetName":"Assets/Effect/RTS Effects/Models/ClickArrow01.FBX",
+					"Dependencies":[
+						"Assets/Effect/RTS Effects/Models/Materials/No Name.mat"
+					]
+				},
+				{
+					"AssetName":"Assets/Effect/RTS Effects/Materials/arrow.mat",
+					"Dependencies":[
+						"Assets/Effect/RTS Effects/Textures/arrowgreen.png"
+					]
+				}
+			]
+		},
+		{
+			"AssetBundleName":"prefab_model1_player_aki.bundle",
+			"Length":27589,
+			"Hash":"9b1ef2c4c70e78dc8216ca61a3361f6e",
+			"Group":"model1",
+			"Assets":[
+				{
+					"AssetName":"Assets/Prefab/Model1/player_Aki.prefab",
 					"Dependencies":[
 						"Assets/GirlModel/Suriyun/Aki/Materials/Aki/Base_character/face_Aki.mat",
 						"Assets/GirlModel/Suriyun/Aki/Materials/Aki/Base_character/mat_cheek_Aki.mat",
@@ -62,8 +111,8 @@
 		},
 		{
 			"AssetBundleName":"common.bundle",
-			"Length":14445837,
-			"Hash":"37713561699baabbcfdc97579ed89c0e",
+			"Length":14445655,
+			"Hash":"b69a91a5b91d015d045959c57154d3f3",
 			"Assets":[
 				{
 					"AssetName":"Assets/GirlModel/Suriyun/UnityChanShader/Shader/Unitychan_chara_eye.shader",

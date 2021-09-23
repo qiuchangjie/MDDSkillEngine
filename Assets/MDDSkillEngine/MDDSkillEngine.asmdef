@@ -1,6 +1,6 @@
 {
     "name": "MDDSkillEngine",
-    "references": ["MDDGameFramework","MDDGameFrameworkRuntime","CatAsset.Runtime","NPBehave","XNode","NPBehave.node"],
+    "references": ["MDDGameFramework","MDDGameFrameworkRuntime","CatAsset.Runtime","NPBehave","XNode","NPBehave.node","Animancer","AstarPathfindingProject"],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": true,

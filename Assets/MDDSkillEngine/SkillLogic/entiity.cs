@@ -89,13 +89,13 @@ namespace MDDSkillEngine
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
-                Debug.LogError("nodeGraph.nodes.Count" + nodeGraph.nodes.Count);
+                //Debug.LogError("nodeGraph.nodes.Count" + nodeGraph.nodes.Count);
 
                // Debug.LogError($"{((RootNode)nodeGraph.nodes[0]).root.Name}------------{((RootNode)nodeGraph.nodes[0]).Outputs}----------");
 
-                TestBehaviourTreeFactory();
+                //TestBehaviourTreeFactory();
 
-                //GameEnter.Entity.ShowEntity<Cubes>(100,"Assets/Prefab/Model1/Akiiii.prefab", "player");
+                GameEnter.Entity.ShowEntity<Cubes>(100,"Assets/Prefab/Model1/Akiiii.prefab", "player");
             }
 
             if (Input.GetKeyDown(KeyCode.K))

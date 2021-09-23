@@ -155,7 +155,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7777778, y: 1}
+    m_SensorSize: {x: 1.7762128, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -7760,11 +7760,10 @@ GameObject:
   - component: {fileID: 9078925057909852172}
   - component: {fileID: 9078925057921608489}
   - component: {fileID: 9078925057921608495}
-  - component: {fileID: 9078925057921608488}
   - component: {fileID: 9078925057921608494}
   - component: {fileID: 9078925057921608493}
   m_Layer: 8
-  m_Name: Aki
+  m_Name: Akiiii
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7902,58 +7901,6 @@ MonoBehaviour:
   slowWhenNotFacingTarget: 1
   whenCloseToDestination: 0
   constrainInsideGraph: 0
---- !u!114 &9078925057921608488
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9078925057921608490}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ece8b14ef430c6e44b43d40452f8de86, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  version: 1
-  target: {fileID: 0}
-  animancer: {fileID: 0}
-  _MainAnimation:
-    _FadeDuration: 0.25
-    _Events:
-      _Names: []
-      _NormalizedTimes: []
-      _Callbacks: []
-    _Clip: {fileID: 7400000, guid: 9578a9aec8889fb4296e8f3cef661372, type: 3}
-    _Speed: 1
-    _NormalizedStartTime: NaN
-  Idle:
-    _FadeDuration: 0.25
-    _Events:
-      _Names: []
-      _NormalizedTimes: []
-      _Callbacks: []
-    _Clip: {fileID: 7400000, guid: 9578a9aec8889fb4296e8f3cef661372, type: 3}
-    _Speed: 1
-    _NormalizedStartTime: NaN
-  Work:
-    _FadeDuration: 0.25
-    _Events:
-      _Names: []
-      _NormalizedTimes: []
-      _Callbacks: []
-    _Clip: {fileID: 7400000, guid: d9a2874e1c6daa848872fb0bd27dc881, type: 3}
-    _Speed: 1
-    _NormalizedStartTime: NaN
-  Attack:
-    _FadeDuration: 0.25
-    _Events:
-      _Names: []
-      _NormalizedTimes:
-      - 1
-      _Callbacks: []
-    _Clip: {fileID: 7400000, guid: 89b083c3cdd6cb64d906f6bbfcb40211, type: 3}
-    _Speed: 1
-    _NormalizedStartTime: 0
 --- !u!114 &9078925057921608494
 MonoBehaviour:
   m_ObjectHideFlags: 0
