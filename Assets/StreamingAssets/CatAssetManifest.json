@@ -1,11 +1,11 @@
 {
 	"GameVersion":"0.1",
-	"ManifestVersion":19,
+	"ManifestVersion":21,
 	"AssetBundles":[
 		{
 			"AssetBundleName":"prefab_model1_akiiii.bundle",
-			"Length":27461,
-			"Hash":"77f0ce1336dc4b3698414377419d5282",
+			"Length":25835,
+			"Hash":"da4788d8eeb6c5bdd70ab793fa8e72e4",
 			"Group":"model1",
 			"Assets":[
 				{
@@ -13,7 +13,6 @@
 					"Dependencies":[
 						"Assets/GirlModel/Suriyun/Aki/Materials/Aki/Base_character/face_Aki.mat",
 						"Assets/GirlModel/Suriyun/Aki/Materials/Aki/Base_character/mat_cheek_Aki.mat",
-						"Assets/GirlModel/Suriyun/Animations/Anim@Atk1.fbx",
 						"Assets/GirlModel/Suriyun/Aki/FBX/katana.fbx",
 						"Assets/GirlModel/Suriyun/Aki/Materials/Aki/Base_character/hair_Aki.mat",
 						"Assets/GirlModel/Suriyun/Aki/Materials/Aki/Base_character/eyebase_Aki.mat",
@@ -23,8 +22,6 @@
 						"Assets/GirlModel/Suriyun/Aki/Materials/Aki/Dress/Dress.mat",
 						"Assets/GirlModel/Suriyun/Aki/Materials/Aki/Base_character/Lash.mat",
 						"Assets/GirlModel/Suriyun/Aki/FBX/Aki.fbx",
-						"Assets/GirlModel/Suriyun/Animations/Anim@Run.fbx",
-						"Assets/GirlModel/Suriyun/Animations/Anim@Idle_A.fbx",
 						"Assets/GirlModel/Suriyun/Aki/Materials/Aki/Dress/Katana_Aki.mat",
 						"Assets/GirlModel/Suriyun/Aki/Materials/Aki/Base_character/eye_R_Aki.mat"
 					]
@@ -82,8 +79,8 @@
 		},
 		{
 			"AssetBundleName":"prefab_model1_player_aki.bundle",
-			"Length":27589,
-			"Hash":"9b1ef2c4c70e78dc8216ca61a3361f6e",
+			"Length":1341009,
+			"Hash":"bf10e591619372ab669fa727415a22a8",
 			"Group":"model1",
 			"Assets":[
 				{
@@ -91,7 +88,6 @@
 					"Dependencies":[
 						"Assets/GirlModel/Suriyun/Aki/Materials/Aki/Base_character/face_Aki.mat",
 						"Assets/GirlModel/Suriyun/Aki/Materials/Aki/Base_character/mat_cheek_Aki.mat",
-						"Assets/GirlModel/Suriyun/Animations/Anim@Atk1.fbx",
 						"Assets/GirlModel/Suriyun/Aki/FBX/katana.fbx",
 						"Assets/GirlModel/Suriyun/Aki/Materials/Aki/Base_character/hair_Aki.mat",
 						"Assets/GirlModel/Suriyun/Aki/Materials/Aki/Base_character/eyebase_Aki.mat",
@@ -99,20 +95,44 @@
 						"Assets/GirlModel/Suriyun/Aki/Materials/Aki/Dress/Skin_Aki.mat",
 						"Assets/GirlModel/Suriyun/Aki/Materials/Aki/Dress/Boot.mat",
 						"Assets/GirlModel/Suriyun/Aki/Materials/Aki/Dress/Dress.mat",
+						"Assets/GirlModel/Akane_project/Animation/Akane@Atk1.fbx",
 						"Assets/GirlModel/Suriyun/Aki/Materials/Aki/Base_character/Lash.mat",
 						"Assets/GirlModel/Suriyun/Aki/FBX/Aki.fbx",
-						"Assets/GirlModel/Suriyun/Animations/Anim@Run.fbx",
-						"Assets/GirlModel/Suriyun/Animations/Anim@Idle_A.fbx",
+						"Assets/GirlModel/Akane_project/Animation/Akane@Run.fbx",
+						"Assets/GirlModel/Akane_project/Animation/Akane@Idle_B.fbx",
 						"Assets/GirlModel/Suriyun/Aki/Materials/Aki/Dress/Katana_Aki.mat",
 						"Assets/GirlModel/Suriyun/Aki/Materials/Aki/Base_character/eye_R_Aki.mat"
+					]
+				},
+				{
+					"AssetName":"Assets/GirlModel/Akane_project/FBX/Akane_phoenix.fbx",
+					"Dependencies":[
+					]
+				},
+				{
+					"AssetName":"Assets/GirlModel/Akane_project/Animation/Akane@Atk1.fbx",
+					"Dependencies":[
+						"Assets/GirlModel/Akane_project/FBX/Akane_phoenix.fbx"
+					]
+				},
+				{
+					"AssetName":"Assets/GirlModel/Akane_project/Animation/Akane@Run.fbx",
+					"Dependencies":[
+						"Assets/GirlModel/Akane_project/FBX/Akane_phoenix.fbx"
+					]
+				},
+				{
+					"AssetName":"Assets/GirlModel/Akane_project/Animation/Akane@Idle_B.fbx",
+					"Dependencies":[
+						"Assets/GirlModel/Akane_project/FBX/Akane_phoenix.fbx"
 					]
 				}
 			]
 		},
 		{
 			"AssetBundleName":"common.bundle",
-			"Length":14445655,
-			"Hash":"b69a91a5b91d015d045959c57154d3f3",
+			"Length":14101334,
+			"Hash":"c57fde1633686eab480cd06db20f4838",
 			"Assets":[
 				{
 					"AssetName":"Assets/GirlModel/Suriyun/UnityChanShader/Shader/Unitychan_chara_eye.shader",
@@ -167,13 +187,6 @@
 					]
 				},
 				{
-					"AssetName":"Assets/GirlModel/Suriyun/Animations/Anim@Atk1.fbx",
-					"Dependencies":[
-						"Assets/GirlModel/Suriyun/Animations/AvatarA_v1.0.fbx",
-						"Assets/GirlModel/Suriyun/Animations/AvatarA_Mask_v1.0.mask"
-					]
-				},
-				{
 					"AssetName":"Assets/GirlModel/Suriyun/Aki/FBX/katana.fbx",
 					"Dependencies":[
 					]
@@ -195,22 +208,12 @@
 					]
 				},
 				{
-					"AssetName":"Assets/GirlModel/Suriyun/Animations/AvatarA_v1.0.fbx",
-					"Dependencies":[
-					]
-				},
-				{
 					"AssetName":"Assets/GirlModel/Suriyun/Aki/Materials/Aki/Base_character/eyebase_Aki.mat",
 					"Dependencies":[
 						"Assets/GirlModel/Suriyun/UnityChanShader/Shader/Unitychan_chara_eye.shader",
 						"Assets/GirlModel/Suriyun/UnityChanShader/Shader/FO_SKIN1.tga",
 						"Assets/GirlModel/Suriyun/UnityChanShader/Shader/FO_RIM1.tga",
 						"Assets/GirlModel/Suriyun/Aki/Texture/Aki/Base_character/eyeline.png"
-					]
-				},
-				{
-					"AssetName":"Assets/GirlModel/Suriyun/Animations/AvatarA_Mask_v1.0.mask",
-					"Dependencies":[
 					]
 				},
 				{
@@ -331,22 +334,8 @@
 					]
 				},
 				{
-					"AssetName":"Assets/GirlModel/Suriyun/Animations/Anim@Run.fbx",
-					"Dependencies":[
-						"Assets/GirlModel/Suriyun/Animations/AvatarA_v1.0.fbx",
-						"Assets/GirlModel/Suriyun/Animations/AvatarA_Mask_v1.0.mask"
-					]
-				},
-				{
 					"AssetName":"Packages/com.unity.cinemachine/Editor/EditorResources/cm_logo_sm.png",
 					"Dependencies":[
-					]
-				},
-				{
-					"AssetName":"Assets/GirlModel/Suriyun/Animations/Anim@Idle_A.fbx",
-					"Dependencies":[
-						"Assets/GirlModel/Suriyun/Animations/AvatarA_v1.0.fbx",
-						"Assets/GirlModel/Suriyun/Animations/AvatarA_Mask_v1.0.mask"
 					]
 				},
 				{

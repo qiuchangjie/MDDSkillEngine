@@ -64,7 +64,7 @@ namespace MDDSkillEngine
 
             //    isAttact = true;
             //    Instantiate(FirePrefab,FirePoint.position,FirePoint.rotation);
-                
+
             //}
 
             if (Input.GetKeyDown(KeyCode.C))
@@ -73,8 +73,13 @@ namespace MDDSkillEngine
                 GameEnter.Entity.AddEntityGroup("Bullet", 3600, 999, 3600, 10);
                 GameEnter.Entity.AddEntityGroup("Player", 3600, 999, 3600, 10);
                 GameEnter.Entity.AddEntityGroup("Enemy", 3600, 999, 3600, 10);
-            
 
+                GameEnter.Entity.ShowPlayer(new BulletData(GameEnter.Entity.GenerateSerialId(), 50000, 50000, CampType.Player, 50000, 1)
+                {
+                    name = "player_Aki",
+                    Position = new Vector3(10,0,0)
+
+                }) ; 
 
             }
 

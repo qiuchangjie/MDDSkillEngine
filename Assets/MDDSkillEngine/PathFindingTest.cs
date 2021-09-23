@@ -4,14 +4,15 @@ using UnityEngine;
 using Animancer;
 using System;
 using Pathfinding;
+using MDDGameFramework.Runtime;
 
 namespace MDDSkillEngine
 {
     public class PathFindingTest : MonoBehaviour
     {
-        public Action idleAction;
-        public Action workAction;
-        public Action attackAction;
+        public System.Action idleAction;
+        public System.Action workAction;
+        public System.Action attackAction;
 
         
 
@@ -28,8 +29,12 @@ namespace MDDSkillEngine
 
         IAstarAI ai;
 
+        AIPath aIPath;
+
         public void Start()
         {
+            target=GameObject.Find("GameObject").transform;
+
             idleAction += () => { animancer.Play(Idle); };
             workAction += () => { animancer.Play(Work); };
             attackAction += () => 
@@ -38,6 +43,8 @@ namespace MDDSkillEngine
                 animancer.Play(Attack);
                 //Attack.Speed = 3f;
             };
+
+            Attack.Events.OnEnd += () => { animancer.Play(Idle); };
 
 
         }
@@ -49,6 +56,7 @@ namespace MDDSkillEngine
 
         void OnEnable()
         {
+            aIPath = GetComponent<AIPath>();
             ai = GetComponent<IAstarAI>();
             animancer = GetComponent<AnimancerComponent>();
             // Update the destination right before searching for a path as well.
@@ -58,26 +66,41 @@ namespace MDDSkillEngine
 
             animancer.Play(Idle);
 
-            
+            aIPath.reach += reach;
 
-            //if (ai != null) ai.onSearchPath += Update;
+            if (ai != null) ai.onSearchPath += Update;
         }
 
+        
         void OnDisable()
         {
-            //if (ai != null) ai.onSearchPath -= Update;
+            if (ai != null) ai.onSearchPath -= Update;
+        }
+
+        public void reach(object obj,EventArgs e)
+        {
+            animancer.Play(Idle);
         }
 
         /// <summary>Updates the AI's destination every frame</summary>
         void Update()
         {
-            if(ai.reachedDestination)
-                animancer.Play(Idle);
+            //if (ai.reachedDestination)
+            //{
+            //    Log.Error(ai.reachedDestination);
+            //    animancer.Play(Idle);
+            //}
+
+           // ai.onSearchPath
 
             if (target != null && ai != null)
             {
                 if (ai.destination == target.position)
+                {
+                    
                     return;
+                }
+                   
 
                 ai.destination = target.position;
             }
