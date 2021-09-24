@@ -114,7 +114,7 @@ namespace MDDGameFramework
         public void Start()
         {
             // Assert.AreEqual(this.currentState, State.INACTIVE, "can only start inactive nodes, tried to start: " + this.Name + "! PATH: " + GetPath());
-            Assert.AreEqual(this.currentState, State.INACTIVE, "can only start inactive nodes");
+            //Assert.AreEqual(this.currentState, State.INACTIVE, "can only start inactive nodes");
 
 #if UNITY_EDITOR
             RootNode.TotalNumStartCalls++;
@@ -130,7 +130,7 @@ namespace MDDGameFramework
         public void Stop()
         {
             // Assert.AreEqual(this.currentState, State.ACTIVE, "can only stop active nodes, tried to stop " + this.Name + "! PATH: " + GetPath());
-            Assert.AreEqual(this.currentState, State.ACTIVE, "can only stop active nodes, tried to stop");
+            //Assert.AreEqual(this.currentState, State.ACTIVE, "can only stop active nodes, tried to stop");
             this.currentState = State.STOP_REQUESTED;
 #if UNITY_EDITOR
             RootNode.TotalNumStopCalls++;

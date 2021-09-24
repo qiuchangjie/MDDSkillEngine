@@ -8,7 +8,7 @@ namespace MDDSkillEngine
 {
     public class SelectEntity : MonoBehaviour
     {
-        public List<Entity> entities;
+        public static List<Entity> entities=new List<Entity>();
         public static Entity selectEntity;
 
         public static void InitSelectEntity(Entity entity)
@@ -16,7 +16,10 @@ namespace MDDSkillEngine
             if(entity!=null)
             {
                 selectEntity = entity;
-
+                if (entity.gameObject.layer == 11)
+                {
+                    entities.Add(entity);
+                }
                 Log.Error("entityname:{0},entityid{1}", entity.name, entity.Id);
             }
         }

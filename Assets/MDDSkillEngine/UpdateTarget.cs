@@ -79,8 +79,8 @@ namespace MDDSkillEngine
                     name = "player_Aki",
                     Position = new Vector3(10,0,0)
 
-                }) ;
-                
+                });
+
                 GameEnter.Entity.ShowEnemy(new BulletData(GameEnter.Entity.GenerateSerialId(), 50000, 50000, CampType.Player, 50000, 1)
                 {
                     name = "Akiiii",
@@ -88,14 +88,43 @@ namespace MDDSkillEngine
 
                 });
 
+
             }
 
             if (Input.GetKeyDown(KeyCode.F))
             {
-                entiity entiity = GameObject.Find("GameObject").GetComponent<entiity>();
-                buffSystem.AddBuff(1, entiity.obj[0], entiity.obj[1]);
+                //entiity entiity = GameObject.Find("GameObject").GetComponent<entiity>();
+                //buffSystem.AddBuff(1, entiity.obj[0], entiity.obj[1]);
 
-                Debug.LogError(ReferencePool.GetAllReferencePoolInfos()[0].UnusedReferenceCount);
+                //Debug.LogError(ReferencePool.GetAllReferencePoolInfos()[0].UnusedReferenceCount);
+
+
+               
+
+                GameEnter.Entity.ShowEnemy(new BulletData(GameEnter.Entity.GenerateSerialId(), 50000, 50000, CampType.Player, 50000, 1)
+                {
+                    name = "Akiiii",
+                    Position = new Vector3(0, 0, 10)
+
+                });
+                GameEnter.Entity.ShowEnemy(new BulletData(GameEnter.Entity.GenerateSerialId(), 50000, 50000, CampType.Player, 50000, 1)
+                {
+                    name = "Akiiii",
+                    Position = new Vector3(0, 0, -10)
+
+                });
+                GameEnter.Entity.ShowEnemy(new BulletData(GameEnter.Entity.GenerateSerialId(), 50000, 50000, CampType.Player, 50000, 1)
+                {
+                    name = "Akiiii",
+                    Position = new Vector3(-5, 0, 0)
+
+                });
+                GameEnter.Entity.ShowEnemy(new BulletData(GameEnter.Entity.GenerateSerialId(), 50000, 50000, CampType.Player, 50000, 1)
+                {
+                    name = "Akiiii",
+                    Position = new Vector3(5, 0, 0)
+
+                });
             }
         }
 

@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using MDDGameFramework.Runtime;
 using MDDGameFramework;
+using Animancer;
 
 namespace MDDSkillEngine
 {
@@ -28,6 +29,8 @@ namespace MDDSkillEngine
 
             blackboard["isBoom"] = false;
 
+            shared_Blackboard["isTrigger"] = null;
+
             behaveTree = CreateBehaviourTree();
 
             
@@ -51,19 +54,34 @@ namespace MDDSkillEngine
             behaveTree.Start();
         }
 
+        private int i;
+
         private Root CreateBehaviourTree()
         {
             // Tell the behaviour tree to use the provided blackboard instead of creating a new one
             return new Root(blackboard,
-                new Selector(
-                    new BlackboardCondition("isBoom",Operator.IS_EQUAL,false,Stops.IMMEDIATE_RESTART,
-                        new Action(()=> { MoveTowards(SelectEntity.selectEntity); })),
+                new Parallel(Parallel.Policy.ONE, Parallel.Policy.ONE,
+                    new Parallel(Parallel.Policy.ONE, Parallel.Policy.ONE,
+                        new BlackboardCondition("isTrigger", Operator.IS_NOT_EQUAL, null, Stops.IMMEDIATE_RESTART,
+                             new Action(() =>
+                             {
+                                 Log.Error("isTrigger");
+                                 shared_Blackboard.Get<Entity>("isTrigger").gameObject.GetComponent<PathFindingTest>().attackAction?.Invoke();
+                                 shared_Blackboard["isTrigger"] = null;
+                                 i++;
+                                 if (i==5)
+                                 GameEnter.Entity.HideEntity(this);
+                             }))),
+                    new BlackboardCondition("isTrigger", Operator.IS_EQUAL, null, Stops.IMMEDIATE_RESTART,
+                        new Action(()=> 
+                        {
+                            Log.Error("move");
+                            MoveTowards(SelectEntity.entities[i]);                            
+                        })
 
-                    new Action(()=> 
-                    {
-                       
-                    })
-                    )
+                                           )
+
+                         )
 
             
                 );
@@ -83,6 +101,15 @@ namespace MDDSkillEngine
             //transform.position += localPosition.transform.position * 0.5f * Time.deltaTime;
         }
 
+        protected override void OnHide(bool isShutdown, object userData)
+        {
+            base.OnHide(isShutdown, userData);
+
+            blackboard["isBoom"] = false;
+
+            behaveTree.Stop();
+        }
+
         protected override void OnUpdate(float elapseSeconds, float realElapseSeconds)
         {
             base.OnUpdate(elapseSeconds, realElapseSeconds);
@@ -100,14 +127,16 @@ namespace MDDSkillEngine
 
             if (e is Enemy)
             {
-                ((Enemy)e).findingTest.died.Invoke();
+                shared_Blackboard["isTrigger"] = e;
+
+               //((Enemy)e).findingTest.died.Invoke();
 
                 GameEnter.Entity.ShowEffect(new EffectData(GameEnter.Entity.GenerateSerialId(), 50000) { name = "Hit", Position = this.transform.position });
 
-                behaveTree.Stop();
+                //behaveTree.Stop();
             }
 
-            GameEnter.Entity.HideEntity(this);
+            
         }
     }
 }

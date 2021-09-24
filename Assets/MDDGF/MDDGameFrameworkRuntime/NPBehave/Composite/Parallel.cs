@@ -61,7 +61,7 @@ namespace MDDGameFramework.Runtime
 
         protected override void DoStop()
         {
-            Assert.IsTrue(runningCount + succeededCount + failedCount == childrenCount);
+            //Assert.IsTrue(runningCount + succeededCount + failedCount == childrenCount);
 
             foreach (Node child in this.Children)
             {
