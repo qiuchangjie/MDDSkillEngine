@@ -1,0 +1,515 @@
+{
+	"GameVersion":"0.1",
+	"ManifestVersion":24,
+	"AssetBundles":[
+		{
+			"AssetBundleName":"prefab_model1_akiiii.bundle",
+			"Length":27207,
+			"Hash":"2b2b6e77df992fbf18579ba8ff7a1815",
+			"Group":"model1",
+			"Assets":[
+				{
+					"AssetName":"Assets/Prefab/Model1/Akiiii.prefab",
+					"Dependencies":[
+						"Assets/GirlModel/Suriyun/Aki/Materials/Aki/Base_character/face_Aki.mat",
+						"Assets/GirlModel/Suriyun/Aki/Materials/Aki/Base_character/mat_cheek_Aki.mat",
+						"Assets/GirlModel/Suriyun/Aki/FBX/katana.fbx",
+						"Assets/GirlModel/Suriyun/Aki/Materials/Aki/Base_character/hair_Aki.mat",
+						"Assets/GirlModel/Suriyun/Aki/Materials/Aki/Base_character/eyebase_Aki.mat",
+						"Assets/GirlModel/Suriyun/Aki/Materials/Aki/Base_character/eye_L_Aki.mat",
+						"Assets/GirlModel/Suriyun/Aki/Materials/Aki/Dress/Skin_Aki.mat",
+						"Assets/GirlModel/Suriyun/Aki/Materials/Aki/Dress/Boot.mat",
+						"Assets/GirlModel/Suriyun/Aki/Materials/Aki/Dress/Dress.mat",
+						"Assets/GirlModel/Akane_project/Animation/Akane@Atk1.fbx",
+						"Assets/GirlModel/Suriyun/Aki/Materials/Aki/Base_character/Lash.mat",
+						"Assets/GirlModel/Suriyun/Aki/FBX/Aki.fbx",
+						"Assets/GirlModel/Akane_project/Animation/Akane@Run.fbx",
+						"Assets/GirlModel/Akane_project/Animation/Akane@Idle_B.fbx",
+						"Assets/GirlModel/Suriyun/Aki/Materials/Aki/Dress/Katana_Aki.mat",
+						"Assets/GirlModel/Suriyun/Aki/Materials/Aki/Base_character/eye_R_Aki.mat"
+					]
+				}
+			]
+		},
+		{
+			"AssetBundleName":"prefab_model1_bullet.bundle",
+			"Length":1315579,
+			"Hash":"429dc6f308f330c541c550ccb30c680b",
+			"Group":"model1",
+			"Assets":[
+				{
+					"AssetName":"Assets/Prefab/Model1/Bullet.prefab",
+					"Dependencies":[
+						"Assets/Hovl Studio/Toon Projectiles 2/Materials/Point11bcg.mat",
+						"Assets/Hovl Studio/Toon Projectiles 2/Materials/Lightning17bcg.mat",
+						"Assets/Hovl Studio/Toon Projectiles 2/Materials/Aura16bcg.mat",
+						"Assets/Hovl Studio/Toon Projectiles 2/Materials/Lightning11cg.mat"
+					]
+				},
+				{
+					"AssetName":"Assets/Hovl Studio/Toon Projectiles 2/Textures/Point11.png",
+					"Dependencies":[
+					]
+				},
+				{
+					"AssetName":"Assets/Hovl Studio/Toon Projectiles 2/Textures/Noise28.png",
+					"Dependencies":[
+					]
+				},
+				{
+					"AssetName":"Assets/Hovl Studio/Toon Projectiles 2/Materials/Point11bcg.mat",
+					"Dependencies":[
+						"Assets/Hovl Studio/Toon Projectiles 2/Textures/Point11.png",
+						"Assets/Hovl Studio/Toon Projectiles 2/Shaders/Blend_CenterGlow.shader"
+					]
+				},
+				{
+					"AssetName":"Assets/Hovl Studio/Toon Projectiles 2/Textures/Lightning11.png",
+					"Dependencies":[
+					]
+				},
+				{
+					"AssetName":"Assets/Hovl Studio/Toon Projectiles 2/Materials/Lightning11cg.mat",
+					"Dependencies":[
+						"Assets/Hovl Studio/Toon Projectiles 2/Textures/Noise28.png",
+						"Assets/Hovl Studio/Toon Projectiles 2/Shaders/Add_CenterGlow.shader",
+						"Assets/Hovl Studio/Toon Projectiles 2/Textures/Lightning11.png"
+					]
+				}
+			]
+		},
+		{
+			"AssetBundleName":"prefab_model1_clickmove.bundle",
+			"Length":181208,
+			"Hash":"0c17dcde244e56295ac735865abb00d5",
+			"Group":"model1",
+			"Assets":[
+				{
+					"AssetName":"Assets/Prefab/Model1/ClickMove.prefab",
+					"Dependencies":[
+						"Assets/Effect/RTS Effects/Materials/ring.mat",
+						"Assets/Effect/RTS Effects/Models/ClickArrow01.FBX",
+						"Assets/Effect/RTS Effects/Materials/arrow.mat"
+					]
+				},
+				{
+					"AssetName":"Assets/Effect/RTS Effects/Materials/ring.mat",
+					"Dependencies":[
+						"Assets/Effect/RTS Effects/Textures/ringgreen.png"
+					]
+				},
+				{
+					"AssetName":"Assets/Effect/RTS Effects/Models/Materials/No Name.mat",
+					"Dependencies":[
+					]
+				},
+				{
+					"AssetName":"Assets/Effect/RTS Effects/Textures/ringgreen.png",
+					"Dependencies":[
+					]
+				},
+				{
+					"AssetName":"Assets/Effect/RTS Effects/Textures/arrowgreen.png",
+					"Dependencies":[
+					]
+				},
+				{
+					"AssetName":"Assets/Effect/RTS Effects/Models/ClickArrow01.FBX",
+					"Dependencies":[
+						"Assets/Effect/RTS Effects/Models/Materials/No Name.mat"
+					]
+				},
+				{
+					"AssetName":"Assets/Effect/RTS Effects/Materials/arrow.mat",
+					"Dependencies":[
+						"Assets/Effect/RTS Effects/Textures/arrowgreen.png"
+					]
+				}
+			]
+		},
+		{
+			"AssetBundleName":"prefab_model1_flash.bundle",
+			"Length":28095,
+			"Hash":"9d50b5f9e2e9ac5e45163b8186f9348f",
+			"Group":"model1",
+			"Assets":[
+				{
+					"AssetName":"Assets/Prefab/Model1/Flash.prefab",
+					"Dependencies":[
+						"Assets/Hovl Studio/Toon Projectiles 2/Materials/Glow1cg.mat"
+					]
+				}
+			]
+		},
+		{
+			"AssetBundleName":"prefab_model1_hit.bundle",
+			"Length":193442,
+			"Hash":"dabf045ae8af12d349e59d8318ee3ee8",
+			"Group":"model1",
+			"Assets":[
+				{
+					"AssetName":"Assets/Prefab/Model1/Hit.prefab",
+					"Dependencies":[
+						"Assets/Hovl Studio/Toon Projectiles 2/Materials/Flash7bcg.mat",
+						"Assets/Hovl Studio/Toon Projectiles 2/Materials/Glow1cg.mat",
+						"Assets/Hovl Studio/Toon Projectiles 2/Materials/Lightning17bcg.mat",
+						"Assets/Hovl Studio/Toon Projectiles 2/Materials/Smoke24cg.mat",
+						"Assets/Hovl Studio/Toon Projectiles 2/Materials/Aura16bcg.mat"
+					]
+				},
+				{
+					"AssetName":"Assets/Hovl Studio/Toon Projectiles 2/Materials/Flash7bcg.mat",
+					"Dependencies":[
+						"Assets/Hovl Studio/Toon Projectiles 2/Shaders/Blend_CenterGlow.shader",
+						"Assets/Hovl Studio/Toon Projectiles 2/Textures/Flash7.png"
+					]
+				},
+				{
+					"AssetName":"Assets/Hovl Studio/Toon Projectiles 2/Textures/Flash7.png",
+					"Dependencies":[
+					]
+				},
+				{
+					"AssetName":"Assets/Hovl Studio/Toon Projectiles 2/Materials/Smoke24cg.mat",
+					"Dependencies":[
+						"Assets/Hovl Studio/Toon Projectiles 2/Shaders/Add_CenterGlow.shader",
+						"Assets/Hovl Studio/Toon Projectiles 2/Textures/Smoke24.png"
+					]
+				},
+				{
+					"AssetName":"Assets/Hovl Studio/Toon Projectiles 2/Textures/Smoke24.png",
+					"Dependencies":[
+					]
+				}
+			]
+		},
+		{
+			"AssetBundleName":"prefab_model1_player_aki.bundle",
+			"Length":27355,
+			"Hash":"3f53575c69f99ebff5839464f5077af7",
+			"Group":"model1",
+			"Assets":[
+				{
+					"AssetName":"Assets/Prefab/Model1/player_Aki.prefab",
+					"Dependencies":[
+						"Assets/GirlModel/Suriyun/Aki/Materials/Aki/Base_character/face_Aki.mat",
+						"Assets/GirlModel/Suriyun/Aki/Materials/Aki/Base_character/mat_cheek_Aki.mat",
+						"Assets/GirlModel/Suriyun/Aki/FBX/katana.fbx",
+						"Assets/GirlModel/Suriyun/Aki/Materials/Aki/Base_character/hair_Aki.mat",
+						"Assets/GirlModel/Suriyun/Aki/Materials/Aki/Base_character/eyebase_Aki.mat",
+						"Assets/GirlModel/Suriyun/Aki/Materials/Aki/Base_character/eye_L_Aki.mat",
+						"Assets/GirlModel/Suriyun/Aki/Materials/Aki/Dress/Skin_Aki.mat",
+						"Assets/GirlModel/Suriyun/Aki/Materials/Aki/Dress/Boot.mat",
+						"Assets/GirlModel/Suriyun/Aki/Materials/Aki/Dress/Dress.mat",
+						"Assets/GirlModel/Akane_project/Animation/Akane@Atk1.fbx",
+						"Assets/GirlModel/Suriyun/Aki/Materials/Aki/Base_character/Lash.mat",
+						"Assets/GirlModel/Suriyun/Aki/FBX/Aki.fbx",
+						"Assets/GirlModel/Akane_project/Animation/Akane@Run.fbx",
+						"Assets/GirlModel/Akane_project/Animation/Akane@Idle_B.fbx",
+						"Assets/GirlModel/Suriyun/Aki/Materials/Aki/Dress/Katana_Aki.mat",
+						"Assets/GirlModel/Suriyun/Aki/Materials/Aki/Base_character/eye_R_Aki.mat"
+					]
+				}
+			]
+		},
+		{
+			"AssetBundleName":"common.bundle",
+			"Length":15608205,
+			"Hash":"907ca9b5dd50bd12d772cb2367353d80",
+			"Assets":[
+				{
+					"AssetName":"Assets/GirlModel/Suriyun/UnityChanShader/Shader/Unitychan_chara_eye.shader",
+					"Dependencies":[
+					]
+				},
+				{
+					"AssetName":"Assets/GirlModel/Suriyun/Aki/Texture/Aki/Base_character/eyeR_Aki.tga",
+					"Dependencies":[
+					]
+				},
+				{
+					"AssetName":"Assets/GirlModel/Suriyun/UnityChanShader/Shader/Unitychan_chara_fuku.shader",
+					"Dependencies":[
+					]
+				},
+				{
+					"AssetName":"Assets/GirlModel/Suriyun/UnityChanShader/Shader/FO_SKIN1.tga",
+					"Dependencies":[
+					]
+				},
+				{
+					"AssetName":"Assets/GirlModel/Suriyun/Aki/Materials/Aki/Base_character/face_Aki.mat",
+					"Dependencies":[
+						"Assets/GirlModel/Suriyun/UnityChanShader/Shader/FO_SKIN1.tga",
+						"Assets/GirlModel/Suriyun/UnityChanShader/Shader/FO_RIM1.tga",
+						"Assets/GirlModel/Suriyun/UnityChanShader/Shader/Unitychan_chara_hada.shader",
+						"Assets/GirlModel/Suriyun/Aki/Texture/Aki/Base_character/face.BMP"
+					]
+				},
+				{
+					"AssetName":"Assets/GirlModel/Suriyun/UnityChanShader/Shader/FO_RIM1.tga",
+					"Dependencies":[
+					]
+				},
+				{
+					"AssetName":"Assets/GirlModel/Suriyun/Aki/Materials/Aki/Base_character/mat_cheek_Aki.mat",
+					"Dependencies":[
+						"Assets/GirlModel/Suriyun/UnityChanShader/Shader/FO_SKIN1.tga",
+						"Assets/GirlModel/Suriyun/UnityChanShader/Shader/FO_RIM1.tga",
+						"Assets/GirlModel/Suriyun/Aki/Texture/Aki/Base_character/cheek_Aki.tga"
+					]
+				},
+				{
+					"AssetName":"Assets/GirlModel/Suriyun/UnityChanShader/Shader/FO_CLOTH1.tga",
+					"Dependencies":[
+					]
+				},
+				{
+					"AssetName":"Assets/GirlModel/Akane_project/Texture/Base_character/hair_normal.png",
+					"Dependencies":[
+					]
+				},
+				{
+					"AssetName":"Assets/GirlModel/Suriyun/Aki/FBX/katana.fbx",
+					"Dependencies":[
+					]
+				},
+				{
+					"AssetName":"Assets/GirlModel/Akane_project/FBX/Akane_phoenix.fbx",
+					"Dependencies":[
+					]
+				},
+				{
+					"AssetName":"Assets/GirlModel/Suriyun/Aki/Materials/Aki/Base_character/hair_Aki.mat",
+					"Dependencies":[
+						"Assets/GirlModel/Suriyun/UnityChanShader/Shader/FO_CLOTH1.tga",
+						"Assets/GirlModel/Akane_project/Texture/Base_character/hair_normal.png",
+						"Assets/GirlModel/Akane_project/Texture/Base_character/FO_SKIN1.tga",
+						"Assets/GirlModel/Suriyun/Aki/Texture/Aki/Base_character/Hair.tif",
+						"Assets/GirlModel/Akane_project/Texture/Base_character/hair_01_SPEC.tga",
+						"Assets/GirlModel/Suriyun/UnityChanShader/Shader/Unitychan_chara_hada.shader"
+					]
+				},
+				{
+					"AssetName":"Assets/GirlModel/Suriyun/Aki/Texture/Aki/Dress/katana.png",
+					"Dependencies":[
+					]
+				},
+				{
+					"AssetName":"Assets/GirlModel/Suriyun/Aki/Materials/Aki/Base_character/eyebase_Aki.mat",
+					"Dependencies":[
+						"Assets/GirlModel/Suriyun/UnityChanShader/Shader/Unitychan_chara_eye.shader",
+						"Assets/GirlModel/Suriyun/UnityChanShader/Shader/FO_SKIN1.tga",
+						"Assets/GirlModel/Suriyun/UnityChanShader/Shader/FO_RIM1.tga",
+						"Assets/GirlModel/Suriyun/Aki/Texture/Aki/Base_character/eyeline.png"
+					]
+				},
+				{
+					"AssetName":"Assets/GirlModel/Suriyun/UnityChanShader/Shader/Unitychan_chara_fuku_ds.shader",
+					"Dependencies":[
+					]
+				},
+				{
+					"AssetName":"Assets/GirlModel/Akane_project/Texture/Base_character/FO_SKIN1.tga",
+					"Dependencies":[
+					]
+				},
+				{
+					"AssetName":"Assets/GirlModel/Suriyun/UnityChanShader/Shader/Unitychan_chara_eye_blend.shader",
+					"Dependencies":[
+					]
+				},
+				{
+					"AssetName":"Assets/GirlModel/Suriyun/Aki/Materials/Aki/Base_character/eye_L_Aki.mat",
+					"Dependencies":[
+						"Assets/GirlModel/Suriyun/UnityChanShader/Shader/FO_SKIN1.tga",
+						"Assets/GirlModel/Suriyun/UnityChanShader/Shader/FO_RIM1.tga",
+						"Assets/GirlModel/Suriyun/UnityChanShader/Shader/Unitychan_chara_eye_blend.shader",
+						"Assets/GirlModel/Suriyun/Aki/Texture/Aki/Base_character/eyeL_Aki.tga"
+					]
+				},
+				{
+					"AssetName":"Assets/GirlModel/Suriyun/Aki/Materials/Aki/Dress/Skin_Aki.mat",
+					"Dependencies":[
+						"Assets/GirlModel/Suriyun/UnityChanShader/Shader/FO_SKIN1.tga",
+						"Assets/GirlModel/Suriyun/UnityChanShader/Shader/FO_CLOTH1.tga",
+						"Assets/GirlModel/Suriyun/Aki/Texture/Aki/Dress/Skin.BMP",
+						"Assets/GirlModel/Suriyun/UnityChanShader/Shader/Unitychan_chara_hada.shader"
+					]
+				},
+				{
+					"AssetName":"Assets/GirlModel/Suriyun/Aki/Materials/Aki/Dress/Boot.mat",
+					"Dependencies":[
+						"Assets/GirlModel/Suriyun/UnityChanShader/Shader/Unitychan_chara_fuku.shader",
+						"Assets/GirlModel/Suriyun/UnityChanShader/Shader/FO_RIM1.tga",
+						"Assets/GirlModel/Suriyun/UnityChanShader/Shader/FO_CLOTH1.tga",
+						"Assets/GirlModel/Suriyun/Aki/Texture/Aki/Dress/Boot.png",
+						"Assets/GirlModel/Suriyun/Aki/Texture/Aki/Base_character/cheek_Aki.tga"
+					]
+				},
+				{
+					"AssetName":"Assets/GirlModel/Suriyun/Aki/Texture/Aki/Dress/dress.png",
+					"Dependencies":[
+					]
+				},
+				{
+					"AssetName":"Assets/GirlModel/Suriyun/Aki/Texture/Aki/Base_character/Hair.tif",
+					"Dependencies":[
+					]
+				},
+				{
+					"AssetName":"Assets/GirlModel/Suriyun/Aki/Texture/Aki/Base_character/eyeL_Aki.tga",
+					"Dependencies":[
+					]
+				},
+				{
+					"AssetName":"Assets/GirlModel/Suriyun/Aki/Materials/Aki/Dress/Dress.mat",
+					"Dependencies":[
+						"Assets/GirlModel/Suriyun/UnityChanShader/Shader/Unitychan_chara_fuku.shader",
+						"Assets/GirlModel/Suriyun/UnityChanShader/Shader/FO_RIM1.tga",
+						"Assets/GirlModel/Suriyun/UnityChanShader/Shader/FO_CLOTH1.tga",
+						"Assets/GirlModel/Suriyun/Aki/Texture/Aki/Dress/dress.png",
+						"Assets/GirlModel/Suriyun/Aki/Texture/Aki/Base_character/cheek_Aki.tga"
+					]
+				},
+				{
+					"AssetName":"Assets/GirlModel/Akane_project/Animation/Akane@Atk1.fbx",
+					"Dependencies":[
+						"Assets/GirlModel/Akane_project/FBX/Akane_phoenix.fbx"
+					]
+				},
+				{
+					"AssetName":"Assets/GirlModel/Suriyun/Aki/Texture/Aki/Dress/Skin.BMP",
+					"Dependencies":[
+					]
+				},
+				{
+					"AssetName":"Assets/GirlModel/Suriyun/Aki/Materials/Aki/Base_character/Lash.mat",
+					"Dependencies":[
+						"Assets/GirlModel/Suriyun/UnityChanShader/Shader/FO_SKIN1.tga",
+						"Assets/GirlModel/Suriyun/UnityChanShader/Shader/FO_RIM1.tga",
+						"Assets/GirlModel/Suriyun/UnityChanShader/Shader/Unitychan_chara_fuku_ds.shader",
+						"Assets/GirlModel/Suriyun/Aki/Texture/Aki/Base_character/eyeline.png"
+					]
+				},
+				{
+					"AssetName":"Assets/GirlModel/Akane_project/Texture/Base_character/hair_01_SPEC.tga",
+					"Dependencies":[
+					]
+				},
+				{
+					"AssetName":"Assets/GirlModel/Suriyun/Aki/Texture/Aki/Dress/Boot.png",
+					"Dependencies":[
+					]
+				},
+				{
+					"AssetName":"Assets/GirlModel/Suriyun/Aki/FBX/Aki.fbx",
+					"Dependencies":[
+					]
+				},
+				{
+					"AssetName":"Assets/GirlModel/Suriyun/UnityChanShader/Shader/Unitychan_chara_hada.shader",
+					"Dependencies":[
+					]
+				},
+				{
+					"AssetName":"Assets/GirlModel/Suriyun/Aki/Texture/Aki/Base_character/face.BMP",
+					"Dependencies":[
+					]
+				},
+				{
+					"AssetName":"Assets/GirlModel/Suriyun/Aki/Texture/Aki/Base_character/cheek_Aki.tga",
+					"Dependencies":[
+					]
+				},
+				{
+					"AssetName":"Assets/GirlModel/Akane_project/Animation/Akane@Run.fbx",
+					"Dependencies":[
+						"Assets/GirlModel/Akane_project/FBX/Akane_phoenix.fbx"
+					]
+				},
+				{
+					"AssetName":"Assets/GirlModel/Suriyun/Aki/Texture/Aki/Base_character/eyeline.png",
+					"Dependencies":[
+					]
+				},
+				{
+					"AssetName":"Assets/GirlModel/Akane_project/Animation/Akane@Idle_B.fbx",
+					"Dependencies":[
+						"Assets/GirlModel/Akane_project/FBX/Akane_phoenix.fbx"
+					]
+				},
+				{
+					"AssetName":"Packages/com.unity.cinemachine/Editor/EditorResources/cm_logo_sm.png",
+					"Dependencies":[
+					]
+				},
+				{
+					"AssetName":"Assets/GirlModel/Suriyun/Aki/Materials/Aki/Dress/Katana_Aki.mat",
+					"Dependencies":[
+						"Assets/GirlModel/Suriyun/UnityChanShader/Shader/Unitychan_chara_fuku.shader",
+						"Assets/GirlModel/Suriyun/UnityChanShader/Shader/FO_RIM1.tga",
+						"Assets/GirlModel/Suriyun/UnityChanShader/Shader/FO_CLOTH1.tga",
+						"Assets/GirlModel/Suriyun/Aki/Texture/Aki/Dress/katana.png",
+						"Assets/GirlModel/Suriyun/Aki/Texture/Aki/Base_character/cheek_Aki.tga"
+					]
+				},
+				{
+					"AssetName":"Assets/GirlModel/Suriyun/Aki/Materials/Aki/Base_character/eye_R_Aki.mat",
+					"Dependencies":[
+						"Assets/GirlModel/Suriyun/Aki/Texture/Aki/Base_character/eyeR_Aki.tga",
+						"Assets/GirlModel/Suriyun/UnityChanShader/Shader/FO_SKIN1.tga",
+						"Assets/GirlModel/Suriyun/UnityChanShader/Shader/FO_RIM1.tga",
+						"Assets/GirlModel/Suriyun/UnityChanShader/Shader/Unitychan_chara_eye_blend.shader"
+					]
+				},
+				{
+					"AssetName":"Assets/Hovl Studio/Toon Projectiles 2/Shaders/Blend_CenterGlow.shader",
+					"Dependencies":[
+					]
+				},
+				{
+					"AssetName":"Assets/Hovl Studio/Toon Projectiles 2/Textures/Lightning17.png",
+					"Dependencies":[
+					]
+				},
+				{
+					"AssetName":"Assets/Hovl Studio/Toon Projectiles 2/Shaders/Add_CenterGlow.shader",
+					"Dependencies":[
+					]
+				},
+				{
+					"AssetName":"Assets/Hovl Studio/Toon Projectiles 2/Materials/Lightning17bcg.mat",
+					"Dependencies":[
+						"Assets/Hovl Studio/Toon Projectiles 2/Shaders/Blend_CenterGlow.shader",
+						"Assets/Hovl Studio/Toon Projectiles 2/Textures/Lightning17.png"
+					]
+				},
+				{
+					"AssetName":"Assets/Hovl Studio/Toon Projectiles 2/Materials/Aura16bcg.mat",
+					"Dependencies":[
+						"Assets/Hovl Studio/Toon Projectiles 2/Shaders/Blend_CenterGlow.shader",
+						"Assets/Hovl Studio/Toon Projectiles 2/Textures/Aura16.png"
+					]
+				},
+				{
+					"AssetName":"Assets/Hovl Studio/Toon Projectiles 2/Textures/Aura16.png",
+					"Dependencies":[
+					]
+				},
+				{
+					"AssetName":"Assets/Hovl Studio/Toon Projectiles 2/Textures/Glow1.png",
+					"Dependencies":[
+					]
+				},
+				{
+					"AssetName":"Assets/Hovl Studio/Toon Projectiles 2/Materials/Glow1cg.mat",
+					"Dependencies":[
+						"Assets/Hovl Studio/Toon Projectiles 2/Textures/Glow1.png",
+						"Assets/Hovl Studio/Toon Projectiles 2/Shaders/Add_CenterGlow.shader"
+					]
+				}
+			]
+		}
+	]
+}

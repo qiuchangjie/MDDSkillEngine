@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f24210f5109c8c2459ccac71fce807da, type: 3}
   m_Name: PackageConfig
   m_EditorClassIdentifier: 
-  TargetPlatforms: 0500000013000000
+  TargetPlatforms: 05000000
   Options: 256
   IsAnalyzeRedundancy: 1
-  OutputPath: D:/Users/admin/Documents/GitHub/MDDSkillEngine/Assets/StreamingAssets
-  ManifestVersion: 21
+  OutputPath: D:\Users\admin\Documents\GitHub\MDDSkillEngine\AssetBundleOutput
+  ManifestVersion: 26
   IsCopyToStreamingAssets: 1

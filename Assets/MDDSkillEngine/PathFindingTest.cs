@@ -13,8 +13,9 @@ namespace MDDSkillEngine
         public System.Action idleAction;
         public System.Action workAction;
         public System.Action attackAction;
+        public System.Action died;
 
-        
+        public bool isPath;
 
         public Transform target;
 
@@ -27,6 +28,8 @@ namespace MDDSkillEngine
 
         [SerializeField] private ClipState.Transition Attack;
 
+        [SerializeField] private ClipState.Transition Died;
+
         IAstarAI ai;
 
         AIPath aIPath;
@@ -34,7 +37,7 @@ namespace MDDSkillEngine
         public void Start()
         {
             target=GameObject.Find("GameObject").transform;
-
+            died += () => { animancer.Play(Died); };
             idleAction += () => { animancer.Play(Idle); };
             workAction += () => { animancer.Play(Work); };
             attackAction += () => 
@@ -57,6 +60,7 @@ namespace MDDSkillEngine
         void OnEnable()
         {
             aIPath = GetComponent<AIPath>();
+            if(!isPath)
             ai = GetComponent<IAstarAI>();
             animancer = GetComponent<AnimancerComponent>();
             // Update the destination right before searching for a path as well.

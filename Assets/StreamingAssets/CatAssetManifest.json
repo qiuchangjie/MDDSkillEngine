@@ -1,16 +1,17 @@
 {
 	"GameVersion":"0.1",
-	"ManifestVersion":21,
+	"ManifestVersion":26,
 	"AssetBundles":[
 		{
 			"AssetBundleName":"prefab_model1_akiiii.bundle",
-			"Length":25835,
-			"Hash":"da4788d8eeb6c5bdd70ab793fa8e72e4",
+			"Length":353767,
+			"Hash":"ff4192830b2217f672fa939053882ef3",
 			"Group":"model1",
 			"Assets":[
 				{
 					"AssetName":"Assets/Prefab/Model1/Akiiii.prefab",
 					"Dependencies":[
+						"Assets/GirlModel/Akane_project/Animation/Akane@die.fbx",
 						"Assets/GirlModel/Suriyun/Aki/Materials/Aki/Base_character/face_Aki.mat",
 						"Assets/GirlModel/Suriyun/Aki/Materials/Aki/Base_character/mat_cheek_Aki.mat",
 						"Assets/GirlModel/Suriyun/Aki/FBX/katana.fbx",
@@ -20,10 +21,66 @@
 						"Assets/GirlModel/Suriyun/Aki/Materials/Aki/Dress/Skin_Aki.mat",
 						"Assets/GirlModel/Suriyun/Aki/Materials/Aki/Dress/Boot.mat",
 						"Assets/GirlModel/Suriyun/Aki/Materials/Aki/Dress/Dress.mat",
+						"Assets/GirlModel/Akane_project/Animation/Akane@Atk1.fbx",
 						"Assets/GirlModel/Suriyun/Aki/Materials/Aki/Base_character/Lash.mat",
 						"Assets/GirlModel/Suriyun/Aki/FBX/Aki.fbx",
+						"Assets/GirlModel/Akane_project/Animation/Akane@Run.fbx",
+						"Assets/GirlModel/Akane_project/Animation/Akane@Idle_B.fbx",
 						"Assets/GirlModel/Suriyun/Aki/Materials/Aki/Dress/Katana_Aki.mat",
 						"Assets/GirlModel/Suriyun/Aki/Materials/Aki/Base_character/eye_R_Aki.mat"
+					]
+				},
+				{
+					"AssetName":"Assets/GirlModel/Akane_project/Animation/Akane@die.fbx",
+					"Dependencies":[
+						"Assets/GirlModel/Akane_project/FBX/Akane_phoenix.fbx"
+					]
+				}
+			]
+		},
+		{
+			"AssetBundleName":"prefab_model1_bullet.bundle",
+			"Length":1315579,
+			"Hash":"97a422c6fcc2f2a38d14f02764b8c643",
+			"Group":"model1",
+			"Assets":[
+				{
+					"AssetName":"Assets/Prefab/Model1/Bullet.prefab",
+					"Dependencies":[
+						"Assets/Hovl Studio/Toon Projectiles 2/Materials/Point11bcg.mat",
+						"Assets/Hovl Studio/Toon Projectiles 2/Materials/Lightning17bcg.mat",
+						"Assets/Hovl Studio/Toon Projectiles 2/Materials/Aura16bcg.mat",
+						"Assets/Hovl Studio/Toon Projectiles 2/Materials/Lightning11cg.mat"
+					]
+				},
+				{
+					"AssetName":"Assets/Hovl Studio/Toon Projectiles 2/Textures/Point11.png",
+					"Dependencies":[
+					]
+				},
+				{
+					"AssetName":"Assets/Hovl Studio/Toon Projectiles 2/Textures/Noise28.png",
+					"Dependencies":[
+					]
+				},
+				{
+					"AssetName":"Assets/Hovl Studio/Toon Projectiles 2/Materials/Point11bcg.mat",
+					"Dependencies":[
+						"Assets/Hovl Studio/Toon Projectiles 2/Textures/Point11.png",
+						"Assets/Hovl Studio/Toon Projectiles 2/Shaders/Blend_CenterGlow.shader"
+					]
+				},
+				{
+					"AssetName":"Assets/Hovl Studio/Toon Projectiles 2/Textures/Lightning11.png",
+					"Dependencies":[
+					]
+				},
+				{
+					"AssetName":"Assets/Hovl Studio/Toon Projectiles 2/Materials/Lightning11cg.mat",
+					"Dependencies":[
+						"Assets/Hovl Studio/Toon Projectiles 2/Textures/Noise28.png",
+						"Assets/Hovl Studio/Toon Projectiles 2/Shaders/Add_CenterGlow.shader",
+						"Assets/Hovl Studio/Toon Projectiles 2/Textures/Lightning11.png"
 					]
 				}
 			]
@@ -78,9 +135,65 @@
 			]
 		},
 		{
+			"AssetBundleName":"prefab_model1_flash.bundle",
+			"Length":28095,
+			"Hash":"9d50b5f9e2e9ac5e45163b8186f9348f",
+			"Group":"model1",
+			"Assets":[
+				{
+					"AssetName":"Assets/Prefab/Model1/Flash.prefab",
+					"Dependencies":[
+						"Assets/Hovl Studio/Toon Projectiles 2/Materials/Glow1cg.mat"
+					]
+				}
+			]
+		},
+		{
+			"AssetBundleName":"prefab_model1_hit.bundle",
+			"Length":193442,
+			"Hash":"dabf045ae8af12d349e59d8318ee3ee8",
+			"Group":"model1",
+			"Assets":[
+				{
+					"AssetName":"Assets/Prefab/Model1/Hit.prefab",
+					"Dependencies":[
+						"Assets/Hovl Studio/Toon Projectiles 2/Materials/Flash7bcg.mat",
+						"Assets/Hovl Studio/Toon Projectiles 2/Materials/Glow1cg.mat",
+						"Assets/Hovl Studio/Toon Projectiles 2/Materials/Lightning17bcg.mat",
+						"Assets/Hovl Studio/Toon Projectiles 2/Materials/Smoke24cg.mat",
+						"Assets/Hovl Studio/Toon Projectiles 2/Materials/Aura16bcg.mat"
+					]
+				},
+				{
+					"AssetName":"Assets/Hovl Studio/Toon Projectiles 2/Materials/Flash7bcg.mat",
+					"Dependencies":[
+						"Assets/Hovl Studio/Toon Projectiles 2/Shaders/Blend_CenterGlow.shader",
+						"Assets/Hovl Studio/Toon Projectiles 2/Textures/Flash7.png"
+					]
+				},
+				{
+					"AssetName":"Assets/Hovl Studio/Toon Projectiles 2/Textures/Flash7.png",
+					"Dependencies":[
+					]
+				},
+				{
+					"AssetName":"Assets/Hovl Studio/Toon Projectiles 2/Materials/Smoke24cg.mat",
+					"Dependencies":[
+						"Assets/Hovl Studio/Toon Projectiles 2/Shaders/Add_CenterGlow.shader",
+						"Assets/Hovl Studio/Toon Projectiles 2/Textures/Smoke24.png"
+					]
+				},
+				{
+					"AssetName":"Assets/Hovl Studio/Toon Projectiles 2/Textures/Smoke24.png",
+					"Dependencies":[
+					]
+				}
+			]
+		},
+		{
 			"AssetBundleName":"prefab_model1_player_aki.bundle",
-			"Length":1341009,
-			"Hash":"bf10e591619372ab669fa727415a22a8",
+			"Length":27627,
+			"Hash":"3f53575c69f99ebff5839464f5077af7",
 			"Group":"model1",
 			"Assets":[
 				{
@@ -103,36 +216,13 @@
 						"Assets/GirlModel/Suriyun/Aki/Materials/Aki/Dress/Katana_Aki.mat",
 						"Assets/GirlModel/Suriyun/Aki/Materials/Aki/Base_character/eye_R_Aki.mat"
 					]
-				},
-				{
-					"AssetName":"Assets/GirlModel/Akane_project/FBX/Akane_phoenix.fbx",
-					"Dependencies":[
-					]
-				},
-				{
-					"AssetName":"Assets/GirlModel/Akane_project/Animation/Akane@Atk1.fbx",
-					"Dependencies":[
-						"Assets/GirlModel/Akane_project/FBX/Akane_phoenix.fbx"
-					]
-				},
-				{
-					"AssetName":"Assets/GirlModel/Akane_project/Animation/Akane@Run.fbx",
-					"Dependencies":[
-						"Assets/GirlModel/Akane_project/FBX/Akane_phoenix.fbx"
-					]
-				},
-				{
-					"AssetName":"Assets/GirlModel/Akane_project/Animation/Akane@Idle_B.fbx",
-					"Dependencies":[
-						"Assets/GirlModel/Akane_project/FBX/Akane_phoenix.fbx"
-					]
 				}
 			]
 		},
 		{
 			"AssetBundleName":"common.bundle",
-			"Length":14101334,
-			"Hash":"c57fde1633686eab480cd06db20f4838",
+			"Length":15608205,
+			"Hash":"65c58fce262030639bd4dc36c2eb3377",
 			"Assets":[
 				{
 					"AssetName":"Assets/GirlModel/Suriyun/UnityChanShader/Shader/Unitychan_chara_eye.shader",
@@ -188,6 +278,11 @@
 				},
 				{
 					"AssetName":"Assets/GirlModel/Suriyun/Aki/FBX/katana.fbx",
+					"Dependencies":[
+					]
+				},
+				{
+					"AssetName":"Assets/GirlModel/Akane_project/FBX/Akane_phoenix.fbx",
 					"Dependencies":[
 					]
 				},
@@ -285,6 +380,12 @@
 					]
 				},
 				{
+					"AssetName":"Assets/GirlModel/Akane_project/Animation/Akane@Atk1.fbx",
+					"Dependencies":[
+						"Assets/GirlModel/Akane_project/FBX/Akane_phoenix.fbx"
+					]
+				},
+				{
 					"AssetName":"Assets/GirlModel/Suriyun/Aki/Texture/Aki/Dress/Skin.BMP",
 					"Dependencies":[
 					]
@@ -329,8 +430,20 @@
 					]
 				},
 				{
+					"AssetName":"Assets/GirlModel/Akane_project/Animation/Akane@Run.fbx",
+					"Dependencies":[
+						"Assets/GirlModel/Akane_project/FBX/Akane_phoenix.fbx"
+					]
+				},
+				{
 					"AssetName":"Assets/GirlModel/Suriyun/Aki/Texture/Aki/Base_character/eyeline.png",
 					"Dependencies":[
+					]
+				},
+				{
+					"AssetName":"Assets/GirlModel/Akane_project/Animation/Akane@Idle_B.fbx",
+					"Dependencies":[
+						"Assets/GirlModel/Akane_project/FBX/Akane_phoenix.fbx"
 					]
 				},
 				{
@@ -355,6 +468,52 @@
 						"Assets/GirlModel/Suriyun/UnityChanShader/Shader/FO_SKIN1.tga",
 						"Assets/GirlModel/Suriyun/UnityChanShader/Shader/FO_RIM1.tga",
 						"Assets/GirlModel/Suriyun/UnityChanShader/Shader/Unitychan_chara_eye_blend.shader"
+					]
+				},
+				{
+					"AssetName":"Assets/Hovl Studio/Toon Projectiles 2/Shaders/Blend_CenterGlow.shader",
+					"Dependencies":[
+					]
+				},
+				{
+					"AssetName":"Assets/Hovl Studio/Toon Projectiles 2/Textures/Lightning17.png",
+					"Dependencies":[
+					]
+				},
+				{
+					"AssetName":"Assets/Hovl Studio/Toon Projectiles 2/Shaders/Add_CenterGlow.shader",
+					"Dependencies":[
+					]
+				},
+				{
+					"AssetName":"Assets/Hovl Studio/Toon Projectiles 2/Materials/Lightning17bcg.mat",
+					"Dependencies":[
+						"Assets/Hovl Studio/Toon Projectiles 2/Shaders/Blend_CenterGlow.shader",
+						"Assets/Hovl Studio/Toon Projectiles 2/Textures/Lightning17.png"
+					]
+				},
+				{
+					"AssetName":"Assets/Hovl Studio/Toon Projectiles 2/Materials/Aura16bcg.mat",
+					"Dependencies":[
+						"Assets/Hovl Studio/Toon Projectiles 2/Shaders/Blend_CenterGlow.shader",
+						"Assets/Hovl Studio/Toon Projectiles 2/Textures/Aura16.png"
+					]
+				},
+				{
+					"AssetName":"Assets/Hovl Studio/Toon Projectiles 2/Textures/Aura16.png",
+					"Dependencies":[
+					]
+				},
+				{
+					"AssetName":"Assets/Hovl Studio/Toon Projectiles 2/Textures/Glow1.png",
+					"Dependencies":[
+					]
+				},
+				{
+					"AssetName":"Assets/Hovl Studio/Toon Projectiles 2/Materials/Glow1cg.mat",
+					"Dependencies":[
+						"Assets/Hovl Studio/Toon Projectiles 2/Textures/Glow1.png",
+						"Assets/Hovl Studio/Toon Projectiles 2/Shaders/Add_CenterGlow.shader"
 					]
 				}
 			]

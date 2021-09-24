@@ -2,6 +2,7 @@
 using Animancer;
 using UnityEngine;
 using Pathfinding;
+using MDDGameFramework.Runtime;
 
 namespace MDDSkillEngine
 {
@@ -10,6 +11,8 @@ namespace MDDSkillEngine
         PlayerData PlayerData = null;
 
         Transform target;
+
+        Transform fireTransform;
 
         Camera main;
 
@@ -24,7 +27,9 @@ namespace MDDSkillEngine
         PathFindingTest pathFindingTest;
         IAstarAI ai;
 
-        private bool isClick;
+        private bool isClickRight;
+
+        private bool isClickLeft;
 
         private bool isAttact;
 
@@ -37,6 +42,8 @@ namespace MDDSkillEngine
             animancers = GetComponent<AnimancerComponent>();
             pathFindingTest = GetComponent<PathFindingTest>();
             ai = GetComponent<AIPath>();
+
+            fireTransform = transform.Find("FirePoint");
         }
 
 
@@ -46,12 +53,12 @@ namespace MDDSkillEngine
 
             if (Input.GetMouseButtonDown(1))
             {
-                isClick = true;
+                isClickRight = true;
             }
 
             if (Input.GetMouseButtonDown(0))
             {
-                isClick = true;
+                isClickLeft = true;
             }
 
             if (Input.GetKeyDown(KeyCode.X))
@@ -63,7 +70,32 @@ namespace MDDSkillEngine
 
         private void LateUpdate()
         {
-            if (isClick)
+            if (isClickLeft)
+            {
+                RaycastHit hit;
+                if (Physics.Raycast(main.ScreenPointToRay(Input.mousePosition), out hit, Mathf.Infinity, 1<<11))
+                {
+                    Log.Error("hitPointSelet:{0}",hit.collider.gameObject.name);
+
+                    Entity e = hit.collider.gameObject.GetComponent<Entity>();
+
+
+
+                    if (e!=null)
+                    {
+                        Log.Error("获取到entity{0}", e.name);
+                        SelectEntity.InitSelectEntity(e);
+                    }
+
+
+                    //target.position = hit.point;
+
+                    //GameEnter.Entity.ShowEffect(new EffectData(GameEnter.Entity.GenerateSerialId(), 50000) { name = "ClickMove", Position = hit.point });
+                }
+                isClickLeft = false;
+            }
+
+            if (isClickRight)
             {
                 RaycastHit hit;
                 if (Physics.Raycast(main.ScreenPointToRay(Input.mousePosition), out hit, Mathf.Infinity, 1))
@@ -88,12 +120,20 @@ namespace MDDSkillEngine
 
                     //positionFound = true;
                 }
-                isClick = false;
+                isClickRight = false;
             }
 
             if (isAttact)
             {                
                 pathFindingTest.attackAction.Invoke();
+
+                GameEnter.Entity.ShowBullet(new BulletData(GameEnter.Entity.GenerateSerialId(), 10, 10, CampType.Enemy, 10, 10)
+                {
+                    name = "Bullet",
+                    Position = fireTransform.position,
+                    Rotation = fireTransform.rotation
+                }) ;
+
                 isAttact = false;
             }
         }

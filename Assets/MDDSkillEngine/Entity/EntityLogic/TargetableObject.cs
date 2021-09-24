@@ -42,7 +42,7 @@ namespace MDDSkillEngine
         protected override void OnInit(object userData)
         {
             base.OnInit(userData);
-            gameObject.SetLayerRecursively(Constant.Layer.TargetableObjectLayerId);
+            //gameObject.SetLayerRecursively(Constant.Layer.TargetableObjectLayerId);
         }
 
         protected override void OnShow(object userData)
@@ -62,7 +62,7 @@ namespace MDDSkillEngine
             GameEnter.Entity.HideEntity(this);
         }
 
-        private  void OnTriggerEnter(Collider other)
+        private void OnTriggerEnter(Collider other)
         {
             Entity entity = other.gameObject.GetComponent<Entity>();
             if (entity == null)
@@ -73,6 +73,7 @@ namespace MDDSkillEngine
             if (entity is TargetableObject && entity.Id >= Id)
             {
                 // 碰撞事件由 Id 小的一方处理，避免重复处理
+                
                 return;
             }
 
