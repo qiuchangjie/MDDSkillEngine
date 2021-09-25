@@ -3,8 +3,9 @@
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -15,7 +16,7 @@ MonoBehaviour:
   Name: Helmet
   Description: 
   Notes: 
-  Type: 4
+  Type: 7
   Requirements:
     stats: []
   Prefab: {fileID: 0}
@@ -25,8 +26,10 @@ MonoBehaviour:
   Modifiers:
     stats:
     - Type: 4
-      Value: 0
+      Value: -14
     - Type: 7
-      Value: 0
-  BaseArmour: 0.19
+      Value: -18
+    - Type: 0
+      Value: -9
+  BaseArmor: 0
   MovementSpeed: 1.07
