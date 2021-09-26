@@ -1,4 +1,6 @@
-﻿using System.Collections;
+﻿using MDDGameFramework;
+using MDDGameFramework.Runtime;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -48,9 +50,9 @@ namespace MDDSkillEngine
         //设置选择区域的Color
         public Color SelectionAreaColor { get => selectionAreaColor; set => selectionAreaColor = value; }
 
-   
 
-      
+
+        List<IEntity> entities = new List<IEntity>();
 
         /// <summary>
         /// 初始化
@@ -74,8 +76,23 @@ namespace MDDSkillEngine
             if (Input.GetMouseButtonUp(0))
             {
                 isStartDraw = false;
+                SelectEntitys();
             }
                             
+        }
+
+
+        private void SelectEntitys()
+        {
+            GameEnter.Entity.GetEntityGroup("Enemy").GetAllEntities(entities);
+
+            foreach (var v in entities)
+            {
+                Log.Error("EntityName:{0}", GameEnter.Entity.GetEntity(v.Id).Logic.Name);
+
+                Vector3 location = Camera.main.WorldToScreenPoint(GameEnter.Entity.GetEntity(v.Id).Logic.gameObject.transform.position);
+
+            }          
         }
 
 
