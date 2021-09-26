@@ -49,6 +49,8 @@ namespace Sirenix.OdinInspector.Demos.RPGEditor
             tree.AddAllAssetsAtPath("", "Assets/Plugins/Sirenix/Demos/SAMPLE - RPG Editor/Items", typeof(Item), true)
                 .ForEach(this.AddDragHandles);
 
+            tree.Add("Weapons", new CharacterTable(CharacterOverview.Instance.AllCharacters));
+
             // Add drag handles to items, so they can be easily dragged into the inventory if characters etc...
             tree.EnumerateTree().Where(x => x.Value as Item).ForEach(AddDragHandles);
 

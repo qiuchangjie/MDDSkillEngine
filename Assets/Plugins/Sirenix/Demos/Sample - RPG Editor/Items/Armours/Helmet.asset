@@ -16,7 +16,7 @@ MonoBehaviour:
   Name: Helmet
   Description: 
   Notes: 
-  Type: 7
+  Type: 4
   Requirements:
     stats: []
   Prefab: {fileID: 0}
@@ -26,10 +26,10 @@ MonoBehaviour:
   Modifiers:
     stats:
     - Type: 4
-      Value: -14
+      Value: 22
     - Type: 7
-      Value: -18
+      Value: -29
     - Type: 0
-      Value: -9
+      Value: 1
   BaseArmor: 0
   MovementSpeed: 1.07

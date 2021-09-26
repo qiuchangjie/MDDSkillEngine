@@ -55,7 +55,7 @@ namespace MDDSkillEngine
 
             Attack.Events.OnEnd += () => { animancer.Play(Idle); };
 
-
+            
         }
 
         private void OnTriggerEnter(Collider other)

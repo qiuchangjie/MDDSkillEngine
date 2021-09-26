@@ -256,7 +256,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfd8470fdb96dbe4b82d3205b6b21eaf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  entities: []
 --- !u!1 &367323693
 GameObject:
   m_ObjectHideFlags: 0
@@ -315,6 +314,7 @@ GameObject:
   - component: {fileID: 387613642}
   - component: {fileID: 387613645}
   - component: {fileID: 387613646}
+  - component: {fileID: 387613647}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -441,6 +441,24 @@ MonoBehaviour:
   m_CameraActivatedEvent:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &387613647
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 387613641}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2455b0e636f32704ba44a54465a953ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  brushColor: {r: 0.078431375, g: 0.8980392, b: 0.09019608, a: 1}
+  drawMaterial: {fileID: 0}
+  isStartDraw: 0
+  mouseStartPos: {x: 0, y: 0, z: 0}
+  mouseEndPos: {x: 0, y: 0, z: 0}
+  selectionAreaColor: {r: 0.080322154, g: 0.8962264, b: 0.088518925, a: 0.39215687}
 --- !u!1 &564267487
 GameObject:
   m_ObjectHideFlags: 0
@@ -812,6 +830,10 @@ PrefabInstance:
       propertyPath: Died._Clip
       value: 
       objectReference: {fileID: 7400000, guid: 94c062316ebb62d49996bd11df48437c, type: 3}
+    - target: {fileID: 1455097765, guid: ed52bc2685959f744bf894f9b6773f17, type: 3}
+      propertyPath: Died._NormalizedStartTime
+      value: NaN
+      objectReference: {fileID: 0}
     - target: {fileID: 9078925057212735178, guid: ed52bc2685959f744bf894f9b6773f17,
         type: 3}
       propertyPath: m_LocalRotation.y
@@ -1163,6 +1185,36 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &1708480501
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1708480503}
+  m_Layer: 0
+  m_Name: FuckTest
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1708480503
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1708480501}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1768412146
 GameObject:
   m_ObjectHideFlags: 0

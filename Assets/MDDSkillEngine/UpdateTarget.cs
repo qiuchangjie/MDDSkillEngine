@@ -6,6 +6,7 @@ using System.Linq;
 using UnityEngine;
 using MDDGameFramework;
 using CatAsset;
+using MDDGameFramework.Runtime;
 
 namespace MDDSkillEngine
 {
@@ -45,6 +46,7 @@ namespace MDDSkillEngine
         bool isClick = false;
         bool isAttact = false;
 
+        List<IEntity> entities = new List<IEntity>();
         public void Update()
         {
             //if (Input.GetMouseButtonDown(1))
@@ -127,6 +129,7 @@ namespace MDDSkillEngine
                 });
             }
         }
+        
 
         public void LateUpdate()
         {

@@ -3,8 +3,9 @@
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -15,15 +16,33 @@ MonoBehaviour:
   Name: "Mj\xF6lnir"
   Description: It's a hammer.
   Notes: It's hammer time.
-  Type: 1
+  Type: 2
   Requirements:
-    stats: []
+    stats:
+    - Type: 1
+      Value: 10.8
+    - Type: 2
+      Value: 11.3
+    - Type: 3
+      Value: -4.4
+    - Type: 4
+      Value: 23.2
   Prefab: {fileID: 0}
   ItemStackSize: 1
   ItemRarity: 9001
   Durability: 9001
   Modifiers:
-    stats: []
+    stats:
+    - Type: 0
+      Value: -20
+    - Type: 1
+      Value: -55
+    - Type: 2
+      Value: 27
+    - Type: 3
+      Value: 17
+    - Type: 4
+      Value: -47
   BaseAttackDamage: 9001
   BaseAttackSpeed: 80
   BaseCritChance: 0.7
