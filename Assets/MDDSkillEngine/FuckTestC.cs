@@ -88,10 +88,14 @@ namespace MDDSkillEngine
 
             foreach (var v in entities)
             {
-                Log.Error("EntityName:{0}", GameEnter.Entity.GetEntity(v.Id).Logic.Name);
+                //Log.Error("EntityName:{0}", GameEnter.Entity.GetEntity(v.Id).Logic.Name);
 
-                Vector3 location = Camera.main.WorldToScreenPoint(GameEnter.Entity.GetEntity(v.Id).Logic.gameObject.transform.position);
+                Vector3 location = Camera.main.WorldToScreenPoint(GameEnter.Entity.GetEntity(v.Id).Logic.CachedTransform.position);
 
+                if (SelectUtility.IsInsert(mouseStartPos, mouseEndPos, location))
+                {
+                    Log.Error("EntityName:{0}", GameEnter.Entity.GetEntity(v.Id).Logic.Name);
+                }
             }          
         }
 

@@ -20,7 +20,7 @@ namespace MDDSkillEngine
                 {
                     entities.Add(entity);
                 }
-                Log.Error("entityname:{0},entityid{1}", entity.name, entity.Id);
+                //Log.Error("entityname:{0},entityid{1}", entity.name, entity.Id);
             }
         }
 

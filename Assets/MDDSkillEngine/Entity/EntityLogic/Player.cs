@@ -75,7 +75,7 @@ namespace MDDSkillEngine
                 RaycastHit hit;
                 if (Physics.Raycast(main.ScreenPointToRay(Input.mousePosition), out hit, Mathf.Infinity, 1<<11))
                 {
-                    Log.Error("hitPointSelet:{0}",hit.collider.gameObject.name);
+                    //Log.Error("hitPointSelet:{0}",hit.collider.gameObject.name);
 
                     Entity e = hit.collider.gameObject.GetComponent<Entity>();
 
@@ -83,7 +83,7 @@ namespace MDDSkillEngine
 
                     if (e!=null)
                     {
-                        Log.Error("获取到entity{0}", e.name);
+                        //Log.Error("获取到entity{0}", e.name);
                         SelectEntity.InitSelectEntity(e);
                     }
 
