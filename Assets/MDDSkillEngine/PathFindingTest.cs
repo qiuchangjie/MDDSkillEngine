@@ -4,7 +4,7 @@ using UnityEngine;
 using Animancer;
 using System;
 using Pathfinding;
-using MDDGameFramework.Runtime;
+using Sirenix.OdinInspector;
 
 namespace MDDSkillEngine
 {
@@ -30,13 +30,19 @@ namespace MDDSkillEngine
 
         [SerializeField] private ClipState.Transition Died;
 
+        [DictionaryDrawerSettings()]
+        [ShowInInspector]
+        [InfoBox("为了序列化字典，我们需要做的就是从SerializedMonoBehaviour继承类")]
+        private Dictionary<string, ClipState.Transition> animDic = new Dictionary<string, ClipState.Transition>();
+
+
         IAstarAI ai;
 
         AIPath aIPath;
 
         public void Start()
         {
-            target=GameObject.Find("GameObject").transform;
+            target =GameObject.Find("GameObject").transform;
             died += () => { animancer.Play(Died); };
             idleAction += () => { animancer.Play(Idle); };
             workAction += () => { animancer.Play(Work); };
@@ -49,7 +55,7 @@ namespace MDDSkillEngine
 
             Attack.Events.OnEnd += () => { animancer.Play(Idle); };
 
-
+            
         }
 
         private void OnTriggerEnter(Collider other)

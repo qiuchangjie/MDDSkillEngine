@@ -3,8 +3,9 @@
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -901,18 +902,18 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-  Icon: {fileID: 2800000, guid: 3af7666693284e04eacc2fcd7c0f6c43, type: 3}
+  Icon: {fileID: 2800000, guid: 0d1fb353c40bd6345af42a3b4f0bdb1a, type: 3}
   Name: Baldr
   Surname: 
   Age: 33
-  CharacterAlignment: 0
+  CharacterAlignment: 1
   Skills:
     Stats:
       stats:
       - Type: 0
-        Value: 47.058823
+        Value: 58.10811
       - Type: 1
-        Value: 40.356865
+        Value: 30.158731
       - Type: 2
         Value: 23.033136
       - Type: 3
@@ -920,7 +921,7 @@ MonoBehaviour:
       - Type: 4
         Value: 10.204426
       - Type: 7
-        Value: 4.685077
+        Value: 47.5
   StartingEquipment:
     MainHand: {fileID: 0}
     Offhand: {fileID: 0}

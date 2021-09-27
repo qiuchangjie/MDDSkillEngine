@@ -7,6 +7,7 @@ namespace Sirenix.OdinInspector.Demos.RPGEditor
     using UnityEditor;
     using UnityEngine;
     using System.Linq;
+    using MonKey;
 
     // 
     // This is the main RPG editor that which exposes everything included in this sample project.
@@ -24,7 +25,7 @@ namespace Sirenix.OdinInspector.Demos.RPGEditor
 
     public class RPGEditorWindow : OdinMenuEditorWindow
     {
-        [MenuItem("Tools/Odin Inspector/Demos/RPG Editor")]
+        [Command("Odin_Demo","OdinDemo",Category = "EditorWindows")]
         private static void Open()
         {
             var window = GetWindow<RPGEditorWindow>();
@@ -48,6 +49,8 @@ namespace Sirenix.OdinInspector.Demos.RPGEditor
             tree.AddAllAssetsAtPath("", "Assets/Plugins/Sirenix/Demos/SAMPLE - RPG Editor/Items", typeof(Item), true)
                 .ForEach(this.AddDragHandles);
 
+            tree.Add("Weapons", new CharacterTable(CharacterOverview.Instance.AllCharacters));
+
             // Add drag handles to items, so they can be easily dragged into the inventory if characters etc...
             tree.EnumerateTree().Where(x => x.Value as Item).ForEach(AddDragHandles);
 
@@ -68,7 +71,7 @@ namespace Sirenix.OdinInspector.Demos.RPGEditor
             var selected = this.MenuTree.Selection.FirstOrDefault();
             var toolbarHeight = this.MenuTree.Config.SearchToolbarHeight;
 
-            // Draws a toolbar with the name of the currently selected menu item.
+            // Draws a toolbar with the name of the currently selected menu item
             SirenixEditorGUI.BeginHorizontalToolbar(toolbarHeight);
             {
                 if (selected != null)
