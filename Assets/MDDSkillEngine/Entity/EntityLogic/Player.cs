@@ -128,8 +128,8 @@ namespace MDDSkillEngine
                 pathFindingTest.attackAction.Invoke();
 
                 GameEnter.Entity.ShowBullet(new BulletData(GameEnter.Entity.GenerateSerialId(), 10, 10, CampType.Enemy, 10, 10)
-                {
-                    name = "Bullet",
+                {                 
+                    name = "Bullet",                    
                     Position = fireTransform.position,
                     Rotation = fireTransform.rotation
                 }) ;
