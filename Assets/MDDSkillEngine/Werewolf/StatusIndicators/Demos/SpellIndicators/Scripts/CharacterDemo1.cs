@@ -32,7 +32,7 @@ namespace Werewolf.StatusIndicators.Demo {
 
 		private void UpdateSelection() {
 			Splats.SelectSpellIndicator(Splats.SpellIndicators[index].name);
-			GameObject.FindObjectOfType<SplatName>().GetComponent<Text>().text = index + ": " + Splats.CurrentSpellIndicator.name;
+			//GameObject.FindObjectOfType<SplatName>().GetComponent<Text>().text = index + ": " + Splats.CurrentSpellIndicator.name;
 		}
 	}
 }

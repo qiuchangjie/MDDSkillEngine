@@ -17,7 +17,7 @@ namespace Werewolf.StatusIndicators.Demo {
 			if(Input.GetMouseButtonDown(0)) {
 				Splats.CancelRangeIndicator();
 			}
-			if(Input.GetKeyDown(KeyCode.Q)) {
+			if(Input.GetKeyDown(KeyCode .Q)) {
 				Splats.SelectRangeIndicator("Range1");
 				Splats.CurrentRangeIndicator.Scale = 14f;
 			}

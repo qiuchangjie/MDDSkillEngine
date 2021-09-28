@@ -11,8 +11,6 @@ namespace MDDSkillEngine
     /// </summary>
     class FuckTestC : MonoBehaviour
     {
-  
-
         //画笔颜色
         [SerializeField]
         private Color brushColor = Color.white;
@@ -84,6 +82,9 @@ namespace MDDSkillEngine
 
         private void SelectEntitys()
         {
+            if (GameEnter.Entity.EntityCount == 0)
+                return;
+
             GameEnter.Entity.GetEntityGroup("Enemy").GetAllEntities(entities);
 
             foreach (var v in entities)
@@ -158,9 +159,7 @@ namespace MDDSkillEngine
             GL.Vertex3(MouseStartPos.x, MouseEndPos.y, 0);
             GL.Vertex3(MouseStartPos.x, MouseStartPos.y, 0);
             GL.End();
-        }
-
-        
+        }      
     }
 
 }
