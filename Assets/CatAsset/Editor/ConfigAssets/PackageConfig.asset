@@ -16,5 +16,5 @@ MonoBehaviour:
   Options: 256
   IsAnalyzeRedundancy: 1
   OutputPath: F:\gitcode\MDDSkillEngine\AssetBundleOutput
-  ManifestVersion: 30
+  ManifestVersion: 31
   IsCopyToStreamingAssets: 1

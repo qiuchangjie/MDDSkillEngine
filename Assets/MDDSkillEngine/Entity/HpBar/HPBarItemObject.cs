@@ -1,7 +1,7 @@
 ﻿using MDDGameFramework;
 using UnityEngine;
 
-namespace StarForce
+namespace MDDSkillEngine
 {
     public class HPBarItemObject : ObjectBase
     {
@@ -14,13 +14,13 @@ namespace StarForce
 
         protected override void Release(bool isShutdown)
         {
-            //HPBarItem hpBarItem = (HPBarItem)Target;
-            //if (hpBarItem == null)
-            //{
-            //    return;
-            //}
+            HPBarItem hpBarItem = (HPBarItem)Target;
+            if (hpBarItem == null)
+            {
+                return;
+            }
 
-            //Object.Destroy(hpBarItem.gameObject);
+            Object.Destroy(hpBarItem.gameObject);
         }
     }
 }
