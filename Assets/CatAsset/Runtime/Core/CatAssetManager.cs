@@ -17,6 +17,21 @@ namespace CatAsset
     public delegate void LoadAssetSuccessCallback(string assetName, object asset, float duration, object userData);
 
     /// <summary>
+    /// 加载场景成功回调函数。
+    /// </summary>
+    /// <param name="sceneAssetName">要加载的场景资源名称。</param>
+    /// <param name="duration">加载持续时间。</param>
+    /// <param name="userData">用户自定义数据。</param>
+    public delegate void LoadSceneSuccessCallback(string sceneAssetName, float duration, object userData);
+
+    /// <summary>
+    /// 卸载场景成功回调函数。
+    /// </summary>
+    /// <param name="sceneAssetName">要卸载的场景资源名称。</param>
+    /// <param name="userData">用户自定义数据。</param>
+    public delegate void UnloadSceneSuccessCallback(string sceneAssetName, object userData);
+
+    /// <summary>
     /// CatAsset管理器
     /// </summary>
     public class CatAssetManager
@@ -250,7 +265,7 @@ namespace CatAsset
         /// <summary>
         /// 加载场景
         /// </summary>
-        public static void LoadScene(string sceneName, Action<object> loadedCallback, int priority = 0)
+        public static void LoadScene(string sceneName, Action<object> loadedCallback, int priority = 0, LoadSceneCallbacks loadAssetCallbacks = null, object userdata = null)
         {
 #if UNITY_EDITOR
             if (IsEditorMode)

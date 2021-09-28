@@ -1,11 +1,58 @@
 {
 	"GameVersion":"0.1",
-	"ManifestVersion":26,
+	"ManifestVersion":30,
 	"AssetBundles":[
 		{
+			"AssetBundleName":"mddskillengine_prefabs_player.bundle",
+			"Length":14447,
+			"Hash":"e817c28e47086ec5c7de075e16d21609",
+			"Group":"model1",
+			"Assets":[
+				{
+					"AssetName":"Assets/MDDSkillEngine/Prefabs/Player.prefab",
+					"Dependencies":[
+						"Assets/MDDSkillEngine/NPBehave-master/Runtime/Examples/Materials/NPBehave_Example_Player.mat"
+					]
+				},
+				{
+					"AssetName":"Assets/MDDSkillEngine/NPBehave-master/Runtime/Examples/Materials/NPBehave_Example_Player.mat",
+					"Dependencies":[
+					]
+				}
+			]
+		},
+		{
+			"AssetBundleName":"mddskillengine_prefabs_simpleenemy.bundle",
+			"Length":3599,
+			"Hash":"d6f91be7c68f46ac9b0933c863f48fcc",
+			"Group":"model1",
+			"Assets":[
+				{
+					"AssetName":"Assets/MDDSkillEngine/Prefabs/SimpleEnemy.prefab",
+					"Dependencies":[
+						"Assets/MDDSkillEngine/NPBehave-master/Runtime/Examples/Materials/NPBehave_Example_Enemy.mat"
+					]
+				}
+			]
+		},
+		{
+			"AssetBundleName":"mddskillengine_prefabs_swarmenemy.bundle",
+			"Length":3598,
+			"Hash":"7bf3a3337f7237625828ed6e98ffcdc5",
+			"Group":"model1",
+			"Assets":[
+				{
+					"AssetName":"Assets/MDDSkillEngine/Prefabs/SwarmEnemy.prefab",
+					"Dependencies":[
+						"Assets/MDDSkillEngine/NPBehave-master/Runtime/Examples/Materials/NPBehave_Example_Enemy.mat"
+					]
+				}
+			]
+		},
+		{
 			"AssetBundleName":"prefab_model1_akiiii.bundle",
-			"Length":353767,
-			"Hash":"ff4192830b2217f672fa939053882ef3",
+			"Length":353691,
+			"Hash":"2e221ff3e32feade7a782e085075d75a",
 			"Group":"model1",
 			"Assets":[
 				{
@@ -41,7 +88,7 @@
 		{
 			"AssetBundleName":"prefab_model1_bullet.bundle",
 			"Length":1315579,
-			"Hash":"97a422c6fcc2f2a38d14f02764b8c643",
+			"Hash":"5fd4b7a5c4522d63f1062d8dc83f53c0",
 			"Group":"model1",
 			"Assets":[
 				{
@@ -88,7 +135,7 @@
 		{
 			"AssetBundleName":"prefab_model1_clickmove.bundle",
 			"Length":181208,
-			"Hash":"0c17dcde244e56295ac735865abb00d5",
+			"Hash":"4a02f3803c19c97b3c21bf4e20d610fd",
 			"Group":"model1",
 			"Assets":[
 				{
@@ -137,7 +184,7 @@
 		{
 			"AssetBundleName":"prefab_model1_flash.bundle",
 			"Length":28095,
-			"Hash":"9d50b5f9e2e9ac5e45163b8186f9348f",
+			"Hash":"ab962083a33f05aab03031e2c63308c0",
 			"Group":"model1",
 			"Assets":[
 				{
@@ -151,7 +198,7 @@
 		{
 			"AssetBundleName":"prefab_model1_hit.bundle",
 			"Length":193442,
-			"Hash":"dabf045ae8af12d349e59d8318ee3ee8",
+			"Hash":"c7d6514425f58c451332e31acff83059",
 			"Group":"model1",
 			"Assets":[
 				{
@@ -193,7 +240,7 @@
 		{
 			"AssetBundleName":"prefab_model1_player_aki.bundle",
 			"Length":27627,
-			"Hash":"3f53575c69f99ebff5839464f5077af7",
+			"Hash":"f970591bdfd2a2b6c659def9d1409dcd",
 			"Group":"model1",
 			"Assets":[
 				{
@@ -220,10 +267,57 @@
 			]
 		},
 		{
-			"AssetBundleName":"common.bundle",
-			"Length":15608205,
-			"Hash":"65c58fce262030639bd4dc36c2eb3377",
+			"AssetBundleName":"scenes_testbundlescene_launchera.bundle",
+			"Length":40895,
+			"Hash":"cc312687e159e28005c58632890fb7c9",
+			"IsScene":true,
+			"Group":"model1",
 			"Assets":[
+				{
+					"AssetName":"Assets/Scenes/testBundleScene/LauncherA.unity",
+					"Dependencies":[
+						"Assets/GirlModel/Suriyun/Aki/Materials/Aki/Base_character/face_Aki.mat",
+						"Assets/GirlModel/Suriyun/Aki/Materials/Aki/Base_character/mat_cheek_Aki.mat",
+						"Assets/GirlModel/Suriyun/Aki/FBX/katana.fbx",
+						"Assets/GirlModel/Suriyun/Aki/Materials/Aki/Base_character/hair_Aki.mat",
+						"Assets/GirlModel/Suriyun/Aki/Materials/Aki/Base_character/eyebase_Aki.mat",
+						"Assets/GirlModel/Suriyun/Aki/Materials/Aki/Base_character/eye_L_Aki.mat",
+						"Assets/GirlModel/Suriyun/Aki/Materials/Aki/Dress/Skin_Aki.mat",
+						"Assets/GirlModel/Suriyun/Aki/Materials/Aki/Dress/Boot.mat",
+						"Assets/GirlModel/Suriyun/Aki/Materials/Aki/Dress/Dress.mat",
+						"Assets/GirlModel/Suriyun/Aki/Materials/Aki/Base_character/Lash.mat",
+						"Assets/GirlModel/Suriyun/Aki/FBX/Aki.fbx",
+						"Assets/GirlModel/Suriyun/Aki/Materials/Aki/Dress/Katana_Aki.mat",
+						"Assets/MDDSkillEngine/Prefabs/SimpleEnemy.prefab",
+						"Assets/GirlModel/Suriyun/Aki/Materials/Aki/Base_character/eye_R_Aki.mat"
+					]
+				}
+			]
+		},
+		{
+			"AssetBundleName":"scenes_testbundlescene_samplescene.bundle",
+			"Length":105283,
+			"Hash":"c9756cb05676bd1a58a2771f527f4627",
+			"IsScene":true,
+			"Group":"model1",
+			"Assets":[
+				{
+					"AssetName":"Assets/Scenes/testBundleScene/SampleScene.unity",
+					"Dependencies":[
+					]
+				}
+			]
+		},
+		{
+			"AssetBundleName":"common.bundle",
+			"Length":15611346,
+			"Hash":"ffdad651e105a3e279bfe66a6c1a43eb",
+			"Assets":[
+				{
+					"AssetName":"Assets/MDDSkillEngine/NPBehave-master/Runtime/Examples/Materials/NPBehave_Example_Enemy.mat",
+					"Dependencies":[
+					]
+				},
 				{
 					"AssetName":"Assets/GirlModel/Suriyun/UnityChanShader/Shader/Unitychan_chara_eye.shader",
 					"Dependencies":[

@@ -4,5 +4,14 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/SkillFactor.unity
+    guid: 8740e6c889fa9254f83cdc04f15836dc
+  - enabled: 1
+    path: Assets/Scenes/testBundleScene/SampleScene.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Scenes/testBundleScene/LauncherA.unity
+    guid: 0ca445fe4e0af7f49b33c83f74a60eef
   m_configObjects: {}

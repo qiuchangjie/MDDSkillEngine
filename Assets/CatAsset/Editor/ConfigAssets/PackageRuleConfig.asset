@@ -13,6 +13,12 @@ MonoBehaviour:
   m_Name: PackageRuleConfig
   m_EditorClassIdentifier: 
   Rules:
+  - Directory: Assets/MDDSkillEngine/Prefabs
+    Mode: 2
+    Group: model1
   - Directory: Assets/Prefab/Model1
+    Mode: 2
+    Group: model1
+  - Directory: Assets/Scenes/testBundleScene
     Mode: 2
     Group: model1

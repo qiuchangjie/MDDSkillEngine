@@ -46,6 +46,18 @@ public class GameEnter : MonoBehaviour
         private set;
     }
 
+    public static SceneComponent Scene
+    { 
+        get;
+        private set;
+    }
+
+    public static UIComponent UI
+    {
+        get;
+        private set;
+    }
+
 
     private void InitMDDComponent()
     {
@@ -55,5 +67,7 @@ public class GameEnter : MonoBehaviour
         ObjectPool = MDDGameEntry.GetComponent<ObjectPoolComponent>();
         Entity = MDDGameEntry.GetComponent<EntityComponent>();
         NPBehave = MDDGameEntry.GetComponent<NPBehaveComponent>();
+        Scene = MDDGameEntry.GetComponent<SceneComponent>();
+        UI = MDDGameEntry.GetComponent<UIComponent>();
     }
 }

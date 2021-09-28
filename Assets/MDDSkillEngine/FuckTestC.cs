@@ -76,7 +76,20 @@ namespace MDDSkillEngine
                 isStartDraw = false;
                 SelectEntitys();
             }
-                            
+
+            if (Input.GetKeyDown(KeyCode.S))
+            {
+                GameEnter.Scene.LoadScene(AssetUtility.GetSceneAsset("LauncherA"));
+            }
+
+            if (Input.GetKeyDown(KeyCode.S))
+            {
+                GameEnter.Scene.LoadScene(AssetUtility.GetSceneAsset("SampleScene"));
+            }
+
+
+
+
         }
 
 
