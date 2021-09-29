@@ -19,6 +19,8 @@ namespace MDDGameFramework
         public BuffSystem()
         {
             buffs = new MDDGameFrameworkLinkedList<BuffBase>();
+            m_Owner = null;
+            currentNode = null;
         }
 
         public void AddBuff(int bufID,object target,object from)
