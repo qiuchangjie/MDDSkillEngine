@@ -44,7 +44,7 @@ namespace MDDSkillEngine
             }
             if (Input.GetKeyDown(KeyCode.D))
             {
-                Splats.SelectRangeIndicator("Status Basic");
+                Splats.SelectStatusIndicator("Status Basic");
             }
         }
     }

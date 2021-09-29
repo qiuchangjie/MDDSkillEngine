@@ -13,6 +13,7 @@ namespace MDDGameFramework
         public BuffSystemManager()
         {
             m_BuffSystems = new Dictionary<string, BuffSystem>();
+            m_tempBuffSystems = new List<BuffSystem>();
         }
 
         internal override void Shutdown()
@@ -22,7 +23,7 @@ namespace MDDGameFramework
 
         internal override void Update(float elapseSeconds, float realElapseSeconds)
         {          
-            if (m_BuffSystems == null)
+            if (m_BuffSystems.Count == 0)
             {
                 return;
             }
