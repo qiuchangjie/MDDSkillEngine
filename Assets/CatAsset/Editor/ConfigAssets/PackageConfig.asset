@@ -15,6 +15,6 @@ MonoBehaviour:
   TargetPlatforms: 05000000
   Options: 256
   IsAnalyzeRedundancy: 1
-  OutputPath: F:\gitcode\MDDSkillEngine\AssetBundleOutput
-  ManifestVersion: 31
+  OutputPath: D:\Users\admin\Documents\GitHub\MDDSkillEngine\AssetBundleOutput
+  ManifestVersion: 33
   IsCopyToStreamingAssets: 1

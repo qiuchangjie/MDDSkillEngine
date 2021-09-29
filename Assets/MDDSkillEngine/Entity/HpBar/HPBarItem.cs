@@ -66,8 +66,9 @@ namespace MDDSkillEngine
 
             if (m_Owner != null && Owner.Available && Owner.Id == m_OwnerId)
             {
-                Vector3 worldPosition = m_Owner.CachedTransform.position + Vector3.forward;
-                Vector3 screenPosition = GameEnter.Scene.MainCamera.WorldToScreenPoint(worldPosition);
+                Vector3 worldPosition = m_Owner.CachedTransform.position +new Vector3(0,1.8f,0);
+                //Vector3 screenPosition = GameEnter.Scene.MainCamera.WorldToScreenPoint(worldPosition);
+                Vector3 screenPosition = Camera.main.WorldToScreenPoint(worldPosition);
 
                 Vector2 position;
                 if (RectTransformUtility.ScreenPointToLocalPointInRectangle((RectTransform)m_ParentCanvas.transform, screenPosition,

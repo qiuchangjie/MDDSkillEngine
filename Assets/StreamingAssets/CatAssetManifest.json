@@ -1,11 +1,24 @@
 {
 	"GameVersion":"0.1",
-	"ManifestVersion":30,
+	"ManifestVersion":32,
 	"AssetBundles":[
+		{
+			"AssetBundleName":"mddskillengine_prefabs_hpbaritem.bundle",
+			"Length":5490,
+			"Hash":"4b80d1acb0f820688d6f962492b5c720",
+			"Group":"model1",
+			"Assets":[
+				{
+					"AssetName":"Assets/MDDSkillEngine/Prefabs/HPBarItem.prefab",
+					"Dependencies":[
+					]
+				}
+			]
+		},
 		{
 			"AssetBundleName":"mddskillengine_prefabs_player.bundle",
 			"Length":14447,
-			"Hash":"e817c28e47086ec5c7de075e16d21609",
+			"Hash":"d6843826dabf1a866eea76868e051575",
 			"Group":"model1",
 			"Assets":[
 				{
@@ -24,7 +37,7 @@
 		{
 			"AssetBundleName":"mddskillengine_prefabs_simpleenemy.bundle",
 			"Length":3599,
-			"Hash":"d6f91be7c68f46ac9b0933c863f48fcc",
+			"Hash":"b0edb5697eb955ac7e0c1b639bec6260",
 			"Group":"model1",
 			"Assets":[
 				{
@@ -38,7 +51,7 @@
 		{
 			"AssetBundleName":"mddskillengine_prefabs_swarmenemy.bundle",
 			"Length":3598,
-			"Hash":"7bf3a3337f7237625828ed6e98ffcdc5",
+			"Hash":"4676c7a6591ef59e0ce72e1490bf7910",
 			"Group":"model1",
 			"Assets":[
 				{
@@ -51,8 +64,8 @@
 		},
 		{
 			"AssetBundleName":"prefab_model1_akiiii.bundle",
-			"Length":353691,
-			"Hash":"2e221ff3e32feade7a782e085075d75a",
+			"Length":353767,
+			"Hash":"ff4192830b2217f672fa939053882ef3",
 			"Group":"model1",
 			"Assets":[
 				{
@@ -88,7 +101,7 @@
 		{
 			"AssetBundleName":"prefab_model1_bullet.bundle",
 			"Length":1315579,
-			"Hash":"5fd4b7a5c4522d63f1062d8dc83f53c0",
+			"Hash":"97a422c6fcc2f2a38d14f02764b8c643",
 			"Group":"model1",
 			"Assets":[
 				{
@@ -135,7 +148,7 @@
 		{
 			"AssetBundleName":"prefab_model1_clickmove.bundle",
 			"Length":181208,
-			"Hash":"4a02f3803c19c97b3c21bf4e20d610fd",
+			"Hash":"0c17dcde244e56295ac735865abb00d5",
 			"Group":"model1",
 			"Assets":[
 				{
@@ -184,7 +197,7 @@
 		{
 			"AssetBundleName":"prefab_model1_flash.bundle",
 			"Length":28095,
-			"Hash":"ab962083a33f05aab03031e2c63308c0",
+			"Hash":"9d50b5f9e2e9ac5e45163b8186f9348f",
 			"Group":"model1",
 			"Assets":[
 				{
@@ -198,7 +211,7 @@
 		{
 			"AssetBundleName":"prefab_model1_hit.bundle",
 			"Length":193442,
-			"Hash":"c7d6514425f58c451332e31acff83059",
+			"Hash":"dabf045ae8af12d349e59d8318ee3ee8",
 			"Group":"model1",
 			"Assets":[
 				{
@@ -240,7 +253,7 @@
 		{
 			"AssetBundleName":"prefab_model1_player_aki.bundle",
 			"Length":27627,
-			"Hash":"f970591bdfd2a2b6c659def9d1409dcd",
+			"Hash":"3f53575c69f99ebff5839464f5077af7",
 			"Group":"model1",
 			"Assets":[
 				{
@@ -268,8 +281,8 @@
 		},
 		{
 			"AssetBundleName":"scenes_testbundlescene_launchera.bundle",
-			"Length":40895,
-			"Hash":"cc312687e159e28005c58632890fb7c9",
+			"Length":40877,
+			"Hash":"1dc06b08e29eaca04b18f31db45f5bcc",
 			"IsScene":true,
 			"Group":"model1",
 			"Assets":[
@@ -296,8 +309,8 @@
 		},
 		{
 			"AssetBundleName":"scenes_testbundlescene_samplescene.bundle",
-			"Length":105283,
-			"Hash":"c9756cb05676bd1a58a2771f527f4627",
+			"Length":105347,
+			"Hash":"2cfd76b92413f25b72e047dc4cca9138",
 			"IsScene":true,
 			"Group":"model1",
 			"Assets":[
@@ -310,8 +323,8 @@
 		},
 		{
 			"AssetBundleName":"common.bundle",
-			"Length":15611346,
-			"Hash":"ffdad651e105a3e279bfe66a6c1a43eb",
+			"Length":15611373,
+			"Hash":"d3ada857a8065379974c51e7b9074f33",
 			"Assets":[
 				{
 					"AssetName":"Assets/MDDSkillEngine/NPBehave-master/Runtime/Examples/Materials/NPBehave_Example_Enemy.mat",

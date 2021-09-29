@@ -31,7 +31,7 @@ namespace MDDSkillEngine
 
             entiity ent = GameObject.Find("GameObject").GetComponent<entiity>();
 
-            ((BuffBase)buf).OnInit(null,null);
+            ((BuffBase)buf).OnInit(null);
 
             return (BuffBase)buf;
         }

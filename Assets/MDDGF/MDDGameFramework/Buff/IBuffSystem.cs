@@ -8,7 +8,13 @@ namespace MDDGameFramework
     {
         void AddBuff(int bufID,object target,object from);
 
-        void RemoveBuff();
+        void RemoveBuff(int bufID);
+
+        bool HasBuff(int bufID);
+
+        void ClearBuff();
+
+
     }
 }
 

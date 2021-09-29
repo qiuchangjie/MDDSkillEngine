@@ -13,11 +13,7 @@ namespace MDDGameFramework
 
         public BuffDatabase buffData;
 
-        public object target;
-
-        public object from;
-
-        public abstract void OnInit(IBuffSystem buffSystem,BuffDatabase buffData);
+        public abstract void OnInit(IBuffSystem buffSystem);
 
         public abstract void OnExecute(IBuffSystem buffSytem,object target, object from);
 

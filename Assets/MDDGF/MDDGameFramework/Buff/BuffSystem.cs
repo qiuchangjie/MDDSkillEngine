@@ -7,14 +7,18 @@ namespace MDDGameFramework
 {
     internal sealed class BuffSystem : BuffSystemBase,IBuffSystem
     {
+        private object m_Owner;
         private readonly MDDGameFrameworkLinkedList<BuffBase> buffs;
-        private readonly List<BuffBase> m_TempBuffs;
         private LinkedListNode<BuffBase> currentNode;
+
+        public object Owner
+        {
+            get { return m_Owner; }
+        }
 
         public BuffSystem()
         {
             buffs = new MDDGameFrameworkLinkedList<BuffBase>();
-            m_TempBuffs = new List<BuffBase>();
         }
 
         public void AddBuff(int bufID,object target,object from)
@@ -43,21 +47,14 @@ namespace MDDGameFramework
 
         internal override void OnUpdate(float elapseSeconds, float realElapseSeconds)
         {
-            m_TempBuffs.Clear();
-
-            if (buffs.Count <= 0)
+            if (currentNode == null)
             {
                 return;
             }
 
-            foreach (var buff in buffs)
+            foreach (var v in buffs)
             {
-                m_TempBuffs.Add(buff);
-            }
-
-            foreach (var buff in m_TempBuffs)
-            {
-                buff.OnUpdate(this,elapseSeconds,realElapseSeconds);
+                v.OnUpdate(this,elapseSeconds,realElapseSeconds);
             }
 
         }
@@ -65,6 +62,25 @@ namespace MDDGameFramework
         internal override void Shutdown()
         {
             
+        }
+
+        public void RemoveBuff(int bufID)
+        {
+            currentNode.Value.Clear();
+
+            ReferencePool.EnableStrictCheck = true;
+
+            ReferencePool.Release(currentNode.Value);
+        }
+
+        public bool HasBuff(int bufID)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void ClearBuff()
+        {
+            throw new System.NotImplementedException();
         }
     }
 }

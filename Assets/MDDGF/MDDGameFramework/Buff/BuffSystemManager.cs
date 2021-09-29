@@ -8,6 +8,7 @@ namespace MDDGameFramework
     internal sealed class BuffSystemManager: MDDGameFrameworkModule,IBuffSystemManager
     {
         private readonly Dictionary<string, BuffSystem> m_BuffSystems;
+        private readonly List<BuffSystem> m_tempBuffSystems;
 
         public BuffSystemManager()
         {
@@ -20,15 +21,22 @@ namespace MDDGameFramework
         }
 
         internal override void Update(float elapseSeconds, float realElapseSeconds)
-        {
+        {          
             if (m_BuffSystems == null)
             {
                 return;
             }
 
-            foreach(var bufsystem in m_BuffSystems)
+            m_tempBuffSystems.Clear();
+
+            foreach (var v in m_BuffSystems)
             {
-                bufsystem.Value.OnUpdate(elapseSeconds,realElapseSeconds);
+                m_tempBuffSystems.Add(v.Value);
+            }
+
+            foreach (var bufsystem in m_tempBuffSystems)
+            {
+                bufsystem.OnUpdate(elapseSeconds,realElapseSeconds);
             }
         }
 

@@ -120,7 +120,7 @@ namespace Werewolf.StatusIndicators.Components {
 		/// </summary>
 		public static Vector3 Get3DMousePosition() {
 			RaycastHit hit;
-			if(Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, 300.0f, ~(1 << 11)))
+			if(Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, 300.0f))
 				return hit.point;
 			else
 				return Vector3.zero;

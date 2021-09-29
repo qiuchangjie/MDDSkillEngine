@@ -5,9 +5,13 @@ using UnityEngine;
 
 namespace MDDGameFramework
 {
-    public class BuffDatabase 
+    public abstract class BuffDatabase 
     {
-        
+        public object target;
+
+        public object from;
+
+        public int id;
     }
 }
 

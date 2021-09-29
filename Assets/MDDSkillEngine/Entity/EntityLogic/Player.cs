@@ -33,6 +33,8 @@ namespace MDDSkillEngine
 
         private bool isAttact;
 
+        private bool isQ;
+
         protected override void OnInit(object userData)
         {
             base.OnInit(userData);
@@ -65,7 +67,13 @@ namespace MDDSkillEngine
             {
                 isAttact = true;
                 //Instantiate(FirePrefab, FirePoint.position, FirePoint.rotation);
-            }           
+            }
+
+            if (Input.GetKeyDown(KeyCode.Q))
+            {
+                isQ = true;
+                //Instantiate(FirePrefab, FirePoint.position, FirePoint.rotation);
+            }
         }
 
         private void LateUpdate()
@@ -135,6 +143,13 @@ namespace MDDSkillEngine
                 }) ;
 
                 isAttact = false;
+            }
+
+            if (isQ)
+            {
+                GameEnter.HpBar.ShowHPBar(this,1,0);
+
+                isQ = false;
             }
         }
 

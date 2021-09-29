@@ -8,15 +8,15 @@ namespace MDDSkillEngine
 {
     public class Buff : BuffBase
     {
-        public override void OnInit(IBuffSystem buffSystem, BuffDatabase buffData)
+        public override void OnInit(IBuffSystem buffSystem)
         {
            
         }
 
         public override void OnExecute(IBuffSystem buffSytem, object target, object from)
         {
-            this.target = target;
-            this.from = from;
+            this.buffData.target = target;
+            this.buffData.from = from;
 
             ((GameObject)target).transform.position += new Vector3(0, 10, 0);
             ((GameObject)from).transform.position += new Vector3(0, 100, 0);
@@ -31,8 +31,7 @@ namespace MDDSkillEngine
 
         public override void Clear()
         {
-            target = null;
-            from = null;
+          
             Debug.LogError("clear");
         }
 
