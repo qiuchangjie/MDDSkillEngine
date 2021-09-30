@@ -84,5 +84,10 @@ namespace MDDGameFramework
         {
             throw new System.NotImplementedException();
         }
+
+        internal override void AddBuff(object target, object from)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

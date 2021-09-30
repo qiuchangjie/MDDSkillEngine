@@ -2,7 +2,7 @@
 using NPBehave;
 using MDDGameFramework;
 using MDDGameFramework.Runtime;
-
+using MDDSkillEngine;
 
 public class NPBehaveExampleSwarmEnemyAI : MonoBehaviour
 {

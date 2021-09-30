@@ -49,6 +49,11 @@ namespace MDDGameFramework
 
             return buff;
         }
+
+        public void AddBuff(string buffName, object target, object from)
+        {
+            throw new System.NotImplementedException();
+        }
     }       
 }
 

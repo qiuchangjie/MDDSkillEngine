@@ -2,6 +2,8 @@
 using NPBehave;
 using MDDGameFramework;
 using MDDGameFramework.Runtime;
+using MDDSkillEngine;
+
 public class NPBehaveExampleEnemyAI : MonoBehaviour
 {
     private Blackboard blackboard;

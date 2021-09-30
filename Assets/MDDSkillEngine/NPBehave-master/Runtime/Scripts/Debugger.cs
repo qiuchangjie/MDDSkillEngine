@@ -4,71 +4,75 @@ using MDDGameFramework;
 using MDDGameFramework.Runtime;
 
 
-
-public class Debugger : MonoBehaviour
+namespace MDDSkillEngine
 {
-    public Root BehaviorTree;
-
-    private static Blackboard _customGlobalStats = null;
-    public static Blackboard CustomGlobalStats
+    public class Debugger : MonoBehaviour
     {
-        get
+        public Root BehaviorTree;
+
+        private static Blackboard _customGlobalStats = null;
+        public static Blackboard CustomGlobalStats
         {
-            if (_customGlobalStats == null)
+            get
             {
-                _customGlobalStats = UnityContext.GetSharedBlackboard("_GlobalStats"); ;
+                if (_customGlobalStats == null)
+                {
+                    _customGlobalStats = UnityContext.GetSharedBlackboard("_GlobalStats"); ;
+                }
+                return _customGlobalStats;
             }
-            return _customGlobalStats;
         }
-    }
 
-    private Blackboard _customStats = null;
-    public Blackboard CustomStats
-    {
-        get
+        private Blackboard _customStats = null;
+        public Blackboard CustomStats
         {
-            if (_customStats == null)
+            get
             {
-                _customStats = new Blackboard(CustomGlobalStats, UnityContext.GetClock());
+                if (_customStats == null)
+                {
+                    _customStats = new Blackboard(CustomGlobalStats, UnityContext.GetClock());
+                }
+                return _customStats;
             }
-            return _customStats;
         }
-    }
 
-    public void DebugCounterInc(string key)
-    {
-        if (!CustomStats.Isset(key))
+        public void DebugCounterInc(string key)
         {
-            CustomStats[key] = 0;
+            if (!CustomStats.Isset(key))
+            {
+                CustomStats[key] = 0;
+            }
+            CustomStats[key] = CustomStats.Get<int>(key) + 1;
         }
-        CustomStats[key] = CustomStats.Get<int>(key) + 1;
-    }
 
-    public void DebugCounterDec(string key)
-    {
-        if (!CustomStats.Isset(key))
+        public void DebugCounterDec(string key)
         {
-            CustomStats[key] = 0;
+            if (!CustomStats.Isset(key))
+            {
+                CustomStats[key] = 0;
+            }
+            CustomStats[key] = CustomStats.Get<int>(key) - 1;
         }
-        CustomStats[key] = CustomStats.Get<int>(key) - 1;
-    }
 
-    public static void GlobalDebugCounterInc(string key)
-    {
-        if (!CustomGlobalStats.Isset(key))
+        public static void GlobalDebugCounterInc(string key)
         {
-            CustomGlobalStats[key] = 0;
+            if (!CustomGlobalStats.Isset(key))
+            {
+                CustomGlobalStats[key] = 0;
+            }
+            CustomGlobalStats[key] = CustomGlobalStats.Get<int>(key) + 1;
         }
-        CustomGlobalStats[key] = CustomGlobalStats.Get<int>(key) + 1;
-    }
 
-    public static void GlobalDebugCounterDec(string key)
-    {
-        if (!CustomGlobalStats.Isset(key))
+        public static void GlobalDebugCounterDec(string key)
         {
-            CustomGlobalStats[key] = 0;
+            if (!CustomGlobalStats.Isset(key))
+            {
+                CustomGlobalStats[key] = 0;
+            }
+            CustomGlobalStats[key] = CustomGlobalStats.Get<int>(key) - 1;
         }
-        CustomGlobalStats[key] = CustomGlobalStats.Get<int>(key) - 1;
+
     }
 
 }
+

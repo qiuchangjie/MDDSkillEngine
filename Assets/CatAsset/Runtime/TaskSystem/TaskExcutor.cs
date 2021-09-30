@@ -37,6 +37,18 @@ namespace CatAsset
             return taskDict.ContainsKey(taskName);
         }
 
+        public float GetTaskPrograss(string taskName)
+        {
+            if (!taskDict.ContainsKey(taskName))
+            {
+                Debug.LogError("taskName为空");
+
+                return 0;
+            }
+                
+            return taskDict[taskName].Progress;
+        }
+
         /// <summary>
         /// 是否存在指定任务
         /// </summary>

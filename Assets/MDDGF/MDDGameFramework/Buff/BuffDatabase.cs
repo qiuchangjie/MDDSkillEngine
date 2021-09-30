@@ -12,6 +12,10 @@ namespace MDDGameFramework
         public object from;
 
         public int id;
+
+        public float duration;
+
+        public int level;
     }
 }
 

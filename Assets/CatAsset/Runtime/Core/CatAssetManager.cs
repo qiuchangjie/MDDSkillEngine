@@ -64,7 +64,7 @@ namespace CatAsset
             get;
             set;
         }
-
+        
         /// <summary>
         /// 编辑器资源模式下的最大加载延时
         /// </summary>
@@ -73,6 +73,17 @@ namespace CatAsset
             get;
             set;
         }
+
+        /// <summary>
+        /// 获取资源加载进度
+        /// </summary>
+        /// <param name="taskName">资源命</param>
+        /// <returns>资源加载进度包括场景</returns>
+        public static float GetTaskProgress(string taskName)
+        {
+            return taskExcutor.GetTaskPrograss(taskName);
+        }
+
 
         /// <summary>
         /// 设置单帧最大加载数量
