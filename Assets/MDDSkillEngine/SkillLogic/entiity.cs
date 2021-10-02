@@ -116,9 +116,11 @@ namespace MDDSkillEngine
 
             if (Input.GetKeyDown(KeyCode.G))
             {
-                fsm = GameEnter.Fsm.CreateFsm<entiity>(this, new GoAround(), new GoOn());
+                //fsm = GameEnter.Fsm.CreateFsm<entiity>(this, new GoAround(), new GoOn());
 
-                fsm.Start<GoAround>();
+                //fsm.Start<GoAround>();
+
+                BuffFactory.AcquireBuff("Buff");
             }
 
             if (Input.GetKeyDown(KeyCode.H))

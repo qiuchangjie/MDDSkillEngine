@@ -6,7 +6,7 @@ namespace MDDGameFramework
 {
     public interface IBuffSystem
     {
-        void AddBuff(int bufID,object target,object from);
+        //void AddBuff(int bufID,object target,object from);
 
         void RemoveBuff(int bufID);
 

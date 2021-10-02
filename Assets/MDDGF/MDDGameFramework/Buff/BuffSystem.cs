@@ -9,8 +9,10 @@ namespace MDDGameFramework
     {
         private object m_Owner;
         private readonly MDDGameFrameworkLinkedList<BuffBase> buffs;
+        private readonly List<BuffBase> m_TempBuffs;
         private LinkedListNode<BuffBase> currentNode;
 
+      
         public object Owner
         {
             get { return m_Owner; }
@@ -21,8 +23,9 @@ namespace MDDGameFramework
             buffs = new MDDGameFrameworkLinkedList<BuffBase>();
             m_Owner = null;
             currentNode = null;
+            m_TempBuffs = new List<BuffBase>();
         }
-
+      
         public void AddBuff(int bufID,object target,object from)
         {
             if (buffs.Count == 0)
@@ -54,7 +57,14 @@ namespace MDDGameFramework
                 return;
             }
 
+            m_TempBuffs.Clear();
+
             foreach (var v in buffs)
+            {
+                m_TempBuffs.Add(v);
+            }
+
+            foreach (var v in m_TempBuffs)
             {
                 v.OnUpdate(this,elapseSeconds,realElapseSeconds);
             }
@@ -85,8 +95,20 @@ namespace MDDGameFramework
             throw new System.NotImplementedException();
         }
 
-        internal override void AddBuff(object target, object from)
+        internal override void AddBuff(string buffName,object target, object from)
         {
+            if (buffs.Count == 0)
+            {
+                currentNode = buffs.AddFirst(BuffFactory.AcquireBuff("Buff", 1));
+                currentNode.Value.OnExecute(this, target, from);
+                //currentNode.Value.OnInit()
+            }
+            else
+            {
+                currentNode = buffs.AddAfter(currentNode, BuffFactory.AcquireBuff("Buff", 1));
+                currentNode.Value.OnExecute(this, target, from);
+            }
+
             throw new System.NotImplementedException();
         }
     }

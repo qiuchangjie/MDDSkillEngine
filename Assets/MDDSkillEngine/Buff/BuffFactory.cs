@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using MDDGameFramework;
 using System.Reflection;
+using System;
 
 namespace MDDSkillEngine
 {
@@ -29,11 +30,15 @@ namespace MDDSkillEngine
         {
             object buf = SkillAssembly.CreateInstance(SkillAssembly.GetName().Name + "." + bufName);
 
-            entiity ent = GameObject.Find("GameObject").GetComponent<entiity>();
+            Type buffType = Utility.Assembly.GetType(Utility.Text.Format("MDDSkillEngine.{0}", bufName));
+
+            ReferencePool.Acquire(buffType);
+
+            //entiity ent = GameObject.Find("GameObject").GetComponent<entiity>();
 
             ((BuffBase)buf).OnInit(null);
 
-            return (BuffBase)buf;
+            return (BuffBase)ReferencePool.Acquire(buffType);
         }
     }
 }

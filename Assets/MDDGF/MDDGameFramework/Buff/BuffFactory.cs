@@ -28,9 +28,11 @@ namespace MDDGameFramework
 
         public static BuffBase AcquireBuff(string bufName, int bufID)
         {
-            Type type = SkillAssembly.GetType(SkillAssembly.GetName().Name + "." + bufName);
+            //Type type = SkillAssembly.GetType(SkillAssembly.GetName().Name + "." + bufName);
 
-            IReference i = ReferencePool.Acquire(type);
+            Type buffType = Utility.Assembly.GetType("buff");
+
+            IReference i = ReferencePool.Acquire(buffType);
 
             //((BuffBase)buf).OnInit(null,null,testm);
 
