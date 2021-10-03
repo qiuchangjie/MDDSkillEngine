@@ -66,6 +66,12 @@ namespace MDDSkillEngine
             private set;
         }
 
+        public static TextBarComponent TextBar
+        {
+            get;
+            private set;
+        }
+
 
         private void InitMDDComponent()
         {
@@ -78,6 +84,7 @@ namespace MDDSkillEngine
             Scene = MDDGameEntry.GetComponent<SceneComponent>();
             UI = MDDGameEntry.GetComponent<UIComponent>();
             HpBar = MDDGameEntry.GetComponent<HPBarComponent>();
+            TextBar = MDDGameEntry.GetComponent<TextBarComponent>();
         }
     }
 }

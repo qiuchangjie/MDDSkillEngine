@@ -125,6 +125,8 @@ namespace MDDSkillEngine
 
             Entity e = other.gameObject.GetComponent<Entity>();
 
+            GameEnter.TextBar.ShowTextBar(e,999);
+
             if (e is Enemy)
             {
                 shared_Blackboard["isTrigger"] = e;
