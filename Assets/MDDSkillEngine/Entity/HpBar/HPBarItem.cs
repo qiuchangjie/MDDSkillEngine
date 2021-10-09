@@ -23,12 +23,28 @@ namespace MDDSkillEngine
         private Entity m_Owner = null;
         private int m_OwnerId = 0;
 
+        private Coroutine hpcoroutine = null;
+
+        private float toHPRatio;
+
         public Entity Owner
         {
             get
             {
                 return m_Owner;
             }
+        }
+
+        public void HpChange(float toHPRotio)
+        {
+            if (hpcoroutine != null)
+            {
+                StopCoroutine(hpcoroutine);
+            }
+
+            this.toHPRatio = toHPRotio;
+
+            hpcoroutine = StartCoroutine(HPBarCo(this.toHPRatio, AnimationSeconds));
         }
 
         public void Init(Entity owner, Canvas parentCanvas, float fromHPRatio, float toHPRatio)
@@ -42,9 +58,15 @@ namespace MDDSkillEngine
             m_ParentCanvas = parentCanvas;
 
             gameObject.SetActive(true);
-            StopAllCoroutines();
+
+            if (hpcoroutine != null)
+            {
+                StopCoroutine(hpcoroutine);
+            }
+            //StopAllCoroutines();
 
             m_CachedCanvasGroup.alpha = 1f;
+
             if (m_Owner != owner || m_OwnerId != owner.Id)
             {
                 m_HPBar.value = fromHPRatio;
@@ -54,7 +76,9 @@ namespace MDDSkillEngine
 
             Refresh();
 
-            StartCoroutine(HPBarCo(toHPRatio, AnimationSeconds, KeepSeconds, FadeOutSeconds));
+            this.toHPRatio = toHPRatio;
+
+            hpcoroutine = StartCoroutine(HPBarCo(this.toHPRatio, AnimationSeconds));
         }
 
         public bool Refresh()
@@ -107,11 +131,11 @@ namespace MDDSkillEngine
             }
         }
 
-        private IEnumerator HPBarCo(float value, float animationDuration, float keepDuration, float fadeOutDuration)
+        private IEnumerator HPBarCo(float value, float animationDuration)
         {
             yield return m_HPBar.SmoothValue(value, animationDuration);
-            yield return new WaitForSeconds(keepDuration);
-            yield return m_CachedCanvasGroup.FadeToAlpha(0f, fadeOutDuration);
+            //yield return new WaitForSeconds(keepDuration);
+            //yield return m_CachedCanvasGroup.FadeToAlpha(0f, fadeOutDuration);
         }
     }
 }

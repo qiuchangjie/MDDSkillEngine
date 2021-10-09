@@ -50,6 +50,26 @@ namespace MDDSkillEngine
 
                 HideHPBar(hpBarItem);
             }
+
+        }
+
+        public void HPBarChange(Entity entity, float toHPRatio)
+        {
+            if (entity == null)
+            {
+                Log.Warning("Entity is invalid.");
+                return;
+            }
+
+            HPBarItem hpBarItem = GetActiveHPBarItem(entity);
+
+            if (hpBarItem == null)
+            {
+                Log.Info("血条未实例化，所属对象：{0}", entity.Name);
+                return;
+            }
+
+            hpBarItem.HpChange(toHPRatio);
         }
 
         public void ShowHPBar(Entity entity, float fromHPRatio, float toHPRatio)

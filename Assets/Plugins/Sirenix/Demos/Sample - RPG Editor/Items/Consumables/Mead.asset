@@ -22,7 +22,7 @@ MonoBehaviour:
   Prefab: {fileID: 123674, guid: 122a9c42bc462ff40ab673d26c30e0e7, type: 2}
   ItemStackSize: 20
   ItemRarity: 0.2
-  Cooldown: 0.44
+  Cooldown: -1.53
   ConsumeOverTime: 1
   Duration: 0.7
   Modifiers:
@@ -30,7 +30,7 @@ MonoBehaviour:
     - Type: 2
       Value: -9
     - Type: 4
-      Value: -48
+      Value: 0
     - Type: 0
       Value: -9
     - Type: 1

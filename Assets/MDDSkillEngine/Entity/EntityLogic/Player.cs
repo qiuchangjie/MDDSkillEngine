@@ -106,7 +106,7 @@ namespace MDDSkillEngine
             if (isClickRight)
             {
                 RaycastHit hit;
-                if (Physics.Raycast(main.ScreenPointToRay(Input.mousePosition), out hit, Mathf.Infinity, 1))
+                if (Physics.Raycast(main.ScreenPointToRay(Input.mousePosition), out hit, Mathf.Infinity, 1<<0))
                 {
                     target.position = hit.point;
 
@@ -141,6 +141,8 @@ namespace MDDSkillEngine
                     Position = fireTransform.position,
                     Rotation = fireTransform.rotation
                 }) ;
+
+                GameEnter.HpBar.ShowHPBar(this,0.1f,0.8f);
 
                 isAttact = false;
             }

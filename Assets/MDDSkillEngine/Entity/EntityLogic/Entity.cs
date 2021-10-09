@@ -1,6 +1,7 @@
 ﻿using MDDGameFramework;
 using UnityEngine;
 using MDDGameFramework.Runtime;
+using Animancer;
 
 namespace MDDSkillEngine
 {
@@ -23,10 +24,17 @@ namespace MDDSkillEngine
             private set;
         }
 
+        public AnimancerComponent Anim
+        {
+            get;
+            private set;
+        }
+
         protected override void OnInit(object userData)
         {
             base.OnInit(userData);
             CachedAnimator = GetComponent<Animator>();
+            Anim = GetComponent<AnimancerComponent>();
         }
 
 

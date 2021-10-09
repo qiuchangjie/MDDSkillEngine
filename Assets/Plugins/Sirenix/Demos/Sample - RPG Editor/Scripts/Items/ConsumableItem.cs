@@ -1,11 +1,15 @@
 #if UNITY_EDITOR
+using OdinSerializer;
+using UnityEngine;
+
 namespace Sirenix.OdinInspector.Demos.RPGEditor
 {
     public class ConsumableItem : Item
     {
         [SuffixLabel("seconds ", true)]
         [BoxGroup(STATS_BOX_GROUP)]
-        public float Cooldown;
+        [SerializeField]
+        private float Cooldown;
 
         [HorizontalGroup(STATS_BOX_GROUP + "/Dur")]
         public bool ConsumeOverTime;
