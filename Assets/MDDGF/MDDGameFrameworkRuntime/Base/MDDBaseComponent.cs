@@ -24,6 +24,9 @@ namespace MDDGameFramework.Runtime
         [SerializeField]
         private string m_JsonHelperTypeName = "UnityGameFramework.Runtime.DefaultJsonHelper";
 
+        [SerializeField]
+        private string m_BuffFactoryTypeName = "MDDSkillEngine.BuffFactoryHelper";
+
         protected override void Awake()
         {
 
@@ -31,6 +34,7 @@ namespace MDDGameFramework.Runtime
 
             InitTextHelper();
             InitLogHelper();
+            InitBuffFactoryHelper();
         }
 
 
@@ -83,7 +87,30 @@ namespace MDDGameFramework.Runtime
                 throw new MDDGameFrameworkException(Utility.Text.Format("Can not create log helper instance '{0}'.", m_LogHelperTypeName));
             }
 
-            MDDGameFrameworkLog.SetLogHelper(logHelper);
+            MDDGameFrameworkLog.SetLogHelper(logHelper);        
+        }
+
+
+        private void InitBuffFactoryHelper()
+        {
+            if (string.IsNullOrEmpty(m_BuffFactoryTypeName))
+            {
+                return;
+            }
+
+            Type buffFactoryHelperType = Utility.Assembly.GetType(m_BuffFactoryTypeName);
+            if (buffFactoryHelperType == null)
+            {
+                throw new MDDGameFrameworkException(Utility.Text.Format("Can not find log helper type '{0}'.", m_BuffFactoryTypeName));
+            }
+
+            IBuffFactory buffFactoryHelper = (IBuffFactory)Activator.CreateInstance(buffFactoryHelperType);
+            if (buffFactoryHelper == null)
+            {
+                throw new MDDGameFrameworkException(Utility.Text.Format("Can not create log helper instance '{0}'.", m_BuffFactoryTypeName));
+            }
+
+            BuffFactory.SetBuffFactoryHelper(buffFactoryHelper);
         }
     }
 }

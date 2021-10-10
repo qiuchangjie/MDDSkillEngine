@@ -26,7 +26,7 @@ namespace MDDSkillEngine
         }
 
 
-        public static BuffBase AcquireBuff(string bufName)
+        public static BuffBase AcquireBuff(string bufName,object Target,object From)
         {
             object buf = SkillAssembly.CreateInstance(SkillAssembly.GetName().Name + "." + bufName);
 
@@ -35,8 +35,6 @@ namespace MDDSkillEngine
             ReferencePool.Acquire(buffType);
 
             //entiity ent = GameObject.Find("GameObject").GetComponent<entiity>();
-
-            ((BuffBase)buf).OnInit(null);
 
             return (BuffBase)ReferencePool.Acquire(buffType);
         }

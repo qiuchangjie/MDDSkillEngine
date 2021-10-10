@@ -36,7 +36,7 @@ namespace MDDSkillEngine
 
         private void Start()
         {
-            buffSystem = GameEnter.Buff.CreatBuffSystem();
+            buffSystem = GameEnter.Buff.CreatBuffSystem("123",this);
             entiity entiity = GameObject.Find("GameObject").GetComponent<entiity>();
             //buffSystem.AddBuff(1,entiity.obj[0],entiity.obj[1]);
 

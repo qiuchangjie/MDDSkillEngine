@@ -45,6 +45,10 @@ namespace MDDSkillEngine
             pathFindingTest = GetComponent<PathFindingTest>();
             ai = GetComponent<AIPath>();
 
+            GameEnter.Buff.CreatBuffSystem(this.Entity.Id.ToString(),this);
+
+            GameEnter.HpBar.ShowHPBar(this, 1, 1);
+
             fireTransform = transform.Find("FirePoint");
         }
 
@@ -149,6 +153,8 @@ namespace MDDSkillEngine
 
             if (isQ)
             {
+                GameEnter.Buff.AddBuff(this.Id.ToString(),"Buff",this,this);
+
                 GameEnter.HpBar.ShowHPBar(this,1,0);
 
                 isQ = false;

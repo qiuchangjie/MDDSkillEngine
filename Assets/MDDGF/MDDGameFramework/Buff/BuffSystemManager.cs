@@ -41,19 +41,28 @@ namespace MDDGameFramework
             }
         }
 
-        public IBuffSystem CreatBuffSystem()
+        public IBuffSystem CreatBuffSystem(string name, object owner)
         {
-            BuffSystem buff = new BuffSystem();
+            BuffSystem buffSystem = BuffSystem.Create(owner);
 
-            m_BuffSystems.Add("1",buff);
+            m_BuffSystems.Add(name,buffSystem);
 
-            return buff;
+            return buffSystem;
         }
 
-        public void AddBuff(string buffName, object target, object from)
+        public void AddBuff(string buffSystemName,string buffName, object target, object from)
         {
-            throw new System.NotImplementedException();
+            if (m_BuffSystems.TryGetValue(buffSystemName, out BuffSystem buffSystem))
+            {
+                buffSystem.AddBuff(buffName,from);
+            }
+            else
+            {
+                throw new MDDGameFrameworkException(Utility.Text.Format("m_BuffSystems is null:{0}", buffSystemName));
+            }
         }
+
+      
     }       
 }
 

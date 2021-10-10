@@ -120,7 +120,7 @@ namespace MDDSkillEngine
 
                 //fsm.Start<GoAround>();
 
-                BuffFactory.AcquireBuff("Buff");
+                //BuffFactory.AcquireBuff("Buff");
             }
 
             if (Input.GetKeyDown(KeyCode.H))

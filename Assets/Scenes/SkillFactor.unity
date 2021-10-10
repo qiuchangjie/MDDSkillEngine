@@ -132,7 +132,7 @@ GameObject:
   - component: {fileID: 37575883}
   - component: {fileID: 37575882}
   - component: {fileID: 37575881}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -312,7 +312,7 @@ GameObject:
   - component: {fileID: 127705466}
   - component: {fileID: 127705468}
   - component: {fileID: 127705467}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: HpBarInstance
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -802,7 +802,7 @@ MonoBehaviour:
   m_ShowCameraFrustum: 1
   m_IgnoreTimeScale: 0
   m_WorldUpOverride: {fileID: 0}
-  m_UpdateMethod: 2
+  m_UpdateMethod: 1
   m_BlendUpdateMethod: 1
   m_DefaultBlend:
     m_Style: 1
@@ -1092,6 +1092,7 @@ MonoBehaviour:
   m_LogHelperTypeName: MDDGameFramework.Runtime.DefaultLogHelper
   m_CompressionHelperTypeName: MDDGameFramework.Runtime.DefaultCompressionHelper
   m_JsonHelperTypeName: MDDGameFramework.Runtime.DefaultJsonHelper
+  m_BuffFactoryTypeName: MDDSkillEngine.BuffFactoryHelper
 --- !u!1 &574173321 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 167794, guid: e8d038476a8dad643b8e87791868999b,
@@ -2892,7 +2893,7 @@ GameObject:
   - component: {fileID: 1892955030}
   - component: {fileID: 1892955032}
   - component: {fileID: 1892955031}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: HpBarInstance
   m_TagString: Untagged
   m_Icon: {fileID: 0}

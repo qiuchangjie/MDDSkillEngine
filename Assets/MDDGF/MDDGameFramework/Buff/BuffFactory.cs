@@ -7,36 +7,19 @@ using UnityEngine;
 
 namespace MDDGameFramework
 {
-    public class BuffFactory
+    public static class BuffFactory
     {
-        private static Assembly skillAssembly;
-        public static Assembly SkillAssembly
-        {
-            get
-            {
-                if (skillAssembly == null)
-                {
-                    skillAssembly = Assembly.Load("MDDSkillEngine");
+        public static IBuffFactory s_BuffFactoryHelper;
 
-                    return skillAssembly;
-                }
-                else
-                    return skillAssembly;
-            }
+        public static void SetBuffFactoryHelper(IBuffFactory buffFactoryHelper)
+        {
+            s_BuffFactoryHelper = buffFactoryHelper;
         }
 
-
-        public static BuffBase AcquireBuff(string bufName, int bufID)
+        public static BuffBase AcquireBuff(string bufName,object Target, object From)
         {
-            //Type type = SkillAssembly.GetType(SkillAssembly.GetName().Name + "." + bufName);
-
-            Type buffType = Utility.Assembly.GetType("buff");
-
-            IReference i = ReferencePool.Acquire(buffType);
-
-            //((BuffBase)buf).OnInit(null,null,testm);
-
-            return (BuffBase)i;
+            return s_BuffFactoryHelper.AcquireBuff(bufName, Target, From);
         }
+       
     }
 }

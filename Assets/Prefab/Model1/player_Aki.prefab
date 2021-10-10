@@ -8003,6 +8003,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5dddde5c4a9066747a548536dfabf9ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isPath: 0
   target: {fileID: 0}
   animancer: {fileID: 5144886476383702367}
   Idle:
@@ -8030,6 +8031,15 @@ MonoBehaviour:
       _NormalizedTimes: []
       _Callbacks: []
     _Clip: {fileID: 7400000, guid: 96b2e3e9258a79b43bea27d3ba87a194, type: 3}
+    _Speed: 1
+    _NormalizedStartTime: NaN
+  Died:
+    _FadeDuration: 0.25
+    _Events:
+      _Names: []
+      _NormalizedTimes: []
+      _Callbacks: []
+    _Clip: {fileID: 0}
     _Speed: 1
     _NormalizedStartTime: NaN
 --- !u!1 &5144886477025343670

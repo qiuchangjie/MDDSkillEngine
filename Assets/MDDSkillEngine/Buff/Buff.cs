@@ -1,6 +1,5 @@
 ﻿using MDDGameFramework;
-using System.Collections;
-using System.Collections.Generic;
+using MDDGameFramework.Runtime;
 using UnityEngine;
 
 
@@ -8,31 +7,41 @@ namespace MDDSkillEngine
 {
     public class Buff : BuffBase
     {
-        public override void OnInit(IBuffSystem buffSystem)
+        Entity entity;
+
+        public override void OnInit(IBuffSystem buffSystem,object target,object from, BuffDatabase buffDatabase = null)
         {
-           
+            Target = target;
+            From = from;
+
+
         }
 
-        public override void OnExecute(IBuffSystem buffSytem, object target, object from)
+        public override void OnExecute(IBuffSystem buffSytem)
         {
-            this.buffData.target = target;
-            this.buffData.from = from;
-
-            ((GameObject)target).transform.position += new Vector3(0, 10, 0);
-            ((GameObject)from).transform.position += new Vector3(0, 100, 0);
+            entity = Target as Entity;           
         }
 
         public override void OnUpdate(IBuffSystem buffSystem, float elapseSeconds, float realElapseSeconds)
         {
             base.OnUpdate(buffSystem, elapseSeconds, realElapseSeconds);
-            Debug.LogError("buff系统开始运转啦");
+
+            if (entity != null)
+            {
+                entity.CachedTransform.Translate(Vector3.one * 10 * elapseSeconds, Space.World);
+            }
+            else
+            {
+                Log.Error("转化失败");
+            }
+
+            Log.Error("buff系统开始运转啦");
         }
 
 
         public override void Clear()
         {
-          
-            Debug.LogError("clear");
+            buffData = null;
         }
 
         public override void OnFininsh(IBuffSystem buffSystem)
