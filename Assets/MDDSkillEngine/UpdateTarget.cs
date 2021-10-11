@@ -78,9 +78,9 @@ namespace MDDSkillEngine
 
                 GameEnter.Entity.ShowPlayer(new BulletData(GameEnter.Entity.GenerateSerialId(), 50000, 50000, CampType.Player, 50000, 1)
                 {
-                    name = "player_Aki",
+                    name = "player_Aki",                   
                     Position = new Vector3(10,0,0)
-
+                    
                 });
 
                 GameEnter.Entity.ShowEnemy(new BulletData(GameEnter.Entity.GenerateSerialId(), 50000, 50000, CampType.Player, 50000, 1)

@@ -1,6 +1,6 @@
 {
 	"GameVersion":"0.1",
-	"ManifestVersion":32,
+	"ManifestVersion":33,
 	"AssetBundles":[
 		{
 			"AssetBundleName":"mddskillengine_prefabs_hpbaritem.bundle",
@@ -63,9 +63,22 @@
 			]
 		},
 		{
+			"AssetBundleName":"mddskillengine_prefabs_textbar.bundle",
+			"Length":3985,
+			"Hash":"c2622d2a288f02100462007a57281884",
+			"Group":"model1",
+			"Assets":[
+				{
+					"AssetName":"Assets/MDDSkillEngine/Prefabs/TextBar.prefab",
+					"Dependencies":[
+					]
+				}
+			]
+		},
+		{
 			"AssetBundleName":"prefab_model1_akiiii.bundle",
-			"Length":353767,
-			"Hash":"ff4192830b2217f672fa939053882ef3",
+			"Length":350916,
+			"Hash":"d2678443c46cfc430b27f8c1bc13890d",
 			"Group":"model1",
 			"Assets":[
 				{
@@ -252,8 +265,8 @@
 		},
 		{
 			"AssetBundleName":"prefab_model1_player_aki.bundle",
-			"Length":27627,
-			"Hash":"3f53575c69f99ebff5839464f5077af7",
+			"Length":27664,
+			"Hash":"ce02fbc9f879a73b6afc14e733a8db98",
 			"Group":"model1",
 			"Assets":[
 				{
@@ -282,7 +295,7 @@
 		{
 			"AssetBundleName":"scenes_testbundlescene_launchera.bundle",
 			"Length":40877,
-			"Hash":"1dc06b08e29eaca04b18f31db45f5bcc",
+			"Hash":"ce76740bbd524d3c0d9c1b15217a6652",
 			"IsScene":true,
 			"Group":"model1",
 			"Assets":[
@@ -300,8 +313,8 @@
 						"Assets/GirlModel/Suriyun/Aki/Materials/Aki/Dress/Dress.mat",
 						"Assets/GirlModel/Suriyun/Aki/Materials/Aki/Base_character/Lash.mat",
 						"Assets/GirlModel/Suriyun/Aki/FBX/Aki.fbx",
+						"Assets/MDDSkillEngine/NPBehave-master/Runtime/Examples/Materials/NPBehave_Example_Enemy.mat",
 						"Assets/GirlModel/Suriyun/Aki/Materials/Aki/Dress/Katana_Aki.mat",
-						"Assets/MDDSkillEngine/Prefabs/SimpleEnemy.prefab",
 						"Assets/GirlModel/Suriyun/Aki/Materials/Aki/Base_character/eye_R_Aki.mat"
 					]
 				}
@@ -324,7 +337,7 @@
 		{
 			"AssetBundleName":"common.bundle",
 			"Length":15611373,
-			"Hash":"d3ada857a8065379974c51e7b9074f33",
+			"Hash":"ad2fe78d103164383938478167daed4a",
 			"Assets":[
 				{
 					"AssetName":"Assets/MDDSkillEngine/NPBehave-master/Runtime/Examples/Materials/NPBehave_Example_Enemy.mat",
@@ -554,11 +567,6 @@
 					]
 				},
 				{
-					"AssetName":"Packages/com.unity.cinemachine/Editor/EditorResources/cm_logo_sm.png",
-					"Dependencies":[
-					]
-				},
-				{
 					"AssetName":"Assets/GirlModel/Suriyun/Aki/Materials/Aki/Dress/Katana_Aki.mat",
 					"Dependencies":[
 						"Assets/GirlModel/Suriyun/UnityChanShader/Shader/Unitychan_chara_fuku.shader",
@@ -621,6 +629,11 @@
 					"Dependencies":[
 						"Assets/Hovl Studio/Toon Projectiles 2/Textures/Glow1.png",
 						"Assets/Hovl Studio/Toon Projectiles 2/Shaders/Add_CenterGlow.shader"
+					]
+				},
+				{
+					"AssetName":"Packages/com.unity.cinemachine/Editor/EditorResources/cm_logo_sm.png",
+					"Dependencies":[
 					]
 				}
 			]

@@ -20,7 +20,7 @@ namespace MDDSkillEngine
         public Transform target;
 
         public AnimancerComponent animancer;
-       
+
 
         [SerializeField] private ClipState.Transition Idle;
 
@@ -30,7 +30,7 @@ namespace MDDSkillEngine
 
         [SerializeField] private ClipState.Transition Died;
 
-        [DictionaryDrawerSettings()]
+        [DictionaryDrawerSettings(KeyLabel ="动画名",ValueLabel ="AnimationClip")]
         [ShowInInspector]
         [InfoBox("为了序列化字典，我们需要做的就是从SerializedMonoBehaviour继承类")]
         private Dictionary<string, ClipState.Transition> animDic = new Dictionary<string, ClipState.Transition>();

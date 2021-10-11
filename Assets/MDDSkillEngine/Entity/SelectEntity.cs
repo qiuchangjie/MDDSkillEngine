@@ -10,6 +10,17 @@ namespace MDDSkillEngine
     {
         public static List<Entity> entities=new List<Entity>();
         public static Entity selectEntity;
+        public static Entity Player;
+
+        public static void InitPlayer(Entity entity)
+        {
+            if (entity != null)
+            {
+                Player = entity;
+            }
+        }
+
+        
 
         public static void InitSelectEntity(Entity entity)
         {

@@ -3,6 +3,7 @@ using UnityEngine;
 using System.Collections;
 using System.Linq;
 using Werewolf.StatusIndicators.Services;
+using MDDSkillEngine;
 
 namespace Werewolf.StatusIndicators.Components {
 	public abstract class Splat : MonoBehaviour {
@@ -40,6 +41,8 @@ namespace Werewolf.StatusIndicators.Components {
 		[SerializeField]
 		protected float width;
 
+		protected Transform owner_Transform = null;
+
 		// Properties
 
 		/// <summary>
@@ -57,6 +60,8 @@ namespace Werewolf.StatusIndicators.Components {
 				OnValueChanged();
 			}
 		}
+
+
 
 		/// <summary>
 		/// Size of the Splat in Length, or Length and Width depending on Scaling Type
@@ -89,10 +94,12 @@ namespace Werewolf.StatusIndicators.Components {
 				p.material = new Material(p.material);
 
 			// Reset Position
-			transform.localPosition = Vector3.zero;
+			// transform.localPosition = Vector3.zero;
 		}
 
 		public virtual void Update() {
+			//if(owner_Transform!=null)
+			//transform.localPosition = owner_Transform.position;
 		}
 
 		/// <summary>
@@ -107,6 +114,10 @@ namespace Werewolf.StatusIndicators.Components {
 		/// Procedure when splat is set active
 		/// </summary>
 		public virtual void OnShow() {
+			if(SelectEntity.Player!=null)
+            {
+				owner_Transform = SelectEntity.Player.CachedTransform;
+			}
 		}
 
 		/// <summary>

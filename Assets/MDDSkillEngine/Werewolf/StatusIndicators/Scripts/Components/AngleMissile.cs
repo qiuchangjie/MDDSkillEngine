@@ -1,4 +1,4 @@
-
+using MDDSkillEngine;
 using UnityEngine;
 using System.Linq;
 using Werewolf.StatusIndicators.Services;
@@ -14,8 +14,19 @@ namespace Werewolf.StatusIndicators.Components {
 		// Methods
 
 		public override void Update() {
+
+			base.Update();
+
 			if(Manager != null) {
-				Vector3 v = FlattenVector(Get3DMousePosition()) - Manager.transform.position;
+
+                if (SelectEntity.Player != null)
+                {
+                    Manager.transform.position = SelectEntity.Player.CachedTransform.position;
+                    transform.position = SelectEntity.Player.CachedTransform.position;
+                }
+
+
+                Vector3 v = FlattenVector(Get3DMousePosition()) - Manager.transform.position;
 				if(v != Vector3.zero) {
 					Manager.transform.rotation = Quaternion.LookRotation(v);
 				}

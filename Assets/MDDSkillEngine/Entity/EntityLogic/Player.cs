@@ -53,6 +53,13 @@ namespace MDDSkillEngine
         }
 
 
+        protected override void OnShow(object userData)
+        {
+            base.OnShow(userData);
+
+            SelectEntity.InitPlayer(this);
+        }
+
         protected override void OnUpdate(float elapseSeconds, float realElapseSeconds)
         {
             base.OnUpdate(elapseSeconds, realElapseSeconds);
@@ -153,7 +160,7 @@ namespace MDDSkillEngine
 
             if (isQ)
             {
-                GameEnter.Buff.AddBuff(this.Id.ToString(),"Buff",this,this);
+                //GameEnter.Buff.AddBuff(this.Id.ToString(),"Buff",this,this);
 
                 GameEnter.HpBar.ShowHPBar(this,1,0);
 

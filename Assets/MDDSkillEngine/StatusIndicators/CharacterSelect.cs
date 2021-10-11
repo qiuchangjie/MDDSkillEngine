@@ -24,7 +24,8 @@ namespace MDDSkillEngine
             }
             if (Input.GetKeyDown(KeyCode.Q))
             {
-                Splats.SelectSpellIndicator("Cone Basic");
+               
+                Splats.SelectSpellIndicator("Angle Missile Basic");
             }
             if (Input.GetKeyDown(KeyCode.W))
             {
