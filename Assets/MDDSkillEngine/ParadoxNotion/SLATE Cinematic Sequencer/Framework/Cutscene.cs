@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using MDDGameFramework.Runtime;
 
 namespace Slate
 {
@@ -549,18 +550,21 @@ namespace Slate
             //Sample started
             if ( currentTime > 0 && currentTime < length && ( previousTime == 0 || previousTime == length ) ) {
                 if ( !Application.isPlaying || isActive ) {
+                    Log.Error("Sample pointers");
                     OnSampleStarted();
                 }
             }
 
             //Sample pointers
             if ( timePointers != null ) {
+                Log.Error("Sample pointers");
                 Internal_SamplePointers(currentTime, previousTime);
             }
 
             //Sample ended
             if ( ( currentTime == 0 || currentTime == length ) && previousTime > 0 && previousTime < length ) {
                 if ( !Application.isPlaying || isActive ) {
+                    Log.Error("Sample pointers");
                     OnSampleEnded();
                 }
             }

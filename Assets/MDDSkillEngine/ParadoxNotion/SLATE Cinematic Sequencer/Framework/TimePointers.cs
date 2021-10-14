@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using MDDGameFramework.Runtime;
+using UnityEngine;
 
 namespace Slate
 {
@@ -34,6 +35,7 @@ namespace Slate
         void IDirectableTimePointer.TriggerForward(float currentTime, float previousTime) {
             if ( currentTime >= target.startTime ) {
                 if ( !triggered ) {
+                    Log.Error("triggered{0}", target.name);
                     triggered = true;
                     target.Enter();
                     target.Update(target.ToLocalTime(currentTime), 0);
