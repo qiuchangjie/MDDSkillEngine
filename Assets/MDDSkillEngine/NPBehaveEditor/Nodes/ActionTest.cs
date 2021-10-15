@@ -35,8 +35,8 @@ namespace NPBehave.node
 		{
 			Debug.LogError("fuckTEst");
 		}
-
-        public override void Initialize()
+     
+        public override MDDGameFramework.Node NP_GetNode()
         {
             throw new System.NotImplementedException();
         }

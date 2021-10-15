@@ -46,9 +46,11 @@ namespace NPBehave.node
 			return null; // Replace this
 		}
 
-        public override void Initialize()
+       
+
+        public override MDDGameFramework.Node NP_GetNode()
         {
-            //throw new System.NotImplementedException();
+            throw new System.NotImplementedException();
         }
     }
 }
