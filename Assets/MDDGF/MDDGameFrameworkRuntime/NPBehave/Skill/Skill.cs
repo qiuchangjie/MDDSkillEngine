@@ -10,7 +10,23 @@ namespace MDDGameFramework.Runtime
 
         private Dictionary<long, Root> m_ChildrenRoot;
 
+        private object m_Owner;
 
+
+        public void SetRootNode(Root root)
+        {
+            m_MainRoot = root;
+        }
+
+        public Blackboard GetBlackboard()
+        {
+            return m_MainRoot.Blackboard;
+        }
+
+        public void Start()
+        {
+            m_MainRoot.Start();
+        }
     }
 }
 
