@@ -45,9 +45,9 @@ namespace MDDSkillEngine
             pathFindingTest = GetComponent<PathFindingTest>();
             ai = GetComponent<AIPath>();
 
-            GameEnter.Buff.CreatBuffSystem(this.Entity.Id.ToString(),this);
+            Game.Buff.CreatBuffSystem(this.Entity.Id.ToString(),this);
 
-            GameEnter.HpBar.ShowHPBar(this, 1, 1);
+            Game.HpBar.ShowHPBar(this, 1, 1);
 
             fireTransform = transform.Find("FirePoint");
         }
@@ -109,7 +109,7 @@ namespace MDDSkillEngine
 
                     //target.position = hit.point;
 
-                    //GameEnter.Entity.ShowEffect(new EffectData(GameEnter.Entity.GenerateSerialId(), 50000) { name = "ClickMove", Position = hit.point });
+                    //Game.Entity.ShowEffect(new EffectData(Game.Entity.GenerateSerialId(), 50000) { name = "ClickMove", Position = hit.point });
                 }
                 isClickLeft = false;
             }
@@ -124,7 +124,7 @@ namespace MDDSkillEngine
                     //GameObject obj = Instantiate(clickPrefab);
                     //obj.transform.position = hit.point;
 
-                    GameEnter.Entity.ShowEffect(new EffectData(GameEnter.Entity.GenerateSerialId(), 50000) { name = "ClickMove", Position = hit.point });
+                    Game.Entity.ShowEffect(new EffectData(Game.Entity.GenerateSerialId(), 50000) { name = "ClickMove", Position = hit.point });
 
 
                     pathFindingTest.workAction.Invoke();
@@ -146,23 +146,23 @@ namespace MDDSkillEngine
             {                
                 pathFindingTest.attackAction.Invoke();
 
-                GameEnter.Entity.ShowBullet(new BulletData(GameEnter.Entity.GenerateSerialId(), 10, 10, CampType.Enemy, 10, 10)
+                Game.Entity.ShowBullet(new BulletData(Game.Entity.GenerateSerialId(), 10, 10, CampType.Enemy, 10, 10)
                 {                 
                     name = "Bullet",                    
                     Position = fireTransform.position,
                     Rotation = fireTransform.rotation
                 }) ;
 
-                GameEnter.HpBar.ShowHPBar(this,0.1f,0.8f);
+                Game.HpBar.ShowHPBar(this,0.1f,0.8f);
 
                 isAttact = false;
             }
 
             if (isQ)
             {
-                //GameEnter.Buff.AddBuff(this.Id.ToString(),"Buff",this,this);
+                //Game.Buff.AddBuff(this.Id.ToString(),"Buff",this,this);
 
-                GameEnter.HpBar.ShowHPBar(this,1,0);
+                Game.HpBar.ShowHPBar(this,1,0);
 
                 isQ = false;
             }

@@ -47,8 +47,8 @@ namespace MDDSkillEngine
             testEvent += LogString;
             testEvent1 += debugstring;
             LoadAssetSucess += loadsucess;
-            //fsm = GameEnter.Fsm.CreateFsm<entiity>(this, new GoAround(), new GoOn());
-            //  fsm = GameEnter.Fsm.CreateFsm<entiity>(this,new GoAround(),new GoOn());
+            //fsm = Game.Fsm.CreateFsm<entiity>(this, new GoAround(), new GoOn());
+            //  fsm = Game.Fsm.CreateFsm<entiity>(this,new GoAround(),new GoOn());
         }
 
         List<GameObject> objs = new List<GameObject>();  
@@ -95,13 +95,13 @@ namespace MDDSkillEngine
 
                 //TestBehaviourTreeFactory();
 
-                GameEnter.Entity.ShowEntity<Cubes>(100,"Assets/Prefab/Model1/Akiiii.prefab", "player");
+                Game.Entity.ShowEntity<Cubes>(100,"Assets/Prefab/Model1/Akiiii.prefab", "player");
             }
 
             if (Input.GetKeyDown(KeyCode.K))
             {
                 //CatAssetManager.LoadAsset("Assets/Prefab/Model1/Aki1.prefab", LoadAssetSucess);
-                GameEnter.Entity.AddEntityGroup("player", 10, 10, 10, 10);
+                Game.Entity.AddEntityGroup("player", 10, 10, 10, 10);
             }
 
 
@@ -116,7 +116,7 @@ namespace MDDSkillEngine
 
             if (Input.GetKeyDown(KeyCode.G))
             {
-                //fsm = GameEnter.Fsm.CreateFsm<entiity>(this, new GoAround(), new GoOn());
+                //fsm = Game.Fsm.CreateFsm<entiity>(this, new GoAround(), new GoOn());
 
                 //fsm.Start<GoAround>();
 
@@ -137,7 +137,7 @@ namespace MDDSkillEngine
 
             if (Input.GetKeyDown(KeyCode.B))
             {
-                behaviorTree = GameEnter.NPBehave.CreatBehaviourTree(
+                behaviorTree = Game.NPBehave.CreatBehaviourTree(
                     new MDDGameFramework.Runtime.Action(()=> { Debug.LogError("CreatBehaviourTree"); }));
 
                 behaviorTree.Start();

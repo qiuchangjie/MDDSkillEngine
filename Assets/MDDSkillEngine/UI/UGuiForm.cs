@@ -42,7 +42,7 @@ namespace MDDSkillEngine
 
             if (ignoreFade)
             {
-                //GameEnter.UI.CloseUIForm(this);
+                //Game.UI.CloseUIForm(this);
             }
             else
             {
@@ -52,7 +52,7 @@ namespace MDDSkillEngine
 
         public void PlayUISound(int uiSoundId)
         {
-            //GameEnter.Sound.PlayUISound(uiSoundId);
+            //Game.Sound.PlayUISound(uiSoundId);
         }
 
         public static void SetMainFont(Font mainFont)
@@ -91,7 +91,7 @@ namespace MDDSkillEngine
                 texts[i].font = s_MainFont;
                 if (!string.IsNullOrEmpty(texts[i].text))
                 {
-                    //texts[i].text = GameEnter.Localization.GetString(texts[i].text);
+                    //texts[i].text = Game.Localization.GetString(texts[i].text);
                 }
             }
         }
@@ -175,7 +175,7 @@ namespace MDDSkillEngine
         private IEnumerator CloseCo(float duration)
         {
             yield return m_CanvasGroup.FadeToAlpha(0f, duration);
-            GameEnter.UI.CloseUIForm(this.UIForm);
+            Game.UI.CloseUIForm(this.UIForm);
         }
     }
 }

@@ -5,7 +5,7 @@ using MDDGameFramework.Runtime;
 
 namespace MDDSkillEngine
 {
-    public class GameEnter : MonoBehaviour
+    public class Game : MonoBehaviour
     {
         public void Start()
         {

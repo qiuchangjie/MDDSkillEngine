@@ -36,7 +36,7 @@ namespace MDDSkillEngine
 
         private void Start()
         {
-            buffSystem = GameEnter.Buff.CreatBuffSystem("123",this);
+            buffSystem = Game.Buff.CreatBuffSystem("123",this);
             entiity entiity = GameObject.Find("GameObject").GetComponent<entiity>();
             //buffSystem.AddBuff(1,entiity.obj[0],entiity.obj[1]);
 
@@ -71,19 +71,19 @@ namespace MDDSkillEngine
 
             if (Input.GetKeyDown(KeyCode.C))
             {
-                GameEnter.Entity.AddEntityGroup("Effect", 3600, 999, 3600, 10);
-                GameEnter.Entity.AddEntityGroup("Bullet", 3600, 999, 3600, 10);
-                GameEnter.Entity.AddEntityGroup("Player", 3600, 999, 3600, 10);
-                GameEnter.Entity.AddEntityGroup("Enemy", 3600, 999, 3600, 10);
+                Game.Entity.AddEntityGroup("Effect", 3600, 999, 3600, 10);
+                Game.Entity.AddEntityGroup("Bullet", 3600, 999, 3600, 10);
+                Game.Entity.AddEntityGroup("Player", 3600, 999, 3600, 10);
+                Game.Entity.AddEntityGroup("Enemy", 3600, 999, 3600, 10);
 
-                GameEnter.Entity.ShowPlayer(new BulletData(GameEnter.Entity.GenerateSerialId(), 50000, 50000, CampType.Player, 50000, 1)
+                Game.Entity.ShowPlayer(new BulletData(Game.Entity.GenerateSerialId(), 50000, 50000, CampType.Player, 50000, 1)
                 {
                     name = "player_Aki",                   
                     Position = new Vector3(10,0,0)
                     
                 });
 
-                GameEnter.Entity.ShowEnemy(new BulletData(GameEnter.Entity.GenerateSerialId(), 50000, 50000, CampType.Player, 50000, 1)
+                Game.Entity.ShowEnemy(new BulletData(Game.Entity.GenerateSerialId(), 50000, 50000, CampType.Player, 50000, 1)
                 {
                     name = "Akiiii",
                     Position = new Vector3(0, 0, 0)
@@ -103,25 +103,25 @@ namespace MDDSkillEngine
 
                
 
-                GameEnter.Entity.ShowEnemy(new BulletData(GameEnter.Entity.GenerateSerialId(), 50000, 50000, CampType.Player, 50000, 1)
+                Game.Entity.ShowEnemy(new BulletData(Game.Entity.GenerateSerialId(), 50000, 50000, CampType.Player, 50000, 1)
                 {
                     name = "Akiiii",
                     Position = new Vector3(0, 0, 10)
 
                 });
-                GameEnter.Entity.ShowEnemy(new BulletData(GameEnter.Entity.GenerateSerialId(), 50000, 50000, CampType.Player, 50000, 1)
+                Game.Entity.ShowEnemy(new BulletData(Game.Entity.GenerateSerialId(), 50000, 50000, CampType.Player, 50000, 1)
                 {
                     name = "Akiiii",
                     Position = new Vector3(0, 0, -10)
 
                 });
-                GameEnter.Entity.ShowEnemy(new BulletData(GameEnter.Entity.GenerateSerialId(), 50000, 50000, CampType.Player, 50000, 1)
+                Game.Entity.ShowEnemy(new BulletData(Game.Entity.GenerateSerialId(), 50000, 50000, CampType.Player, 50000, 1)
                 {
                     name = "Akiiii",
                     Position = new Vector3(-5, 0, 0)
 
                 });
-                GameEnter.Entity.ShowEnemy(new BulletData(GameEnter.Entity.GenerateSerialId(), 50000, 50000, CampType.Player, 50000, 1)
+                Game.Entity.ShowEnemy(new BulletData(Game.Entity.GenerateSerialId(), 50000, 50000, CampType.Player, 50000, 1)
                 {
                     name = "Akiiii",
                     Position = new Vector3(5, 0, 0)
@@ -143,7 +143,7 @@ namespace MDDSkillEngine
                     //GameObject obj = Instantiate(clickPrefab);
                     //obj.transform.position = hit.point;
 
-                    GameEnter.Entity.ShowEffect(new EffectData(GameEnter.Entity.GenerateSerialId(), 50000) { name= "ClickMove" ,Position=hit.point });
+                    Game.Entity.ShowEffect(new EffectData(Game.Entity.GenerateSerialId(), 50000) { name= "ClickMove" ,Position=hit.point });
 
 
                     //PathFindingTest.workAction.Invoke();

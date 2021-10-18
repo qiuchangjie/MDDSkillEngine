@@ -29,7 +29,7 @@ namespace MDDSkillEngine
             float toHPRatio = m_TargetableObjectData.HPRatio;
             if (fromHPRatio > toHPRatio)
             {
-                //GameEnter.HPBar.ShowHPBar(this, fromHPRatio, toHPRatio);
+                //Game.HPBar.ShowHPBar(this, fromHPRatio, toHPRatio);
             }
 
             if (m_TargetableObjectData.HP <= 0)
@@ -59,7 +59,7 @@ namespace MDDSkillEngine
 
         protected virtual void OnDead(Entity attacker)
         {
-            GameEnter.Entity.HideEntity(this);
+            Game.Entity.HideEntity(this);
         }
 
         private void OnTriggerEnter(Collider other)

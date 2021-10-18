@@ -49,7 +49,7 @@ namespace MDDSkillEngine
                 return;
             }
 
-            GameEnter.Entity.ShowEffect(new EffectData(GameEnter.Entity.GenerateSerialId(), 50000) { name = "Flash", Position = this.transform.position });
+            Game.Entity.ShowEffect(new EffectData(Game.Entity.GenerateSerialId(), 50000) { name = "Flash", Position = this.transform.position });
 
             behaveTree.Start();
         }
@@ -70,7 +70,7 @@ namespace MDDSkillEngine
                                  shared_Blackboard["isTrigger"] = null;
                                  i++;
                                  if (i==5)
-                                 GameEnter.Entity.HideEntity(this);
+                                 Game.Entity.HideEntity(this);
                              }))),
                     new BlackboardCondition("isTrigger", Operator.IS_EQUAL, null, Stops.IMMEDIATE_RESTART,
                         new Action(()=> 
@@ -125,7 +125,7 @@ namespace MDDSkillEngine
 
             Entity e = other.gameObject.GetComponent<Entity>();
 
-            GameEnter.TextBar.ShowTextBar(e,999);
+            Game.TextBar.ShowTextBar(e,999);
 
             if (e is Enemy)
             {
@@ -133,7 +133,7 @@ namespace MDDSkillEngine
 
                //((Enemy)e).findingTest.died.Invoke();
 
-                GameEnter.Entity.ShowEffect(new EffectData(GameEnter.Entity.GenerateSerialId(), 50000) { name = "Hit", Position = this.transform.position });
+                Game.Entity.ShowEffect(new EffectData(Game.Entity.GenerateSerialId(), 50000) { name = "Hit", Position = this.transform.position });
 
                 //behaveTree.Stop();
             }

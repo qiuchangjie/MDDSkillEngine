@@ -1,6 +1,4 @@
-﻿
-using GameFramework.Resource;
-using System;
+﻿using System;
 using System.Collections.Generic;
 
 namespace MDDGameFramework

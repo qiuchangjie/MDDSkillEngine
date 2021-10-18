@@ -30,7 +30,7 @@ namespace MDDSkillEngine
             }
 
             m_CachedCanvas = m_TextBarInstanceRoot.GetComponent<Canvas>();
-            m_TextBarItemObjectPool = GameEnter.ObjectPool.CreateSingleSpawnObjectPool<TextBarItemObject>("TextBarPool", m_InstancePoolCapacity);
+            m_TextBarItemObjectPool = Game.ObjectPool.CreateSingleSpawnObjectPool<TextBarItemObject>("TextBarPool", m_InstancePoolCapacity);
             m_ActiveTextBarItems = new List<TextBarItem>();
         }
 

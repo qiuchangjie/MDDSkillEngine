@@ -79,12 +79,12 @@ namespace MDDSkillEngine
 
             if (Input.GetKeyDown(KeyCode.S))
             {
-                GameEnter.Scene.LoadScene(AssetUtility.GetSceneAsset("LauncherA"));
+                Game.Scene.LoadScene(AssetUtility.GetSceneAsset("LauncherA"));
             }
 
             if (Input.GetKeyDown(KeyCode.S))
             {
-                GameEnter.Scene.LoadScene(AssetUtility.GetSceneAsset("SampleScene"));
+                Game.Scene.LoadScene(AssetUtility.GetSceneAsset("SampleScene"));
             }
 
 
@@ -95,20 +95,20 @@ namespace MDDSkillEngine
 
         private void SelectEntitys()
         {
-            if (GameEnter.Entity.EntityCount == 0)
+            if (Game.Entity.EntityCount == 0)
                 return;
 
-            GameEnter.Entity.GetEntityGroup("Enemy").GetAllEntities(entities);
+            Game.Entity.GetEntityGroup("Enemy").GetAllEntities(entities);
 
             foreach (var v in entities)
             {
-                //Log.Error("EntityName:{0}", GameEnter.Entity.GetEntity(v.Id).Logic.Name);
+                //Log.Error("EntityName:{0}", Game.Entity.GetEntity(v.Id).Logic.Name);
 
-                Vector3 location = Camera.main.WorldToScreenPoint(GameEnter.Entity.GetEntity(v.Id).Logic.CachedTransform.position);
+                Vector3 location = Camera.main.WorldToScreenPoint(Game.Entity.GetEntity(v.Id).Logic.CachedTransform.position);
 
                 if (SelectUtility.IsInsert(mouseStartPos, mouseEndPos, location))
                 {
-                    Log.Error("EntityName:{0}", GameEnter.Entity.GetEntity(v.Id).Logic.Name);
+                    Log.Error("EntityName:{0}", Game.Entity.GetEntity(v.Id).Logic.Name);
                 }
             }          
         }

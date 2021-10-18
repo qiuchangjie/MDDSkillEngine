@@ -35,7 +35,7 @@ namespace MDDSkillEngine
             m_ElapseSeconds += elapseSeconds;
             if (m_ElapseSeconds >= m_EffectData.KeepTime)
             {
-                GameEnter.Entity.HideEntity(this);
+                Game.Entity.HideEntity(this);
             }
         }
     }
