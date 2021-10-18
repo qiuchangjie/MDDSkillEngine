@@ -1,14 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using XNode.Examples;
 using XNode;
 using XNodeEditor;
+using static XNodeEditor.NodeGraphEditor;
 
 namespace NPBehave.node
 {
-	[CustomNodeGraphEditor(typeof(MathGraphEditor))]
-	public class MathGraphEditor : NodeGraphEditor
+	[CustomNodeGraphEditor(typeof(NPBehaveGraph))]
+	public class NPBehaveGraphEditor : NodeGraphEditor
 	{
 
 		/// <summary> 
