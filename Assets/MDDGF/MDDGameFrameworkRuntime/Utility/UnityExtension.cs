@@ -357,12 +357,15 @@ public static class UnityExtension
             {
                 return null;
             }
-            using (MemoryStream stream = new MemoryStream())
-            {
-                byte[] bytes = SerializationUtility.SerializeValue(obj , DataFormat.Binary);
-                stream.Position = 0;
-                return SerializationUtility.DeserializeValue<T>(bytes, DataFormat.Binary);
-            }
+
+            byte[] bytes = SerializationUtility.SerializeValue(obj, DataFormat.Binary);
+            return SerializationUtility.DeserializeValue<T>(bytes, DataFormat.Binary);
+
+            //using (MemoryStream stream = new MemoryStream())
+            //{
+            //    byte[] bytes = SerializationUtility.SerializeValue(obj , DataFormat.Binary);
+            //    return SerializationUtility.DeserializeValue<T>(bytes, DataFormat.Binary);
+            //}
         }
         catch (Exception e)
         {
