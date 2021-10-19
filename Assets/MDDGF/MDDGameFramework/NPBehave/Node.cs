@@ -2,7 +2,7 @@
 
 namespace MDDGameFramework
 {
-    public abstract class Node
+    public abstract class Node : IReference
     {
         
         public enum State
@@ -52,6 +52,10 @@ namespace MDDGameFramework
             {
                 return name;
             }
+            protected set
+            {
+                name = value;
+            }
         }
 
         public virtual Blackboard Blackboard
@@ -86,7 +90,10 @@ namespace MDDGameFramework
             }
         }
 
-
+        public Node()
+        {
+            
+        }
         public Node(string name)
         {
             this.name = name;
@@ -212,6 +219,12 @@ namespace MDDGameFramework
             {
                 return Name;
             }
+        }
+
+
+        public virtual void Clear()
+        {
+            throw new System.NotImplementedException();
         }
     }
 }

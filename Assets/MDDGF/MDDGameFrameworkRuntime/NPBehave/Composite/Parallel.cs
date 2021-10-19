@@ -32,6 +32,11 @@ namespace MDDGameFramework.Runtime
         private bool successState;
         private bool childrenAborted;
 
+        public Parallel()
+        {
+            
+        }
+
         public Parallel(Policy successPolicy, Policy failurePolicy, /*Wait waitForPendingChildrenRule,*/ params Node[] children) : base("Parallel", children)
         {
             this.successPolicy = successPolicy;
@@ -39,6 +44,27 @@ namespace MDDGameFramework.Runtime
             // this.waitForPendingChildrenRule = waitForPendingChildrenRule;
             this.childrenCount = children.Length;
             this.childrenResults = new Dictionary<Node, bool>();
+        }
+
+        public static Composite Create(Policy successPolicy, Policy failurePolicy, params Node[] children)
+        {
+            Parallel parallel = ReferencePool.Acquire<Parallel>();
+            parallel.Name = "Parallel";
+            parallel.successPolicy = successPolicy;
+            parallel.failurePolicy = failurePolicy;
+            parallel.childrenCount = children.Length;
+            parallel.childrenResults = new Dictionary<Node, bool>();
+
+            foreach (var v in children)
+            {
+                v.SetParent(parallel);
+
+                v.SetRoot(parallel.RootNode);
+            }
+
+           
+
+            return parallel;
         }
 
         protected override void DoStart()
@@ -159,7 +185,7 @@ namespace MDDGameFramework.Runtime
             }
             else
             {
-                //throw new Exception("On Parallel Nodes all children have the same priority, thus the method does nothing if you pass false to 'immediateRestart'!");
+                throw new MDDGameFrameworkException("On Parallel Nodes all children have the same priority, thus the method does nothing if you pass false to 'immediateRestart'!");
             }
         }
     }

@@ -17,6 +17,11 @@ namespace MDDGameFramework
             }
         }
 
+        public Container()
+        {
+            
+        }
+
         public Container(string name) : base(name)
         {
         }

@@ -7,6 +7,11 @@ namespace MDDGameFramework
     {
         protected Node[] Children;
 
+        public Composite()
+        {
+
+        }
+
         public Composite(string name, Node[] children) : base(name)
         {
             this.Children = children;
