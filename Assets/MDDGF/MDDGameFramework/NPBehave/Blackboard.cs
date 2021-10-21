@@ -35,15 +35,19 @@ namespace MDDGameFramework
         private Blackboard parentBlackboard;
         private HashSet<Blackboard> children = new HashSet<Blackboard>();
 
+        private System.Action NotifiyObserversActionCache;
+
         public Blackboard(Blackboard parent, Clock clock)
         {
             this.clock = clock;
             this.parentBlackboard = parent;
+            NotifiyObserversActionCache = NotifiyObservers;
         }
         public Blackboard(Clock clock)
         {
             this.parentBlackboard = null;
             this.clock = clock;
+            NotifiyObserversActionCache = NotifiyObservers;
         }
 
         public void Enable()
@@ -62,11 +66,13 @@ namespace MDDGameFramework
             }
             if (this.clock != null)
             {
-                this.clock.RemoveTimer(this.NotifiyObservers);
+                this.clock.RemoveTimer(this.NotifiyObserversActionCache);
             }
         }
 
-        public Variable this[string key]
+
+
+        public object this[string key]
         {
             get
             {
@@ -74,7 +80,7 @@ namespace MDDGameFramework
             }
             set
             {
-                Set(key, value);
+                Set(key, (Variable)value);
             }
         }
 
@@ -86,8 +92,15 @@ namespace MDDGameFramework
             }
         }
 
+        public void Set<T>(string key, T value) where T : Variable
+        {
+            Set(key,(Variable)value);
+        }
+
         public void Set(string key, Variable value)
         {
+            
+
             if (this.parentBlackboard != null && this.parentBlackboard.Isset(key))
             {
                 this.parentBlackboard.Set(key, value);
@@ -96,17 +109,31 @@ namespace MDDGameFramework
             {
                 if (!this.data.ContainsKey(key))
                 {
+                    Variable oldData = Get(key);
+                    if (oldData != null)
+                    {
+                        ReferencePool.Release(oldData);
+                    }
+
                     this.data[key] = value;
                     this.notifications.Add(new Notification(key, Type.ADD, value));
-                    this.clock.AddTimer(0f, 0, NotifiyObservers);
+                    this.clock.AddTimer(0f, 0, NotifiyObserversActionCache);
                 }
                 else
                 {
                     if ((this.data[key] == null && value != null) || (this.data[key] != null && !this.data[key].Equals(value)))
                     {
+                        Variable oldData = Get(key);
+                        if (oldData != null)
+                        {
+                            ReferencePool.Release(oldData);
+                        }
+
                         this.data[key] = value;
                         this.notifications.Add(new Notification(key, Type.CHANGE, value));
-                        this.clock.AddTimer(0f, 0, NotifiyObservers);
+                        UnityEngine.Profiling.Profiler.BeginSample("kkkk");
+                        this.clock.AddTimer(0f, 0, NotifiyObserversActionCache);
+                        UnityEngine.Profiling.Profiler.EndSample();
                     }
                 }
             }
@@ -118,7 +145,7 @@ namespace MDDGameFramework
             {
                 this.data.Remove(key);
                 this.notifications.Add(new Notification(key, Type.REMOVE, null));
-                this.clock.AddTimer(0f, 0, NotifiyObservers);
+                this.clock.AddTimer(0f, 0, NotifiyObserversActionCache);
             }
         }
 

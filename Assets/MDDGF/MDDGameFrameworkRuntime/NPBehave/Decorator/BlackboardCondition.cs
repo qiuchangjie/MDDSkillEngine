@@ -34,11 +34,12 @@ namespace MDDGameFramework.Runtime
             }
         }
 
+       
         public BlackboardCondition(string key, Operator op, Variable value, Stops stopsOnChange, Node decoratee) : base("BlackboardCondition", stopsOnChange, decoratee)
         {
             this.op = op;
             this.key = key;
-            this.value = value;
+            this.value = value ;
             this.stopsOnChange = stopsOnChange;
         }
         
@@ -77,22 +78,29 @@ namespace MDDGameFramework.Runtime
                 return op == Operator.IS_NOT_SET;
             }
 
-            object o = this.RootNode.Blackboard.Get(key);
+            Variable o = this.RootNode.Blackboard.Get(key);
 
             switch (this.op)
             {
                 case Operator.IS_SET: return true;
-                case Operator.IS_EQUAL: return object.Equals(o, value);
-                case Operator.IS_NOT_EQUAL: return !object.Equals(o, value);
+                case Operator.IS_EQUAL:
+                    UnityEngine.Profiling.Profiler.BeginSample("采样1");
+                    bool var = object.Equals(o.GetValue(), value.GetValue());
+                    UnityEngine.Profiling.Profiler.EndSample();
+
+                    return var;
+
+                case Operator.IS_NOT_EQUAL: return !object.Equals(o.GetValue(), value.GetValue());
 
                 case Operator.IS_GREATER_OR_EQUAL:
-                    if (o is float)
+
+                    if (o is VarFloat)
                     {
-                        return (float)o >= (VarInt64)this.value;
+                        return ((VarFloat)o).Value >= ((VarFloat)this.value).Value;
                     }
-                    else if (o is int)
+                    else if (o is VarInt32)
                     {
-                        return (int)o >= (VarInt32)this.value;
+                        return ((VarInt32)o).Value >= ((VarInt32)this.value).Value;
                     }
                     else
                     {
@@ -101,13 +109,13 @@ namespace MDDGameFramework.Runtime
                     }
 
                 case Operator.IS_GREATER:
-                    if (o is float)
+                    if (o is VarFloat)
                     {
-                        return (float)o > (VarInt64)this.value;
+                        return ((VarFloat)o).Value > ((VarFloat)this.value).Value;
                     }
-                    else if (o is int)
+                    else if (o is VarInt32)
                     {
-                        return (int)o > (VarInt32)this.value;
+                        return ((VarInt32)o).Value > ((VarInt32)this.value).Value;
                     }
                     else
                     {
@@ -116,13 +124,13 @@ namespace MDDGameFramework.Runtime
                     }
 
                 case Operator.IS_SMALLER_OR_EQUAL:
-                    if (o is float)
+                    if (o is VarFloat)
                     {
-                        return (float)o <= (VarInt64)this.value;
+                        return ((VarFloat)o).Value <= ((VarFloat)this.value).Value;
                     }
-                    else if (o is int)
+                    else if (o is VarInt32)
                     {
-                        return (int)o <= (VarInt32)this.value;
+                        return ((VarInt32)o).Value <= ((VarInt32)this.value).Value;
                     }
                     else
                     {
@@ -131,13 +139,13 @@ namespace MDDGameFramework.Runtime
                     }
 
                 case Operator.IS_SMALLER:
-                    if (o is float)
+                    if (o is VarFloat)
                     {
-                        return (float)o < (VarInt64)this.value;
+                        return ((VarFloat)o).Value < ((VarFloat)this.value).Value;
                     }
-                    else if (o is int)
+                    else if (o is VarInt32)
                     {
-                        return (int)o < (VarInt32)this.value;
+                        return ((VarInt32)o).Value < ((VarInt32)this.value).Value;
                     }
                     else
                     {

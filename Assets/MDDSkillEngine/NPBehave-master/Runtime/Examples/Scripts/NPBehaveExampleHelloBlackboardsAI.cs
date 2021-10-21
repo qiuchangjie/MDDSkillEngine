@@ -1,52 +1,62 @@
-﻿//using UnityEngine;
-//using NPBehave;
-//using MDDGameFramework;
-//using MDDGameFramework.Runtime;
-//using MDDSkillEngine;
+﻿using UnityEngine;
+using NPBehave;
+using MDDGameFramework;
+using MDDGameFramework.Runtime;
+using MDDSkillEngine;
 
-//public class NPBehaveExampleHelloBlackboardsAI : MonoBehaviour
-//{
-//    private Root behaviorTree;
+public class NPBehaveExampleHelloBlackboardsAI : MonoBehaviour
+{
+    private Root behaviorTree;
 
-//    void Start()
-//    {
-//        behaviorTree = new Root(
+    VarBoolean var = true;
 
-//            // toggle the 'toggled' blackboard boolean flag around every 500 milliseconds
-//            new Service(0.5f, () => { behaviorTree.Blackboard["foo"] = !behaviorTree.Blackboard.Get<bool>("foo"); },
+    void Start()
+    {
+       
+        behaviorTree = new Root(
 
-//                new Selector(
+            // toggle the 'toggled' blackboard boolean flag around every 500 milliseconds
+            new Service(0.5f, () =>
+            {
+                UnityEngine.Profiling.Profiler.BeginSample("kkk");
+                behaviorTree.Blackboard.Set<VarBoolean>("foo", !behaviorTree.Blackboard.Get<bool>("foo"));
+                UnityEngine.Profiling.Profiler.EndSample();
 
-//                    // Check the 'toggled' flag. Stops.IMMEDIATE_RESTART means that the Blackboard will be observed for changes 
-//                    // while this or any lower priority branches are executed. If the value changes, the corresponding branch will be
-//                    // stopped and it will be immediately jump to the branch that now matches the condition.
-//                    new BlackboardCondition("foo", Operator.IS_EQUAL, true, Stops.IMMEDIATE_RESTART,
+                //behaviorTree.Blackboard["foo"] = !behaviorTree.Blackboard.Get<bool>("foo");
+            },
 
-//                        // when 'toggled' is true, this branch will get executed.
-//                        new Sequence(
+                new Selector(
 
-//                            // print out a message ...
-//                            new Action(() => Debug.Log("foo")),
+                    // Check the 'toggled' flag. Stops.IMMEDIATE_RESTART means that the Blackboard will be observed for changes 
+                    // while this or any lower priority branches are executed. If the value changes, the corresponding branch will be
+                    // stopped and it will be immediately jump to the branch that now matches the condition.
+                    new BlackboardCondition("foo", Operator.IS_EQUAL, var, Stops.IMMEDIATE_RESTART,
 
-//                            // ... and stay here until the `BlackboardValue`-node stops us because the toggled flag went false.
-//                            new WaitUntilStopped()
-//                        )
-//                    ),
+                        // when 'toggled' is true, this branch will get executed.
+                        new Sequence(
 
-//                    // when 'toggled' is false, we'll eventually land here
-//                    new Sequence(
-//                        new Action(() => Debug.Log("bar")),
-//                        new WaitUntilStopped()
-//                    )
-//                )
-//            )
-//        );
-//        behaviorTree.Start();
+                            // print out a message ...
+                            new Action(() => Debug.Log("foo")),
 
-//        // attach the debugger component if executed in editor (helps to debug in the inspector) 
-//#if UNITY_EDITOR
-//        Debugger debugger = (Debugger)this.gameObject.AddComponent(typeof(Debugger));
-//        debugger.BehaviorTree = behaviorTree;
-//#endif
-//    }
-//}
+                            // ... and stay here until the `BlackboardValue`-node stops us because the toggled flag went false.
+                            new WaitUntilStopped()
+                        )
+                    ),
+
+                    // when 'toggled' is false, we'll eventually land here
+                    new Sequence(
+                        new Action(() => Debug.Log("bar")),
+                        new WaitUntilStopped()
+                    )
+                )
+            )
+        );
+        behaviorTree.Start();
+
+        // attach the debugger component if executed in editor (helps to debug in the inspector) 
+#if UNITY_EDITOR
+        Debugger debugger = (Debugger)this.gameObject.AddComponent(typeof(Debugger));
+        debugger.BehaviorTree = behaviorTree;
+#endif
+    }
+}

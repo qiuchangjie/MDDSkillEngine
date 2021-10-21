@@ -44,7 +44,7 @@
 
 //                    // check the 'engaged' blackboard value.
 //                    // When the condition changes, we want to immediately jump in or out of this path, thus we use IMMEDIATE_RESTART
-//                    new BlackboardCondition("engaged", Operator.IS_EQUAL, true, Stops.IMMEDIATE_RESTART,
+//                    new BlackboardCondition<bool>("engaged", Operator.IS_EQUAL, true, Stops.IMMEDIATE_RESTART,
 
 //                        // we are currently engaged with the player
 //                        new Sequence(
@@ -74,7 +74,7 @@
 
 //                        // this time we can also use NBtrStops.BOTH, which stops the current branch if the condition changes but will traverse the 
 //                        // tree further the normal way (in that case, doesn't make a difference at all). 
-//                        new BlackboardCondition("playerInRange", Operator.IS_EQUAL, true, Stops.BOTH,
+//                        new BlackboardCondition<bool>("playerInRange", Operator.IS_EQUAL, true, Stops.BOTH,
 
 //                            // player is not in range, mark 'yellow'
 //                            new Sequence(
@@ -97,10 +97,9 @@
 //    private void UpdateBlackboards()
 //    {
 //        Vector3 playerLocalPos = this.transform.InverseTransformPoint(GameObject.FindGameObjectWithTag("Player").transform.position);
-//        VarVector3 Vector3 = ReferencePool.Acquire<VarVector3>();
-//        Vector3 = playerLocalPos;
+
 //        // update all our distances
-//        ownBlackboard["playerLocalPos"] = Vector3;
+//        ownBlackboard.Set("playerLocalPos", playerLocalPos);
 //        ownBlackboard["playerInRange"] = Vector3.Value.magnitude < 7.5f;
 
 //        // if we are not yet engaging the player, but he is in range and there are not yet other 2 guys engaged with him
