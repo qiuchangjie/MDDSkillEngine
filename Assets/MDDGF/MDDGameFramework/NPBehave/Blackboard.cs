@@ -130,10 +130,9 @@ namespace MDDGameFramework
                         }
 
                         this.data[key] = value;
-                        this.notifications.Add(new Notification(key, Type.CHANGE, value));
-                        UnityEngine.Profiling.Profiler.BeginSample("kkkk");
+                        this.notifications.Add(new Notification(key, Type.CHANGE, value));                      
                         this.clock.AddTimer(0f, 0, NotifiyObserversActionCache);
-                        UnityEngine.Profiling.Profiler.EndSample();
+
                     }
                 }
             }

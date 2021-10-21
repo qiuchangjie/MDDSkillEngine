@@ -18,9 +18,9 @@ public class NPBehaveExampleHelloBlackboardsAI : MonoBehaviour
             // toggle the 'toggled' blackboard boolean flag around every 500 milliseconds
             new Service(0.5f, () =>
             {
-                UnityEngine.Profiling.Profiler.BeginSample("kkk");
+              
                 behaviorTree.Blackboard.Set<VarBoolean>("foo", !behaviorTree.Blackboard.Get<bool>("foo"));
-                UnityEngine.Profiling.Profiler.EndSample();
+          
 
                 //behaviorTree.Blackboard["foo"] = !behaviorTree.Blackboard.Get<bool>("foo");
             },

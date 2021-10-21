@@ -83,11 +83,7 @@ namespace MDDGameFramework.Runtime
             switch (this.op)
             {
                 case Operator.IS_SET: return true;
-                case Operator.IS_EQUAL:
-                    UnityEngine.Profiling.Profiler.BeginSample("采样1");
-                    bool var = object.Equals(o.GetValue(), value.GetValue());
-                    UnityEngine.Profiling.Profiler.EndSample();
-
+                case Operator.IS_EQUAL: bool var = object.Equals(o.GetValue(), value.GetValue());
                     return var;
 
                 case Operator.IS_NOT_EQUAL: return !object.Equals(o.GetValue(), value.GetValue());
