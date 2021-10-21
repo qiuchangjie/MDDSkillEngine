@@ -405,13 +405,17 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 939964544}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2455b0e636f32704ba44a54465a953ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rectColor: {r: 0, g: 0, b: 0, a: 0}
-  rectMat: {fileID: 0}
+  brushColor: {r: 1, g: 1, b: 1, a: 1}
+  drawMaterial: {fileID: 0}
+  isStartDraw: 0
+  mouseStartPos: {x: 0, y: 0, z: 0}
+  mouseEndPos: {x: 0, y: 0, z: 0}
+  selectionAreaColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1001 &1040174952
 PrefabInstance:
   m_ObjectHideFlags: 0
