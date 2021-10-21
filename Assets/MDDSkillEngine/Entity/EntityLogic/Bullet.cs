@@ -27,7 +27,7 @@ namespace MDDSkillEngine
 
             blackboard = new Blackboard(shared_Blackboard, UnityContext.GetClock());
 
-            blackboard["isBoom"] = false;
+           // blackboard["isBoom"] = false;
 
             shared_Blackboard["isTrigger"] = null;
 
@@ -89,7 +89,7 @@ namespace MDDSkillEngine
 
         private void UpdateBlackboards()
         {
-            blackboard["GameObject"] = SelectEntity.selectEntity;
+           // blackboard["GameObject"] = SelectEntity.selectEntity;
         }
 
         private void MoveTowards(Entity localPosition)
@@ -105,7 +105,7 @@ namespace MDDSkillEngine
         {
             base.OnHide(isShutdown, userData);
 
-            blackboard["isBoom"] = false;
+          //  blackboard["isBoom"] = false;
 
             behaveTree.Stop();
         }
@@ -119,7 +119,7 @@ namespace MDDSkillEngine
 
         private void OnTriggerEnter(Collider other)
         {
-            blackboard["isBoom"] = true;
+          //  blackboard["isBoom"] = true;
 
             Log.Error("出发碰撞  炸了");
 
@@ -129,7 +129,7 @@ namespace MDDSkillEngine
 
             if (e is Enemy)
             {
-                shared_Blackboard["isTrigger"] = e;
+            //    shared_Blackboard["isTrigger"] = e;
 
                //((Enemy)e).findingTest.died.Invoke();
 

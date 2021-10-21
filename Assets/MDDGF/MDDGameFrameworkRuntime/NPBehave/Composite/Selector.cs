@@ -10,9 +10,22 @@ namespace MDDGameFramework.Runtime
     {
         private int currentIndex = -1;
 
+        public Selector()
+        {
+            
+        }
+
         public Selector(params Node[] children) : base("Selector", children)
         {
         }
+
+        public static Selector Create(params Node[] children)
+        {
+            Selector selector = ReferencePool.Acquire<Selector>();
+            selector.Name = "Selector";
+            selector.Children = children;
+            return selector;
+    }
 
 
         protected override void DoStart()

@@ -7,7 +7,7 @@ namespace MDDGameFramework.Runtime
     public class BlackboardCondition : ObservingDecorator
     {
         private string key;
-        private object value;
+        private Variable value;
         private Operator op;
 
         public string Key
@@ -18,7 +18,7 @@ namespace MDDGameFramework.Runtime
             }
         }
 
-        public object Value
+        public Variable Value
         {
             get
             {
@@ -34,7 +34,7 @@ namespace MDDGameFramework.Runtime
             }
         }
 
-        public BlackboardCondition(string key, Operator op, object value, Stops stopsOnChange, Node decoratee) : base("BlackboardCondition", stopsOnChange, decoratee)
+        public BlackboardCondition(string key, Operator op, Variable value, Stops stopsOnChange, Node decoratee) : base("BlackboardCondition", stopsOnChange, decoratee)
         {
             this.op = op;
             this.key = key;
@@ -88,11 +88,11 @@ namespace MDDGameFramework.Runtime
                 case Operator.IS_GREATER_OR_EQUAL:
                     if (o is float)
                     {
-                        return (float)o >= (float)this.value;
+                        return (float)o >= (VarInt64)this.value;
                     }
                     else if (o is int)
                     {
-                        return (int)o >= (int)this.value;
+                        return (int)o >= (VarInt32)this.value;
                     }
                     else
                     {
@@ -103,11 +103,11 @@ namespace MDDGameFramework.Runtime
                 case Operator.IS_GREATER:
                     if (o is float)
                     {
-                        return (float)o > (float)this.value;
+                        return (float)o > (VarInt64)this.value;
                     }
                     else if (o is int)
                     {
-                        return (int)o > (int)this.value;
+                        return (int)o > (VarInt32)this.value;
                     }
                     else
                     {
@@ -118,11 +118,11 @@ namespace MDDGameFramework.Runtime
                 case Operator.IS_SMALLER_OR_EQUAL:
                     if (o is float)
                     {
-                        return (float)o <= (float)this.value;
+                        return (float)o <= (VarInt64)this.value;
                     }
                     else if (o is int)
                     {
-                        return (int)o <= (int)this.value;
+                        return (int)o <= (VarInt32)this.value;
                     }
                     else
                     {
@@ -133,11 +133,11 @@ namespace MDDGameFramework.Runtime
                 case Operator.IS_SMALLER:
                     if (o is float)
                     {
-                        return (float)o < (float)this.value;
+                        return (float)o < (VarInt64)this.value;
                     }
                     else if (o is int)
                     {
-                        return (int)o < (int)this.value;
+                        return (int)o < (VarInt32)this.value;
                     }
                     else
                     {

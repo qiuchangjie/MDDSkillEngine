@@ -36,41 +36,45 @@ namespace MDDSkillEngine
             }
         }
 
-        public void DebugCounterInc(string key)
-        {
-            if (!CustomStats.Isset(key))
-            {
-                CustomStats[key] = 0;
-            }
-            CustomStats[key] = CustomStats.Get<int>(key) + 1;
-        }
+        private VarInt32 m_int;
 
-        public void DebugCounterDec(string key)
-        {
-            if (!CustomStats.Isset(key))
-            {
-                CustomStats[key] = 0;
-            }
-            CustomStats[key] = CustomStats.Get<int>(key) - 1;
-        }
 
-        public static void GlobalDebugCounterInc(string key)
-        {
-            if (!CustomGlobalStats.Isset(key))
-            {
-                CustomGlobalStats[key] = 0;
-            }
-            CustomGlobalStats[key] = CustomGlobalStats.Get<int>(key) + 1;
-        }
+        //public void DebugCounterInc(string key)
+        //{
+        //    if (!CustomStats.Isset(key))
+        //    {
+        //        m_int = 0;
+        //        CustomStats[key] = m_int;
+        //    }
+        //    CustomStats[key] = CustomStats.Get<VarInt32>(key) + 1;
+        //}
 
-        public static void GlobalDebugCounterDec(string key)
-        {
-            if (!CustomGlobalStats.Isset(key))
-            {
-                CustomGlobalStats[key] = 0;
-            }
-            CustomGlobalStats[key] = CustomGlobalStats.Get<int>(key) - 1;
-        }
+        //public void DebugCounterDec(string key)
+        //{
+        //    if (!CustomStats.Isset(key))
+        //    {
+        //        CustomStats[key] = 0;
+        //    }
+        //    CustomStats[key] = CustomStats.Get<int>(key) - 1;
+        //}
+
+        //public static void GlobalDebugCounterInc(string key)
+        //{
+        //    if (!CustomGlobalStats.Isset(key))
+        //    {
+        //        CustomGlobalStats[key] = 0;
+        //    }
+        //    CustomGlobalStats[key] = CustomGlobalStats.Get<int>(key) + 1;
+        //}
+
+        //public static void GlobalDebugCounterDec(string key)
+        //{
+        //    if (!CustomGlobalStats.Isset(key))
+        //    {
+        //        CustomGlobalStats[key] = 0;
+        //    }
+        //    CustomGlobalStats[key] = CustomGlobalStats.Get<int>(key) - 1;
+        //}
 
     }
 

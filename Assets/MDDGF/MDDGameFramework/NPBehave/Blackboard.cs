@@ -15,8 +15,8 @@ namespace MDDGameFramework
         {
             public string key;
             public Type type;
-            public object value;
-            public Notification(string key, Type type, object value)
+            public Variable value;
+            public Notification(string key, Type type, Variable value)
             {
                 this.key = key;
                 this.type = type;
@@ -25,11 +25,11 @@ namespace MDDGameFramework
         }
 
         private Clock clock;
-        private Dictionary<string, object> data = new Dictionary<string, object>();
-        private Dictionary<string, List<System.Action<Type, object>>> observers = new Dictionary<string, List<System.Action<Type, object>>>();
+        private Dictionary<string, Variable> data = new Dictionary<string, Variable>();
+        private Dictionary<string, List<System.Action<Type, Variable>>> observers = new Dictionary<string, List<System.Action<Type, Variable>>>();
         private bool isNotifiyng = false;
-        private Dictionary<string, List<System.Action<Type, object>>> addObservers = new Dictionary<string, List<System.Action<Type, object>>>();
-        private Dictionary<string, List<System.Action<Type, object>>> removeObservers = new Dictionary<string, List<System.Action<Type, object>>>();
+        private Dictionary<string, List<System.Action<Type, Variable>>> addObservers = new Dictionary<string, List<System.Action<Type, Variable>>>();
+        private Dictionary<string, List<System.Action<Type, Variable>>> removeObservers = new Dictionary<string, List<System.Action<Type, Variable>>>();
         private List<Notification> notifications = new List<Notification>();
         private List<Notification> notificationsDispatch = new List<Notification>();
         private Blackboard parentBlackboard;
@@ -66,7 +66,7 @@ namespace MDDGameFramework
             }
         }
 
-        public object this[string key]
+        public Variable this[string key]
         {
             get
             {
@@ -86,7 +86,7 @@ namespace MDDGameFramework
             }
         }
 
-        public void Set(string key, object value)
+        public void Set(string key, Variable value)
         {
             if (this.parentBlackboard != null && this.parentBlackboard.Isset(key))
             {
@@ -122,46 +122,64 @@ namespace MDDGameFramework
             }
         }
 
-        [System.Obsolete("Use Get<T> instead")]
-        public bool GetBool(string key)
-        {
-            return Get<bool>(key);
-        }
 
-        [System.Obsolete("Use Get<T> instead - WARNING: return value for non-existant key will be 0.0f instead of float.NaN")]
-        public float GetFloat(string key)
-        {
-            object result = Get(key);
-            if (result == null)
-            {
-                return float.NaN;
-            }
-            return (float)Get(key);
-        }
 
-        [System.Obsolete("Use Get<T> instead")]
-        public Vector3 GetVector3(string key)
-        {
-            return Get<Vector3>(key);
-        }
+        #region 旧代码
 
-        [System.Obsolete("Use Get<T> instead")]
-        public int GetInt(string key)
-        {
-            return Get<int>(key);
-        }
+        //[System.Obsolete("Use Get<T> instead")]
+        //public bool GetBool(string key)
+        //{
+        //    return Get<bool>(key);
+        //}
+
+        //[System.Obsolete("Use Get<T> instead - WARNING: return value for non-existant key will be 0.0f instead of float.NaN")]
+        //public float GetFloat(string key)
+        //{
+        //    Variable result = Get(key);
+        //    if (result == null)
+        //    {
+        //        return float.NaN;
+        //    }
+        //    return (float)Get(key);
+        //}
+
+        //[System.Obsolete("Use Get<T> instead")]
+        //public Vector3 GetVector3(string key)
+        //{
+        //    return Get<Vector3>(key);
+        //}
+
+        //[System.Obsolete("Use Get<T> instead")]
+        //public int GetInt(string key)
+        //{
+        //    return Get<int>(key);
+        //}
+
+        #endregion
 
         public T Get<T>(string key)
         {
-            object result = Get(key);
+            Variable result = Get(key);
             if (result == null)
             {
                 return default(T);
             }
-            return (T)result;
+
+            Variable<T> finalResult = result as Variable<T>;
+
+            if (finalResult == null)
+            {
+                throw new MDDGameFrameworkException("获取不到黑板值");
+            }
+            else
+            {
+                return finalResult.Value;
+            }
+
+            
         }
 
-        public object Get(string key)
+        public Variable Get(string key)
         {
             if (this.data.ContainsKey(key))
             {
@@ -182,9 +200,9 @@ namespace MDDGameFramework
             return this.data.ContainsKey(key) || (this.parentBlackboard != null && this.parentBlackboard.Isset(key));
         }
 
-        public void AddObserver(string key, System.Action<Type, object> observer)
+        public void AddObserver(string key, System.Action<Type, Variable> observer)
         {
-            List<System.Action<Type, object>> observers = GetObserverList(this.observers, key);
+            List<System.Action<Type, Variable>> observers = GetObserverList(this.observers, key);
             if (!isNotifiyng)
             {
                 if (!observers.Contains(observer))
@@ -196,14 +214,14 @@ namespace MDDGameFramework
             {
                 if (!observers.Contains(observer))
                 {
-                    List<System.Action<Type, object>> addObservers = GetObserverList(this.addObservers, key);
+                    List<System.Action<Type, Variable>> addObservers = GetObserverList(this.addObservers, key);
                     if (!addObservers.Contains(observer))
                     {
                         addObservers.Add(observer);
                     }
                 }
 
-                List<System.Action<Type, object>> removeObservers = GetObserverList(this.removeObservers, key);
+                List<System.Action<Type, Variable>> removeObservers = GetObserverList(this.removeObservers, key);
                 if (removeObservers.Contains(observer))
                 {
                     removeObservers.Remove(observer);
@@ -211,9 +229,9 @@ namespace MDDGameFramework
             }
         }
 
-        public void RemoveObserver(string key, System.Action<Type, object> observer)
+        public void RemoveObserver(string key, System.Action<Type, Variable> observer)
         {
-            List<System.Action<Type, object>> observers = GetObserverList(this.observers, key);
+            List<System.Action<Type, Variable>> observers = GetObserverList(this.observers, key);
             if (!isNotifiyng)
             {
                 if (observers.Contains(observer))
@@ -223,7 +241,7 @@ namespace MDDGameFramework
             }
             else
             {
-                List<System.Action<Type, object>> removeObservers = GetObserverList(this.removeObservers, key);
+                List<System.Action<Type, Variable>> removeObservers = GetObserverList(this.removeObservers, key);
                 if (!removeObservers.Contains(observer))
                 {
                     if (observers.Contains(observer))
@@ -232,7 +250,7 @@ namespace MDDGameFramework
                     }
                 }
 
-                List<System.Action<Type, object>> addObservers = GetObserverList(this.addObservers, key);
+                List<System.Action<Type, Variable>> addObservers = GetObserverList(this.addObservers, key);
                 if (addObservers.Contains(observer))
                 {
                     addObservers.Remove(observer);
@@ -299,8 +317,8 @@ namespace MDDGameFramework
                     continue;
                 }
 
-                List<System.Action<Type, object>> observers = GetObserverList(this.observers, notification.key);
-                foreach (System.Action<Type, object> observer in observers)
+                List<System.Action<Type, Variable>> observers = GetObserverList(this.observers, notification.key);
+                foreach (System.Action<Type, Variable> observer in observers)
                 {
                     if (this.removeObservers.ContainsKey(notification.key) && this.removeObservers[notification.key].Contains(observer))
                     {
@@ -316,7 +334,7 @@ namespace MDDGameFramework
             }
             foreach (string key in this.removeObservers.Keys)
             {
-                foreach (System.Action<Type, object> action in removeObservers[key])
+                foreach (System.Action<Type, Variable> action in removeObservers[key])
                 {
                     GetObserverList(this.observers, key).Remove(action);
                 }
@@ -327,16 +345,16 @@ namespace MDDGameFramework
             isNotifiyng = false;
         }
 
-        private List<System.Action<Type, object>> GetObserverList(Dictionary<string, List<System.Action<Type, object>>> target, string key)
+        private List<System.Action<Type, Variable>> GetObserverList(Dictionary<string, List<System.Action<Type, Variable>>> target, string key)
         {
-            List<System.Action<Type, object>> observers;
+            List<System.Action<Type, Variable>> observers;
             if (target.ContainsKey(key))
             {
                 observers = target[key];
             }
             else
             {
-                observers = new List<System.Action<Type, object>>();
+                observers = new List<System.Action<Type, Variable>>();
                 target[key] = observers;
             }
             return observers;
