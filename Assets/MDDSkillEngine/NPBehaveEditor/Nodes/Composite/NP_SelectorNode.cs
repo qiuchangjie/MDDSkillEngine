@@ -15,9 +15,11 @@ namespace NPBehave.node
             return this.m_SelectorNode;
         }
 
-        public override Node NP_GetNode()
+       
+
+        public override NP_NodeDataBase NP_GetNodeData()
         {
-            return this.m_SelectorNode;
+            throw new System.NotImplementedException();
         }
     }
 }

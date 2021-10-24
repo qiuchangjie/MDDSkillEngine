@@ -90,6 +90,8 @@ namespace MDDGameFramework
             }
         }
 
+        public System.Action startCache;
+
         public Node()
         {
             
@@ -97,11 +99,13 @@ namespace MDDGameFramework
         public Node(string name)
         {
             this.name = name;
+            startCache = Start;
         }
 
         public virtual void SetRoot(Root rootNode)
         {
             this.RootNode = rootNode;
+
         }
 
         public void SetParent(Container parent)

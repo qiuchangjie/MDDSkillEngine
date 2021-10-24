@@ -5,6 +5,7 @@ namespace MDDGameFramework.Runtime
     public class Service : Decorator
     {
         private System.Action serviceMethod;
+        private System.Action actionCache;
 
         private float interval = -1.0f;
         private float randomVariation;
@@ -14,7 +15,7 @@ namespace MDDGameFramework.Runtime
             this.serviceMethod = service;
             this.interval = interval;
             this.randomVariation = randomVariation;
-
+            actionCache = InvokeServiceMethodWithRandomVariation;
             this.Label = "" + (interval - randomVariation) + "..." + (interval + randomVariation) + "s";
         }
 
@@ -24,6 +25,7 @@ namespace MDDGameFramework.Runtime
             this.interval = interval;
             this.randomVariation = interval * 0.05f;
             this.Label = "" + (interval - randomVariation) + "..." + (interval + randomVariation) + "s";
+            actionCache = InvokeServiceMethodWithRandomVariation;
         }
 
         public Service(System.Action service, Node decoratee) : base("Service", decoratee)
@@ -68,7 +70,7 @@ namespace MDDGameFramework.Runtime
             }
             else
             {
-                this.Clock.RemoveTimer(InvokeServiceMethodWithRandomVariation);
+                this.Clock.RemoveTimer(actionCache);
             }
             Stopped(result);
         }
@@ -76,7 +78,7 @@ namespace MDDGameFramework.Runtime
         private void InvokeServiceMethodWithRandomVariation()
         {
             serviceMethod();
-            this.Clock.AddTimer(interval, randomVariation, 0, InvokeServiceMethodWithRandomVariation);
+            this.Clock.AddTimer(interval, randomVariation, 0, actionCache);
         }
     }
 }

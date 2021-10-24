@@ -1,6 +1,8 @@
-﻿using System.Collections;
+﻿using MDDGameFramework;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static XNode.Node;
 
 namespace NPBehave.node
 {

@@ -7,6 +7,11 @@ namespace MDDGameFramework
     {
         protected Node Decoratee;
 
+        public Decorator()
+        {
+            
+        }
+        
         public Decorator(string name) : base(name)
         {
             //this.Decoratee.SetParent(this);

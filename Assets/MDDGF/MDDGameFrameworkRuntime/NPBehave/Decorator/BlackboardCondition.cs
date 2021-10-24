@@ -155,7 +155,7 @@ namespace MDDGameFramework.Runtime
 
         override public string ToString()
         {
-            return "(" + this.op + ") " + this.key + " ? " + this.value;
+            return Utility.Text.Format("({0}){1}?{2}", this.op, this.key, this.value);
         }
     }
 }

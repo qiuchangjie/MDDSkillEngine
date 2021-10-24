@@ -138,7 +138,7 @@ namespace MDDSkillEngine
             if (Input.GetKeyDown(KeyCode.B))
             {
                 behaviorTree = Game.NPBehave.CreatBehaviourTree(
-                    new MDDGameFramework.Runtime.Action(()=> { Debug.LogError("CreatBehaviourTree"); }));
+                    new MDDGameFramework.Action(()=> { Debug.LogError("CreatBehaviourTree"); }));
 
                 behaviorTree.Start();
             }

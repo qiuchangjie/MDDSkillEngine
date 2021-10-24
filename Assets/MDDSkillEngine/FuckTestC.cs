@@ -94,7 +94,7 @@ namespace MDDSkillEngine
 
 
         private void SelectEntitys()
-        {
+        {          
             if (Game.Entity.EntityCount == 0)
                 return;
 

@@ -46,7 +46,7 @@ namespace MDDGameFramework.Runtime
             this.childrenResults = new Dictionary<Node, bool>();
         }
 
-        public static Composite Create(Policy successPolicy, Policy failurePolicy, params Node[] children)
+        public static Parallel Create(Policy successPolicy, Policy failurePolicy, params Node[] children)
         {
             Parallel parallel = ReferencePool.Acquire<Parallel>();
             parallel.Name = "Parallel";
@@ -54,18 +54,25 @@ namespace MDDGameFramework.Runtime
             parallel.failurePolicy = failurePolicy;
             parallel.childrenCount = children.Length;
             parallel.childrenResults = new Dictionary<Node, bool>();
-
-            foreach (var v in children)
-            {
-                v.SetParent(parallel);
-
-                v.SetRoot(parallel.RootNode);
-            }
-
-           
-
+            parallel.Children = children;
+                    
             return parallel;
+        }     
+
+        public override void Clear()
+        {
+            base.Clear();
+            Name = null;
+            childrenResults = null;
+            Children = null;
+            childrenCount = 0;
+            runningCount = 0;
+            succeededCount = 0;
+            failedCount = 0;
+            successState = false;
+            childrenAborted = false;
         }
+
 
         protected override void DoStart()
         {

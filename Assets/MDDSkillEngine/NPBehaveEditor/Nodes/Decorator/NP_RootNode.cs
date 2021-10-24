@@ -13,18 +13,23 @@ namespace NPBehave.node
         [Output(ShowBackingValue.Never, ConnectionType.Override)]
         public bool output;
 
-        public Root m_Root;
+        public NP_RootNodeData data=new NP_RootNodeData();
 
-        public override Decorator CreateDecoratorNode(NP_Tree runtimeTree, Node node)
+        public override NP_NodeDataBase NP_GetNodeData()
         {
-            this.m_Root = new Root(node);
-            return this.m_Root;
+            return data;
         }
 
-        public override Node NP_GetNode()
-        {
-            return this.m_Root;
-        }
+        //public override Decorator CreateDecoratorNode(NP_Tree runtimeTree, Node node)
+        //{
+        //    this.m_Root = new Root(node);
+        //    return this.m_Root;
+        //}
+
+        //public override Node NP_GetNode()
+        //{
+        //    return this.m_Root;
+        //}
     }
 }
 

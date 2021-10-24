@@ -1,34 +1,25 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
-using XNode;
-using NPBehave;
-using MDDGameFramework;
 
-namespace NPBehave.node
+namespace MDDGameFramework
 {
-	public abstract class NP_NodeBase : XNode.Node
-	{
-
-		public int Id;
-
-
-        public List<int> linkedID = new List<int>();
-
-        public virtual string Name => GetType().Name;
+    public abstract class NP_NodeDataBase 
+    {
 
         /// <summary>
         /// 获取结点
         /// </summary>
         /// <returns></returns>
-        public abstract MDDGameFramework.NP_NodeDataBase NP_GetNodeData();
-
+        public virtual Node NP_GetNode()
+        {
+            return null;
+        }
 
         /// <summary>
         /// 创建组合结点
         /// </summary>
         /// <returns></returns>
-        public virtual Composite CreateCompositeNode(NP_Tree owner_Tree,MDDGameFramework.Node[] nodes)
+        public virtual Composite CreateComposite(Node[] nodes)
         {
             return null;
         }
@@ -40,7 +31,7 @@ namespace NPBehave.node
         /// <param name="runtimeTree">运行时归属的行为树</param>
         /// <param name="node">所装饰的结点</param>
         /// <returns></returns>
-        public virtual Decorator CreateDecoratorNode(NP_Tree owner_Tree, MDDGameFramework.Node node)
+        public virtual Decorator CreateDecoratorNode(object m_object, NP_Tree runtimeTree, Node node)
         {
             return null;
         }
@@ -51,10 +42,11 @@ namespace NPBehave.node
         /// <param name="unitId">行为树归属的Unit</param>
         /// <param name="runtimeTree">运行时归属的行为树</param>
         /// <returns></returns>
-        public virtual Task CreateTask(NP_Tree owner_Tree)
+        public virtual Task CreateTask(object unit, NP_Tree runtimeTree)
         {
             return null;
         }
     }
+
 }
 

@@ -10,19 +10,26 @@ public class NPBehaveExampleHelloBlackboardsAI : MonoBehaviour
 
     VarBoolean var = true;
 
+    System.Action action;
+
+    public void addint()
+    {
+        
+    }
+
     void Start()
     {
-       
+        action = addint;
+
         behaviorTree = new Root(
 
             // toggle the 'toggled' blackboard boolean flag around every 500 milliseconds
             new Service(0.5f, () =>
             {
-              
-                behaviorTree.Blackboard.Set<VarBoolean>("foo", !behaviorTree.Blackboard.Get<bool>("foo"));
-          
 
-                //behaviorTree.Blackboard["foo"] = !behaviorTree.Blackboard.Get<bool>("foo");
+                UnityEngine.Profiling.Profiler.BeginSample("xiaofang");
+                behaviorTree.Blackboard.Set<VarBoolean>("foo", !behaviorTree.Blackboard.Get<bool>("foo"));
+                UnityEngine.Profiling.Profiler.EndSample();
             },
 
                 new Selector(
@@ -36,7 +43,8 @@ public class NPBehaveExampleHelloBlackboardsAI : MonoBehaviour
                         new Sequence(
 
                             // print out a message ...
-                            new Action(() => Debug.Log("foo")),
+                            new Action( action
+                                             ),
 
                             // ... and stay here until the `BlackboardValue`-node stops us because the toggled flag went false.
                             new WaitUntilStopped()
@@ -45,7 +53,7 @@ public class NPBehaveExampleHelloBlackboardsAI : MonoBehaviour
 
                     // when 'toggled' is false, we'll eventually land here
                     new Sequence(
-                        new Action(() => Debug.Log("bar")),
+                        new Action(action),
                         new WaitUntilStopped()
                     )
                 )

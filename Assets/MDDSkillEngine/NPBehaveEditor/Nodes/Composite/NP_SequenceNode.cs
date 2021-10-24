@@ -9,18 +9,15 @@ namespace NPBehave.node
     public class NP_SequenceNode : NP_CompositeNodeBase
     {
         public override string Name => "Sequence";
-  
-        public Sequence m_SequenceNode;
 
-        public override Composite CreateCompositeNode(NP_Tree runtimeTree, Node[]node)
-        {
-            this.m_SequenceNode = new Sequence(node);
-            return this.m_SequenceNode;
-        }
 
-        public override Node NP_GetNode()
+        NP_SequenceNodeData data = new NP_SequenceNodeData();
+       
+
+       
+        public override NP_NodeDataBase NP_GetNodeData()
         {
-            return this.m_SequenceNode;
+            return data;
         }
     }
 }

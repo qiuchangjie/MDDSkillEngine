@@ -23,6 +23,7 @@ namespace MDDGameFramework
             }
         }
 
+
         override public void SetRoot(Root rootNode)
         {
             base.SetRoot(rootNode);

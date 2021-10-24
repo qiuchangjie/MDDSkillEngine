@@ -37,6 +37,11 @@ namespace MDDGameFramework
 
         private System.Action NotifiyObserversActionCache;
 
+        public Blackboard()
+        {
+            
+        }
+
         public Blackboard(Blackboard parent, Clock clock)
         {
             this.clock = clock;
@@ -330,7 +335,7 @@ namespace MDDGameFramework
             foreach (Blackboard child in children)
             {
                 child.notifications.AddRange(notifications);
-                child.clock.AddTimer(0f, 0, child.NotifiyObservers);
+                child.clock.AddTimer(0f, 0, child.NotifiyObserversActionCache);
             }
             notifications.Clear();
 

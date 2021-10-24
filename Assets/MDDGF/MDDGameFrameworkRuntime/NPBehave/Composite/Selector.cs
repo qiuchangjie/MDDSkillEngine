@@ -25,7 +25,15 @@ namespace MDDGameFramework.Runtime
             selector.Name = "Selector";
             selector.Children = children;
             return selector;
-    }
+        }
+
+        public override void Clear()
+        {
+            base.Clear();
+            Name = null;
+            Children = null;
+            currentIndex = -1;
+        }
 
 
         protected override void DoStart()

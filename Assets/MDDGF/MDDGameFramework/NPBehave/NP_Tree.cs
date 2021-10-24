@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace MDDGameFramework.Runtime
+namespace MDDGameFramework
 {
     public abstract class NP_Tree
     {

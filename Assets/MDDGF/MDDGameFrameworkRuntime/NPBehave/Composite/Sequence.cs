@@ -10,8 +10,31 @@ namespace MDDGameFramework.Runtime
     {
         private int currentIndex = -1;
 
+        public Sequence()
+        {
+            
+        }
+
         public Sequence(params Node[] children) : base("Sequence", children)
         {
+        }
+
+        public static Sequence Create(params Node[] children)
+        {
+            Sequence sequence = ReferencePool.Acquire<Sequence>();
+
+            sequence.Name = "Sequence";
+            sequence.Children = children;
+
+            return sequence;
+        }
+
+        public override void Clear()
+        {
+            base.Clear();
+            Name = null;
+            Children = null;
+            currentIndex = -1;
         }
 
         protected override void DoStart()

@@ -20,6 +20,7 @@ namespace MDDGameFramework.Runtime
         private int currentIndex = -1;
         private int[] randomizedOrder;
 
+
         public RandomSelector(params Node[] children) : base("Random Selector", children)
         {
             randomizedOrder = new int[children.Length];

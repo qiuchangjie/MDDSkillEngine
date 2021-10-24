@@ -1,7 +1,6 @@
 ﻿using UnityEngine.Assertions;
-using MDDGameFramework;
 
-namespace MDDGameFramework.Runtime
+namespace MDDGameFramework
 {
     public class Action : Task
     {
@@ -25,6 +24,7 @@ namespace MDDGameFramework.Runtime
         private System.Func<Request, Result> multiFrameFunc2 = null;
         private System.Action action = null;
         private bool bWasBlocked = false;
+
 
         public Action() : base("Action")
         {
@@ -52,9 +52,35 @@ namespace MDDGameFramework.Runtime
             this.singleFrameFunc = singleFrameFunc;
         }
 
+
+        public static Action Create(NP_ClassForAction data)
+        {
+            Action action = ReferencePool.Acquire<Action>();
+            action.Name = "Action";
+
+
+
+            return null;
+        }
+
         public void SetAction(System.Action action)
         {
             this.action = action;
+        }
+
+        public void SetFunc1(System.Func<bool, Result> multiframeFunc)
+        {
+            this.multiFrameFunc = multiframeFunc;
+        }
+
+        public void SetFunc2(System.Func<Request, Result> multiframeFunc2)
+        {
+            this.multiFrameFunc2 = multiframeFunc2;
+        }
+
+        public void SetSingleFunc(System.Func<bool> singleFrameFunc)
+        {
+            this.singleFrameFunc = singleFrameFunc;
         }
 
         protected override void DoStart()
