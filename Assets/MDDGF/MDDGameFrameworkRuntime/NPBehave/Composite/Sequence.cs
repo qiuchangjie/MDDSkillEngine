@@ -26,6 +26,11 @@ namespace MDDGameFramework.Runtime
             sequence.Name = "Sequence";
             sequence.Children = children;
 
+            foreach (Node node in sequence.Children)
+            {
+                node.SetParent(sequence);
+            }
+
             return sequence;
         }
 

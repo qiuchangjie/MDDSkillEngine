@@ -14,6 +14,7 @@ namespace MDDGameFramework
 
         private List<Node> node_Tree;
 
+
         public virtual void SetRootNode(Root root)
         {
             m_MainRoot = root;

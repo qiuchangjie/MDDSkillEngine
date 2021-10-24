@@ -8,6 +8,12 @@ namespace NPBehave.node
 {
     public class NP_RootNode : NP_NodeBase
     {
+        protected override void Init()
+        {
+            base.Init();
+            nodeType = NodeType.Decorator;
+        }
+
         public override string Name => "根节点";
 
         [Output(ShowBackingValue.Never, ConnectionType.Override)]

@@ -4,6 +4,7 @@ using UnityEngine;
 using XNode;
 using NPBehave;
 using MDDGameFramework;
+using MDDGameFramework.Runtime;
 
 namespace NPBehave.node
 {
@@ -14,6 +15,9 @@ namespace NPBehave.node
 
 
         public List<int> linkedID = new List<int>();
+
+        public NodeType nodeType;
+
 
         public virtual string Name => GetType().Name;
 

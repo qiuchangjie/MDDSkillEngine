@@ -55,7 +55,12 @@ namespace MDDGameFramework.Runtime
             parallel.childrenCount = children.Length;
             parallel.childrenResults = new Dictionary<Node, bool>();
             parallel.Children = children;
-                    
+
+            foreach (Node node in parallel.Children)
+            {
+                node.SetParent(parallel);
+            }
+
             return parallel;
         }     
 

@@ -19,6 +19,8 @@ namespace MDDGameFramework.Runtime
 
         public void TestLog()
         {
+            Debug.LogError(LogInfo);
+
             Log.Info(LogInfo);
         }
     }

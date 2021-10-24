@@ -60,7 +60,7 @@ namespace MDDGameFramework
 
 
 
-            return null;
+            return action;
         }
 
         public void SetAction(System.Action action)

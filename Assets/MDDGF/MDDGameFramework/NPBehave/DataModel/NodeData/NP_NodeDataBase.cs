@@ -15,6 +15,7 @@ namespace MDDGameFramework
             return null;
         }
 
+
         /// <summary>
         /// 创建组合结点
         /// </summary>
@@ -46,6 +47,14 @@ namespace MDDGameFramework
         {
             return null;
         }
+      
+    }
+
+    public enum NodeType
+    {
+        Composite,
+        Decorator,
+        Task,
     }
 
 }

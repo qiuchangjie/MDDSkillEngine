@@ -15,7 +15,8 @@ namespace MDDGameFramework.Runtime
         {
             NpClassForAction.owner = owner;
             NpClassForAction.BelongtoRuntimeTree = runtimeTree;
-            return NpClassForAction._CreateNPBehaveAction();
+            m_ActionNode = NpClassForAction._CreateNPBehaveAction();
+            return m_ActionNode;
         }
 
         public override Node NP_GetNode()

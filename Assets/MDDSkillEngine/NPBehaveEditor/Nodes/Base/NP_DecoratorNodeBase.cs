@@ -8,6 +8,11 @@ namespace NPBehave.node
 {
     public abstract class NP_DecoratorNodeBase : NP_NodeBase
     {
+        protected override void Init()
+        {
+            nodeType = NodeType.Decorator;
+        }
+
         [Input(ShowBackingValue.Unconnected, ConnectionType.Override)]
         public bool input;
 

@@ -24,6 +24,12 @@ namespace MDDGameFramework.Runtime
             Selector selector = ReferencePool.Acquire<Selector>();
             selector.Name = "Selector";
             selector.Children = children;
+
+            foreach (Node node in selector.Children)
+            {
+                node.SetParent(selector);
+            }
+
             return selector;
         }
 

@@ -94,7 +94,7 @@ namespace MDDGameFramework
 
         public Node()
         {
-            
+            startCache = Start;
         }
         public Node(string name)
         {

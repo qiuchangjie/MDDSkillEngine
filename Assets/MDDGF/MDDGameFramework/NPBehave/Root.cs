@@ -95,7 +95,8 @@ namespace MDDGameFramework
             root.mainNode = mainNode;
             root.clock = UnityContext.GetClock();
             root.blackboard = new Blackboard(root.clock);
-
+            root.Decoratee = mainNode;
+            root.Decoratee.SetParent(root);
 
             return root;
         }

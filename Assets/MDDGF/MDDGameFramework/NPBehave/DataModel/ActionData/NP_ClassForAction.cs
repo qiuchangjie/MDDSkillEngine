@@ -54,8 +54,8 @@ namespace MDDGameFramework
             GetActionToBeDone();
             if (this.Action != null)
             {
-                action = ReferencePool.Acquire<Action>();
-                action.SetAction(Action);
+                 action = ReferencePool.Acquire<Action>();
+                 action.SetAction(Action);
                 return action;
             }
 
