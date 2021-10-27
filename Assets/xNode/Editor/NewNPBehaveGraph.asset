@@ -12,6 +12,84 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 967cc566b86c09546b6d097140091401, type: 3}
   m_Name: Action Test
   m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: action
+      Entry: 7
+      Data: 0|MDDGameFramework.Action, MDDGameFramework
+    - Name: RootNode
+      Entry: 6
+      Data: 
+    - Name: startCache
+      Entry: 7
+      Data: 1|System.Action, mscorlib
+    - Name: target
+      Entry: 9
+      Data: 0
+    - Name: declaringType
+      Entry: 7
+      Data: 2|System.RuntimeType, mscorlib
+    - Name: 
+      Entry: 1
+      Data: MDDGameFramework.Node, MDDGameFramework
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: methodName
+      Entry: 1
+      Data: Start
+    - Name: delegateType
+      Entry: 7
+      Data: 3|System.RuntimeType, mscorlib
+    - Name: 
+      Entry: 1
+      Data: System.Action, mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: signature
+      Entry: 7
+      Data: 4|System.Type[], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: DebugLastStopRequestAt
+      Entry: 4
+      Data: 0
+    - Name: DebugLastStoppedAt
+      Entry: 4
+      Data: 0
+    - Name: DebugNumStartCalls
+      Entry: 3
+      Data: 0
+    - Name: DebugNumStopCalls
+      Entry: 3
+      Data: 0
+    - Name: DebugNumStoppedCalls
+      Entry: 3
+      Data: 0
+    - Name: DebugLastResult
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
   graph: {fileID: 11400000}
   position: {x: 24, y: -120}
   ports:
@@ -30,6 +108,10 @@ MonoBehaviour:
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 0
+  level: 0
+  Id: 0
+  linkedID: 
+  nodeType: 0
   input: 0
 --- !u!114 &11400000
 MonoBehaviour:
@@ -43,6 +125,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1eea3111da1f5c49afa81600507d50d, type: 3}
   m_Name: NewNPBehaveGraph
   m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: BBValues
+      Entry: 7
+      Data: 0|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[MDDGameFramework.Variable,
+        MDDGameFramework]], mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 1|System.Collections.Generic.GenericEqualityComparer`1[[System.String,
+        mscorlib]], mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
   nodes:
   - {fileID: 5384814683009589907}
   - {fileID: -6903753143908779190}
@@ -58,8 +169,95 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9e792f73dc752342a3b793b8a70582e, type: 3}
   m_Name: Root
   m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: root
+      Entry: 7
+      Data: 0|MDDGameFramework.Root, MDDGameFramework
+    - Name: RootNode
+      Entry: 6
+      Data: 
+    - Name: startCache
+      Entry: 7
+      Data: 1|System.Action, mscorlib
+    - Name: target
+      Entry: 9
+      Data: 0
+    - Name: declaringType
+      Entry: 7
+      Data: 2|System.RuntimeType, mscorlib
+    - Name: 
+      Entry: 1
+      Data: MDDGameFramework.Node, MDDGameFramework
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: methodName
+      Entry: 1
+      Data: Start
+    - Name: delegateType
+      Entry: 7
+      Data: 3|System.RuntimeType, mscorlib
+    - Name: 
+      Entry: 1
+      Data: System.Action, mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: signature
+      Entry: 7
+      Data: 4|System.Type[], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: DebugLastStopRequestAt
+      Entry: 4
+      Data: 0
+    - Name: DebugLastStoppedAt
+      Entry: 4
+      Data: 0
+    - Name: DebugNumStartCalls
+      Entry: 3
+      Data: 0
+    - Name: DebugNumStopCalls
+      Entry: 3
+      Data: 0
+    - Name: DebugNumStoppedCalls
+      Entry: 3
+      Data: 0
+    - Name: DebugLastResult
+      Entry: 5
+      Data: false
+    - Name: TotalNumStartCalls
+      Entry: 3
+      Data: 0
+    - Name: TotalNumStopCalls
+      Entry: 3
+      Data: 0
+    - Name: TotalNumStoppedCalls
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
   graph: {fileID: 11400000}
-  position: {x: -376, y: -88}
+  position: {x: -504, y: -120}
   ports:
     keys:
     - output
@@ -86,5 +284,9 @@ MonoBehaviour:
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 0
+  level: 0
+  Id: 0
+  linkedID: 
+  nodeType: 0
   output: 0
   input: 0

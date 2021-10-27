@@ -11,12 +11,25 @@ namespace NPBehave.node
 	[CustomNodeGraphEditor(typeof(NPBehaveGraph))]
 	public class NPBehaveGraphEditor : NodeGraphEditor
 	{
+		NPBehaveNodeMenuTree treeWindow;
 
-		/// <summary> 
-		/// Overriding GetNodeMenuName lets you control if and how nodes are categorized.
-		/// In this example we are sorting out all node types that are not in the XNode.Examples namespace.
-		/// </summary>
-		public override string GetNodeMenuName(System.Type type)
+		public override void OnOpen()
+        {
+            base.OnOpen();
+
+			treeWindow = NPBehaveNodeMenuTree.OpenWindow();
+
+			treeWindow.Show();
+
+			LayoutUtility.DockEditorWindow(window, treeWindow);
+
+		}
+
+        /// <summary> 
+        /// Overriding GetNodeMenuName lets you control if and how nodes are categorized.
+        /// In this example we are sorting out all node types that are not in the XNode.Examples namespace.
+        /// </summary>
+        public override string GetNodeMenuName(System.Type type)
 		{
 			if (type.Namespace == "NPBehave.node")
 			{

@@ -3,6 +3,7 @@ using UnityEngine.Events;
 using System.Collections;
 using XNode;
 using System.Collections.Generic;
+using MDDSkillEngine;
 
 namespace Slate
 {
@@ -11,7 +12,7 @@ namespace Slate
     public class PlayCutsceneOnClick : MonoBehaviour
     {
         public ScriptableObject graph;
-        NPBehaveGraph graph1;
+        public NPBehaveGraph graph1;
 
         public Cutscene cutscene;
         public float startTime;
