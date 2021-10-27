@@ -105,8 +105,6 @@ public class NPBehaveExampleHelloBlackboardsAI : MonoBehaviour
                         {
                             nodes.Add((v2.node as NP_NodeBase).NP_GetNodeData().NP_GetNode());
                         }
-
-                        //nodes.Add((v1.Connection.node as NP_NodeBase).NP_GetNodeData().NP_GetNode());
                     }
                     data.NP_GetNodeData().CreateComposite(nodes.ToArray());
                     break;

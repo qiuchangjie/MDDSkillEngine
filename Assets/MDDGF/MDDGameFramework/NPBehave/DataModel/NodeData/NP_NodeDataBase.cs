@@ -1,8 +1,10 @@
-﻿using System.Collections;
+﻿using Sirenix.OdinInspector;
+using System.Collections;
 using System.Collections.Generic;
 
 namespace MDDGameFramework
 {
+    [BoxGroup("行为结点数据")]
     public abstract class NP_NodeDataBase 
     {
 

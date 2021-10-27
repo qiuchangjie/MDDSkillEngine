@@ -8,7 +8,12 @@ namespace MDDGameFramework.Runtime
     public abstract class ObservingDecorator : Decorator
     {
         protected Stops stopsOnChange;
-        private bool isObserving;
+        protected bool isObserving;
+
+        public ObservingDecorator()
+        {
+            
+        }
 
         public ObservingDecorator(string name, Stops stopsOnChange, Node decoratee) : base(name, decoratee)
         {

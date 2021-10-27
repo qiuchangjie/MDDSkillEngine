@@ -49,18 +49,22 @@ namespace MDDGameFramework
 
         public Action(System.Func<bool> singleFrameFunc) : base("Action")
         {
-            this.singleFrameFunc = singleFrameFunc;
+            this.singleFrameFunc = singleFrameFunc;          
         }
 
 
         public static Action Create(NP_ClassForAction data)
+        {           
+            return data._CreateNPBehaveAction();
+        }
+
+        public override void Clear()
         {
-            Action action = ReferencePool.Acquire<Action>();
-            action.Name = "Action";
-
-
-
-            return action;
+            base.Clear();
+            singleFrameFunc = null;
+            multiFrameFunc = null;
+            multiFrameFunc2 = null;
+            action = null;
         }
 
         public void SetAction(System.Action action)

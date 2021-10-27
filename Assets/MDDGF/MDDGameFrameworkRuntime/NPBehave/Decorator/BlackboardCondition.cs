@@ -9,6 +9,7 @@ namespace MDDGameFramework.Runtime
         private string key;
         private Variable value;
         private Operator op;
+        private System.Action<Blackboard.Type, Variable> actionCache;
 
         public string Key
         {
@@ -34,6 +35,10 @@ namespace MDDGameFramework.Runtime
             }
         }
 
+        public BlackboardCondition()
+        {
+            actionCache = onValueChanged;
+        }
        
         public BlackboardCondition(string key, Operator op, Variable value, Stops stopsOnChange, Node decoratee) : base("BlackboardCondition", stopsOnChange, decoratee)
         {
@@ -41,6 +46,7 @@ namespace MDDGameFramework.Runtime
             this.key = key;
             this.value = value ;
             this.stopsOnChange = stopsOnChange;
+            actionCache = onValueChanged;
         }
         
         public BlackboardCondition(string key, Operator op, Stops stopsOnChange, Node decoratee) : base("BlackboardCondition", stopsOnChange, decoratee)
@@ -48,20 +54,47 @@ namespace MDDGameFramework.Runtime
             this.op = op;
             this.key = key;
             this.stopsOnChange = stopsOnChange;
+            actionCache = onValueChanged;
+        }
+
+        public static BlackboardCondition Create(string key, Operator op, Variable value, Stops stopsOnChange, Node decoratee)
+        {
+            BlackboardCondition blackboardCondition = ReferencePool.Acquire<BlackboardCondition>();
+
+            blackboardCondition.Name = "BlackboardCondition";
+            blackboardCondition.op = op;
+            blackboardCondition.key = key;
+            blackboardCondition.value = value;
+            blackboardCondition.stopsOnChange = stopsOnChange;
+            blackboardCondition.Decoratee = decoratee;
+            blackboardCondition.isObserving = false;
+            blackboardCondition.Decoratee.SetParent(blackboardCondition);
+            blackboardCondition.RootNode.Blackboard.RemoveObserver(key, blackboardCondition.actionCache);
+
+            return blackboardCondition;
+        }
+
+        public override void Clear()
+        {
+            base.Clear();
+            key = null;
+            value = null;
+            Decoratee = null;
+            isObserving = false;
         }
 
 
         override protected void StartObserving()
         {
-            this.RootNode.Blackboard.AddObserver(key, onValueChanged);
+            this.RootNode.Blackboard.AddObserver(key, actionCache);
         }
 
         override protected void StopObserving()
         {
-            this.RootNode.Blackboard.RemoveObserver(key, onValueChanged);
+            this.RootNode.Blackboard.RemoveObserver(key, actionCache);
         }
 
-        private void onValueChanged(Blackboard.Type type, object newValue)
+        private void onValueChanged(Blackboard.Type type, Variable newValue)
         {
             Evaluate();
         }

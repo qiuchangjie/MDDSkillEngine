@@ -15,22 +15,22 @@ namespace NPBehave.node
      
         public override void OnBodyGUI()
         {
-            if (target == null)
-            {
-                Debug.LogWarning("Null target node for node editor!");
-                return;
-            }
-            NodePort input = target.GetPort("input");
-            NodePort output = target.GetPort("output");
+            //if (target == null)
+            //{
+            //    Debug.LogWarning("Null target node for node editor!");
+            //    return;
+            //}
+            //NodePort input = target.GetPort("input");
+            //NodePort output = target.GetPort("output");
 
-            GUILayout.BeginHorizontal();
-            if (input != null) NodeEditorGUILayout.PortField(GUIContent.none, input, GUILayout.MinWidth(0));
-            if (output != null) NodeEditorGUILayout.PortField(GUIContent.none, output, GUILayout.MinWidth(0));
-            GUILayout.EndHorizontal();
+            //GUILayout.BeginHorizontal();
+            //if (input != null) NodeEditorGUILayout.PortField(GUIContent.none, input, GUILayout.MinWidth(0));
+            //if (output != null) NodeEditorGUILayout.PortField(GUIContent.none, output, GUILayout.MinWidth(0));
+            //GUILayout.EndHorizontal();
 
-            EditorGUIUtility.labelWidth = 60;
+            //EditorGUIUtility.labelWidth = 60;
 
-            //base.OnBodyGUI();                   
+            base.OnBodyGUI();                   
         }
     }
 }

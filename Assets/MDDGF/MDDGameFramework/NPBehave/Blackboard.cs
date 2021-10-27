@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace MDDGameFramework
 {
-    public class Blackboard
+    public class Blackboard:IReference
     {
         public enum Type
         {
@@ -39,7 +39,7 @@ namespace MDDGameFramework
 
         public Blackboard()
         {
-            
+            NotifiyObserversActionCache = NotifiyObservers;
         }
 
         public Blackboard(Blackboard parent, Clock clock)
@@ -53,6 +53,35 @@ namespace MDDGameFramework
             this.parentBlackboard = null;
             this.clock = clock;
             NotifiyObserversActionCache = NotifiyObservers;
+        }
+
+        public static Blackboard Create(Blackboard parent, Clock clock)
+        {
+            Blackboard blackboard = ReferencePool.Acquire<Blackboard>();
+            blackboard.parentBlackboard = parent;
+            blackboard.clock = clock;
+
+            return blackboard;
+        }
+
+        public void Clear()
+        {
+            if (this.parentBlackboard != null)
+            {
+                this.parentBlackboard.children.Remove(this);
+            }
+            if (this.clock != null)
+            {
+                this.clock.RemoveTimer(this.NotifiyObserversActionCache);
+            }
+            data.Clear();
+            observers.Clear();
+            isNotifiyng = false;
+            addObservers.Clear();
+            removeObservers.Clear();
+            notifications.Clear();
+            notificationsDispatch.Clear();
+            children.Clear();
         }
 
         public void Enable()
@@ -390,5 +419,7 @@ namespace MDDGameFramework
             }
             return observers;
         }
+
+       
     }
 }

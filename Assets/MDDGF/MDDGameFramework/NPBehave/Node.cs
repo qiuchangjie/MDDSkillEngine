@@ -228,7 +228,9 @@ namespace MDDGameFramework
 
         public virtual void Clear()
         {
-            throw new System.NotImplementedException();
+            RootNode = null;
+            parentNode = null;
+            currentState = State.INACTIVE;
         }
     }
 }

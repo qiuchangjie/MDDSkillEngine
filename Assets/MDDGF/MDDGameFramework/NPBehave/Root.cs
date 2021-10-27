@@ -69,7 +69,6 @@ namespace MDDGameFramework
             this.clock = UnityContext.GetClock();
             this.blackboard = new Blackboard(this.clock);
             this.SetRoot(this);
-            //actionCache = Start;
         }
         public Root(Blackboard blackboard, Node mainNode) : base("Root", mainNode)
         {
@@ -77,7 +76,6 @@ namespace MDDGameFramework
             this.mainNode = mainNode;
             this.clock = UnityContext.GetClock();
             this.SetRoot(this);
-            //actionCache = Start;
         }
 
         public Root(Blackboard blackboard, Clock clock, Node mainNode) : base("Root", mainNode)
@@ -96,8 +94,7 @@ namespace MDDGameFramework
             root.clock = UnityContext.GetClock();
             root.blackboard = new Blackboard(root.clock);
             root.Decoratee = mainNode;
-            root.Decoratee.SetParent(root);
-
+            root.Decoratee.SetParent(root);           
             return root;
         }
 
@@ -107,7 +104,8 @@ namespace MDDGameFramework
             mainNode = null;
             clock = null;
             blackboard = null;
-            
+            Decoratee = null;
+            clock.RemoveTimer(startCache);
         }
 
         public override void SetRoot(Root rootNode)
