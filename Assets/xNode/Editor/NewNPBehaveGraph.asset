@@ -91,7 +91,7 @@ MonoBehaviour:
       Entry: 8
       Data: 
   graph: {fileID: 11400000}
-  position: {x: 24, y: -120}
+  position: {x: -216, y: -200}
   ports:
     keys:
     - input
@@ -108,7 +108,6 @@ MonoBehaviour:
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 0
-  level: 0
   Id: 0
   linkedID: 
   nodeType: 0
@@ -257,7 +256,7 @@ MonoBehaviour:
       Entry: 8
       Data: 
   graph: {fileID: 11400000}
-  position: {x: -504, y: -120}
+  position: {x: -504, y: -56}
   ports:
     keys:
     - output
@@ -284,7 +283,6 @@ MonoBehaviour:
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 0
-  level: 0
   Id: 0
   linkedID: 
   nodeType: 0

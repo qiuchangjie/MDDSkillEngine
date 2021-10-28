@@ -825,6 +825,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000, guid: 81c24e06c06ad8d48bf6fe20b3dc0b51, type: 2}
+  graph1: {fileID: 0}
   cutscene: {fileID: 1249632256}
   startTime: 0
   onFinish:

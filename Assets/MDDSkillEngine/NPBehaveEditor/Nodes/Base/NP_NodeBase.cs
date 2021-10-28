@@ -5,17 +5,22 @@ using XNode;
 using NPBehave;
 using MDDGameFramework;
 using MDDGameFramework.Runtime;
+using Sirenix.OdinInspector;
 
 namespace NPBehave.node
 {
+
+   
 	public abstract class NP_NodeBase : XNode.Node
 	{
+        [FoldoutGroup("节点Editor数据")]
+        public int Id;
 
-		public int Id;
-
-
+        [FoldoutGroup("节点Editor数据")]
         public List<int> linkedID = new List<int>();
 
+        [FoldoutGroup("节点Editor数据")]
+        [ReadOnly]
         public NodeType nodeType;
 
 

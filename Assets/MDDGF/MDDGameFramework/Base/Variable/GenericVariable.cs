@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Sirenix.OdinInspector;
+using System;
+using UnityEngine;
 
 namespace MDDGameFramework
 {
@@ -8,6 +10,8 @@ namespace MDDGameFramework
     /// <typeparam name="T">变量类型。</typeparam>
     public abstract class Variable<T> : Variable
     {
+        [LabelText("值")]    
+        [SerializeField]
         private T m_Value;
 
         /// <summary>

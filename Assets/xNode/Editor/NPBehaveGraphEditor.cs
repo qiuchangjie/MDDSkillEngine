@@ -5,6 +5,8 @@ using XNode;
 using XNodeEditor;
 using static XNodeEditor.NodeGraphEditor;
 using MDDSkillEngine;
+using MDDGameFramework;
+using Sirenix.OdinInspector;
 
 namespace NPBehave.node
 {
@@ -13,17 +15,37 @@ namespace NPBehave.node
 	{
 		NPBehaveNodeMenuTree treeWindow;
 
-		public override void OnOpen()
+		NPBehaveGraph graph;
+        public override void OnOpen()
         {
             base.OnOpen();
+            treeWindow = NPBehaveNodeMenuTree.OpenWindow();
+            treeWindow.Show();
+            LayoutUtility.DockEditorWindow(window, treeWindow);
 
-			treeWindow = NPBehaveNodeMenuTree.OpenWindow();
+            NodeEditor.onUpdateNode = OnChange;
 
-			treeWindow.Show();
+            graph = target as NPBehaveGraph;
+            if (graph != null)
+            {
+                NPBlackBoardEditorInstance.BBValues = graph.BBValues;
+            }
+        }
 
-			LayoutUtility.DockEditorWindow(window, treeWindow);
+        public override void OnDropObjects(Object[] objects)
+        {
+            base.OnDropObjects(objects);
+			Debug.LogError(objects.Length);
+        }
 
-		}
+        //public override void OnGUI()
+        //{
+        //    base.OnGUI();
+        //    if (GUI.Button(window.position,GUIContent.none))
+        //    {
+        //        SortAllChildrenNode();
+        //    }
+        //}
 
         /// <summary> 
         /// Overriding GetNodeMenuName lets you control if and how nodes are categorized.
@@ -37,5 +59,27 @@ namespace NPBehave.node
 			}
 			else return null;
 		}
+
+		public void OnChange(XNode.Node node)
+		{
+            SortAllChildrenNode();
+
+        }
+
+        [Button("Sort")]
+        public void SortAllChildrenNode()
+        {
+            if (graph == null)
+                return;
+
+            foreach (var node in graph.nodes)
+            {
+                foreach (var connection in node.Outputs)
+                {
+                    connection.Sort();
+                }
+            }
+        }
+
 	}
 }

@@ -12,9 +12,10 @@ namespace MDDGameFramework
     /// <summary>
     /// 与黑板节点相关的数据
     /// </summary>
-    [BoxGroup("黑板数据配置"), GUIColor(0.961f, 0.902f, 0.788f, 1f)]
+    [BoxGroup("黑板数据配置")]
     [HideLabel]
-    public partial class NP_BlackBoardRelationData
+    [ShowOdinSerializedPropertiesInInspector]
+    public class ClassForBlackboard
     {
         [LabelText("字典键")]
         [ValueDropdown("GetBBKeys")]
@@ -31,30 +32,31 @@ namespace MDDGameFramework
         [ShowIf("WriteOrCompareToBB")]
         public Variable NP_BBValue;
 
+
 #if UNITY_EDITOR
         private IEnumerable<string> GetBBKeys()
         {
-            //if (NP_BlackBoardDataManager.CurrentEditedNP_BlackBoardDataManager != null)
-            //{
-            //    return NP_BlackBoardDataManager.CurrentEditedNP_BlackBoardDataManager.BBValues.Keys;
-            //}
+            if (NPBlackBoardEditorInstance.BBValues != null)
+            {
+                return NPBlackBoardEditorInstance.BBValues.Keys;
+            }
 
             return null;
         }
 
         private void OnBBKeySelected()
         {
-            //if (NP_BlackBoardDataManager.CurrentEditedNP_BlackBoardDataManager != null)
-            //{
-            //    foreach (var bbValues in NP_BlackBoardDataManager.CurrentEditedNP_BlackBoardDataManager.BBValues)
-            //    {
-            //        if (bbValues.Key == this.BBKey)
-            //        {
-            //            NP_BBValue = bbValues.Value.DeepCopy();
-            //            NP_BBValueType = this.NP_BBValue.NP_BBValueType.ToString();
-            //        }
-            //    }
-            //}
+            if (NPBlackBoardEditorInstance.BBValues != null)
+            {
+                foreach (var bbValues in NPBlackBoardEditorInstance.BBValues)
+                {
+                    if (bbValues.Key == this.BBKey)
+                    {
+                        NP_BBValue = bbValues.Value.DeepCopy();
+                        NP_BBValueType = this.NP_BBValue.Type.ToString();
+                    }
+                }
+            }
         }
 #endif
 

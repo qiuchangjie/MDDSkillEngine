@@ -923,7 +923,7 @@ MonoBehaviour:
       - Type: 1
         Value: 39.540043
       - Type: 0
-        Value: 55.405407
+        Value: 50.81967
   StartingEquipment:
     MainHand: {fileID: 11400000, guid: e927c9ab37d3bd247a2d546c2acdbe1d, type: 2}
     Offhand: {fileID: 0}

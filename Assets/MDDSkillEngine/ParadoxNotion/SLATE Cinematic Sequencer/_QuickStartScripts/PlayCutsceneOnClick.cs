@@ -81,7 +81,7 @@ namespace Slate
             Node tMTreeNode;
             Queue<Node> queue = new Queue<Node>(100); //将队列初始化大小为100
             Stack<Node> stack = new Stack<Node>(100); //将栈初始化大小为100
-            head.level = 0; //根节点的深度为0
+            //head.level = 0; //根节点的深度为0
 
             //将根节点入队列
             queue.Enqueue(head);

@@ -1,4 +1,5 @@
-﻿using MDDGameFramework.Runtime;
+﻿using MDDGameFramework;
+using MDDGameFramework.Runtime;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

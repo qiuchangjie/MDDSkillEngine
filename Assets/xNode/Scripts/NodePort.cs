@@ -5,7 +5,8 @@ using UnityEngine;
 
 namespace XNode {
     [Serializable]
-    public class NodePort {
+    public class NodePort
+    {
         public enum IO { Input, Output }
 
         public int ConnectionCount { get { return connections.Count; } }
@@ -230,6 +231,14 @@ namespace XNode {
             return result;
         }
 
+        public void Sort()
+        {
+            connections.Sort((y, x) =>
+            {
+                return x.node.position.y.CompareTo(y.node.position.y);
+            });
+        }
+
         public NodePort GetConnection(int i) {
             //If the connection is broken for some reason, remove it.
             if (connections[i].node == null || string.IsNullOrEmpty(connections[i].fieldName)) {
@@ -391,6 +400,8 @@ namespace XNode {
                 if (index >= 0) connection.node = newNodes[index];
             }
         }
+
+        
 
         [Serializable]
         private class PortConnection {

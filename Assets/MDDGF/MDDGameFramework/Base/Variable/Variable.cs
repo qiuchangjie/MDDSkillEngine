@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Sirenix.OdinInspector;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,6 +9,7 @@ namespace MDDGameFramework
     /// <summary>
     /// 变量。
     /// </summary>
+    [ShowOdinSerializedPropertiesInInspector]
     public abstract class Variable : IReference
     {
         /// <summary>

@@ -3,7 +3,6 @@ using Sirenix.OdinInspector;
 
 namespace MDDGameFramework.Runtime
 {
-    [BoxGroup("行为结点数据")]
     [HideLabel]
     public class NP_ActionNodeData : NP_NodeDataBase
     {
