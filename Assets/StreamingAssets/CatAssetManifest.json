@@ -1,6 +1,6 @@
 {
 	"GameVersion":"0.1",
-	"ManifestVersion":33,
+	"ManifestVersion":34,
 	"AssetBundles":[
 		{
 			"AssetBundleName":"mddskillengine_prefabs_hpbaritem.bundle",
@@ -36,7 +36,7 @@
 		},
 		{
 			"AssetBundleName":"mddskillengine_prefabs_simpleenemy.bundle",
-			"Length":3599,
+			"Length":3583,
 			"Hash":"b0edb5697eb955ac7e0c1b639bec6260",
 			"Group":"model1",
 			"Assets":[
@@ -50,7 +50,7 @@
 		},
 		{
 			"AssetBundleName":"mddskillengine_prefabs_swarmenemy.bundle",
-			"Length":3598,
+			"Length":3579,
 			"Hash":"4676c7a6591ef59e0ce72e1490bf7910",
 			"Group":"model1",
 			"Assets":[
@@ -64,7 +64,7 @@
 		},
 		{
 			"AssetBundleName":"mddskillengine_prefabs_textbar.bundle",
-			"Length":3985,
+			"Length":3987,
 			"Hash":"c2622d2a288f02100462007a57281884",
 			"Group":"model1",
 			"Assets":[
@@ -265,8 +265,8 @@
 		},
 		{
 			"AssetBundleName":"prefab_model1_player_aki.bundle",
-			"Length":27664,
-			"Hash":"ce02fbc9f879a73b6afc14e733a8db98",
+			"Length":51991,
+			"Hash":"ee00b0688ed5ccf8a3723d183f6005d9",
 			"Group":"model1",
 			"Assets":[
 				{
@@ -289,46 +289,22 @@
 						"Assets/GirlModel/Suriyun/Aki/Materials/Aki/Dress/Katana_Aki.mat",
 						"Assets/GirlModel/Suriyun/Aki/Materials/Aki/Base_character/eye_R_Aki.mat"
 					]
-				}
-			]
-		},
-		{
-			"AssetBundleName":"scenes_testbundlescene_launchera.bundle",
-			"Length":40877,
-			"Hash":"ce76740bbd524d3c0d9c1b15217a6652",
-			"IsScene":true,
-			"Group":"model1",
-			"Assets":[
+				},
 				{
-					"AssetName":"Assets/Scenes/testBundleScene/LauncherA.unity",
+					"AssetName":"Packages/com.unity.cinemachine/Editor/EditorResources/cm_logo_sm.png",
 					"Dependencies":[
-						"Assets/GirlModel/Suriyun/Aki/Materials/Aki/Base_character/face_Aki.mat",
-						"Assets/GirlModel/Suriyun/Aki/Materials/Aki/Base_character/mat_cheek_Aki.mat",
-						"Assets/GirlModel/Suriyun/Aki/FBX/katana.fbx",
-						"Assets/GirlModel/Suriyun/Aki/Materials/Aki/Base_character/hair_Aki.mat",
-						"Assets/GirlModel/Suriyun/Aki/Materials/Aki/Base_character/eyebase_Aki.mat",
-						"Assets/GirlModel/Suriyun/Aki/Materials/Aki/Base_character/eye_L_Aki.mat",
-						"Assets/GirlModel/Suriyun/Aki/Materials/Aki/Dress/Skin_Aki.mat",
-						"Assets/GirlModel/Suriyun/Aki/Materials/Aki/Dress/Boot.mat",
-						"Assets/GirlModel/Suriyun/Aki/Materials/Aki/Dress/Dress.mat",
-						"Assets/GirlModel/Suriyun/Aki/Materials/Aki/Base_character/Lash.mat",
-						"Assets/GirlModel/Suriyun/Aki/FBX/Aki.fbx",
-						"Assets/MDDSkillEngine/NPBehave-master/Runtime/Examples/Materials/NPBehave_Example_Enemy.mat",
-						"Assets/GirlModel/Suriyun/Aki/Materials/Aki/Dress/Katana_Aki.mat",
-						"Assets/GirlModel/Suriyun/Aki/Materials/Aki/Base_character/eye_R_Aki.mat"
 					]
 				}
 			]
 		},
 		{
-			"AssetBundleName":"scenes_testbundlescene_samplescene.bundle",
-			"Length":105347,
-			"Hash":"2cfd76b92413f25b72e047dc4cca9138",
-			"IsScene":true,
+			"AssetBundleName":"prefab_model1_sotest.bundle",
+			"Length":3830,
+			"Hash":"885312654b1166aabe90e4f99adb5f0b",
 			"Group":"model1",
 			"Assets":[
 				{
-					"AssetName":"Assets/Scenes/testBundleScene/SampleScene.unity",
+					"AssetName":"Assets/Prefab/Model1/SoTest.asset",
 					"Dependencies":[
 					]
 				}
@@ -336,8 +312,8 @@
 		},
 		{
 			"AssetBundleName":"common.bundle",
-			"Length":15611373,
-			"Hash":"ad2fe78d103164383938478167daed4a",
+			"Length":15601169,
+			"Hash":"887d0b8d6a91fa39cca7b96b73a580e6",
 			"Assets":[
 				{
 					"AssetName":"Assets/MDDSkillEngine/NPBehave-master/Runtime/Examples/Materials/NPBehave_Example_Enemy.mat",
@@ -629,11 +605,6 @@
 					"Dependencies":[
 						"Assets/Hovl Studio/Toon Projectiles 2/Textures/Glow1.png",
 						"Assets/Hovl Studio/Toon Projectiles 2/Shaders/Add_CenterGlow.shader"
-					]
-				},
-				{
-					"AssetName":"Packages/com.unity.cinemachine/Editor/EditorResources/cm_logo_sm.png",
-					"Dependencies":[
 					]
 				}
 			]
