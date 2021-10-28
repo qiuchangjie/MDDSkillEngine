@@ -74,9 +74,9 @@ namespace NPBehave.node
 
             foreach (var node in graph.nodes)
             {
-                foreach (var connection in node.Outputs)
+                foreach (var port in node.Outputs)
                 {
-                    connection.Sort();
+                    port.Sort();
                 }
             }
         }
