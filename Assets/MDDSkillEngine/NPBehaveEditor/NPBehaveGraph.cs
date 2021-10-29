@@ -5,6 +5,7 @@ using UnityEngine;
 using XNode;
 using MDDGameFramework;
 using System;
+using NPBehave.node;
 
 namespace MDDSkillEngine
 {
@@ -12,7 +13,7 @@ namespace MDDSkillEngine
     [CreateAssetMenu(fileName = "NewNPBehaveGraph", menuName = "NewNPBehaveGraph/test")]
     public class NPBehaveGraph : NodeGraph
     {
-        [InfoBox("这是这个NPBehaveCanvas的所有黑板数据\n键为string，值为NP_BBValue子类\n如果要添加新的黑板数据类型，请参照BBValues文件夹下的定义")]
+        [InfoBox("这是这个NPBehaveGraph的所有黑板数据\n键为string，值为Variable子类\n如果要添加新的黑板数据类型，请参照Variable文件夹下的定义")]
         [Title("黑板数据", TitleAlignment = TitleAlignments.Centered)]
         [LabelText("黑板内容")]
         [BoxGroup]
@@ -20,6 +21,21 @@ namespace MDDSkillEngine
         public Dictionary<string,Variable> BBValues = new Dictionary<string, Variable>();
 
 
+
+
+        public XNode.Node GetRootNode()
+        {
+            for (int i = 0; i < nodes.Count; i++)
+            {
+                NP_NodeBase node = nodes[i] as NP_NodeBase;
+
+                if (node.Name == "根节点")
+                {
+                    return node;
+                }
+            }
+            return null;
+        }
     }
 }
 

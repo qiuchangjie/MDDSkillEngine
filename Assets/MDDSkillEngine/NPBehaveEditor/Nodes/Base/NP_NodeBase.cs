@@ -14,15 +14,16 @@ namespace NPBehave.node
 	public abstract class NP_NodeBase : XNode.Node
 	{
         [FoldoutGroup("节点Editor数据")]
+        [ReadOnly]
         public int Id;
-
-        [FoldoutGroup("节点Editor数据")]
-        public List<int> linkedID = new List<int>();
+       
 
         [FoldoutGroup("节点Editor数据")]
         [ReadOnly]
         public NodeType nodeType;
 
+        [FoldoutGroup("节点Editor数据")]
+        public string des;
 
         public virtual string Name => GetType().Name;
 

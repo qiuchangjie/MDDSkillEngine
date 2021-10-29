@@ -14,8 +14,11 @@ namespace NPBehave.node
 	public class NPBehaveGraphEditor : NodeGraphEditor
 	{
 		NPBehaveNodeMenuTree treeWindow;
-
 		NPBehaveGraph graph;
+
+        Queue<XNode.Node> queue = new Queue<XNode.Node>(100); //将队列初始化大小为100
+        Stack<XNode.Node> stack = new Stack<XNode.Node>(100);
+
         public override void OnOpen()
         {
             base.OnOpen();
@@ -32,21 +35,12 @@ namespace NPBehave.node
             }
         }
 
-        public override void OnDropObjects(Object[] objects)
-        {
-            base.OnDropObjects(objects);
-			Debug.LogError(objects.Length);
-        }
-
-        //public override void OnGUI()
-        //{
-        //    base.OnGUI();
-        //    if (GUI.Button(window.position,GUIContent.none))
-        //    {
-        //        SortAllChildrenNode();
-        //    }
-        //}
-
+   //     public override void OnDropObjects(Object[] objects)
+   //     {
+   //         base.OnDropObjects(objects);
+			//Debug.LogError(objects.Length);
+   //     }
+      
         /// <summary> 
         /// Overriding GetNodeMenuName lets you control if and how nodes are categorized.
         /// In this example we are sorting out all node types that are not in the XNode.Examples namespace.
@@ -62,12 +56,26 @@ namespace NPBehave.node
 
 		public void OnChange(XNode.Node node)
 		{
-            SortAllChildrenNode();
-
+            Sort();
         }
 
-        [Button("Sort")]
-        public void SortAllChildrenNode()
+        /// <summary>
+        /// 行为树排序方法
+        /// </summary>
+        public void Sort()
+        {
+            if (graph == null)
+                return;
+
+            SortAllChildrenNode();
+            SortTree(graph.GetRootNode());
+        }
+
+
+        /// <summary>
+        /// 给所有的孩子节点排序 通过坐标确定顺序
+        /// </summary>
+        private void SortAllChildrenNode()
         {
             if (graph == null)
                 return;
@@ -81,5 +89,58 @@ namespace NPBehave.node
             }
         }
 
-	}
+        /// <summary>
+        /// 行为树排序 并给ID自动赋值 层次遍历
+        /// </summary>
+        /// <param name="head"></param>
+        private void SortTree(XNode.Node head)
+        {
+            if (head == null)
+            {
+                Debug.LogError("根节点为空");
+                return;
+            }   
+            
+            XNode.Node tMTreeNode;
+            
+            //将根节点入队列
+            queue.Enqueue(head);
+
+            //采用层次优先遍历方法，借助于队列
+            while (queue.Count != 0) //如果队列q不为空
+            {
+                tMTreeNode = queue.Dequeue(); //出队列
+
+                //孩子入队
+                foreach (var v in tMTreeNode.Outputs)
+                {
+                    foreach (var v1 in v.GetConnections())
+                    {
+                        queue.Enqueue(v1.node);
+                    }
+                }
+
+                stack.Push(tMTreeNode); //将p入栈
+            }
+
+            int i = 0;
+
+            while (stack.Count != 0) //不为空
+            {
+                i++;
+                tMTreeNode = stack.Pop(); //弹栈
+                NP_NodeBase node = tMTreeNode as NP_NodeBase;
+                node.Id = i;
+            }
+
+            graph.nodes.Sort((x,y)=> 
+            {
+                NP_NodeBase nodex = x as NP_NodeBase;
+                NP_NodeBase nodey = y as NP_NodeBase;
+
+                return nodex.Id.CompareTo(nodey.Id);
+            });
+        }
+
+    }
 }

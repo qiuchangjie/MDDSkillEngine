@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace MDDGameFramework
 {
-    [BoxGroup("结点数据")]
+    [FoldoutGroup("结点数据")]
     public abstract class NP_NodeDataBase 
     {
 
