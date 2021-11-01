@@ -5,6 +5,7 @@ using MDDGameFramework;
 
 namespace MDDSkillEngine
 {
+    [entiity]
     public sealed class GoAround : FsmState<entiity>
     {
         public override bool StrongState

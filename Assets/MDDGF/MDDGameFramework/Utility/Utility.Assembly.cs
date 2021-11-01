@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace MDDGameFramework
 {
@@ -12,6 +13,8 @@ namespace MDDGameFramework
         {
             private static readonly System.Reflection.Assembly[] s_Assemblies = null;
             private static readonly Dictionary<string, Type> s_CachedTypes = new Dictionary<string, Type>(StringComparer.Ordinal);
+            private static System.Reflection.Assembly runTimeAssembly = null;
+            private static Type[] runTimeTypes = null;
 
             static Assembly()
             {
@@ -96,6 +99,42 @@ namespace MDDGameFramework
                 }
 
                 return null;
+            }
+
+
+            /// <summary>
+            /// 通过标签获取runtime程序集中的指定类型
+            /// </summary>
+            /// <typeparam name="TAttribute"></typeparam>
+            /// <param name="results"></param>
+            public static void GetTypesByAttribute<TAttribute>(List<Type> results,Type interfaceType)
+            {
+                if (results == null)
+                {
+                    throw new MDDGameFrameworkException("Results is invalid.");
+                }
+
+                Type attributeType = typeof(TAttribute);
+
+                if (runTimeAssembly == null)
+                {
+                    runTimeAssembly = attributeType.Assembly;
+                    runTimeTypes = runTimeAssembly.GetTypes();
+                }
+
+                for (int i = 0; i < runTimeTypes.Length; i++)
+                {
+                    if (interfaceType.IsAssignableFrom(runTimeTypes[i]))
+                    {
+                        if (!runTimeTypes[i].IsAbstract)
+                        {
+                            if (runTimeTypes[i].GetCustomAttributes(attributeType, false).Length > 0)
+                            {
+                                results.Add(runTimeTypes[i]);
+                            }
+                        }
+                    }                 
+                }
             }
         }
     }

@@ -1,5 +1,7 @@
 ﻿using MDDGameFramework;
 using MDDGameFramework.Runtime;
+using MDDSkillEngine;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -26,10 +28,12 @@ public class fucser : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.L))
         {
-            copy = fuck.DeepCopy();
+            //copy = fuck.DeepCopy();
+            // Log.Error("fuck.c:{0},fuck.b{1},fuck.fuck2.a{2}", copy.c, copy.b, copy.fuck2.a);
 
+          List<Type> types = new List<Type>();
 
-            Log.Error("fuck.c:{0},fuck.b{1},fuck.fuck2.a{2}", copy.c, copy.b, copy.fuck2.a);
+          Utility.Assembly.GetTypesByAttribute<entiityAttribute>(types,typeof(FsmState));
         }
     }
 }

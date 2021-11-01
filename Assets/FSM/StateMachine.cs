@@ -30,7 +30,7 @@ public class StateMachine
             IState state  = (IState)System.Activator.CreateInstance(stateType);
 
             if (!_registedState.ContainsKey(stateType.Name))
-            {
+            { 
                 _registedState.Add(state.name,state);
             }
         }

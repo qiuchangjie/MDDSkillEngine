@@ -5,11 +5,16 @@ using UnityEngine;
 
 namespace MDDGameFramework
 {
+    public abstract class FsmState
+    {
+        
+    }
+
     /// <summary>
     /// 有限状态机状态基类。
     /// </summary>
     /// <typeparam name="T">有限状态机持有者类型。</typeparam>
-    public abstract class FsmState<T> where T : class
+    public abstract class FsmState<T> : FsmState where T : class
     {
         public virtual bool StrongState
         {

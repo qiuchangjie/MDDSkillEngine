@@ -5,6 +5,7 @@ using MDDGameFramework;
 
 namespace MDDSkillEngine
 {
+    [entiity]
     public sealed class GoOn : FsmState<entiity>
     {
         public float time;
