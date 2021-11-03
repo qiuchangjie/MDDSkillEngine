@@ -3,13 +3,13 @@
 // 生成时间：__DATA_TABLE_CREATE_TIME__
 //------------------------------------------------------------
 
-using GameFramework;
+using MDDGameFramework;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
 using UnityEngine;
-using UnityGameFramework.Runtime;
+using MDDGameFramework.Runtime;
 
 namespace __DATA_TABLE_NAME_SPACE__
 {
