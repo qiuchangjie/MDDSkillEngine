@@ -1,7 +1,6 @@
 ﻿
 
 using MDDGameFramework;
-using GameFramework.Event;
 
 namespace MDDGameFramework.Runtime
 {

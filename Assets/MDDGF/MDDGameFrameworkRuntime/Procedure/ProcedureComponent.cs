@@ -1,7 +1,4 @@
 ﻿
-using GameFramework;
-using GameFramework.Fsm;
-using GameFramework.Procedure;
 using System;
 using System.Collections;
 using UnityEngine;
@@ -53,7 +50,7 @@ namespace MDDGameFramework.Runtime
         {
             base.Awake();
 
-            m_ProcedureManager = GameFrameworkEntry.GetModule<IProcedureManager>();
+            m_ProcedureManager = MDDGameFrameworkEntry.GetModule<IProcedureManager>();
             if (m_ProcedureManager == null)
             {
                 Log.Fatal("Procedure manager is invalid.");
@@ -92,7 +89,7 @@ namespace MDDGameFramework.Runtime
                 yield break;
             }
 
-            m_ProcedureManager.Initialize(GameFrameworkEntry.GetModule<IFsmManager>(), procedures);
+            m_ProcedureManager.Initialize(MDDGameFrameworkEntry.GetModule<IFsmManager>(), procedures);
 
             yield return new WaitForEndOfFrame();
 

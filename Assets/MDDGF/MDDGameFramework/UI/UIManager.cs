@@ -15,7 +15,7 @@ namespace MDDGameFramework
         private readonly Queue<IUIForm> m_RecycleQueue;
         private readonly LoadAssetCallbacks m_LoadAssetCallbacks;
         private IObjectPoolManager m_ObjectPoolManager;
-        //private IResourceManager m_ResourceManager;
+        private IResourceManager m_ResourceManager;
         private IObjectPool<UIFormInstanceObject> m_InstancePool;
         private IUIFormHelper m_UIFormHelper;
         private int m_Serial;
@@ -37,7 +37,7 @@ namespace MDDGameFramework
             m_RecycleQueue = new Queue<IUIForm>();
             m_LoadAssetCallbacks = new LoadAssetCallbacks(LoadAssetSuccessCallback);
             m_ObjectPoolManager = null;
-           // m_ResourceManager = null;
+            m_ResourceManager = null;
             m_InstancePool = null;
             m_UIFormHelper = null;
             m_Serial = 0;
@@ -247,15 +247,15 @@ namespace MDDGameFramework
         /// 设置资源管理器。
         /// </summary>
         /// <param name="resourceManager">资源管理器。</param>
-        //public void SetResourceManager(IResourceManager resourceManager)
-        //{
-        //    if (resourceManager == null)
-        //    {
-        //        throw new MDDGameFrameworkException("Resource manager is invalid.");
-        //    }
+        public void SetResourceManager(IResourceManager resourceManager)
+        {
+            if (resourceManager == null)
+            {
+                throw new MDDGameFrameworkException("Resource manager is invalid.");
+            }
 
-        //    m_ResourceManager = resourceManager;
-        //}
+            m_ResourceManager = resourceManager;
+        }
 
         /// <summary>
         /// 设置界面辅助器。
@@ -745,7 +745,8 @@ namespace MDDGameFramework
             if (uiFormInstanceObject == null)
             {
                 m_UIFormsBeingLoaded.Add(serialId, uiFormAssetName);
-               CatAssetManager.LoadAsset(uiFormAssetName, null,priority, m_LoadAssetCallbacks, OpenUIFormInfo.Create(serialId, uiGroup, pauseCoveredUIForm, userData));
+                m_ResourceManager.LoadAsset(uiFormAssetName, priority, m_LoadAssetCallbacks, OpenUIFormInfo.Create(serialId, uiGroup, pauseCoveredUIForm, userData));
+                //CatAssetManager.LoadAsset(uiFormAssetName, null,priority, m_LoadAssetCallbacks, OpenUIFormInfo.Create(serialId, uiGroup, pauseCoveredUIForm, userData));
             }
             else
             {

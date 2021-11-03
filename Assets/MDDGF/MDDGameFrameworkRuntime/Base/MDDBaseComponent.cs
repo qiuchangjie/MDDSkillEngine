@@ -27,6 +27,13 @@ namespace MDDGameFramework.Runtime
         [SerializeField]
         private string m_BuffFactoryTypeName = "MDDSkillEngine.BuffFactoryHelper";
 
+        public bool EditorResourceMode;
+        public IResourceManager EditorResourceHelper
+        {
+            get;
+            set;
+        }
+
         protected override void Awake()
         {
 

@@ -16,7 +16,7 @@ namespace MDDGameFramework
         private readonly List<string> m_UnloadingSceneAssetNames;
         private readonly LoadSceneCallbacks m_LoadSceneCallbacks;
         private readonly UnloadSceneCallbacks m_UnloadSceneCallbacks;
-        //private IResourceManager m_ResourceManager;
+        private IResourceManager m_ResourceManager;
         private EventHandler<LoadSceneSuccessEventArgs> m_LoadSceneSuccessEventHandler;
         private EventHandler<LoadSceneFailureEventArgs> m_LoadSceneFailureEventHandler;
         private EventHandler<LoadSceneUpdateEventArgs> m_LoadSceneUpdateEventHandler;
@@ -34,7 +34,7 @@ namespace MDDGameFramework
             m_UnloadingSceneAssetNames = new List<string>();
             m_LoadSceneCallbacks = new LoadSceneCallbacks(LoadSceneSuccessCallback);
             m_UnloadSceneCallbacks = new UnloadSceneCallbacks(UnloadSceneSuccessCallback);
-            //m_ResourceManager = null;
+            m_ResourceManager = null;
             m_LoadSceneSuccessEventHandler = null;
             m_LoadSceneFailureEventHandler = null;
             m_LoadSceneUpdateEventHandler = null;
@@ -179,15 +179,15 @@ namespace MDDGameFramework
         /// 设置资源管理器。
         /// </summary>
         /// <param name="resourceManager">资源管理器。</param>
-        //public void SetResourceManager(IResourceManager resourceManager)
-        //{
-        //    if (resourceManager == null)
-        //    {
-        //        throw new MDDGameFrameworkException("Resource manager is invalid.");
-        //    }
+        public void SetResourceManager(IResourceManager resourceManager)
+        {
+            if (resourceManager == null)
+            {
+                throw new MDDGameFrameworkException("Resource manager is invalid.");
+            }
 
-        //    m_ResourceManager = resourceManager;
-        //}
+            m_ResourceManager = resourceManager;
+        }
 
         /// <summary>
         /// 获取场景是否已加载。
@@ -359,10 +359,10 @@ namespace MDDGameFramework
                 throw new MDDGameFrameworkException("Scene asset name is invalid.");
             }
 
-            //if (m_ResourceManager == null)
-            //{
-            //    throw new MDDGameFrameworkException("You must set resource manager first.");
-            //}
+            if (m_ResourceManager == null)
+            {
+                throw new MDDGameFrameworkException("You must set resource manager first.");
+            }
 
             if (SceneIsUnloading(sceneAssetName))
             {
@@ -380,7 +380,8 @@ namespace MDDGameFramework
             }
 
             m_LoadingSceneAssetNames.Add(sceneAssetName);
-            CatAssetManager.LoadScene(sceneAssetName,null, priority, m_LoadSceneCallbacks, userData);
+            m_ResourceManager.LoadScene(sceneAssetName, priority, m_LoadSceneCallbacks, userData);
+            // CatAssetManager.LoadScene(sceneAssetName,null, priority, m_LoadSceneCallbacks, userData);
         }
 
         /// <summary>
@@ -404,10 +405,10 @@ namespace MDDGameFramework
                 throw new MDDGameFrameworkException("Scene asset name is invalid.");
             }
 
-            //if (m_ResourceManager == null)
-            //{
-            //    throw new MDDGameFrameworkException("You must set resource manager first.");
-            //}
+            if (m_ResourceManager == null)
+            {
+                throw new MDDGameFrameworkException("You must set resource manager first.");
+            }
 
             if (SceneIsUnloading(sceneAssetName))
             {
@@ -425,7 +426,8 @@ namespace MDDGameFramework
             }
 
             m_UnloadingSceneAssetNames.Add(sceneAssetName);
-            CatAssetManager.UnloadScene(sceneAssetName);
+            m_ResourceManager.UnloadScene(sceneAssetName, m_UnloadSceneCallbacks, userData);
+            //CatAssetManager.UnloadScene(sceneAssetName);
         }
 
         private void LoadSceneSuccessCallback(string sceneAssetName, float duration, object userData)

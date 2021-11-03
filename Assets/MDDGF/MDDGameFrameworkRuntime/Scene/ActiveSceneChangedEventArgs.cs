@@ -1,6 +1,5 @@
 ﻿
 using MDDGameFramework;
-using GameFramework.Event;
 using UnityEngine.SceneManagement;
 
 namespace MDDGameFramework.Runtime
