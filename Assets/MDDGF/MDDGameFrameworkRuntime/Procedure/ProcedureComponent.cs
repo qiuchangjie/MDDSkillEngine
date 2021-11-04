@@ -86,14 +86,14 @@ namespace MDDGameFramework.Runtime
                 {
                     Log.Error("Entrance procedure is invalid.");
                     yield break;
-                }
-
-                m_ProcedureManager.Initialize(MDDGameFrameworkEntry.GetModule<IFsmManager>(), procedures);
-
-                yield return new WaitForEndOfFrame();
-
-                m_ProcedureManager.StartProcedure(m_EntranceProcedure.GetType());
+                }              
             }
+
+            m_ProcedureManager.Initialize(MDDGameFrameworkEntry.GetModule<IFsmManager>(), procedures);
+
+            yield return new WaitForEndOfFrame();
+
+            m_ProcedureManager.StartProcedure(m_EntranceProcedure.GetType());
 
 
             //for (int i = 0; i < m_AvailableProcedureTypeNames.Length; i++)

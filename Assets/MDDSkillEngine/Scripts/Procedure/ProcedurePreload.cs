@@ -51,7 +51,13 @@ namespace MDDSkillEngine
                 }
             }
 
-            Log.Info("Editor 初始化流程结束");
+            
+
+            IDataTable<DRAircraft> dtThruster = Game.DataTable.GetDataTable<DRAircraft>();
+            DRAircraft drThruster = dtThruster.MaxIdDataRow;
+
+            Log.Info(drThruster.WeaponId0);
+
 
             //ChangeState<ProcedureChangeScene>(procedureOwner);
         }
