@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 
 namespace MDDGameFramework
 {
@@ -118,7 +119,15 @@ namespace MDDGameFramework
 
                 if (runTimeAssembly == null)
                 {
-                    runTimeAssembly = attributeType.Assembly;
+                    for (int i = 0; i < s_Assemblies.Length; i++)
+                    {
+                        if (s_Assemblies[i].GetName().Name == "MDDSkillEngine")
+                        {
+                            runTimeAssembly = s_Assemblies[i];
+                            break;
+                        }
+                    }
+
                     runTimeTypes = runTimeAssembly.GetTypes();
                 }
 

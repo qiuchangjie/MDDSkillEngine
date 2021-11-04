@@ -1,6 +1,7 @@
 ﻿
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace MDDGameFramework.Runtime
@@ -60,40 +61,74 @@ namespace MDDGameFramework.Runtime
 
         private IEnumerator Start()
         {
-            ProcedureBase[] procedures = new ProcedureBase[m_AvailableProcedureTypeNames.Length];
-            for (int i = 0; i < m_AvailableProcedureTypeNames.Length; i++)
-            {
-                Type procedureType = Utility.Assembly.GetType(m_AvailableProcedureTypeNames[i]);
-                if (procedureType == null)
-                {
-                    Log.Error("Can not find procedure type '{0}'.", m_AvailableProcedureTypeNames[i]);
-                    yield break;
-                }
+            List<Type> proceduresTypes = new List<Type>();
 
-                procedures[i] = (ProcedureBase)Activator.CreateInstance(procedureType);
+            Utility.Assembly.GetTypesByAttribute<ProcedureAttribute>(proceduresTypes,typeof(FsmState));
+
+            ProcedureBase[] procedures = new ProcedureBase[proceduresTypes.Count];
+
+            for (int i = 0; i < proceduresTypes.Count; i++)
+            {
+                procedures[i] = (ProcedureBase)Activator.CreateInstance(proceduresTypes[i]);
+
                 if (procedures[i] == null)
                 {
                     Log.Error("Can not create procedure instance '{0}'.", m_AvailableProcedureTypeNames[i]);
                     yield break;
                 }
 
-                if (m_EntranceProcedureTypeName == m_AvailableProcedureTypeNames[i])
+                if (procedures[i].GetType().FullName == m_EntranceProcedureTypeName)
                 {
                     m_EntranceProcedure = procedures[i];
                 }
+
+                if (m_EntranceProcedure == null)
+                {
+                    Log.Error("Entrance procedure is invalid.");
+                    yield break;
+                }
+
+                m_ProcedureManager.Initialize(MDDGameFrameworkEntry.GetModule<IFsmManager>(), procedures);
+
+                yield return new WaitForEndOfFrame();
+
+                m_ProcedureManager.StartProcedure(m_EntranceProcedure.GetType());
             }
 
-            if (m_EntranceProcedure == null)
-            {
-                Log.Error("Entrance procedure is invalid.");
-                yield break;
-            }
 
-            m_ProcedureManager.Initialize(MDDGameFrameworkEntry.GetModule<IFsmManager>(), procedures);
+            //for (int i = 0; i < m_AvailableProcedureTypeNames.Length; i++)
+            //{
+            //    Type procedureType = Utility.Assembly.GetType(m_AvailableProcedureTypeNames[i]);
+            //    if (procedureType == null)
+            //    {
+            //        Log.Error("Can not find procedure type '{0}'.", m_AvailableProcedureTypeNames[i]);
+            //        yield break;
+            //    }
 
-            yield return new WaitForEndOfFrame();
+            //    procedures[i] = (ProcedureBase)Activator.CreateInstance(procedureType);
+            //    if (procedures[i] == null)
+            //    {
+            //        Log.Error("Can not create procedure instance '{0}'.", m_AvailableProcedureTypeNames[i]);
+            //        yield break;
+            //    }
 
-            m_ProcedureManager.StartProcedure(m_EntranceProcedure.GetType());
+            //    if (m_EntranceProcedureTypeName == m_AvailableProcedureTypeNames[i])
+            //    {
+            //        m_EntranceProcedure = procedures[i];
+            //    }
+            //}
+
+            //if (m_EntranceProcedure == null)
+            //{
+            //    Log.Error("Entrance procedure is invalid.");
+            //    yield break;
+            //}
+
+            //m_ProcedureManager.Initialize(MDDGameFrameworkEntry.GetModule<IFsmManager>(), procedures);
+
+            //yield return new WaitForEndOfFrame();
+
+            //m_ProcedureManager.StartProcedure(m_EntranceProcedure.GetType());
         }
 
         /// <summary>

@@ -11,7 +11,15 @@ namespace MDDSkillEngine
 
         public static string GetDataTableAsset(string assetName, bool fromBytes)
         {
-            return Utility.Text.Format("Assets/GameMain/DataTables/{0}.{1}", assetName, fromBytes ? "bytes" : "txt");
+            if (fromBytes)
+            {
+                return Utility.Text.Format("Assets/MDDSkillEngine/ResourceDataTable/{0}.{1}", assetName, "bytes");
+            }
+            else
+            {
+                return Utility.Text.Format("Assets/MDDSkillEngine/DataTable/{0}.{1}", assetName,"txt");
+            }
+
         }
 
         //public static string GetDictionaryAsset(string assetName, bool fromBytes)

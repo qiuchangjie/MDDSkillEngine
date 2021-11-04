@@ -72,6 +72,29 @@ namespace MDDSkillEngine
             private set;
         }
 
+        public static ResourceComponent Resource
+        {
+            get;
+            private set;
+        }
+
+        public static ProcedureComponent Procedure
+        {
+            get;
+            private set;
+        }
+
+        public static DataTableComponent DataTable
+        {
+            get;
+            private set;
+        }
+
+        public static MDDBaseComponent Base
+        {
+            get;
+            private set;
+        }
 
         private void InitMDDComponent()
         {
@@ -85,6 +108,10 @@ namespace MDDSkillEngine
             UI = MDDGameEntry.GetComponent<UIComponent>();
             HpBar = MDDGameEntry.GetComponent<HPBarComponent>();
             TextBar = MDDGameEntry.GetComponent<TextBarComponent>();
+            Resource = MDDGameEntry.GetComponent<ResourceComponent>();
+            Procedure = MDDGameEntry.GetComponent<ProcedureComponent>();
+            DataTable = MDDGameEntry.GetComponent<DataTableComponent>();
+            Base = MDDGameEntry.GetComponent<MDDBaseComponent>();
         }
     }
 }

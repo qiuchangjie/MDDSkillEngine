@@ -19,7 +19,7 @@ namespace MDDGameFramework.Runtime
         private string m_LogHelperTypeName = "MDDGameFramework.Runtime.DefaultLogHelper";
 
         [SerializeField]
-        private string m_CompressionHelperTypeName = "UnityGameFramework.Runtime.DefaultCompressionHelper";
+        private string m_CompressionHelperTypeName = "MDDGameFramework.Runtime.DefaultCompressionHelper";
 
         [SerializeField]
         private string m_JsonHelperTypeName = "UnityGameFramework.Runtime.DefaultJsonHelper";

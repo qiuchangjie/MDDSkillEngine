@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using MDDGameFramework;
+using MDDGameFramework.Runtime;
 
 namespace MDDSkillEngine
 {
