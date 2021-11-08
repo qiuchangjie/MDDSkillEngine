@@ -10,12 +10,12 @@ namespace MDDSkillEngine
         /// <summary>
         /// 朝向
         /// </summary>
-        public Quaternion rotation { get; }
+        public Quaternion rotation { get; set; }
 
         /// <summary>
         /// 坐标
         /// </summary>
-        public Vector3 position { get; }
+        public Vector3 position { get; set; }
 
         /// <summary>
         /// 速度
