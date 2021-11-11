@@ -1,4 +1,5 @@
 ﻿using Pathfinding;
+using Pathfinding.Util;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -7,6 +8,20 @@ namespace MDDSkillEngine
 {
     public class PlayerMovement : MonoBehaviour
     {
+
+        public Seeker seeker;
+
+        public Transform tr;
+
+        public Vector3 previousMovementOrigin;
+
+        public Vector3 previousMovementDirection;
+
+        public PathInterpolator interpolator = new PathInterpolator();
+
+        Vector3 previousPosition1, previousPosition2, simulatedPosition;
+        Quaternion simulatedRotation;
+
         /// <summary>
         /// 朝向
         /// </summary>
@@ -71,6 +86,18 @@ namespace MDDSkillEngine
         /// 重新计算路径的频率
         /// </summary>
         public float repathRate = 0.5F;
+
+        public void Awake()
+        {
+            tr = transform;
+
+            seeker = GetComponent<Seeker>();
+
+            seeker.startEndModifier.adjustStartPoint = () => simulatedPosition;
+        }
+    
+
+
 
         /// <summary>
         /// 开始计算当前的路径

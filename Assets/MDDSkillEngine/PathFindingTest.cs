@@ -81,7 +81,6 @@ namespace MDDSkillEngine
             if (ai != null) ai.onSearchPath += Update;
         }
 
-        
         void OnDisable()
         {
             if (ai != null) ai.onSearchPath -= Update;

@@ -96,6 +96,8 @@ namespace MDDSkillEngine
             private set;
         }
 
+        
+
         private void InitMDDComponent()
         {
             Buff = MDDGameEntry.GetComponent<BuffComponent>();
