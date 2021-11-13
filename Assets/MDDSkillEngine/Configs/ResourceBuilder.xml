@@ -9,7 +9,7 @@
       <AdditionalCompressionSelected>True</AdditionalCompressionSelected>
       <ForceRebuildAssetBundleSelected>True</ForceRebuildAssetBundleSelected>
       <BuildEventHandlerTypeName>MDDSkillEngine.MDDSkillEngineBuildEventHander</BuildEventHandlerTypeName>
-      <OutputDirectory>F:/KunSvn/StarForce/Assets/StreamingAssets</OutputDirectory>
+      <OutputDirectory>F:/gitcode/MDDSkillEngine/Assets/StreamingAssets</OutputDirectory>
       <OutputPackageSelected>True</OutputPackageSelected>
       <OutputFullSelected>True</OutputFullSelected>
       <OutputPackedSelected>True</OutputPackedSelected>

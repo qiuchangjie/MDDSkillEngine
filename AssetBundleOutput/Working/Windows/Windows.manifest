@@ -1,0 +1,22 @@
+ManifestFileVersion: 0
+CRC: 1685135070
+AssetBundleManifest:
+  AssetBundleInfos:
+    Info_0:
+      Name: configs/defaultconfig
+      Dependencies: {}
+    Info_1:
+      Name: configs/resourcecollection
+      Dependencies: {}
+    Info_2:
+      Name: resourcedatatable/aircraft
+      Dependencies: {}
+    Info_3:
+      Name: resourcedatatable/scene
+      Dependencies: {}
+    Info_4:
+      Name: scene/mddskillfactory
+      Dependencies: {}
+    Info_5:
+      Name: scene/mddskilllauncher
+      Dependencies: {}

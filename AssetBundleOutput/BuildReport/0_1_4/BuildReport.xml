@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<UnityGameFramework>
+  <BuildReport>
+    <Summary>
+      <ProductName>MDDSkillEngine</ProductName>
+      <CompanyName>DefaultCompany</CompanyName>
+      <GameIdentifier>com.DefaultCompany.MDDSkillEngine</GameIdentifier>
+      <GameFrameworkVersion>2021.05.31</GameFrameworkVersion>
+      <UnityVersion>2019.2.16f1</UnityVersion>
+      <ApplicableGameVersion>0.1</ApplicableGameVersion>
+      <InternalResourceVersion>4</InternalResourceVersion>
+      <Platforms>Windows</Platforms>
+      <AssetBundleCompression>LZ4</AssetBundleCompression>
+      <CompressionHelperTypeName>MDDGameFramework.Runtime.DefaultCompressionHelper</CompressionHelperTypeName>
+      <AdditionalCompressionSelected>True</AdditionalCompressionSelected>
+      <ForceRebuildAssetBundleSelected>True</ForceRebuildAssetBundleSelected>
+      <BuildEventHandlerTypeName>
+      </BuildEventHandlerTypeName>
+      <OutputDirectory>H:/gitcode/MDDSkillEngine/AssetBundleOutput</OutputDirectory>
+      <BuildAssetBundleOptions>DeterministicAssetBundle, ForceRebuildAssetBundle, ChunkBasedCompression</BuildAssetBundleOptions>
+    </Summary>
+    <Resources Count="6">
+      <Resource Name="Configs/DefaultConfig" Extension="dat" LoadType="0" Packed="False">
+        <Assets Count="2">
+          <Asset Guid="44c8db52241385c45bbb14a1718f17bf" Name="Assets/MDDSkillEngine/Configs/DefaultConfig.txt" Length="162" HashCode="1970827408" />
+          <Asset Guid="7fd11dc5d29076d469d414dec2818f11" Name="Assets/MDDSkillEngine/Configs/DefaultConfig.bytes" Length="45" HashCode="698598607" />
+        </Assets>
+        <Codes />
+      </Resource>
+      <Resource Name="Configs/ResourceCollection" Extension="dat" LoadType="0" Packed="False">
+        <Assets Count="1">
+          <Asset Guid="b44bfac45a6cb7f448eb320ecc030a9c" Name="Assets/MDDSkillEngine/Configs/ResourceCollection.xml" Length="1345" HashCode="1575161008" />
+        </Assets>
+        <Codes />
+      </Resource>
+      <Resource Name="ResourceDataTable/Aircraft" Extension="dat" LoadType="0" Packed="False">
+        <Assets Count="1">
+          <Asset Guid="3a15d565d9c7cd142b496914d645b1bc" Name="Assets/MDDSkillEngine/ResourceDataTable/Aircraft.bytes" Length="505" HashCode="2087326432" />
+        </Assets>
+        <Codes />
+      </Resource>
+      <Resource Name="ResourceDataTable/Scene" Extension="dat" LoadType="0" Packed="False">
+        <Assets Count="1">
+          <Asset Guid="8634c7428e9a440448e16d5119663ea3" Name="Assets/MDDSkillEngine/ResourceDataTable/Scene.bytes" Length="36" HashCode="1653259022" />
+        </Assets>
+        <Codes />
+      </Resource>
+      <Resource Name="Scene/MDDSkillFactory" Extension="dat" LoadType="0" Packed="False">
+        <Assets Count="1">
+          <Asset Guid="9620f10aeb13f76499f1f4234654d8dd" Name="Assets/MDDSkillEngine/Scene/MDDSkillFactory.unity" Length="14736" HashCode="-537264000" />
+        </Assets>
+        <Codes />
+      </Resource>
+      <Resource Name="Scene/MDDSkillLauncher" Extension="dat" LoadType="0" Packed="False">
+        <Assets Count="1">
+          <Asset Guid="f097c29f76fe80045bd98a958e38f9de" Name="Assets/MDDSkillEngine/Scene/MDDSkillLauncher.unity" Length="8418" HashCode="417997000" />
+        </Assets>
+        <Codes />
+      </Resource>
+    </Resources>
+  </BuildReport>
+</UnityGameFramework>

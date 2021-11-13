@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<UnityGameFramework>
+<MDDGameFramework>
   <ResourceEditor>
     <Settings>
-      <SourceAssetRootPath>Assets/GameMain</SourceAssetRootPath>
+      <SourceAssetRootPath>Assets/MDDSKillEngine</SourceAssetRootPath>
       <SourceAssetSearchPaths>
         <SourceAssetSearchPath RelativePath="" />
       </SourceAssetSearchPaths>
@@ -13,4 +13,4 @@
       <AssetSorter>Path</AssetSorter>
     </Settings>
   </ResourceEditor>
-</UnityGameFramework>
+</MDDGameFramework>

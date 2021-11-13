@@ -17,7 +17,7 @@ namespace MDDGameFramework.Editor.ResourceTools
 {
     public sealed class ResourceEditorController
     {
-        private const string DefaultSourceAssetRootPath = "Assets";
+        private const string DefaultSourceAssetRootPath = "Assets/MDDSkillEngine";
 
         private readonly string m_ConfigurationPath;
         private readonly ResourceCollection m_ResourceCollection;
@@ -34,7 +34,7 @@ namespace MDDGameFramework.Editor.ResourceTools
 
         public ResourceEditorController()
         {
-            m_ConfigurationPath = Type.GetConfigurationPath<ResourceEditorConfigPathAttribute>() ?? Utility.Path.GetRegularPath(Path.Combine(Application.dataPath, "MDDSkillEngine/Configs/ResourceEditor.xml"));
+            m_ConfigurationPath = Utility.Path.GetRegularPath(Path.Combine(Application.dataPath, "MDDSkillEngine/Configs/ResourceEditor.xml")); //Type.GetConfigurationPath<ResourceEditorConfigPathAttribute>() ?? Utility.Path.GetRegularPath(Path.Combine(Application.dataPath, "MDDSkillEngine/Configs/ResourceEditor.xml"));
             m_ResourceCollection = new ResourceCollection();
             m_ResourceCollection.OnLoadingResource += delegate (int index, int count)
             {
@@ -223,7 +223,7 @@ namespace MDDGameFramework.Editor.ResourceTools
             {
                 XmlDocument xmlDocument = new XmlDocument();
                 xmlDocument.Load(m_ConfigurationPath);
-                XmlNode xmlRoot = xmlDocument.SelectSingleNode("UnityGameFramework");
+                XmlNode xmlRoot = xmlDocument.SelectSingleNode("MDDGameFramework");
                 XmlNode xmlEditor = xmlRoot.SelectSingleNode("ResourceEditor");
                 XmlNode xmlSettings = xmlEditor.SelectSingleNode("Settings");
 
@@ -300,7 +300,7 @@ namespace MDDGameFramework.Editor.ResourceTools
                 XmlDocument xmlDocument = new XmlDocument();
                 xmlDocument.AppendChild(xmlDocument.CreateXmlDeclaration("1.0", "UTF-8", null));
 
-                XmlElement xmlRoot = xmlDocument.CreateElement("UnityGameFramework");
+                XmlElement xmlRoot = xmlDocument.CreateElement("MDDGameFramework");
                 xmlDocument.AppendChild(xmlRoot);
 
                 XmlElement xmlEditor = xmlDocument.CreateElement("ResourceEditor");

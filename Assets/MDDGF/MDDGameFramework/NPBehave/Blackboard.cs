@@ -19,7 +19,7 @@ namespace MDDGameFramework
             public Notification(string key, Type type, Variable value)
             {
                 this.key = key;
-                this.type = type;
+                this.type = type; 
                 this.value = value;
             }
         }
