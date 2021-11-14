@@ -42,7 +42,7 @@ namespace MDDSkillEngine
 
             if (ignoreFade)
             {
-                //Game.UI.CloseUIForm(this);
+                Game.UI.CloseUIForm(this.UIForm);
             }
             else
             {

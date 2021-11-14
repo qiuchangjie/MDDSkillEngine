@@ -55,7 +55,7 @@ namespace MDDGameFramework.Runtime
         private UIFormHelperBase m_CustomUIFormHelper = null;
 
         [SerializeField]
-        private string m_UIGroupHelperTypeName = "MDDGameFramework.Runtime.DefaultUIGroupHelper";
+        private string m_UIGroupHelperTypeName = "MDDSkillEngine.UGuiGroupHelper";
 
         [SerializeField]
         private UIGroupHelperBase m_CustomUIGroupHelper = null;
@@ -187,14 +187,14 @@ namespace MDDGameFramework.Runtime
                 return;
             }
 
-            //if (baseComponent.EditorResourceMode)
-            //{
-            //    m_UIManager.SetResourceManager(baseComponent.EditorResourceHelper);
-            //}
-            //else
-            //{
-            //    m_UIManager.SetResourceManager(MDDGameFrameworkEntry.GetModule<IResourceManager>());
-            //}
+            if (baseComponent.EditorResourceMode)
+            {
+                m_UIManager.SetResourceManager(baseComponent.EditorResourceHelper);
+            }
+            else
+            {
+                m_UIManager.SetResourceManager(MDDGameFrameworkEntry.GetModule<IResourceManager>());
+            }
 
             m_UIManager.SetObjectPoolManager(MDDGameFrameworkEntry.GetModule<IObjectPoolManager>());
             m_UIManager.InstanceAutoReleaseInterval = m_InstanceAutoReleaseInterval;

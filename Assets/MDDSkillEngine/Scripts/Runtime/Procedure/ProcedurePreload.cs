@@ -13,7 +13,8 @@ namespace MDDSkillEngine
         public static readonly string[] DataTableNames = new string[]
         {
             "Aircraft",  
-            "Scene"
+            "Scene",
+            "UIForm"
         };
 
         private Dictionary<string, bool> m_LoadedFlag = new Dictionary<string, bool>();

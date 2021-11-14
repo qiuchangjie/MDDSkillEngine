@@ -13,9 +13,11 @@ namespace MDDSkillEngine
         protected override void OnEnter(ProcedureOwner procedureOwner)
         {
             base.OnEnter(procedureOwner);
+
+            Game.UI.GetUIForm(UIFormId.LoadingForm).Close();
+
             Log.Info("成功进入训练场景");
         }
-
 
     }
 }

@@ -15,6 +15,11 @@ namespace MDDSkillEngine
         DialogForm = 1,
 
         /// <summary>
+        /// 加载界面
+        /// </summary>
+        LoadingForm = 2,
+
+        /// <summary>
         /// 主菜单。
         /// </summary>
         MenuForm = 100,
@@ -28,5 +33,8 @@ namespace MDDSkillEngine
         /// 关于。
         /// </summary>
         AboutForm = 102,
+        
+
+      
     }
 }

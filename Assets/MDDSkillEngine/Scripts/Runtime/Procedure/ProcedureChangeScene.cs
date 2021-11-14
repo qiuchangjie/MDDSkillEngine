@@ -27,6 +27,8 @@ namespace MDDSkillEngine
 
             m_IsChangeSceneComplete = false;
 
+            Game.UI.OpenUIForm(UIFormId.LoadingForm , this);
+
             Game.Event.Subscribe(MDDGameFramework.Runtime.LoadSceneSuccessEventArgs.EventId, OnLoadSceneSuccess);
             Game.Event.Subscribe(MDDGameFramework.Runtime.LoadSceneFailureEventArgs.EventId, OnLoadSceneFailure);
             Game.Event.Subscribe(MDDGameFramework.Runtime.LoadSceneUpdateEventArgs.EventId, OnLoadSceneUpdate);
@@ -83,7 +85,7 @@ namespace MDDSkillEngine
                 return;
             }
 
-
+            ChangeState<ProcedureMDDSkillFactory>(procedureOwner);
 
             //if (m_ChangeToMenu)
             //{

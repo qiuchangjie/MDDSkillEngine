@@ -13,7 +13,7 @@ namespace MDDSkillEngine
     {
         private const string DataTablePath = "Assets/MDDSkillEngine/DataTable";
         private const string DataTablePathBytes = "Assets/MDDSkillEngine/ResourceDataTable";
-        private const string CSharpCodePath = "Assets/MDDSkillEngine/Scripts/DataTable";
+        private const string CSharpCodePath = "Assets/MDDSkillEngine/Scripts/Runtime/DataTable";
         private const string CSharpCodeTemplateFileName = "Assets/MDDSkillEngine/Configs/DataTableCodeTemplate.txt";
         private static readonly Regex EndWithNumberRegex = new Regex(@"\d+$");
         private static readonly Regex NameRegex = new Regex(@"^[A-Z][A-Za-z0-9_]*$");
