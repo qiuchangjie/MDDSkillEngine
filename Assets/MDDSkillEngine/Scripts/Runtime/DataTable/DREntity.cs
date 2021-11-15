@@ -1,6 +1,6 @@
 ﻿//------------------------------------------------------------
 // 此文件由工具自动生成，请勿直接修改。
-// 生成时间：2021-11-15 22:31:49.716
+// 生成时间：2021-11-15 22:31:49.720
 //------------------------------------------------------------
 
 using MDDGameFramework;
@@ -14,14 +14,14 @@ using MDDGameFramework.Runtime;
 namespace MDDSkillEngine
 {
     /// <summary>
-    /// 场景配置表。
+    /// 实体表。
     /// </summary>
-    public class DRScene : DataRowBase
+    public class DREntity : DataRowBase
     {
         private int m_Id = 0;
 
         /// <summary>
-        /// 获取场景编号。
+        /// 获取实体编号。
         /// </summary>
         public override int Id
         {
@@ -40,15 +40,6 @@ namespace MDDSkillEngine
             private set;
         }
 
-        /// <summary>
-        /// 获取背景音乐编号。
-        /// </summary>
-        public int BackgroundMusicId
-        {
-            get;
-            private set;
-        }
-
         public override bool ParseDataRow(string dataRowString, object userData)
         {
             string[] columnStrings = dataRowString.Split(DataTableExtension.DataSplitSeparators);
@@ -62,7 +53,6 @@ namespace MDDSkillEngine
             m_Id = int.Parse(columnStrings[index++]);
             index++;
             AssetName = columnStrings[index++];
-            BackgroundMusicId = int.Parse(columnStrings[index++]);
 
             GeneratePropertyArray();
             return true;
@@ -76,7 +66,6 @@ namespace MDDSkillEngine
                 {
                     m_Id = binaryReader.Read7BitEncodedInt32();
                     AssetName = binaryReader.ReadString();
-                    BackgroundMusicId = binaryReader.Read7BitEncodedInt32();
                 }
             }
 

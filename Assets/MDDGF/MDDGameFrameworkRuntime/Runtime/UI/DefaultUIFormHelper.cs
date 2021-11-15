@@ -9,7 +9,7 @@ namespace MDDGameFramework.Runtime
     /// </summary>
     public class DefaultUIFormHelper : UIFormHelperBase
     {
-        //private ResourceComponent m_ResourceComponent = null;
+        private ResourceComponent m_ResourceComponent = null;
 
         /// <summary>
         /// 实例化界面。
@@ -51,18 +51,18 @@ namespace MDDGameFramework.Runtime
         /// <param name="uiFormInstance">要释放的界面实例。</param>
         public override void ReleaseUIForm(object uiFormAsset, object uiFormInstance)
         {
-            CatAssetManager.UnloadAsset((Object)uiFormAsset);
+            m_ResourceComponent.UnloadAsset((Object)uiFormAsset);
             Destroy((Object)uiFormInstance);
         }
 
         private void Start()
         {
-            //m_ResourceComponent = GameEntry.GetComponent<ResourceComponent>();
-            //if (m_ResourceComponent == null)
-            //{
-            //    Log.Fatal("Resource component is invalid.");
-            //    return;
-            //}
+            m_ResourceComponent = MDDGameEntry.GetComponent<ResourceComponent>();
+            if (m_ResourceComponent == null)
+            {
+                Log.Fatal("Resource component is invalid.");
+                return;
+            }
         }
     }
 }

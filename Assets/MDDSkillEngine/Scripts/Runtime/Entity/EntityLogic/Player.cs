@@ -50,6 +50,14 @@ namespace MDDSkillEngine
             Game.HpBar.ShowHPBar(this, 1, 1);
 
             fireTransform = transform.Find("FirePoint");
+
+            PlayerData = userData as PlayerData;
+            if (PlayerData == null)
+            {
+                Log.Error("PlayerData is invalid.");
+                return;
+            }
+
         }
 
 

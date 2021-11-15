@@ -110,14 +110,14 @@ namespace MDDGameFramework.Runtime
                 return;
             }
 
-            //if (baseComponent.EditorResourceMode)
-            //{
-            //   // m_EntityManager.SetResourceManager(baseComponent.EditorResourceHelper);
-            //}
-            //else
-            //{
-            //    //m_EntityManager.SetResourceManager(MDDGameFrameworkEntry.GetModule<IResourceManager>());
-            //}
+            if (baseComponent.EditorResourceMode)
+            {
+                m_EntityManager.SetResourceManager(baseComponent.EditorResourceHelper);
+            }
+            else
+            {
+                m_EntityManager.SetResourceManager(MDDGameFrameworkEntry.GetModule<IResourceManager>());
+            }
 
             m_EntityManager.SetObjectPoolManager(MDDGameFrameworkEntry.GetModule<IObjectPoolManager>());
 

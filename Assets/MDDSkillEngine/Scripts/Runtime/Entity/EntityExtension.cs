@@ -1,4 +1,5 @@
 ﻿using System;
+using MDDGameFramework;
 using MDDGameFramework.Runtime;
 using UnityEngine;
 
@@ -49,7 +50,7 @@ namespace MDDSkillEngine
             entityCompoennt.ShowEntity(typeof(Bullet),"Bullet", Constant.AssetPriority.BulletAsset, data);
         }
 
-        public static void ShowPlayer(this EntityComponent entityCompoennt, BulletData data)
+        public static void ShowPlayer(this EntityComponent entityCompoennt, PlayerData data)
         {
             entityCompoennt.ShowEntity(typeof(Player), "Player", Constant.AssetPriority.AircraftAsset, data);
         }
@@ -59,7 +60,7 @@ namespace MDDSkillEngine
             entityComponent.ShowEntity(typeof(Effect), "Effect", Constant.AssetPriority.EffectAsset, data);
         }
 
-        private static void ShowEntity(this EntityComponent entityComponent, Type logicType, string entityGroup, int priority, EntityData data,string AssetName=null)
+        private static void ShowEntity(this EntityComponent entityComponent, Type logicType, string entityGroup, int priority, EntityData data)
         {
             if (data == null)
             {
@@ -67,20 +68,15 @@ namespace MDDSkillEngine
                 return;
             }
 
-            //IDataTable<DREntity> dtEntity = GameEntry.DataTable.GetDataTable<DREntity>();
-            //DREntity drEntity = dtEntity.GetDataRow(data.TypeId);
-            //if (drEntity == null)
-            //{
-            //    Log.Warning("Can not load entity id '{0}' from data table.", data.TypeId.ToString());
-            //    return;
-            //}
-
-            if (data.name != "")
+            IDataTable<DREntity> dtEntity = Game.DataTable.GetDataTable<DREntity>();
+            DREntity drEntity = dtEntity.GetDataRow(data.TypeId);
+            if (drEntity == null)
             {
-                AssetName = data.name;
+                Log.Warning("Can not load entity id '{0}' from data table.", data.TypeId.ToString());
+                return;
             }
 
-            entityComponent.ShowEntity(data.Id, logicType, AssetUtility.GetEntityAsset(AssetName), entityGroup, priority, data);
+            entityComponent.ShowEntity(data.Id, logicType, AssetUtility.GetEntityAsset(drEntity.AssetName), entityGroup, priority, data);
         }
 
         public static int GenerateSerialId(this EntityComponent entityComponent)

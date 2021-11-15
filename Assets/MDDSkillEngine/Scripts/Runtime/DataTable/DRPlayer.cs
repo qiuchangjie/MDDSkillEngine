@@ -1,6 +1,6 @@
 ﻿//------------------------------------------------------------
 // 此文件由工具自动生成，请勿直接修改。
-// 生成时间：2021-11-14 17:42:39.405
+// 生成时间：2021-11-15 22:31:49.707
 //------------------------------------------------------------
 
 using MDDGameFramework;
@@ -16,7 +16,7 @@ namespace MDDSkillEngine
     /// <summary>
     /// 战机表。
     /// </summary>
-    public class DRAircraft : DataRowBase
+    public class DRPlayer : DataRowBase
     {
         private int m_Id = 0;
 

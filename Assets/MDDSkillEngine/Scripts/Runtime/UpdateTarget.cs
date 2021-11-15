@@ -76,12 +76,12 @@ namespace MDDSkillEngine
                 Game.Entity.AddEntityGroup("Player", 3600, 999, 3600, 10);
                 Game.Entity.AddEntityGroup("Enemy", 3600, 999, 3600, 10);
 
-                Game.Entity.ShowPlayer(new BulletData(Game.Entity.GenerateSerialId(), 50000, 50000, CampType.Player, 50000, 1)
-                {
-                    name = "player_Aki",                   
-                    Position = new Vector3(10,0,0)
+                //Game.Entity.ShowPlayer(new BulletData(Game.Entity.GenerateSerialId(), 50000, 50000, CampType.Player, 50000, 1)
+                //{
+                //    name = "player_Aki",                   
+                //    Position = new Vector3(10,0,0)
                     
-                });
+                //});
 
                 Game.Entity.ShowEnemy(new BulletData(Game.Entity.GenerateSerialId(), 50000, 50000, CampType.Player, 50000, 1)
                 {

@@ -49,7 +49,7 @@ namespace MDDSkillEngine
 
         public static string GetEntityAsset(string assetName)
         {
-            return Utility.Text.Format("Assets/Prefab/Model1/{0}.prefab", assetName);
+            return Utility.Text.Format("Assets/MDDSkillEngine/Prefabs/{0}.prefab", assetName);
         }
 
         public static string GetUIFormAsset(string assetName)

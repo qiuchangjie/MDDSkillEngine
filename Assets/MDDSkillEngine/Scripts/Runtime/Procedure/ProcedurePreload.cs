@@ -11,10 +11,11 @@ namespace MDDSkillEngine
     public class ProcedurePreload : ProcedureBase
     {
         public static readonly string[] DataTableNames = new string[]
-        {
-            "Aircraft",  
+        {   
+            "Player",
             "Scene",
-            "UIForm"
+            "UIForm",
+            "Entity"
         };
 
         private Dictionary<string, bool> m_LoadedFlag = new Dictionary<string, bool>();
