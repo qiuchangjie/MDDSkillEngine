@@ -142,14 +142,20 @@ namespace MDDGameFramework.Runtime
         }
 
 
+        /// <summary>
+        /// 初始化状态机
+        /// </summary>
+        /// <typeparam name="T">状态机持有者</typeparam>
+        /// <typeparam name="TFsmAttribute">状态机管理的状态的标签</typeparam>
+        /// <param name="owner"></param>
+        /// <returns></returns>
         public IFsm<T> CreateFsm<T,TFsmAttribute>(T owner) where T : class where TFsmAttribute : Attribute
         {
             typeList.Clear();
 
             Utility.Assembly.GetTypesByAttribute<TFsmAttribute>(typeList, typeof(FsmState));
-
-
             FsmState<T>[] states = new FsmState<T>[typeList.Count];
+
             for (int i = 0; i < states.Length; i++)
             {
                 states[i] = (FsmState<T>)Activator.CreateInstance(typeList[i]);
