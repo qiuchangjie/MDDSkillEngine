@@ -7807,12 +7807,9 @@ GameObject:
   - component: {fileID: 5144886476383432130}
   - component: {fileID: 5144886476376230836}
   - component: {fileID: 5144886476380352126}
-  - component: {fileID: 4982592123833310639}
   - component: {fileID: 5144886476383702363}
-  - component: {fileID: 5144886476383702365}
-  - component: {fileID: 5144886476383702364}
   - component: {fileID: 5144886476383702367}
-  - component: {fileID: -2512662310955501266}
+  - component: {fileID: 3851152952501331819}
   m_Layer: 8
   m_Name: player_Aki
   m_TagString: Untagged
@@ -7828,7 +7825,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5144886476383702360}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.5182548, y: -1.750246e-18, z: 0.7882407}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5144886476383333028}
@@ -7874,24 +7871,6 @@ CapsuleCollider:
   m_Height: 1.58
   m_Direction: 1
   m_Center: {x: 0, y: 0.79, z: 0}
---- !u!143 &4982592123833310639
-CharacterController:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5144886476383702360}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Height: 1.98
-  m_Radius: 0.5
-  m_SlopeLimit: 45
-  m_StepOffset: 0.3
-  m_SkinWidth: 0.08
-  m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0.61, z: 0}
 --- !u!114 &5144886476383702363
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7920,65 +7899,6 @@ MonoBehaviour:
   tagPenalties: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   graphMask:
     value: -1
---- !u!114 &5144886476383702365
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5144886476383702360}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6eb1402c17e84a9282a7f0f62eb584f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  version: 2
-  radius: 0.35
-  height: 0.87
-  repathRate: 0.2
-  canSearch: 1
-  canMove: 1
-  maxSpeed: 20
-  gravity: {x: NaN, y: NaN, z: NaN}
-  groundMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  centerOffsetCompatibility: NaN
-  orientation: 0
-  enableRotation: 1
-  targetCompatibility: {fileID: 0}
-  maxAcceleration: -2.5
-  rotationSpeed: 900
-  slowdownDistance: 0.6
-  pickNextWaypointDist: 1.5
-  endReachedDistance: 0.05
-  alwaysDrawGizmos: 0
-  slowWhenNotFacingTarget: 0
-  whenCloseToDestination: 0
-  constrainInsideGraph: 0
---- !u!114 &5144886476383702364
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5144886476383702360}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b090bec917bbe4c3bbc612ef13f7c4a1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  version: 1
-  useRaycasting: 1
-  mask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  thickRaycast: 0
-  thickRaycastRadius: 0
-  use2DPhysics: 0
-  raycastOffset: {x: 0, y: 0, z: 0}
-  useGraphRaycasting: 0
-  quality: 1
 --- !u!114 &5144886476383702367
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7993,7 +7913,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _Animator: {fileID: 5144886476376230836}
   _ActionOnDisable: 0
---- !u!114 &-2512662310955501266
+--- !u!114 &3851152952501331819
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8002,48 +7922,248 @@ MonoBehaviour:
   m_GameObject: {fileID: 5144886476383702360}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5dddde5c4a9066747a548536dfabf9ab, type: 3}
+  m_Script: {fileID: 11500000, guid: 70ab7012578592b4d8e26a93dc947d56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isPath: 0
-  target: {fileID: 0}
-  animancer: {fileID: 5144886476383702367}
-  Idle:
-    _FadeDuration: 0.25
-    _Events:
-      _Names: []
-      _NormalizedTimes: []
-      _Callbacks: []
-    _Clip: {fileID: 7400000, guid: da9153ad4fcef784284a4010343975c4, type: 3}
-    _Speed: 1
-    _NormalizedStartTime: NaN
-  Work:
-    _FadeDuration: 0.25
-    _Events:
-      _Names: []
-      _NormalizedTimes: []
-      _Callbacks: []
-    _Clip: {fileID: 7400000, guid: bc79185da16f0af4f8dceea6d6bc2a1b, type: 3}
-    _Speed: 1
-    _NormalizedStartTime: NaN
-  Attack:
-    _FadeDuration: 0.25
-    _Events:
-      _Names: []
-      _NormalizedTimes: []
-      _Callbacks: []
-    _Clip: {fileID: 7400000, guid: 96b2e3e9258a79b43bea27d3ba87a194, type: 3}
-    _Speed: 1
-    _NormalizedStartTime: NaN
-  Died:
-    _FadeDuration: 0.25
-    _Events:
-      _Names: []
-      _NormalizedTimes: []
-      _Callbacks: []
-    _Clip: {fileID: 0}
-    _Speed: 1
-    _NormalizedStartTime: NaN
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects:
+    - {fileID: 7400000, guid: bd4165bb112043d489519fbfc93453de, type: 3}
+    - {fileID: 7400000, guid: d9a2874e1c6daa848872fb0bd27dc881, type: 3}
+    - {fileID: 7400000, guid: 89b083c3cdd6cb64d906f6bbfcb40211, type: 3}
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: animDic
+      Entry: 7
+      Data: 0|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[Animancer.ClipState+Transition,
+        Animancer]], mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 1|System.Collections.Generic.GenericEqualityComparer`1[[System.String,
+        mscorlib]], mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 3
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: Idle
+    - Name: $v
+      Entry: 7
+      Data: 2|Animancer.ClipState+Transition, Animancer
+    - Name: _FadeDuration
+      Entry: 4
+      Data: 0.25
+    - Name: _Events
+      Entry: 7
+      Data: 3|Animancer.AnimancerEvent+Sequence+Serializable, Animancer
+    - Name: _Names
+      Entry: 7
+      Data: 4|System.String[], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _NormalizedTimes
+      Entry: 7
+      Data: 5|System.Single[], mscorlib
+    - Name: 
+      Entry: 14
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _Callbacks
+      Entry: 7
+      Data: 6|UnityEngine.Events.UnityEvent[], UnityEngine.CoreModule
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _Clip
+      Entry: 10
+      Data: 0
+    - Name: _Speed
+      Entry: 4
+      Data: 1
+    - Name: _NormalizedStartTime
+      Entry: 4
+      Data: NaN
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: Run
+    - Name: $v
+      Entry: 7
+      Data: 7|Animancer.ClipState+Transition, Animancer
+    - Name: _FadeDuration
+      Entry: 4
+      Data: 0.25
+    - Name: _Events
+      Entry: 7
+      Data: 8|Animancer.AnimancerEvent+Sequence+Serializable, Animancer
+    - Name: _Names
+      Entry: 7
+      Data: 9|System.String[], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _NormalizedTimes
+      Entry: 7
+      Data: 10|System.Single[], mscorlib
+    - Name: 
+      Entry: 14
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _Callbacks
+      Entry: 7
+      Data: 11|UnityEngine.Events.UnityEvent[], UnityEngine.CoreModule
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _Clip
+      Entry: 10
+      Data: 1
+    - Name: _Speed
+      Entry: 4
+      Data: 1
+    - Name: _NormalizedStartTime
+      Entry: 4
+      Data: NaN
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: Attack1
+    - Name: $v
+      Entry: 7
+      Data: 12|Animancer.ClipState+Transition, Animancer
+    - Name: _FadeDuration
+      Entry: 4
+      Data: 0.25
+    - Name: _Events
+      Entry: 7
+      Data: 13|Animancer.AnimancerEvent+Sequence+Serializable, Animancer
+    - Name: _Names
+      Entry: 7
+      Data: 14|System.String[], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _NormalizedTimes
+      Entry: 7
+      Data: 15|System.Single[], mscorlib
+    - Name: 
+      Entry: 14
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _Callbacks
+      Entry: 7
+      Data: 16|UnityEngine.Events.UnityEvent[], UnityEngine.CoreModule
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _Clip
+      Entry: 10
+      Data: 2
+    - Name: _Speed
+      Entry: 4
+      Data: 1
+    - Name: _NormalizedStartTime
+      Entry: 4
+      Data: NaN
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
 --- !u!1 &5144886477025343670
 GameObject:
   m_ObjectHideFlags: 0

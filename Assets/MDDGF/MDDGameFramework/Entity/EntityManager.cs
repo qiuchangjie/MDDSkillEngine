@@ -601,10 +601,10 @@ namespace MDDGameFramework
         /// <param name="userData">用户自定义数据。</param>
         public void ShowEntity(int entityId, string entityAssetName, string entityGroupName, int priority, object userData)
         {
-            //if (m_ResourceManager == null)
-            //{
-            //    throw new MDDGameFrameworkException("You must set resource manager first.");
-            //}
+            if (m_ResourceManager == null)
+            {
+                throw new MDDGameFrameworkException("You must set resource manager first.");
+            }
 
             if (m_EntityHelper == null)
             {

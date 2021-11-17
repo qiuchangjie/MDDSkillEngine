@@ -24,7 +24,13 @@ namespace MDDSkillEngine
             private set;
         }
 
-        public AnimancerComponent Anim
+        public AnimancerComponent CachedAnimancer
+        {
+            get;
+            private set;
+        }
+
+        public AnimationContainer CachedAnimContainer
         {
             get;
             private set;
@@ -34,7 +40,8 @@ namespace MDDSkillEngine
         {
             base.OnInit(userData);
             CachedAnimator = GetComponent<Animator>();
-            Anim = GetComponent<AnimancerComponent>();
+            CachedAnimancer = GetComponent<AnimancerComponent>();
+            CachedAnimContainer = GetComponent<AnimationContainer>();
         }
 
 

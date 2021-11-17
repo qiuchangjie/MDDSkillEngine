@@ -10,23 +10,7 @@ namespace MDDSkillEngine
     {
         PlayerData PlayerData = null;
 
-        Transform target;
-
-        Transform fireTransform;
-
-        Camera main;
-
-        Blackboard blackboard;
-
-        Blackboard shared_Blackboard;
-
-        IFsm<Enemy> fsm;
-
-        AnimancerComponent animancers;
-
-        PathFindingTest pathFindingTest;
-        IAstarAI ai;
-
+        #region 输入用bool值
         private bool isClickRight;
 
         private bool isClickLeft;
@@ -34,36 +18,35 @@ namespace MDDSkillEngine
         private bool isAttact;
 
         private bool isQ;
+        #endregion
 
         protected override void OnInit(object userData)
         {
             base.OnInit(userData);
-
-            target = GameObject.Find("GameObject").transform;
-            main = GameObject.Find("Main Camera").GetComponent<Camera>();
-            animancers = GetComponent<AnimancerComponent>();
-            pathFindingTest = GetComponent<PathFindingTest>();
-            ai = GetComponent<AIPath>();
-
+         
             Game.Buff.CreatBuffSystem(this.Entity.Id.ToString(),this);
 
-            Game.HpBar.ShowHPBar(this, 1, 1);
+            
 
-            fireTransform = transform.Find("FirePoint");
+            Game.HpBar.ShowHPBar(this, 1, 1);
+         
 
             PlayerData = userData as PlayerData;
             if (PlayerData == null)
             {
                 Log.Error("PlayerData is invalid.");
                 return;
-            }
-
+            }         
         }
 
 
         protected override void OnShow(object userData)
         {
             base.OnShow(userData);
+
+            Name = "Aki__";
+
+            CachedAnimancer.Play(CachedAnimContainer.GetAnimation("Idle"));
 
             SelectEntity.InitPlayer(this);
         }
@@ -100,21 +83,16 @@ namespace MDDSkillEngine
             if (isClickLeft)
             {
                 RaycastHit hit;
-                if (Physics.Raycast(main.ScreenPointToRay(Input.mousePosition), out hit, Mathf.Infinity, 1<<11))
+                if (Physics.Raycast(Game.Scene.MainCamera.ScreenPointToRay(Input.mousePosition), out hit, Mathf.Infinity, 1<<11))
                 {
                     //Log.Error("hitPointSelet:{0}",hit.collider.gameObject.name);
 
                     Entity e = hit.collider.gameObject.GetComponent<Entity>();
-
-
-
                     if (e!=null)
                     {
                         //Log.Error("获取到entity{0}", e.name);
                         SelectEntity.InitSelectEntity(e);
                     }
-
-
                     //target.position = hit.point;
 
                     //Game.Entity.ShowEffect(new EffectData(Game.Entity.GenerateSerialId(), 50000) { name = "ClickMove", Position = hit.point });
@@ -125,53 +103,28 @@ namespace MDDSkillEngine
             if (isClickRight)
             {
                 RaycastHit hit;
-                if (Physics.Raycast(main.ScreenPointToRay(Input.mousePosition), out hit, Mathf.Infinity, 1<<0))
+                if (Physics.Raycast(Game.Scene.MainCamera.ScreenPointToRay(Input.mousePosition), out hit, Mathf.Infinity, 1<<0))
                 {
-                    target.position = hit.point;
-
-                    //GameObject obj = Instantiate(clickPrefab);
-                    //obj.transform.position = hit.point;
-
-                    Game.Entity.ShowEffect(new EffectData(Game.Entity.GenerateSerialId(), 50000) { name = "ClickMove", Position = hit.point });
-
-
-                    pathFindingTest.workAction.Invoke();
-
-
-                    //for (int i = 0; i < ais.Length; i++)
-                    //{
-                    //    ais[i].SearchPath();
-                    //}
-
-                    ai.SearchPath();
-
-                    //positionFound = true;
+                    Game.Entity.ShowEffect(new EffectData(Game.Entity.GenerateSerialId(), 50000) { name = "ClickMove", Position = hit.point });                 
                 }
                 isClickRight = false;
             }
 
             if (isAttact)
             {                
-                pathFindingTest.attackAction.Invoke();
-
                 Game.Entity.ShowBullet(new BulletData(Game.Entity.GenerateSerialId(), 10, 10, CampType.Enemy, 10, 10)
                 {                 
                     name = "Bullet",                    
-                    Position = fireTransform.position,
-                    Rotation = fireTransform.rotation
+                  
                 }) ;
-
                 Game.HpBar.ShowHPBar(this,0.1f,0.8f);
-
                 isAttact = false;
             }
 
             if (isQ)
             {
                 //Game.Buff.AddBuff(this.Id.ToString(),"Buff",this,this);
-
                 Game.HpBar.ShowHPBar(this,1,0);
-
                 isQ = false;
             }
         }
