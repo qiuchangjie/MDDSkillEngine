@@ -19,6 +19,8 @@ namespace MDDGameFramework.Runtime
         private readonly SortedDictionary<string, int> m_SceneOrder = new SortedDictionary<string, int>(StringComparer.Ordinal);
         private Camera m_MainCamera = null;
         private Scene m_GameFrameworkScene = default(Scene);
+        [SerializeField]
+        private Camera ui_Camera;
 
         [SerializeField]
         private bool m_EnableLoadSceneUpdateEvent = true;
@@ -34,6 +36,14 @@ namespace MDDGameFramework.Runtime
             get
             {
                 return m_MainCamera;
+            }
+        }
+
+        public Camera UICamera
+        {
+            get
+            {
+                return ui_Camera;
             }
         }
 

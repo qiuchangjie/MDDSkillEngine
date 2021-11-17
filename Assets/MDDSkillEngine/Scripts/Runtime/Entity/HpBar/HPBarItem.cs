@@ -90,9 +90,9 @@ namespace MDDSkillEngine
 
             if (m_Owner != null && Owner.Available && Owner.Id == m_OwnerId)
             {
-                Vector3 worldPosition = m_Owner.CachedTransform.position + new Vector3(0, 1.8f ,0);
+                Vector3 worldPosition = m_Owner.CachedTransform.position;//+ new Vector3(0, 1.8f ,0);
 
-                m_CachedTransform.position = SelectUtility.WorldToUgui(worldPosition, (RectTransform)m_ParentCanvas.transform);
+                m_CachedTransform.localPosition = SelectUtility.WorldToUgui(worldPosition, (RectTransform)m_ParentCanvas.transform);
             }
 
             return true;

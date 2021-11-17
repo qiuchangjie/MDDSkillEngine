@@ -57,11 +57,11 @@ namespace MDDSkillEngine
         // 将世界坐标转换为Ugui坐标
         public static Vector2 WorldToUgui(Vector3 position,RectTransform rectTransform)
         {
-            Vector2 screenPoint = Camera.main.WorldToScreenPoint(position);//世界坐标转换为屏幕坐标
+            Vector2 screenPoint = Game.Scene.UICamera.WorldToScreenPoint(position);//世界坐标转换为屏幕坐标
             Vector2 screenSize = new Vector2(Screen.width, Screen.height);
             //screenPoint += screenSize / 2;//将屏幕坐标变换为以屏幕中心为原点
-            Vector2 anchorPos = screenPoint / screenSize * rectTransform.sizeDelta;//缩放得到UGUI坐标
-            return anchorPos;
+            Vector2 anchorPos = screenPoint/screenSize * rectTransform.sizeDelta;//缩放得到UGUI坐标
+            return anchorPos/5;
         }
 
     }

@@ -161,11 +161,11 @@ Camera:
     width: 1
     height: 1
   near clip plane: -1
-  far clip plane: 50
+  far clip plane: 150
   field of view: 60
   orthographic: 1
   orthographic size: 5
-  m_Depth: -100
+  m_Depth: 1
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 32
@@ -272,6 +272,16 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5091158754143614263, guid: 881c9baea14e3ad4cbaefeb0ad1e7418,
+        type: 3}
+      propertyPath: m_RenderMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5091158754143614263, guid: 881c9baea14e3ad4cbaefeb0ad1e7418,
+        type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 307689314}
     - target: {fileID: 5091158754374844004, guid: 881c9baea14e3ad4cbaefeb0ad1e7418,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -332,11 +342,31 @@ PrefabInstance:
       propertyPath: m_Name
       value: MDDGameFramework
       objectReference: {fileID: 0}
+    - target: {fileID: 5091158754960943059, guid: 881c9baea14e3ad4cbaefeb0ad1e7418,
+        type: 3}
+      propertyPath: m_RenderMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5091158754960943059, guid: 881c9baea14e3ad4cbaefeb0ad1e7418,
+        type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 307689314}
     - target: {fileID: 5091158754960943069, guid: 881c9baea14e3ad4cbaefeb0ad1e7418,
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5091158755329418494, guid: 881c9baea14e3ad4cbaefeb0ad1e7418,
+        type: 3}
+      propertyPath: camera
+      value: 
+      objectReference: {fileID: 307689314}
+    - target: {fileID: 5091158755329418494, guid: 881c9baea14e3ad4cbaefeb0ad1e7418,
+        type: 3}
+      propertyPath: ui_Camera
+      value: 
+      objectReference: {fileID: 307689314}
     - target: {fileID: 5091158755454515198, guid: 881c9baea14e3ad4cbaefeb0ad1e7418,
         type: 3}
       propertyPath: m_Camera

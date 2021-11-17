@@ -166,7 +166,13 @@ namespace MDDGameFramework.Runtime
                 }
             }
 
-            return m_FsmManager.CreateFsm(owner, states);
+            EntityLogic logic = owner as EntityLogic;
+            if (logic == null)
+            {
+                Log.Error("logic is null");
+            }
+
+            return m_FsmManager.CreateFsm(logic.Name, owner, states);
         }
 
         /// <summary>
