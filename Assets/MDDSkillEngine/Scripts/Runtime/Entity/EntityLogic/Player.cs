@@ -26,7 +26,7 @@ namespace MDDSkillEngine
          
             Game.Buff.CreatBuffSystem(this.Entity.Id.ToString(),this);
 
-            
+            Game.Fsm.CreateFsm<Player, AkiStateAttribute>(this);
 
             Game.HpBar.ShowHPBar(this, 1, 1);
          

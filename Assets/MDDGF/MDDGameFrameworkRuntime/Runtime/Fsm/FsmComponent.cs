@@ -9,7 +9,7 @@ namespace MDDGameFramework.Runtime
     public class FsmComponent : MDDGameFrameworkComponent
     {
         private IFsmManager m_FsmManager = null;
-
+        private List<Type> typeList = new List<Type>();
         /// <summary>
         /// 获取有限状态机数量。
         /// </summary>
@@ -139,6 +139,28 @@ namespace MDDGameFramework.Runtime
         public void GetAllFsms(List<FsmBase> results)
         {
             m_FsmManager.GetAllFsms(results);
+        }
+
+
+        public IFsm<T> CreateFsm<T,TFsmAttribute>(T owner) where T : class where TFsmAttribute : Attribute
+        {
+            typeList.Clear();
+
+            Utility.Assembly.GetTypesByAttribute<TFsmAttribute>(typeList, typeof(FsmState));
+
+
+            FsmState<T>[] states = new FsmState<T>[typeList.Count];
+            for (int i = 0; i < states.Length; i++)
+            {
+                states[i] = (FsmState<T>)Activator.CreateInstance(typeList[i]);
+
+                if (states[i] == null)
+                {
+                    Log.Error("Can not create FsmState instance '{0}'.", typeList[i]);
+                }
+            }
+
+            return m_FsmManager.CreateFsm(owner, states);
         }
 
         /// <summary>

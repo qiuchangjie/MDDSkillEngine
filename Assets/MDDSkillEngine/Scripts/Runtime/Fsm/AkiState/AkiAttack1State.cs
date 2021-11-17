@@ -7,6 +7,7 @@ using UnityEngine;
 
 namespace MDDSkillEngine
 {
+    [AkiState]
     public class AkiAttack1State : FsmState<Player>
     {
         private ClipState.Transition attack;
