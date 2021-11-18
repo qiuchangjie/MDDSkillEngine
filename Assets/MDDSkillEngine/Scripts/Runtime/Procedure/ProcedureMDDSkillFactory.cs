@@ -26,8 +26,6 @@ namespace MDDSkillEngine
 
             if (Input.GetKeyDown(KeyCode.C))
             {
-                Game.Entity.AddEntityGroup("Player", 3600, 999, 3600, 10);
-
                 Game.Entity.ShowPlayer(new PlayerData(Game.Entity.GenerateSerialId(), 10000)
                 {
                     Position = new Vector3(0f, 0f, 0f),                  

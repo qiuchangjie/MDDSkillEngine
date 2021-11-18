@@ -12,6 +12,9 @@ namespace MDDSkillEngine
         [SerializeField]
         private int m_HP = 0;
 
+        [SerializeField]
+        private float m_Speed = 0;
+
         public TargetableObjectData(int entityId, int typeId, CampType camp)
             : base(entityId, typeId)
         {
@@ -51,6 +54,18 @@ namespace MDDSkillEngine
         public abstract int MaxHP
         {
             get;
+        }
+
+        public float Speed
+        {
+            get
+            {
+                return m_Speed;
+            }
+            set
+            {
+                m_Speed = value;
+            }
         }
 
         /// <summary>

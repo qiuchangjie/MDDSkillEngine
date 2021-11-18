@@ -11,6 +11,8 @@ namespace MDDSkillEngine
 
         public Seeker seeker;
 
+        public Player player;
+
         public Transform tr;
 
         public Vector3 previousMovementOrigin;
@@ -169,6 +171,8 @@ namespace MDDSkillEngine
 
         private void Start()
         {
+
+            player = GetComponent<Player>();
             seeker.pathCallback += OnPathComplete;
             startHasRun = true;
             Init();

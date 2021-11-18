@@ -172,7 +172,7 @@ namespace MDDGameFramework.Runtime
                 Log.Error("logic is null");
             }
 
-            return m_FsmManager.CreateFsm(logic.Name, owner, states);
+            return m_FsmManager.CreateFsm(logic.Entity.Id.ToString(), owner, states);
         }
 
         /// <summary>

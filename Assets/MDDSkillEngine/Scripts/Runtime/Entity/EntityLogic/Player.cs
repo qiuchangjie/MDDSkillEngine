@@ -28,6 +28,8 @@ namespace MDDSkillEngine
 
             Game.Fsm.CreateFsm<Player, AkiStateAttribute>(this);
 
+            
+
             Game.HpBar.ShowHPBar(this, 1, 1);
          
 
@@ -46,7 +48,9 @@ namespace MDDSkillEngine
 
             Name = "Aki__";
 
-            CachedAnimancer.Play(CachedAnimContainer.GetAnimation("Idle"));
+            IFsm<Player> fsm = Game.Fsm.GetFsm<Player>(Entity.Id.ToString());
+
+            fsm.Start<AkiIdleState>();
 
             SelectEntity.InitPlayer(this);
         }
@@ -102,10 +106,12 @@ namespace MDDSkillEngine
 
             if (isClickRight)
             {
+                Log.Info("点击");
                 RaycastHit hit;
                 if (Physics.Raycast(Game.Scene.MainCamera.ScreenPointToRay(Input.mousePosition), out hit, Mathf.Infinity, 1<<0))
                 {
-                    Game.Entity.ShowEffect(new EffectData(Game.Entity.GenerateSerialId(), 50000) { name = "ClickMove", Position = hit.point });                 
+                    Log.Info("已经点击到地面");
+                    Game.Entity.ShowEffect(new EffectData(Game.Entity.GenerateSerialId(), 70000) {  Position = hit.point });                 
                 }
                 isClickRight = false;
             }
