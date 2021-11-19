@@ -96,7 +96,11 @@ namespace MDDSkillEngine
             private set;
         }
 
-        
+        public static SelectEntity Select
+        {
+            get;
+            private set;
+        }
 
         private void InitMDDComponent()
         {
@@ -114,6 +118,7 @@ namespace MDDSkillEngine
             Procedure = MDDGameEntry.GetComponent<ProcedureComponent>();
             DataTable = MDDGameEntry.GetComponent<DataTableComponent>();
             Base = MDDGameEntry.GetComponent<MDDBaseComponent>();
+            Select = MDDGameEntry.GetComponent<SelectEntity>();
         }
     }
 }

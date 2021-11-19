@@ -1,4 +1,6 @@
-﻿using Pathfinding;
+﻿using MDDGameFramework;
+using MDDGameFramework.Runtime;
+using Pathfinding;
 using Pathfinding.Util;
 using System;
 using System.Collections;
@@ -57,7 +59,18 @@ namespace MDDSkillEngine
         /// <summary>
         /// 坐标
         /// </summary>
-        public Vector3 position { get; set; }
+        public Vector3 position
+        {
+            get
+            {
+                return tr.position;
+            }
+            set
+            {
+                tr.position = value;
+            }
+        }
+            
 
         /// <summary>
         /// 速度
@@ -83,11 +96,23 @@ namespace MDDSkillEngine
         /// <summary>
         /// 目的地坐标
         /// </summary>
-        public Vector3 destination { get; set; }
+        public Vector3 destination 
+        {
+            get
+            {
+                return Game.Select.pathFindingTarget.transform.position;
+            }          
+        }
 
         public bool canSearch { get; set; }
 
-        public bool canMove { get; set; }
+        public bool canMove 
+        {
+            get
+            {
+                return true;
+            }
+        }
 
         /// <summary>
         /// 代理此时是否路径
@@ -148,6 +173,7 @@ namespace MDDSkillEngine
         /// </summary>
         bool startHasRun = false;
 
+
         protected virtual bool shouldRecalculatePath
         {
             get
@@ -159,6 +185,7 @@ namespace MDDSkillEngine
         /// <summary>Time when the last path request was sent</summary>
 		protected float lastRepath = -9999;
 
+        IFsm<Player> fsm;
 
         public void Awake()
         {
@@ -171,7 +198,6 @@ namespace MDDSkillEngine
 
         private void Start()
         {
-
             player = GetComponent<Player>();
             seeker.pathCallback += OnPathComplete;
             startHasRun = true;
@@ -180,6 +206,8 @@ namespace MDDSkillEngine
 
         private void Init()
         {
+            fsm = Game.Fsm.GetFsm<Player>(player.Id.ToString());
+
             if (startHasRun)
             {
                 // The Teleport call will make sure some variables are properly initialized (like #prevPosition1 and #prevPosition2)
@@ -288,6 +316,12 @@ namespace MDDSkillEngine
         /// </summary>
         public virtual void OnTargetReached()
         {
+            Log.Info("寻路结束");
+
+            interpolator.SetPath(null);
+                
+
+            fsm.SetData<VarBoolean>("isMove", false);
         }
 
 
@@ -344,6 +378,7 @@ namespace MDDSkillEngine
 
             // Create a new path request
             // The OnPathComplete method will later be called with the result
+            Log.Info("search");
             seeker.StartPath(currentPosition, destination);
         }
 
@@ -419,7 +454,7 @@ namespace MDDSkillEngine
         {
             if (shouldRecalculatePath) SearchPath();
 
-            if (canMove)
+            if (canMove && interpolator.valid)
             {
                 Vector3 nextPosition;
                 Quaternion nextRotation;
@@ -483,7 +518,13 @@ namespace MDDSkillEngine
                 return simulatedPosition;
             }
 
+            Log.Info("寻路进行中。。。。。。。");
+
+            fsm.SetData<VarBoolean>("isMove", true);
+
             interpolator.distance += deltaTime * speed;
+
+            direction = interpolator.tangent;
 
             if (interpolator.remainingDistance < 0.0001f && !reachedEndOfPath)
             {
@@ -491,7 +532,12 @@ namespace MDDSkillEngine
                 OnTargetReached();
             }
 
-            direction = interpolator.tangent;
+            if (!interpolator.valid)
+            {
+                direction = Vector3.zero;
+                return simulatedPosition;
+            }
+
             pathSwitchInterpolationTime += deltaTime;
             var alpha = switchPathInterpolationSpeed * pathSwitchInterpolationTime;
             if (interpolatePathSwitches && alpha < 1f)

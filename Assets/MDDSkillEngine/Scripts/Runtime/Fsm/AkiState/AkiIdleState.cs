@@ -25,6 +25,7 @@ namespace MDDSkillEngine
             base.OnInit(fsm);
             Log.Info("创建akiIdle状态。");
             idle = fsm.Owner.CachedAnimContainer.GetAnimation("Idle");
+            fsm.SetData<VarBoolean>("isMove",false);
         }
 
         protected override void OnEnter(IFsm<Player> fsm)
@@ -49,7 +50,15 @@ namespace MDDSkillEngine
         protected override void OnUpdate(IFsm<Player> fsm, float elapseSeconds, float realElapseSeconds)
         {
             base.OnUpdate(fsm, elapseSeconds, realElapseSeconds);
+            if (fsm.GetData<VarBoolean>("isMove"))
+            {
+                ChangeState<AkiRunState>(fsm);
+            }
 
+            if (fsm.GetData<VarBoolean>("attack1"))
+            {
+                ChangeState<AkiAttack1State>(fsm);
+            }
         }
     }
 }

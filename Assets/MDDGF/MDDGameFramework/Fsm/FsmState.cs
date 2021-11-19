@@ -71,7 +71,7 @@ namespace MDDGameFramework
         {
         }
 
-        public void Finish<TState>(IFsm<T> fsm) where TState : FsmState<T>
+        public void Finish(IFsm<T> fsm) 
         {
             Fsm<T> fsmImplement = (Fsm<T>)fsm;
 
@@ -80,7 +80,7 @@ namespace MDDGameFramework
                 throw new MDDGameFrameworkException("FSM is invalid.");
             }
 
-            fsmImplement.FinishState<TState>();
+            fsmImplement.FinishState();
         }
 
         /// <summary>

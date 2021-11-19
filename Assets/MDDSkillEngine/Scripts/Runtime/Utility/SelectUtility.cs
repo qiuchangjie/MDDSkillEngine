@@ -1,4 +1,5 @@
 ﻿using MDDGameFramework;
+using MDDGameFramework.Runtime;
 using UnityEngine;
 
 namespace MDDSkillEngine
@@ -54,16 +55,20 @@ namespace MDDSkillEngine
 
 
 
-        // 将世界坐标转换为Ugui坐标
+        /// <summary>
+        /// 世界坐标转换为ui坐标
+        /// </summary>
+        /// <param name="worldPosition">世界坐标</param>
+        /// <param name="rectTransform">依托的canvans</param>
+        /// <returns></returns>
         public static Vector2 WorldToUgui(Vector3 worldPosition, RectTransform rectTransform)
         {
-            Vector2 screenPoint = RectTransformUtility.WorldToScreenPoint(Game.Scene.UICamera, worldPosition);
+            Vector2 screenPoint = RectTransformUtility.WorldToScreenPoint(Game.Scene.MainCamera, worldPosition);
 
             Vector2 localPoint;
 
             RectTransformUtility.ScreenPointToLocalPointInRectangle(rectTransform, screenPoint, Game.Scene.UICamera, out localPoint);
           
-
             return localPoint;
         }
 

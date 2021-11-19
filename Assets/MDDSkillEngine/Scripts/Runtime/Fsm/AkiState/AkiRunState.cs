@@ -23,7 +23,7 @@ namespace MDDSkillEngine
         {
             base.OnInit(fsm);
             Log.Info("进入akiRun状态。");
-            fsm.Owner.CachedAnimancer.Play(Run);
+            fsm.Owner.CachedAnimancer.Play(Run);            
         }
 
         protected override void OnDestroy(IFsm<Player> fsm)
@@ -41,7 +41,18 @@ namespace MDDSkillEngine
         protected override void OnUpdate(IFsm<Player> fsm, float elapseSeconds, float realElapseSeconds)
         {
             base.OnUpdate(fsm, elapseSeconds, realElapseSeconds);
-            Log.Info("轮询akiRun状态。");
+
+            if (!fsm.GetData<VarBoolean>("isMove"))
+            {
+                //ChangeState<AkiIdleState>(fsm);
+                Finish(fsm);
+            }
+
+            if (fsm.GetData<VarBoolean>("attack1"))
+            {
+                ChangeState<AkiAttack1State>(fsm);
+            }
+
         }
     }
 }

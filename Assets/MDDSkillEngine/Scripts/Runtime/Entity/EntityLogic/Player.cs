@@ -10,6 +10,8 @@ namespace MDDSkillEngine
     {
         PlayerData PlayerData = null;
 
+        PlayerMovement move;
+
         #region 输入用bool值
         private bool isClickRight;
 
@@ -28,7 +30,7 @@ namespace MDDSkillEngine
 
             Game.Fsm.CreateFsm<Player, AkiStateAttribute>(this);
 
-            
+            move = GetComponent<PlayerMovement>();
 
             Game.HpBar.ShowHPBar(this, 1, 1);
          
@@ -106,24 +108,27 @@ namespace MDDSkillEngine
 
             if (isClickRight)
             {
-                Log.Info("点击");
                 RaycastHit hit;
                 if (Physics.Raycast(Game.Scene.MainCamera.ScreenPointToRay(Input.mousePosition), out hit, Mathf.Infinity, 1<<0))
                 {
-                    Log.Info("已经点击到地面");
+                    Game.Select.pathFindingTarget.transform.position = hit.point;
+
+                    move.SearchPath();
+
                     Game.Entity.ShowEffect(new EffectData(Game.Entity.GenerateSerialId(), 70000) {  Position = hit.point });                 
                 }
                 isClickRight = false;
             }
 
             if (isAttact)
-            {                
-                Game.Entity.ShowBullet(new BulletData(Game.Entity.GenerateSerialId(), 10, 10, CampType.Enemy, 10, 10)
-                {                 
-                    name = "Bullet",                    
+            {
+                Game.Fsm.GetFsm<Player>(Id.ToString()).SetData<VarBoolean>("attack1",true);
+                //Game.Entity.ShowBullet(new BulletData(Game.Entity.GenerateSerialId(), 10, 10, CampType.Enemy, 10, 10)
+                //{                 
+                //    name = "Bullet",                    
                   
-                }) ;
-                Game.HpBar.ShowHPBar(this,0.1f,0.8f);
+                //}) ;
+                //Game.HpBar.ShowHPBar(this,0.1f,0.8f);
                 isAttact = false;
             }
 

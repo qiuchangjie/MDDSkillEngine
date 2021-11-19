@@ -7716,6 +7716,8 @@ GameObject:
   - component: {fileID: 5144886476383702363}
   - component: {fileID: 5144886476383702367}
   - component: {fileID: 3851152952501331819}
+  - component: {fileID: 2297193329782769551}
+  - component: {fileID: 3678973921348063314}
   m_Layer: 8
   m_Name: player_Aki
   m_TagString: Untagged
@@ -8069,3 +8071,50 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+--- !u!114 &2297193329782769551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5144886476383702360}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c84e6fc5abb4228458bd37cd74876d32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  seeker: {fileID: 0}
+  player: {fileID: 0}
+  tr: {fileID: 0}
+  previousMovementOrigin: {x: 0, y: 0, z: 0}
+  previousMovementDirection: {x: 0, y: 0, z: 0}
+  speed: 7
+  interpolatePathSwitches: 1
+  rotationSpeed: 10
+  orientation: 0
+  repathRate: 0.2
+  enableRotation: 1
+  switchPathInterpolationSpeed: 5
+--- !u!114 &3678973921348063314
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5144886476383702360}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b090bec917bbe4c3bbc612ef13f7c4a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 1
+  useRaycasting: 1
+  mask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  thickRaycast: 0
+  thickRaycastRadius: 0
+  use2DPhysics: 0
+  raycastOffset: {x: 0, y: 0, z: 0}
+  useGraphRaycasting: 0
+  quality: 3

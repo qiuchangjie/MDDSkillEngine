@@ -29,6 +29,7 @@ namespace Pathfinding.Util {
 		/// <summary>Tangent of the curve at the current position</summary>
 		public Vector3 tangent {
 			get {
+
 				return path[segmentIndex+1] - path[segmentIndex];
 			}
 		}

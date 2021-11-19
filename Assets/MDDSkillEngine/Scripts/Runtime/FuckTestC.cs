@@ -76,20 +76,6 @@ namespace MDDSkillEngine
                 isStartDraw = false;
                 SelectEntitys();
             }
-
-            if (Input.GetKeyDown(KeyCode.S))
-            {
-                Game.Scene.LoadScene(AssetUtility.GetSceneAsset("LauncherA"));
-            }
-
-            if (Input.GetKeyDown(KeyCode.S))
-            {
-                Game.Scene.LoadScene(AssetUtility.GetSceneAsset("SampleScene"));
-            }
-
-
-
-
         }
 
 
@@ -98,13 +84,11 @@ namespace MDDSkillEngine
             if (Game.Entity.EntityCount == 0)
                 return;
 
-            Game.Entity.GetEntityGroup("Enemy").GetAllEntities(entities);
+            Game.Entity.GetEntityGroup("Player").GetAllEntities(entities);
 
             foreach (var v in entities)
             {
-                //Log.Error("EntityName:{0}", Game.Entity.GetEntity(v.Id).Logic.Name);
-
-                Vector3 location = Camera.main.WorldToScreenPoint(Game.Entity.GetEntity(v.Id).Logic.CachedTransform.position);
+                Vector3 location = Game.Scene.UICamera.WorldToScreenPoint(Game.Entity.GetEntity(v.Id).Logic.CachedTransform.position);
 
                 if (SelectUtility.IsInsert(mouseStartPos, mouseEndPos, location))
                 {

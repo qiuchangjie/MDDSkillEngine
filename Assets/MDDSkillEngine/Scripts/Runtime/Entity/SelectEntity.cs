@@ -6,8 +6,10 @@ using MDDGameFramework.Runtime;
 
 namespace MDDSkillEngine
 {
-    public class SelectEntity : MonoBehaviour
+    public class SelectEntity : MDDGameFrameworkComponent
     {
+        public GameObject pathFindingTarget;
+
         public static List<Entity> entities=new List<Entity>();
         public static Entity selectEntity;
         public static Entity Player;

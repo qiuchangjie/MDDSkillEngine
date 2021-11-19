@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using UnityEngine;
 
 namespace MDDGameFramework
 {
@@ -563,13 +564,13 @@ namespace MDDGameFramework
             ChangeState(typeof(TState));
         }
 
-        internal void FinishState<TState>() where TState : FsmState<T>
+        internal void FinishState() 
         {
             if (m_CurrentState == null)
             {
                 throw new MDDGameFrameworkException("Current state is invalid.");
             }
-
+     
             m_StateStack.Pop();
             m_StateStack.Peek().OnEnter(this);
         }
@@ -606,6 +607,7 @@ namespace MDDGameFramework
                 m_StateStack.Peek().OnEnter(this);
             }
 
+            Debug.LogError(m_StateStack.Count);
 
             //m_CurrentState.OnLeave(this, false);
             //m_CurrentStateTime = 0f;

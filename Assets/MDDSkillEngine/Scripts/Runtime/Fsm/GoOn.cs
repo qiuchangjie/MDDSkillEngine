@@ -26,7 +26,7 @@ namespace MDDSkillEngine
 
             if (time <= 0)
             {
-                Finish<GoOn>(fsm);
+               // Finish<GoOn>(fsm);
             }
 
             Debug.LogError("正在GoOn状态");

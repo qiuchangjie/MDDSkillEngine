@@ -11,12 +11,15 @@ namespace MDDSkillEngine
     public class AkiAttack1State : FsmState<Player>
     {
         private ClipState.Transition attack;
-     
+
         protected override void OnInit(IFsm<Player> fsm)
         {
             base.OnInit(fsm);
             Log.Info("创建aki攻击状态。");
+
             attack = fsm.Owner.CachedAnimContainer.GetAnimation("Attack1");
+            fsm.SetData<VarBoolean>("attack1",false);
+            attack.Events.OnEnd += ()=> { fsm.SetData<VarBoolean>("attack1", false); };
         }
 
         protected override void OnEnter(IFsm<Player> fsm)
@@ -41,7 +44,10 @@ namespace MDDSkillEngine
         protected override void OnUpdate(IFsm<Player> fsm, float elapseSeconds, float realElapseSeconds)
         {
             base.OnUpdate(fsm, elapseSeconds, realElapseSeconds);
-            Log.Info("轮询aki攻击状态。");
+            if (!fsm.GetData<VarBoolean>("attack1"))
+            {
+                Finish(fsm);
+            }
         }
     }
 }
