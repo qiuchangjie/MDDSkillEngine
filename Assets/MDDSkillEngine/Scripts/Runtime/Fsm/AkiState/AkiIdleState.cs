@@ -59,6 +59,11 @@ namespace MDDSkillEngine
             {
                 ChangeState<AkiAttack1State>(fsm);
             }
+
+            if (fsm.GetData<VarBoolean>("shunxi"))
+            {
+                ChangeState<AkiShunXiState>(fsm);
+            }
         }
     }
 }

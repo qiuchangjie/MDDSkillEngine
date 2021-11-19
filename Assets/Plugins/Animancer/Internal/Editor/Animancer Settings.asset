@@ -20,7 +20,6 @@ MonoBehaviour:
     _RotationSensitivity: 1
     _Models:
     - {fileID: 5144886476383702360, guid: a5a0b935c4c57244d929fba1874a45af, type: 3}
-    - {fileID: 5144886476383702360, guid: a5a0b935c4c57244d929fba1874a45af, type: 3}
     _MaxRecentModels: 10
     _FloorEnabled: 1
     _FloorMaterial: {fileID: 0}
