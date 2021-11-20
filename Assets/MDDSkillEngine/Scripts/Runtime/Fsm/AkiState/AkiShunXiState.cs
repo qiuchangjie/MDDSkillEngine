@@ -11,6 +11,14 @@ namespace MDDSkillEngine
     [AkiState]
     public class AkiShunXiState : FsmState<Player>
     {
+        public override bool CantStop
+        {
+            get
+            {
+                return true;
+            }
+        }
+
         private ClipState.Transition shunXi;
         private ClipState.Transition shunXi2;
 
@@ -57,13 +65,13 @@ namespace MDDSkillEngine
             });
 
 
-            Log.Info("进入aki瞬袭状态");
+            Log.Debug("进入aki瞬袭状态");
         }
 
         protected override void OnDestroy(IFsm<Player> fsm)
         {
             base.OnDestroy(fsm);
-            Log.Info("销毁aki瞬袭状态。");
+            Log.Debug("销毁aki瞬袭状态。");
         }
 
         protected override void OnLeave(IFsm<Player> fsm, bool isShutdown)
@@ -71,7 +79,7 @@ namespace MDDSkillEngine
             base.OnLeave(fsm, isShutdown);
             shunXi2.Events.OnEnd -= endAction;         
             distance = 0;
-            Log.Info("离开aki瞬袭状态。");
+            Log.Debug("离开aki瞬袭状态。");
         }
 
         protected override void OnUpdate(IFsm<Player> fsm, float elapseSeconds, float realElapseSeconds)

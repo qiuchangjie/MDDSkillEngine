@@ -21,6 +21,11 @@ namespace MDDGameFramework
             get { return false; }
         }
 
+        public virtual bool CantStop
+        {
+            get { return false; }
+        }
+
         /// <summary>
         /// 初始化有限状态机状态基类的新实例。
         /// </summary>
