@@ -135,8 +135,13 @@ namespace MDDSkillEngine
             if (isQ)
             {
                 Game.Fsm.GetFsm<Player>(Id.ToString()).SetData<VarBoolean>("shunxi", true);
-                //Game.Buff.AddBuff(this.Id.ToString(),"Buff",this,this);
-                //Game.HpBar.ShowHPBar(this,1,0);
+
+                RaycastHit hit;
+                if (Physics.Raycast(Game.Scene.MainCamera.ScreenPointToRay(Input.mousePosition), out hit, Mathf.Infinity, 1 << 0))
+                {
+                    Game.Select.currentClick = hit.point;
+                }
+
                 isQ = false;
             }
         }

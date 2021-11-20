@@ -14,6 +14,8 @@ namespace MDDSkillEngine
         public static Entity selectEntity;
         public static Entity Player;
 
+        public Vector3 currentClick;
+
         public static void InitPlayer(Entity entity)
         {
             if (entity != null)

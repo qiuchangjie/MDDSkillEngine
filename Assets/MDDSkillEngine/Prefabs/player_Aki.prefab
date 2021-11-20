@@ -7843,6 +7843,7 @@ MonoBehaviour:
     - {fileID: 7400000, guid: f3a99e8d52c562f43bfcc8e857c3e450, type: 3}
     - {fileID: 7400000, guid: e12061989d0170e48ba310efd1c73870, type: 3}
     - {fileID: 7400000, guid: d3dc7873b48531c43a7e90cfe4b993db, type: 3}
+    - {fileID: 7400000, guid: 3e2cf120e49d5394c9178923b58fa920, type: 3}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -7861,7 +7862,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 12
-      Data: 7
+      Data: 8
     - Name: 
       Entry: 7
       Data: 
@@ -8333,6 +8334,75 @@ MonoBehaviour:
     - Name: _Clip
       Entry: 10
       Data: 6
+    - Name: _Speed
+      Entry: 4
+      Data: 1
+    - Name: _NormalizedStartTime
+      Entry: 4
+      Data: NaN
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: ShunXi2
+    - Name: $v
+      Entry: 7
+      Data: 37|Animancer.ClipState+Transition, Animancer
+    - Name: _FadeDuration
+      Entry: 4
+      Data: 0.25
+    - Name: _Events
+      Entry: 7
+      Data: 38|Animancer.AnimancerEvent+Sequence+Serializable, Animancer
+    - Name: _Names
+      Entry: 7
+      Data: 39|System.String[], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _NormalizedTimes
+      Entry: 7
+      Data: 40|System.Single[], mscorlib
+    - Name: 
+      Entry: 14
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _Callbacks
+      Entry: 7
+      Data: 41|UnityEngine.Events.UnityEvent[], UnityEngine.CoreModule
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _Clip
+      Entry: 10
+      Data: 7
     - Name: _Speed
       Entry: 4
       Data: 1
