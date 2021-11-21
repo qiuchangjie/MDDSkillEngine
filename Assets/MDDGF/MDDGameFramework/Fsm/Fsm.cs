@@ -335,6 +335,11 @@ namespace MDDGameFramework
             return m_States.ContainsKey(stateType);
         }
 
+        public string GetCurrStateName()
+        {
+            return CurrentState.GetType().Name;
+        }
+
         /// <summary>
         /// 获取有限状态机状态。
         /// </summary>
@@ -585,6 +590,7 @@ namespace MDDGameFramework
         {
             if (m_CurrentState.CantStop)
             {
+                Debug.LogError("CantStopCantStopCantStopCantStopCantStopCantStop");
                 return;
             }
 
@@ -613,7 +619,7 @@ namespace MDDGameFramework
                 m_StateStack.Peek().OnEnter(this);
             }
 
-            Debug.LogError(m_StateStack.Count);
+            //Debug.LogError(m_StateStack.Count);
 
             //m_CurrentState.OnLeave(this, false);
             //m_CurrentStateTime = 0f;

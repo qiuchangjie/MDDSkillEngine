@@ -83,12 +83,7 @@ namespace MDDSkillEngine
                     
                 //});
 
-                Game.Entity.ShowEnemy(new BulletData(Game.Entity.GenerateSerialId(), 50000, 50000, CampType.Player, 50000, 1)
-                {
-                    name = "Akiiii",
-                    Position = new Vector3(0, 0, 0)
-
-                });
+              
 
 
             }
@@ -101,32 +96,7 @@ namespace MDDSkillEngine
                 //Debug.LogError(ReferencePool.GetAllReferencePoolInfos()[0].UnusedReferenceCount);
 
 
-               
-
-                Game.Entity.ShowEnemy(new BulletData(Game.Entity.GenerateSerialId(), 50000, 50000, CampType.Player, 50000, 1)
-                {
-                    name = "Akiiii",
-                    Position = new Vector3(0, 0, 10)
-
-                });
-                Game.Entity.ShowEnemy(new BulletData(Game.Entity.GenerateSerialId(), 50000, 50000, CampType.Player, 50000, 1)
-                {
-                    name = "Akiiii",
-                    Position = new Vector3(0, 0, -10)
-
-                });
-                Game.Entity.ShowEnemy(new BulletData(Game.Entity.GenerateSerialId(), 50000, 50000, CampType.Player, 50000, 1)
-                {
-                    name = "Akiiii",
-                    Position = new Vector3(-5, 0, 0)
-
-                });
-                Game.Entity.ShowEnemy(new BulletData(Game.Entity.GenerateSerialId(), 50000, 50000, CampType.Player, 50000, 1)
-                {
-                    name = "Akiiii",
-                    Position = new Vector3(5, 0, 0)
-
-                });
+            
             }
         }
         
@@ -143,7 +113,7 @@ namespace MDDSkillEngine
                     //GameObject obj = Instantiate(clickPrefab);
                     //obj.transform.position = hit.point;
 
-                    Game.Entity.ShowEffect(new EffectData(Game.Entity.GenerateSerialId(), 50000) { name= "ClickMove" ,Position=hit.point });
+                    //Game.Entity.ShowEffect(new EffectData(Game.Entity.GenerateSerialId(), 50000) { name= "ClickMove" ,Position=hit.point });
 
 
                     //PathFindingTest.workAction.Invoke();

@@ -5,11 +5,7 @@ namespace MDDSkillEngine
 {
     [Serializable]
     public abstract class EntityData
-    {/// <summary>
-     /// 临时添加name
-     /// </summary>
-        public string name="";
-
+    {
         [SerializeField]
         private int m_Id = 0;
 
@@ -21,6 +17,9 @@ namespace MDDSkillEngine
 
         [SerializeField]
         private Quaternion m_Rotation = Quaternion.identity;
+
+        [SerializeField]
+        private Vector3 m_LocalScale = Vector3.one;
 
         public EntityData(int entityId, int typeId)
         {
@@ -77,6 +76,19 @@ namespace MDDSkillEngine
             set
             {
                 m_Rotation = value;
+            }
+        }
+
+
+        public Vector3 LocalScale
+        {
+            get
+            {
+                return m_LocalScale;
+            }
+            set
+            {
+                m_LocalScale = value;
             }
         }
     }

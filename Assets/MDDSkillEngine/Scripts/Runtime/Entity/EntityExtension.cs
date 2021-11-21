@@ -40,7 +40,7 @@ namespace MDDSkillEngine
         }
 
 
-        public static void ShowEnemy(this EntityComponent entityCompoennt, BulletData data)
+        public static void ShowEnemy(this EntityComponent entityCompoennt, EnemyData data)
         {
             entityCompoennt.ShowEntity(typeof(Enemy), "Enemy", Constant.AssetPriority.BulletAsset, data);
         }
@@ -58,6 +58,11 @@ namespace MDDSkillEngine
         public static void ShowEffect(this EntityComponent entityComponent, EffectData data)
         {
             entityComponent.ShowEntity(typeof(Effect), "Effect", Constant.AssetPriority.EffectAsset, data);
+        }
+
+        public static void ShowCollider(this EntityComponent entityComponent, ColliderData data)
+        {
+            entityComponent.ShowEntity(typeof(MDDCollider), "Collider", Constant.AssetPriority.EffectAsset, data);
         }
 
         private static void ShowEntity(this EntityComponent entityComponent, Type logicType, string entityGroup, int priority, EntityData data)

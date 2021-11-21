@@ -65,7 +65,7 @@ namespace MDDSkillEngine
             Name = Utility.Text.Format("[Entity {0}]", Id.ToString());
             CachedTransform.localPosition = m_EntityData.Position;
             CachedTransform.localRotation = m_EntityData.Rotation;
-            CachedTransform.localScale = Vector3.one;
+            CachedTransform.localScale = m_EntityData.LocalScale;
         }
 
 

@@ -63,6 +63,7 @@ namespace MDDSkillEngine
             if (fsm.GetData<VarBoolean>("shunxi"))
             {
                 ChangeState<AkiShunXiState>(fsm);
+                
             }
         }
     }

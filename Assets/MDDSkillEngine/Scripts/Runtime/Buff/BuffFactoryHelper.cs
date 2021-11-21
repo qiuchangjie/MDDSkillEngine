@@ -12,10 +12,6 @@ namespace MDDSkillEngine
         {
             Type buffType = Utility.Assembly.GetType(Utility.Text.Format("MDDSkillEngine.{0}", bufName));
 
-            //ReferencePool.Acquire(buffType);
-
-            //entiity ent = GameObject.Find("GameObject").GetComponent<entiity>();
-
             BuffBase buff = (BuffBase)ReferencePool.Acquire(buffType);
 
             buff.OnInit(null, Target, From);
@@ -23,6 +19,8 @@ namespace MDDSkillEngine
             return buff;
         }
     }
+
+   
 
 }
 

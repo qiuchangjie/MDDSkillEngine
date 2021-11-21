@@ -29,20 +29,47 @@ namespace MDDGameFramework
             protected set { m_From = value; }
         }
 
-        public abstract void OnInit(IBuffSystem buffSystem,object Target,object From,BuffDatabase buffDatabase=null);
+        public virtual void OnInit(IBuffSystem buffSystem, object Target, object From, BuffDatabase buffDatabase = null)
+        {
+            m_Target = Target;
+            m_From = From;
+            buffData = buffDatabase;
+        }
 
         public abstract void OnExecute(IBuffSystem buffSytem);
 
         public virtual void OnUpdate(IBuffSystem buffSystem,float elapseSeconds, float realElapseSeconds) 
         {
-            
+            buffData.PassDuration += elapseSeconds;
+            buffData.AccumulateDuration += elapseSeconds;
+
+            if (buffData.Duration == -1)
+            {
+                
+            }
+            else if(buffData.Duration <= buffData.PassDuration)
+            {
+                Finish(buffSystem,this.GetType().Name);
+            }
         }
 
-        public abstract void OnFininsh(IBuffSystem buffSystem);
+        public virtual void OnFininsh(IBuffSystem buffSystem)
+        {
+            buffData.PassDuration = 0f;
+        }
 
         public virtual void OnRefresh(IBuffSystem buffSystem) { }
 
         public abstract void Clear();
+
+
+        public void Finish(IBuffSystem buffSystem,string name)
+        {
+            BuffSystem system = (BuffSystem)buffSystem;
+
+            system.Finish(name);
+        }
+
     }
 }
 

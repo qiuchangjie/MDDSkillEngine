@@ -49,7 +49,7 @@ namespace MDDSkillEngine
                 return;
             }
 
-            Game.Entity.ShowEffect(new EffectData(Game.Entity.GenerateSerialId(), 50000) { name = "Flash", Position = this.transform.position });
+            //Game.Entity.ShowEffect(new EffectData(Game.Entity.GenerateSerialId(), 50000) { name = "Flash", Position = this.transform.position });
 
             behaveTree.Start();
         }
@@ -133,7 +133,7 @@ namespace MDDSkillEngine
 
                //((Enemy)e).findingTest.died.Invoke();
 
-                Game.Entity.ShowEffect(new EffectData(Game.Entity.GenerateSerialId(), 50000) { name = "Hit", Position = this.transform.position });
+               // Game.Entity.ShowEffect(new EffectData(Game.Entity.GenerateSerialId(), 50000) { name = "Hit", Position = this.transform.position });
 
                 //behaveTree.Stop();
             }

@@ -1,41 +1,46 @@
 ﻿using MDDGameFramework;
 using Animancer;
+using MDDGameFramework.Runtime;
+
 
 namespace MDDSkillEngine
 {
     public class Enemy : TargetableObject
     {
-        Blackboard blackboard;
+        EnemyData data;
 
-        Blackboard shared_Blackboard;
-
-        IFsm<Enemy> fsm;
-
-        AnimancerComponent animancers;
-
-        Root behaveTree;
-
-        public PathFindingTest findingTest;
+        public override ImpactData GetImpactData()
+        {
+            return new ImpactData(data.HP,0);
+        }
 
         protected override void OnInit(object userData)
         {
             base.OnInit(userData);
 
-            animancers = GetComponent<AnimancerComponent>();
-            findingTest = GetComponent<PathFindingTest>();
+            Game.Fsm.CreateFsm<Enemy, AiStateAttribute>(this);
 
+            Game.Buff.CreatBuffSystem(Id.ToString(),this);
+
+            Game.HpBar.ShowHPBar(this,1,1);
+        }
+
+        protected override void OnShow(object userData)
+        {
+            base.OnShow(userData);
+            Name = "Ai";
+
+            IFsm<Enemy> fsm = Game.Fsm.GetFsm<Enemy>(Entity.Id.ToString());
+
+            fsm.Start<AiIdleState>();
+
+            data = userData as EnemyData;
         }
 
         protected override void OnUpdate(float elapseSeconds, float realElapseSeconds)
         {
-            base.OnUpdate(elapseSeconds, realElapseSeconds);
-
-           
-        }
-
-        
-
-
+            base.OnUpdate(elapseSeconds, realElapseSeconds);         
+        }     
     }
 }
 

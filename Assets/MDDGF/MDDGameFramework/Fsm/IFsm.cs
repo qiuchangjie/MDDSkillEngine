@@ -101,6 +101,8 @@ namespace MDDGameFramework
         /// <returns>是否存在有限状态机状态。</returns>
         bool HasState(Type stateType);
 
+        string GetCurrStateName();
+
         /// <summary>
         /// 获取有限状态机状态。
         /// </summary>

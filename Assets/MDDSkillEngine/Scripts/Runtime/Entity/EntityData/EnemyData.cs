@@ -12,7 +12,7 @@ namespace MDDSkillEngine
 
         }
 
-
+    
         public override int MaxHP
         {
             get

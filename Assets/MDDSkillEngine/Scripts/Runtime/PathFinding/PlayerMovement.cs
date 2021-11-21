@@ -518,7 +518,7 @@ namespace MDDSkillEngine
                 return simulatedPosition;
             }
 
-            Log.Info("寻路进行中。。。。。。。");
+            //Log.Info("寻路进行中。。。。。。。");
 
             fsm.SetData<VarBoolean>("isMove", true);
 

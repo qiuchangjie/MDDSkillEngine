@@ -11,10 +11,11 @@ namespace MDDGameFramework
     public abstract class BuffDatabase 
     {
         private int m_Id;
-        private float m_Level;
+        private int m_Level;
         private float m_Duration;      
         private float m_PassDuration;
-   
+        private float m_accumulateDuration;
+
         /// <summary>
         /// buffID
         /// </summary>
@@ -26,13 +27,14 @@ namespace MDDGameFramework
         /// <summary>
         /// buff等级
         /// </summary>
-        public float Level
+        public int Level
         {
             get { return m_Level; }
         }
 
         /// <summary>
         /// 持续时间
+        /// 永久buff持续时间默认为-1
         /// </summary>
         public float Duration
         {
@@ -40,7 +42,7 @@ namespace MDDGameFramework
         }
         
         /// <summary>
-        /// buff已经持续的时间
+        /// buff在单次持续时间内已经持续的时间
         /// </summary>
         public float PassDuration
         {
@@ -48,9 +50,16 @@ namespace MDDGameFramework
             set { m_PassDuration = value; }
         }
 
+        public float AccumulateDuration
+        {
+            get { return m_accumulateDuration; }
+            set { m_accumulateDuration = value; }
+        }
+
         /// <summary>
         /// buff行进百分比
         /// 若是永久buff则直接返回百分之百
+        /// 永久buff持续时间默认为-1
         /// </summary>
         public float DurationRadio
         {
@@ -58,6 +67,13 @@ namespace MDDGameFramework
             {
                 return m_Duration > 0 ? m_PassDuration / m_Duration : 1f;
             }
+        }
+
+        public void Init(int id,int level,float duration)
+        {
+            m_Id = id;
+            m_Level = level;
+            m_Duration = duration;
         }
     }
 }

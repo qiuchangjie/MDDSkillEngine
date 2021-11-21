@@ -39,10 +39,10 @@ namespace MDDSkillEngine
             shunXi2 = fsm.Owner.CachedAnimContainer.GetAnimation("ShunXi2");
 
             endAction += () => 
-            { 
-                Finish(fsm);
-                fsm.SetData<VarBoolean>("shunxi", false);
+            {
                 Log.Debug("瞬息结束");
+                fsm.SetData<VarBoolean>("shunxi", false);
+                Finish(fsm);                                
             };
             
             fsm.SetData<VarBoolean>("shunxi", false);
@@ -63,6 +63,14 @@ namespace MDDSkillEngine
                 Position = fsm.Owner.CachedTransform.position,
                 Rotation = fsm.Owner.CachedTransform.rotation
             });
+
+            Game.Entity.ShowCollider(new ColliderData(Game.Entity.GenerateSerialId(), 20000,fsm.Owner)
+            {
+                Position = fsm.Owner.CachedTransform.position+new Vector3(0,1f,2f),
+                Rotation = fsm.Owner.CachedTransform.rotation,
+                LocalScale = new Vector3(1f, 1f, 4f)
+            });
+
 
 
             Log.Debug("进入aki瞬袭状态");

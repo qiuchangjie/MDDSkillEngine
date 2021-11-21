@@ -12,6 +12,8 @@ namespace MDDSkillEngine
 
         PlayerMovement move;
 
+        IBuffSystem buff;
+
         #region 输入用bool值
         private bool isClickRight;
 
@@ -22,11 +24,16 @@ namespace MDDSkillEngine
         private bool isQ;
         #endregion
 
+        public override ImpactData GetImpactData()
+        {
+            return new ImpactData(PlayerData.HP, 200);
+        }
+
         protected override void OnInit(object userData)
         {
             base.OnInit(userData);
-         
-            Game.Buff.CreatBuffSystem(this.Entity.Id.ToString(),this);
+
+            buff = Game.Buff.CreatBuffSystem(this.Entity.Id.ToString(),this);
 
             Game.Fsm.CreateFsm<Player, AkiStateAttribute>(this);
 
@@ -132,7 +139,7 @@ namespace MDDSkillEngine
                 isAttact = false;
             }
 
-            if (isQ)
+            if (isQ && Game.Fsm.GetFsm<Player>(Id.ToString()).GetCurrStateName() != "AkiShunXiState")
             {
                 Game.Fsm.GetFsm<Player>(Id.ToString()).SetData<VarBoolean>("shunxi", true);
 
