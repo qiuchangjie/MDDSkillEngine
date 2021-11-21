@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 940443076}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: Target
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -507,7 +507,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5091158753441318962}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1373bdd3443dd9942bd50ebd9c08d6d4, type: 3}
   m_Name: 
@@ -520,7 +520,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5091158753441318962}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3b5df569b4b003546b44bf91219a3555, type: 3}
   m_Name: 
@@ -703,6 +703,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pathFindingTarget: {fileID: 940443075}
+  currentClick: {x: 0, y: 0, z: 0}
 --- !u!114 &5091158754848817181
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1350,6 +1351,16 @@ MonoBehaviour:
     m_InstanceAutoReleaseInterval: 60
     m_InstanceCapacity: 50
     m_InstanceExpireTime: 3600
+    m_InstancePriority: 0
+  - m_Name: Enemy
+    m_InstanceAutoReleaseInterval: 60
+    m_InstanceCapacity: 50
+    m_InstanceExpireTime: 3600
+    m_InstancePriority: 0
+  - m_Name: Collider
+    m_InstanceAutoReleaseInterval: 60
+    m_InstanceCapacity: 16
+    m_InstanceExpireTime: 60
     m_InstancePriority: 0
 --- !u!1 &5091158754862399630
 GameObject:

@@ -286,20 +286,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 940443075, guid: 881c9baea14e3ad4cbaefeb0ad1e7418, type: 3}
-      propertyPath: m_Name
-      value: Target
-      objectReference: {fileID: 0}
-    - target: {fileID: 5091158753441318960, guid: 881c9baea14e3ad4cbaefeb0ad1e7418,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5091158753441318967, guid: 881c9baea14e3ad4cbaefeb0ad1e7418,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5091158754143614263, guid: 881c9baea14e3ad4cbaefeb0ad1e7418,
         type: 3}
       propertyPath: m_Camera
@@ -364,51 +350,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: MDDGameFramework
-      objectReference: {fileID: 0}
-    - target: {fileID: 5091158754852934434, guid: 881c9baea14e3ad4cbaefeb0ad1e7418,
-        type: 3}
-      propertyPath: m_EntityGroups.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 5091158754852934434, guid: 881c9baea14e3ad4cbaefeb0ad1e7418,
-        type: 3}
-      propertyPath: m_EntityGroups.Array.data[2].m_InstanceAutoReleaseInterval
-      value: 60
-      objectReference: {fileID: 0}
-    - target: {fileID: 5091158754852934434, guid: 881c9baea14e3ad4cbaefeb0ad1e7418,
-        type: 3}
-      propertyPath: m_EntityGroups.Array.data[2].m_InstanceCapacity
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 5091158754852934434, guid: 881c9baea14e3ad4cbaefeb0ad1e7418,
-        type: 3}
-      propertyPath: m_EntityGroups.Array.data[2].m_InstanceExpireTime
-      value: 3600
-      objectReference: {fileID: 0}
-    - target: {fileID: 5091158754852934434, guid: 881c9baea14e3ad4cbaefeb0ad1e7418,
-        type: 3}
-      propertyPath: m_EntityGroups.Array.data[2].m_Name
-      value: Enemy
-      objectReference: {fileID: 0}
-    - target: {fileID: 5091158754852934434, guid: 881c9baea14e3ad4cbaefeb0ad1e7418,
-        type: 3}
-      propertyPath: m_EntityGroups.Array.data[3].m_InstanceAutoReleaseInterval
-      value: 60
-      objectReference: {fileID: 0}
-    - target: {fileID: 5091158754852934434, guid: 881c9baea14e3ad4cbaefeb0ad1e7418,
-        type: 3}
-      propertyPath: m_EntityGroups.Array.data[3].m_InstanceCapacity
-      value: 16
-      objectReference: {fileID: 0}
-    - target: {fileID: 5091158754852934434, guid: 881c9baea14e3ad4cbaefeb0ad1e7418,
-        type: 3}
-      propertyPath: m_EntityGroups.Array.data[3].m_InstanceExpireTime
-      value: 60
-      objectReference: {fileID: 0}
-    - target: {fileID: 5091158754852934434, guid: 881c9baea14e3ad4cbaefeb0ad1e7418,
-        type: 3}
-      propertyPath: m_EntityGroups.Array.data[3].m_Name
-      value: Collider
       objectReference: {fileID: 0}
     - target: {fileID: 5091158754960943059, guid: 881c9baea14e3ad4cbaefeb0ad1e7418,
         type: 3}
