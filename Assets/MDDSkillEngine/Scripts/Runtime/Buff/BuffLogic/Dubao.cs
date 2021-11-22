@@ -12,17 +12,18 @@ namespace MDDSkillEngine
 
         public Predicate<DRBuff> drCondition;
 
+        private bool dRCondition(DRBuff buff)
+        {
+            if (buff.Name == this.GetType().Name && buff.Level == 1)
+            {
+                return true;
+            }
+            return false;
+        }
+
         public override void OnInit(IBuffSystem buffSystem, object target, object from, BuffDatabase buffDatabase = null)
         {
-            drCondition = (x) =>
-             {
-                 if (x.Name == this.GetType().Name && x.Level == 1)
-                 {
-                     return true;
-                 }
-                 return false;
-             };
-
+            drCondition = dRCondition;
 
             IDataTable<DRBuff> dtBuff = Game.DataTable.GetDataTable<DRBuff>();
 

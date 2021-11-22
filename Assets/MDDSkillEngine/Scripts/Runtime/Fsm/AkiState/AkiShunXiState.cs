@@ -64,16 +64,14 @@ namespace MDDSkillEngine
                 Rotation = fsm.Owner.CachedTransform.rotation
             });
 
-            Game.Entity.ShowCollider(new ColliderData(Game.Entity.GenerateSerialId(), 20000,fsm.Owner)
+            Game.Entity.ShowCollider(new ColliderData(Game.Entity.GenerateSerialId(), 20000, fsm.Owner)
             {
-                Position = fsm.Owner.CachedTransform.position+new Vector3(0,1f,2f),
                 Rotation = fsm.Owner.CachedTransform.rotation,
+                Position = fsm.Owner.CachedTransform.position + fsm.Owner.CachedTransform.forward * 2 + new Vector3(0f,0.5f,0),
                 LocalScale = new Vector3(1f, 1f, 4f)
             });
 
-
-
-            Log.Debug("进入aki瞬袭状态");
+          
         }
 
         protected override void OnDestroy(IFsm<Player> fsm)

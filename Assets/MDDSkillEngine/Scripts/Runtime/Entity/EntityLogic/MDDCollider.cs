@@ -22,6 +22,14 @@ namespace MDDSkillEngine
             
         }
 
+        public void OnDrawGizmos()
+        {
+            //Collider col = GetComponent<Collider>();
+
+            //Gizmos.color = Color.red;
+                
+            //Gizmos.DrawWireCube(col.bounds.center, col.bounds.size);
+        }
 
         private void OnTriggerEnter(Collider other)
         {
