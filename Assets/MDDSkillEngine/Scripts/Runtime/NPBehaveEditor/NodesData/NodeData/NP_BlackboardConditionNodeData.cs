@@ -1,9 +1,8 @@
 ﻿using Sirenix.OdinInspector;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+using MDDGameFramework;
+using MDDGameFramework.Runtime;
 
-namespace MDDGameFramework.Runtime
+namespace MDDSkillEngine
 {
     [HideLabel]
     public class NP_BlackBoardConditionNodeData : NP_NodeDataBase

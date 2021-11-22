@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using MDDGameFramework;
 
-namespace NPBehave.node
+namespace MDDSkillEngine
 {
     public abstract class NP_CompositeNodeBase : NP_NodeBase
     {

@@ -4,7 +4,7 @@ using XNode;
 using XNode.Examples.MathNodes;
 using XNodeEditor;
 
-namespace NPBehave.node
+namespace MDDSkillEngine
 {
 
     [CustomNodeEditor(typeof(RootNode))]

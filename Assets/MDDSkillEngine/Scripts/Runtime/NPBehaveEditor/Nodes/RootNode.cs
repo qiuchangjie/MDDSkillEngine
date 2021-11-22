@@ -6,7 +6,7 @@ using NPBehave;
 using MDDGameFramework;
 using MDDGameFramework.Runtime;
 
-namespace NPBehave.node
+namespace MDDSkillEngine
 {
 	public class RootNode : NP_NodeBase
 	{ 

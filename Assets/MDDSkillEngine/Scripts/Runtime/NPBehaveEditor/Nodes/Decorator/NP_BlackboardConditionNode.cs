@@ -4,7 +4,7 @@ using UnityEngine;
 using MDDGameFramework;
 using MDDGameFramework.Runtime;
 
-namespace NPBehave.node
+namespace MDDSkillEngine
 {
     public class NP_BlackboardConditionNode : NP_DecoratorNodeBase
     {

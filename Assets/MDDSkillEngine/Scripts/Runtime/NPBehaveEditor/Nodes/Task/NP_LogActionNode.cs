@@ -1,16 +1,17 @@
 ﻿using MDDGameFramework;
 using MDDGameFramework.Runtime;
+using MDDSkillEngine;
 
-namespace NPBehave.node
+namespace MDDSkillEngine
 {
-    public class NP_LogAction : NP_TaskNodeBase
+    public class NP_LogActionNode: NP_TaskNodeBase
     {
         public override string Name => "NP_LogAction";
 
 
         public NP_ActionNodeData data = new NP_ActionNodeData()
         {
-            NpClassForAction = new MDDGameFramework.Runtime.NP_LogAction()
+            NpClassForAction = new NP_LogAction()
         };
 
 

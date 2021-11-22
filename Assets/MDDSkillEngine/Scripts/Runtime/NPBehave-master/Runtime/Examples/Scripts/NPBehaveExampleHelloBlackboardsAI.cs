@@ -3,7 +3,6 @@ using NPBehave;
 using MDDGameFramework;
 using MDDGameFramework.Runtime;
 using MDDSkillEngine;
-using NPBehave.node;
 using System.Collections.Generic;
 
 public class NPBehaveExampleHelloBlackboardsAI : MonoBehaviour

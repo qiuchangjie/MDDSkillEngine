@@ -22,8 +22,10 @@ namespace NPBehave.node
         public override void OnOpen()
         {
             base.OnOpen();
+
             treeWindow = NPBehaveNodeMenuTree.OpenWindow();
             treeWindow.Show();
+
             LayoutUtility.DockEditorWindow(window, treeWindow);
 
             NodeEditor.onUpdateNode = OnChange;
@@ -47,7 +49,7 @@ namespace NPBehave.node
         /// </summary>
         public override string GetNodeMenuName(System.Type type)
 		{
-			if (type.Namespace == "NPBehave.node")
+			if (type.Namespace == "MDDSkillEngine")
 			{
 				return base.GetNodeMenuName(type).Replace("NPBehave/node", "");
 			}

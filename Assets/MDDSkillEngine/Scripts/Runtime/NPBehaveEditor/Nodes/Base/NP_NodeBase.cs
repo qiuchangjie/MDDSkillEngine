@@ -7,7 +7,7 @@ using MDDGameFramework;
 using MDDGameFramework.Runtime;
 using Sirenix.OdinInspector;
 
-namespace NPBehave.node
+namespace MDDSkillEngine
 {
 
    

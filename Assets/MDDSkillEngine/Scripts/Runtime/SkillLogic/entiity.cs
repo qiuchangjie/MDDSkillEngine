@@ -4,9 +4,7 @@ using MDDGameFramework;
 using System;
 using CatAsset;
 using MDDGameFramework.Runtime;
-using NPBehave;
 using XNode;
-using NPBehave.node;
 
 namespace MDDSkillEngine
 {

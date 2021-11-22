@@ -1,8 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using MDDGameFramework;
 
-namespace MDDGameFramework.Runtime
+namespace MDDSkillEngine
 {
     public class NP_RootNodeData : NP_NodeDataBase
     {

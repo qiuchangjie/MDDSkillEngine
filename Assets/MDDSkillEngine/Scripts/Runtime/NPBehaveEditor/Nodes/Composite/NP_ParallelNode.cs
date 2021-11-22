@@ -1,7 +1,7 @@
 ﻿using MDDGameFramework;
 using MDDGameFramework.Runtime;
 
-namespace NPBehave.node
+namespace MDDSkillEngine
 {
     public class NP_ParallelNode : NP_CompositeNodeBase
     {

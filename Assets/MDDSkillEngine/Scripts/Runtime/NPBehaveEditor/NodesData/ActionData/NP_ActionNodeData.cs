@@ -1,7 +1,9 @@
 ﻿
 using Sirenix.OdinInspector;
+using MDDGameFramework.Runtime;
+using MDDGameFramework;
 
-namespace MDDGameFramework.Runtime
+namespace MDDSkillEngine
 {
     [HideLabel]
     public class NP_ActionNodeData : NP_NodeDataBase

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using static XNode.Node;
 
-namespace NPBehave.node
+namespace MDDSkillEngine
 {
     public abstract class NP_DecoratorNodeBase : NP_NodeBase
     {
