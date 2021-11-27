@@ -22,14 +22,6 @@ namespace MDDSkillEngine
             
         }
 
-        public void OnDrawGizmos()
-        {
-            //Collider col = GetComponent<Collider>();
-
-            //Gizmos.color = Color.red;
-                
-            //Gizmos.DrawWireCube(col.bounds.center, col.bounds.size);
-        }
 
         private void OnTriggerEnter(Collider other)
         {
@@ -41,34 +33,11 @@ namespace MDDSkillEngine
             {
                 return;
             }
-            TargetableObject target = entity as TargetableObject;
 
-          
+            Vector3  hitPos = other.ClosestPoint(CachedTransform.position);
 
-            Game.Entity.ShowEffect(new EffectData(Game.Entity.GenerateSerialId(), 70003)
-            {
-                Position = entity.CachedTransform.position,
-                Rotation = entity.CachedTransform.rotation
-            });
+            Game.Event.Fire(this, ColliderEnterEventArgs.Create(data.Owner, entity, hitPos));
 
-            int entityDamageHP = AIUtility.CalcDamageHP(200, 0);
-
-            target.ApplyDamage(target, entityDamageHP);
-
-            if (target.IsDead)
-            {
-                Game.Fsm.GetFsm<Enemy>(target.Id.ToString()).SetData<VarBoolean>("died", true);
-                Game.Entity.HideEntity(this);
-                return;
-            }
-
-            Game.Buff.AddBuff(target.Id.ToString(), "Dubao", this, data.Owner);
-
-            Game.Fsm.GetFsm<Enemy>(target.Id.ToString()).SetData<VarBoolean>("damage", true);
-
-            // AIUtility.PerformCollision((TargetableObject)data.Owner, entity);
-
-            Game.Entity.HideEntity(this);
         }
     }
 
