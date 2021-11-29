@@ -53,8 +53,8 @@ namespace Sirenix.OdinInspector.Demos.RPGEditor
         {
             base.DrawPropertyLayout(label);
 
-            // Draws a drop-zone where we can destroy items.
-            var rect = GUILayoutUtility.GetRect(0, 40).Padding(2);
+            //Draws a drop - zone where we can destroy items.
+             var rect = GUILayoutUtility.GetRect(0, 40).Padding(2);
             var id = DragAndDropUtilities.GetDragAndDropId(rect);
             DragAndDropUtilities.DrawDropZone(rect, null as UnityEngine.Object, null, id);
             DragAndDropUtilities.DropZone<ItemSlot>(rect, new ItemSlot(), false, id);

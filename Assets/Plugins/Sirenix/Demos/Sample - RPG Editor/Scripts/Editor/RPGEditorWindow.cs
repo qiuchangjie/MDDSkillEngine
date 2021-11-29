@@ -44,14 +44,14 @@ namespace Sirenix.OdinInspector.Demos.RPGEditor
 
             // Adds all characters.
             tree.AddAllAssetsAtPath("Characters", "Assets/Plugins/Sirenix", typeof(Character), true, true);
-
-            // Add all scriptable object items.
+            
+             //Add all scriptable object items.
             tree.AddAllAssetsAtPath("", "Assets/Plugins/Sirenix/Demos/SAMPLE - RPG Editor/Items", typeof(Item), true)
                 .ForEach(this.AddDragHandles);
 
             tree.Add("Weapons", new CharacterTable(CharacterOverview.Instance.AllCharacters));
 
-            // Add drag handles to items, so they can be easily dragged into the inventory if characters etc...
+             //Add drag handles to items, so they can be easily dragged into the inventory if characters etc...
             tree.EnumerateTree().Where(x => x.Value as Item).ForEach(AddDragHandles);
 
             // Add icons to characters and items.

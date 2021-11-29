@@ -62,6 +62,9 @@ namespace MDDGameFramework
         internal void Finish(string bufName)
         {
             buffs[bufName].OnFininsh(this);
+
+            ReferencePool.Release(buffs[bufName]);
+
             buffs.Remove(bufName);
         }
 

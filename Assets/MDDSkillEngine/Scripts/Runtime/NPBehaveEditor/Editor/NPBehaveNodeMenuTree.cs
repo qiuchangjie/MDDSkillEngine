@@ -6,6 +6,12 @@ using UnityEditor;
 using Sirenix.OdinInspector.Editor;
 using Sirenix.Utilities.Editor;
 using Sirenix.Serialization;
+using MDDGameFramework;
+using System.IO;
+using System;
+using Sirenix.OdinInspector;
+using System.Linq;
+using Sirenix.Utilities;
 
 namespace MDDSkillEngine
 {
@@ -14,7 +20,6 @@ namespace MDDSkillEngine
 
         public OdinMenuTree tree;
 
-        [MenuItem("My Game/My Window")]
         public static NPBehaveNodeMenuTree OpenWindow()
         {
             var window = GetWindow<NPBehaveNodeMenuTree>();
@@ -25,28 +30,64 @@ namespace MDDSkillEngine
 
         public void Awake()
         {
-            tree = new OdinMenuTree(supportsMultiSelect: true)
-{
-    { "Home",                           this,                           EditorIcons.House       },
-    { "Odin Settings",                  null,                           EditorIcons.SettingsCog },
-    { "Odin Settings/Color Palettes",   ColorPaletteManager.Instance,   EditorIcons.EyeDropper  },
-    { "Odin Settings/AOT Generation",   AOTGenerationConfig.Instance,   EditorIcons.SmartPhone  },
-    { "Camera current",                 Camera.current                                          },
-    { "Some Class",                     null                                           }
-};
+            tree = new OdinMenuTree(supportsMultiSelect: true);
 
-            tree.AddAllAssetsAtPath("Some Menu Item", "Some Asset Path", typeof(ScriptableObject), true)
-          .AddThumbnailIcons();
+            tree.DefaultMenuStyle.IconSize = 28.00f;
+            tree.Config.DrawSearchToolbar = true;
 
-            tree.AddAssetAtPath("Some Second Menu Item", "SomeAssetPath/SomeAssetFile.asset");
+            List<Type> types = new List<Type>();
 
-            var customMenuItem = new OdinMenuItem(tree, "Menu Style", tree.DefaultMenuStyle);
-            tree.MenuItems.Insert(2, customMenuItem);
+            Utility.Assembly.GetTypesByFather(types, typeof(NP_NodeBase));
 
-            tree.Add("Menu/Items/Are/Created/As/Needed", new GUIContent());
-            tree.Add("Menu/Items/Are/Created", new GUIContent("And can be overridden"));
+            List<NP_NodeBase> list = new List<NP_NodeBase>();
 
+            for (int i = 0; i < types.Count; i++)
+            {
+                list.Add(Activator.CreateInstance(types[i]) as NP_NodeBase);
+            }
 
+            for (int i = 0; i < list.Count; i++)
+            {
+                tree.Add(list[i].Name,list[i]);
+            }
+
+            foreach (var item in tree.EnumerateTree())
+            {
+                AddDragHandles(item);
+            }
+
+        }
+
+        protected override void OnGUI()
+        {
+            base.OnGUI();
+            DragAndDropUtilities.DrawDropZone(new Rect(100, 100, 100, 100), null, null, 1);
+        }
+
+        private void AddDragHandles(OdinMenuItem menuItem)
+        {
+            menuItem.OnDrawItem += x => DragAndDropUtilities.DragZone(menuItem.Rect, menuItem.Value, true, true);
+        }
+    }
+
+    public class NodeTable
+    {
+        [TableList(IsReadOnly = true, AlwaysExpanded = true), ShowInInspector]
+        public readonly List<NP_NodeBaseWarper> list = new List<NP_NodeBaseWarper>();
+
+        public NodeTable(List<NP_NodeBase> list)
+        {
+            for (int i = 0; i < list.Count; i++)
+            {
+                NP_NodeBaseWarper baseWarper = new NP_NodeBaseWarper();
+                baseWarper.nP = list[i];
+                this.list.Add(baseWarper);
+            }
+        }
+
+        public class NP_NodeBaseWarper
+        {
+            public NP_NodeBase nP;
         }
     }
 }

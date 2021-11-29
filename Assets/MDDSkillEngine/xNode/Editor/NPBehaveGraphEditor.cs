@@ -7,6 +7,7 @@ using static XNodeEditor.NodeGraphEditor;
 using MDDSkillEngine;
 using MDDGameFramework;
 using Sirenix.OdinInspector;
+using Sirenix.Utilities.Editor;
 
 namespace NPBehave.node
 {
@@ -19,13 +20,15 @@ namespace NPBehave.node
         Queue<XNode.Node> queue = new Queue<XNode.Node>(100); //将队列初始化大小为100
         Stack<XNode.Node> stack = new Stack<XNode.Node>(100);
 
+        NP_NodeBase nP_DragNode;
+
         public override void OnOpen()
         {
             base.OnOpen();
 
             treeWindow = NPBehaveNodeMenuTree.OpenWindow();
             treeWindow.Show();
-
+           
             LayoutUtility.DockEditorWindow(window, treeWindow);
 
             NodeEditor.onUpdateNode = OnChange;
@@ -37,12 +40,20 @@ namespace NPBehave.node
             }
         }
 
-   //     public override void OnDropObjects(Object[] objects)
-   //     {
-   //         base.OnDropObjects(objects);
-			//Debug.LogError(objects.Length);
-   //     }
-      
+        public override void OnGUI()
+        {
+            base.OnGUI();
+            //DragAndDropUtilities.DrawDropZone(window.position, nP_DragNode, null, 1);
+            //nP_DragNode = DragAndDropUtilities.DragAndDropZone(window.position, nP_DragNode, typeof(NP_NodeBase), true,
+            //    true) as NP_NodeBase;
+        }
+
+        public override void OnDropObjects(Object[] objects)
+        {
+            base.OnDropObjects(objects);
+            Debug.LogError(objects[0].name);
+        }
+
         /// <summary> 
         /// Overriding GetNodeMenuName lets you control if and how nodes are categorized.
         /// In this example we are sorting out all node types that are not in the XNode.Examples namespace.

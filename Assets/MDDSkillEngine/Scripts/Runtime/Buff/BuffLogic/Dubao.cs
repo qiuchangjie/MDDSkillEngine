@@ -55,7 +55,7 @@ namespace MDDSkillEngine
 
         public override void OnFininsh(IBuffSystem buffSystem)
         {
-          
+            base.OnFininsh(buffSystem);
             TargetableObject entity = buffSystem.Owner as TargetableObject;
 
             Game.Entity.ShowEffect(new EffectData(Game.Entity.GenerateSerialId(), 70004)

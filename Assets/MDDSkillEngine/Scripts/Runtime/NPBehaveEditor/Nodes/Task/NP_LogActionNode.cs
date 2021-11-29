@@ -14,6 +14,10 @@ namespace MDDSkillEngine
             NpClassForAction = new NP_LogAction()
         };
 
+        public override Task CreateTask(NP_Tree owner_Tree)
+        {
+            return data.NpClassForAction._CreateNPBehaveAction();
+        }
 
         public override NP_NodeDataBase NP_GetNodeData()
         {

@@ -47,15 +47,15 @@ namespace MDDGameFramework
             return null;
         }
 
-        public  Action _CreateNPBehaveAction()
+        public Action _CreateNPBehaveAction()
         {
             Action action;
 
             GetActionToBeDone();
             if (this.Action != null)
             {
-                 action = ReferencePool.Acquire<Action>();
-                 action.SetAction(Action);
+                action = ReferencePool.Acquire<Action>();
+                action.SetAction(Action);
                 return action;
             }
 
@@ -74,7 +74,7 @@ namespace MDDGameFramework
                 action.SetFunc1(Func2);
                 return action;
             }
-           
+
             return null;
         }
     }

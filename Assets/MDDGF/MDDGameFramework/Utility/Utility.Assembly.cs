@@ -104,6 +104,45 @@ namespace MDDGameFramework
 
 
             /// <summary>
+            /// 通过父类获取类型
+            /// </summary>
+            /// <param name="results"></param>
+            /// <param name="fatherType"></param>
+            public static void GetTypesByFather(List<Type> results, Type fatherType)
+            {
+                if (results == null)
+                {
+                    throw new MDDGameFrameworkException("Results is invalid.");
+                }
+
+                if (runTimeAssembly == null)
+                {
+                    for (int i = 0; i < s_Assemblies.Length; i++)
+                    {
+                        if (s_Assemblies[i].GetName().Name == "MDDSkillEngine")
+                        {
+                            runTimeAssembly = s_Assemblies[i];
+                            break;
+                        }
+                    }
+
+                    runTimeTypes = runTimeAssembly.GetTypes();
+                }
+
+                for (int i = 0; i < runTimeTypes.Length; i++)
+                {
+                    if (fatherType.IsAssignableFrom(runTimeTypes[i]))
+                    {
+                        if (!runTimeTypes[i].IsAbstract)
+                        {
+                            results.Add(runTimeTypes[i]);
+                        }
+                    }
+                }
+            }
+
+
+            /// <summary>
             /// 通过标签获取runtime程序集中的指定类型
             /// </summary>
             /// <typeparam name="TAttribute"></typeparam>
