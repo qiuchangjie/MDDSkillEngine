@@ -61,26 +61,26 @@ namespace MDDSkillEngine
 
         private void TestBehaviourTreeFactory()
         {
-            List<NodePort> nodePorts = new List<NodePort>();
+            //List<NodePort> nodePorts = new List<NodePort>();
 
-            foreach (var item in ((RootNode)nodeGraph.nodes[0]).Outputs)
-            {
-                nodePorts.Add(item);
-            }
+            //foreach (var item in ((RootNode)nodeGraph.nodes[0]).Outputs)
+            //{
+            //    nodePorts.Add(item);
+            //}
 
-            ((RootNode)nodeGraph.nodes[0]).root.SetClock();
+            //((RootNode)nodeGraph.nodes[0]).root.SetClock();
 
-            ((RootNode)nodeGraph.nodes[0]).root.SetMainNode(((ActionTest)nodePorts[0].Connection.node).action);
+            //((RootNode)nodeGraph.nodes[0]).root.SetMainNode(((ActionTest)nodePorts[0].Connection.node).action);
 
-            ((RootNode)nodeGraph.nodes[0]).root.SetDecoratee();
+            //((RootNode)nodeGraph.nodes[0]).root.SetDecoratee();
 
-            ((RootNode)nodeGraph.nodes[0]).root.SetRoot(((RootNode)nodeGraph.nodes[0]).root);
+            //((RootNode)nodeGraph.nodes[0]).root.SetRoot(((RootNode)nodeGraph.nodes[0]).root);
 
-            ((ActionTest)nodePorts[0].Connection.node).action.SetParent(((RootNode)nodeGraph.nodes[0]).root);
+            //((ActionTest)nodePorts[0].Connection.node).action.SetParent(((RootNode)nodeGraph.nodes[0]).root);
 
-            ((ActionTest)nodePorts[0].Connection.node).action.SetAction(((ActionTest)nodePorts[0].Connection.node).debug);
+            //((ActionTest)nodePorts[0].Connection.node).action.SetAction(((ActionTest)nodePorts[0].Connection.node).debug);
 
-            ((RootNode)nodeGraph.nodes[0]).root.Start();
+            //((RootNode)nodeGraph.nodes[0]).root.Start();
         }
 
         private void Update()

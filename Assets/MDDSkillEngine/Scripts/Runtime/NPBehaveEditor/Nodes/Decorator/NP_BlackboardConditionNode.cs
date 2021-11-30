@@ -8,12 +8,6 @@ namespace MDDSkillEngine
 {
     public class NP_BlackboardConditionNode : NP_DecoratorNodeBase
     {
-        protected override void Init()
-        {
-            base.Init();
-            nodeType = NodeType.Decorator;
-        }
-
         public override string Name => "NP_BlackboardCondition";
 
        

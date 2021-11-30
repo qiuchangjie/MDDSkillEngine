@@ -8,8 +8,10 @@ using MDDSkillEngine;
 using MDDGameFramework;
 using Sirenix.OdinInspector;
 using Sirenix.Utilities.Editor;
+using UnityEditor;
+using System;
 
-namespace NPBehave.node
+namespace MDDSkillEngine
 {
 	[CustomNodeGraphEditor(typeof(NPBehaveGraph))]
 	public class NPBehaveGraphEditor : NodeGraphEditor
@@ -20,38 +22,61 @@ namespace NPBehave.node
         Queue<XNode.Node> queue = new Queue<XNode.Node>(100); //将队列初始化大小为100
         Stack<XNode.Node> stack = new Stack<XNode.Node>(100);
 
-        NP_NodeBase nP_DragNode;
 
         public override void OnOpen()
         {
             base.OnOpen();
 
+            this.window.titleContent = new GUIContent("行为树编辑面板");
+
             treeWindow = NPBehaveNodeMenuTree.OpenWindow();
             treeWindow.Show();
-           
+
+            
             LayoutUtility.DockEditorWindow(window, treeWindow);
 
-            NodeEditor.onUpdateNode = OnChange;
 
             graph = target as NPBehaveGraph;
             if (graph != null)
             {
                 NPBlackBoardEditorInstance.BBValues = graph.BBValues;
             }
+
+            treeWindow.setins(graph);
         }
 
         public override void OnGUI()
         {
             base.OnGUI();
-            //DragAndDropUtilities.DrawDropZone(window.position, nP_DragNode, null, 1);
-            //nP_DragNode = DragAndDropUtilities.DragAndDropZone(window.position, nP_DragNode, typeof(NP_NodeBase), true,
-            //    true) as NP_NodeBase;
+            Event e = Event.current;
+            int cid = GUIUtility.GetControlID(FocusType.Passive);
+            switch (e.GetTypeForControl(cid))
+            {
+                case EventType.KeyDown:
+                    if (e.keyCode == (KeyCode)113)
+                    {
+                        Debug.LogError("触发排序");
+                        Sort();
+                        EditorUtility.SetDirty(graph);
+                        AssetDatabase.SaveAssets();
+                    }
+                    e.Use();
+                    break;
+            }
         }
 
-        public override void OnDropObjects(Object[] objects)
+
+        public override void OnDropObjects(UnityEngine.Object[] objects)
         {
             base.OnDropObjects(objects);
-            Debug.LogError(objects[0].name);
+            NP_NodeBase nP = DragAndDrop.GetGenericData("dragflag") as NP_NodeBase;
+
+            if (nP == null)
+                return;
+
+            Type type = nP.GetType();
+            CreateNode(type, NodeEditorWindow.current.WindowToGridPosition(Event.current.mousePosition));
+            Event.current.Use();
         }
 
         /// <summary> 

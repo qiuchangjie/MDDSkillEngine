@@ -21,8 +21,6 @@ namespace MDDSkillEngine
         public Dictionary<string,Variable> BBValues = new Dictionary<string, Variable>();
 
 
-
-
         public XNode.Node GetRootNode()
         {
             for (int i = 0; i < nodes.Count; i++)
