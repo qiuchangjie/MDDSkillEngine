@@ -6,22 +6,51 @@ namespace MDDGameFramework
     internal sealed class NPBehaveManager : MDDGameFrameworkModule, INPBehaveManager
     {
         private Dictionary<string, Blackboard> blackboards;
-        private Dictionary<int, Root> behaviourTreeDic;
+        private Dictionary<NameNamePair, Root> behaviourTreeDic;
         private Clock clock;
+
+        private IBehaveHelper behaveHelper;
+
 
         public NPBehaveManager()
         {
             blackboards = new Dictionary<string, Blackboard>();
-            behaviourTreeDic = new Dictionary<int, Root>();
+            behaviourTreeDic = new Dictionary<NameNamePair, Root>();
             clock = new Clock();
         }
 
-
-        public Root CreatBehaviourTree(Node mainNode)
+     
+        public void SetBehaveHelper(IBehaveHelper behaveHelper)
         {
-            Root tree = new Root(new Blackboard(clock),clock,mainNode);
-            behaviourTreeDic.Add(1, tree);
-            return tree;
+            if (behaveHelper == null)
+            {
+                throw new MDDGameFrameworkException("behaveHelper helper is invalid.");
+            }
+          
+            this.behaveHelper = behaveHelper;
+        }
+
+        public Root CreatBehaviourTree(string Name,object userData = null)
+        {
+            Root root = behaveHelper.CreatBehaviourTree(Name,userData);
+
+            if (root == null)
+            {
+                throw new MDDGameFrameworkException("root is invalid.");
+            }
+
+            if (root.Owner != null)
+            {
+                behaviourTreeDic.Add(new NameNamePair(Name, root.Owner.Id.ToString()), root);
+                blackboards.Add(new NameNamePair(Name, root.Owner.Id.ToString()).ToString(), root.Blackboard);
+            }
+            else
+            {
+                behaviourTreeDic.Add(new NameNamePair(Name), root);
+                blackboards.Add(new NameNamePair(Name).ToString(), root.Blackboard);
+            }
+
+            return root;
         }
 
         public Clock GetClock()

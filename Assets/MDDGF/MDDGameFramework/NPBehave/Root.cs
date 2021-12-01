@@ -8,6 +8,9 @@ namespace MDDGameFramework
 
         //private Node inProgressNode;
 
+        private IEntity m_Owner;
+
+
         private Blackboard blackboard;
         public override Blackboard Blackboard
         {
@@ -17,6 +20,13 @@ namespace MDDGameFramework
             }
         }
 
+        public IEntity Owner
+        {
+            get 
+            {
+                return m_Owner;
+            }
+        }
 
         private Clock clock;
         public override Clock Clock
@@ -63,6 +73,11 @@ namespace MDDGameFramework
             Decoratee = this.mainNode;
         }
 
+        public void SetOwner(IEntity Owner)
+        {
+            m_Owner = Owner;
+        }
+
         public Root(Node mainNode) : base("Root", mainNode)
         {
             this.mainNode = mainNode;
@@ -86,7 +101,7 @@ namespace MDDGameFramework
             this.SetRoot(this);
         }
 
-        public static Root Create(Node mainNode)
+        public static Root Create(Node mainNode,IEntity Owner)
         {
             Root root = ReferencePool.Acquire<Root>();
             root.Name = "Root";
@@ -94,7 +109,9 @@ namespace MDDGameFramework
             root.clock = UnityContext.GetClock();
             root.blackboard = new Blackboard(root.clock);
             root.Decoratee = mainNode;
-            root.Decoratee.SetParent(root);           
+            root.Decoratee.SetParent(root);
+            root.m_Owner = Owner;
+
             return root;
         }
 
@@ -106,6 +123,7 @@ namespace MDDGameFramework
             blackboard = null;
             Decoratee = null;
             clock.RemoveTimer(startCache);
+            m_Owner = null;
         }
 
         public override void SetRoot(Root rootNode)

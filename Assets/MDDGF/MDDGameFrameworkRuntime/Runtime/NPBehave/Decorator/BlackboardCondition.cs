@@ -69,8 +69,7 @@ namespace MDDGameFramework.Runtime
             blackboardCondition.Decoratee = decoratee;
             blackboardCondition.isObserving = false;
             blackboardCondition.Decoratee.SetParent(blackboardCondition);
-            blackboardCondition.RootNode.Blackboard.RemoveObserver(key, blackboardCondition.actionCache);
-
+            
             return blackboardCondition;
         }
 
@@ -81,6 +80,7 @@ namespace MDDGameFramework.Runtime
             value = null;
             Decoratee = null;
             isObserving = false;
+            RootNode.Blackboard.RemoveObserver(key,actionCache);
         }
 
 

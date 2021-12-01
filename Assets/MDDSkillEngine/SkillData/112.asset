@@ -112,7 +112,7 @@ MonoBehaviour:
       Entry: 8
       Data: 
   graph: {fileID: 11400000}
-  position: {x: 168, y: -72}
+  position: {x: 200, y: -72}
   ports:
     keys:
     - input
@@ -155,7 +155,7 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   graph: {fileID: 11400000}
-  position: {x: -120, y: -248}
+  position: {x: -120, y: -312}
   ports:
     keys:
     - input
@@ -272,6 +272,66 @@ MonoBehaviour:
   nodeType: 2
   des: 
   input: 0
+--- !u!114 &-1644159993866134085
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: NP_Colldown
+  m_EditorClassIdentifier: MDDSkillEngine:MDDSkillEngine:NP_ColldownNode
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: data
+      Entry: 7
+      Data: 0|MDDSkillEngine.NP_CooldownNodeData, MDDSkillEngine
+    - Name: cooldownTime
+      Entry: 4
+      Data: 6
+    - Name: 
+      Entry: 8
+      Data: 
+  graph: {fileID: 11400000}
+  position: {x: -168, y: -72}
+  ports:
+    keys:
+    - input
+    - output
+    values:
+    - _fieldName: input
+      _node: {fileID: -1644159993866134085}
+      _typeQualifiedName: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: output
+      _node: {fileID: -1644159993866134085}
+      _typeQualifiedName: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+  Id: 0
+  nodeType: 1
+  des: 
+  input: 0
+  output: 0
 --- !u!114 &-1176501703252310911
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -417,7 +477,7 @@ MonoBehaviour:
       Entry: 8
       Data: 
   graph: {fileID: 11400000}
-  position: {x: 168, y: -296}
+  position: {x: 200, y: -280}
   ports:
     keys:
     - input
@@ -568,8 +628,9 @@ MonoBehaviour:
   - {fileID: 5432297103932367731}
   - {fileID: -488269616866175189}
   - {fileID: -6226531382314803255}
-  - {fileID: -3598830461327847557}
   - {fileID: 2367248652910897786}
+  - {fileID: 0}
+  - {fileID: -3598830461327847557}
 --- !u!114 &2367248652910897786
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -744,7 +805,7 @@ MonoBehaviour:
       Entry: 8
       Data: 
   graph: {fileID: 11400000}
-  position: {x: 168, y: -424}
+  position: {x: 184, y: -472}
   ports:
     keys:
     - input

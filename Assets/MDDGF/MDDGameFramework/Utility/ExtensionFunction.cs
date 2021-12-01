@@ -24,6 +24,7 @@ namespace MDDGameFramework
                 }
 
                 byte[] bytes = SerializationUtility.SerializeValue(obj, DataFormat.Binary);
+
                 return SerializationUtility.DeserializeValue<T>(bytes, DataFormat.Binary);             
             }
             catch (Exception e)

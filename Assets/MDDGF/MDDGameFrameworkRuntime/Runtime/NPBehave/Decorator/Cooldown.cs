@@ -13,6 +13,8 @@ namespace MDDGameFramework.Runtime
         private float randomVariation = 0.05f;
         private bool isReady = true;
 
+        private System.Action cacheAction;
+
         /// <summary>
         /// The Cooldown decorator ensures that the branch can not be started twice within the given cooldown time.
         /// 
@@ -86,6 +88,33 @@ namespace MDDGameFramework.Runtime
         	Assert.IsTrue(cooldownTime > 0f, "cooldownTime has to be set");
         }
 
+        public Cooldown()
+        {
+            cacheAction = TimeoutReached;
+        }
+
+        public static Cooldown Create(float cooldownTime, Node decoratee)
+        {
+            Cooldown cooldown = ReferencePool.Acquire<Cooldown>();
+            cooldown.startAfterDecoratee = false;
+            cooldown.cooldownTime = cooldownTime;
+            cooldown.resetOnFailiure = false;
+            cooldown.randomVariation = 0;
+            cooldown.Decoratee = decoratee;
+            cooldown.Decoratee.SetParent(cooldown);
+
+            return cooldown;
+        }
+
+
+        public override void Clear()
+        {
+            base.Clear();
+            Decoratee = null;
+            cacheAction = null;
+        }
+
+
         protected override void DoStart()
         {
             if (isReady)
@@ -93,7 +122,7 @@ namespace MDDGameFramework.Runtime
                 isReady = false;
                 if (!startAfterDecoratee)
                 {
-                    Clock.AddTimer(cooldownTime, randomVariation, 0, TimeoutReached);
+                    Clock.AddTimer(cooldownTime, randomVariation, 0, cacheAction);
                 }
                 Decoratee.Start();
             }
@@ -111,13 +140,13 @@ namespace MDDGameFramework.Runtime
             if (Decoratee.IsActive)
             {
                 isReady = true;
-                Clock.RemoveTimer(TimeoutReached);
+                Clock.RemoveTimer(cacheAction);
                 Decoratee.Stop();
             }
             else
             {
                 isReady = true;
-                Clock.RemoveTimer(TimeoutReached);
+                Clock.RemoveTimer(cacheAction);
                 Stopped(false);
             }
         }
@@ -127,11 +156,11 @@ namespace MDDGameFramework.Runtime
             if (resetOnFailiure && !result)
             {
                 isReady = true;
-                Clock.RemoveTimer(TimeoutReached);
+                Clock.RemoveTimer(cacheAction);
             }
             else if (startAfterDecoratee)
             {
-                Clock.AddTimer(cooldownTime, randomVariation, 0, TimeoutReached);
+                Clock.AddTimer(cooldownTime, randomVariation, 0, cacheAction);
             }
             Stopped(result);
         }
@@ -140,7 +169,7 @@ namespace MDDGameFramework.Runtime
         {
             if (IsActive && !Decoratee.IsActive)
             {
-                Clock.AddTimer(cooldownTime, randomVariation, 0, TimeoutReached);
+                Clock.AddTimer(cooldownTime, randomVariation, 0, cacheAction);
                 Decoratee.Start();
             }
             else

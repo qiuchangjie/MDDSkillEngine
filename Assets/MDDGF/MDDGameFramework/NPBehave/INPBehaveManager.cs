@@ -8,7 +8,7 @@ namespace MDDGameFramework
 
         Blackboard GetSharedBlackboard(string key);
 
-        Root CreatBehaviourTree(Node mainNode);
+        Root CreatBehaviourTree(string Name,object userData);
     }
 }
 

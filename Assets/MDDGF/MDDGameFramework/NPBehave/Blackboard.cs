@@ -64,6 +64,43 @@ namespace MDDGameFramework
             return blackboard;
         }
 
+        public static Blackboard Create(Dictionary<string, Variable> data, Clock clock)
+        {
+            Blackboard blackboard = ReferencePool.Acquire<Blackboard>();
+            blackboard.parentBlackboard = null;
+            blackboard.clock = clock;
+
+            Dictionary<string, Variable> useData = new Dictionary<string, Variable>();
+
+            useData = data.DeepCopy();
+
+            foreach (var item in useData)
+            {
+                blackboard.Set(item.Key,item.Value);
+            }
+
+            return blackboard;
+        }
+
+        public static Blackboard Create(Dictionary<string, Variable> data, Blackboard parent, Clock clock)
+        {
+            Blackboard blackboard = ReferencePool.Acquire<Blackboard>();
+            blackboard.parentBlackboard = parent;
+            blackboard.clock = clock;
+
+            Dictionary<string, Variable> useData = new Dictionary<string, Variable>();
+
+            useData = data.DeepCopy();
+
+            foreach (var item in useData)
+            {
+                blackboard.Set(item.Key, item.Value);
+            }
+
+            return blackboard;
+        }
+
+
         public void Clear()
         {
             if (this.parentBlackboard != null)
@@ -132,9 +169,7 @@ namespace MDDGameFramework
         }
 
         public void Set(string key, Variable value)
-        {
-            
-
+        {           
             if (this.parentBlackboard != null && this.parentBlackboard.Isset(key))
             {
                 this.parentBlackboard.Set(key, value);

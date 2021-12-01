@@ -3,13 +3,12 @@ using MDDGameFramework.Runtime;
 
 namespace MDDSkillEngine
 {
-    public class NP_SelectorNode : NP_CompositeNodeBase
+    public class NP_CooldownNode : NP_DecoratorNodeBase
     {
-        public override string Name => "Selector";
+        public override string Name => "冷却时间";
 
-        NP_SelectorNodeData data = new NP_SelectorNodeData();
-
-           
+        public NP_CooldownNodeData data = new NP_CooldownNodeData();
+        
         public override NP_NodeDataBase NP_GetNodeData()
         {
             return data;

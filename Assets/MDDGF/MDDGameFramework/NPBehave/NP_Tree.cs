@@ -7,13 +7,17 @@ namespace MDDGameFramework
     public abstract class NP_Tree
     {
         private Root m_MainRoot;
-
-        private Dictionary<long, Root> m_ChildrenRoot;
-
-        private object m_Owner;
-
         private List<Node> node_Tree;
 
+        public IEntity Owner
+        {
+            get
+            {
+              return m_MainRoot.Owner;
+            }
+        }
+
+        public abstract void Init();
 
         public virtual void SetRootNode(Root root)
         {
@@ -28,6 +32,17 @@ namespace MDDGameFramework
         public virtual void Start()
         {
             m_MainRoot.Start();
+        }
+
+        public virtual void Clear()
+        {
+            for (int i = 0; i < node_Tree.Count; i++)
+            {
+                ReferencePool.Release(node_Tree[i]);
+            }
+
+            node_Tree = null;
+            m_MainRoot = null;
         }
     }
 }

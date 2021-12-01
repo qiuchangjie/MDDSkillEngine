@@ -32,6 +32,11 @@ namespace MDDSkillEngine
             return Utility.Text.Format("Assets/GameMain/Fonts/{0}.ttf", assetName);
         }
 
+        public static string GetSkillAsset(string assetName)
+        {
+            return Utility.Text.Format("Assets/MDDSkillEngine/SkillData/{0}.asset", assetName);
+        }
+
         public static string GetSceneAsset(string assetName)
         {
             return Utility.Text.Format("Assets/MDDSkillEngine/Scene/{0}.unity", assetName);

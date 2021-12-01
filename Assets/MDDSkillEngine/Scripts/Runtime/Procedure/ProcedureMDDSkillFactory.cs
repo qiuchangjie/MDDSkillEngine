@@ -15,6 +15,9 @@ namespace MDDSkillEngine
             base.OnEnter(procedureOwner);
 
             Game.UI.GetUIForm(UIFormId.LoadingForm).Close();
+
+            Game.Resource.LoadAsset(AssetUtility.GetSkillAsset("112"), new LoadAssetCallbacks(LoadAssetCallbacksSucess));
+
             Log.Info("成功进入训练场景");
         }
 
@@ -37,7 +40,15 @@ namespace MDDSkillEngine
             }
 
 
+
+
         }
+
+        private void LoadAssetCallbacksSucess(string assetName, object asset, float duration, object userData)
+        {
+            Log.Error("加载成功：{0}", assetName);
+        }
+
     }
 }
 

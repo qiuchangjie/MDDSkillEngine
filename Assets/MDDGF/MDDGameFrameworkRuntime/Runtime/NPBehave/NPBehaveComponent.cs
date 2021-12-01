@@ -27,9 +27,9 @@ namespace MDDGameFramework.Runtime
             return m_NPBehaveManager.GetClock();
         }
 
-        public Root CreatBehaviourTree(Node mainNode)
+        public Root CreatBehaviourTree(string name,object userdata)
         {
-            return m_NPBehaveManager.CreatBehaviourTree(mainNode);
+            return m_NPBehaveManager.CreatBehaviourTree(name, userdata);
         }
 
         public Blackboard GetSharedBlackboard(string key)

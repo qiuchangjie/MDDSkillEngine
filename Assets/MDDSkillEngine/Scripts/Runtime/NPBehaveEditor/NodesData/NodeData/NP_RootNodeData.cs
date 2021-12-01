@@ -8,7 +8,7 @@ namespace MDDSkillEngine
 
         public override Decorator CreateDecoratorNode(object m_object,NP_Tree runtimeTree, Node node)
         {
-            this.m_Root =Root.Create(node);
+            this.m_Root =Root.Create(node, m_object as IEntity);
 
             return this.m_Root;
         }

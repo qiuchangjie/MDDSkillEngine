@@ -43,9 +43,6 @@ namespace MDDSkillEngine
             return window;
         }
 
-        NP_NodeBase nodeBase;
-
-
         public void Awake()
         {
             Init();
