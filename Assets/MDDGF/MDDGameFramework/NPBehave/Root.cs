@@ -78,6 +78,11 @@ namespace MDDGameFramework
             m_Owner = Owner;
         }
 
+        public void SetBlackBoard(Blackboard Blackboard)
+        {
+            this.blackboard = Blackboard;
+        }
+
         public Root(Node mainNode) : base("Root", mainNode)
         {
             this.mainNode = mainNode;

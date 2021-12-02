@@ -12,7 +12,6 @@ namespace MDDSkillEngine
 
         PlayerMovement move;
 
-        IBuffSystem buff;
 
         #region 输入用bool值
         private bool isClickRight;
@@ -22,6 +21,12 @@ namespace MDDSkillEngine
         private bool isAttact;
 
         private bool isQ;
+
+        private bool isW;
+
+        private bool isE;
+
+        private bool isR;
         #endregion
 
         public override ImpactData GetImpactData()
@@ -33,7 +38,7 @@ namespace MDDSkillEngine
         {
             base.OnInit(userData);
 
-            buff = Game.Buff.CreatBuffSystem(this.Entity.Id.ToString(),this);
+            Game.Buff.CreatBuffSystem(this.Entity.Id.ToString(),this);
 
             Game.Fsm.CreateFsm<Player, AkiStateAttribute>(this);
 
@@ -61,13 +66,18 @@ namespace MDDSkillEngine
 
             fsm.Start<AkiIdleState>();
 
-            SelectEntity.InitPlayer(this);
+            Game.Select.InitPlayer(this);
         }
 
         protected override void OnUpdate(float elapseSeconds, float realElapseSeconds)
         {
             base.OnUpdate(elapseSeconds, realElapseSeconds);
 
+            InputLogic();
+        }
+
+        private void InputLogic()
+        {
             if (Input.GetMouseButtonDown(1))
             {
                 isClickRight = true;
@@ -81,15 +91,29 @@ namespace MDDSkillEngine
             if (Input.GetKeyDown(KeyCode.X))
             {
                 isAttact = true;
-                //Instantiate(FirePrefab, FirePoint.position, FirePoint.rotation);
             }
 
             if (Input.GetKeyDown(KeyCode.Q))
             {
                 isQ = true;
-                //Instantiate(FirePrefab, FirePoint.position, FirePoint.rotation);
+            }
+
+            if (Input.GetKeyDown(KeyCode.W))
+            {
+                isW = true;
+            }
+
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                isE = true;
+            }
+
+            if (Input.GetKeyDown(KeyCode.R))
+            {
+                isR = true;
             }
         }
+
 
         private void LateUpdate()
         {
@@ -104,7 +128,7 @@ namespace MDDSkillEngine
                     if (e!=null)
                     {
                         //Log.Error("获取到entity{0}", e.name);
-                        SelectEntity.InitSelectEntity(e);
+                        Game.Select.InitSelectEntity(e);
                     }
                     //target.position = hit.point;
 

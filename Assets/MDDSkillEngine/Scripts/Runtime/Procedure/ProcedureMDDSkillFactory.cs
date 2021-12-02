@@ -4,6 +4,7 @@ using UnityEngine;
 using ProcedureOwner = MDDGameFramework.IFsm<MDDGameFramework.IProcedureManager>;
 using MDDGameFramework.Runtime;
 using MDDGameFramework;
+using System.Threading.Tasks;
 
 namespace MDDSkillEngine
 {
@@ -41,8 +42,34 @@ namespace MDDSkillEngine
 
 
 
+            if (Input.GetKeyDown(KeyCode.T))
+            {
+                test();
+                testload();
+            }
+
+
 
         }
+
+        private async System.Threading.Tasks.Task testload()
+        {
+            await tcs.Task;
+            Log.Info("加载完成");
+        }
+
+        private async System.Threading.Tasks.Task test()
+        {
+
+            await System.Threading.Tasks.Task.Delay(5000);
+            tcs.SetResult(true);
+            Log.Info("延迟执行");
+        }
+
+
+        TaskCompletionSource<bool> tcs = new TaskCompletionSource<bool>();
+
+
 
         private void LoadAssetCallbacksSucess(string assetName, object asset, float duration, object userData)
         {

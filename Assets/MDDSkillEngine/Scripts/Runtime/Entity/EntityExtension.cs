@@ -39,7 +39,6 @@ namespace MDDSkillEngine
             entityComponent.AttachEntity(entity.Entity, ownerId, parentTransformPath, userData);
         }
 
-
         public static void ShowEnemy(this EntityComponent entityCompoennt, EnemyData data)
         {
             entityCompoennt.ShowEntity(typeof(Enemy), "Enemy", Constant.AssetPriority.BulletAsset, data);

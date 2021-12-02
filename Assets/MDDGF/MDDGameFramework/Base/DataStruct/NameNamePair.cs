@@ -7,7 +7,7 @@ namespace MDDGameFramework
     /// 名称和名称的组合值。
     /// </summary>
     [StructLayout(LayoutKind.Auto)]
-    internal struct NameNamePair : IEquatable<NameNamePair>
+    public struct NameNamePair : IEquatable<NameNamePair>
     {
         private readonly string m_Name;
         private readonly string m_OwnerName;

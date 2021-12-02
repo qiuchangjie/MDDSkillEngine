@@ -17,6 +17,14 @@ namespace MDDGameFramework
             }
         }
 
+        public Blackboard Blackboard
+        {
+            get
+            {
+                return m_MainRoot.Blackboard;
+            }
+        }
+
         public abstract void Init();
 
         public virtual void SetRootNode(Root root)

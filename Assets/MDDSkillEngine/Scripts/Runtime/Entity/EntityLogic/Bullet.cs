@@ -66,7 +66,7 @@ namespace MDDSkillEngine
                              new Action(() =>
                              {
                                  Log.Error("isTrigger");
-                                 shared_Blackboard.Get<Entity>("isTrigger").gameObject.GetComponent<PathFindingTest>().attackAction?.Invoke();
+                                 //shared_Blackboard.Get<Entity>("isTrigger").gameObject.GetComponent<PathFindingTest>().attackAction?.Invoke();
                                  shared_Blackboard["isTrigger"] = null;
                                  i++;
                                  if (i==5)

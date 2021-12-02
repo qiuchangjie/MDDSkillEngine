@@ -1,7 +1,8 @@
 {
     "name": "MDDSkillEngine",
     "references": ["MDDGameFramework","MDDGameFrameworkRuntime","CatAsset.Runtime","NPBehave"
-    ,"XNode","NPBehave.node","Animancer","AstarPathfindingProject","MDDGameFrameworkEditor"],
+    ,"XNode","NPBehave.node","Animancer","AstarPathfindingProject","MDDGameFrameworkEditor",
+    "Werewolf.StatusIndicators.Components"],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": true,

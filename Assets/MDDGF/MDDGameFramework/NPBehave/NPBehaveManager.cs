@@ -6,7 +6,7 @@ namespace MDDGameFramework
     internal sealed class NPBehaveManager : MDDGameFrameworkModule, INPBehaveManager
     {
         private Dictionary<string, Blackboard> blackboards;
-        private Dictionary<NameNamePair, Root> behaviourTreeDic;
+        private Dictionary<NameNamePair, NP_Tree> behaviourTreeDic;
         private Clock clock;
 
         private IBehaveHelper behaveHelper;
@@ -15,7 +15,7 @@ namespace MDDGameFramework
         public NPBehaveManager()
         {
             blackboards = new Dictionary<string, Blackboard>();
-            behaviourTreeDic = new Dictionary<NameNamePair, Root>();
+            behaviourTreeDic = new Dictionary<NameNamePair, NP_Tree>();
             clock = new Clock();
         }
 
@@ -30,9 +30,9 @@ namespace MDDGameFramework
             this.behaveHelper = behaveHelper;
         }
 
-        public Root CreatBehaviourTree(string Name,object userData = null)
+        public NP_Tree CreatBehaviourTree(string Name,object userData = null)
         {
-            Root root = behaveHelper.CreatBehaviourTree(Name,userData);
+            NP_Tree root = behaveHelper.CreatBehaviourTree(Name,userData);
 
             if (root == null)
             {

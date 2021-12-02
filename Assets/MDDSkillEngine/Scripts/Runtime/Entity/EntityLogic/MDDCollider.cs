@@ -22,7 +22,6 @@ namespace MDDSkillEngine
             
         }
 
-
         private void OnTriggerEnter(Collider other)
         {
             Log.Error("触发碰撞");
@@ -34,10 +33,9 @@ namespace MDDSkillEngine
                 return;
             }
 
-            Vector3  hitPos = other.ClosestPoint(CachedTransform.position);
+            Vector3 hitPos = other.ClosestPoint(CachedTransform.position);
 
             Game.Event.Fire(this, ColliderEnterEventArgs.Create(data.Owner, entity, hitPos));
-
         }
     }
 

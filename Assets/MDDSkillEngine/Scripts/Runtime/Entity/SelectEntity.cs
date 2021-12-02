@@ -16,17 +16,15 @@ namespace MDDSkillEngine
 
         public Vector3 currentClick;
 
-        public static void InitPlayer(Entity entity)
+        public void InitPlayer(Entity entity)
         {
             if (entity != null)
             {
                 Player = entity;
             }
         }
-
-        
-
-        public static void InitSelectEntity(Entity entity)
+       
+        public void InitSelectEntity(Entity entity)
         {
             if(entity!=null)
             {
@@ -39,7 +37,7 @@ namespace MDDSkillEngine
             }
         }
 
-        public static void ClearSelectEntity(IEntity entity)
+        public void ClearSelectEntity(IEntity entity)
         {
             selectEntity = null;
         }
