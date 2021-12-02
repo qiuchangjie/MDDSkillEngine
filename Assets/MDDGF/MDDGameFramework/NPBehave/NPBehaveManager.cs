@@ -19,7 +19,16 @@ namespace MDDGameFramework
             clock = new Clock();
         }
 
-     
+        public IBehaveHelper GetHelper()
+        {
+            if (behaveHelper == null)
+            {
+                throw new MDDGameFrameworkException("behaveHelper helper is invalid.");
+            }
+
+            return behaveHelper;
+        }
+
         public void SetBehaveHelper(IBehaveHelper behaveHelper)
         {
             if (behaveHelper == null)

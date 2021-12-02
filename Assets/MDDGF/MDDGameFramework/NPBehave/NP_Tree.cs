@@ -25,7 +25,7 @@ namespace MDDGameFramework
             }
         }
 
-        public abstract void Init();
+        public abstract void Init(Root m_MainRoot);
 
         public virtual void SetRootNode(Root root)
         {

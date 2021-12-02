@@ -6,12 +6,8 @@ namespace MDDGameFramework.Runtime
 {
     public class Skill : NP_Tree
     {
-        //public static Skill Create(string Name)
-        //{
 
-        //}
-
-        public override void Init()
+        public override void Init(Root root)    
         {
             throw new System.NotImplementedException();
         }

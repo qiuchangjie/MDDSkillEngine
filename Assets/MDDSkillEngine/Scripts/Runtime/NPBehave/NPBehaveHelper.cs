@@ -70,18 +70,19 @@ namespace MDDSkillEngine
                         break;
                 }
 
-                root = (nP.GetRootNode() as NP_NodeBase).NP_GetNodeData().NP_GetNode() as Root;
-
-                root.SetRoot(root);
-                root.SetBlackBoard(Blackboard.Create(nP.BBValues,root.Clock));
-
-
-
+             
+                
             }
 
+            root = (nP.GetRootNode() as NP_NodeBase).NP_GetNodeData().NP_GetNode() as Root;
+            root.SetRoot(root);
+            root.SetBlackBoard(Blackboard.Create(nP.BBValues, root.Clock));
 
 
-            return null;
+            Skill skill = new Skill();
+            skill.Init(root);
+
+            return skill;
         }
 
 
