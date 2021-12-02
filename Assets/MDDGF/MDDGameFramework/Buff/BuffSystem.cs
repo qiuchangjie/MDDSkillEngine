@@ -12,7 +12,6 @@ namespace MDDGameFramework
         private readonly Dictionary<string, BuffBase> buffs;
         private readonly List<BuffBase> m_TempBuffs;
         private BuffBase currentNode;
-        private BuffBase tempNode;
 
 
         public object Owner
@@ -26,7 +25,6 @@ namespace MDDGameFramework
             m_Owner = null;
             currentNode = null;
             m_TempBuffs = new List<BuffBase>();
-            tempNode = null;
         }
       
         public void RemoveBuff()
