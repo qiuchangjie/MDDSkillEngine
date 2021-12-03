@@ -16,7 +16,8 @@ namespace MDDSkillEngine
             "Scene",
             "UIForm",
             "Entity",
-            "Buff"
+            "Buff",
+            "Skill",
         };
 
         private Dictionary<string, bool> m_LoadedFlag = new Dictionary<string, bool>();

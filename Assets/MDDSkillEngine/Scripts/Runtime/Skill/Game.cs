@@ -12,6 +12,12 @@ namespace MDDSkillEngine
             InitMDDComponent();
         }
 
+        public static SkillComponent Skill
+        {
+            get;
+            private set;
+        }
+
         public static BuffComponent Buff
         {
             get;
@@ -119,6 +125,7 @@ namespace MDDSkillEngine
             DataTable = MDDGameEntry.GetComponent<DataTableComponent>();
             Base = MDDGameEntry.GetComponent<MDDBaseComponent>();
             Select = MDDGameEntry.GetComponent<SelectEntity>();
+            Skill = MDDGameEntry.GetComponent<SkillComponent>();
         }
     }
 }

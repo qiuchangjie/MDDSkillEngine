@@ -1,6 +1,6 @@
 ﻿//------------------------------------------------------------
 // 此文件由工具自动生成，请勿直接修改。
-// 生成时间：2021-12-03 11:49:37.190
+// 生成时间：2021-12-03 11:49:37.207
 //------------------------------------------------------------
 
 using MDDGameFramework;
@@ -14,14 +14,14 @@ using MDDGameFramework.Runtime;
 namespace MDDSkillEngine
 {
     /// <summary>
-    /// 场景配置表。
+    /// 技能配置表。
     /// </summary>
-    public class DRScene : DataRowBase
+    public class DRSkill : DataRowBase
     {
         private int m_Id = 0;
 
         /// <summary>
-        /// 获取场景编号。
+        /// 获取skillid。
         /// </summary>
         public override int Id
         {
@@ -32,7 +32,16 @@ namespace MDDSkillEngine
         }
 
         /// <summary>
-        /// 获取资源名称。
+        /// 获取名字。
+        /// </summary>
+        public string Name
+        {
+            get;
+            private set;
+        }
+
+        /// <summary>
+        /// 获取资源名。
         /// </summary>
         public string AssetName
         {
@@ -41,9 +50,9 @@ namespace MDDSkillEngine
         }
 
         /// <summary>
-        /// 获取背景音乐编号。
+        /// 获取技能图标。
         /// </summary>
-        public int BackgroundMusicId
+        public string Icon
         {
             get;
             private set;
@@ -61,8 +70,9 @@ namespace MDDSkillEngine
             index++;
             m_Id = int.Parse(columnStrings[index++]);
             index++;
+            Name = columnStrings[index++];
             AssetName = columnStrings[index++];
-            BackgroundMusicId = int.Parse(columnStrings[index++]);
+            Icon = columnStrings[index++];
 
             GeneratePropertyArray();
             return true;
@@ -75,8 +85,9 @@ namespace MDDSkillEngine
                 using (BinaryReader binaryReader = new BinaryReader(memoryStream, Encoding.UTF8))
                 {
                     m_Id = binaryReader.Read7BitEncodedInt32();
+                    Name = binaryReader.ReadString();
                     AssetName = binaryReader.ReadString();
-                    BackgroundMusicId = binaryReader.Read7BitEncodedInt32();
+                    Icon = binaryReader.ReadString();
                 }
             }
 

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using MDDGameFramework.Runtime;
 
+
 namespace MDDSkillEngine
 {
     public class SkillSystem : ISkillSystem, IReference
@@ -21,7 +22,7 @@ namespace MDDSkillEngine
 
         public SkillSystem()
         {
-
+            skillDic = new Dictionary<NameNamePair, Skill>();
         }
 
 
@@ -40,9 +41,32 @@ namespace MDDSkillEngine
 
         public void AddSkill(int skillId)
         {
-            
+            Skill skill = SkillFactory.AcquireSkill(skillId, m_Owner);
+
+            if (skill == null)
+            {
+                Log.Error("技能创建失败id：{0}", skillId);
+            }
+            else
+            {
+                Log.Info("添加技能成功：{0}", skillId);
+            }
+
+            skill.Start();
+            skillDic.Add(new NameNamePair(skillId.ToString(), m_Owner.Id.ToString()), skill);
         }
 
+        public Skill GetSkill(int id)
+        {
+            Skill skill;
+            if (!skillDic.TryGetValue(new NameNamePair(id.ToString(),m_Owner.Id.ToString()), out skill))
+            {
+                Log.Error("尝试获取没有装配的技能id：{0}",id);
+                return null;
+            }
+
+            return skill;
+        }
        
         public void RemoveSkill(string name)
         {

@@ -17,7 +17,9 @@ namespace MDDSkillEngine
 
             Game.UI.GetUIForm(UIFormId.LoadingForm).Close();
 
-            Game.Resource.LoadAsset(AssetUtility.GetSkillAsset("112"), new LoadAssetCallbacks(LoadAssetCallbacksSucess));
+            //Game.Resource.LoadAsset(AssetUtility.GetSkillAsset("112"), new LoadAssetCallbacks(LoadAssetCallbacksSucess));
+
+            Game.NPBehave.GetHelper().PreLoad();
 
             Log.Info("成功进入训练场景");
         }
@@ -42,39 +44,17 @@ namespace MDDSkillEngine
 
 
 
-            if (Input.GetKeyDown(KeyCode.T))
-            {
-                test();
-                testload();
-            }
-
+          
 
 
         }
 
-        private async System.Threading.Tasks.Task testload()
-        {
-            await tcs.Task;
-            Log.Info("加载完成");
-        }
+      
 
-        private async System.Threading.Tasks.Task test()
-        {
-
-            await System.Threading.Tasks.Task.Delay(5000);
-            tcs.SetResult(true);
-            Log.Info("延迟执行");
-        }
-
-
-        TaskCompletionSource<bool> tcs = new TaskCompletionSource<bool>();
-
-
-
-        private void LoadAssetCallbacksSucess(string assetName, object asset, float duration, object userData)
-        {
-            Log.Error("加载成功：{0}", assetName);
-        }
+        //private void LoadAssetCallbacksSucess(string assetName, object asset, float duration, object userData)
+        //{
+        //    Log.Error("加载成功：{0}", assetName);
+        //}
 
     }
 }

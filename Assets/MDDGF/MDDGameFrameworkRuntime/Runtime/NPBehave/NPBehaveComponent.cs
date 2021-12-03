@@ -1,6 +1,7 @@
 ﻿using MDDGameFramework.Runtime;
 using System;
 using UnityEngine;
+using MDDGameFramework;
 
 namespace MDDGameFramework.Runtime
 {
@@ -28,6 +29,12 @@ namespace MDDGameFramework.Runtime
 
         private void Start()
         {
+        }
+
+
+        public IBehaveHelper GetHelper()
+        {
+            return m_NPBehaveManager.GetHelper();
         }
 
         private void InitBehaveHelperHelper()
@@ -58,10 +65,10 @@ namespace MDDGameFramework.Runtime
         //    return m_NPBehaveManager.GetClock();
         //}
 
-        //public Root CreatBehaviourTree(string name,object userdata)
-        //{
-        //    return m_NPBehaveManager.CreatBehaviourTree(name, userdata);
-        //}
+        public NP_Tree CreatBehaviourTree(string name, object userdata)
+        {
+            return m_NPBehaveManager.CreatBehaviourTree(name, userdata);
+        }
 
         //public Blackboard GetSharedBlackboard(string key)
         //{

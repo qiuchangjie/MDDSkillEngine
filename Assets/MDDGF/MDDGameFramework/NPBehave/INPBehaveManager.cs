@@ -5,6 +5,8 @@ namespace MDDGameFramework
     public interface INPBehaveManager 
     {
 
+        IBehaveHelper GetHelper();
+
         void SetBehaveHelper(IBehaveHelper behaveHelper);
 
         Clock GetClock();

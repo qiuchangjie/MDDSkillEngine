@@ -24,9 +24,17 @@ namespace MDDSkillEngine
 
         public void PreLoad()
         {
-            
+            IDataTable<DRSkill> dtSkill = Game.DataTable.GetDataTable<DRSkill>();
+
+            DRSkill[] dRSkills = dtSkill.GetAllDataRows();
+
+            for (int i = 0; i < dRSkills.Length; i++)
+            {
+                Game.Resource.LoadAsset(AssetUtility.GetSkillAsset(dRSkills[i].AssetName), assetCallbacks);
+            }   
+
         }
-      
+
 
         public NP_Tree CreatBehaviourTree(string Name, object userData)
         {
@@ -37,6 +45,8 @@ namespace MDDSkillEngine
                 return null;
             }
 
+            Skill skill = new Skill();
+
             Root root = null;
             foreach (var v in nP.nodes)
             {
@@ -45,7 +55,7 @@ namespace MDDSkillEngine
                 switch (data.nodeType)
                 {
                     case NodeType.Task:
-                        data.NP_GetNodeData().CreateTask(null, null);
+                        data.NP_GetNodeData().CreateTask(null, skill);
                         break;
                     case NodeType.Decorator:
                         Node node = null;
@@ -54,7 +64,7 @@ namespace MDDSkillEngine
                             node = (v1.Connection.node as NP_NodeBase).NP_GetNodeData().NP_GetNode();
                         }
 
-                        data.NP_GetNodeData().CreateDecoratorNode(null, null, node);
+                        data.NP_GetNodeData().CreateDecoratorNode(null, skill, node);
 
                         break;
                     case NodeType.Composite:
@@ -79,8 +89,17 @@ namespace MDDSkillEngine
             root.SetBlackBoard(Blackboard.Create(nP.BBValues, root.Clock));
 
 
-            Skill skill = new Skill();
-            skill.Init(root);
+            Entity owner = userData as Entity;
+            if (owner == null)
+            {
+                Log.Error("没有传入行为树归属者");
+            }
+            root.SetOwner(owner.Entity);
+
+
+          
+            skill.SetRootNode(root);
+       
 
             return skill;
         }
@@ -95,7 +114,7 @@ namespace MDDSkillEngine
                 Log.Error("行为树文件：{0} 读取失败", entityAssetName);
             }
 
-            Log.Info("行为树文件：{0}  成功", entityAssetName);
+            Log.Info("加载行为树文件：{0}  成功", entityAssetName);
             m_GraphDic.Add(entityAssetName, np);
         }
 

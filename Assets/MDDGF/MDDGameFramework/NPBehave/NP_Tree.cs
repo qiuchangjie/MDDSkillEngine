@@ -17,6 +17,14 @@ namespace MDDGameFramework
             }
         }
 
+        public Root Root
+        {
+            get
+            {
+                return m_MainRoot;
+            }
+        }
+
         public Blackboard Blackboard
         {
             get

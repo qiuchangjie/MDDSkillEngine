@@ -39,13 +39,13 @@ namespace MDDSkillEngine
             base.OnInit(userData);
 
             Game.Buff.CreatBuffSystem(this.Entity.Id.ToString(),this);
-
             Game.Fsm.CreateFsm<Player, AkiStateAttribute>(this);
-
             move = GetComponent<PlayerMovement>();
-
             Game.HpBar.ShowHPBar(this, 1, 1);
-         
+            Game.Skill.CreateSkillSystem(this);
+
+            Game.Skill.GetSkillSystem(Id).AddSkill(10001);
+
 
             PlayerData = userData as PlayerData;
             if (PlayerData == null)
@@ -165,7 +165,7 @@ namespace MDDSkillEngine
 
             if (isQ && Game.Fsm.GetFsm<Player>(Id.ToString()).GetCurrStateName() != "AkiShunXiState")
             {
-                Game.Fsm.GetFsm<Player>(Id.ToString()).SetData<VarBoolean>("shunxi", true);
+                Game.Skill.GetSkillSystem(Id).GetSkill(10001).GetBlackboard().Set<VarBoolean>("input", true);
 
                 RaycastHit hit;
                 if (Physics.Raycast(Game.Scene.MainCamera.ScreenPointToRay(Input.mousePosition), out hit, Mathf.Infinity, 1 << 0))
@@ -174,6 +174,13 @@ namespace MDDSkillEngine
                 }
 
                 isQ = false;
+            }
+
+            if (isW)
+            {
+                //Game.Skill.GetSkillSystem(Id).GetSkill(10001).GetBlackboard().Set<VarBoolean>("input",true);
+
+                isW = false;
             }
         }
 

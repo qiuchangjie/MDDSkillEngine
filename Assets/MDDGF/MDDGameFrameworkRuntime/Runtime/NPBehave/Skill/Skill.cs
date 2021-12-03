@@ -9,7 +9,7 @@ namespace MDDGameFramework.Runtime
 
         public override void Init(Root root)    
         {
-            throw new System.NotImplementedException();
+            
         }
     }
 }

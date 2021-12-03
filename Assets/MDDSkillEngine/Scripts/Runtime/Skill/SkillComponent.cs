@@ -12,13 +12,17 @@ namespace MDDSkillEngine
         protected override void Awake()
         {
             base.Awake();
+
             skillSystemDic = new Dictionary<int, SkillSystem>();
         }
 
         public ISkillSystem CreateSkillSystem(Entity Owner)
         {
             SkillSystem skillSystem = SkillSystem.Create(Owner);
+
             skillSystemDic.Add(skillSystem.Owner.Id,skillSystem);
+
+            Log.Info("创建技能系统成功 挂载实体:{0}", Owner.Id);
 
             return skillSystem;
         }
