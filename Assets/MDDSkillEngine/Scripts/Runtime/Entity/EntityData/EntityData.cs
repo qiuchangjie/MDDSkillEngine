@@ -21,6 +21,10 @@ namespace MDDSkillEngine
         [SerializeField]
         private Vector3 m_LocalScale = Vector3.one;
 
+        private bool isPreLoad;
+         
+        
+
         public EntityData(int entityId, int typeId)
         {
             m_Id = entityId;
@@ -89,6 +93,18 @@ namespace MDDSkillEngine
             set
             {
                 m_LocalScale = value;
+            }
+        }
+
+        public bool IsPreLoad
+        {
+            get
+            {
+                return isPreLoad;
+            }
+            set
+            {
+                isPreLoad = value;
             }
         }
     }

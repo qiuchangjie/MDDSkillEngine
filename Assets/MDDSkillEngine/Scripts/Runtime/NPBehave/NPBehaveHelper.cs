@@ -31,6 +31,8 @@ namespace MDDSkillEngine
             for (int i = 0; i < dRSkills.Length; i++)
             {
                 Game.Resource.LoadAsset(AssetUtility.GetSkillAsset(dRSkills[i].AssetName), assetCallbacks);
+
+                Log.Error(dRSkills[i].EffectAsset.Count);
             }   
 
         }

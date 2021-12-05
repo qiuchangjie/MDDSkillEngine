@@ -58,7 +58,7 @@ namespace MDDSkillEngine
         protected override void OnEnter(IFsm<Player> fsm)
         {
            
-            base.OnInit(fsm);
+            base.OnEnter(fsm);
 
             Game.Event.Subscribe(ColliderEnterEventArgs.EventId, colliderAction);
 

@@ -198,5 +198,7 @@ namespace MDDGameFramework.Runtime
         {
             gameObject.SetActive(visible);
         }
+
+       
     }
 }

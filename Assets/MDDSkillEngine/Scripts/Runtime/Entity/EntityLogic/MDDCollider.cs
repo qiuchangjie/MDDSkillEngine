@@ -9,9 +9,20 @@ namespace MDDSkillEngine
     {
         ColliderData data;
 
+        private int damageSettlementPreSecond = 4;
+
+        private bool canDamage;
+
+        private float waitTime;
+
+        private float needWaitTime;
+
+
         protected override void OnInit(object userData)
         {
             base.OnInit(userData);
+
+           
         }
 
         protected override void OnShow(object userData)
@@ -19,8 +30,29 @@ namespace MDDSkillEngine
             base.OnShow(userData);
 
             data = userData as ColliderData;
-            
+
+            needWaitTime = 1f / damageSettlementPreSecond;
         }
+
+        protected override void OnUpdate(float elapseSeconds, float realElapseSeconds)
+        {
+            base.OnUpdate(elapseSeconds, realElapseSeconds);
+
+            data.Duration -= elapseSeconds;
+            if (data.Duration <= 0)
+            {
+                HideSelf();
+            }
+
+            waitTime += elapseSeconds;
+
+            if (waitTime >= needWaitTime)
+            {
+                canDamage = true;
+                waitTime -= needWaitTime; 
+            }
+        }
+
 
         private void OnTriggerEnter(Collider other)
         {
@@ -37,6 +69,32 @@ namespace MDDSkillEngine
 
             Game.Event.Fire(this, ColliderEnterEventArgs.Create(data.Owner, entity, hitPos));
         }
+
+
+        private void OnTriggerStay(Collider other)
+        {
+            if (!canDamage)
+            {
+                return;
+            }
+
+            Log.Error("触发Stay碰撞");
+
+            Entity entity = other.gameObject.GetComponent<Entity>();
+
+            if (entity == null)
+            {
+                return;
+            }
+
+            Vector3 hitPos = other.ClosestPoint(CachedTransform.position);
+
+            Game.Event.Fire(this, ColliderEnterEventArgs.Create(data.Owner, entity, hitPos));
+
+            canDamage = false;
+        }
+
+      
     }
 
 }

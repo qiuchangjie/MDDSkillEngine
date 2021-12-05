@@ -66,6 +66,11 @@ namespace MDDSkillEngine
             CachedTransform.localPosition = m_EntityData.Position;
             CachedTransform.localRotation = m_EntityData.Rotation;
             CachedTransform.localScale = m_EntityData.LocalScale;
+
+            if (m_EntityData.IsPreLoad)
+            {
+                HideSelf();
+            }
         }
 
 
@@ -90,6 +95,7 @@ namespace MDDSkillEngine
 
         {
             base.OnAttachTo(parentEntity, parentTransform, userData);
+            
         }
 
 
@@ -102,6 +108,11 @@ namespace MDDSkillEngine
 
         {
             base.OnUpdate(elapseSeconds, realElapseSeconds);
+        }
+
+        protected virtual void HideSelf()
+        {
+            Game.Entity.HideEntity(Id);
         }
     }
 }

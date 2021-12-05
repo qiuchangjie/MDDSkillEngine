@@ -3,6 +3,7 @@ using MDDGameFramework;
 using System;
 using UnityEngine;
 using MDDGameFramework.Runtime;
+using System.Collections.Generic;
 
 namespace MDDSkillEngine
 {
@@ -80,6 +81,17 @@ namespace MDDSkillEngine
         {
             string[] splitedValue = value.Split(',');
             return new Vector4(float.Parse(splitedValue[0]), float.Parse(splitedValue[1]), float.Parse(splitedValue[2]), float.Parse(splitedValue[3]));
+        }
+
+        public static List<int> ParseList(string value)
+        {
+            string[] splitedValue = value.Split(',');
+            List<int> intList = new List<int>();
+            for (int i = 0; i < splitedValue.Length; i++)
+            {
+                intList.Add(int.Parse(splitedValue[i]));
+            }
+            return intList;
         }
     }
 }

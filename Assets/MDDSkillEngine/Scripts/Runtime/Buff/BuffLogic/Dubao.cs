@@ -61,7 +61,7 @@ namespace MDDSkillEngine
             Game.Entity.ShowEffect(new EffectData(Game.Entity.GenerateSerialId(), 70004)
             {
                 Position = entity.CachedTransform.position,
-                Rotation = entity.CachedTransform.rotation
+                Rotation = entity.CachedTransform.rotation              
             });
 
             entity.ApplyDamage((Entity)From, data.Damage);

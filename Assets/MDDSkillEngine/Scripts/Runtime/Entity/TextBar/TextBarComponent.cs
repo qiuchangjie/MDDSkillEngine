@@ -68,13 +68,10 @@ namespace MDDSkillEngine
                 return;
             }
 
-            TextBarItem textBarItem = GetActiveTextBarItem(entity);
 
-            if (textBarItem == null)
-            {
-                textBarItem = CreateTextBarItem(entity);
-                m_ActiveTextBarItems.Add(textBarItem);
-            }
+            TextBarItem textBarItem = CreateTextBarItem(entity);
+            m_ActiveTextBarItems.Add(textBarItem);
+
 
             textBarItem.Init(entity, damage, m_CachedCanvas);
         }

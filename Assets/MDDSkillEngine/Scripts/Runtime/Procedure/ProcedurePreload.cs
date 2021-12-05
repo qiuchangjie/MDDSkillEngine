@@ -4,6 +4,7 @@ using UnityEngine;
 using MDDGameFramework.Runtime;
 using ProcedureOwner = MDDGameFramework.IFsm<MDDGameFramework.IProcedureManager>;
 using MDDGameFramework;
+using OpenUIFormSuccessEventArgs = MDDGameFramework.Runtime.OpenUIFormSuccessEventArgs;
 
 namespace MDDSkillEngine
 {
@@ -29,6 +30,7 @@ namespace MDDSkillEngine
 
             Game.Event.Subscribe(LoadDataTableSuccessEventArgs.EventId, OnLoadDataTableSuccess);
             Game.Event.Subscribe(LoadDataTableFailureEventArgs.EventId, OnLoadDataTableFailure);
+            Game.Event.Subscribe(OpenUIFormSuccessEventArgs.EventId, OnOpenUIFormSuccess);
 
             m_LoadedFlag.Clear();
 
@@ -40,6 +42,7 @@ namespace MDDSkillEngine
 
             Game.Event.Unsubscribe(LoadDataTableSuccessEventArgs.EventId, OnLoadDataTableSuccess);
             Game.Event.Unsubscribe(LoadDataTableFailureEventArgs.EventId, OnLoadDataTableFailure);
+            Game.Event.Unsubscribe(OpenUIFormSuccessEventArgs.EventId, OnOpenUIFormSuccess);
 
             base.OnLeave(procedureOwner, isShutdown);
         }
@@ -69,6 +72,8 @@ namespace MDDSkillEngine
             {
                 LoadDataTable(dataTableName);
             }
+
+            //LoadLoadingUIAsset();
         }
 
         private void LoadDataTable(string dataTableName)
@@ -87,7 +92,32 @@ namespace MDDSkillEngine
             }
 
             m_LoadedFlag[ne.DataTableAssetName] = true;
+
+            if (ne.DataTableAssetName == AssetUtility.GetUIFormAsset("UILoadingForm"))
+            {
+                LoadLoadingUIAsset();
+            }
+
             Log.Info("Load data table '{0}' OK.", ne.DataTableAssetName);
+        }
+
+        private void LoadLoadingUIAsset()
+        {
+            Game.UI.OpenUIForm(UIFormId.LoadingForm, this);
+            m_LoadedFlag.Add(UIFormId.LoadingForm.ToString(), false);
+        }
+
+        private void OnOpenUIFormSuccess(object sender, GameEventArgs e)
+        {
+            MDDGameFramework.Runtime.OpenUIFormSuccessEventArgs ne = (MDDGameFramework.Runtime.OpenUIFormSuccessEventArgs)e;
+            if (ne.UserData != this)
+            {
+                return;
+            }
+
+            Log.Error("打开ui成功");
+            Game.UI.GetUIForm(UIFormId.LoadingForm).Close(true);
+            m_LoadedFlag[UIFormId.LoadingForm.ToString()] = true;
         }
 
         private void OnLoadDataTableFailure(object sender, GameEventArgs e)

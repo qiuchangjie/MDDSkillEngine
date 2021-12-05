@@ -246,6 +246,17 @@ namespace MDDSkillEngine
             return string.IsNullOrEmpty(GetName(rawColumn)) || m_DataProcessor[rawColumn].IsComment;
         }
 
+        public bool IsList(int rawColumn)
+        {
+            if (rawColumn < 0 || rawColumn >= RawColumnCount)
+            {
+                throw new MDDGameFrameworkException(Utility.Text.Format("Raw column '{0}' is out of range.", rawColumn.ToString()));
+            }
+
+            return m_DataProcessor[rawColumn].IsList;
+        }
+
+
         public string GetName(int rawColumn)
         {
             if (rawColumn < 0 || rawColumn >= RawColumnCount)

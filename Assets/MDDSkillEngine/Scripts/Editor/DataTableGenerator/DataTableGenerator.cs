@@ -156,6 +156,10 @@ namespace MDDSkillEngine
                     {
                         stringBuilder.AppendFormat("            {0} = columnStrings[index++];", dataTableProcessor.GetName(i)).AppendLine();
                     }
+                    else if (dataTableProcessor.IsList(i))
+                    {
+                        stringBuilder.AppendFormat("            {0} =  DataTableExtension.ParseList(columnStrings[index++]);", dataTableProcessor.GetName(i)).AppendLine();
+                    }
                     else
                     {
                         stringBuilder.AppendFormat("            {0} = {1}.Parse(columnStrings[index++]);", dataTableProcessor.GetName(i), languageKeyword).AppendLine();
@@ -194,10 +198,17 @@ namespace MDDSkillEngine
                     continue;
                 }
 
+
+
                 string languageKeyword = dataTableProcessor.GetLanguageKeyword(i);
                 if (languageKeyword == "int" || languageKeyword == "uint" || languageKeyword == "long" || languageKeyword == "ulong")
                 {
                     stringBuilder.AppendFormat("                    {0} = binaryReader.Read7BitEncoded{1}();", dataTableProcessor.GetName(i), dataTableProcessor.GetType(i).Name).AppendLine();
+                }
+                else if (languageKeyword == "List<int>")
+                {
+                    //列表
+                    stringBuilder.AppendFormat("                    {0} = binaryReader.Read{1}();", dataTableProcessor.GetName(i), "List").AppendLine();
                 }
                 else
                 {

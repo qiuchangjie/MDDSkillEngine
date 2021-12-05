@@ -33,10 +33,18 @@ namespace MDDSkillEngine
             base.OnUpdate(elapseSeconds, realElapseSeconds);
 
             m_ElapseSeconds += elapseSeconds;
+
+            if (m_EffectData.IsFllow)
+            {
+                CachedTransform.position = m_EffectData.Owner.CachedTransform.position;
+            }
+
             if (m_ElapseSeconds >= m_EffectData.KeepTime)
             {
                 Game.Entity.HideEntity(this);
             }
+
+            
         }
     }
 }

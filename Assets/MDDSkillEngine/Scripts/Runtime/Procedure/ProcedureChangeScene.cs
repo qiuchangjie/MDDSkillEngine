@@ -13,6 +13,8 @@ namespace MDDSkillEngine
         private bool m_IsChangeSceneComplete = false;
         private int m_BackgroundMusicId = 0;
 
+        private bool isOpen = false;
+
         public  bool UseNativeDialog
         {
             get
@@ -33,7 +35,7 @@ namespace MDDSkillEngine
             Game.Event.Subscribe(MDDGameFramework.Runtime.LoadSceneFailureEventArgs.EventId, OnLoadSceneFailure);
             Game.Event.Subscribe(MDDGameFramework.Runtime.LoadSceneUpdateEventArgs.EventId, OnLoadSceneUpdate);
             Game.Event.Subscribe(MDDGameFramework.Runtime.LoadSceneDependencyAssetEventArgs.EventId, OnLoadSceneDependencyAsset);
-
+            Game.Event.Subscribe(MDDGameFramework.Runtime.OpenUIFormSuccessEventArgs.EventId, OnOpenUIFormSuccess);
             // 停止所有声音
             //Game.Sound.StopAllLoadingSounds();
             //Game.Sound.StopAllLoadedSounds();
@@ -72,6 +74,9 @@ namespace MDDSkillEngine
             Game.Event.Unsubscribe(MDDGameFramework.Runtime.LoadSceneFailureEventArgs.EventId, OnLoadSceneFailure);
             Game.Event.Unsubscribe(MDDGameFramework.Runtime.LoadSceneUpdateEventArgs.EventId, OnLoadSceneUpdate);
             Game.Event.Unsubscribe(MDDGameFramework.Runtime.LoadSceneDependencyAssetEventArgs.EventId, OnLoadSceneDependencyAsset);
+            Game.Event.Unsubscribe(MDDGameFramework.Runtime.OpenUIFormSuccessEventArgs.EventId,OnOpenUIFormSuccess);
+
+            isOpen = false;
 
             base.OnLeave(procedureOwner, isShutdown);
         }
@@ -85,16 +90,9 @@ namespace MDDSkillEngine
                 return;
             }
 
-            ChangeState<ProcedureMDDSkillFactory>(procedureOwner);
+            if (isOpen)
+                ChangeState<ProcedureMDDSkillFactory>(procedureOwner);
 
-            //if (m_ChangeToMenu)
-            //{
-            //    ChangeState<ProcedureMenu>(procedureOwner);
-            //}
-            //else
-            //{
-            //    ChangeState<ProcedureMain>(procedureOwner);
-            //}
         }
 
         private void OnLoadSceneSuccess(object sender, GameEventArgs e)
@@ -146,6 +144,19 @@ namespace MDDSkillEngine
             }
 
             Log.Info("Load scene '{0}' dependency asset '{1}', count '{2}/{3}'.", ne.SceneAssetName, ne.DependencyAssetName, ne.LoadedCount.ToString(), ne.TotalCount.ToString());
+        }
+
+        private void OnOpenUIFormSuccess(object sender, GameEventArgs e)
+        {
+            MDDGameFramework.Runtime.OpenUIFormSuccessEventArgs ne = (MDDGameFramework.Runtime.OpenUIFormSuccessEventArgs)e;
+            if (ne.UserData != this)
+            {
+                return;
+            }
+
+            Log.Error("打开ui成功");
+
+            isOpen = true;
         }
     }
 }

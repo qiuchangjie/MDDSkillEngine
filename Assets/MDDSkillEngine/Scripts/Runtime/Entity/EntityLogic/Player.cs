@@ -180,6 +180,8 @@ namespace MDDSkillEngine
             {
                 //Game.Skill.GetSkillSystem(Id).GetSkill(10001).GetBlackboard().Set<VarBoolean>("input",true);
 
+                Game.Fsm.GetFsm<Player>(Id.ToString()).SetData<VarBoolean>("jianrenfengbao", true);
+
                 isW = false;
             }
         }

@@ -6,7 +6,9 @@ namespace MDDSkillEngine
 {
     public class ColliderData : EntityData
     {
-        Entity m_Owner;
+        private Entity m_Owner;
+
+        private float m_duration = 999;
 
         public Entity Owner
         {
@@ -16,7 +18,20 @@ namespace MDDSkillEngine
             }
         }
 
-        public ColliderData(int entityId, int typeId,Entity owner)
+        public float Duration
+        {
+            get
+            {
+                return m_duration;
+            }
+            set
+            {
+                m_duration = value;
+            }
+        }
+
+
+        public ColliderData(int entityId, int typeId, Entity owner)
            : base(entityId, typeId)
         {
             m_Owner = owner;

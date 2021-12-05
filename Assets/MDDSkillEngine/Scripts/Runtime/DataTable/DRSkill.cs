@@ -1,6 +1,6 @@
 ﻿//------------------------------------------------------------
 // 此文件由工具自动生成，请勿直接修改。
-// 生成时间：2021-12-03 11:49:37.207
+// 生成时间：2021-12-05 21:02:45.800
 //------------------------------------------------------------
 
 using MDDGameFramework;
@@ -58,6 +58,42 @@ namespace MDDSkillEngine
             private set;
         }
 
+        /// <summary>
+        /// 获取关联的特效资源id。
+        /// </summary>
+        public List<int> EffectAsset
+        {
+            get;
+            private set;
+        }
+
+        /// <summary>
+        /// 获取会生成多份的特效。
+        /// </summary>
+        public List<int> EffectAssetMutl
+        {
+            get;
+            private set;
+        }
+
+        /// <summary>
+        /// 获取会使用到的碰撞体。
+        /// </summary>
+        public List<int> ColliderEntity
+        {
+            get;
+            private set;
+        }
+
+        /// <summary>
+        /// 获取需要生成多份的碰撞体。
+        /// </summary>
+        public List<int> ColliderEntityMutl
+        {
+            get;
+            private set;
+        }
+
         public override bool ParseDataRow(string dataRowString, object userData)
         {
             string[] columnStrings = dataRowString.Split(DataTableExtension.DataSplitSeparators);
@@ -73,6 +109,10 @@ namespace MDDSkillEngine
             Name = columnStrings[index++];
             AssetName = columnStrings[index++];
             Icon = columnStrings[index++];
+            EffectAsset =  DataTableExtension.ParseList(columnStrings[index++]);
+            EffectAssetMutl =  DataTableExtension.ParseList(columnStrings[index++]);
+            ColliderEntity =  DataTableExtension.ParseList(columnStrings[index++]);
+            ColliderEntityMutl =  DataTableExtension.ParseList(columnStrings[index++]);
 
             GeneratePropertyArray();
             return true;
@@ -88,6 +128,10 @@ namespace MDDSkillEngine
                     Name = binaryReader.ReadString();
                     AssetName = binaryReader.ReadString();
                     Icon = binaryReader.ReadString();
+                    EffectAsset = binaryReader.ReadList();
+                    EffectAssetMutl = binaryReader.ReadList();
+                    ColliderEntity = binaryReader.ReadList();
+                    ColliderEntityMutl = binaryReader.ReadList();
                 }
             }
 

@@ -1,6 +1,7 @@
 ﻿
 
 using System;
+using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 
@@ -47,5 +48,32 @@ namespace MDDSkillEngine
         {
             return new Vector4(binaryReader.ReadSingle(), binaryReader.ReadSingle(), binaryReader.ReadSingle(), binaryReader.ReadSingle());
         }
+
+
+        public static List<int> ReadList(this BinaryReader binaryReader)
+        {
+            List<int> intList = new List<int>();
+
+            string s = "";
+
+            bool isBreak = true;
+
+            while (isBreak)
+            {
+                s = binaryReader.ReadString();
+
+                if (s != "#")
+                {
+                    intList.Add(int.Parse(s));
+                }
+                else
+                {
+                    isBreak = false;
+                }
+            }
+
+            return intList;
+        }
+
     }
 }
