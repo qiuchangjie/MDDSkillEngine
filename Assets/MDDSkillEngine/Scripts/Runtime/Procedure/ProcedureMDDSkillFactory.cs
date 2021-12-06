@@ -53,10 +53,7 @@ namespace MDDSkillEngine
                 });
             }
 
-            if (Input.GetKeyDown(KeyCode.W))
-            {
-                Game.UI.OpenUIForm(UIFormId.LoadingForm);
-            }
+          
 
           
 
@@ -130,9 +127,7 @@ namespace MDDSkillEngine
                     }
                 }
             }
-
-
-
+          
             await Task.Delay(5000);
 
             end?.Invoke();

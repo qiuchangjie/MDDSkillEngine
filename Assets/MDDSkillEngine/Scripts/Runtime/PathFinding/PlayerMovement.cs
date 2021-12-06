@@ -204,6 +204,11 @@ namespace MDDSkillEngine
             Init();
         }
 
+        private void OnEnable()
+        {
+            Init();
+        }
+
         private void Init()
         {
             fsm = Game.Fsm.GetFsm<Player>(player.Id.ToString());

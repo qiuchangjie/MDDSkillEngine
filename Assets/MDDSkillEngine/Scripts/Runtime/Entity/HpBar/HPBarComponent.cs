@@ -90,6 +90,26 @@ namespace MDDSkillEngine
             hpBarItem.Init(entity, m_CachedCanvas, fromHPRatio, toHPRatio);
         }
 
+        public void HideHPBar(Entity entity)
+        {
+            if (entity == null)
+            {
+                return;
+            }
+
+            for (int i = 0; i < m_ActiveHPBarItems.Count; i++)
+            {
+                if (m_ActiveHPBarItems[i].Owner == entity)
+                {
+                    m_ActiveHPBarItems[i].Reset();
+                    m_HPBarItemObjectPool.Unspawn(m_ActiveHPBarItems[i]);
+                    m_ActiveHPBarItems.Remove(m_ActiveHPBarItems[i]);
+                    break;
+                }
+            }
+
+        }
+
         private void HideHPBar(HPBarItem hpBarItem)
         {
             hpBarItem.Reset();

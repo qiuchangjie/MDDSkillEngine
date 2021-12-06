@@ -41,7 +41,7 @@ namespace MDDSkillEngine
             Game.Buff.CreatBuffSystem(this.Entity.Id.ToString(),this);
             Game.Fsm.CreateFsm<Player, AkiStateAttribute>(this);
             move = GetComponent<PlayerMovement>();
-            Game.HpBar.ShowHPBar(this, 1, 1);
+           
             Game.Skill.CreateSkillSystem(this);
 
             Game.Skill.GetSkillSystem(Id).AddSkill(10001);
@@ -66,7 +66,19 @@ namespace MDDSkillEngine
 
             fsm.Start<AkiIdleState>();
 
+            Game.HpBar.ShowHPBar(this, 1, 1);
+
             Game.Select.InitPlayer(this);
+        }
+
+        protected override void OnHide(bool isShutdown, object userData)
+        {
+            base.OnHide(isShutdown, userData);
+
+
+            Game.HpBar.HideHPBar(this);
+
+            //IFsm<Player> fsm = Game.Fsm.GetFsm<Player>(Entity.Id.ToString());          
         }
 
         protected override void OnUpdate(float elapseSeconds, float realElapseSeconds)

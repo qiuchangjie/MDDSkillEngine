@@ -37,6 +37,12 @@ namespace MDDSkillEngine
             data = userData as EnemyData;
         }
 
+        protected override void OnHide(bool isShutdown, object userData)
+        {
+            base.OnHide(isShutdown, userData);
+            Game.HpBar.HideHPBar(this);
+        }
+
         protected override void OnUpdate(float elapseSeconds, float realElapseSeconds)
         {
             base.OnUpdate(elapseSeconds, realElapseSeconds);         
