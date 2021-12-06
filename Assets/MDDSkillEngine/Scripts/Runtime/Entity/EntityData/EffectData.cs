@@ -45,10 +45,15 @@ namespace MDDSkillEngine
         }
 
         public bool IsFllow
-
         {
-            get { return isFllow; }
-            set { isFllow = value; }
+            get 
+            { 
+                return isFllow; 
+            }
+            set 
+            { 
+                isFllow = value; 
+            }
         }
     }
 }

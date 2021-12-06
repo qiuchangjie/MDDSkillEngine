@@ -21,6 +21,9 @@ namespace MDDSkillEngine
         [SerializeField]
         private Vector3 m_LocalScale = Vector3.one;
 
+        /// <summary>
+        /// 是否预加载
+        /// </summary>
         private bool isPreLoad;
          
         
