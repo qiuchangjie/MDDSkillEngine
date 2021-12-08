@@ -6,6 +6,7 @@ using MDDGameFramework.Runtime;
 using MDDGameFramework;
 using System.Threading.Tasks;
 using Task = System.Threading.Tasks.Task;
+using System;
 
 namespace MDDSkillEngine
 {
@@ -33,6 +34,10 @@ namespace MDDSkillEngine
             
 
             Log.Info("成功进入训练场景");
+
+            flagstest test = flagstest.one | flagstest.three;
+            flagstest test1 = flagstest.three;
+            Log.Error(test);
         }
 
 
@@ -138,6 +143,14 @@ namespace MDDSkillEngine
         //    Log.Error("加载成功：{0}", assetName);
         //}
 
+    }
+
+    [Flags]
+    public enum flagstest
+    {
+        one  ,
+        two  ,
+        three 
     }
 }
 
