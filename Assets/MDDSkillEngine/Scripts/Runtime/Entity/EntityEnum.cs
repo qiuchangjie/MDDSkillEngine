@@ -132,8 +132,28 @@ namespace MDDSkillEngine
         BAR,
 
         COLLISION,
+    }
 
+    public struct AttackNum
+    {
+        public int min;
 
+        public int max;
 
+        public AttackNum(int min,int max)
+        {
+            this.min = min;
+            this.max = max;
+        }
+
+        public static AttackNum operator + (int addAttackNum , AttackNum attackNum)
+        {
+            return new AttackNum(addAttackNum + attackNum.min, addAttackNum + attackNum.max);
+        }
+
+        public static AttackNum operator - (int addAttackNum, AttackNum attackNum)
+        {
+            return new AttackNum(attackNum.min - addAttackNum, attackNum.max - addAttackNum);
+        }
     }
 }
