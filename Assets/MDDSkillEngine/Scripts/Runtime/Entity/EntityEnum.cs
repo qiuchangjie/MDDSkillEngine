@@ -134,6 +134,18 @@ namespace MDDSkillEngine
         COLLISION,
     }
 
+    [Flags]
+    public enum HeroType
+    {
+        NONE = 0,
+
+        STRENGTH = 1,
+
+        INTELLIGENCE = 2,
+
+        AGILE = 3,
+    }
+
     public struct AttackNum
     {
         public int min;

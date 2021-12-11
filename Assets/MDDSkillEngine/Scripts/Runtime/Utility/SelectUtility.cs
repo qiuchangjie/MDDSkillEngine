@@ -6,7 +6,7 @@ namespace MDDSkillEngine
 {
     public static class SelectUtility
     {
-        public static bool IsInsert(Vector3 start,Vector3 end,Vector3 point)
+        public static bool IsInsert(Vector3 start, Vector3 end, Vector3 point)
         {
             bool isIn = false;
             bool isInx = false;
@@ -68,8 +68,31 @@ namespace MDDSkillEngine
             Vector2 localPoint;
 
             RectTransformUtility.ScreenPointToLocalPointInRectangle(rectTransform, screenPoint, Game.Scene.UICamera, out localPoint);
-          
+
             return localPoint;
+        }
+
+
+        /// <summary>
+        /// 返回鼠标射线检测坐标
+        /// </summary>
+        /// <param name="layer"></param>
+        /// <returns></returns>
+        public static bool MouseRayCastByLayer(int layer,ref Vector3 vector3)
+        {
+            RaycastHit hit;
+            if (Physics.Raycast(Game.Scene.MainCamera.ScreenPointToRay(Input.mousePosition), out hit, Mathf.Infinity, layer))
+            {
+                vector3 = hit.point;
+
+                return true;
+            }
+            else
+            {
+                Log.Info("射线射空了------");
+                return false;
+            }
+        
         }
 
     }

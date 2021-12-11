@@ -67,6 +67,11 @@ namespace MDDSkillEngine
 
             return skill;
         }
+
+        public void UseSkill(int id)
+        {
+            GetSkill(id).GetBlackboard().Set<VarBoolean>("input", true);
+        }
        
         public void RemoveSkill(string name)
         {

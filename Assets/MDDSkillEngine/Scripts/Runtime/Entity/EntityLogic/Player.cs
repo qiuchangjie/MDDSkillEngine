@@ -86,6 +86,19 @@ namespace MDDSkillEngine
             base.OnUpdate(elapseSeconds, realElapseSeconds);
 
             InputLogic();
+
+            switch (SelectState)
+            {
+                case EntitySelectState.None:
+                    CacheOutLiner.SetOutLiner(false);
+                    break;
+                case EntitySelectState.OnHighlight:
+                    CacheOutLiner.SetOutLiner(true);
+                    break;
+                case EntitySelectState.OnSelect:
+                    CacheOutLiner.SetOutLiner(false);
+                    break;
+            }
         }
 
         private void InputLogic()
@@ -151,15 +164,14 @@ namespace MDDSkillEngine
 
             if (isClickRight)
             {
-                RaycastHit hit;
-                if (Physics.Raycast(Game.Scene.MainCamera.ScreenPointToRay(Input.mousePosition), out hit, Mathf.Infinity, 1<<0))
+                Vector3 vector3 = Vector3.zero;
+                if (SelectUtility.MouseRayCastByLayer(1 << 0 | 1 << 1, ref vector3))
                 {
-                    Game.Select.pathFindingTarget.transform.position = hit.point;
-
+                    Game.Select.pathFindingTarget.transform.position = vector3;
                     move.SearchPath();
-
-                    Game.Entity.ShowEffect(new EffectData(Game.Entity.GenerateSerialId(), 70000) {  Position = hit.point });                 
+                    Game.Entity.ShowEffect(new EffectData(Game.Entity.GenerateSerialId(), 70000) { Position = vector3 });
                 }
+                                                             
                 isClickRight = false;
             }
 
@@ -178,12 +190,8 @@ namespace MDDSkillEngine
             if (isQ && Game.Fsm.GetFsm<Player>(Id.ToString()).GetCurrStateName() != "AkiShunXiState")
             {
                 Game.Skill.GetSkillSystem(Id).GetSkill(10001).GetBlackboard().Set<VarBoolean>("input", true);
-
-                RaycastHit hit;
-                if (Physics.Raycast(Game.Scene.MainCamera.ScreenPointToRay(Input.mousePosition), out hit, Mathf.Infinity, 1 << 0))
-                {
-                    Game.Select.currentClick = hit.point;
-                }
+             
+                SelectUtility.MouseRayCastByLayer(1 << 0 + 1 << 1,ref Game.Select.currentClick);
 
                 isQ = false;
             }

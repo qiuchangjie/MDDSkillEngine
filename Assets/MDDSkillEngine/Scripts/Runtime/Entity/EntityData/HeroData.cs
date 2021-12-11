@@ -12,6 +12,12 @@ namespace MDDSkillEngine
         private Team m_Team = Team.TEAM_BOTH;
 
         /// <summary>
+        /// 英雄类型
+        /// 力量 智力 敏捷
+        /// </summary>
+        private HeroType m_HeroType = HeroType.NONE;
+
+        /// <summary>
         /// 血量
         /// </summary>
         private float m_HP = 0;
@@ -19,17 +25,32 @@ namespace MDDSkillEngine
         /// <summary>
         /// 力量
         /// </summary>
-        private int m_Strength = 0;
+        private float m_Strength = 0;
 
         /// <summary>
         /// 智力
         /// </summary>
-        private int m_Intelligence = 0;
+        private float m_Intelligence = 0;
 
         /// <summary>
         /// 敏捷
         /// </summary>
-        private int m_Agile = 0;
+        private float m_Agile = 0;
+
+        /// <summary>
+        /// 力量成长系数
+        /// </summary>
+        private float m_StrengthGF;
+
+        /// <summary>
+        /// 智力成长系数
+        /// </summary>
+        private float m_IntelligenceGF;
+
+        /// <summary>
+        /// 敏捷成长系数
+        /// </summary>
+        private int m_AgileGF;
 
         /// <summary>
         /// 攻击速度
@@ -74,10 +95,14 @@ namespace MDDSkillEngine
         private float m_AttackInterval = 0f;
 
         /// <summary>
-        /// 攻击力
+        /// 基础攻击力
         /// </summary>
-        private AttackNum m_Attack;
+        private AttackNum m_BaseAttack;
 
+        /// <summary>
+        /// 生命恢复
+        /// </summary>
+        private float m_HPRecovery;
 
         [SerializeField]
         private float m_Speed = 0;
@@ -169,5 +194,13 @@ namespace MDDSkillEngine
                 return m_MagicResistance;
             }
         }
+
+        //public AttackNum Attack
+        //{
+        //    get
+        //    {
+        //        return 
+        //    }
+        //}
     }
 }

@@ -20,10 +20,6 @@ namespace MDDSkillEngine
         {
             base.OnEnter(procedureOwner);
 
-           
-
-            //Game.Resource.LoadAsset(AssetUtility.GetSkillAsset("112"), new LoadAssetCallbacks(LoadAssetCallbacksSucess));
-
             Game.NPBehave.GetHelper().PreLoad();
 
             _ = PreLoadSkillAsset(() =>
@@ -34,10 +30,6 @@ namespace MDDSkillEngine
             
 
             Log.Info("成功进入训练场景");
-
-            flagstest test = flagstest.one | flagstest.three;
-            flagstest test1 = flagstest.three;
-            Log.Error(test);
         }
 
 
@@ -56,13 +48,7 @@ namespace MDDSkillEngine
                 {
                     Position = new Vector3(2f, 0f, 0f),
                 });
-            }
-
-          
-
-          
-
-
+            }              
         }
 
 
@@ -138,20 +124,10 @@ namespace MDDSkillEngine
             end?.Invoke();
         }
 
-        //private void LoadAssetCallbacksSucess(string assetName, object asset, float duration, object userData)
-        //{
-        //    Log.Error("加载成功：{0}", assetName);
-        //}
 
     }
 
-    [Flags]
-    public enum flagstest
-    {
-        one  ,
-        two  ,
-        three 
-    }
+
 }
 
 

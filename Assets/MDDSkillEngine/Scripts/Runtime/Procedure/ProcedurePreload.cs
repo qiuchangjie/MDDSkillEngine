@@ -19,6 +19,7 @@ namespace MDDSkillEngine
             "Entity",
             "Buff",
             "Skill",
+            "Hero"
         };
 
         private Dictionary<string, bool> m_LoadedFlag = new Dictionary<string, bool>();

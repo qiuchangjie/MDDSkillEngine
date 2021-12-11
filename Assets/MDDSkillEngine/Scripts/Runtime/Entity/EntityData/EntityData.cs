@@ -25,8 +25,8 @@ namespace MDDSkillEngine
         /// 是否预加载
         /// </summary>
         private bool isPreLoad;
-         
-        
+
+        private bool canSelect=true;
 
         public EntityData(int entityId, int typeId)
         {
@@ -108,6 +108,14 @@ namespace MDDSkillEngine
             set
             {
                 isPreLoad = value;
+            }
+        }
+
+        public bool IsCanSelect
+        {
+            get
+            {
+                return canSelect;
             }
         }
     }

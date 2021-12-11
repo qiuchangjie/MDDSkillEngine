@@ -42,6 +42,21 @@ namespace MDDSkillEngine
             selectEntity = null;
         }
 
+        private void Update()
+        {
+
+            
+            RaycastHit hit;
+            if (Physics.Raycast(Game.Scene.MainCamera.ScreenPointToRay(Input.mousePosition), out hit, Mathf.Infinity, 1 << 8))
+            {              
+                Entity e = hit.collider.gameObject.GetComponent<Entity>();
+                if (e != null)
+                {
+                    e.CacheOutLiner.SetOutLiner(true);
+                }            
+            }
+        }
+
     }
 }
 

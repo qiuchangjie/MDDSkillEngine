@@ -18,6 +18,16 @@ namespace MDDSkillEngine
             }
         }
 
+        private EntitySelectState m_SelectState = EntitySelectState.None;
+
+        public EntitySelectState SelectState
+        {
+            get
+            {
+                return m_SelectState;
+            }
+        }
+
         public Animator CachedAnimator
         {
             get;
@@ -36,12 +46,20 @@ namespace MDDSkillEngine
             private set;
         }
 
+        public OutLinerList CacheOutLiner
+        {
+            get;
+            private set;
+        }
+
+
         protected override void OnInit(object userData)
         {
             base.OnInit(userData);
             CachedAnimator = GetComponent<Animator>();
             CachedAnimancer = GetComponent<AnimancerComponent>();
             CachedAnimContainer = GetComponent<AnimationContainer>();
+            CacheOutLiner = GetComponent<OutLinerList>();
         }
 
 
@@ -114,5 +132,22 @@ namespace MDDSkillEngine
         {
             Game.Entity.HideEntity(Id);
         }
+
+        public void SwitchEntitySelectState(EntitySelectState state)
+        {
+            if (!m_EntityData.IsCanSelect)
+                return;
+
+            m_SelectState = state;
+        }
+    }
+
+    public enum EntitySelectState
+    {
+        None,
+
+        OnSelect,
+
+        OnHighlight,
     }
 }

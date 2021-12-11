@@ -70,6 +70,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5144886476383446712}
   - component: {fileID: 5144886476380386206}
+  - component: {fileID: 9153084258715256214}
   m_Layer: 8
   m_Name: Skin
   m_TagString: Untagged
@@ -226,6 +227,20 @@ SkinnedMeshRenderer:
     m_Center: {x: 0.12192297, y: 0.025472313, z: 0.000000029802322}
     m_Extent: {x: 0.60172796, y: 0.27722546, z: 0.6523495}
   m_DirtyAABB: 0
+--- !u!114 &9153084258715256214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5144886476383518842}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbf3575480402db40813e763382412fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  color: 1
+  eraseRenderer: 1
 --- !u!1 &5144886476383519020
 GameObject:
   m_ObjectHideFlags: 0
@@ -1620,6 +1635,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5144886476383351234}
   - component: {fileID: 5144886476380399544}
+  - component: {fileID: 6814082441237044059}
   m_Layer: 8
   m_Name: Skirt
   m_TagString: Untagged
@@ -1702,6 +1718,20 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.007134717, y: -0.0131675005, z: 0.0025527328}
     m_Extent: {x: 0.12396836, y: 0.16192268, z: 0.20016575}
   m_DirtyAABB: 0
+--- !u!114 &6814082441237044059
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5144886476383530966}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbf3575480402db40813e763382412fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  color: 1
+  eraseRenderer: 1
 --- !u!1 &5144886476383530978
 GameObject:
   m_ObjectHideFlags: 0
@@ -2638,6 +2668,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5144886476383354392}
   - component: {fileID: 5144886476380380362}
+  - component: {fileID: 2638374676622703725}
   m_Layer: 8
   m_Name: Boot
   m_TagString: Untagged
@@ -2719,6 +2750,20 @@ SkinnedMeshRenderer:
     m_Center: {x: 0.72126436, y: -0.0028712898, z: 0.047994893}
     m_Extent: {x: 0.24895151, y: 0.24585737, z: 0.12852235}
   m_DirtyAABB: 0
+--- !u!114 &2638374676622703725
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5144886476383542264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbf3575480402db40813e763382412fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  color: 1
+  eraseRenderer: 1
 --- !u!1 &5144886476383542534
 GameObject:
   m_ObjectHideFlags: 0
@@ -3960,6 +4005,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5144886476383429674}
   - component: {fileID: 5144886476380484568}
+  - component: {fileID: 482706941657205503}
   m_Layer: 8
   m_Name: Dress
   m_TagString: Untagged
@@ -4051,6 +4097,20 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.20146132, y: -0.03229791, z: 0.000000011175871}
     m_Extent: {x: 0.1878599, y: 0.1609301, z: 0.11253394}
   m_DirtyAABB: 0
+--- !u!114 &482706941657205503
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5144886476383594142}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbf3575480402db40813e763382412fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  color: 1
+  eraseRenderer: 1
 --- !u!1 &5144886476383595074
 GameObject:
   m_ObjectHideFlags: 0
@@ -7251,6 +7311,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5144886476383446340}
   - component: {fileID: 5144886476380386152}
+  - component: {fileID: 2060155769402341126}
   m_Layer: 8
   m_Name: Hair
   m_TagString: Untagged
@@ -7367,6 +7428,20 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.0014437735, y: -0.25127545, z: -0.12676458}
     m_Extent: {x: 0.3927218, y: 0.37433138, z: 0.28682858}
   m_DirtyAABB: 0
+--- !u!114 &2060155769402341126
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5144886476383645024}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbf3575480402db40813e763382412fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  color: 1
+  eraseRenderer: 1
 --- !u!1 &5144886476383645406
 GameObject:
   m_ObjectHideFlags: 0
@@ -7718,6 +7793,7 @@ GameObject:
   - component: {fileID: 3851152952501331819}
   - component: {fileID: 2297193329782769551}
   - component: {fileID: 3678973921348063314}
+  - component: {fileID: 2514765801324056538}
   m_Layer: 8
   m_Name: player_Aki
   m_TagString: Untagged
@@ -8468,3 +8544,21 @@ MonoBehaviour:
   raycastOffset: {x: 0, y: 0, z: 0}
   useGraphRaycasting: 0
   quality: 3
+--- !u!114 &2514765801324056538
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5144886476383702360}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9644fc018f7322044b741b8c2dfe9339, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlines:
+  - {fileID: 2638374676622703725}
+  - {fileID: 482706941657205503}
+  - {fileID: 2060155769402341126}
+  - {fileID: 9153084258715256214}
+  - {fileID: 6814082441237044059}
