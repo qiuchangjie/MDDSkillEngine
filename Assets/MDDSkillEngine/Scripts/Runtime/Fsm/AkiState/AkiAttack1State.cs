@@ -12,6 +12,8 @@ namespace MDDSkillEngine
     {
         private ClipState.Transition attack;
 
+        private float attackTime;
+
         private System.Action endAction;
 
         protected override void OnInit(IFsm<Player> fsm)
@@ -22,6 +24,9 @@ namespace MDDSkillEngine
             attack = fsm.Owner.CachedAnimContainer.GetAnimation("Attack1");
 
             fsm.SetData<VarBoolean>("attack1",false);
+            attackTime = attack.MaximumDuration;
+
+            Log.Error("attackAnimTime:{0}", attackTime);
 
             endAction += ()=> 
             {
