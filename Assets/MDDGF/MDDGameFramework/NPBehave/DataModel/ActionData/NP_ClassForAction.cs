@@ -4,7 +4,7 @@ using Sirenix.OdinInspector;
 
 namespace MDDGameFramework
 {
-    [BoxGroup("用于包含Action的数据类"), GUIColor(0.961f, 0.902f, 0.788f, 1f)]
+    [BoxGroup("用于包含Action的数据类")]
     [HideLabel]
     public class NP_ClassForAction
     {

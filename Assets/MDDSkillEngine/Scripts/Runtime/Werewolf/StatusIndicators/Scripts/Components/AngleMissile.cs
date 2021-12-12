@@ -19,10 +19,10 @@ namespace Werewolf.StatusIndicators.Components {
 
 			if(Manager != null) {
 
-                if (SelectEntity.Player != null)
+                if (Game.Select.Player != null)
                 {
-                    Manager.transform.position = SelectEntity.Player.CachedTransform.position;
-                    transform.position = SelectEntity.Player.CachedTransform.position;
+                    Manager.transform.position = Game.Select.Player.CachedTransform.position;
+                    transform.position = Game.Select.Player.CachedTransform.position;
                 }
 
 

@@ -21,6 +21,11 @@ namespace MDDGameFramework.Runtime
             }
         }
 
+        public Wait()
+        {
+            
+        }
+
         public Wait(float seconds, float randomVariance) : base("Wait")
         {
             UnityEngine.Assertions.Assert.IsTrue(seconds >= 0);
@@ -46,6 +51,21 @@ namespace MDDGameFramework.Runtime
             this.randomVariance = randomVariance;
         }
 
+        public static Wait Create(string blackboardKey)
+        {
+            Wait wait = ReferencePool.Acquire<Wait>();
+            wait.blackboardKey = blackboardKey;
+            wait.randomVariance = 0f;
+
+            return wait;
+        }
+
+        public override void Clear()
+        {
+            base.Clear();
+            blackboardKey = "";            
+        }
+
         protected override void DoStart()
         {
             float seconds = this.seconds;
@@ -60,7 +80,7 @@ namespace MDDGameFramework.Runtime
                     seconds = this.function();
                 }
             }
-//            UnityEngine.Assertions.Assert.IsTrue(seconds >= 0);
+            UnityEngine.Assertions.Assert.IsTrue(seconds >= 0);
             if (seconds < 0)
             {
                 seconds = 0;

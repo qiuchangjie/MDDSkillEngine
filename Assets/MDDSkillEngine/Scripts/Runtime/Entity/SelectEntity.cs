@@ -10,11 +10,15 @@ namespace MDDSkillEngine
     {
         public GameObject pathFindingTarget;
 
-        public static List<Entity> entities=new List<Entity>();
-        public static Entity selectEntity;
-        public static Entity Player;
+        public List<Entity> entities = new List<Entity>();
+        public Entity selectEntity;
+        public Entity Player;
+
+        public List<Entity> highLightEntity = new List<Entity>();
 
         public Vector3 currentClick;
+
+        public bool isWork;
 
         public void InitPlayer(Entity entity)
         {
@@ -23,10 +27,10 @@ namespace MDDSkillEngine
                 Player = entity;
             }
         }
-       
+
         public void InitSelectEntity(Entity entity)
         {
-            if(entity!=null)
+            if (entity != null)
             {
                 selectEntity = entity;
                 if (entity.gameObject.layer == 11)
@@ -44,16 +48,28 @@ namespace MDDSkillEngine
 
         private void Update()
         {
+            if (!isWork)
+                return;
 
-            
-            RaycastHit hit;
-            if (Physics.Raycast(Game.Scene.MainCamera.ScreenPointToRay(Input.mousePosition), out hit, Mathf.Infinity, 1 << 8))
-            {              
-                Entity e = hit.collider.gameObject.GetComponent<Entity>();
-                if (e != null)
-                {
-                    e.CacheOutLiner.SetOutLiner(true);
-                }            
+            //RaycastHit hit;
+            //if (Physics.Raycast(Game.Scene.MainCamera.ScreenPointToRay(Input.mousePosition), out hit, Mathf.Infinity, 1 << 8))
+            //{
+            //    Entity e = hit.collider.gameObject.GetComponent<Entity>();
+            //    if (e != null)
+            //    {
+            //        if (e.SelectState != EntitySelectState.OnSelect)
+            //        {
+            //            e.SwitchEntitySelectState(EntitySelectState.OnHighlight);
+            //        }
+            //    }
+            //}
+        }
+
+        private void AddHighLight(Entity e)
+        {
+            if (!highLightEntity.Contains(e))
+            {
+                highLightEntity.Add(e);
             }
         }
 

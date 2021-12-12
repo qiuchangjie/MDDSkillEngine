@@ -27,7 +27,7 @@ namespace MDDSkillEngine
                   Game.UI.GetUIForm(UIFormId.LoadingForm).Close();
               });
 
-            
+            Game.Select.isWork = true;
 
             Log.Info("成功进入训练场景");
         }

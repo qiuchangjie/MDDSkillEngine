@@ -114,9 +114,9 @@ namespace Werewolf.StatusIndicators.Components {
 		/// Procedure when splat is set active
 		/// </summary>
 		public virtual void OnShow() {
-			if(SelectEntity.Player!=null)
+			if(Game.Select.Player!=null)
             {
-				owner_Transform = SelectEntity.Player.CachedTransform;
+				owner_Transform = Game.Select.Player.CachedTransform;
 			}
 		}
 

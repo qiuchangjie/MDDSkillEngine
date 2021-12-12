@@ -5,6 +5,7 @@ using System.IO;
 using System.Reflection;
 using UnityEngine;
 using OdinSerializer;
+using MDDGameFramework;
 
 /// <summary>
 /// 对 Unity 的扩展方法。
@@ -82,6 +83,20 @@ public static class UnityExtension
     public static Vector2 ToVector2(this Vector3 vector3)
     {
         return new Vector2(vector3.x, vector3.z);
+    }
+
+    public static Variable VDeepCopy(this Variable obj)
+    {       
+        Variable var = ReferencePool.Acquire(obj.GetType()) as Variable;
+
+        if (var == null)
+        {
+            throw new MDDGameFrameworkException("引用池子深拷贝失败！！");
+        }
+
+        var.SetValue(obj.GetValue());
+       
+        return var;
     }
 
     /// <summary>

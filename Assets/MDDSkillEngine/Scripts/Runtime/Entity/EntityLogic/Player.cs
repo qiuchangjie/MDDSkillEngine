@@ -87,6 +87,8 @@ namespace MDDSkillEngine
 
             InputLogic();
 
+
+
             switch (SelectState)
             {
                 case EntitySelectState.None:
@@ -99,6 +101,41 @@ namespace MDDSkillEngine
                     CacheOutLiner.SetOutLiner(false);
                     break;
             }
+
+            //RaycastHit hit;
+            //if (Physics.Raycast(Game.Scene.MainCamera.ScreenPointToRay(Input.mousePosition), out hit, Mathf.Infinity, 1 << 8))
+            //{
+            //    Entity e = hit.collider.gameObject.GetComponent<Entity>();
+            //    if (e != null)
+            //    {
+            //        if (e == this)
+            //        {
+            //            SwitchEntitySelectState(EntitySelectState.OnHighlight);
+            //        }
+            //        else
+            //        {
+            //            SwitchEntitySelectState(EntitySelectState.None);
+            //        }
+            //    }
+            //    else
+            //    {
+            //        SwitchEntitySelectState(EntitySelectState.None);
+            //    }
+            //}
+            //else
+            //{
+            //    SwitchEntitySelectState(EntitySelectState.None);
+            //}
+        }
+
+        private void OnMouseEnter()
+        {
+            SwitchEntitySelectState(EntitySelectState.OnHighlight);
+        }
+
+        private void OnMouseExit()
+        {
+            SwitchEntitySelectState(EntitySelectState.None);
         }
 
         private void InputLogic()
@@ -140,6 +177,7 @@ namespace MDDSkillEngine
         }
 
 
+
         private void LateUpdate()
         {
             if (isClickLeft)
@@ -164,12 +202,12 @@ namespace MDDSkillEngine
 
             if (isClickRight)
             {
-                Vector3 vector3 = Vector3.zero;
-                if (SelectUtility.MouseRayCastByLayer(1 << 0 | 1 << 1, ref vector3))
+
+                if (SelectUtility.MouseRayCastByLayer(1 << 0 | 1 << 1, out RaycastHit vector3))
                 {
-                    Game.Select.pathFindingTarget.transform.position = vector3;
+                    Game.Select.pathFindingTarget.transform.position = vector3.point;
                     move.SearchPath();
-                    Game.Entity.ShowEffect(new EffectData(Game.Entity.GenerateSerialId(), 70000) { Position = vector3 });
+                    Game.Entity.ShowEffect(new EffectData(Game.Entity.GenerateSerialId(), 70000) { Position = vector3.point });
                 }
                                                              
                 isClickRight = false;
@@ -190,8 +228,11 @@ namespace MDDSkillEngine
             if (isQ && Game.Fsm.GetFsm<Player>(Id.ToString()).GetCurrStateName() != "AkiShunXiState")
             {
                 Game.Skill.GetSkillSystem(Id).GetSkill(10001).GetBlackboard().Set<VarBoolean>("input", true);
-             
-                SelectUtility.MouseRayCastByLayer(1 << 0 + 1 << 1,ref Game.Select.currentClick);
+
+                if (SelectUtility.MouseRayCastByLayer(1 << 0 + 1 << 1, out RaycastHit hit))
+                {
+                    Game.Select.currentClick = hit.point;
+                }
 
                 isQ = false;
             }

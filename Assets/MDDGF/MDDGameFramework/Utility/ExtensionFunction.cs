@@ -33,6 +33,21 @@ namespace MDDGameFramework
             }
         }
 
+        public static Variable VDeepCopy(this Variable obj)
+        {
+            Variable var = ReferencePool.Acquire(obj.GetType()) as Variable;
+
+            if (var == null)
+            {
+                throw new MDDGameFrameworkException("引用池子深拷贝失败！！");
+            }
+
+            var.SetValue(obj.GetValue());
+
+            return var;
+        }
+
+
         public static T DeepCopyByReflect<T>(T obj)
         {
             //如果是字符串或值类型则直接返回

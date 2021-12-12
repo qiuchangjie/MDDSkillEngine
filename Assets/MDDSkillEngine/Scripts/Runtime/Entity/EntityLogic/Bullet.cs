@@ -76,7 +76,7 @@ namespace MDDSkillEngine
                         new Action(()=> 
                         {
                             Log.Error("move");
-                            MoveTowards(SelectEntity.entities[i]);                            
+                            MoveTowards(Game.Select.entities[i]);                            
                         })
 
                                            )

@@ -78,17 +78,18 @@ namespace MDDSkillEngine
         /// </summary>
         /// <param name="layer"></param>
         /// <returns></returns>
-        public static bool MouseRayCastByLayer(int layer,ref Vector3 vector3)
+        public static bool MouseRayCastByLayer(int layer,out RaycastHit Hit)
         {
             RaycastHit hit;
             if (Physics.Raycast(Game.Scene.MainCamera.ScreenPointToRay(Input.mousePosition), out hit, Mathf.Infinity, layer))
             {
-                vector3 = hit.point;
+                Hit = hit;
 
                 return true;
             }
             else
             {
+                Hit = new RaycastHit();
                 Log.Info("射线射空了------");
                 return false;
             }
