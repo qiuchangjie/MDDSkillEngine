@@ -30,7 +30,7 @@ namespace MDDSkillEngine
 
         protected override void OnEnter(IFsm<Player> fsm)
         {
-            base.OnInit(fsm);
+            base.OnEnter(fsm);
             Log.Info("进入akiIdle状态。");
             fsm.Owner.CachedAnimancer.Play(idle);
         }

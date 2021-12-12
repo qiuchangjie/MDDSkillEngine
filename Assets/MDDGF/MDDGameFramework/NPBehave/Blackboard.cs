@@ -162,7 +162,7 @@ namespace MDDGameFramework
                 Set(key, null);
             }
         }
-
+            
         public void Set<T>(string key, T value) where T : Variable
         {
             Set(key,(Variable)value);

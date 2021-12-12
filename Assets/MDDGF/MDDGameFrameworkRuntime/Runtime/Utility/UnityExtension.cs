@@ -85,20 +85,7 @@ public static class UnityExtension
         return new Vector2(vector3.x, vector3.z);
     }
 
-    public static Variable VDeepCopy(this Variable obj)
-    {       
-        Variable var = ReferencePool.Acquire(obj.GetType()) as Variable;
-
-        if (var == null)
-        {
-            throw new MDDGameFrameworkException("引用池子深拷贝失败！！");
-        }
-
-        var.SetValue(obj.GetValue());
-       
-        return var;
-    }
-
+    
     /// <summary>
     /// 取 <see cref="Vector2" /> 的 (x, y) 转换为 <see cref="Vector3" /> 的 (x, 0, y)。
     /// </summary>

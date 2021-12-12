@@ -32,7 +32,7 @@ namespace MDDSkillEngine
 
         protected override void OnEnter(IFsm<Player> fsm)
         {
-            base.OnInit(fsm);
+            base.OnEnter(fsm);
             Log.Info("进入aki攻击状态。");
             attack.Events.OnEnd += endAction;
             fsm.Owner.CachedAnimancer.Play(attack);
