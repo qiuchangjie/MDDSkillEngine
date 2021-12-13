@@ -10,12 +10,20 @@ namespace MDDSkillEngine
     [AkiState]
     public class AkiAttack1State : FsmState<Player>
     {
+        /// <summary>
+        ///  对于普攻动画的处理明显会有一些特殊
+        ///  因为游戏中有攻击间隔的概念
+        ///  所以需要在攻击间隔时间内播完一整个普攻动画
+        ///   speed = 动画时长/普工间隔
+        /// </summary>
         private ClipState.Transition attack;
 
         private float attackTime;
 
         private System.Action endAction;
 
+
+       
         protected override void OnInit(IFsm<Player> fsm)
         {
             base.OnInit(fsm);
