@@ -2,6 +2,9 @@
 
 using UnityEditor;
 using UnityEngine;
+using Sirenix.OdinInspector.Editor;
+using Sirenix.Utilities;
+using Sirenix.Utilities.Editor;
 
 namespace Slate
 {
@@ -12,18 +15,18 @@ namespace Slate
     }
 
     [CustomEditor(typeof(ActionClip), true)]
-    public class ActionClipInspector : Editor
+    public class ActionClipInspector : OdinEditor
     {
 
         private ActionClip action { get { return (ActionClip)target; } }
 
-        public override void OnInspectorGUI() {
-            ShowCommonInspector();
-            ShowAnimatableParameters();
-            if ( GUI.changed ) {
-                action.Validate();
-            }
-        }
+        //public override void OnInspectorGUI() {
+        //    ShowCommonInspector();
+        //    ShowAnimatableParameters();
+        //    if ( GUI.changed ) {
+        //        action.Validate();
+        //    }
+        //}
 
         protected void ShowCommonInspector(bool showBaseInspector = true) {
             ShowErrors();

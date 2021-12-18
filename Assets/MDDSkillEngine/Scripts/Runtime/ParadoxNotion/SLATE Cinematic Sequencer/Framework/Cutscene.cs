@@ -545,6 +545,7 @@ namespace Slate
             //Initialize time pointers if required.
             if ( !preInitialized && currentTime > 0 && previousTime == 0 ) {
                 InitializeTimePointers();
+                Debug.LogError($"初始化时间点,timePointers:{timePointers.Count},unsortedStartTimePointers:{unsortedStartTimePointers.Count}");
             }
 
             //Sample started
@@ -602,7 +603,11 @@ namespace Slate
             //Update timePointers triggering forwards
             if ( !Application.isPlaying || currentTime > previousTime ) {
                 for ( var i = 0; i < timePointers.Count; i++ ) {
-                    try { timePointers[i].TriggerForward(currentTime, previousTime); }
+                    try 
+                    {
+                        //Debug.LogError("TriggerForward");
+                        timePointers[i].TriggerForward(currentTime, previousTime); 
+                    }
                     catch ( System.Exception e ) { Debug.LogException(e); }
                 }
             }

@@ -33,9 +33,11 @@ namespace Slate
 
         //...
         void IDirectableTimePointer.TriggerForward(float currentTime, float previousTime) {
-            if ( currentTime >= target.startTime ) {
-                if ( !triggered ) {
-                    Log.Error("triggered{0}", target.name);
+            if ( currentTime >= target.startTime ) 
+            {
+                if ( !triggered ) 
+                {
+                    Debug.LogError($"triggered{target.name}");
                     triggered = true;
                     target.Enter();
                     target.Update(target.ToLocalTime(currentTime), 0);
@@ -54,7 +56,8 @@ namespace Slate
                 var localPreviousTime = target.ToLocalTime(previousTime + deltaMoveClip);
 
 #if UNITY_EDITOR
-                if ( target is IKeyable && localCurrentTime == localPreviousTime ) {
+                if ( target is IKeyable && localCurrentTime == localPreviousTime ) 
+                {
                     ( (IKeyable)target ).TryAutoKey(localCurrentTime);
                 }
 #endif
@@ -69,8 +72,10 @@ namespace Slate
 
         //...
         void IDirectableTimePointer.TriggerBackward(float currentTime, float previousTime) {
-            if ( currentTime < target.startTime || currentTime <= 0 ) {
-                if ( triggered ) {
+            if ( currentTime < target.startTime || currentTime <= 0 )
+            {
+                if ( triggered ) 
+                {
                     triggered = false;
                     target.Update(0, target.ToLocalTime(previousTime));
                     target.Reverse();
