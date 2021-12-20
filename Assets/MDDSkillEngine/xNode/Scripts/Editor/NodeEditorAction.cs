@@ -12,7 +12,7 @@ namespace XNodeEditor {
         public static bool isPanning { get; private set; }
         public static Vector2[] dragOffset;
 
-        public static XNode.Node[] copyBuffer = null;
+        public static XNode.Node[] copyBuffer = null; 
 
         private bool IsDraggingPort { get { return draggedOutput != null; } }
         private bool IsHoveringPort { get { return hoveredPort != null; } }

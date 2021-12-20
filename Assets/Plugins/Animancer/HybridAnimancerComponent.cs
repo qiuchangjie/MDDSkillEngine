@@ -43,7 +43,7 @@ namespace Animancer
         /// <remarks>
         /// Called by the Unity Editor when this component is first added (in Edit Mode) and whenever the Reset command
         /// is executed from its context menu.
-        /// </remarks>
+        /// </remarksxuya>
         protected override void Reset()
         {
             base.Reset();
