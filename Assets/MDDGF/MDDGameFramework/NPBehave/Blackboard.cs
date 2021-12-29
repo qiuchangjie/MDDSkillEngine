@@ -427,6 +427,7 @@ namespace MDDGameFramework
             {
                 GetObserverList(this.observers, key).AddRange(this.addObservers[key]);
             }
+
             foreach (string key in this.removeObservers.Keys)
             {
                 foreach (System.Action<Type, Variable> action in removeObservers[key])
@@ -434,6 +435,7 @@ namespace MDDGameFramework
                     GetObserverList(this.observers, key).Remove(action);
                 }
             }
+
             this.addObservers.Clear();
             this.removeObservers.Clear();
 

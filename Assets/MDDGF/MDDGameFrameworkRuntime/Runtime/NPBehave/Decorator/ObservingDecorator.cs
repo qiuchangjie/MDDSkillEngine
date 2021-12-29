@@ -3,6 +3,7 @@ using System.Collections;
 using UnityEngine.Assertions;
 using MDDGameFramework;
 
+
 namespace MDDGameFramework.Runtime
 {
     public abstract class ObservingDecorator : Decorator
