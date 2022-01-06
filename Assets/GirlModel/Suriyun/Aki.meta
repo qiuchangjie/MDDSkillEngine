@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: fea3cb12915d2eb46bd4a8a8e512cc06
+guid: cff7c698efeda0949821a3ca751d3bdb
 labels:
 - katana
 - toon
@@ -21,9 +21,8 @@ labels:
 - Reiji
 - SDRPG
 folderAsset: yes
-timeCreated: 1464265550
-licenseType: Store
 DefaultImporter:
+  externalObjects: {}
   userData: 
   assetBundleName: 
   assetBundleVariant: 

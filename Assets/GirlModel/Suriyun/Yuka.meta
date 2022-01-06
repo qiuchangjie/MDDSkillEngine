@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 58474192154f9204985f7015a7ab6a19
+guid: da4d5e63d2e11fa43b9e3e9bcc9005b0
 labels:
 - Akane
 - Ami
@@ -33,9 +33,8 @@ labels:
 - RefinedAirplaneControl
 - MEGASDRPGPack3
 folderAsset: yes
-timeCreated: 1439709442
-licenseType: Store
 DefaultImporter:
+  externalObjects: {}
   userData: 
   assetBundleName: 
   assetBundleVariant: 

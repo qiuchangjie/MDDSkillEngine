@@ -1,0 +1,39 @@
+DOCUMENTATION
+Contancs: thelabaofficial@gmail.com
+Instagram: @thelabaofficial
+
+How it works:
+with the scirpt GlobalTimeManager and the UI in the example scene you can manage the global time in the project for all objects.
+with the AreaTime and ObjectTime you can manage the single navmesh agents.
+The Grenade script is an example to move the rigidBodyes.
+Use the flycam script to move around the scene. 
+To control the single navmesh agents you can use the CamRaycast script that through the raycast it open the single agents control.
+
+
+FOLDERS:
+
+1)Animations
+        contains all the examples Animations and aniamtors   
+2)Materials
+        contains all the example scene materials. Change them how you want.
+3)Models
+        All the models in the example scene: Car Clock Logo Character  Buildings
+4)Prefabs
+        All the prefabs (drag and drop)  Main prefabs: AreaTime , Man , GlobalTimeManager , Canvas , Car
+5)Scenes
+        All the example Scenes 
+            a)Example: Main example scene like the trailer
+            b)ExamplePhysics: example with some rigidbodyes
+           
+6)Script
+        contains all the scripts of the package (open the script to read the short description of what they do)
+            a)AreaTime
+            b)CamRaycast
+            c)flycam
+            d)GlobalTimeManager
+            e)Grenade
+            f)ObjectTime
+
+8)Textures
+            All the Textures of the package
+           
