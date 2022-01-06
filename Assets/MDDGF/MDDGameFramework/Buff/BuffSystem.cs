@@ -8,7 +8,6 @@ namespace MDDGameFramework
     internal sealed class BuffSystem : BuffSystemBase,IBuffSystem,IReference
     {
         private object m_Owner;
-       //private readonly MDDGameFrameworkLinkedList<BuffBase> buffs;
         private readonly Dictionary<string, BuffBase> buffs;
         private readonly List<BuffBase> m_TempBuffs;
         private BuffBase currentNode;
@@ -62,7 +61,6 @@ namespace MDDGameFramework
             buffs[bufName].OnFininsh(this);
 
             ReferencePool.Release(buffs[bufName]);
-
             buffs.Remove(bufName);
         }
 
@@ -73,10 +71,6 @@ namespace MDDGameFramework
 
         public void RemoveBuff(int bufID)
         {
-            //buffs.Remove(bufID);
-
-            ReferencePool.EnableStrictCheck = true; 
-
             ReferencePool.Release(currentNode);
         }
 
@@ -106,7 +100,7 @@ namespace MDDGameFramework
         {
             if (owner == null)
             {
-                throw new MDDGameFrameworkException("FSM owner is invalid.");
+                throw new MDDGameFrameworkException("Buff owner is invalid.");
             }
 
             BuffSystem buffSystem = ReferencePool.Acquire<BuffSystem>();
