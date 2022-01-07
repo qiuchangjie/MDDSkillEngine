@@ -34,7 +34,6 @@ namespace MDDSkillEngine
 
                 Log.Error(dRSkills[i].EffectAsset.Count);
             }   
-
         }
 
 
@@ -119,10 +118,7 @@ namespace MDDSkillEngine
             Log.Info("加载行为树文件：{0}  成功", entityAssetName);
             m_GraphDic.Add(entityAssetName, np);
         }
-
     }
-
-
 
 }
 

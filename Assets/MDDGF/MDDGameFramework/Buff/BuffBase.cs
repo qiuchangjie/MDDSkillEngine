@@ -49,7 +49,8 @@ namespace MDDGameFramework
             }
             else if(buffData.Duration <= buffData.PassDuration)
             {
-                Finish(buffSystem,this.GetType().Name);
+                BuffSystem system = (BuffSystem)buffSystem;
+                system.Finish(this);
             }
         }
 
@@ -61,15 +62,6 @@ namespace MDDGameFramework
         public virtual void OnRefresh(IBuffSystem buffSystem) { }
 
         public abstract void Clear();
-
-
-        public void Finish(IBuffSystem buffSystem,string name)
-        {
-            BuffSystem system = (BuffSystem)buffSystem;
-
-            system.Finish(name);
-        }
-
     }
 }
 
