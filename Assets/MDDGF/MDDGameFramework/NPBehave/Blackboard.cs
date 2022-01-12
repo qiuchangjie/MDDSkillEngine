@@ -69,7 +69,7 @@ namespace MDDGameFramework
             Blackboard blackboard = ReferencePool.Acquire<Blackboard>();
             blackboard.parentBlackboard = null;
             blackboard.clock = clock;
-
+             
             Dictionary<string, Variable> useData = new Dictionary<string, Variable>();
 
             useData = data.DeepCopy();
@@ -387,6 +387,7 @@ namespace MDDGameFramework
 #endif
 
 
+        //通知观察者
         private void NotifiyObservers()
         {
             if (notifications.Count == 0)

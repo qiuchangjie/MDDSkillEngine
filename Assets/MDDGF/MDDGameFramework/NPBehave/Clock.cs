@@ -3,7 +3,9 @@ using UnityEngine.Assertions;
 
 namespace MDDGameFramework
 {
-
+    /// <summary>
+    /// Clock类提供了基于事件的计时器功能  timerevent and updateevent
+    /// </summary>
     public class Clock
     {
         private List<System.Action> updateObservers = new List<System.Action>();

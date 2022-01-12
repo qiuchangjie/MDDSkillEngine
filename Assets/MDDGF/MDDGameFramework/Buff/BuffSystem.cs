@@ -8,7 +8,7 @@ namespace MDDGameFramework
     internal sealed class BuffSystem : BuffSystemBase,IBuffSystem,IReference
     {
         private object m_Owner;
-        private readonly Dictionary<string, BuffBase> buffs;
+        private readonly List<BuffBase> buffs;
         private readonly List<BuffBase> m_TempBuffs;
         private BuffBase currentNode;
 
@@ -20,7 +20,7 @@ namespace MDDGameFramework
 
         public BuffSystem()
         {
-            buffs = new Dictionary<string, BuffBase>();
+            buffs = new List<BuffBase>();
             m_Owner = null;
             currentNode = null;
             m_TempBuffs = new List<BuffBase>();
@@ -46,7 +46,7 @@ namespace MDDGameFramework
 
             foreach (var v in buffs)
             {
-                m_TempBuffs.Add(v.Value);
+                m_TempBuffs.Add(v);
             }
 
             foreach (var v in m_TempBuffs)
@@ -56,12 +56,12 @@ namespace MDDGameFramework
 
         }
 
-        internal void Finish(string bufName)
+        internal void Finish(BuffBase buff)
         {
-            buffs[bufName].OnFininsh(this);
+            buff.OnFininsh(this);
 
-            ReferencePool.Release(buffs[bufName]);
-            buffs.Remove(bufName);
+            ReferencePool.Release(buff);
+            buffs.Remove(buff);
         }
 
         internal override void Shutdown()
@@ -76,7 +76,15 @@ namespace MDDGameFramework
 
         public bool HasBuff(int bufID)
         {
-            throw new System.NotImplementedException();
+            foreach (var v in buffs)
+            {
+                if (v.buffData.Id == bufID)
+                {
+                    return true;
+                }
+            }
+
+            return false;
         }
 
         public void ClearBuff()
@@ -86,14 +94,9 @@ namespace MDDGameFramework
 
         internal override void AddBuff(string buffName, object from)
         {
-            if (buffs.TryGetValue(buffName, out BuffBase buff))
-            {
-                buff.OnRefresh(this);
-                return;
-            }
-
-            buffs.Add(buffName, BuffFactory.AcquireBuff(buffName, m_Owner, from));
-            buffs[buffName].OnExecute(this);
+            BuffBase buff = BuffFactory.AcquireBuff(buffName, m_Owner, from);
+            buffs.Add(buff);
+            buff.OnExecute(this);
         }
 
         public static BuffSystem Create(object owner)

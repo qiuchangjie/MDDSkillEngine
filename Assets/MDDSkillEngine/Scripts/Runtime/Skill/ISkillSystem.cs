@@ -10,5 +10,7 @@ namespace MDDSkillEngine
         void AddSkill(int id);
 
         Skill GetSkill(int id);
+
+        void UseSkill(int id);
     }
 }
