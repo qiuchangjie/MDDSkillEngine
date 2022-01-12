@@ -53,7 +53,7 @@ namespace Slate.ActionClips
             if ( deltaTime > previousTime ) { lastCapturedFrame++; }
             if ( deltaTime < previousTime ) { lastCapturedFrame--; }
             var final = string.Format(@"Assets\Flipbooks\{0}_#{1}.png", filename, frame.ToString("0000"));
-            Application.CaptureScreenshot(final);
+            UnityEngine.ScreenCapture.CaptureScreenshot(final);
             Debug.Log(final);
         }
 
