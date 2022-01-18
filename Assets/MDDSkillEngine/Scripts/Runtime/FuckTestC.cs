@@ -64,18 +64,18 @@ namespace MDDSkillEngine
 
         private void Update()
         {
-            if (Input.GetMouseButtonDown(0))
-            {
-                isStartDraw = true;
+            //if (Input.GetMouseButtonDown(0))
+            //{
+            //    isStartDraw = true;
 
-                mouseStartPos = Input.mousePosition;
-            }
+            //    mouseStartPos = Input.mousePosition;
+            //}
 
-            if (Input.GetMouseButtonUp(0))
-            {
-                isStartDraw = false;
-                SelectEntitys();
-            }
+            //if (Input.GetMouseButtonUp(0))
+            //{
+            //    isStartDraw = false;
+            //    SelectEntitys();
+            //}
         }
 
 

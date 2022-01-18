@@ -73,8 +73,8 @@ namespace MDDGameFramework.Runtime
         /// <param name="shutdownType">关闭游戏框架类型。</param>
         public static void Shutdown()
         {
-            //Log.Info("Shutdown Game Framework ({0})...", shutdownType);
-//            BaseComponent baseComponent = GetComponent<BaseComponent>();
+//            Log.Info("Shutdown Game Framework ({0})...", shutdownType);
+//            MDDBaseComponent baseComponent = GetComponent<MDDBaseComponent>();
 //            if (baseComponent != null)
 //            {
 //                baseComponent.Shutdown();

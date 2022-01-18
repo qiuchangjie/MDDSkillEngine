@@ -50,6 +50,10 @@ namespace MDDGameFramework
             set { m_PassDuration = value; }
         }
 
+
+        /// <summary>
+        /// 积累时间
+        /// </summary>
         public float AccumulateDuration
         {
             get { return m_accumulateDuration; }
