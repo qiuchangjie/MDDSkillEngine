@@ -166,6 +166,8 @@ namespace Slate
         public DirectorGroup directorGroup {
             get
             {
+                return null;
+
                 //DirectorGroup should always be in index 0.
                 if ( groups.Count > 0 && groups[0] is DirectorGroup ) {
                     return (DirectorGroup)groups[0];
@@ -1160,11 +1162,11 @@ namespace Slate
 
         void TryReset() {
             if ( directorGroup == null ) {
-                var newDirectorGroup = AddGroup<DirectorGroup>();
-                newDirectorGroup.AddTrack<DirectorActionTrack>();
-                newDirectorGroup.AddTrack<DirectorAudioTrack>();
-                newDirectorGroup.AddTrack<CameraTrack>();
-                CutsceneUtility.selectedObject = null;
+                //var newDirectorGroup = AddGroup<DirectorGroup>();
+                //newDirectorGroup.AddTrack<DirectorActionTrack>();
+                //newDirectorGroup.AddTrack<DirectorAudioTrack>();
+                //newDirectorGroup.AddTrack<CameraTrack>();
+                //CutsceneUtility.selectedObject = null;
                 length = 20;
                 viewTimeMin = -1;
                 viewTimeMax = 21;
