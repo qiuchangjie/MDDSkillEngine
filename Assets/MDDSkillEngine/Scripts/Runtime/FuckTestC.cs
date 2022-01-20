@@ -3,6 +3,7 @@ using MDDGameFramework.Runtime;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 namespace MDDSkillEngine
 {
@@ -64,11 +65,25 @@ namespace MDDSkillEngine
 
         private void Update()
         {
+            if (Mouse.current.leftButton.wasPressedThisFrame)
+            {
+                isStartDraw = true;
+
+                mouseStartPos = Mouse.current.position.ReadValue();
+            }
+
+            if (Mouse.current.leftButton.wasReleasedThisFrame)
+            {
+                isStartDraw = false;
+
+                SelectEntitys();
+            }
+
             //if (Input.GetMouseButtonDown(0))
             //{
             //    isStartDraw = true;
 
-            //    mouseStartPos = Input.mousePosition;
+            //mouseStartPos = Input.mousePosition;
             //}
 
             //if (Input.GetMouseButtonUp(0))
@@ -102,7 +117,7 @@ namespace MDDSkillEngine
         {
             if (isStartDraw)
             {
-                mouseEndPos = Input.mousePosition;
+                mouseEndPos = Mouse.current.position.ReadValue();
 
                 drawMaterial.SetPass(0);
                 GL.LoadOrtho();
