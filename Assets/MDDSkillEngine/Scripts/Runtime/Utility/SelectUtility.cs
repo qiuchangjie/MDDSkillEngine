@@ -1,6 +1,7 @@
 ﻿using MDDGameFramework;
 using MDDGameFramework.Runtime;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 namespace MDDSkillEngine
 {
@@ -81,7 +82,7 @@ namespace MDDSkillEngine
         public static bool MouseRayCastByLayer(int layer,out RaycastHit Hit)
         {
             RaycastHit hit;
-            if (Physics.Raycast(Game.Scene.MainCamera.ScreenPointToRay(Input.mousePosition), out hit, Mathf.Infinity, layer))
+            if (Physics.Raycast(Game.Scene.MainCamera.ScreenPointToRay(Mouse.current.position.ReadValue()), out hit, Mathf.Infinity, layer))
             {
                 Hit = hit;
 

@@ -108,6 +108,8 @@ namespace MDDSkillEngine
             private set;
         }
 
+        public static InputSystemComponent Input;
+
         private void InitMDDComponent()
         {
             Buff = MDDGameEntry.GetComponent<BuffComponent>();
@@ -126,6 +128,7 @@ namespace MDDSkillEngine
             Base = MDDGameEntry.GetComponent<MDDBaseComponent>();
             Select = MDDGameEntry.GetComponent<SelectEntity>();
             Skill = MDDGameEntry.GetComponent<SkillComponent>();
+            Input = MDDGameEntry.GetComponent<InputSystemComponent>();
         }
     }
 }

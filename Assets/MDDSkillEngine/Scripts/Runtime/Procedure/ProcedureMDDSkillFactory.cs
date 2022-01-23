@@ -7,6 +7,7 @@ using MDDGameFramework;
 using System.Threading.Tasks;
 using Task = System.Threading.Tasks.Task;
 using System;
+using UnityEngine.InputSystem;
 
 namespace MDDSkillEngine
 {
@@ -36,6 +37,22 @@ namespace MDDSkillEngine
         protected override void OnUpdate(ProcedureOwner procedureOwner, float elapseSeconds, float realElapseSeconds)
         {
             base.OnUpdate(procedureOwner, elapseSeconds, realElapseSeconds);
+
+
+            if (Keyboard.current.cKey.wasPressedThisFrame)
+            {
+                Game.Entity.ShowPlayer(new PlayerData(Game.Entity.GenerateSerialId(), 10000)
+                {
+                    Position = new Vector3(0f, 0f, 0f),
+                });
+
+
+                Game.Entity.ShowEnemy(new EnemyData(Game.Entity.GenerateSerialId(), 10001)
+                {
+                    Position = new Vector3(2f, 0f, 0f),
+                });
+            }
+
 
             //if (Input.GetKeyDown(KeyCode.C))
             //{

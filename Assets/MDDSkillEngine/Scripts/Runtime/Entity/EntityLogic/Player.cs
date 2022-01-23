@@ -3,11 +3,17 @@ using Animancer;
 using UnityEngine;
 using Pathfinding;
 using MDDGameFramework.Runtime;
+using UnityEngine.InputSystem;
+using System;
+using static UnityEngine.InputSystem.InputAction;
 
 namespace MDDSkillEngine
 {
     public class Player : TargetableObject
     {
+
+        Action<CallbackContext> Skill_1;
+
         PlayerData PlayerData = null;
 
         PlayerMovement move;
@@ -28,7 +34,40 @@ namespace MDDSkillEngine
 
         private bool isR;
         #endregion
+        public void UseSkill_1(CallbackContext ctx)
+        {
+            if (Game.Fsm.GetFsm<Player>(Id.ToString()).GetCurrStateName() != "AkiShunXiState")
+            {
+                Game.Skill.GetSkillSystem(Id).GetSkill(10001).GetBlackboard().Set<VarBoolean>("input", true);
 
+                if (SelectUtility.MouseRayCastByLayer(1 << 0 + 1 << 1, out RaycastHit hit))
+                {
+                    Game.Select.currentClick = hit.point;
+                }
+            }
+        }
+
+        public void UseSkill_2(CallbackContext ctx)
+        {
+            Game.Fsm.GetFsm<Player>(Id.ToString()).SetData<VarBoolean>("jianrenfengbao", true);
+        }
+
+        public void OnClickLeft(CallbackContext ctx)
+        {
+            
+        }
+
+        public void OnClickRight(CallbackContext ctx)
+        {
+            if (SelectUtility.MouseRayCastByLayer(1 << 0 | 1 << 1, out RaycastHit vector3))
+            {
+                Game.Select.pathFindingTarget.transform.position = vector3.point;
+                move.SearchPath();
+                Game.Entity.ShowEffect(new EffectData(Game.Entity.GenerateSerialId(), 70000) { Position = vector3.point });
+            }
+        }
+
+        
         public override ImpactData GetImpactData()
         {
             return new ImpactData(PlayerData.HP, 200);
@@ -37,6 +76,11 @@ namespace MDDSkillEngine
         protected override void OnInit(object userData)
         {
             base.OnInit(userData);
+
+
+            Game.Input.Control.Heros_Normal.Skill_1.performed += UseSkill_1;
+            Game.Input.Control.Heros_Normal.Skill_2.performed += UseSkill_2;
+            Game.Input.Control.Heros_Normal.RightClick.performed += OnClickRight;
 
             Game.Buff.CreatBuffSystem(this.Entity.Id.ToString(),this);
             Game.Fsm.CreateFsm<Player, AkiStateAttribute>(this);
@@ -140,40 +184,40 @@ namespace MDDSkillEngine
 
         private void InputLogic()
         {
-            if (Input.GetMouseButtonDown(1))
-            {
-                isClickRight = true;
-            }
+            //if (Input.GetMouseButtonDown(1))
+            //{
+            //    isClickRight = true;
+            //}
 
-            if (Input.GetMouseButtonDown(0))
-            {
-                isClickLeft = true;
-            }
+            //if (Input.GetMouseButtonDown(0))
+            //{
+            //    isClickLeft = true;
+            //}
 
-            if (Input.GetKeyDown(KeyCode.X))
-            {
-                isAttact = true;
-            }
+            //if (Input.GetKeyDown(KeyCode.X))
+            //{
+            //    isAttact = true;
+            //}
 
-            if (Input.GetKeyDown(KeyCode.Q))
-            {
-                isQ = true;
-            }
+            //if (Input.GetKeyDown(KeyCode.Q))
+            //{
+            //    isQ = true;
+            //}
 
-            if (Input.GetKeyDown(KeyCode.W))
-            {
-                isW = true;
-            }
+            //if (Input.GetKeyDown(KeyCode.W))
+            //{
+            //    isW = true;
+            //}
 
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                isE = true;
-            }
+            //if (Input.GetKeyDown(KeyCode.E))
+            //{
+            //    isE = true;
+            //}
 
-            if (Input.GetKeyDown(KeyCode.R))
-            {
-                isR = true;
-            }
+            //if (Input.GetKeyDown(KeyCode.R))
+            //{
+            //    isR = true;
+            //}
         }
 
 
@@ -246,6 +290,8 @@ namespace MDDSkillEngine
                 isW = false;
             }
         }
+
+
 
 
     }
