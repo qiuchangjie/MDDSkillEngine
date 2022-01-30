@@ -54,15 +54,15 @@ namespace Slate
         public static DirectorCamera current {
             get
             {
-                if ( _current == null ) {
-                    _current = FindObjectOfType<DirectorCamera>();
-                    if ( _current == null ) {
-                        _current = new GameObject("★ Director Camera Root").AddComponent<DirectorCamera>();
-                        _current.cam.nearClipPlane = 0.01f;
-                        _current.cam.farClipPlane = 1000;
-                    }
-                }
-                return _current;
+                //if ( _current == null ) {
+                //    _current = FindObjectOfType<DirectorCamera>();
+                //    if ( _current == null ) {
+                //        _current = new GameObject("★ Director Camera Root").AddComponent<DirectorCamera>();
+                //        _current.cam.nearClipPlane = 0.01f;
+                //        _current.cam.farClipPlane = 1000;
+                //    }
+                //}
+                return null;
             }
         }
 

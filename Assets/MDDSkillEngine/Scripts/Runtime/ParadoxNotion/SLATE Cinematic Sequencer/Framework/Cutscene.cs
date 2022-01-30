@@ -547,27 +547,27 @@ namespace Slate
             //Initialize time pointers if required.
             if ( !preInitialized && currentTime > 0 && previousTime == 0 ) {
                 InitializeTimePointers();
-                Debug.LogError($"初始化时间点,timePointers:{timePointers.Count},unsortedStartTimePointers:{unsortedStartTimePointers.Count}");
+                //Debug.LogError($"初始化时间点,timePointers:{timePointers.Count},unsortedStartTimePointers:{unsortedStartTimePointers.Count}");
             }
 
             //Sample started
             if ( currentTime > 0 && currentTime < length && ( previousTime == 0 || previousTime == length ) ) {
                 if ( !Application.isPlaying || isActive ) {
-                    Log.Error("Sample pointers");
+                    //Log.Error("Sample pointers");
                     OnSampleStarted();
                 }
             }
 
             //Sample pointers
             if ( timePointers != null ) {
-                Log.Error("Sample pointers");
+                //Log.Error("Sample pointers");
                 Internal_SamplePointers(currentTime, previousTime);
             }
 
             //Sample ended
             if ( ( currentTime == 0 || currentTime == length ) && previousTime > 0 && previousTime < length ) {
                 if ( !Application.isPlaying || isActive ) {
-                    Log.Error("Sample pointers");
+                    //Log.Error("Sample pointers");
                     OnSampleEnded();
                 }
             }
@@ -730,7 +730,7 @@ namespace Slate
         //When Sample begins
         void OnSampleStarted() {
             SetLayersActive();
-            DirectorGUI.current.enabled = true;
+            //DirectorGUI.current.enabled = true;
             for ( var i = 0; i < directables.Count; i++ ) {
                 try { directables[i].RootEnabled(); }
                 catch ( System.Exception e ) { Debug.LogException(e, gameObject); }
@@ -740,10 +740,10 @@ namespace Slate
 #endif
         }
 
-        //When Sample ends
+        //When Sample ends  
         void OnSampleEnded() {
             RestoreLayersActive();
-            DirectorGUI.current.enabled = false;
+            //DirectorGUI.current.enabled = false;
             for ( var i = 0; i < directables.Count; i++ ) {
                 try { directables[i].RootDisabled(); }
                 catch ( System.Exception e ) { Debug.LogException(e, gameObject); }
