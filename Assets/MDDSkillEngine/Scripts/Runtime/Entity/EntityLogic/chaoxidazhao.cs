@@ -26,7 +26,7 @@ namespace MDDSkillEngine
 
 
         /// <summary>
-        /// 圆弧创建射线检测射线检测方法
+        /// 圆弧创建射线检测射线检测方法1
         /// </summary>
         /// <param name="radius">半径</param>
         /// <param name="angle">角度</param>
