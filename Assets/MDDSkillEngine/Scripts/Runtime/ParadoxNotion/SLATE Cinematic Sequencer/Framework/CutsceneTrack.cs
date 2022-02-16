@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 using System.Linq;
+using MDDSkillEngine;
 
 namespace Slate
 {
@@ -11,6 +12,8 @@ namespace Slate
 
         [SerializeField]
         private string _name;
+        [SerializeField]
+        private SkillDataType skillDataType = SkillDataType.None; 
         [SerializeField]
         private Color _color = Color.white;
         [SerializeField]

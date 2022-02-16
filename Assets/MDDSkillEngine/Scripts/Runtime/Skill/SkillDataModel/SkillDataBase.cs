@@ -42,10 +42,16 @@ namespace MDDSkillEngine
         }
     }
 
-    public class SkillData
+    public class SkillData 
     {
-        public List<SkillDataBase> skillData=new List<SkillDataBase>();
-        
+        /// <summary>
+        /// 技能名
+        /// </summary>
+        public string SkillName;
+
+        public Entity Entity;
+
+        public List<SkillDataBase> skillData = new List<SkillDataBase>();
     }
 
 

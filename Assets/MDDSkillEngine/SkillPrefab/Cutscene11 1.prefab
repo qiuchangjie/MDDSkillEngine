@@ -55,8 +55,8 @@ MonoBehaviour:
   groups:
   - {fileID: 7232431185629851885}
   _length: 0.7
-  _viewTimeMin: -0.34997395
-  _viewTimeMax: 0.7978259
+  _viewTimeMin: -0.27628317
+  _viewTimeMax: 0.5787095
 --- !u!1 &3378478145511216615
 GameObject:
   m_ObjectHideFlags: 0
@@ -101,7 +101,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e3ae2da6236cfb41a2650f4042e33d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _name: 
+  _name: "\u52A8\u753B\u8F68\u9053"
+  skillDataType: 1
   _color: {r: 1, g: 1, b: 1, a: 1}
   _active: 1
   _isLocked: 0
@@ -306,7 +307,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b9cb7b110ccf394a9e8eef8d8047e62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _name: 
+  _name: "\u7279\u6548\u8F68\u9053"
+  skillDataType: 2
   _color: {r: 1, g: 1, b: 1, a: 1}
   _active: 1
   _isLocked: 0

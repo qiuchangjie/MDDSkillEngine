@@ -131,8 +131,6 @@ namespace MDDSkillEngine
 
             InputLogic();
 
-
-
             switch (SelectState)
             {
                 case EntitySelectState.None:
@@ -184,6 +182,11 @@ namespace MDDSkillEngine
 
         private void InputLogic()
         {
+            if (Keyboard.current.vKey.wasPressedThisFrame)
+            {
+                Visible = !Visible;
+            }
+
             //if (Input.GetMouseButtonDown(1))
             //{
             //    isClickRight = true;

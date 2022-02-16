@@ -20,7 +20,7 @@ namespace Slate.ActionClips
         public ParticleSystem pat;
 
         [OnValueChanged("OnSetPosition")]
-        public Vector3 localeffPostion;
+        public Vector3 localeftPostion;
 
         [OnValueChanged("OnSetRotation")]
         public Quaternion localRotation;
@@ -48,7 +48,7 @@ namespace Slate.ActionClips
                 Object asset = UnityEditor.AssetDatabase.LoadAssetAtPath(AssetUtility.GetEntityAsset(EffectName), typeof(Object));
                 GameObject obj = Instantiate(asset) as GameObject;
                 pat = obj.GetComponent<ParticleSystem>();
-                obj.transform.localPosition = localeffPostion;
+                obj.transform.localPosition = localeftPostion;
                 obj.transform.rotation = localRotation;
                 obj.transform.localScale = localScale;
             }
@@ -67,7 +67,7 @@ namespace Slate.ActionClips
 
         protected override void OnExit()
         {
-            localeffPostion = pat.gameObject.transform.localPosition;
+            localeftPostion = pat.gameObject.transform.localPosition;
             localRotation = pat.gameObject.transform.localRotation;
             localScale = pat.gameObject.transform.localScale;
             DestroyImmediate(pat.gameObject);
@@ -86,7 +86,7 @@ namespace Slate.ActionClips
         private void OnSetPosition()
         {
             if (pat != null)
-                pat.gameObject.transform.localPosition = localeffPostion;
+                pat.gameObject.transform.localPosition = localeftPostion;
         }
 
         private void OnSetRotation()

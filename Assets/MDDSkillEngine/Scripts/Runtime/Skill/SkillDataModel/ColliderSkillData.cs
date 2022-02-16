@@ -8,6 +8,7 @@ namespace MDDSkillEngine
     public class ColliderSkillData : SkillDataBase
     {
 
+
     }
 }
 
