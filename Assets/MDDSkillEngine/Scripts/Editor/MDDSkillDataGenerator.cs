@@ -1,4 +1,5 @@
 ﻿using Slate;
+using Slate.ActionClips;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
@@ -44,6 +45,12 @@ namespace MDDSkillEngine
                         if (Data != null)
                         {
                             Debug.LogError(Data.groups[0].tracks[0].clips[0].startTime+"start,"+Data.groups[0].tracks[0].clips[0].endTime+"endtime");
+                            Data.groups[0].tracks[0].clips[0].startTime = 0.3f;
+                            if (Data.groups[0].tracks[0].clips[0] is PlayAnimatorClip)
+                            {
+                                var clip = (PlayAnimatorClip)Data.groups[0].tracks[0].clips[0];
+                                Debug.LogError($"------{clip.animationClip.name}-------");
+                            }
                         }
 
                         //通知你的编辑器 obj 改变了
