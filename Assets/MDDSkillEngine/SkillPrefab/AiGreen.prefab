@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7026954199551462257}
   - component: {fileID: 8199464004636828458}
   m_Layer: 0
-  m_Name: Cutscene11 1
+  m_Name: AiGreen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -54,9 +54,9 @@ MonoBehaviour:
     m_Bits: 4294967295
   groups:
   - {fileID: 7232431185629851885}
-  _length: 0.7
-  _viewTimeMin: -0.21443582
-  _viewTimeMax: 0.44714394
+  _length: 0.6
+  _viewTimeMin: 0
+  _viewTimeMax: 1.6756895
 --- !u!1 &3378478145511216615
 GameObject:
   m_ObjectHideFlags: 0
@@ -136,20 +136,14 @@ MonoBehaviour:
   - {x: 0, y: 0, z: 0}
   - {x: 0, y: 0, z: 0}
   - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
   rmRotations:
   - {x: 0, y: 0, z: 0, w: 1}
-  - {x: 0, y: 0, z: 0, w: 1}
-  - {x: 0, y: 0, z: 0, w: 1}
-  - {x: 0, y: 0, z: 0, w: 1}
-  - {x: 0, y: 0, z: 0, w: 1}
-  - {x: 0, y: 0, z: 0, w: 1}
-  - {x: 0, y: 0, z: 0, w: 1}
-  - {x: 0, y: 0, z: 0, w: 1}
-  - {x: 0, y: 0, z: 0, w: 1}
-  - {x: 0, y: 0, z: 0, w: 1}
+  - {x: -0, y: -0, z: -0, w: 1}
+  - {x: -0, y: -0, z: -0, w: 1}
+  - {x: -0, y: -0, z: -0, w: 1}
+  - {x: -0, y: -0, z: -0, w: 1}
+  - {x: -0, y: -0, z: -0, w: 1}
+  - {x: -0, y: -0, z: -0, w: 1}
   - {x: -0, y: -0, z: -0, w: 1}
   - {x: -0, y: -0, z: -0, w: 1}
   - {x: -0, y: -0, z: -0, w: 1}
@@ -175,7 +169,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4792578f693c06841a5b299345830d63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _startTime: 0.3
+  _startTime: 0
   _animationData:
     _animatedParameters:
     - _serializedData: '{"parameterName":"steerLocalRotation","declaringTypeName":"Slate.ActionClips.PlayAnimatorClip","transformHierarchyPath":"","parameterType":2}'
@@ -192,7 +186,7 @@ MonoBehaviour:
         m_PostInfinity: 2
         m_RotationOrder: 4
       _scriptExpression: 
-  _length: 0.7
+  _length: 0.59999996
   _blendIn: 0
   _blendOut: 0
   animationClip: {fileID: 7400000, guid: 96b2e3e9258a79b43bea27d3ba87a194, type: 3}
@@ -274,8 +268,9 @@ GameObject:
   m_Component:
   - component: {fileID: 6736176873481770646}
   - component: {fileID: 4871426869517224130}
+  - component: {fileID: 4353259953826499718}
   m_Layer: 0
-  m_Name: Actor Action Track
+  m_Name: GameObject Track
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -307,14 +302,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b9cb7b110ccf394a9e8eef8d8047e62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _name: "\u7279\u6548\u8F68\u9053"
+  _name: GameObject Track
   skillDataType: 2
   _color: {r: 1, g: 1, b: 1, a: 1}
   _active: 1
   _isLocked: 0
-  _actionClips: []
+  _actionClips:
+  - {fileID: 4353259953826499718}
   _customHeight: 300
   _icon: {fileID: 0}
+--- !u!114 &4353259953826499718
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3450132935525475907}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 483d42241718b7547b50464f7294571f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _startTime: 0.2
+  _animationData:
+    _animatedParameters: []
+  _length: 0.40000004
+  EffectName: daoguang_green_1
+  pat: {fileID: 0}
+  localeftPostion: {x: 0.272, y: 1.302, z: 0.145}
+  localRotation: {x: -0.99897295, y: -0, z: -0, w: 0.04531167}
+  localScale: {x: 0.3, y: 0.3, z: 0.3}
 --- !u!1 &5283733973731255988
 GameObject:
   m_ObjectHideFlags: 0
