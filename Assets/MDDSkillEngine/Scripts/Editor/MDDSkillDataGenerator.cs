@@ -1,4 +1,5 @@
-﻿using Slate;
+﻿using OdinSerializer;
+using Slate;
 using Slate.ActionClips;
 using System.Collections;
 using System.Collections.Generic;
@@ -19,6 +20,7 @@ namespace MDDSkillEngine
         {
             //路径
             string fullPath = Application.dataPath + "/MDDSkillEngine/SkillPrefab/";
+            string savePath = Application.dataPath + "/MDDSkillEngine/SkillData/";
             Debug.Log(fullPath);
             //获得指定路径下面的所有资源文件
             if (Directory.Exists(fullPath))
@@ -44,13 +46,10 @@ namespace MDDSkillEngine
                         Cutscene Data = obj.GetComponent<Cutscene>();
                         if (Data != null)
                         {
-                            Debug.LogError(Data.groups[0].tracks[0].clips[0].startTime+"start,"+Data.groups[0].tracks[0].clips[0].endTime+"endtime");
-                            Data.groups[0].tracks[0].clips[0].startTime = 0.3f;
-                            if (Data.groups[0].tracks[0].clips[0] is PlayAnimatorClip)
-                            {
-                                var clip = (PlayAnimatorClip)Data.groups[0].tracks[0].clips[0];
-                                Debug.LogError($"------{clip.animationClip.name}-------");
-                            }
+                            List<SkillDataBase> datas = HandleSkillData(Data);
+                            byte[] bytes = SerializationUtility.SerializeValue<SkillDataBase>(datas[0],DataFormat.Binary);
+                            if (Directory.Exists(savePath))
+                                File.WriteAllBytes(savePath + "name.txt", bytes);
                         }
 
                         //通知你的编辑器 obj 改变了
@@ -66,6 +65,52 @@ namespace MDDSkillEngine
                 Debug.Log("资源路径不存在");
             }
         }
+
+
+        /// <summary>
+        /// 返回一份slate数据中的技能导出数据
+        /// </summary>
+        /// <param name="Data"></param>
+        /// <returns></returns>
+        public static List<SkillDataBase> HandleSkillData(Cutscene Data)
+        {
+            List<SkillDataBase> dataList = new List<SkillDataBase>();
+
+            foreach (var group in Data.groups)
+            {
+                foreach (var track in group.tracks)
+                {
+                    switch (track.SkillDataType)
+                    {
+                        case SkillDataType.None: continue;
+                        case SkillDataType.Effect:
+                            {
+                                foreach (var clip in track.clips)
+                                {
+                                    if (clip is EffectInstance)
+                                    {
+                                        EffectInstance effectInstance = (EffectInstance)clip;
+                                        EffectSkillData data = new EffectSkillData();  
+                                        data.DataType = SkillDataType.Effect;
+                                        Debug.LogError(data.DataType);
+
+                                        dataList.Add(data);
+                                    }
+                                }
+                                break;
+                            }
+                        case SkillDataType.Animation:
+                            {
+
+                                break;
+                            }
+                    }
+                }
+            }
+
+            return dataList;
+        }
+
     }
 
 }

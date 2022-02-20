@@ -31,6 +31,11 @@ namespace Slate
             get { return parent != null ? parent.actor : null; }
         }
 
+        public SkillDataType SkillDataType
+        {
+            get { return skillDataType; }
+        }
+
         ///The name...
         new public string name {
             get { return string.IsNullOrEmpty(_name) ? GetType().Name.SplitCamelCase() : _name; }
