@@ -3,6 +3,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Reflection;
+using MDDSkillEngine;
 #if FUCK_LUA
 using ILRuntime.CLR.Method;
 using ILRuntime.CLR.TypeSystem;

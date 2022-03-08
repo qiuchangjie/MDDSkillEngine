@@ -3,7 +3,6 @@
     "references": [
         "MDDGameFramework",
         "MDDGameFrameworkRuntime",
-        "CatAsset.Runtime",
         "NPBehave",
         "XNode",
         "NPBehave.node",

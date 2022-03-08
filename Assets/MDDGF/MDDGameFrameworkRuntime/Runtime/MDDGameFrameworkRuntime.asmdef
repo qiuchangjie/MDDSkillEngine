@@ -1,6 +1,6 @@
 {
     "name": "MDDGameFrameworkRuntime",
-    "references": ["GameFramework","MDDGameFramework","CatAsset.Runtime","NPBehave","OdinSerializer"],
+    "references": ["GameFramework","MDDGameFramework","NPBehave","OdinSerializer"],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": true,

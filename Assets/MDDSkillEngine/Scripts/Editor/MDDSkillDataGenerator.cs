@@ -1,5 +1,4 @@
-﻿using OdinSerializer;
-using Slate;
+﻿using Slate;
 using Slate.ActionClips;
 using System.Collections;
 using System.Collections.Generic;
@@ -47,10 +46,20 @@ namespace MDDSkillEngine
                         if (Data != null)
                         {
                             List<SkillDataBase> datas = HandleSkillData(Data);
-                            byte[] bytes = SerializationUtility.SerializeValue<SkillDataBase>(datas[0],DataFormat.Binary);
-                            if (Directory.Exists(savePath))
-                                File.WriteAllBytes(savePath + "name.txt", bytes);
+                            string json = CatJson.JsonParser.ToJson<SkillDataBase>(datas[0]);
+                            //byte[] bytes = SerializationUtility.SerializeValue<SkillDataBase>(datas[0],DataFormat.JSON);
+                            using (StreamWriter sr = new StreamWriter(savePath + "\\name.json"))
+                            {
+                                sr.Write(json);
+                            }
                         }
+
+
+                        string testjson = File.ReadAllText(savePath + "name.json");
+
+
+                        //SkillDataBase testDeS = SerializationUtility.DeserializeValue<SkillDataBase>(testbytes,DataFormat.JSON);
+                        SkillDataBase testDeS = CatJson.JsonParser.ParseJson<EffectSkillData>(testjson);
 
                         //通知你的编辑器 obj 改变了
                         EditorUtility.SetDirty(obj);
@@ -92,6 +101,7 @@ namespace MDDSkillEngine
                                         EffectInstance effectInstance = (EffectInstance)clip;
                                         EffectSkillData data = new EffectSkillData();  
                                         data.DataType = SkillDataType.Effect;
+                                        data.ResouceName = effectInstance.EffectName;
                                         Debug.LogError(data.DataType);
 
                                         dataList.Add(data);

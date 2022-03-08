@@ -40,6 +40,8 @@ namespace MDDSkillEngine
             get { return m_EndTime; }
             set { m_EndTime = value; }
         }
+
+        public SkillDataBase() { }
     }
 
     public class SkillData 

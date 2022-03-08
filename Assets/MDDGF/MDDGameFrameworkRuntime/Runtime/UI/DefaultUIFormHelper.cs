@@ -1,6 +1,4 @@
-﻿//------------------------------------------------------------
-using CatAsset;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace MDDGameFramework.Runtime
 {

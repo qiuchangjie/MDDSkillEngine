@@ -55,8 +55,8 @@ MonoBehaviour:
   groups:
   - {fileID: 7232431185629851885}
   _length: 0.6
-  _viewTimeMin: 0
-  _viewTimeMax: 1.6756895
+  _viewTimeMin: 0.0027517453
+  _viewTimeMax: 1.6536815
 --- !u!1 &3378478145511216615
 GameObject:
   m_ObjectHideFlags: 0

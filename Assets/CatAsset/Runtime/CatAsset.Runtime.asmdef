@@ -1,6 +1,6 @@
 {
     "name": "CatAsset.Runtime",
-    "references": [],
+    "references": ["MDDSkillEngine"],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": true,
