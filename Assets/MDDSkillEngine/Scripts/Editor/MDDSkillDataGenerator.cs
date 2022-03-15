@@ -42,12 +42,13 @@ namespace MDDSkillEngine
                         //{
                         //    lab.color = Color.red;
                         //}
+
                         Cutscene Data = obj.GetComponent<Cutscene>();
+
                         if (Data != null)
                         {
-                            List<SkillDataBase> datas = HandleSkillData(Data);
-                            string json = CatJson.JsonParser.ToJson<SkillDataBase>(datas[0]);
-                            //byte[] bytes = SerializationUtility.SerializeValue<SkillDataBase>(datas[0],DataFormat.JSON);
+
+                            string json = CatJson.JsonParser.ToJson<SkillData>(HandleSkillData(Data));
                             using (StreamWriter sr = new StreamWriter(savePath + "\\name.json"))
                             {
                                 sr.Write(json);
@@ -58,8 +59,7 @@ namespace MDDSkillEngine
                         string testjson = File.ReadAllText(savePath + "name.json");
 
 
-                        //SkillDataBase testDeS = SerializationUtility.DeserializeValue<SkillDataBase>(testbytes,DataFormat.JSON);
-                        SkillDataBase testDeS = CatJson.JsonParser.ParseJson<EffectSkillData>(testjson);
+                        SkillData testDeS = CatJson.JsonParser.ParseJson<SkillData>(testjson);
 
                         //通知你的编辑器 obj 改变了
                         EditorUtility.SetDirty(obj);
@@ -81,7 +81,7 @@ namespace MDDSkillEngine
         /// </summary>
         /// <param name="Data"></param>
         /// <returns></returns>
-        public static List<SkillDataBase> HandleSkillData(Cutscene Data)
+        public static SkillData HandleSkillData(Cutscene Data)
         {
             List<SkillDataBase> dataList = new List<SkillDataBase>();
 
@@ -91,7 +91,9 @@ namespace MDDSkillEngine
                 {
                     switch (track.SkillDataType)
                     {
-                        case SkillDataType.None: continue;
+                        case SkillDataType.None:
+                            Debug.LogError("检测到未指定类型的技能数据");
+                            continue;
                         case SkillDataType.Effect:
                             {
                                 foreach (var clip in track.clips)
@@ -99,7 +101,7 @@ namespace MDDSkillEngine
                                     if (clip is EffectInstance)
                                     {
                                         EffectInstance effectInstance = (EffectInstance)clip;
-                                        EffectSkillData data = new EffectSkillData();  
+                                        EffectSkillData data = new EffectSkillData();
                                         data.DataType = SkillDataType.Effect;
                                         data.ResouceName = effectInstance.EffectName;
                                         Debug.LogError(data.DataType);
@@ -111,14 +113,19 @@ namespace MDDSkillEngine
                             }
                         case SkillDataType.Animation:
                             {
-
+                                break;
+                            }
+                        case (SkillDataType.Collider):
+                            {
                                 break;
                             }
                     }
                 }
             }
 
-            return dataList;
+            SkillData resultData = new SkillData(dataList);
+
+            return resultData;
         }
 
     }

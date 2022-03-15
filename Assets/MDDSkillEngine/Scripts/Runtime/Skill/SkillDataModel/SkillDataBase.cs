@@ -7,7 +7,7 @@ namespace MDDSkillEngine
     /// <summary>
     /// 释后技能数据模板基类
     /// </summary>
-    public abstract class SkillDataBase
+    public class SkillDataBase
     {
         private SkillDataType m_DataType;
 
@@ -54,6 +54,13 @@ namespace MDDSkillEngine
         public Entity Entity;
 
         public List<SkillDataBase> skillData = new List<SkillDataBase>();
+
+        public SkillData() { }
+
+        public SkillData(List<SkillDataBase> skillDatas)
+        {
+            skillData = skillDatas;
+        }
     }
 
 
