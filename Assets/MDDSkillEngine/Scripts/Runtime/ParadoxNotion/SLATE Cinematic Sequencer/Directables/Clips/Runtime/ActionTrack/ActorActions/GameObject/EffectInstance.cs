@@ -80,7 +80,7 @@ namespace Slate.ActionClips
 
         protected override void OnReverse()
         {
-          
+            //Debug.LogError("OnReverse");
         }
 
         private void OnSetPosition()
