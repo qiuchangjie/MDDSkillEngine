@@ -1,4 +1,5 @@
-﻿using Slate;
+﻿using OdinSerializer;
+using Slate;
 using Slate.ActionClips;
 using System.Collections;
 using System.Collections.Generic;
@@ -44,22 +45,35 @@ namespace MDDSkillEngine
                         //}
 
                         Cutscene Data = obj.GetComponent<Cutscene>();
+                       // byte[] bytes;
 
-                        if (Data != null)
-                        {
+                        //if (Data != null)
+                        //{
 
-                            string json = CatJson.JsonParser.ToJson<SkillData>(HandleSkillData(Data));
-                            using (StreamWriter sr = new StreamWriter(savePath + "\\name.json"))
-                            {
-                                sr.Write(json);
-                            }
-                        }
+                        //    //string json = CatJson.JsonParser.ToJson<SkillData>(HandleSkillData(Data));
+                        //    byte[] bytes = SerializationUtility.SerializeValue(HandleSkillData(Data), DataFormat.Binary);
+                        //    using (StreamWriter sr = new StreamWriter(savePath + "\\name.bytes"))
+                        //    {
+                        //        sr.Write(bytes);
+                        //    }
+                        //}
+
+                        byte[] bytes = SerializationUtility.SerializeValue(HandleSkillData(Data), DataFormat.Binary);
+
+                        File.WriteAllBytes(savePath + "name.bytes", bytes);
+
+                        //byte[] bytes = SerializationUtility.SerializeValue(HandleSkillData(Data), DataFormat.Binary);
+
+                        byte[] bytes1 = File.ReadAllBytes(savePath + "name.bytes");
+
+                        //string testjson = File.ReadAllText(savePath + "name.json");
 
 
-                        string testjson = File.ReadAllText(savePath + "name.json");
+                        //SkillData testDeS = CatJson.JsonParser.ParseJson<SkillData>(testjson);
 
+                        SkillData testDeS = SerializationUtility.DeserializeValue<SkillData>(bytes1, DataFormat.Binary);
 
-                        SkillData testDeS = CatJson.JsonParser.ParseJson<SkillData>(testjson);
+                        EffectSkillData testconvertdata = (EffectSkillData)testDeS.skillData[0];
 
                         //通知你的编辑器 obj 改变了
                         EditorUtility.SetDirty(obj);
@@ -104,8 +118,11 @@ namespace MDDSkillEngine
                                         EffectSkillData data = new EffectSkillData();
                                         data.DataType = SkillDataType.Effect;
                                         data.ResouceName = effectInstance.EffectName;
+                                        data.localeftPostion = effectInstance.localeftPostion;
+                                        data.localRotation = effectInstance.localRotation;
+                                        data.localScale = effectInstance.localScale;
                                         Debug.LogError(data.DataType);
-
+                                        dataList.Add(data);
                                         dataList.Add(data);
                                     }
                                 }

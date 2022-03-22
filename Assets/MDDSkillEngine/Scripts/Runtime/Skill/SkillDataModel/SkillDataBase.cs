@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,6 +8,7 @@ namespace MDDSkillEngine
     /// <summary>
     /// 释后技能数据模板基类
     /// </summary>
+    [Serializable]
     public class SkillDataBase
     {
         private SkillDataType m_DataType;
@@ -44,6 +46,7 @@ namespace MDDSkillEngine
         public SkillDataBase() { }
     }
 
+    [Serializable]
     public class SkillData 
     {
         /// <summary>
@@ -68,6 +71,7 @@ namespace MDDSkillEngine
     /// 技能数据的类型
     /// 数据的源头来自于timeline编辑的导出数据
     /// </summary>
+    [Serializable]
     public enum SkillDataType
     {
         None,
