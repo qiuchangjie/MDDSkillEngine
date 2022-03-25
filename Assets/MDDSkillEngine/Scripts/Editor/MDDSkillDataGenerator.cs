@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.IO;
 using UnityEditor;
 using UnityEngine;
+using LitJson;
 
 namespace MDDSkillEngine
 {
@@ -58,18 +59,20 @@ namespace MDDSkillEngine
                         //    }
                         //}
 
+                        //string jsontest = JsonUtility.ToJson(HandleSkillData(Data));
+
                         byte[] bytes = SerializationUtility.SerializeValue(HandleSkillData(Data), DataFormat.Binary);
 
                         File.WriteAllBytes(savePath + "name.bytes", bytes);
 
-                        //byte[] bytes = SerializationUtility.SerializeValue(HandleSkillData(Data), DataFormat.Binary);
+                       // byte[] bytes = SerializationUtility.SerializeValue(HandleSkillData(Data), DataFormat.Binary);
 
                         byte[] bytes1 = File.ReadAllBytes(savePath + "name.bytes");
 
-                        //string testjson = File.ReadAllText(savePath + "name.json");
+                        // testjson = File.ReadAllText(savePath + "name.json");
 
 
-                        //SkillData testDeS = CatJson.JsonParser.ParseJson<SkillData>(testjson);
+                        //SkillData testDeS = JsonUtility.FromJson<SkillData>(testjson);
 
                         SkillData testDeS = SerializationUtility.DeserializeValue<SkillData>(bytes1, DataFormat.Binary);
 
@@ -122,7 +125,6 @@ namespace MDDSkillEngine
                                         data.localRotation = effectInstance.localRotation;
                                         data.localScale = effectInstance.localScale;
                                         Debug.LogError(data.DataType);
-                                        dataList.Add(data);
                                         dataList.Add(data);
                                     }
                                 }

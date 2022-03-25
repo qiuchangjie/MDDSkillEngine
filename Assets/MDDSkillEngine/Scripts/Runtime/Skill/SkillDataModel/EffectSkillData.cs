@@ -1,10 +1,12 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 
 namespace MDDSkillEngine
 {
+    [Serializable]
     public class EffectSkillData : SkillDataBase
     {
         public Vector3 localeftPostion;

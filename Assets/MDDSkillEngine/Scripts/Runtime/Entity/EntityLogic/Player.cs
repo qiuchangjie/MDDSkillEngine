@@ -52,6 +52,11 @@ namespace MDDSkillEngine
             Game.Fsm.GetFsm<Player>(Id.ToString()).SetData<VarBoolean>("jianrenfengbao", true);
         }
 
+        public void UseSkill_3(CallbackContext ctx)
+        {
+            Game.Fsm.GetFsm<Player>(Id.ToString()).SetData<VarBoolean>("skilldatatest", true);
+        }
+
         public void OnClickLeft(CallbackContext ctx)
         {
             
@@ -80,6 +85,7 @@ namespace MDDSkillEngine
 
             Game.Input.Control.Heros_Normal.Skill_1.performed += UseSkill_1;
             Game.Input.Control.Heros_Normal.Skill_2.performed += UseSkill_2;
+            Game.Input.Control.Heros_Normal.Skill_3.performed += UseSkill_3;
             Game.Input.Control.Heros_Normal.RightClick.performed += OnClickRight;
 
             Game.Buff.CreatBuffSystem(this.Entity.Id.ToString(),this);

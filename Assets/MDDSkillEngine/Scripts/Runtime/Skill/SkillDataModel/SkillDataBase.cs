@@ -11,13 +11,14 @@ namespace MDDSkillEngine
     [Serializable]
     public class SkillDataBase
     {
-        private SkillDataType m_DataType;
 
-        private string m_ResouceName = "None";
+        public SkillDataType m_DataType;
 
-        private float m_StartTime;
+        public string m_ResouceName = "None";
 
-        private float m_EndTime;
+        public float m_StartTime;
+
+        public float m_EndTime;
 
         public SkillDataType DataType
         {

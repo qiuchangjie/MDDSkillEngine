@@ -69,6 +69,11 @@ namespace MDDSkillEngine
             {
                 ChangeState<Akijianrenfengbao>(fsm);
             }
+
+            if (fsm.GetData<VarBoolean>("skilldatatest"))
+            {
+                ChangeState<AkiSkillDataTest>(fsm);
+            }
         }
     }
 }
