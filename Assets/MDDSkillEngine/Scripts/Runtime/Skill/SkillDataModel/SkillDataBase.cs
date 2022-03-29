@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Sirenix.Serialization;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,14 +12,14 @@ namespace MDDSkillEngine
     [Serializable]
     public class SkillDataBase
     {
-
-        public SkillDataType m_DataType;
-
-        public string m_ResouceName = "None";
-
-        public float m_StartTime;
-
-        public float m_EndTime;
+        [SerializeField]
+        private SkillDataType m_DataType;
+        [SerializeField]
+        private string m_ResouceName = "None";
+        [SerializeField]
+        private float m_StartTime;
+        [SerializeField]
+        private float m_EndTime;
 
         public SkillDataType DataType
         {
@@ -54,6 +55,8 @@ namespace MDDSkillEngine
         /// 技能名
         /// </summary>
         public string SkillName;
+
+        public float Length;
 
         public Entity Entity;
 

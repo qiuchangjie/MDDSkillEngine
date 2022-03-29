@@ -26,6 +26,8 @@ namespace MDDGameFramework
             get { return false; }
         }
 
+        public float duration = 0f;
+
         /// <summary>
         /// 初始化有限状态机状态基类的新实例。
         /// </summary>
@@ -57,6 +59,7 @@ namespace MDDGameFramework
         /// <param name="realElapseSeconds">真实流逝时间，以秒为单位。</param>
         protected internal virtual void OnUpdate(IFsm<T> fsm, float elapseSeconds, float realElapseSeconds)
         {
+            duration += elapseSeconds;
         }
 
         /// <summary>
@@ -66,6 +69,7 @@ namespace MDDGameFramework
         /// <param name="isShutdown">是否是关闭有限状态机时触发。</param>
         protected internal virtual void OnLeave(IFsm<T> fsm, bool isShutdown)
         {
+            duration = 0f;
         }
 
         /// <summary>

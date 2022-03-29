@@ -136,7 +136,7 @@ namespace MDDSkillEngine
                 }
             }
           
-            await Task.Delay(5000);
+            await Task.Delay(3000);
 
             end?.Invoke();
         }

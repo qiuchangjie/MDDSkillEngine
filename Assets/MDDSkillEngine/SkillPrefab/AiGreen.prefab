@@ -47,16 +47,16 @@ MonoBehaviour:
   _updateMode: 0
   _defaultWrapMode: 0
   _defaultStopMode: 0
-  _playbackSpeed: 1
+  _playbackSpeed: 0.25
   _explicitActiveLayers: 0
   _activeLayers:
     serializedVersion: 2
     m_Bits: 4294967295
   groups:
   - {fileID: 7232431185629851885}
-  _length: 0.6
-  _viewTimeMin: 0.0027517453
-  _viewTimeMax: 1.6536815
+  _length: 0.8333334
+  _viewTimeMin: -1.255671
+  _viewTimeMax: 1.2301445
 --- !u!1 &3378478145511216615
 GameObject:
   m_ObjectHideFlags: 0
@@ -136,8 +136,22 @@ MonoBehaviour:
   - {x: 0, y: 0, z: 0}
   - {x: 0, y: 0, z: 0}
   - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
   rmRotations:
   - {x: 0, y: 0, z: 0, w: 1}
+  - {x: -0, y: -0, z: -0, w: 1}
+  - {x: -0, y: -0, z: -0, w: 1}
+  - {x: -0, y: -0, z: -0, w: 1}
+  - {x: -0, y: -0, z: -0, w: 1}
+  - {x: -0, y: -0, z: -0, w: 1}
+  - {x: -0, y: -0, z: -0, w: 1}
+  - {x: -0, y: -0, z: -0, w: 1}
   - {x: -0, y: -0, z: -0, w: 1}
   - {x: -0, y: -0, z: -0, w: 1}
   - {x: -0, y: -0, z: -0, w: 1}
@@ -186,10 +200,11 @@ MonoBehaviour:
         m_PostInfinity: 2
         m_RotationOrder: 4
       _scriptExpression: 
-  _length: 0.59999996
+  _length: 0.8333334
   _blendIn: 0
   _blendOut: 0
-  animationClip: {fileID: 7400000, guid: 96b2e3e9258a79b43bea27d3ba87a194, type: 3}
+  animationClip: {fileID: 7400000, guid: 89b083c3cdd6cb64d906f6bbfcb40211, type: 3}
+  animationName: Attack1
   clipOffset: 0
   clipWrapMode: 0
   clipWeight: 1
@@ -323,7 +338,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 483d42241718b7547b50464f7294571f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _startTime: 0.2
+  _startTime: 0
   _animationData:
     _animatedParameters: []
   _length: 0.40000004

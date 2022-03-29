@@ -21,9 +21,12 @@ namespace MDDSkillEngine
 
         private SkillData skillData;
 
+        bool effect = false;
+        bool anim = false;
+
         private void ParseSkillData(SkillData skillData, IFsm<Player> fsm)
         {
-            bool effect=false;
+           // bool effect=false;
 
             foreach (var data in skillData.skillData)
             {
@@ -31,17 +34,42 @@ namespace MDDSkillEngine
                 {
                     case SkillDataType.Effect:
                         {
+                            EffectSkillData eff = (EffectSkillData)data;    
+
                             if (data.StartTime <= fsm.CurrentStateTime && !effect)
                             {
                                 Log.Info("执行effectdata");
-                                Game.Entity.ShowEffect(new EffectData(Game.Entity.GenerateSerialId(), 70006)
+
+                                int id = Game.Entity.GenerateSerialId();
+
+                                Game.Entity.ShowEffect(new EffectData(id, 70006)
                                 {
                                     Position = fsm.Owner.CachedTransform.position,
                                     Rotation = fsm.Owner.CachedTransform.rotation,
-                                    KeepTime = 5f
+                                    KeepTime = 2f
                                 });
+                                MDDGameFramework.Runtime.Entity e = Game.Entity.GetEntity(id);
+                                if (e != null)
+                                    Log.Error(e.name);
+                                Game.Entity.AttachEntity(id, fsm.Owner.Id);
+
+                                e.Logic.CachedTransform.localPosition = eff.localeftPostion;
+                                e.Logic.CachedTransform.localRotation = eff.localRotation;
+                                e.Logic.CachedTransform.localScale = eff.localScale;
+
                                 effect = true;
                             }
+                        }
+                        break;
+                    case SkillDataType.Animation:
+                        {
+                            if (!anim)
+                            {
+                                fsm.Owner.CachedAnimancer.Play(attack);
+                                Log.Error("播放动画数据");
+                                anim = true;
+                            }
+                            
                         }
                         break;
 
@@ -60,12 +88,16 @@ namespace MDDSkillEngine
 
             fsm.SetData<VarBoolean>("skilldatatest", false);
 
+            attack = fsm.Owner.CachedAnimContainer.GetAnimation("Attack1");
+
             Log.Error("数据加载并反序列化成功");
         }
 
         protected override void OnEnter(IFsm<Player> fsm)
         {
             base.OnEnter(fsm);
+            effect = false;
+            anim = false;
             Log.Info("进入test状态");   
         }
 
@@ -78,13 +110,21 @@ namespace MDDSkillEngine
         protected override void OnLeave(IFsm<Player> fsm, bool isShutdown)
         {
             base.OnLeave(fsm, isShutdown);
-         
+            fsm.SetData<VarBoolean>("skilldatatest", false);
+            //effect = false;
         }
 
         protected override void OnUpdate(IFsm<Player> fsm, float elapseSeconds, float realElapseSeconds)
         {
             base.OnUpdate(fsm, elapseSeconds, realElapseSeconds);
             ParseSkillData(skillData, fsm);
+            if (duration >= skillData.Length)
+            {
+
+                Log.Error(skillData.Length);
+                Finish(fsm);
+            }
+
         }
     }
 }

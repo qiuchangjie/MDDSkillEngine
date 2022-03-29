@@ -7,7 +7,7 @@ namespace MDDSkillEngine
 {
     public class AnimationSkillData : SkillDataBase
     {
-        
+        public string AnimationName= "";
     }
 }
 

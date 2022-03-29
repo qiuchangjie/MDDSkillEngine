@@ -67,16 +67,16 @@ namespace MDDSkillEngine
 
                        // byte[] bytes = SerializationUtility.SerializeValue(HandleSkillData(Data), DataFormat.Binary);
 
-                        byte[] bytes1 = File.ReadAllBytes(savePath + "name.bytes");
+                       // byte[] bytes1 = File.ReadAllBytes(savePath + "name.bytes");
 
                         // testjson = File.ReadAllText(savePath + "name.json");
 
 
                         //SkillData testDeS = JsonUtility.FromJson<SkillData>(testjson);
 
-                        SkillData testDeS = SerializationUtility.DeserializeValue<SkillData>(bytes1, DataFormat.Binary);
+                        //SkillData testDeS = SerializationUtility.DeserializeValue<SkillData>(bytes1, DataFormat.Binary);
 
-                        EffectSkillData testconvertdata = (EffectSkillData)testDeS.skillData[0];
+                        //EffectSkillData testconvertdata = (EffectSkillData)testDeS.skillData[0];
 
                         //通知你的编辑器 obj 改变了
                         EditorUtility.SetDirty(obj);
@@ -119,7 +119,7 @@ namespace MDDSkillEngine
                                     {
                                         EffectInstance effectInstance = (EffectInstance)clip;
                                         EffectSkillData data = new EffectSkillData();
-                                        data.DataType = SkillDataType.Effect;
+                                        data.DataType = SkillDataType.Effect;                                      
                                         data.ResouceName = effectInstance.EffectName;
                                         data.localeftPostion = effectInstance.localeftPostion;
                                         data.localRotation = effectInstance.localRotation;
@@ -132,6 +132,17 @@ namespace MDDSkillEngine
                             }
                         case SkillDataType.Animation:
                             {
+                                foreach (var clip in track.clips)
+                                {
+                                    if (clip is PlayAnimatorClip)
+                                    {
+                                        PlayAnimatorClip playAnimatorClip = (PlayAnimatorClip)clip;
+                                        AnimationSkillData data = new AnimationSkillData();
+                                        data.DataType = SkillDataType.Animation;
+                                        data.AnimationName = playAnimatorClip.animationName;
+                                        dataList.Add(data);
+                                    }
+                                }
                                 break;
                             }
                         case (SkillDataType.Collider):
@@ -143,6 +154,8 @@ namespace MDDSkillEngine
             }
 
             SkillData resultData = new SkillData(dataList);
+
+            resultData.Length = Data.length;
 
             return resultData;
         }
