@@ -3,13 +3,14 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using Sirenix.OdinInspector;
 
 namespace Slate
 {
 
     [Attachable(typeof(ActionTrack))]
     ///Clips are added in CutsceneTracks to make stuff happen
-    abstract public class ActionClip : MonoBehaviour, IDirectable, IKeyable
+    abstract public class ActionClip : SerializedMonoBehaviour, IDirectable, IKeyable
     {
 
         [SerializeField]
