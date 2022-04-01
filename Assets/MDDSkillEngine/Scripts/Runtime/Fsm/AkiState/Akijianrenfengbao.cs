@@ -102,8 +102,7 @@ namespace MDDSkillEngine
             duration -= elapseSeconds;
             if (duration <= 0)
             {
-                Finish(fsm);
-              
+                Finish(fsm);             
             }
         }
 

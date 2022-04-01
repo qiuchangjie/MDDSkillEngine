@@ -68,8 +68,7 @@ namespace MDDSkillEngine
                                 fsm.Owner.CachedAnimancer.Play(attack);
                                 Log.Error("播放动画数据");
                                 anim = true;
-                            }
-                            
+                            }                            
                         }
                         break;
 
@@ -83,13 +82,12 @@ namespace MDDSkillEngine
 
             string savePath = Application.dataPath + "/MDDSkillEngine/SkillData/";
             byte[] bytes1 = File.ReadAllBytes(savePath + "name.bytes");
+
             skillData = SerializationUtility.DeserializeValue<SkillData>(bytes1, DataFormat.Binary);
 
 
             fsm.SetData<VarBoolean>("skilldatatest", false);
-
             attack = fsm.Owner.CachedAnimContainer.GetAnimation("Attack1");
-
             Log.Error("数据加载并反序列化成功");
         }
 
@@ -111,7 +109,6 @@ namespace MDDSkillEngine
         {
             base.OnLeave(fsm, isShutdown);
             fsm.SetData<VarBoolean>("skilldatatest", false);
-            //effect = false;
         }
 
         protected override void OnUpdate(IFsm<Player> fsm, float elapseSeconds, float realElapseSeconds)
@@ -120,7 +117,6 @@ namespace MDDSkillEngine
             ParseSkillData(skillData, fsm);
             if (duration >= skillData.Length)
             {
-
                 Log.Error(skillData.Length);
                 Finish(fsm);
             }

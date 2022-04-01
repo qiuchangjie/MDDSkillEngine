@@ -51,21 +51,7 @@ namespace MDDSkillEngine
                 {
                     Position = new Vector3(2f, 0f, 0f),
                 });
-            }
-
-
-            //if (Input.GetKeyDown(KeyCode.C))
-            //{
-            //    Game.Entity.ShowPlayer(new PlayerData(Game.Entity.GenerateSerialId(), 10000)
-            //    {
-            //        Position = new Vector3(0f, 0f, 0f),                  
-            //    });
-
-            //    Game.Entity.ShowEnemy(new EnemyData(Game.Entity.GenerateSerialId(), 10001)
-            //    {
-            //        Position = new Vector3(2f, 0f, 0f),
-            //    });
-            //}              
+            }             
         }
 
 
