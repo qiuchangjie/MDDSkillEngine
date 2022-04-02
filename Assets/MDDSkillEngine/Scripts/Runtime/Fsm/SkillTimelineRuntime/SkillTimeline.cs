@@ -2,29 +2,39 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SkillTimeline
+namespace MDDSkillEngine 
 {
-    public List<SkillClip> skillClips = new List<SkillClip>();
+    public class SkillTimeline
+    {
+        public List<SkillClip> skillClips = new List<SkillClip>();
 
-    private float lastTime;
+        private float lastTime;
 
 
 
+    }
+
+
+    public abstract class SkillClip
+    {
+        public float duration;
+
+        public float startTime;
+
+        public float endTime;
+
+        private bool isTriggered;
+
+        abstract public void Enter();
+        abstract public void Exit();
+        virtual public void Update()
+        {
+
+        }
+    }
 }
 
 
-public abstract class SkillClip
-{
-    public float duration;
-
-    public float startTime;
-
-    public float endTime;
-
-    abstract public void Enter();
-    abstract public void Exit();
-    abstract public void Update();  
-}
 
 
 
