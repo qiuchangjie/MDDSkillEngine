@@ -30,7 +30,8 @@ namespace Slate
         }
 
         ///The local time of the directable based on provided time
-        public static float ToLocalTime(this IDirectable directable, float time) {
+        public static float ToLocalTime(this IDirectable directable, float time) 
+        {
             return Mathf.Clamp(time - directable.startTime, 0, directable.GetLength());
         }
 
