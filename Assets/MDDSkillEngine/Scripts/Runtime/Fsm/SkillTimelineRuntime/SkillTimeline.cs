@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace MDDSkillEngine
 {
-    public class SkillTimeline
+    public class SkillTimeline <T> where T : class
     {
         public enum PlayingDirection
         {

@@ -1,6 +1,6 @@
 {
     "name": "MDDGameFrameworkRuntime",
-    "references": ["GameFramework","MDDGameFramework","NPBehave","OdinSerializer"],
+    "references": ["MDDGameFramework","NPBehave","OdinSerializer"],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": true,

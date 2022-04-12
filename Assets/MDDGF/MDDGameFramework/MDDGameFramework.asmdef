@@ -1,8 +1,6 @@
 {
     "name": "MDDGameFramework",
     "references": [
-        "NPBehave",
-        "NUnit.Framework",
         "OdinSerializer"
     ],
     "includePlatforms": [],
