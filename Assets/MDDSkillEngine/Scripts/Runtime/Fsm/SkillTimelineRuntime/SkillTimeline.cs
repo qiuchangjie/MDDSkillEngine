@@ -3,6 +3,11 @@ using UnityEngine;
 
 namespace MDDSkillEngine
 {
+    /// <summary>
+    /// 技能运行时辅助类
+    /// 主要用于将slate逻辑复制过来
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
     public class SkillTimeline <T> where T : class
     {
         public enum PlayingDirection
