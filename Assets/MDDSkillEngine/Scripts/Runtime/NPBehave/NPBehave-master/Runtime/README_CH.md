@@ -134,7 +134,7 @@ behaviorTree.Start();
     {
         if ( behaviorTree != null && behaviorTree.CurrentState == Node.State.ACTIVE )
         {
-            behaviorTree.Stop();
+            behaviorTree.Cancel();
         }
     }
     // ...
@@ -152,7 +152,7 @@ behaviorTree.Start();
 
 #### 黄金法则
 
-1. **每次调用DoStop()都必须导致调用Stopped(result)**。这是非常重要的!您需要确保在DoStop()中调用了Stopped()，因为NPBehave需要能够在运行时立即取消正在运行的分支。这也意味着你所有的子节点也将调用Stopped(),这反过来又使得它很容易编写可靠的decorator甚至composite节点:在DoStop()里你只需要调用active状态下的孩子Stop()函数,他们将轮流执行ChildStopped()。`最终会回溯到上层节点的Stopped()函数！`请查看现有的实现以供参考。
+1. **每次调用DoStop()都必须导致调用Stopped(result)**。这是非常重要的!您需要确保在DoStop()中调用了Stopped()，因为NPBehave需要能够在运行时立即取消正在运行的分支。这也意味着你所有的子节点也将调用Stopped(),这反过来又使得它很容易编写可靠的decorator甚至composite节点:在DoStop()里你只需要调用active状态下的孩子Cancel()函数,他们将轮流执行ChildStopped()。`最终会回溯到上层节点的Stopped()函数！`请查看现有的实现以供参考。
 2. **Stopped()是您做的最后一个调用**，在调用Stopped后不要修改任何状态或调用任何东西。这是因为Stopped将立即继续遍历其他节点上的树，如果不考虑这一点，将完全破坏行为树的状态。
 3. **每一个注册的时钟或黑板观察者最终都需要删除**。大多数时候你调用Stopped()之前立刻注销你的回调函数,不过可能会有例外,比如BlackboardCondition使观察者处于警惕状态直到父组合结点终止,它需要能够对黑板上值改变及时作出反应，即使节点本身并不活跃。
 

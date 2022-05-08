@@ -4,14 +4,14 @@ using MDDSkillEngine;
 
 namespace MDDSkillEngine
 {
-    public class NP_ChangeBlackboardNode : NP_TaskNodeBase
+    public class NP_ResetCDNode : NP_TaskNodeBase
     {
-        public override string Name => "修改黑板值";
+        public override string Name => "NP_ResetCDNode";
 
 
         public NP_ActionNodeData data = new NP_ActionNodeData()
         {
-            NpClassForAction = new NP_ChangeBlackboardAction()
+            NpClassForAction = new NP_ResetCDAction()
         };
 
         public override Task CreateTask(NP_Tree owner_Tree)

@@ -38,7 +38,7 @@ namespace MDDSkillEngine
         {
             if (Game.Fsm.GetFsm<Player>(Id.ToString()).GetCurrStateName() != "AkiShunXiState")
             {
-                Game.Skill.GetSkillSystem(Id).GetSkill(10001).GetBlackboard().Set<VarBoolean>("input", true);
+                Game.Skill.GetSkillSystem(Id).UseSkill(10001);
 
                 if (SelectUtility.MouseRayCastByLayer(1 << 0 + 1 << 1, out RaycastHit hit))
                 {
@@ -92,7 +92,7 @@ namespace MDDSkillEngine
             Game.Fsm.CreateFsm<Player, AkiStateAttribute>(this);
             move = GetComponent<PlayerMovement>();
            
-            Game.Skill.CreateSkillSystem(this);
+            Game.Skill.CreateSkillSystem<Player>(this);
 
             Game.Skill.GetSkillSystem(Id).AddSkill(10001);
 
@@ -193,114 +193,7 @@ namespace MDDSkillEngine
                 Visible = !Visible;
             }
 
-            //if (Input.GetMouseButtonDown(1))
-            //{
-            //    isClickRight = true;
-            //}
-
-            //if (Input.GetMouseButtonDown(0))
-            //{
-            //    isClickLeft = true;
-            //}
-
-            //if (Input.GetKeyDown(KeyCode.X))
-            //{
-            //    isAttact = true;
-            //}
-
-            //if (Input.GetKeyDown(KeyCode.Q))
-            //{
-            //    isQ = true;
-            //}
-
-            //if (Input.GetKeyDown(KeyCode.W))
-            //{
-            //    isW = true;
-            //}
-
-            //if (Input.GetKeyDown(KeyCode.E))
-            //{
-            //    isE = true;
-            //}
-
-            //if (Input.GetKeyDown(KeyCode.R))
-            //{
-            //    isR = true;
-            //}
         }
-
-
-
-        private void LateUpdate()
-        {
-            if (isClickLeft)
-            {
-                RaycastHit hit;
-                if (Physics.Raycast(Game.Scene.MainCamera.ScreenPointToRay(Input.mousePosition), out hit, Mathf.Infinity, 1<<11))
-                {
-                    //Log.Error("hitPointSelet:{0}",hit.collider.gameObject.name);
-
-                    Entity e = hit.collider.gameObject.GetComponent<Entity>();
-                    if (e!=null)
-                    {
-                        //Log.Error("获取到entity{0}", e.name);
-                        Game.Select.InitSelectEntity(e);
-                    }
-                    //target.position = hit.point;
-
-                    //Game.Entity.ShowEffect(new EffectData(Game.Entity.GenerateSerialId(), 50000) { name = "ClickMove", Position = hit.point });
-                }
-                isClickLeft = false;
-            }
-
-            if (isClickRight)
-            {
-
-                if (SelectUtility.MouseRayCastByLayer(1 << 0 | 1 << 1, out RaycastHit vector3))
-                {
-                    Game.Select.pathFindingTarget.transform.position = vector3.point;
-                    move.SearchPath();
-                    Game.Entity.ShowEffect(new EffectData(Game.Entity.GenerateSerialId(), 70000) { Position = vector3.point });
-                }
-                                                             
-                isClickRight = false;
-            }
-
-            if (isAttact)
-            {
-                Game.Fsm.GetFsm<Player>(Id.ToString()).SetData<VarBoolean>("attack1",true);
-                //Game.Entity.ShowBullet(new BulletData(Game.Entity.GenerateSerialId(), 10, 10, CampType.Enemy, 10, 10)
-                //{                 
-                //    name = "Bullet",                    
-                  
-                //}) ;
-                //Game.HpBar.ShowHPBar(this,0.1f,0.8f);
-                isAttact = false;
-            }
-
-            if (isQ && Game.Fsm.GetFsm<Player>(Id.ToString()).GetCurrStateName() != "AkiShunXiState")
-            {
-                Game.Skill.GetSkillSystem(Id).GetSkill(10001).GetBlackboard().Set<VarBoolean>("input", true);
-
-                if (SelectUtility.MouseRayCastByLayer(1 << 0 + 1 << 1, out RaycastHit hit))
-                {
-                    Game.Select.currentClick = hit.point;
-                }
-
-                isQ = false;
-            }
-
-            if (isW)
-            {
-                //Game.Skill.GetSkillSystem(Id).GetSkill(10001).GetBlackboard().Set<VarBoolean>("input",true);
-
-                Game.Fsm.GetFsm<Player>(Id.ToString()).SetData<VarBoolean>("jianrenfengbao", true);
-
-                isW = false;
-            }
-        }
-
-
 
 
     }

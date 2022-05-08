@@ -6,13 +6,13 @@ using MDDGameFramework.Runtime;
 
 namespace MDDSkillEngine
 {
-    public class SkillSystem : ISkillSystem, IReference
+    public class SkillSystem <T> : ISkillSystem, IReference where T : Entity
     {
         private Dictionary<NameNamePair, Skill> skillDic;
 
-        private Entity m_Owner;
+        private T m_Owner;
 
-        public Entity Owner
+        public T Owner
         {
             get
             {
@@ -26,10 +26,10 @@ namespace MDDSkillEngine
         }
 
 
-        public static SkillSystem Create(Entity Owner)
+        public static SkillSystem<T> Create(Entity Owner)
         {
-            SkillSystem sys = ReferencePool.Acquire<SkillSystem>();
-            sys.m_Owner = Owner;
+            SkillSystem<T> sys = ReferencePool.Acquire<SkillSystem<T>>();
+            sys.m_Owner = Owner as T;
 
             return sys;
         }
@@ -41,7 +41,7 @@ namespace MDDSkillEngine
 
         public void AddSkill(int skillId)
         {
-            Skill skill = SkillFactory.AcquireSkill(skillId, m_Owner);
+            Skill skill = SkillFactory.AcquireSkill(skillId, m_Owner as Entity);
 
             if (skill == null)
             {
@@ -70,7 +70,8 @@ namespace MDDSkillEngine
 
         public void UseSkill(int id)
         {
-            GetSkill(id).GetBlackboard().Set<VarBoolean>("input", true);
+            IFsm<T> fsm = Game.Fsm.GetFsm<T>(m_Owner.Id.ToString());
+            fsm.SetData<VarBoolean>("shunxi", true);
         }
        
         public void RemoveSkill(string name)

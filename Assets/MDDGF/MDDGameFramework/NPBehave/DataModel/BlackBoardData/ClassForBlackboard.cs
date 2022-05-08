@@ -26,7 +26,7 @@ namespace MDDGameFramework
         [ReadOnly]
         public string NP_BBValueType;
 
-        [LabelText("是否可以把值写入黑板，或者是否与黑板进行值对比")]
+        [LabelText("写入或比较")]
         public bool WriteOrCompareToBB;
 
         [ShowIf("WriteOrCompareToBB")]

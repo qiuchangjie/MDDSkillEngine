@@ -128,7 +128,7 @@ namespace FairyGUI
                     return true;
             }
 
-            Cancel();
+            Stop();
             return false;
         }
 
@@ -190,7 +190,7 @@ namespace FairyGUI
             Timers.inst.StartCoroutine(Print(interval));
         }
 
-        public void Cancel()
+        public void Stop()
         {
             if (!_started)
                 return;
@@ -208,7 +208,7 @@ namespace FairyGUI
         {
             if (_textField.graphics.mesh.vertexCount != _backupVerts.Length) //可能文字都改了
             {
-                Cancel();
+                Stop();
                 return;
             }
 

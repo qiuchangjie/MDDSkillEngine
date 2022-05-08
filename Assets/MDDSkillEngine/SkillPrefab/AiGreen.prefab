@@ -183,6 +183,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4792578f693c06841a5b299345830d63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
   _startTime: 0
   _animationData:
     _animatedParameters:
@@ -338,12 +347,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 483d42241718b7547b50464f7294571f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
   _startTime: 0
   _animationData:
     _animatedParameters: []
   _length: 0.40000004
   EffectName: daoguang_green_1
   pat: {fileID: 0}
+  PlayableSpeed: 1
   localeftPostion: {x: 0.272, y: 1.302, z: 0.145}
   localRotation: {x: -0.99897295, y: -0, z: -0, w: 0.04531167}
   localScale: {x: 0.3, y: 0.3, z: 0.3}

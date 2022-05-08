@@ -105,7 +105,7 @@ namespace MDDGameFramework.Runtime
             {
                 if (child.IsActive)
                 {
-                    child.Stop();
+                    child.Cancel();
                 }
             }
         }
@@ -171,7 +171,7 @@ namespace MDDGameFramework.Runtime
                         {
                             if (currentChild.IsActive)
                             {
-                                currentChild.Stop();
+                                currentChild.Cancel();
                             }
                         }
                     }

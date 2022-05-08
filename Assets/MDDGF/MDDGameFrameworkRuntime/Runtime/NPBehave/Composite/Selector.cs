@@ -56,7 +56,7 @@ namespace MDDGameFramework.Runtime
 
         protected override void DoStop()
         {
-            Children[currentIndex].Stop();
+            Children[currentIndex].Cancel();
         }
 
         protected override void DoChildStopped(Node child, bool result)
@@ -114,7 +114,7 @@ namespace MDDGameFramework.Runtime
                     {
                         currentIndex = Children.Length;
                     }
-                    currentChild.Stop();
+                    currentChild.Cancel();
                     break;
                 }
             }

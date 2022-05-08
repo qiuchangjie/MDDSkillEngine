@@ -8,6 +8,13 @@ namespace MDDSkillEngine
     public class ProcedureLaunch : ProcedureBase
     {
 
+        protected override void OnInit(ProcedureOwner procedureOwner)
+        {
+            base.OnInit(procedureOwner);
+
+            Log.Error("11111111111111111111111111111111111111");
+        }
+        
         protected override void OnEnter(ProcedureOwner procedureOwner)
         {
             base.OnEnter(procedureOwner);

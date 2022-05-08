@@ -12,7 +12,7 @@ namespace MDDSkillEngine
     public class NP_LogAction : NP_ClassForAction
     {
         [LabelText("信息")]
-        public string LogInfo;
+        public string LogInfo="shunxishunxi";
 
         public override System.Action GetActionToBeDone()
         {

@@ -81,7 +81,7 @@ public class EmitComponent : GComponent
         EmitManager.inst.ReturnComponent(this);
     }
 
-    public void Cancel()
+    public void Stop()
     {
         _owner = null;
         if (this.parent != null)

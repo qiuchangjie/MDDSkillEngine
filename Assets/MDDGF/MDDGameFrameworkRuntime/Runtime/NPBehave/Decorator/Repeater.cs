@@ -38,7 +38,7 @@ namespace MDDGameFramework.Runtime
             
             if (Decoratee.IsActive)
             {
-                Decoratee.Stop();
+                Decoratee.Cancel();
             }
             else
             {

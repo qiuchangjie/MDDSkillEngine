@@ -7,18 +7,18 @@ namespace MDDSkillEngine
 {
     public class SkillComponent : MDDGameFrameworkComponent
     {
-        private Dictionary<int, SkillSystem> skillSystemDic;
+        private Dictionary<int, ISkillSystem> skillSystemDic;
 
         protected override void Awake()
         {
             base.Awake();
 
-            skillSystemDic = new Dictionary<int, SkillSystem>();
+            skillSystemDic = new Dictionary<int, ISkillSystem>();
         }
 
-        public ISkillSystem CreateSkillSystem(Entity Owner)
+        public ISkillSystem CreateSkillSystem<T>(Entity Owner) where T : Entity
         {
-            SkillSystem skillSystem = SkillSystem.Create(Owner);
+            SkillSystem<T> skillSystem = SkillSystem<T>.Create(Owner);
 
             skillSystemDic.Add(skillSystem.Owner.Id,skillSystem);
 
@@ -29,7 +29,7 @@ namespace MDDSkillEngine
 
         public ISkillSystem GetSkillSystem(int id)
         {
-            SkillSystem skillSystem;
+            ISkillSystem skillSystem;
 
             if (skillSystemDic.TryGetValue(id, out skillSystem))
             {

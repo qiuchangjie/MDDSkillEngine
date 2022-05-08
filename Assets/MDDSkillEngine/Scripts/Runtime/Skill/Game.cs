@@ -1,7 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using MDDGameFramework.Runtime;
 using UnityEngine;
-using MDDGameFramework.Runtime;
 
 namespace MDDSkillEngine
 {

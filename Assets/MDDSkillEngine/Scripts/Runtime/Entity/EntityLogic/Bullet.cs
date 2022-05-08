@@ -107,7 +107,7 @@ namespace MDDSkillEngine
 
           //  blackboard["isBoom"] = false;
 
-            behaveTree.Stop();
+            behaveTree.Cancel();
         }
 
         protected override void OnUpdate(float elapseSeconds, float realElapseSeconds)

@@ -11,7 +11,9 @@
         "MDDGameFrameworkEditor",
         "Werewolf.StatusIndicators.Components",
         "UnityEngine.InputSystem",
-        "Unity.InputSystem"
+        "Unity.InputSystem",
+        "OdinSerializer",
+        "Sirenix.OdinInspector"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

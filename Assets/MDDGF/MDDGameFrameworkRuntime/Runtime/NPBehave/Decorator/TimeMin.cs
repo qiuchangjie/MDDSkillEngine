@@ -51,7 +51,7 @@ namespace MDDGameFramework.Runtime
             {
                 Clock.RemoveTimer(TimeoutReached);
                 isLimitReached = true;
-                Decoratee.Stop();
+                Decoratee.Cancel();
             }
             else
             {

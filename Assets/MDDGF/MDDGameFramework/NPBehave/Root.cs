@@ -149,7 +149,7 @@ namespace MDDGameFramework
         {
             if (this.mainNode.IsActive)
             {
-                this.mainNode.Stop();
+                this.mainNode.Cancel();
             }
             else
             {

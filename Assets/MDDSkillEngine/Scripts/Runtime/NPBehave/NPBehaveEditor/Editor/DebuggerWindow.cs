@@ -355,7 +355,7 @@
     //                {
     //                    if (GUILayout.Button("stop", EditorStyles.miniButton))
     //                    {
-    //                        node.Stop();
+    //                        node.Cancel();
     //                    }
     //                }
     //                else if (node is Root)

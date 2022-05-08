@@ -154,7 +154,7 @@ In case your Monster gets killed or you just destroy your GameObject, you should
     {
         if ( behaviorTree != null && behaviorTree.CurrentState == Node.State.ACTIVE )
         {
-            behaviorTree.Stop();
+            behaviorTree.Cancel();
         }
     }
     // ...
@@ -179,7 +179,7 @@ Please refer to the existing node implementations to find out how to create cust
 
 ### The golden rules
 
-1. **Every call to `DoStop()` must result in a call to `Stopped(result)`**. This is extremely important!: you really need to ensure that Stopped() is called within DoStop(), because NPBehave needs to be able to cancel a running branch at every time *immediately*. This also means that all your child nodes will also call Stopped(), which in turn makes it really easy to write reliable decorators or even composite nodes: Within DoStop() you just call `Stop()` on your active children, they in turn will call of `ChildStopped()` on your node where you then finally put in your Stopped() call. Please have a look at the existing implementations for reference.
+1. **Every call to `DoStop()` must result in a call to `Stopped(result)`**. This is extremely important!: you really need to ensure that Stopped() is called within DoStop(), because NPBehave needs to be able to cancel a running branch at every time *immediately*. This also means that all your child nodes will also call Stopped(), which in turn makes it really easy to write reliable decorators or even composite nodes: Within DoStop() you just call `Cancel()` on your active children, they in turn will call of `ChildStopped()` on your node where you then finally put in your Stopped() call. Please have a look at the existing implementations for reference.
 2. **Stopped() is the last call you do**, never do modify any state or call anything after calling Stopped. This is because Stopped will immediately continue traversal of the tree on other nodes, which will completley fuckup the state of the behavior tree if you don't take that into account.
 3. **Every registered clock or blackboard observer needs to be removed eventually**. Most of the time you unregister your callbacks immediately before you call Stopped(), however there may be exceptions, e.g. the BlackboardCondition keeps observers around up until the parent composite is stopped, it needs to be able to react on blackboard value changes even when the node itself is not active.
 
@@ -198,7 +198,7 @@ All you have to do is to extend from it `ObservingDecorator` and override the me
 ### Implementing Generic Decorators
 For generic decorators you extend from the `Decorator` class and override the `DoStart()`, `DoStop()` and the `DoChildStopped(Node child, bool result)` methods. 
 
-You can start or stop your decorated node by accessing the `Decoratee` property and call `Start()` or `Stop()` on it.
+You can start or stop your decorated node by accessing the `Decoratee` property and call `Start()` or `Cancel()` on it.
 
 If your decorator receives a `DoStop()` call, it's responsible to stop the `Decoratee` accordingly and in this case will not call `Stopped(bool result)` immediately. Instead it will do that in the `DoChildStopped(Node child, bool result)` method. Be aware that the `DoChildStopped(Node child, bool result)` doesn't necessarily mean that your decorator stopped the decoratee, the decoratee may also stop itself, in which case you don't need to immediately stop the Decoratee (that may be useful if you want to implement things like cooldowns etc). To find out whether your decorator got stopped, you can query it's `IsStopRequested` property.
 

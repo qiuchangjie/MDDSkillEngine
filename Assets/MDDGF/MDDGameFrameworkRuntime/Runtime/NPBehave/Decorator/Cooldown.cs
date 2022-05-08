@@ -96,7 +96,7 @@ namespace MDDGameFramework.Runtime
         public static Cooldown Create(float cooldownTime, Node decoratee)
         {
             Cooldown cooldown = ReferencePool.Acquire<Cooldown>();
-            cooldown.startAfterDecoratee = false;
+            cooldown.startAfterDecoratee = true;
             cooldown.cooldownTime = cooldownTime;
             cooldown.resetOnFailiure = false;
             cooldown.randomVariation = 0;
@@ -141,7 +141,7 @@ namespace MDDGameFramework.Runtime
             {
                 isReady = true;
                 Clock.RemoveTimer(cacheAction);
-                Decoratee.Stop();
+                Decoratee.Cancel();
             }
             else
             {

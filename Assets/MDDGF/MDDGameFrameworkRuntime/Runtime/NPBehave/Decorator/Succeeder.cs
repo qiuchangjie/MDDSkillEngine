@@ -16,7 +16,7 @@ namespace MDDGameFramework.Runtime
 
         override protected void DoStop()
         {
-            Decoratee.Stop();
+            Decoratee.Cancel();
         }
 
         protected override void DoChildStopped(Node child, bool result)

@@ -55,7 +55,7 @@ namespace MDDSkillEngine
                 case EventType.KeyDown:
                     if (e.keyCode == (KeyCode)113)
                     {
-                        Debug.LogError("触发排序");
+                        Debug.LogError("保存行为树数据");
                         Sort();
                         EditorUtility.SetDirty(graph);
                         AssetDatabase.SaveAssets();

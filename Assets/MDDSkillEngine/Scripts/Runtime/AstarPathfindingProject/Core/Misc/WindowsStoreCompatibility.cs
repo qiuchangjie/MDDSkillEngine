@@ -109,7 +109,7 @@ namespace Pathfinding.WindowsStore {
 		//
 		public void Abort () {
 			if (this._taskCancellationTokenSource != null) {
-				this._taskCancellationTokenSource.Cancel();
+				this._taskCancellationTokenSource.Stop();
 			}
 		}
 

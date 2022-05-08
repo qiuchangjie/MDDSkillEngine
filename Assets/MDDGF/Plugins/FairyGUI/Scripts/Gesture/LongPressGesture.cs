@@ -104,7 +104,7 @@ namespace FairyGUI
             }
         }
 
-        public void Cancel()
+        public void Stop()
         {
             Timers.inst.Remove(__timer);
             _started = false;

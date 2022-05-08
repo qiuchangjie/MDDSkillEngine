@@ -84,7 +84,7 @@ namespace FairyGUI
         /// Cancel dragging.
         /// 取消拖动。
         /// </summary>
-        public void Cancel()
+        public void Stop()
         {
             if (_agent.parent != null)
             {

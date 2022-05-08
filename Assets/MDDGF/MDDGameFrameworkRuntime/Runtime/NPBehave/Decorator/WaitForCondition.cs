@@ -54,7 +54,7 @@ namespace MDDGameFramework.Runtime
             Clock.RemoveTimer(checkCondition);
             if (Decoratee.IsActive)
             {
-                Decoratee.Stop();
+                Decoratee.Cancel();
             }
             else
             {

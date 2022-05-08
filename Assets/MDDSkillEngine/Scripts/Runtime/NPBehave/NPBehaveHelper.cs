@@ -22,6 +22,9 @@ namespace MDDSkillEngine
             m_GraphDic = new Dictionary<string, NPBehaveGraph>();
         }
 
+        /// <summary>
+        /// 加载行为树文件方法
+        /// </summary>
         public void PreLoad()
         {
             IDataTable<DRSkill> dtSkill = Game.DataTable.GetDataTable<DRSkill>();
@@ -56,7 +59,7 @@ namespace MDDSkillEngine
                 switch (data.nodeType)
                 {
                     case NodeType.Task:
-                        data.NP_GetNodeData().CreateTask(null, skill);
+                        data.NP_GetNodeData().CreateTask(userData, skill);
                         break;
                     case NodeType.Decorator:
                         Node node = null;
@@ -65,7 +68,7 @@ namespace MDDSkillEngine
                             node = (v1.Connection.node as NP_NodeBase).NP_GetNodeData().NP_GetNode();
                         }
 
-                        data.NP_GetNodeData().CreateDecoratorNode(null, skill, node);
+                        data.NP_GetNodeData().CreateDecoratorNode(userData, skill, node);
 
                         break;
                     case NodeType.Composite:
@@ -77,6 +80,7 @@ namespace MDDSkillEngine
                                 nodes.Add((v2.node as NP_NodeBase).NP_GetNodeData().NP_GetNode());
                             }
                         }
+                        //toarray是暴力copy所以这里需要优化
                         data.NP_GetNodeData().CreateComposite(nodes.ToArray());
                         break;
                 }

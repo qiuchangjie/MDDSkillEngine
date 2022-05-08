@@ -124,7 +124,7 @@ namespace MDDGameFramework
 
         public void Start()
         {
-            // Assert.AreEqual(this.currentState, State.INACTIVE, "can only start inactive nodes, tried to start: " + this.Name + "! PATH: " + GetPath());
+            //Assert.AreEqual(this.currentState, State.INACTIVE, "can only start inactive nodes, tried to start: " + this.Name + "! PATH: " + GetPath());
             //Assert.AreEqual(this.currentState, State.INACTIVE, "can only start inactive nodes");
 
 #if UNITY_EDITOR
@@ -137,11 +137,12 @@ namespace MDDGameFramework
 
         /// <summary>
         /// TODO: Rename to "Cancel" in next API-Incompatible version
+        /// 
         /// </summary>
-        public void Stop()
+        public void Cancel()
         {
-            // Assert.AreEqual(this.currentState, State.ACTIVE, "can only stop active nodes, tried to stop " + this.Name + "! PATH: " + GetPath());
-            //Assert.AreEqual(this.currentState, State.ACTIVE, "can only stop active nodes, tried to stop");
+            Assert.AreEqual(this.currentState, State.ACTIVE, "can only stop active nodes, tried to stop " + this.Name + "! PATH: " + GetPath());
+            Assert.AreEqual(this.currentState, State.ACTIVE, "can only stop active nodes, tried to stop");
             this.currentState = State.STOP_REQUESTED;
 #if UNITY_EDITOR
             RootNode.TotalNumStopCalls++;
@@ -164,6 +165,9 @@ namespace MDDGameFramework
 
         /// THIS ABSOLUTLY HAS TO BE THE LAST CALL IN YOUR FUNCTION, NEVER MODIFY
         /// ANY STATE AFTER CALLING Stopped !!!!
+        /// 
+        ///节点的一个生命周期为单位的停止工作 类似于OnExit()
+        ///并返回一个节点的执行结果 是执行成功还是失败
         protected virtual void Stopped(bool success)
         {
             // Assert.AreNotEqual(this.currentState, State.INACTIVE, "The Node " + this + " called 'Stopped' while in state INACTIVE, something is wrong! PATH: " + GetPath());

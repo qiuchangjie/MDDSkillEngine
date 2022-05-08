@@ -4,10 +4,10 @@ using MDDGameFramework.Runtime;
 
 namespace MDDSkillEngine
 {
-    [Title("打印信息", TitleAlignment = TitleAlignments.Centered)]
+    [Title("修改或比对黑板值", TitleAlignment = TitleAlignments.Centered)]
     public class NP_ChangeBlackboardAction : NP_ClassForAction
     {
-        [LabelText("信息")]
+        [LabelText("输入要改变的黑板值")]
         public ClassForBlackboard data = new ClassForBlackboard();
 
         public override System.Action GetActionToBeDone()
