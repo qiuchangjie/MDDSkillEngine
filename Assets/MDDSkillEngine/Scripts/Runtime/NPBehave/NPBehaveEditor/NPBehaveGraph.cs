@@ -20,6 +20,10 @@ namespace MDDSkillEngine
         [DictionaryDrawerSettings(KeyLabel = "键(string)", ValueLabel = "值(Variable)")]      
         public Dictionary<string,Variable> BBValues = new Dictionary<string, Variable>();
 
+        /// <summary>
+        /// 引用的公共黑板资源
+        /// </summary>
+        public SerializedScriptableObject PublicBB;
 
         public XNode.Node GetRootNode()
         {

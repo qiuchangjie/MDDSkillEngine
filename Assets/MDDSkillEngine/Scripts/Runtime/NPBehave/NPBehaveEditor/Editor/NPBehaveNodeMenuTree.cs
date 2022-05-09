@@ -22,7 +22,7 @@ namespace MDDSkillEngine
 
         NPBehaveGraph ins;
 
-        [InfoBox("这是这个NPBehaveGraph的所有黑板数据\n键为string，值为Variable子类\n如果要添加新的黑板数据类型，请参照Variable文件夹下的定义")]
+        [InfoBox("这是这个Skill级的所有黑板数据\n键为string，值为Variable子类\n如果要添加新的黑板数据类型，请参照Variable文件夹下的定义")]
         [Title("黑板数据", TitleAlignment = TitleAlignments.Centered)]
         [LabelText("黑板内容")]
         [TabGroup("黑板数据")]
@@ -30,10 +30,24 @@ namespace MDDSkillEngine
         [OdinSerialize]
         public Dictionary<string, Variable> BBValues = new Dictionary<string, Variable>();
 
+        [InfoBox("角色级公共黑板数据，如果为空则认为没有关联该技能没有关联公共黑板")]
+        [Title("黑板数据", TitleAlignment = TitleAlignments.Centered)]
+        [LabelText("黑板内容")]
+        [BoxGroup]
+        [DictionaryDrawerSettings(KeyLabel = "键(string)", ValueLabel = "值(Variable)")]
+        public Dictionary<string, Variable> PublicBBValues = new Dictionary<string, Variable>();
+
         public void setins(NPBehaveGraph ins)
         {
             this.ins = ins;
             BBValues = ins.BBValues;
+            
+            //看是否有卡尔公共黑板关联
+            KaelBlackboard kaelBlackboard = ins.PublicBB as KaelBlackboard;
+            if (kaelBlackboard != null)
+            {
+                PublicBBValues = kaelBlackboard.BBValues;
+            }
         }
 
         public static NPBehaveNodeMenuTree OpenWindow()

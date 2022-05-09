@@ -348,7 +348,7 @@ MonoBehaviour:
         node: {fileID: -7800692944958138104}
         reroutePoints: []
       - fieldName: input
-        node: {fileID: 889948689715025442}
+        node: {fileID: 3633704860218567011}
         reroutePoints: []
       - fieldName: input
         node: {fileID: -8970143797825262291}
@@ -585,7 +585,7 @@ MonoBehaviour:
       Data: 0|MDDSkillEngine.NP_BlackBoardConditionNodeData, MDDSkillEngine
     - Name: Ope
       Entry: 3
-      Data: 3
+      Data: 4
     - Name: Stop
       Entry: 3
       Data: 4
@@ -744,7 +744,7 @@ MonoBehaviour:
       Entry: 8
       Data: 
   graph: {fileID: 11400000}
-  position: {x: -1592, y: -8}
+  position: {x: -1560, y: -24}
   ports:
     keys:
     - input
@@ -823,7 +823,7 @@ MonoBehaviour:
       Entry: 8
       Data: 
   graph: {fileID: 11400000}
-  position: {x: -1384, y: -344}
+  position: {x: -1384, y: -440}
   ports:
     keys:
     - input
@@ -973,7 +973,7 @@ MonoBehaviour:
       Data: 
   nodes:
   - {fileID: -8970143797825262291}
-  - {fileID: 889948689715025442}
+  - {fileID: 3633704860218567011}
   - {fileID: -7800692944958138104}
   - {fileID: 3850027637246563509}
   - {fileID: -6290168704789421218}
@@ -987,122 +987,7 @@ MonoBehaviour:
   - {fileID: -4124545621436819710}
   - {fileID: -7039302347661189890}
   - {fileID: -8012929573533312983}
---- !u!114 &889948689715025442
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db374073934dc2f4194082445e6927b0, type: 3}
-  m_Name: NP_Use Skill
-  m_EditorClassIdentifier: 
-  serializationData:
-    SerializedFormat: 2
-    SerializedBytes: 
-    ReferencedUnityObjects:
-    - {fileID: 0}
-    SerializedBytesString: 
-    Prefab: {fileID: 0}
-    PrefabModificationsReferencedUnityObjects: []
-    PrefabModifications: []
-    SerializationNodes:
-    - Name: data
-      Entry: 7
-      Data: 0|MDDSkillEngine.NP_ActionNodeData, MDDSkillEngine
-    - Name: NpClassForAction
-      Entry: 7
-      Data: 1|MDDSkillEngine.NP_UseSkillAction, MDDSkillEngine
-    - Name: owner
-      Entry: 10
-      Data: 0
-    - Name: BelongtoRuntimeTree
-      Entry: 7
-      Data: 2|MDDGameFramework.Runtime.Skill, MDDGameFrameworkRuntime
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: Action
-      Entry: 7
-      Data: 3|System.Action, mscorlib
-    - Name: target
-      Entry: 9
-      Data: 1
-    - Name: declaringType
-      Entry: 7
-      Data: 4|System.RuntimeType, mscorlib
-    - Name: 
-      Entry: 1
-      Data: MDDSkillEngine.NP_UseSkillAction, MDDSkillEngine
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: methodName
-      Entry: 1
-      Data: UseSkill
-    - Name: delegateType
-      Entry: 7
-      Data: 5|System.RuntimeType, mscorlib
-    - Name: 
-      Entry: 1
-      Data: System.Action, mscorlib
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: signature
-      Entry: 7
-      Data: 6|System.Type[], mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: Func1
-      Entry: 6
-      Data: 
-    - Name: Func2
-      Entry: 6
-      Data: 
-    - Name: SkillID
-      Entry: 3
-      Data: 10001
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-  graph: {fileID: 11400000}
-  position: {x: -904, y: -520}
-  ports:
-    keys:
-    - input
-    values:
-    - _fieldName: input
-      _node: {fileID: 889948689715025442}
-      _typeQualifiedName: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
-        PublicKeyToken=b77a5c561934e089
-      connections:
-      - fieldName: output
-        node: {fileID: -7537057993310048369}
-        reroutePoints: []
-      _direction: 0
-      _connectionType: 1
-      _typeConstraint: 0
-      _dynamic: 0
-  Id: 2
-  nodeType: 2
-  des: 
-  input: 0
+  PublicBB: {fileID: 11400000, guid: b64ccd45c215fa548ab6217938ea8f3a, type: 2}
 --- !u!114 &3536438989022731794
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1163,6 +1048,79 @@ MonoBehaviour:
   des: 
   input: 0
   output: 0
+--- !u!114 &3633704860218567011
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: NP_Add Buff Action
+  m_EditorClassIdentifier: MDDSkillEngine:MDDSkillEngine:NP_AddBuffActionNode
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: data
+      Entry: 7
+      Data: 0|MDDSkillEngine.NP_ActionNodeData, MDDSkillEngine
+    - Name: NpClassForAction
+      Entry: 7
+      Data: 1|MDDSkillEngine.NP_AddBuffAction, MDDSkillEngine
+    - Name: owner
+      Entry: 6
+      Data: 
+    - Name: BelongtoRuntimeTree
+      Entry: 6
+      Data: 
+    - Name: Action
+      Entry: 6
+      Data: 
+    - Name: Func1
+      Entry: 6
+      Data: 
+    - Name: Func2
+      Entry: 6
+      Data: 
+    - Name: BuffName
+      Entry: 1
+      Data: Dubao
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+  graph: {fileID: 11400000}
+  position: {x: -888, y: -504}
+  ports:
+    keys:
+    - input
+    values:
+    - _fieldName: input
+      _node: {fileID: 3633704860218567011}
+      _typeQualifiedName: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: output
+        node: {fileID: -7537057993310048369}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+  Id: 2
+  nodeType: 2
+  des: 
+  input: 0
 --- !u!114 &3850027637246563509
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1391,7 +1349,7 @@ MonoBehaviour:
       Entry: 8
       Data: 
   graph: {fileID: 11400000}
-  position: {x: -1592, y: 248}
+  position: {x: -1560, y: 184}
   ports:
     keys:
     - input
@@ -1434,7 +1392,7 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   graph: {fileID: 11400000}
-  position: {x: -1800, y: 88}
+  position: {x: -1800, y: 104}
   ports:
     keys:
     - input

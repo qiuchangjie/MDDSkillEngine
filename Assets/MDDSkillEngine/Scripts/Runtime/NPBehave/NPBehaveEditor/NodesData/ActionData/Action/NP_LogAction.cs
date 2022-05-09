@@ -22,8 +22,6 @@ namespace MDDSkillEngine
 
         public void TestLog()
         {
-            Game.Fsm.GetFsm<Player>(BelongtoRuntimeTree.Root.Owner.Id.ToString()).SetData<VarBoolean>("shunxi", true);
-
             Log.Info(LogInfo);
         }
     }

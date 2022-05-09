@@ -16,14 +16,14 @@ namespace MDDSkillEngine
 
         public override System.Action GetActionToBeDone()
         {
-            this.Action = this.UseSkill;
+            this.Action = this.ReleaseSkill;
             return this.Action;
         }
 
-        public void UseSkill()
+        public void ReleaseSkill()
         {
             Debug.LogError($"使用技能:{SkillID}");
-            Game.Skill.GetSkillSystem(((Entity)owner).Id).UseSkill(SkillID);
+            Game.Skill.GetSkillSystem(((Entity)owner).Id).ReleaseSkill(SkillID);
         }
     }
 }

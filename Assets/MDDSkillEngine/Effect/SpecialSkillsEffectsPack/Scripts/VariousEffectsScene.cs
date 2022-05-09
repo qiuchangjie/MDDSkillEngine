@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 public class VariousEffectsScene : MonoBehaviour {
@@ -36,7 +37,7 @@ public class VariousEffectsScene : MonoBehaviour {
 
     void InputKey()
     {
-        if (Input.GetKeyDown(KeyCode.Z))
+        if (Keyboard.current.zKey.wasPressedThisFrame)
         {
             if (index <= 0)
                 index = m_effects.Length - 1;
@@ -46,7 +47,7 @@ public class VariousEffectsScene : MonoBehaviour {
             MakeObject();
         }
 
-        if (Input.GetKeyDown(KeyCode.X))
+        if (Keyboard.current.xKey.wasPressedThisFrame)
         {
             if (index >= m_effects.Length-1)
                 index = 0;
@@ -56,7 +57,7 @@ public class VariousEffectsScene : MonoBehaviour {
             MakeObject();
         }
 
-        if (Input.GetKeyDown(KeyCode.C))
+        if (Keyboard.current.cKey.wasPressedThisFrame)
             MakeObject();
     }
 

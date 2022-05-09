@@ -20,12 +20,10 @@ namespace MDDSkillEngine
 
         public void ProcessCD()
         {
-           float cd = BelongtoRuntimeTree.GetBlackboard().Get<VarFloat>("cd");
-           cd -= Time.deltaTime;
-           VarFloat var = ReferencePool.Acquire<VarFloat>();
-           var.Value = cd;
-           Debug.LogError($"cddlet:{cd}");
-           BelongtoRuntimeTree.GetBlackboard().Set("cd", var);
+           Variable cd = BelongtoRuntimeTree.GetBlackboard().Get("cd");
+           VarFloat varFloat = cd as VarFloat;
+           varFloat.Value -= Time.deltaTime;       
+           //Debug.LogError($"cddlet:{cd}");
         }
     }
 }

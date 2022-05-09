@@ -6,9 +6,11 @@ using MDDGameFramework.Runtime;
 
 namespace MDDSkillEngine
 {
-    public class SkillSystem <T> : ISkillSystem, IReference where T : Entity
+    public class SkillSystem<T> : ISkillSystem, IReference where T : Entity
     {
         private Dictionary<NameNamePair, Skill> skillDic;
+
+        private Blackboard PublicBlackboard;
 
         private T m_Owner;
 
@@ -34,10 +36,6 @@ namespace MDDSkillEngine
             return sys;
         }
 
-        public void AddSkill(string name)
-        {
-            //SkillFactory.AcquireSkill();
-        }
 
         public void AddSkill(int skillId)
         {
@@ -59,9 +57,9 @@ namespace MDDSkillEngine
         public Skill GetSkill(int id)
         {
             Skill skill;
-            if (!skillDic.TryGetValue(new NameNamePair(id.ToString(),m_Owner.Id.ToString()), out skill))
+            if (!skillDic.TryGetValue(new NameNamePair(id.ToString(), m_Owner.Id.ToString()), out skill))
             {
-                Log.Error("尝试获取没有装配的技能id：{0}",id);
+                Log.Error("尝试获取没有装配的技能id：{0}", id);
                 return null;
             }
 
@@ -70,23 +68,36 @@ namespace MDDSkillEngine
 
         public void UseSkill(int id)
         {
-            IFsm<T> fsm = Game.Fsm.GetFsm<T>(m_Owner.Id.ToString());
-            fsm.SetData<VarBoolean>("shunxi", true);
-        }
-       
-        public void RemoveSkill(string name)
-        {
-            
+            Skill skill;
+            if (!skillDic.TryGetValue(new NameNamePair(id.ToString(), m_Owner.Id.ToString()), out skill))
+            {
+                Log.Error("尝试获取没有装配的技能id：{0}", id);
+            }
+            skill.Blackboard.Set<VarBoolean>("input", true);
         }
 
-        public void UpgradeSkill(string name)
+        public void ReleaseSkill(int id)
         {
-            
+            IFsm<T> fsm = Game.Fsm.GetFsm<T>(m_Owner.Id.ToString());
+            //这里需要做成通通过id索引到对应的技能关联状态名称 
+            fsm.SetData<VarBoolean>("shunxi", true);
+        }
+
+        public virtual void RemoveSkill(string name)
+        {
+
+        }
+
+        public virtual bool UpgradeSkill(int id)
+        {
+            return false;
         }
 
         public void Clear()
         {
 
         }
+
+
     }
 }

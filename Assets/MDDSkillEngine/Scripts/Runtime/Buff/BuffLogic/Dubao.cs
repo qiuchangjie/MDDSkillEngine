@@ -21,7 +21,7 @@ namespace MDDSkillEngine
             return false;
         }
 
-        public override void OnInit(IBuffSystem buffSystem, object target, object from, BuffDatabase buffDatabase = null)
+        public override void OnInit(IBuffSystem buffSystem, object target, object from, BuffDatabase buffDatabase = null, object userData = null)
         {
             drCondition = dRCondition;
 
@@ -34,17 +34,17 @@ namespace MDDSkillEngine
             data.Init(drBuff);
 
             base.OnInit(buffSystem, target, from, data);
-           
+
         }
 
         public override void OnExecute(IBuffSystem buffSystem)
         {
-            Log.Error("dubao!!!!");
+            Log.Error("{0}dubao!!!!",LogConst.Buff);
         }
 
         public override void OnUpdate(IBuffSystem buffSystem, float elapseSeconds, float realElapseSeconds)
         {
-            base.OnUpdate(buffSystem, elapseSeconds, realElapseSeconds);            
+            base.OnUpdate(buffSystem, elapseSeconds, realElapseSeconds);
         }
 
 
@@ -61,13 +61,13 @@ namespace MDDSkillEngine
             Game.Entity.ShowEffect(new EffectData(Game.Entity.GenerateSerialId(), 70004)
             {
                 Position = entity.CachedTransform.position,
-                Rotation = entity.CachedTransform.rotation              
+                Rotation = entity.CachedTransform.rotation
             });
 
             entity.ApplyDamage((Entity)From, data.Damage);
         }
 
-        
+
     }
 }
 

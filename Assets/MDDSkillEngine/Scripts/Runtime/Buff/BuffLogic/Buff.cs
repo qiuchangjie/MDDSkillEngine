@@ -9,12 +9,10 @@ namespace MDDSkillEngine
     {
         Entity entity;
 
-        public override void OnInit(IBuffSystem buffSystem,object target,object from, BuffDatabase buffDatabase = null)
+        public override void OnInit(IBuffSystem buffSystem,object target,object from, BuffDatabase buffDatabase = null,object userData = null)
         {
             Target = target;
             From = from;
-
-
         }
 
         public override void OnExecute(IBuffSystem buffSytem)

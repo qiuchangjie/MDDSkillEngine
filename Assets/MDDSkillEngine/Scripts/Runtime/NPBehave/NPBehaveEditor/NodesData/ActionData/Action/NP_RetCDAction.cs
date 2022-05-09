@@ -22,9 +22,9 @@ namespace MDDSkillEngine
         {
             Blackboard blackboard = BelongtoRuntimeTree.GetBlackboard();
 
-            Debug.LogError($"cdtime:{blackboard.Get<VarFloat>("cdtime").Value}");
+            Debug.LogError($"cdtime:{((blackboard.Get("cdtime")) as VarFloat).Value}");
 
-            blackboard.Set<VarFloat>("cd",blackboard.Get<VarFloat>("cdtime").Value);
+            blackboard.Set("cd", blackboard.Get("cdtime").VDeepCopy());
         }
     }
 }

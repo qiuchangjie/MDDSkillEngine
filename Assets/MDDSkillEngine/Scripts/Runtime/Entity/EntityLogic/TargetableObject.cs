@@ -67,7 +67,7 @@ namespace MDDSkillEngine
         {
             Log.Error("ai死亡！！！！！！！！");
 
-            Game.Fsm.GetFsm<Enemy>(Id.ToString()).SetData<VarBoolean>("died", true);
+            //Game.Fsm.GetFsm<Enemy>(Id.ToString()).SetData<VarBoolean>("died", true);
         }
 
         private void OnTriggerEnter(Collider other)

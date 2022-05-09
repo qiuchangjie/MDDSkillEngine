@@ -29,7 +29,7 @@ namespace MDDGameFramework
             protected set { m_From = value; }
         }
 
-        public virtual void OnInit(IBuffSystem buffSystem, object Target, object From, BuffDatabase buffDatabase = null)
+        public virtual void OnInit(IBuffSystem buffSystem, object Target, object From, BuffDatabase buffDatabase = null , object userData = null)
         {
             m_Target = Target;
             m_From = From;
