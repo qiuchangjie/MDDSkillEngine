@@ -40,7 +40,7 @@ namespace MDDSkillEngine
         }
 
 
-        public NP_Tree CreatBehaviourTree(string Name, object userData)
+        public NP_Tree CreatBehaviourTree(string Name, object userData,NPType nPType = NPType.skill)
         {
             NPBehaveGraph nP;
             if (!m_GraphDic.TryGetValue(AssetUtility.GetSkillAsset(Name), out nP))
@@ -83,16 +83,24 @@ namespace MDDSkillEngine
                         //toarray是暴力copy所以这里需要优化
                         data.NP_GetNodeData().CreateComposite(nodes.ToArray());
                         break;
-                }
-
-             
-                
+                }                           
             }
 
+         
             root = (nP.GetRootNode() as NP_NodeBase).NP_GetNodeData().NP_GetNode() as Root;
             root.SetRoot(root);
-            root.SetBlackBoard(Blackboard.Create(nP.BBValues, root.Clock));
-
+            //暂时只有kaer公共黑板，暂时这么写
+            KaelBlackboard kaelBlackboard = nP.PublicBB as KaelBlackboard;
+            if (kaelBlackboard != null)
+            {
+                root.SetBlackBoard(Blackboard.Create(nP.BBValues, Blackboard.Create(kaelBlackboard.BBValues, root.Clock), root.Clock));
+            }
+            else
+            {
+                root.SetBlackBoard(Blackboard.Create(nP.BBValues, root.Clock));
+            }
+           
+            
 
             Entity owner = userData as Entity;
             if (owner == null)
@@ -123,6 +131,8 @@ namespace MDDSkillEngine
             m_GraphDic.Add(entityAssetName, np);
         }
     }
+
+   
 
 }
 

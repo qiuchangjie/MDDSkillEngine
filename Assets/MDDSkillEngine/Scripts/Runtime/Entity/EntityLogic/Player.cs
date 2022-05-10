@@ -49,12 +49,14 @@ namespace MDDSkillEngine
 
         public void UseSkill_2(CallbackContext ctx)
         {
-            Game.Fsm.GetFsm<Player>(Id.ToString()).SetData<VarBoolean>("jianrenfengbao", true);
+            //Game.Fsm.GetFsm<Player>(Id.ToString()).SetData<VarBoolean>("jianrenfengbao", true);
+            Game.Skill.GetSkillSystem(Id).UseSkill(10004);
         }
 
         public void UseSkill_3(CallbackContext ctx)
         {
-            Game.Fsm.GetFsm<Player>(Id.ToString()).SetData<VarBoolean>("skilldatatest", true);
+            //Game.Fsm.GetFsm<Player>(Id.ToString()).SetData<VarBoolean>("skilldatatest", true);
+            Game.Skill.GetSkillSystem(Id).UseSkill(10005);
         }
 
         public void OnClickLeft(CallbackContext ctx)
@@ -95,6 +97,9 @@ namespace MDDSkillEngine
             Game.Skill.CreateSkillSystem<Player>(this);
 
             Game.Skill.GetSkillSystem(Id).AddSkill(10001);
+            Game.Skill.GetSkillSystem(Id).AddSkill(10004);
+            Game.Skill.GetSkillSystem(Id).AddSkill(10005);
+            Game.Skill.GetSkillSystem(Id).AddSkill(10006);
 
 
             PlayerData = userData as PlayerData;

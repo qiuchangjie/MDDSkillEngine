@@ -37,7 +37,7 @@ namespace MDDSkillEngine
 
         public override void OnExecute(IBuffSystem buffSystem)
         {
-            Log.Error("{0}卡尔冰", LogConst.Buff);
+            Log.Error("{0}卡尔火", LogConst.Buff);
         }
 
         public override void OnUpdate(IBuffSystem buffSystem, float elapseSeconds, float realElapseSeconds)

@@ -113,13 +113,18 @@ namespace MDDSkillEngine
                     isNum = !isNum;
                 }
 
-                for (int j = 0; j < numList.Count; j++)
+                if (idList.Count != 0)
                 {
-                    for (int k = 0; k < numList[j]; k++)
+                    for (int j = 0; j < numList.Count; j++)
                     {
-                        PreInitEffect(idList[j]);
+                        for (int k = 0; k < numList[j]; k++)
+                        {
+                            PreInitEffect(idList[j]);
+                        }
                     }
                 }
+
+                
             }
           
             await Task.Delay(3000);

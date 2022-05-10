@@ -47,7 +47,7 @@ namespace MDDSkillEngine
             }
             else
             {
-                Log.Info("添加技能成功：{0}", skillId);
+                Log.Info("{1}添加技能成功：{0}", skillId,LogConst.Skill);
             }
 
             skill.Start();
@@ -59,7 +59,7 @@ namespace MDDSkillEngine
             Skill skill;
             if (!skillDic.TryGetValue(new NameNamePair(id.ToString(), m_Owner.Id.ToString()), out skill))
             {
-                Log.Error("尝试获取没有装配的技能id：{0}", id);
+                Log.Error("{1}尝试获取没有装配的技能id：{0}", id,LogConst.Skill);
                 return null;
             }
 

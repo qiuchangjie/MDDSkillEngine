@@ -15,6 +15,13 @@ namespace MDDGameFramework
 
         NP_Tree CreatBehaviourTree(string Name,object userData);
     }
+
+    public enum NPType
+    {
+        skill,
+        ai,
+
+    }
 }
 
 

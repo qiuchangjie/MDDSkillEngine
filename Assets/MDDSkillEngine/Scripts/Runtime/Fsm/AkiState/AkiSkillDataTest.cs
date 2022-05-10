@@ -80,7 +80,7 @@ namespace MDDSkillEngine
         {
             base.OnInit(fsm);
 
-            string savePath = Application.dataPath + "/MDDSkillEngine/SkillData/";
+            string savePath = Application.dataPath + "/MDDSkillEngine/SkillRes/";
             byte[] bytes1 = File.ReadAllBytes(savePath + "name.bytes");
 
             skillData = SerializationUtility.DeserializeValue<SkillData>(bytes1, DataFormat.Binary);

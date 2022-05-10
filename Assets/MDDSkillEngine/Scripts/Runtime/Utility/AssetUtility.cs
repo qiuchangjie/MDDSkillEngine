@@ -32,10 +32,26 @@ namespace MDDSkillEngine
             return Utility.Text.Format("Assets/GameMain/Fonts/{0}.ttf", assetName);
         }
 
+        /// <summary>
+        /// 获取技能资源
+        /// </summary>
+        /// <param name="assetName"></param>
+        /// <returns></returns>
         public static string GetSkillAsset(string assetName)
         {
             return Utility.Text.Format("Assets/MDDSkillEngine/SkillRes/Skill/{0}.asset", assetName);
         }
+
+        /// <summary>
+        /// 获取公共黑板资源
+        /// </summary>
+        /// <param name="assetName"></param>
+        /// <returns></returns>
+        public static string GetPublicBBAsset(string assetName)
+        {
+            return Utility.Text.Format("Assets/MDDSkillEngine/SkillRes/Skill/{0}.asset", assetName);
+        }
+
 
         public static string GetSceneAsset(string assetName)
         {

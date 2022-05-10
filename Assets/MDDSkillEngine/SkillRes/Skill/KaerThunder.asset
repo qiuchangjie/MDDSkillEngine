@@ -135,7 +135,8 @@ MonoBehaviour:
   serializationData:
     SerializedFormat: 2
     SerializedBytes: 
-    ReferencedUnityObjects: []
+    ReferencedUnityObjects:
+    - {fileID: 0}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -148,13 +149,55 @@ MonoBehaviour:
       Entry: 7
       Data: 1|MDDSkillEngine.NP_ChangeBlackboardAction, MDDSkillEngine
     - Name: owner
-      Entry: 6
-      Data: 
+      Entry: 10
+      Data: 0
     - Name: BelongtoRuntimeTree
-      Entry: 6
+      Entry: 7
+      Data: 2|MDDGameFramework.Runtime.Skill, MDDGameFrameworkRuntime
+    - Name: 
+      Entry: 8
       Data: 
     - Name: Action
-      Entry: 6
+      Entry: 7
+      Data: 3|System.Action, mscorlib
+    - Name: target
+      Entry: 9
+      Data: 1
+    - Name: declaringType
+      Entry: 7
+      Data: 4|System.RuntimeType, mscorlib
+    - Name: 
+      Entry: 1
+      Data: MDDSkillEngine.NP_ChangeBlackboardAction, MDDSkillEngine
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: methodName
+      Entry: 1
+      Data: ChangeValue
+    - Name: delegateType
+      Entry: 7
+      Data: 5|System.RuntimeType, mscorlib
+    - Name: 
+      Entry: 1
+      Data: System.Action, mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: signature
+      Entry: 7
+      Data: 6|System.Type[], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
       Data: 
     - Name: Func1
       Entry: 6
@@ -164,7 +207,7 @@ MonoBehaviour:
       Data: 
     - Name: data
       Entry: 7
-      Data: 2|MDDGameFramework.ClassForBlackboard, MDDGameFramework
+      Data: 7|MDDGameFramework.ClassForBlackboard, MDDGameFramework
     - Name: BBKey
       Entry: 1
       Data: input
@@ -176,7 +219,7 @@ MonoBehaviour:
       Data: true
     - Name: NP_BBValue
       Entry: 7
-      Data: 3|MDDGameFramework.Runtime.VarBoolean, MDDGameFrameworkRuntime
+      Data: 8|MDDGameFramework.Runtime.VarBoolean, MDDGameFrameworkRuntime
     - Name: m_Value
       Entry: 5
       Data: false
@@ -359,7 +402,8 @@ MonoBehaviour:
   serializationData:
     SerializedFormat: 2
     SerializedBytes: 
-    ReferencedUnityObjects: []
+    ReferencedUnityObjects:
+    - {fileID: 0}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -372,13 +416,55 @@ MonoBehaviour:
       Entry: 7
       Data: 1|MDDSkillEngine.NP_ChangeBlackboardAction, MDDSkillEngine
     - Name: owner
-      Entry: 6
-      Data: 
+      Entry: 10
+      Data: 0
     - Name: BelongtoRuntimeTree
-      Entry: 6
+      Entry: 7
+      Data: 2|MDDGameFramework.Runtime.Skill, MDDGameFrameworkRuntime
+    - Name: 
+      Entry: 8
       Data: 
     - Name: Action
-      Entry: 6
+      Entry: 7
+      Data: 3|System.Action, mscorlib
+    - Name: target
+      Entry: 9
+      Data: 1
+    - Name: declaringType
+      Entry: 7
+      Data: 4|System.RuntimeType, mscorlib
+    - Name: 
+      Entry: 1
+      Data: MDDSkillEngine.NP_ChangeBlackboardAction, MDDSkillEngine
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: methodName
+      Entry: 1
+      Data: ChangeValue
+    - Name: delegateType
+      Entry: 7
+      Data: 5|System.RuntimeType, mscorlib
+    - Name: 
+      Entry: 1
+      Data: System.Action, mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: signature
+      Entry: 7
+      Data: 6|System.Type[], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
       Data: 
     - Name: Func1
       Entry: 6
@@ -388,7 +474,7 @@ MonoBehaviour:
       Data: 
     - Name: data
       Entry: 7
-      Data: 2|MDDGameFramework.ClassForBlackboard, MDDGameFramework
+      Data: 7|MDDGameFramework.ClassForBlackboard, MDDGameFramework
     - Name: BBKey
       Entry: 1
       Data: input
@@ -400,10 +486,10 @@ MonoBehaviour:
       Data: true
     - Name: NP_BBValue
       Entry: 7
-      Data: 3|MDDGameFramework.Runtime.VarBoolean, MDDGameFrameworkRuntime
+      Data: 8|MDDGameFramework.Runtime.VarBoolean, MDDGameFrameworkRuntime
     - Name: m_Value
       Entry: 5
-      Data: true
+      Data: false
     - Name: 
       Entry: 8
       Data: 
@@ -417,7 +503,7 @@ MonoBehaviour:
       Entry: 8
       Data: 
   graph: {fileID: 11400000}
-  position: {x: -367.32178, y: -216.91608}
+  position: {x: -376, y: -216}
   ports:
     keys:
     - input
@@ -598,7 +684,8 @@ MonoBehaviour:
   serializationData:
     SerializedFormat: 2
     SerializedBytes: 
-    ReferencedUnityObjects: []
+    ReferencedUnityObjects:
+    - {fileID: 0}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -611,13 +698,55 @@ MonoBehaviour:
       Entry: 7
       Data: 1|MDDSkillEngine.NP_AddBuffAction, MDDSkillEngine
     - Name: owner
-      Entry: 6
-      Data: 
+      Entry: 10
+      Data: 0
     - Name: BelongtoRuntimeTree
-      Entry: 6
+      Entry: 7
+      Data: 2|MDDGameFramework.Runtime.Skill, MDDGameFrameworkRuntime
+    - Name: 
+      Entry: 8
       Data: 
     - Name: Action
-      Entry: 6
+      Entry: 7
+      Data: 3|System.Action, mscorlib
+    - Name: target
+      Entry: 9
+      Data: 1
+    - Name: declaringType
+      Entry: 7
+      Data: 4|System.RuntimeType, mscorlib
+    - Name: 
+      Entry: 1
+      Data: MDDSkillEngine.NP_AddBuffAction, MDDSkillEngine
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: methodName
+      Entry: 1
+      Data: AddBuff
+    - Name: delegateType
+      Entry: 7
+      Data: 5|System.RuntimeType, mscorlib
+    - Name: 
+      Entry: 1
+      Data: System.Action, mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: signature
+      Entry: 7
+      Data: 6|System.Type[], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
       Data: 
     - Name: Func1
       Entry: 6

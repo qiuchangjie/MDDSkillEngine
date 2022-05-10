@@ -21,6 +21,12 @@ namespace MDDSkillEngine
 
             IDataTable<DRSkill> dtSkill = Game.DataTable.GetDataTable<DRSkill>();
             DRSkill dRSkill = dtSkill.GetDataRow(SkillID);
+
+            if (dRSkill == null)
+            {
+                Log.Error("{0}尝试装配不存在的技能id:{1}",LogConst.Skill, SkillID);
+            }
+
             //技能行为树装配
             Skill skill =  Game.NPBehave.CreatBehaviourTree(dRSkill.AssetName, Owner) as Skill;
 

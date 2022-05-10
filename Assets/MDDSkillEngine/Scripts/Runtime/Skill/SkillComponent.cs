@@ -22,7 +22,7 @@ namespace MDDSkillEngine
 
             skillSystemDic.Add(skillSystem.Owner.Id,skillSystem);
 
-            Log.Info("创建技能系统成功 挂载实体:{0}", Owner.Id);
+            Log.Info("{1}创建技能系统成功 挂载实体:{0}", Owner.Id,LogConst.Skill);
 
             return skillSystem;
         }

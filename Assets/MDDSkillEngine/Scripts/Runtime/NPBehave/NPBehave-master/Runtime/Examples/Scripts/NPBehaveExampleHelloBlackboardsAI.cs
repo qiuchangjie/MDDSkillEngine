@@ -17,12 +17,12 @@ public class NPBehaveExampleHelloBlackboardsAI : MonoBehaviour
 
     public void addint()
     {
-        
+
     }
 
     void Start()
     {
-        InitTree();
+        //InitTree();
 
         action = addint;
 
@@ -48,7 +48,7 @@ public class NPBehaveExampleHelloBlackboardsAI : MonoBehaviour
                         new Sequence(
 
                             // print out a message ...
-                            new Action( action
+                            new Action(action
                                              ),
 
                             // ... and stay here until the `BlackboardValue`-node stops us because the toggled flag went false.
@@ -75,50 +75,51 @@ public class NPBehaveExampleHelloBlackboardsAI : MonoBehaviour
 
     Root root;
 
-    public void InitTree()
-    {
-        foreach (var v in np.nodes)
-        {
-            NP_NodeBase data = v as NP_NodeBase;
+    //public void InitTree()
+    //{
+    //    foreach (var v in np.nodes)
+    //    {
+    //        NP_NodeBase data = v as NP_NodeBase;
 
-            switch (data.nodeType)
-            {
-                case NodeType.Task:
-                    data.NP_GetNodeData().CreateTask(null, null);
-                    break;
-                case NodeType.Decorator:
-                    Node node = null;
-                    foreach (var v1 in data.Outputs)
-                    {
-                        node = (v1.Connection.node as NP_NodeBase).NP_GetNodeData().NP_GetNode();
-                    }
+    //        switch (data.nodeType)
+    //        {
+    //            case NodeType.Task:
+    //                data.NP_GetNodeData().CreateTask(null, null);
+    //                break;
+    //            case NodeType.Decorator:
+    //                Node node = null;
+    //                foreach (var v1 in data.Outputs)
+    //                {
+    //                    node = (v1.Connection.node as NP_NodeBase).NP_GetNodeData().NP_GetNode();
+    //                }
 
-                    data.NP_GetNodeData().CreateDecoratorNode(null, null, node);
+    //                data.NP_GetNodeData().CreateDecoratorNode(null, null, node);
 
-                    break;
-                case NodeType.Composite:
-                    List<Node> nodes = new List<Node>();
-                    foreach (var v1 in data.Outputs)
-                    {
-                        foreach (var v2 in v1.GetConnections())
-                        {
-                            nodes.Add((v2.node as NP_NodeBase).NP_GetNodeData().NP_GetNode());
-                        }
-                    }
-                    data.NP_GetNodeData().CreateComposite(nodes.ToArray());
-                    break;
-            }
+    //                break;
+    //            case NodeType.Composite:
+    //                List<Node> nodes = new List<Node>();
+    //                foreach (var v1 in data.Outputs)
+    //                {
+    //                    foreach (var v2 in v1.GetConnections())
+    //                    {
+    //                        nodes.Add((v2.node as NP_NodeBase).NP_GetNodeData().NP_GetNode());
+    //                    }
+    //                }
+    //                data.NP_GetNodeData().CreateComposite(nodes.ToArray());
+    //                break;
+    //        }
 
-            if (data.Name == "根节点")
-            {
-                root = data.NP_GetNodeData().NP_GetNode() as Root;
-            }
+    //        if (data.Name == "根节点")
+    //        {
+    //            root = data.NP_GetNodeData().NP_GetNode() as Root;
+    //        }
 
 
-        }
+    //    }
 
-        root.SetRoot(root);
+    //    root.SetRoot(root);
 
-        root.Start();
-    }
+    //    root.Start();
+    //}
+
 }
