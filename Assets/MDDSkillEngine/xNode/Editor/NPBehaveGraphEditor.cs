@@ -39,7 +39,39 @@ namespace MDDSkillEngine
             graph = target as NPBehaveGraph;
             if (graph != null)
             {
+                //获取该行为树的黑板值
                 NPBlackBoardEditorInstance.BBValues = graph.BBValues;
+               
+                KaelBlackboard kaelBlackboard= graph.PublicBB as KaelBlackboard;
+
+                //将公共黑板数据填充进选项
+                foreach (var v in kaelBlackboard.BBValues)
+                {
+                    if (!NPBlackBoardEditorInstance.AllBB.TryGetValue(v.Key,out Variable variable))
+                    {
+                        NPBlackBoardEditorInstance.AllBB.Add(v.Key,v.Value);
+                    }
+                }
+
+                //将黑板数据填充进选项
+                foreach (var v in NPBlackBoardEditorInstance.BBValues)
+                {
+                    if (!NPBlackBoardEditorInstance.BBValues.TryGetValue(v.Key, out Variable variable))
+                    {
+                        NPBlackBoardEditorInstance.BBValues.Add(v.Key, v.Value);
+                    }
+                }
+
+                //通过反射获取所有buff的名字
+                List<Type> types = new List<Type>();
+                Utility.Assembly.GetTypesByFather(types, typeof(BuffBase));
+                List<string> buffsName = new List<string>();
+                foreach (var type in types)
+                {
+                    buffsName.Add(type.Name);
+                }
+                NPBlackBoardEditorInstance.buffs = buffsName;
+
             }
 
             treeWindow.setins(graph);
@@ -58,6 +90,7 @@ namespace MDDSkillEngine
                         Debug.LogError("保存行为树数据");
                         Sort();
                         EditorUtility.SetDirty(graph);
+                        EditorUtility.SetDirty(graph.PublicBB);
                         AssetDatabase.SaveAssets();
                     }
                     e.Use();

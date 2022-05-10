@@ -10,7 +10,7 @@ using MDDSkillEngine;
 namespace MDDSkillEngine
 {
     [ShowOdinSerializedPropertiesInInspector]
-    [CreateAssetMenu(fileName = "NewNPBehaveGraph", menuName = "NewNPBehaveGraph/test")]
+    [CreateAssetMenu(fileName = "NewBehave", menuName = "行为树/技能行为树")]
     public class NPBehaveGraph : NodeGraph
     {
         [InfoBox("这是这个NPBehaveGraph的所有黑板数据\n键为string，值为Variable子类\n如果要添加新的黑板数据类型，请参照Variable文件夹下的定义")]

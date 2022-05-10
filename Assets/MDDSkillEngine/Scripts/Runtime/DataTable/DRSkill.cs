@@ -1,6 +1,6 @@
 ﻿//------------------------------------------------------------
 // 此文件由工具自动生成，请勿直接修改。
-// 生成时间：2022-03-29 20:47:39.206
+// 生成时间：2022-05-10 15:25:31.621
 //------------------------------------------------------------
 
 using MDDGameFramework;
@@ -35,6 +35,15 @@ namespace MDDSkillEngine
         /// 获取名字。
         /// </summary>
         public string Name
+        {
+            get;
+            private set;
+        }
+
+        /// <summary>
+        /// 获取关联的公共黑板资源名。
+        /// </summary>
+        public string PublicBBAssetName
         {
             get;
             private set;
@@ -107,6 +116,7 @@ namespace MDDSkillEngine
             m_Id = int.Parse(columnStrings[index++]);
             index++;
             Name = columnStrings[index++];
+            PublicBBAssetName = columnStrings[index++];
             AssetName = columnStrings[index++];
             Icon = columnStrings[index++];
             EffectAsset =  DataTableExtension.ParseList(columnStrings[index++]);
@@ -126,6 +136,7 @@ namespace MDDSkillEngine
                 {
                     m_Id = binaryReader.Read7BitEncodedInt32();
                     Name = binaryReader.ReadString();
+                    PublicBBAssetName = binaryReader.ReadString();
                     AssetName = binaryReader.ReadString();
                     Icon = binaryReader.ReadString();
                     EffectAsset = binaryReader.ReadList();

@@ -31,9 +31,9 @@ namespace MDDSkillEngine
         public Dictionary<string, Variable> BBValues = new Dictionary<string, Variable>();
 
         [InfoBox("角色级公共黑板数据，如果为空则认为没有关联该技能没有关联公共黑板")]
-        [Title("黑板数据", TitleAlignment = TitleAlignments.Centered)]
+        [Title("公共黑板数据", TitleAlignment = TitleAlignments.Centered)]
         [LabelText("黑板内容")]
-        [BoxGroup]
+        [TabGroup("黑板数据")]
         [DictionaryDrawerSettings(KeyLabel = "键(string)", ValueLabel = "值(Variable)")]
         public Dictionary<string, Variable> PublicBBValues = new Dictionary<string, Variable>();
 

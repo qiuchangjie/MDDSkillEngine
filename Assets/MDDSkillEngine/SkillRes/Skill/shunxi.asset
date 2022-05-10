@@ -92,7 +92,7 @@ MonoBehaviour:
       Entry: 8
       Data: 
   graph: {fileID: 11400000}
-  position: {x: -904, y: -728}
+  position: {x: -872, y: -728}
   ports:
     keys:
     - input
@@ -158,7 +158,7 @@ MonoBehaviour:
       _connectionType: 1
       _typeConstraint: 0
       _dynamic: 0
-  Id: 15
+  Id: 16
   nodeType: 1
   des: "\u77AC\u88ADqq"
   output: 0
@@ -278,7 +278,7 @@ MonoBehaviour:
       Entry: 8
       Data: 
   graph: {fileID: 11400000}
-  position: {x: -904, y: -200}
+  position: {x: -920, y: -24}
   ports:
     keys:
     - input
@@ -295,7 +295,7 @@ MonoBehaviour:
       _connectionType: 1
       _typeConstraint: 0
       _dynamic: 0
-  Id: 3
+  Id: 4
   nodeType: 2
   des: "\u91CD\u7F6E\u8F93\u5165"
   input: 0
@@ -321,7 +321,7 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   graph: {fileID: 11400000}
-  position: {x: -1160, y: -328}
+  position: {x: -1144, y: -328}
   ports:
     keys:
     - input
@@ -348,7 +348,10 @@ MonoBehaviour:
         node: {fileID: -7800692944958138104}
         reroutePoints: []
       - fieldName: input
-        node: {fileID: 3633704860218567011}
+        node: {fileID: -4176925063616679967}
+        reroutePoints: []
+      - fieldName: input
+        node: {fileID: 603323522037714113}
         reroutePoints: []
       - fieldName: input
         node: {fileID: -8970143797825262291}
@@ -357,7 +360,7 @@ MonoBehaviour:
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 0
-  Id: 6
+  Id: 7
   nodeType: 0
   des: 
   input: 0
@@ -417,7 +420,7 @@ MonoBehaviour:
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 0
-  Id: 14
+  Id: 15
   nodeType: 0
   des: 
   input: 0
@@ -555,9 +558,82 @@ MonoBehaviour:
       _connectionType: 1
       _typeConstraint: 0
       _dynamic: 0
-  Id: 5
+  Id: 6
   nodeType: 2
   des: "\u91CD\u7F6E\u8F93\u5165"
+  input: 0
+--- !u!114 &-4176925063616679967
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf1cc19dd1e56394f878848ed6482035, type: 3}
+  m_Name: NP_Add Buff
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: data
+      Entry: 7
+      Data: 0|MDDSkillEngine.NP_ActionNodeData, MDDSkillEngine
+    - Name: NpClassForAction
+      Entry: 7
+      Data: 1|MDDSkillEngine.NP_AddBuffAction, MDDSkillEngine
+    - Name: owner
+      Entry: 6
+      Data: 
+    - Name: BelongtoRuntimeTree
+      Entry: 6
+      Data: 
+    - Name: Action
+      Entry: 6
+      Data: 
+    - Name: Func1
+      Entry: 6
+      Data: 
+    - Name: Func2
+      Entry: 6
+      Data: 
+    - Name: BuffName
+      Entry: 1
+      Data: Dubao
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+  graph: {fileID: 11400000}
+  position: {x: -632, y: -280}
+  ports:
+    keys:
+    - input
+    values:
+    - _fieldName: input
+      _node: {fileID: -4176925063616679967}
+      _typeQualifiedName: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: output
+        node: {fileID: -7537057993310048369}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+  Id: 3
+  nodeType: 2
+  des: 
   input: 0
 --- !u!114 &-4124545621436819710
 MonoBehaviour:
@@ -647,7 +723,7 @@ MonoBehaviour:
       _connectionType: 1
       _typeConstraint: 0
       _dynamic: 0
-  Id: 13
+  Id: 14
   nodeType: 1
   des: "\u91CD\u7F6Ecdq"
   input: 0
@@ -761,7 +837,7 @@ MonoBehaviour:
       _connectionType: 1
       _typeConstraint: 0
       _dynamic: 0
-  Id: 7
+  Id: 8
   nodeType: 2
   des: "\u66F4\u65B0cd"
   input: 0
@@ -853,7 +929,7 @@ MonoBehaviour:
       _connectionType: 1
       _typeConstraint: 0
       _dynamic: 0
-  Id: 10
+  Id: 11
   nodeType: 1
   des: "\u5982\u679C\u83B7\u53D6\u8F93\u5165"
   input: 0
@@ -973,7 +1049,8 @@ MonoBehaviour:
       Data: 
   nodes:
   - {fileID: -8970143797825262291}
-  - {fileID: 3633704860218567011}
+  - {fileID: 603323522037714113}
+  - {fileID: -4176925063616679967}
   - {fileID: -7800692944958138104}
   - {fileID: 3850027637246563509}
   - {fileID: -6290168704789421218}
@@ -988,6 +1065,79 @@ MonoBehaviour:
   - {fileID: -7039302347661189890}
   - {fileID: -8012929573533312983}
   PublicBB: {fileID: 11400000, guid: b64ccd45c215fa548ab6217938ea8f3a, type: 2}
+--- !u!114 &603323522037714113
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db374073934dc2f4194082445e6927b0, type: 3}
+  m_Name: NP_Use Skill
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: data
+      Entry: 7
+      Data: 0|MDDSkillEngine.NP_ActionNodeData, MDDSkillEngine
+    - Name: NpClassForAction
+      Entry: 7
+      Data: 1|MDDSkillEngine.NP_UseSkillAction, MDDSkillEngine
+    - Name: owner
+      Entry: 6
+      Data: 
+    - Name: BelongtoRuntimeTree
+      Entry: 6
+      Data: 
+    - Name: Action
+      Entry: 6
+      Data: 
+    - Name: Func1
+      Entry: 6
+      Data: 
+    - Name: Func2
+      Entry: 6
+      Data: 
+    - Name: SkillID
+      Entry: 3
+      Data: 10001
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+  graph: {fileID: 11400000}
+  position: {x: -872, y: -472}
+  ports:
+    keys:
+    - input
+    values:
+    - _fieldName: input
+      _node: {fileID: 603323522037714113}
+      _typeQualifiedName: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: output
+        node: {fileID: -7537057993310048369}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+  Id: 2
+  nodeType: 2
+  des: 
+  input: 0
 --- !u!114 &3536438989022731794
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1010,7 +1160,7 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   graph: {fileID: 11400000}
-  position: {x: -1624, y: -376}
+  position: {x: -1672, y: -376}
   ports:
     keys:
     - input
@@ -1043,7 +1193,7 @@ MonoBehaviour:
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 0
-  Id: 12
+  Id: 13
   nodeType: 0
   des: 
   input: 0
@@ -1057,7 +1207,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: cf1cc19dd1e56394f878848ed6482035, type: 3}
   m_Name: NP_Add Buff Action
   m_EditorClassIdentifier: MDDSkillEngine:MDDSkillEngine:NP_AddBuffActionNode
   serializationData:
@@ -1091,16 +1241,16 @@ MonoBehaviour:
       Entry: 6
       Data: 
     - Name: BuffName
-      Entry: 1
-      Data: Dubao
-    - Name: 
-      Entry: 8
+      Entry: 6
       Data: 
     - Name: 
       Entry: 8
       Data: 
-  graph: {fileID: 11400000}
-  position: {x: -888, y: -504}
+    - Name: 
+      Entry: 8
+      Data: 
+  graph: {fileID: 0}
+  position: {x: 0, y: 0}
   ports:
     keys:
     - input
@@ -1109,15 +1259,12 @@ MonoBehaviour:
       _node: {fileID: 3633704860218567011}
       _typeQualifiedName: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
-      connections:
-      - fieldName: output
-        node: {fileID: -7537057993310048369}
-        reroutePoints: []
+      connections: []
       _direction: 0
       _connectionType: 1
       _typeConstraint: 0
       _dynamic: 0
-  Id: 2
+  Id: 0
   nodeType: 2
   des: 
   input: 0
@@ -1169,7 +1316,7 @@ MonoBehaviour:
       _connectionType: 1
       _typeConstraint: 0
       _dynamic: 0
-  Id: 4
+  Id: 5
   nodeType: 2
   des: 
   input: 0
@@ -1228,7 +1375,7 @@ MonoBehaviour:
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 0
-  Id: 9
+  Id: 10
   nodeType: 0
   des: 
   input: 0
@@ -1366,7 +1513,7 @@ MonoBehaviour:
       _connectionType: 1
       _typeConstraint: 0
       _dynamic: 0
-  Id: 8
+  Id: 9
   nodeType: 2
   des: "\u91CD\u7F6E\u8F93\u5165"
   input: 0
@@ -1425,7 +1572,7 @@ MonoBehaviour:
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 0
-  Id: 11
+  Id: 12
   nodeType: 0
   des: 
   input: 0

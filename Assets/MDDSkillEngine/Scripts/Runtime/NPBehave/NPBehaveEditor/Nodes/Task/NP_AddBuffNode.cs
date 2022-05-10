@@ -4,7 +4,7 @@ using MDDSkillEngine;
 
 namespace MDDSkillEngine
 {
-    public class NP_AddBuffActionNode : NP_TaskNodeBase
+    public class NP_AddBuffNode : NP_TaskNodeBase
     {
         public override string Name => "添加buff节点";
 

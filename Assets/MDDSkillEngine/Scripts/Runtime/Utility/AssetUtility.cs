@@ -34,7 +34,7 @@ namespace MDDSkillEngine
 
         public static string GetSkillAsset(string assetName)
         {
-            return Utility.Text.Format("Assets/MDDSkillEngine/SkillData/{0}.asset", assetName);
+            return Utility.Text.Format("Assets/MDDSkillEngine/SkillRes/Skill/{0}.asset", assetName);
         }
 
         public static string GetSceneAsset(string assetName)

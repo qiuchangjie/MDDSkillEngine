@@ -118,7 +118,7 @@ namespace XNode {
         /// <summary> It is recommended not to modify these at hand. Instead, see <see cref="InputAttribute"/> and <see cref="OutputAttribute"/> </summary>
         [SerializeField]
         [FoldoutGroup("节点Editor数据")]
-        private NodePortDictionary ports = new NodePortDictionary();
+        private NodePortDictionary ports = new NodePortDictionary();    
 
 
         /// <summary> Used during node instantiation to fix null/misconfigured graph during OnEnable/Init. Set it before instantiating a node. Will automatically be unset during OnEnable </summary>

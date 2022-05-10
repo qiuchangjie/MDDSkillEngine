@@ -1,13 +1,15 @@
 ﻿using MDDGameFramework;
 using MDDGameFramework.Runtime;
 using Sirenix.OdinInspector;
+using System.Collections.Generic;
 
 namespace MDDSkillEngine
 {
     [Title("添加buff", TitleAlignment = TitleAlignments.Centered)]
     public class NP_AddBuffAction : NP_ClassForAction
     {
-
+        [ValueDropdown("GetBuffs")]
+        [OnValueChanged("OnBuffsSelect")]
         public string BuffName;
 
         public override System.Action GetActionToBeDone()
@@ -26,6 +28,27 @@ namespace MDDSkillEngine
 
             Game.Buff.AddBuff(entity.Id.ToString(), BuffName, entity, entity);
         }
+
+
+#if UNITY_EDITOR
+        private IEnumerable<string> GetBuffs()
+        {
+            if (NPBlackBoardEditorInstance.buffs != null)
+            {
+                return NPBlackBoardEditorInstance.buffs;
+            }
+
+            return null;
+        }
+
+        private void OnBuffsSelect()
+        {
+            if (NPBlackBoardEditorInstance.buffs != null)
+            {
+               
+            }
+        }
+#endif
     }
 }
 

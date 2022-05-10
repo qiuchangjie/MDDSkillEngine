@@ -8,7 +8,7 @@ namespace MDDGameFramework
     /// <summary>
     /// buff通用数据
     /// </summary>
-    public abstract class BuffDatabase 
+    public abstract class BuffDatabase :IReference
     {
         private int m_Id;
         private int m_Level;
@@ -71,6 +71,15 @@ namespace MDDGameFramework
             {
                 return m_Duration > 0 ? m_PassDuration / m_Duration : 1f;
             }
+        }
+
+        public virtual void Clear()
+        {
+            m_Id = 0;
+            m_Level = 0;
+            m_accumulateDuration = 0;
+            m_Duration = 0;
+            m_PassDuration = 0f;
         }
 
         public void Init(int id,int level,float duration)

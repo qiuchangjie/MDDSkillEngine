@@ -36,9 +36,9 @@ namespace MDDGameFramework
 #if UNITY_EDITOR
         private IEnumerable<string> GetBBKeys()
         {
-            if (NPBlackBoardEditorInstance.BBValues != null)
+            if (NPBlackBoardEditorInstance.AllBB != null)
             {
-                return NPBlackBoardEditorInstance.BBValues.Keys;
+                return NPBlackBoardEditorInstance.AllBB.Keys;
             }
 
             return null;
@@ -46,9 +46,9 @@ namespace MDDGameFramework
 
         private void OnBBKeySelected()
         {
-            if (NPBlackBoardEditorInstance.BBValues != null)
+            if (NPBlackBoardEditorInstance.AllBB != null)
             {
-                foreach (var bbValues in NPBlackBoardEditorInstance.BBValues)
+                foreach (var bbValues in NPBlackBoardEditorInstance.AllBB)
                 {
                     if (bbValues.Key == this.BBKey)
                     {

@@ -61,7 +61,10 @@ namespace MDDGameFramework
 
         public virtual void OnRefresh(IBuffSystem buffSystem) { }
 
-        public abstract void Clear();
+        public virtual void Clear()
+        {
+            buffData = null;
+        }
     }
 }
 
