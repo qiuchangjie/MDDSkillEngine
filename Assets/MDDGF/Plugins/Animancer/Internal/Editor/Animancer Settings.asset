@@ -13,15 +13,15 @@ MonoBehaviour:
   m_Name: Animancer Settings
   m_EditorClassIdentifier: 
   _TransitionPreviewWindow:
-    _InspectorWidth: 375
+    _InspectorWidth: 376
     _AutoClose: 1
     _ShowTransition: 1
     _MovementSensitivity: 1
     _RotationSensitivity: 1
     _Models:
+    - {fileID: 1996061924472238, guid: bcfcb1b16ebed974ea8244e270af8d4a, type: 3}
     - {fileID: 5144886476383702360, guid: a5a0b935c4c57244d929fba1874a45af, type: 3}
-    - {fileID: 1996061924472238, guid: bcfcb1b16ebed974ea8244e270af8d4a, type: 3}
-    - {fileID: 1996061924472238, guid: bcfcb1b16ebed974ea8244e270af8d4a, type: 3}
+    - {fileID: 5144886476383702360, guid: a5a0b935c4c57244d929fba1874a45af, type: 3}
     _MaxRecentModels: 10
     _FloorEnabled: 1
     _FloorMaterial: {fileID: 0}
