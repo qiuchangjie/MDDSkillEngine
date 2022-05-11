@@ -16,9 +16,9 @@ namespace MDDGameFramework
             s_BuffFactoryHelper = buffFactoryHelper;
         }
 
-        public static BuffBase AcquireBuff(string bufName,object Target, object From)
+        public static BuffBase AcquireBuff(string bufName,object Target, object From,object userData=null)
         {
-            return s_BuffFactoryHelper.AcquireBuff(bufName, Target, From);
+            return s_BuffFactoryHelper.AcquireBuff(bufName, Target, From, userData);
         }
        
     }

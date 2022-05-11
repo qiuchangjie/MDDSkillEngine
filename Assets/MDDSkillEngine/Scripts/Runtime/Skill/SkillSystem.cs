@@ -66,6 +66,11 @@ namespace MDDSkillEngine
             return skill;
         }
 
+        /// <summary>
+        /// 开始使用技能
+        /// 不代表技能的主要逻辑被释放
+        /// </summary>
+        /// <param name="id"></param>
         public void UseSkill(int id)
         {
             Skill skill;
@@ -76,6 +81,11 @@ namespace MDDSkillEngine
             skill.Blackboard.Set<VarBoolean>("input", true);
         }
 
+
+        /// <summary>
+        /// 释放技能
+        /// </summary>
+        /// <param name="id"></param>
         public void ReleaseSkill(int id)
         {
             IFsm<T> fsm = Game.Fsm.GetFsm<T>(m_Owner.Id.ToString());

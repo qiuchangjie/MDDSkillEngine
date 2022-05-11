@@ -92,9 +92,9 @@ namespace MDDGameFramework
             throw new System.NotImplementedException();
         }
 
-        internal override void AddBuff(string buffName, object from)
+        internal override void AddBuff(string buffName, object from,object userData=null)
         {
-            BuffBase buff = BuffFactory.AcquireBuff(buffName, m_Owner, from);
+            BuffBase buff = BuffFactory.AcquireBuff(buffName, m_Owner, from, userData);
             buffs.Add(buff);
             buff.OnExecute(this);
         }

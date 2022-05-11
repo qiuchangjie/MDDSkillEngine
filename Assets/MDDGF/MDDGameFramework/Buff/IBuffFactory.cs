@@ -7,6 +7,6 @@ namespace MDDGameFramework
 
     public interface IBuffFactory
     {
-         BuffBase AcquireBuff(string bufName, object Target, object From);
+         BuffBase AcquireBuff(string bufName, object Target, object From,object userData=null);
     }
 }
