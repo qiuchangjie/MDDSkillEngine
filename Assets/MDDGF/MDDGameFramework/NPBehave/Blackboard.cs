@@ -111,6 +111,17 @@ namespace MDDGameFramework
             {
                 this.clock.RemoveTimer(this.NotifiyObserversActionCache);
             }
+
+            foreach (var item in data)
+            {
+                if (item.Value == null)
+                {
+                    continue;
+                }
+
+                ReferencePool.Release(item.Value);
+            }
+        
             data.Clear();
             observers.Clear();
             isNotifiyng = false;

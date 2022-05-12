@@ -17,6 +17,8 @@ namespace MDDGameFramework
         private FsmState<T> m_CurrentState;
         private float m_CurrentStateTime;
         private bool m_IsDestroyed;
+        private Clock m_Clock;
+        private Blackboard m_Blackboard;
 
         /// <summary>
         /// 初始化有限状态机的新实例。
@@ -30,6 +32,8 @@ namespace MDDGameFramework
             m_CurrentStateTime = 0f;
             m_IsDestroyed = true;
             m_StateStack = new Stack<FsmState<T>>();
+            m_Clock = new Clock();
+            m_Blackboard = Blackboard.Create(m_Blackboard, m_Clock);
         }
 
         /// <summary>
@@ -121,6 +125,22 @@ namespace MDDGameFramework
         }
 
         /// <summary>
+        /// 获取当前状态机的计时器
+        /// </summary>
+        public Clock Clock
+        {
+            get { return m_Clock; }
+        }
+
+        /// <summary>
+        /// 获取当前状态机的黑板
+        /// </summary>
+        public Blackboard Blackboard
+        {
+            get { return m_Blackboard; }    
+        }
+
+        /// <summary>
         /// 创建有限状态机。
         /// </summary>
         /// <param name="name">有限状态机名称。</param>
@@ -157,10 +177,10 @@ namespace MDDGameFramework
                 }
 
                 fsm.m_States.Add(stateType, state);
-                state.OnInit(fsm);               
+                state.OnInit(fsm);
             }
 
-            
+
 
             return fsm;
         }
@@ -205,7 +225,7 @@ namespace MDDGameFramework
                 state.OnInit(fsm);
             }
 
-            
+
 
             return fsm;
         }
@@ -244,6 +264,10 @@ namespace MDDGameFramework
                 m_Datas.Clear();
             }
 
+            ReferencePool.Release(m_Blackboard);
+            m_Blackboard = null;
+
+            m_Clock = null;
             m_CurrentState = null;
             m_CurrentStateTime = 0f;
             m_IsDestroyed = true;
@@ -428,12 +452,12 @@ namespace MDDGameFramework
                 throw new MDDGameFrameworkException("Data name is invalid.");
             }
 
-            if (m_Datas == null)
+            if (m_Blackboard == null)
             {
                 return false;
             }
 
-            return m_Datas.ContainsKey(name);
+            return m_Blackboard.Isset(name);
         }
 
         /// <summary>
@@ -459,18 +483,12 @@ namespace MDDGameFramework
                 throw new MDDGameFrameworkException("Data name is invalid.");
             }
 
-            if (m_Datas == null)
+            if (m_Blackboard == null)
             {
                 return null;
             }
 
-            Variable data = null;
-            if (m_Datas.TryGetValue(name, out data))
-            {
-                return data;
-            }
-
-            return null;
+            return m_Blackboard.Get(name);
         }
 
         /// <summary>
@@ -481,7 +499,12 @@ namespace MDDGameFramework
         /// <param name="data">要设置的有限状态机数据。</param>
         public void SetData<TData>(string name, TData data) where TData : Variable
         {
-            SetData(name, (Variable)data);
+            if (m_Blackboard == null)
+            {
+                throw new MDDGameFrameworkException("m_Blackboard is invalid.");
+            }
+
+            m_Blackboard.Set(name, data);
         }
 
         /// <summary>
@@ -496,18 +519,12 @@ namespace MDDGameFramework
                 throw new MDDGameFrameworkException("Data name is invalid.");
             }
 
-            if (m_Datas == null)
+            if (m_Blackboard == null)
             {
-                m_Datas = new Dictionary<string, Variable>(StringComparer.Ordinal);
+                throw new MDDGameFrameworkException("m_Blackboard is invalid.");
             }
 
-            Variable oldData = GetData(name);
-            if (oldData != null)
-            {
-                ReferencePool.Release(oldData);
-            }
-
-            m_Datas[name] = data;
+            m_Blackboard.Set(name, data);
         }
 
         /// <summary>
@@ -515,25 +532,19 @@ namespace MDDGameFramework
         /// </summary>
         /// <param name="name">有限状态机数据名称。</param>
         /// <returns>是否移除有限状态机数据成功。</returns>
-        public bool RemoveData(string name)
+        public void RemoveData(string name)
         {
             if (string.IsNullOrEmpty(name))
             {
                 throw new MDDGameFrameworkException("Data name is invalid.");
             }
 
-            if (m_Datas == null)
+            if (m_Blackboard == null)
             {
-                return false;
+                throw new MDDGameFrameworkException("m_Blackboard is invalid.");
             }
 
-            Variable oldData = GetData(name);
-            if (oldData != null)
-            {
-                ReferencePool.Release(oldData);
-            }
-
-            return m_Datas.Remove(name);
+            m_Blackboard.Unset(name);
         }
 
         /// <summary>
@@ -550,6 +561,8 @@ namespace MDDGameFramework
 
             m_CurrentStateTime += elapseSeconds;
             m_StateStack.Peek().OnUpdate(this, elapseSeconds, realElapseSeconds);
+
+            m_Clock.Update(elapseSeconds);
         }
 
         /// <summary>
@@ -565,11 +578,11 @@ namespace MDDGameFramework
         /// </summary>
         /// <typeparam name="TState">要切换到的有限状态机状态类型。</typeparam>
         internal void ChangeState<TState>() where TState : FsmState<T>
-        {                          
+        {
             ChangeState(typeof(TState));
         }
 
-        internal void FinishState() 
+        internal void FinishState()
         {
             if (m_CurrentState == null)
             {
@@ -626,5 +639,6 @@ namespace MDDGameFramework
             //m_CurrentState = state;
             //m_CurrentState.OnEnter(this);
         }
+     
     }
 }

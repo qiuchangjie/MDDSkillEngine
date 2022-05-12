@@ -21,9 +21,11 @@ public class SimpleController_UsingActionAsset : MonoBehaviour
         m_Controls.gameplay.fire.performed +=
             ctx =>
         {
+            
             if (ctx.interaction is SlowTapInteraction)
             {
                 StartCoroutine(BurstFire((int)(ctx.duration * burstSpeed)));
+                Debug.LogError("performed");
             }
             else
             {

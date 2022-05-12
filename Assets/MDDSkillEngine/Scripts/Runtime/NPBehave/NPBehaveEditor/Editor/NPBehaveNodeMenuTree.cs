@@ -30,7 +30,7 @@ namespace MDDSkillEngine
         [OdinSerialize]
         public Dictionary<string, Variable> BBValues = new Dictionary<string, Variable>();
 
-        [InfoBox("角色级公共黑板数据，如果为空则认为没有关联该技能没有关联公共黑板")]
+        [InfoBox("角色级公共黑板数据，如果为空则认为该技能没有关联公共黑板")]
         [Title("公共黑板数据", TitleAlignment = TitleAlignments.Centered)]
         [LabelText("黑板内容")]
         [TabGroup("黑板数据")]
