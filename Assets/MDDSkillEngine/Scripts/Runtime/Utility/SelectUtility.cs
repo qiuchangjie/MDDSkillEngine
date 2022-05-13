@@ -19,7 +19,10 @@ namespace MDDSkillEngine
                     isInx = true;
                 }
                 else
+                {
                     isInx = false;
+                }
+                    
             }
             else
             {
@@ -28,7 +31,10 @@ namespace MDDSkillEngine
                     isInx = true;
                 }
                 else
+                {
                     isInx = false;
+                }
+                  
             }
 
 
@@ -39,7 +45,10 @@ namespace MDDSkillEngine
                     isIn = true;
                 }
                 else
+                {
                     isIn = false;
+                }
+                    
             }
             else
             {
@@ -48,7 +57,10 @@ namespace MDDSkillEngine
                     isIn = true;
                 }
                 else
+                {
                     isIn = false;
+                }
+                    
             }
 
             return isIn && isInx;

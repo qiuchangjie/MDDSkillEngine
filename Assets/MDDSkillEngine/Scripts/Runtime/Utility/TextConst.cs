@@ -2,12 +2,19 @@
 
 namespace MDDSkillEngine
 {
+    /// <summary>
+    /// LOG标识常量方便自己查看log
+    /// </summary>
     public static class LogConst
     {
-        public static readonly string Buff = "<color=#008000ff>BuffLog:</color>";
+        public static readonly string Buff = "<b><color=#008000ff>Buff:</color></b>";
 
-        public static readonly string NPBehave = "<color=#008000ff>NPBehaveLog</color>";
+        public static readonly string NPBehave = "<b><color=#008000ff>NPBehave</color></b>";
 
-        public static readonly string Skill = "<color=#008000ff>SkillLog:</color>";
+        public static readonly string Skill = "<b><color=#00ffffff>Skill:</color></b>";
+
+        public static readonly string FSM = "<b><color=#ffff00ff>FSM:</color></b>";
+
+        public static readonly string SKillTimeline = "<b><color=#00ffffff>SKillTimeline:</color></b>";
     }
 }

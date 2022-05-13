@@ -106,7 +106,11 @@ namespace MDDSkillEngine
             private set;
         }
 
-        public static InputSystemComponent Input;
+        public static InputSystemComponent Input
+        {
+            get;
+            private set;
+        }
 
         private void InitMDDComponent()
         {

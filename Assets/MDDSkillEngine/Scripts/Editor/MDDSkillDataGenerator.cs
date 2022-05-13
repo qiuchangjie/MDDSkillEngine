@@ -38,45 +38,14 @@ namespace MDDSkillEngine
                         Debug.Log("预制体路径" + path);
                         GameObject obj = AssetDatabase.LoadAssetAtPath(path, typeof(GameObject)) as GameObject;
                         Debug.Log("obj的名字" + obj.name);
-                        //Transform tra = obj.transform.FindChild("Label");
-                        //UILabel[] labels = obj.transform.GetComponentsInChildren<UILabel>(true);
-                        //foreach (UILabel lab in labels)
-                        //{
-                        //    lab.color = Color.red;
-                        //}
-
-                        Cutscene Data = obj.GetComponent<Cutscene>();
-                       // byte[] bytes;
-
-                        //if (Data != null)
-                        //{
-
-                        //    //string json = CatJson.JsonParser.ToJson<SkillData>(HandleSkillData(Data));
-                        //    byte[] bytes = SerializationUtility.SerializeValue(HandleSkillData(Data), DataFormat.Binary);
-                        //    using (StreamWriter sr = new StreamWriter(savePath + "\\name.bytes"))
-                        //    {
-                        //        sr.Write(bytes);
-                        //    }
-                        //}
-
-                        //string jsontest = JsonUtility.ToJson(HandleSkillData(Data));
-
+                     
+                        Cutscene Data = obj.GetComponent<Cutscene>();                      
+                        
                         byte[] bytes = SerializationUtility.SerializeValue(HandleSkillData(Data), DataFormat.Binary);
 
                         File.WriteAllBytes(savePath + "name.bytes", bytes);
 
-                       // byte[] bytes = SerializationUtility.SerializeValue(HandleSkillData(Data), DataFormat.Binary);
-
-                       // byte[] bytes1 = File.ReadAllBytes(savePath + "name.bytes");
-
-                        // testjson = File.ReadAllText(savePath + "name.json");
-
-
-                        //SkillData testDeS = JsonUtility.FromJson<SkillData>(testjson);
-
-                        //SkillData testDeS = SerializationUtility.DeserializeValue<SkillData>(bytes1, DataFormat.Binary);
-
-                        //EffectSkillData testconvertdata = (EffectSkillData)testDeS.skillData[0];
+                       
 
                         //通知你的编辑器 obj 改变了
                         EditorUtility.SetDirty(obj);
@@ -90,6 +59,8 @@ namespace MDDSkillEngine
             {
                 Debug.Log("资源路径不存在");
             }
+
+            Debug.Log("数据导出完成");
         }
 
 
@@ -147,6 +118,14 @@ namespace MDDSkillEngine
                             }
                         case (SkillDataType.Collider):
                             {
+                                foreach (var clip in track.clips)
+                                {
+                                    if (clip is InstanceCollider)
+                                    {
+                                        InstanceCollider instanceCollider = (InstanceCollider)clip;
+
+                                    }
+                                }
                                 break;
                             }
                     }

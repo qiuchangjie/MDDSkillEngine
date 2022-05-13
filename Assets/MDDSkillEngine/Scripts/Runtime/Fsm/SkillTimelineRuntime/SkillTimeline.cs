@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace MDDSkillEngine
@@ -42,11 +43,49 @@ namespace MDDSkillEngine
             Sample(currentTime);
         }
 
-        public void InitTimePointer()
+        /// <summary>
+        /// 初始化技能clip
+        /// </summary>
+        /// <param name="skillData"></param>
+        public void InitSkillClip(SkillData skillData)
+        {
+            foreach (var data in skillData.skillData)
+            {
+                switch (data.DataType)
+                {
+                    case SkillDataType.Effect:
+                        {
+                           
+                        }
+                        break;
+                    case SkillDataType.Animation:
+                        {
+                           
+                        }
+                        break;
+
+                }
+            }
+
+
+            
+            InitTimePointer();
+        }
+
+        /// <summary>
+        /// 初始化时间点
+        /// </summary>
+        private void InitTimePointer()
         {
             foreach (var item in skillClips)
             {
+                var timePointer = new StartTimePointer(item);
 
+                timePointers.Add(timePointer);
+                timePointers.Add(new EndTimePointer(item));
+
+                unsortedStartTimePointers.Add(timePointer);
+                timePointers = timePointers.OrderBy(p => p.time).ToList();
             }
         }
 
@@ -111,6 +150,8 @@ namespace MDDSkillEngine
 
     public abstract class SkillClip
     {
+        public GameObject actor;
+
         public float duration;
 
         public float startTime;
@@ -140,7 +181,7 @@ namespace MDDSkillEngine
     ///----------------------------------------------------------------------------------------------
 
     ///Wraps the startTime of a group, track or clip (IDirectable) along with it's relevant execution
-    public class StartTimePointer : IDirectableTimePointer
+    public struct StartTimePointer : IDirectableTimePointer
     {
 
         private bool triggered;
@@ -206,7 +247,7 @@ namespace MDDSkillEngine
     ///----------------------------------------------------------------------------------------------
 
     ///Wraps the endTime of a group, track or clip (IDirectable) along with it's relevant execution
-    public class EndTimePointer : IDirectableTimePointer
+    public struct EndTimePointer : IDirectableTimePointer
     {
 
         private bool triggered;

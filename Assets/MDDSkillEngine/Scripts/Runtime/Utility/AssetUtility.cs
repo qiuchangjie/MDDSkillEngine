@@ -68,9 +68,27 @@ namespace MDDSkillEngine
             return Utility.Text.Format("Assets/GameMain/Sounds/{0}.wav", assetName);
         }
 
-        public static string GetEntityAsset(string assetName)
+        public static string GetEntityAsset(string assetName,EntityType entityType=EntityType.Normal)
         {
+            switch (entityType)
+            {
+                case EntityType.Effect:
+                    return Utility.Text.Format("Assets/MDDSkillEngine/Prefabs/Effect/{0}.prefab", assetName);
+                case EntityType.Collider:
+                    return Utility.Text.Format("Assets/MDDSkillEngine/Prefabs/Collider/{0}.prefab", assetName);              
+            }
+
             return Utility.Text.Format("Assets/MDDSkillEngine/Prefabs/{0}.prefab", assetName);
+        }
+
+        public static string GetEffectAsset(string assetName)
+        {
+            return Utility.Text.Format("Assets/MDDSkillEngine/Prefabs/Effect/{0}.prefab", assetName);
+        }
+
+        public static string GetColliderAsset(string assetName)
+        {
+            return Utility.Text.Format("Assets/MDDSkillEngine/Prefabs/Collider/{0}.prefab", assetName);
         }
 
         public static string GetUIFormAsset(string assetName)

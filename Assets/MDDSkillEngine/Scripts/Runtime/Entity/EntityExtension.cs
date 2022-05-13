@@ -46,7 +46,7 @@ namespace MDDSkillEngine
 
         public static void ShowBullet(this EntityComponent entityCompoennt, BulletData data)
         {
-            entityCompoennt.ShowEntity(typeof(Bullet),"Bullet", Constant.AssetPriority.BulletAsset, data);
+            entityCompoennt.ShowEntity(typeof(Bullet), "Bullet", Constant.AssetPriority.BulletAsset, data);
         }
 
         public static void ShowPlayer(this EntityComponent entityCompoennt, PlayerData data)
@@ -80,12 +80,21 @@ namespace MDDSkillEngine
                 return;
             }
 
-            entityComponent.ShowEntity(data.Id, logicType, AssetUtility.GetEntityAsset(drEntity.AssetName), entityGroup, priority, data);
+            entityComponent.ShowEntity(data.Id, logicType, AssetUtility.GetEntityAsset(drEntity.AssetName, data.EntityType), entityGroup, priority, data);
         }
 
         public static int GenerateSerialId(this EntityComponent entityComponent)
         {
             return --s_SerialId;
         }
+    }
+
+    public enum EntityType
+    {
+        Normal,
+        Effect,
+        Collider,
+        Hero,
+        Monster
     }
 }

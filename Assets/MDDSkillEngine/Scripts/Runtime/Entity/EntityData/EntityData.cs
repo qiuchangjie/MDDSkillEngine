@@ -21,6 +21,9 @@ namespace MDDSkillEngine
         [SerializeField]
         private Vector3 m_LocalScale = Vector3.one;
 
+        [SerializeField]
+        private EntityType m_EntityType = EntityType.Normal;
+
         /// <summary>
         /// 是否预加载
         /// </summary>
@@ -117,6 +120,16 @@ namespace MDDSkillEngine
             {
                 return canSelect;
             }
+        }
+
+        public EntityType EntityType
+        {
+            get 
+            {
+                return m_EntityType;
+            }
+            
+            set { m_EntityType = value; }
         }
     }
 }

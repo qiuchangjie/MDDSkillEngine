@@ -1,4 +1,5 @@
 ﻿using Sirenix.Serialization;
+using Slate;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -46,6 +47,13 @@ namespace MDDSkillEngine
         }
 
         public SkillDataBase() { }
+
+        public virtual void OnInit(ActionClip data)
+        {
+            m_StartTime = data.startTime;
+
+            m_EndTime = data.endTime;           
+        }
     }
 
     [Serializable]

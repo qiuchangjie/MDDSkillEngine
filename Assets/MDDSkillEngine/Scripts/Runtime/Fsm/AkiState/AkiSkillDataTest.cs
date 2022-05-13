@@ -10,7 +10,7 @@ using UnityEngine;
 namespace MDDSkillEngine
 {
     [AkiState]
-    public class AkiSkillDataTest : FsmState<Player>
+    public class AkiSkillDataTest : MDDFsmState<Player>
     {
 
         private ClipState.Transition attack;
