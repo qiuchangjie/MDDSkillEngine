@@ -10,7 +10,7 @@ namespace MDDSkillEngine
         {
             base.OnInit(fsm);
             fsm.SetData<VarBoolean>(GetType().Name , false);
-            Log.Info("{0}设置默认状态黑板变量{1}",LogConst.Buff, GetType().Name);
+            Log.Info("{0}设置默认状态黑板变量{1}",LogConst.FSM, GetType().Name);
         }
     }
 }

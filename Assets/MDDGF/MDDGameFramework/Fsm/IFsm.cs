@@ -84,6 +84,14 @@ namespace MDDGameFramework
         }
 
         /// <summary>
+        /// 获取当前状态机的计时器
+        /// </summary>
+        Blackboard Blackboard
+        {
+            get;
+        }
+
+        /// <summary>
         /// 开始有限状态机。
         /// </summary>
         /// <typeparam name="TState">要开始的有限状态机状态类型。</typeparam>
@@ -180,6 +188,8 @@ namespace MDDGameFramework
         /// <param name="name">有限状态机数据名称。</param>
         /// <returns>是否移除有限状态机数据成功。</returns>
         void RemoveData(string name);
+
+        void AddObserver(string key, System.Action<Blackboard.Type, Variable> action);
     }
 }
 

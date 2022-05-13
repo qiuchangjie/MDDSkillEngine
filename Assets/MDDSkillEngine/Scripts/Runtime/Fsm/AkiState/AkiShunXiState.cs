@@ -40,7 +40,7 @@ namespace MDDSkillEngine
             Log.Info("创建aki瞬袭状态。");
 
             shunXi = fsm.Owner.CachedAnimContainer.GetAnimation("ShunXi");
-            shunXi2 = fsm.Owner.CachedAnimContainer.GetAnimation("ShunXi2");
+            shunXi2 = fsm.Owner.CachedAnimContainer.GetAnimation("Attack4");
 
             colliderAction = ColliderAction;
 

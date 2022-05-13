@@ -639,6 +639,10 @@ namespace MDDGameFramework
             //m_CurrentState = state;
             //m_CurrentState.OnEnter(this);
         }
-     
+
+        public void AddObserver(string key, System.Action<Blackboard.Type, Variable> action)
+        {
+            Blackboard.AddObserver(key, action);
+        }
     }
 }

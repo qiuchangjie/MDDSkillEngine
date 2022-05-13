@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using MDDGameFramework.Runtime;
+using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
@@ -23,7 +24,7 @@ namespace MDDSkillEngine
 
         private float lastTime;
 
-        private float length;
+        public float length;
 
         private float previousTime;
 
@@ -70,6 +71,8 @@ namespace MDDSkillEngine
 
             
             InitTimePointer();
+
+            Log.Info("{0}初始化Skilltimeline:name:{1} 成功.",LogConst.SKillTimeline,GetType().Name);
         }
 
         /// <summary>

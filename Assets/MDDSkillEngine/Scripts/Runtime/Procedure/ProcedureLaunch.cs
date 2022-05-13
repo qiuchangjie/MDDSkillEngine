@@ -11,8 +11,6 @@ namespace MDDSkillEngine
         protected override void OnInit(ProcedureOwner procedureOwner)
         {
             base.OnInit(procedureOwner);
-
-            Log.Error("11111111111111111111111111111111111111");
         }
         
         protected override void OnEnter(ProcedureOwner procedureOwner)

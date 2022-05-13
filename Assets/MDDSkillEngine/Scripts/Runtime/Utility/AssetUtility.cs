@@ -17,7 +17,7 @@ namespace MDDSkillEngine
             }
             else
             {
-                return Utility.Text.Format("Assets/MDDSkillEngine/DataTable/{0}.{1}", assetName,"txt");
+                return Utility.Text.Format("Assets/MDDSkillEngine/DataTable/{0}.{1}", assetName, "txt");
             }
 
         }
@@ -40,6 +40,11 @@ namespace MDDSkillEngine
         public static string GetSkillAsset(string assetName)
         {
             return Utility.Text.Format("Assets/MDDSkillEngine/SkillRes/Skill/{0}.asset", assetName);
+        }
+
+        public static string GetSkillTimelineAsset(string assetName)
+        {
+            return Utility.Text.Format("Assets/MDDSkillEngine/SkillRes/SkillTimelineRuntime/{0}.bytes", assetName);
         }
 
         /// <summary>
@@ -68,14 +73,14 @@ namespace MDDSkillEngine
             return Utility.Text.Format("Assets/GameMain/Sounds/{0}.wav", assetName);
         }
 
-        public static string GetEntityAsset(string assetName,EntityType entityType=EntityType.Normal)
+        public static string GetEntityAsset(string assetName, EntityType entityType = EntityType.Normal)
         {
             switch (entityType)
             {
                 case EntityType.Effect:
                     return Utility.Text.Format("Assets/MDDSkillEngine/Prefabs/Effect/{0}.prefab", assetName);
                 case EntityType.Collider:
-                    return Utility.Text.Format("Assets/MDDSkillEngine/Prefabs/Collider/{0}.prefab", assetName);              
+                    return Utility.Text.Format("Assets/MDDSkillEngine/Prefabs/Collider/{0}.prefab", assetName);
             }
 
             return Utility.Text.Format("Assets/MDDSkillEngine/Prefabs/{0}.prefab", assetName);

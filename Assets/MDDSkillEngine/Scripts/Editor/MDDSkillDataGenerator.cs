@@ -20,8 +20,8 @@ namespace MDDSkillEngine
         public static void GeneratorSkillData()
         {
             //路径
-            string fullPath = Application.dataPath + "/MDDSkillEngine/SkillPrefab/";
-            string savePath = Application.dataPath + "/MDDSkillEngine/SkillData/";
+            string fullPath = Application.dataPath + "/MDDSkillEngine/SkillRes/";
+            string savePath = Application.dataPath + "/MDDSkillEngine/SkillRes/SkillTimelineRuntime/";
             Debug.Log(fullPath);
             //获得指定路径下面的所有资源文件
             if (Directory.Exists(fullPath))
@@ -34,18 +34,18 @@ namespace MDDSkillEngine
                     if (files[i].Name.EndsWith(".prefab"))
                     {
                         Debug.Log("预制体名字" + files[i].Name);
-                        string path = "Assets/MDDSkillEngine/SkillPrefab/" + files[i].Name;
+                        string path = "Assets/MDDSkillEngine/SkillRes/SkillTimeline/" + files[i].Name;
                         Debug.Log("预制体路径" + path);
                         GameObject obj = AssetDatabase.LoadAssetAtPath(path, typeof(GameObject)) as GameObject;
                         Debug.Log("obj的名字" + obj.name);
-                     
-                        Cutscene Data = obj.GetComponent<Cutscene>();                      
-                        
+
+                        Cutscene Data = obj.GetComponent<Cutscene>();
+
                         byte[] bytes = SerializationUtility.SerializeValue(HandleSkillData(Data), DataFormat.Binary);
 
-                        File.WriteAllBytes(savePath + "name.bytes", bytes);
+                        File.WriteAllBytes(savePath + Data.gameObject.name+ ".bytes", bytes);
 
-                       
+
 
                         //通知你的编辑器 obj 改变了
                         EditorUtility.SetDirty(obj);
@@ -90,11 +90,7 @@ namespace MDDSkillEngine
                                     {
                                         EffectInstance effectInstance = (EffectInstance)clip;
                                         EffectSkillData data = new EffectSkillData();
-                                        data.DataType = SkillDataType.Effect;                                      
-                                        data.ResouceName = effectInstance.EffectName;
-                                        data.localeftPostion = effectInstance.localeftPostion;
-                                        data.localRotation = effectInstance.localRotation;
-                                        data.localScale = effectInstance.localScale;
+                                        data.OnInit(effectInstance);
                                         Debug.LogError(data.DataType);
                                         dataList.Add(data);
                                     }
@@ -109,8 +105,7 @@ namespace MDDSkillEngine
                                     {
                                         PlayAnimatorClip playAnimatorClip = (PlayAnimatorClip)clip;
                                         AnimationSkillData data = new AnimationSkillData();
-                                        data.DataType = SkillDataType.Animation;
-                                        data.AnimationName = playAnimatorClip.animationName;
+                                        data.OnInit(playAnimatorClip);
                                         dataList.Add(data);
                                     }
                                 }
@@ -123,7 +118,9 @@ namespace MDDSkillEngine
                                     if (clip is InstanceCollider)
                                     {
                                         InstanceCollider instanceCollider = (InstanceCollider)clip;
-
+                                        ColliderSkillData data = new ColliderSkillData();
+                                        data.OnInit(instanceCollider);
+                                        dataList.Add(data);
                                     }
                                 }
                                 break;
