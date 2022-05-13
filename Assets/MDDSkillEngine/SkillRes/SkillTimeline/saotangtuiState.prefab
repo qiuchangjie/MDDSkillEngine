@@ -78,7 +78,7 @@ MonoBehaviour:
   _animationData:
     _animatedParameters: []
   _length: 0.2666667
-  EffectName: NormalBoxCollider
+  ColliderName: 
   col: {fileID: 0}
   localeftPostion: {x: -0.372, y: 0.51, z: 0.437}
   localRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 7026954199551462257}
   - component: {fileID: 8199464004636828458}
   m_Layer: 0
-  m_Name: AiGreen
+  m_Name: saotangtuiState
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

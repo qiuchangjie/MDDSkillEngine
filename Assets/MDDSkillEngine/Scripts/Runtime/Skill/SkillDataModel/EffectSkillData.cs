@@ -1,8 +1,8 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using MDDGameFramework.Runtime;
+using Slate;
+using Slate.ActionClips;
+using System;
 using UnityEngine;
-
 
 namespace MDDSkillEngine
 {
@@ -14,6 +14,20 @@ namespace MDDSkillEngine
         public Quaternion localRotation;
 
         public Vector3 localScale;
+
+        public override void OnInit(ActionClip data)
+        {
+            base.OnInit(data);
+            EffectInstance clip = data as EffectInstance;
+            if (clip == null)
+            {
+                Log.Error("{0}数据转换失败", LogConst.SKillTimeline);
+            }
+            DataType = SkillDataType.Effect;
+            localeftPostion = clip.localeftPostion;
+            localRotation = clip.localRotation;
+            localScale = clip.localScale;
+        }
     }
 }
 
