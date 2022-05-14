@@ -20,7 +20,7 @@ namespace Slate.ActionClips
         public ParticleSystem pat;
 
         [OnValueChanged("OnTimeScale")]
-        public float PlayableSpeed = 0.5f;
+        public float PlayableSpeed = 1f;
 
         [OnValueChanged("OnSetPosition")]
         public Vector3 localeftPostion;

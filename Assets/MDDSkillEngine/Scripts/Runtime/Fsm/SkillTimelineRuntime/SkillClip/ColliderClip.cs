@@ -9,10 +9,13 @@ namespace MDDSkillEngine
     {
         ColliderSkillData skillData;
 
-        public override void Init(SkillDataBase data, Entity actor)
-        {
-            skillData = data as ColliderSkillData;
+        Entity col;
 
+        public override void Init(SkillDataBase data, Entity actor,SkillTimeline skillTimeline)
+        {
+            base.Init(data, actor, skillTimeline);
+            skillData = data as ColliderSkillData;
+            this.skillTimeline = skillTimeline;
             this.actor = actor;
         }
 
@@ -20,36 +23,36 @@ namespace MDDSkillEngine
         {
             int id = Game.Entity.GenerateSerialId();
 
-            Game.Entity.ShowCollider(new ColliderData(id, 20001, actor)
-            {
-                Position = actor.CachedTransform.position + skillData.localeftPostion,
-                Rotation = actor.CachedTransform.rotation,
-                LocalScale = skillData.localScale,
-            });
+            Game.Entity.ShowCollider(new ColliderData(id, 20001, actor));
+            col = Game.Entity.GetEntity(id).Logic as Entity;
 
-            Entity col = Game.Entity.GetEntity(id).Logic as Entity;
-
-            float angle;
-            Vector3 vector3;
-            skillData.localRotation.ToAngleAxis(out angle, out vector3);
-            col.CachedTransform.rotation = Quaternion.Euler(vector3);
+            Game.Entity.AttachEntity(col.Id,actor.Id);
 
             BoxCollider Box = col.GetComponent<BoxCollider>();
             Box.size = skillData.boundSize;
             Box.center = skillData.boundCenter;
 
-            Log.Info("{0}进入effectclip name：{1}", LogConst.SKillTimeline, "1");
+            col.CachedTransform.localRotation = skillData.localRotation;
+            col.CachedTransform.localPosition = skillData.localeftPostion;
+            col.CachedTransform.localScale = skillData.localScale;
+
+            
+
+            Log.Info("{0}进入ColliderClip name：{1},time:{2}", LogConst.SKillTimeline, GetType().Name, duration);
         }
 
         public override void Update(float currentTime, float previousTime)
         {
             base.Update(currentTime, previousTime);
+            Log.Info("{0}upodateColliderClip name：{1}", LogConst.SKillTimeline, GetType().Name);
+            duration += currentTime;
 
         }
 
         public override void Exit()
         {
-
+            Game.Entity.HideEntity(col);
+            Log.Info("{0}离开ColliderClip name：{1}", LogConst.SKillTimeline, GetType().Name);
         }
 
 

@@ -5,12 +5,17 @@ using UnityEngine;
 
 namespace MDDSkillEngine
 {
+    public abstract class SkillTimeline
+    {
+        
+    }
+
     /// <summary>
     /// 技能运行时辅助类
     /// 主要用于将slate逻辑复制过来
     /// </summary>
     /// <typeparam name="T"></typeparam>
-    public class SkillTimeline<T> where T : Entity
+    public class SkillTimeline<T> : SkillTimeline where T : Entity
     {
         public enum PlayingDirection
         {
@@ -72,21 +77,21 @@ namespace MDDSkillEngine
                     case SkillDataType.Effect:
                         {
                             EffectClip effectClip = new EffectClip();
-                            effectClip.Init(data, owner);
+                            effectClip.Init(data, owner,this);
                             skillClips.Add(effectClip);
                         }
                         break;
                     case SkillDataType.Animation:
                         {
                             AnimationClip animationClip = new AnimationClip();
-                            animationClip.Init(data, owner);
+                            animationClip.Init(data, owner, this);
                             skillClips.Add(animationClip);
                         }
                         break;
                     case SkillDataType.Collider:
                         {
                             ColliderClip colliderClip = new ColliderClip();
-                            colliderClip.Init(data, owner);
+                            colliderClip.Init(data, owner, this);
                             skillClips.Add(colliderClip);
                         }
                         break;
@@ -182,13 +187,19 @@ namespace MDDSkillEngine
     {
         public Entity actor;
 
+        public SkillTimeline skillTimeline;
+
         public float duration;
 
         public float startTime;
 
         public float endTime;
 
-        abstract public void Init(SkillDataBase data, Entity actor);
+        virtual public void Init(SkillDataBase data, Entity actor, SkillTimeline skillTimeline)
+        {
+            startTime = data.StartTime;
+            endTime = data.EndTime;
+        }
 
         abstract public void Enter();
         abstract public void Exit();

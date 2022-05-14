@@ -142,18 +142,18 @@ namespace MDDSkillEngine
 
             InputLogic();
 
-            switch (SelectState)
-            {
-                case EntitySelectState.None:
-                    CacheOutLiner.SetOutLiner(false);
-                    break;
-                case EntitySelectState.OnHighlight:
-                    CacheOutLiner.SetOutLiner(true);
-                    break;
-                case EntitySelectState.OnSelect:
-                    CacheOutLiner.SetOutLiner(false);
-                    break;
-            }
+            //switch (SelectState)
+            //{
+            //    case EntitySelectState.None:
+            //        CacheOutLiner.SetOutLiner(false);
+            //        break;
+            //    case EntitySelectState.OnHighlight:
+            //        CacheOutLiner.SetOutLiner(true);
+            //        break;
+            //    case EntitySelectState.OnSelect:
+            //        CacheOutLiner.SetOutLiner(false);
+            //        break;
+            //}
 
             //RaycastHit hit;
             //if (Physics.Raycast(Game.Scene.MainCamera.ScreenPointToRay(Input.mousePosition), out hit, Mathf.Infinity, 1 << 8))
