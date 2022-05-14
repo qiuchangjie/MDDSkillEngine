@@ -10,7 +10,7 @@ namespace MDDSkillEngine
     /// 主要用于将slate逻辑复制过来
     /// </summary>
     /// <typeparam name="T"></typeparam>
-    public class SkillTimeline <T> where T : class
+    public class SkillTimeline<T> where T : Entity
     {
         public enum PlayingDirection
         {
@@ -18,22 +18,24 @@ namespace MDDSkillEngine
             Backwards
         }
 
+        public T owner;
+
         public List<SkillClip> skillClips = new List<SkillClip>();
 
-        private float currentTime;
+        public float currentTime;
 
-        private float lastTime;
+        public float lastTime;
 
         public float length;
 
-        private float previousTime;
+        public float previousTime;
 
         public PlayingDirection playingDirection = PlayingDirection.Forwards;
 
-        public float playbackSpeed;
+        public float playbackSpeed = 1f;
 
-        private List<IDirectableTimePointer> timePointers;
-        private List<IDirectableTimePointer> unsortedStartTimePointers;
+        private List<IDirectableTimePointer> timePointers = new List<IDirectableTimePointer>();
+        private List<IDirectableTimePointer> unsortedStartTimePointers = new List<IDirectableTimePointer>();
 
 
         public void Updata(float delta)
@@ -44,6 +46,19 @@ namespace MDDSkillEngine
             Sample(currentTime);
         }
 
+        public void Exit()
+        {
+            foreach (var v in timePointers)
+            {
+                v.isTrigger = false;
+            }
+
+            foreach (var v in unsortedStartTimePointers)
+            {
+                v.isTrigger = false;
+            }
+        }
+      
         /// <summary>
         /// 初始化技能clip
         /// </summary>
@@ -56,23 +71,34 @@ namespace MDDSkillEngine
                 {
                     case SkillDataType.Effect:
                         {
-                           
+                            EffectClip effectClip = new EffectClip();
+                            effectClip.Init(data, owner);
+                            skillClips.Add(effectClip);
                         }
                         break;
                     case SkillDataType.Animation:
                         {
-                           
+                            AnimationClip animationClip = new AnimationClip();
+                            animationClip.Init(data, owner);
+                            skillClips.Add(animationClip);
+                        }
+                        break;
+                    case SkillDataType.Collider:
+                        {
+                            ColliderClip colliderClip = new ColliderClip();
+                            colliderClip.Init(data, owner);
+                            skillClips.Add(colliderClip);
                         }
                         break;
 
                 }
             }
 
+            length = skillData.Length;
 
-            
             InitTimePointer();
 
-            Log.Info("{0}初始化Skilltimeline:name:{1} 成功.",LogConst.SKillTimeline,GetType().Name);
+            Log.Info("{0}初始化Skilltimeline:name:{1} 成功.", LogConst.SKillTimeline, owner.Name);
         }
 
         /// <summary>
@@ -87,9 +113,10 @@ namespace MDDSkillEngine
                 timePointers.Add(timePointer);
                 timePointers.Add(new EndTimePointer(item));
 
-                unsortedStartTimePointers.Add(timePointer);
-                timePointers = timePointers.OrderBy(p => p.time).ToList();
+                unsortedStartTimePointers.Add(timePointer);                
             }
+
+            timePointers = timePointers.OrderBy(p => p.time).ToList();
         }
 
         private void Sample(float time)
@@ -101,7 +128,7 @@ namespace MDDSkillEngine
             {
                 return;
             }
-     
+
             //Sample pointers
             if (timePointers != null)
             {
@@ -153,7 +180,7 @@ namespace MDDSkillEngine
 
     public abstract class SkillClip
     {
-        public GameObject actor;
+        public Entity actor;
 
         public float duration;
 
@@ -161,6 +188,7 @@ namespace MDDSkillEngine
 
         public float endTime;
 
+        abstract public void Init(SkillDataBase data, Entity actor);
 
         abstract public void Enter();
         abstract public void Exit();
@@ -174,6 +202,7 @@ namespace MDDSkillEngine
     ///An interface for TimePointers (since structs can't be abstract)
     public interface IDirectableTimePointer
     {
+        bool isTrigger { get; set; }
         SkillClip target { get; }
         float time { get; }
         void TriggerForward(float currentTime, float previousTime);
@@ -186,8 +215,19 @@ namespace MDDSkillEngine
     ///Wraps the startTime of a group, track or clip (IDirectable) along with it's relevant execution
     public struct StartTimePointer : IDirectableTimePointer
     {
+        public bool isTrigger 
+        {
+            get
+            {
+                return triggered;
+            }
+            set
+            {
+                triggered = value;
+            }
+        }
 
-        private bool triggered;
+        public bool triggered;
         private float lastTargetStartTime;
         public SkillClip target { get; private set; }
         float IDirectableTimePointer.time { get { return target.startTime; } }
@@ -252,6 +292,17 @@ namespace MDDSkillEngine
     ///Wraps the endTime of a group, track or clip (IDirectable) along with it's relevant execution
     public struct EndTimePointer : IDirectableTimePointer
     {
+        public bool isTrigger
+        {
+            get
+            {
+                return triggered;
+            }
+            set
+            {
+                triggered = value;
+            }
+        }
 
         private bool triggered;
         public SkillClip target { get; private set; }

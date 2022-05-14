@@ -35,6 +35,7 @@ namespace MDDSkillEngine
            : base(entityId, typeId)
         {
             m_Owner = owner;
+            EntityType = EntityType.Collider;
         }
     }
 

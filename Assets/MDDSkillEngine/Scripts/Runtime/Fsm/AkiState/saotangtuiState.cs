@@ -35,6 +35,7 @@ namespace MDDSkillEngine
         protected override void OnLeave(IFsm<Player> fsm, bool isShutdown)
         {
             base.OnLeave(fsm, isShutdown);
+            Log.Info("{0}离开{1}状态", LogConst.FSM, GetType().Name);
         }
 
         protected override void OnUpdate(IFsm<Player> fsm, float elapseSeconds, float realElapseSeconds)

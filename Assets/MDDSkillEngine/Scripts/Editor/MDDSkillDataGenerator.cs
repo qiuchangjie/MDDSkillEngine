@@ -91,7 +91,6 @@ namespace MDDSkillEngine
                                         EffectInstance effectInstance = (EffectInstance)clip;
                                         EffectSkillData data = new EffectSkillData();
                                         data.OnInit(effectInstance);
-                                        Debug.LogError(data.DataType);
                                         dataList.Add(data);
                                     }
                                 }
@@ -132,6 +131,8 @@ namespace MDDSkillEngine
             SkillData resultData = new SkillData(dataList);
 
             resultData.Length = Data.length;
+
+            Debug.LogError(resultData.Length);
 
             return resultData;
         }

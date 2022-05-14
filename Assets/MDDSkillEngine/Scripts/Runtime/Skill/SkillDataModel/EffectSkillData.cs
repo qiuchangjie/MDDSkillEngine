@@ -24,6 +24,9 @@ namespace MDDSkillEngine
                 Log.Error("{0}数据转换失败", LogConst.SKillTimeline);
             }
             DataType = SkillDataType.Effect;
+
+            ResouceName = clip.EffectName;
+
             localeftPostion = clip.localeftPostion;
             localRotation = clip.localRotation;
             localScale = clip.localScale;

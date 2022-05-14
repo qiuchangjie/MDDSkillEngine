@@ -17,7 +17,7 @@ namespace MDDSkillEngine
                 col = GetComponent<BoxCollider>();
             }
 
-            Debug.LogError(col.bounds.size);
+            //Debug.LogError(col.bounds.size);
 
             Gizmos.DrawWireCube(col.bounds.center, col.bounds.size);
 

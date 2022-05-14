@@ -41,7 +41,7 @@ namespace MDDSkillEngine
 
             if (Keyboard.current.cKey.wasPressedThisFrame)
             {
-                Game.Entity.ShowPlayer(new PlayerData(Game.Entity.GenerateSerialId(), 10000)
+                Game.Entity.ShowPlayer(new PlayerData(1001, 10000)
                 {
                     Position = new Vector3(0f, 0f, 0f),
                 });

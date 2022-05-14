@@ -4,7 +4,7 @@ using Sirenix.Serialization;
 
 namespace MDDSkillEngine
 {
-    public class SkillTimelineState<T> : MDDFsmState<T> where T : class
+    public class SkillTimelineState<T> : MDDFsmState<T> where T : Entity
     {
         public SkillTimeline<T> skillTimeline;
 
@@ -16,6 +16,8 @@ namespace MDDSkillEngine
         {
             base.OnInit(fsm);
             skillTimeline = new SkillTimeline<T>();
+
+            skillTimeline.owner = fsm.Owner;
 
             assetCallbacks = new LoadBinaryCallbacks(LoadCallBack);
             Game.Resource.LoadBinary(AssetUtility.GetSkillTimelineAsset(GetType().Name), assetCallbacks);
@@ -31,6 +33,17 @@ namespace MDDSkillEngine
             {
                 Finish(fsm);
             }
+        }
+
+        protected override void OnLeave(IFsm<T> fsm, bool isShutdown)
+        {
+            base.OnLeave(fsm, isShutdown);
+            skillTimeline.currentTime = 0;
+            skillTimeline.previousTime = 0;
+            skillTimeline.lastTime = 0;
+            Duration = 0f;
+
+            skillTimeline.Exit();
         }
 
         private void LoadCallBack(string entityAssetName, object entityAsset, float duration, object userData)

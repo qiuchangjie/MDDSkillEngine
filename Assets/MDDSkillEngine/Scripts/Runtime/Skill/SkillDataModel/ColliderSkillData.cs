@@ -32,6 +32,8 @@ namespace MDDSkillEngine
 
             DataType = SkillDataType.Collider;
 
+            ResouceName = instanceCollider.ColliderName;
+
             localeftPostion = instanceCollider.localeftPostion;
             localRotation = instanceCollider.localRotation;
             localScale = instanceCollider.localScale;

@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _name: Collider
-  skillDataType: 0
+  skillDataType: 3
   _color: {r: 1, g: 1, b: 1, a: 1}
   _active: 1
   _isLocked: 0
@@ -78,7 +78,7 @@ MonoBehaviour:
   _animationData:
     _animatedParameters: []
   _length: 0.2666667
-  ColliderName: 
+  ColliderName: NormalBoxCollider
   col: {fileID: 0}
   localeftPostion: {x: -0.372, y: 0.51, z: 0.437}
   localRotation: {x: 0, y: 0, z: 0, w: 1}

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using MDDGameFramework.Runtime;
-
+using System.Threading.Tasks;
 
 namespace MDDSkillEngine
 {
@@ -81,6 +81,13 @@ namespace MDDSkillEngine
             skill.Blackboard.Set<VarBoolean>("input", true);
         }
 
+        public async void UseSkillAsync()
+        {
+            await System.Threading.Tasks.Task.Run(() => 
+            {
+                Debug.LogError("1");
+            });
+        }
 
         /// <summary>
         /// 释放技能
