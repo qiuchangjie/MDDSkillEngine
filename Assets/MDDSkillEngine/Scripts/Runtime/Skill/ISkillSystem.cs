@@ -17,5 +17,11 @@ namespace MDDSkillEngine
 
         bool UpgradeSkill(int id);
 
+        Blackboard GetSkillBlackboard(int id);
+
+        Blackboard GetPubBlackboard();
+
+        void SetBlackboard(Blackboard blackboard);
+
     }
 }

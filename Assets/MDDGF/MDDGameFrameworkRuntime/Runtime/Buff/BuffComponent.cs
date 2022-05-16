@@ -30,6 +30,11 @@ namespace MDDGameFramework.Runtime
         {
             buffSystemManager.AddBuff(BufSystemName, buffName,target,from);
         }
+
+        public IBuffSystem GetBuffSystem(string name)
+        {
+            return buffSystemManager.GetBuffSystem(name);
+        }
     }
 }
 

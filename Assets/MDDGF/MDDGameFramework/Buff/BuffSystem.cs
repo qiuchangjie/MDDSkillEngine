@@ -10,7 +10,6 @@ namespace MDDGameFramework
         private object m_Owner;
         private readonly List<BuffBase> buffs;
         private readonly List<BuffBase> m_TempBuffs;
-        private BuffBase currentNode;
 
 
         public object Owner
@@ -22,18 +21,9 @@ namespace MDDGameFramework
         {
             buffs = new List<BuffBase>();
             m_Owner = null;
-            currentNode = null;
             m_TempBuffs = new List<BuffBase>();
         }
       
-        public void RemoveBuff()
-        {
-            currentNode=null;
-
-            ReferencePool.EnableStrictCheck = true;
-
-            ReferencePool.Release(currentNode);
-        }
 
         internal override void OnUpdate(float elapseSeconds, float realElapseSeconds)
         {
@@ -71,7 +61,13 @@ namespace MDDGameFramework
 
         public void RemoveBuff(int bufID)
         {
-            ReferencePool.Release(currentNode);
+        }
+
+        public void RemoveBuff(BuffBase buf)
+        {
+            buf.OnFininsh(this);
+            buffs.Remove(buf);
+            ReferencePool.Release(buf);
         }
 
         public bool HasBuff(int bufID)
@@ -114,9 +110,13 @@ namespace MDDGameFramework
 
         public void Clear()
         {
+            foreach (var item in buffs)
+            {
+                ReferencePool.Release(item);
+            }
+
             buffs.Clear();
             m_Owner = null;
-            currentNode = null;
             m_TempBuffs.Clear();
         }
     }

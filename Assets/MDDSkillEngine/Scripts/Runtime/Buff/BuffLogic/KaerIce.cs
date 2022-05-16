@@ -37,6 +37,16 @@ namespace MDDSkillEngine
 
         public override void OnExecute(IBuffSystem buffSystem)
         {
+            Entity entity = From as Entity;
+
+            if (entity == null)
+            {
+                Log.Error("{0}卡尔冰 施法者丢失", LogConst.Buff);
+            }
+
+            KealSkillSystem kealSkillSystem = Game.Skill.GetSkillSystem(entity.Id) as KealSkillSystem;
+            kealSkillSystem.UpdateKealBuffQueue(this);
+
             Log.Error("{0}卡尔冰", LogConst.Buff);
         }
 

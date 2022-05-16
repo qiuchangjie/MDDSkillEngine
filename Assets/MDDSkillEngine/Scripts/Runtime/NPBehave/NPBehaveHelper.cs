@@ -36,11 +36,11 @@ namespace MDDSkillEngine
                 Game.Resource.LoadAsset(AssetUtility.GetSkillAsset(dRSkills[i].AssetName), assetCallbacks);
 
                 Log.Error(dRSkills[i].EffectAsset.Count);
-            }   
+            }
         }
 
 
-        public NP_Tree CreatBehaviourTree(string Name, object userData,NPType nPType = NPType.skill)
+        public NP_Tree CreatBehaviourTree(string Name, object userData, NPType nPType = NPType.skill)
         {
             NPBehaveGraph nP;
             if (!m_GraphDic.TryGetValue(AssetUtility.GetSkillAsset(Name), out nP))
@@ -83,24 +83,41 @@ namespace MDDSkillEngine
                         //toarray是暴力copy所以这里需要优化
                         data.NP_GetNodeData().CreateComposite(nodes.ToArray());
                         break;
-                }                           
+                }
             }
 
-         
+
             root = (nP.GetRootNode() as NP_NodeBase).NP_GetNodeData().NP_GetNode() as Root;
             root.SetRoot(root);
             //暂时只有kaer公共黑板，暂时这么写
             KaelBlackboard kaelBlackboard = nP.PublicBB as KaelBlackboard;
             if (kaelBlackboard != null)
             {
-                root.SetBlackBoard(Blackboard.Create(nP.BBValues, Blackboard.Create(kaelBlackboard.BBValues, root.Clock), root.Clock));
+                Entity entity = userData as Entity;
+                ISkillSystem skillSystem = Game.Skill.GetSkillSystem(entity.Id);
+
+                if (skillSystem.GetPubBlackboard() == null)
+                {
+                    Blackboard blackboard = Blackboard.Create(kaelBlackboard.BBValues, root.Clock);
+                    skillSystem.SetBlackboard(blackboard);
+                    root.SetBlackBoard(Blackboard.Create(nP.BBValues, blackboard, root.Clock));
+                    Log.Info("{0}设置公共黑板成功", LogConst.NPBehave);
+                }
+                else
+                {
+                    root.SetBlackBoard(Blackboard.Create(nP.BBValues, skillSystem.GetPubBlackboard(), root.Clock));
+                    Log.Info("{0}设置{1}公共黑板成功", LogConst.NPBehave, LogConst.NPBehave);
+
+                }
+
+
             }
             else
             {
                 root.SetBlackBoard(Blackboard.Create(nP.BBValues, root.Clock));
             }
-           
-            
+
+
 
             Entity owner = userData as Entity;
             if (owner == null)
@@ -110,9 +127,9 @@ namespace MDDSkillEngine
             root.SetOwner(owner.Entity);
 
 
-          
+
             skill.SetRootNode(root);
-       
+
 
             return skill;
         }
@@ -132,7 +149,7 @@ namespace MDDSkillEngine
         }
     }
 
-   
+
 
 }
 

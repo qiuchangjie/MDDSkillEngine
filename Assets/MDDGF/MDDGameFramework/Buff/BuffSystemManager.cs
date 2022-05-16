@@ -62,7 +62,19 @@ namespace MDDGameFramework
             }
         }
 
-      
+
+        public IBuffSystem GetBuffSystem(string name)
+        {
+            BuffSystem buffSystem;
+            if (m_BuffSystems.TryGetValue(name, out buffSystem))
+            {
+                return buffSystem;
+            }
+
+            throw new MDDGameFrameworkException(Utility.Text.Format("m_BuffSystems is null:{0}", name));
+        }
+
+
     }       
 }
 
