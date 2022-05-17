@@ -64,6 +64,11 @@ namespace MDDSkillEngine
             entityComponent.ShowEntity(typeof(MDDCollider), "Collider", Constant.AssetPriority.EffectAsset, data);
         }
 
+        public static void ShowCollider(this EntityComponent entityComponent, Type logicType, ColliderData data)
+        {
+            entityComponent.ShowEntity(logicType, "Collider", Constant.AssetPriority.EffectAsset, data);
+        }
+
         private static void ShowEntity(this EntityComponent entityComponent, Type logicType, string entityGroup, int priority, EntityData data)
         {
             if (data == null)

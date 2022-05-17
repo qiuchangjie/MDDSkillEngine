@@ -62,7 +62,14 @@ namespace MDDSkillEngine
 
             procedureOwner.SetData<VarInt32>("NextSceneId",2);
 
-            ChangeState<ProcedureChangeScene>(procedureOwner);
+            if (Game.Procedure.procedureType == ProcedureType.Game)
+            {
+                ChangeState<ProcedureChangeScene>(procedureOwner);
+            }
+            else
+            {
+                ChangeState<ProcedureSkillEditor>(procedureOwner);
+            }
         }
 
 

@@ -91,7 +91,17 @@ namespace MDDSkillEngine
             }
 
             if (isOpen)
-                ChangeState<ProcedureMDDSkillFactory>(procedureOwner);
+            {
+                if (Game.Procedure.procedureType == ProcedureType.Game)
+                {
+                    ChangeState<ProcedureMDDSkillFactory>(procedureOwner);
+                }
+                else
+                {
+                    ChangeState<ProcedureSkillEditor>(procedureOwner);
+                }
+            }
+                
 
         }
 

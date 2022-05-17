@@ -22,6 +22,8 @@ namespace MDDGameFramework.Runtime
         [SerializeField]
         private string m_EntranceProcedureTypeName = null;
 
+        public ProcedureType procedureType = ProcedureType.Game;
+
         /// <summary>
         /// 获取当前流程。
         /// </summary>
@@ -135,5 +137,11 @@ namespace MDDGameFramework.Runtime
         {
             return m_ProcedureManager.GetProcedure(procedureType);
         }
+    }
+
+    public enum ProcedureType
+    {
+        Game,
+        Editor
     }
 }

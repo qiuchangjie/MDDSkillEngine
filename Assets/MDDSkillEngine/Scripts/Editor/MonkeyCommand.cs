@@ -42,6 +42,15 @@ namespace MDDSkillEngine
             IFsm<Player> fsm = Game.Fsm.GetFsm<Player>("1001");
             fsm.SetData<VarBoolean>("saotangtuiState", true);
         }
+
+        [Command("testEntity")]
+        public static void ShowEntity()
+        {
+            Game.Entity.ShowCollider(typeof(NormalMoveCollider),new ColliderData(Game.Entity.GenerateSerialId(), 20003, (Entity)Game.Entity.GetEntity(1001).Logic)
+            {
+                Duration = 7
+            });
+        }
     }
 }
 
