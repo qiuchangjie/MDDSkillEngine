@@ -12,7 +12,7 @@ namespace MDDSkillEngine
 
         private Blackboard m_PublicBlackboard;
 
-        private T m_Owner;
+        protected T m_Owner;
 
         public T Owner
         {

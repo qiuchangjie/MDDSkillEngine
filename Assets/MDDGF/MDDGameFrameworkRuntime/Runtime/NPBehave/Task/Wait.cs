@@ -73,7 +73,7 @@ namespace MDDGameFramework.Runtime
             {
                 if (this.blackboardKey != null)
                 {
-                    seconds = Blackboard.Get<float>(this.blackboardKey);
+                    seconds = Blackboard.Get<VarFloat>(this.blackboardKey);
                 }
                 else if (this.function != null)
                 {

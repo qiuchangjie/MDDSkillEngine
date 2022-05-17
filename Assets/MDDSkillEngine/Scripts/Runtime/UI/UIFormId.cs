@@ -33,6 +33,11 @@ namespace MDDSkillEngine
         /// 关于。
         /// </summary>
         AboutForm = 102,
+
+        /// <summary>
+        /// 黑板
+        /// </summary>
+        Blackboard = 103, 
         
 
       

@@ -101,6 +101,11 @@ namespace MDDSkillEngine
             Game.Skill.GetSkillSystem(Id).AddSkill(10005);
             Game.Skill.GetSkillSystem(Id).AddSkill(10006);
 
+            UIBlackboard uIBlackboard = Game.UI.GetUIForm(UIFormId.Blackboard) as UIBlackboard;
+
+            ISkillSystem skillSystem = Game.Skill.GetSkillSystem(1001);
+
+            uIBlackboard.InitData(skillSystem.GetPubBlackboard());
 
             PlayerData = userData as PlayerData;
             if (PlayerData == null)

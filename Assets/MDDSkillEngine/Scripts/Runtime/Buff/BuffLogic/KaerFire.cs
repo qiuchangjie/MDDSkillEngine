@@ -66,7 +66,8 @@ namespace MDDSkillEngine
 
         public override void OnFininsh(IBuffSystem buffSystem)
         {
-            base.OnFininsh(buffSystem);           
+            base.OnFininsh(buffSystem);
+            Log.Error("{0}卡尔火 finish", LogConst.Buff);
         }
 
 

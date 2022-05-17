@@ -30,6 +30,8 @@ namespace MDDSkillEngine
 
             Game.Select.isWork = true;
 
+            Game.UI.OpenUIForm(UIFormId.Blackboard);
+
             Log.Info("成功进入训练场景");
         }
 

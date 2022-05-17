@@ -18,6 +18,14 @@ namespace MDDSkillEngine
 
         public ISkillSystem CreateSkillSystem<T>(Entity Owner) where T : Entity
         {
+            Player player = Owner as Player;
+            if (player != null)
+            {
+                KealSkillSystem sys = KealSkillSystem.Create(player);
+                skillSystemDic.Add(sys.Owner.Id, sys);
+                return sys;
+            }
+
             SkillSystem<T> skillSystem = SkillSystem<T>.Create(Owner);
 
             skillSystemDic.Add(skillSystem.Owner.Id,skillSystem);

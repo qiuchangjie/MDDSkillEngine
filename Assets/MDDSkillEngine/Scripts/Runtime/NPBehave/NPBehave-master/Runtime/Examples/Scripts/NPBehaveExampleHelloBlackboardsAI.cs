@@ -33,7 +33,7 @@ public class NPBehaveExampleHelloBlackboardsAI : MonoBehaviour
             {
 
                 UnityEngine.Profiling.Profiler.BeginSample("xiaofang");
-                behaviorTree.Blackboard.Set<VarBoolean>("foo", !behaviorTree.Blackboard.Get<bool>("foo"));
+               // behaviorTree.Blackboard.Set<VarBoolean>("foo", !behaviorTree.Blackboard.Get<bool>("foo"));
                 UnityEngine.Profiling.Profiler.EndSample();
             },
 

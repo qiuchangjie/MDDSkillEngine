@@ -13,7 +13,6 @@ namespace MDDGameFramework.Runtime
         /// </summary>
         public VarQueue()
         {
-            Value = new Queue();
         }
 
         /// <summary>
@@ -24,6 +23,7 @@ namespace MDDGameFramework.Runtime
         {
             VarQueue varValue = ReferencePool.Acquire<VarQueue>();
             varValue.Value = value;
+            Log.Error("--------------------------------------------------chufa");
             return varValue;
         }
 

@@ -65,7 +65,7 @@ namespace MDDGameFramework
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public T GetBlackBoardValue<T>(Blackboard blackboard)
+        public T GetBlackBoardValue<T>(Blackboard blackboard) where T : Variable
         {
             return blackboard.Get<T>(this.BBKey);
         }
