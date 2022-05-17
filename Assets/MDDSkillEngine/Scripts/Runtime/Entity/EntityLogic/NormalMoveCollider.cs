@@ -41,7 +41,7 @@ namespace MDDSkillEngine
             {
                 Position = CachedTransform.position,
                 Rotation = CachedTransform.rotation,
-                LocalScale = CachedTransform.localScale,
+                LocalScale = new Vector3(0.2f,0.2f,0.2f),
                 KeepTime = 999
             });
             Game.Entity.AttachEntity(effectid, Id);
@@ -54,6 +54,7 @@ namespace MDDSkillEngine
             data.Duration -= elapseSeconds;
             if (data.Duration <= 0)
             {
+                Log.Info("{0}回收collider, name :{1}", LogConst.Skill, Name);
                 HideSelf();
             }
 
@@ -71,7 +72,6 @@ namespace MDDSkillEngine
         protected override void OnHide(bool isShutdown, object userData)
         {
             base.OnHide(isShutdown, userData);
-            Game.Entity.HideEntity(effectid);
         }
 
         private void MoveWithDirAndSpeed(Vector3 dir,float speed,float elapseSeconds)
