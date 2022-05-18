@@ -1,6 +1,6 @@
 ﻿//------------------------------------------------------------
 // 此文件由工具自动生成，请勿直接修改。
-// 生成时间：2022-05-18 00:41:49.001
+// 生成时间：2022-05-18 18:44:07.792
 //------------------------------------------------------------
 
 using MDDGameFramework;
@@ -53,6 +53,24 @@ namespace MDDSkillEngine
         /// 获取资源名。
         /// </summary>
         public string AssetName
+        {
+            get;
+            private set;
+        }
+
+        /// <summary>
+        /// 获取是否关联State。
+        /// </summary>
+        public bool IsState
+        {
+            get;
+            private set;
+        }
+
+        /// <summary>
+        /// 获取关联的状态名。
+        /// </summary>
+        public string StateName
         {
             get;
             private set;
@@ -118,6 +136,8 @@ namespace MDDSkillEngine
             Name = columnStrings[index++];
             PublicBBAssetName = columnStrings[index++];
             AssetName = columnStrings[index++];
+            IsState = bool.Parse(columnStrings[index++]);
+            StateName = columnStrings[index++];
             Icon = columnStrings[index++];
             EffectAsset =  DataTableExtension.ParseList(columnStrings[index++]);
             EffectAssetMutl =  DataTableExtension.ParseList(columnStrings[index++]);
@@ -138,6 +158,8 @@ namespace MDDSkillEngine
                     Name = binaryReader.ReadString();
                     PublicBBAssetName = binaryReader.ReadString();
                     AssetName = binaryReader.ReadString();
+                    IsState = binaryReader.ReadBoolean();
+                    StateName = binaryReader.ReadString();
                     Icon = binaryReader.ReadString();
                     EffectAsset = binaryReader.ReadList();
                     EffectAssetMutl = binaryReader.ReadList();

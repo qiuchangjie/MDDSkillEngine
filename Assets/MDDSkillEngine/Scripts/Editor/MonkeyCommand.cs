@@ -46,9 +46,11 @@ namespace MDDSkillEngine
         [Command("testEntity")]
         public static void ShowEntity()
         {
-            Game.Entity.ShowCollider(typeof(NormalMoveCollider),new ColliderData(Game.Entity.GenerateSerialId(), 20003, (Entity)Game.Entity.GetEntity(1001).Logic)
+            Entity entity = (Entity)Game.Entity.GetEntity(1001).Logic;
+            Game.Entity.ShowCollider(typeof(NormalMoveCollider),new ColliderData(Game.Entity.GenerateSerialId(), 20003, entity)
             {
-                Duration = 7
+                Position = entity.CachedTransform.position,
+                Duration = 7           
             });
         }
     }

@@ -19,6 +19,7 @@ namespace MDDSkillEngine
 
         private int effectid;
 
+        Vector3 dir;
 
         protected override void OnInit(object userData)
         {
@@ -45,6 +46,8 @@ namespace MDDSkillEngine
                 KeepTime = 999
             });
             Game.Entity.AttachEntity(effectid, Id);
+
+            dir = data.Owner.CachedTransform.forward;
         }
 
         protected override void OnUpdate(float elapseSeconds, float realElapseSeconds)
@@ -58,7 +61,7 @@ namespace MDDSkillEngine
                 HideSelf();
             }
 
-            MoveWithDirAndSpeed(data.Owner.CachedTransform.forward, data.Speed, elapseSeconds);
+            MoveWithDirAndSpeed(dir, data.Speed, elapseSeconds);
 
             waitTime += elapseSeconds;
 

@@ -112,6 +112,12 @@ namespace MDDSkillEngine
             private set;
         }
 
+        public static CoroutineComponent Coroutine
+        {
+            get;
+            private set;
+        }
+
         private void InitMDDComponent()
         {
             Buff = MDDGameEntry.GetComponent<BuffComponent>();
@@ -131,6 +137,7 @@ namespace MDDSkillEngine
             Select = MDDGameEntry.GetComponent<SelectEntity>();
             Skill = MDDGameEntry.GetComponent<SkillComponent>();
             Input = MDDGameEntry.GetComponent<InputSystemComponent>();
+            Coroutine = MDDGameEntry.GetComponent<CoroutineComponent>();
         }
     }
 }

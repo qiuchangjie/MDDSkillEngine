@@ -18,7 +18,6 @@ namespace MDDSkillEngine
             skillTimeline = new SkillTimeline<T>();
 
             skillTimeline.owner = fsm.Owner;
-
             assetCallbacks = new LoadBinaryCallbacks(LoadCallBack);
             Game.Resource.LoadBinary(AssetUtility.GetSkillTimelineAsset(GetType().Name), assetCallbacks);
         }
