@@ -26,6 +26,9 @@ namespace MDDSkillEngine
             }
 
             m_ElapseSeconds = 0f;
+
+            if (m_EffectData.Owner != null)
+                Game.Entity.AttachEntity(Id, m_EffectData.Owner.Id);
         }
 
         protected override void OnUpdate(float elapseSeconds, float realElapseSeconds)

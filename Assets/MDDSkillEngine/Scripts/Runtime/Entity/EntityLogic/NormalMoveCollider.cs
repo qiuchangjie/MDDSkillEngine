@@ -40,12 +40,14 @@ namespace MDDSkillEngine
 
             Game.Entity.ShowEffect(new EffectData(effectid, 70007)
             {
+                Owner = this,
                 Position = CachedTransform.position,
                 Rotation = CachedTransform.rotation,
                 LocalScale = new Vector3(0.2f,0.2f,0.2f),
                 KeepTime = 999
+                
             });
-            Game.Entity.AttachEntity(effectid, Id);
+                
 
             dir = data.Owner.CachedTransform.forward;
         }

@@ -16,7 +16,7 @@ MonoBehaviour:
   MaxSortedSelectionSize: 1000
   ShowSortedSelectionWarning: 1
   MonkeyConsoleOverrideHotKey: 
-  PauseGameOnConsoleOpen: 1
+  PauseGameOnConsoleOpen: 0
   PutInvalidCommandAtEndOfSearch: 0
   IncludeMenuItems: 1
   IncludeOnlyMenuItemsWithHotKeys: 0

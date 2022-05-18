@@ -22,7 +22,7 @@ namespace MDDSkillEngine
             }
         }
 
-       
+
 
         public SkillSystem()
         {
@@ -49,7 +49,7 @@ namespace MDDSkillEngine
             }
             else
             {
-                Log.Info("{1}添加技能成功：{0}", skillId,LogConst.Skill);
+                Log.Info("{1}添加技能成功：{0}", skillId, LogConst.Skill);
             }
 
             skill.Start();
@@ -61,7 +61,7 @@ namespace MDDSkillEngine
             Skill skill;
             if (!skillDic.TryGetValue(new NameNamePair(id.ToString(), m_Owner.Id.ToString()), out skill))
             {
-                Log.Error("{1}尝试获取没有装配的技能id：{0}", id,LogConst.Skill);
+                Log.Error("{1}尝试获取没有装配的技能id：{0}", id, LogConst.Skill);
                 return null;
             }
 
@@ -85,7 +85,7 @@ namespace MDDSkillEngine
 
         public async void UseSkillAsync()
         {
-            await System.Threading.Tasks.Task.Run(() => 
+            await System.Threading.Tasks.Task.Run(() =>
             {
                 Debug.LogError("1");
             });
@@ -98,8 +98,18 @@ namespace MDDSkillEngine
         public void ReleaseSkill(int id)
         {
             IFsm<T> fsm = Game.Fsm.GetFsm<T>(m_Owner.Id.ToString());
-            //这里需要做成通通过id索引到对应的技能关联状态名称 
-            fsm.SetData<VarBoolean>("shunxi", true);
+            IDataTable<DRSkill> dtSkill = Game.DataTable.GetDataTable<DRSkill>();
+            DRSkill drSkill = dtSkill.GetDataRow(id);
+
+            //通过技能id对应到关联的state实例
+            if (drSkill.IsState)
+            {
+                fsm.SetData<VarBoolean>(drSkill.StateName, true);
+            }
+            else
+            {
+                Log.Error("{0}Skill{1}未关联state", LogConst.Skill, id);
+            }
         }
 
         public virtual void RemoveSkill(string name)
@@ -130,7 +140,7 @@ namespace MDDSkillEngine
 
         public void SetBlackboard(Blackboard blackboard)
         {
-            m_PublicBlackboard= blackboard;
+            m_PublicBlackboard = blackboard;
         }
 
         public void Clear()
@@ -138,6 +148,6 @@ namespace MDDSkillEngine
 
         }
 
-        
+
     }
 }

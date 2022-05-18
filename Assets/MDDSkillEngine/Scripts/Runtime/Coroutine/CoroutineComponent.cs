@@ -14,6 +14,28 @@ namespace MDDSkillEngine
         {
             return StartCoroutine(target);
         }
+
+        public IEnumerator StartJobDelayed(float delayedTime)
+        {
+            yield return new WaitForSeconds(delayedTime);         
+        }
+
+        public IEnumerator StartJobDelayed<T>(float delayedTime, T t)
+        {
+            yield return new WaitForSeconds(delayedTime);      
+        }
+
+        public IEnumerator StartJobUntil(Func<bool> funtion)
+        {
+            yield return new WaitUntil(funtion);         
+        }
+
+        public IEnumerator StartJobUntil<T>(Func<bool> funtion, T t)
+        {
+            yield return new WaitUntil(funtion);       
+        }
+
+
     }
     public static class CoroutineEx
     {
