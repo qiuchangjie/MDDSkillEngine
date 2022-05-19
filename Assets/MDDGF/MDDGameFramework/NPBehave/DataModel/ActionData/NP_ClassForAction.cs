@@ -28,6 +28,9 @@ namespace MDDGameFramework
         [HideInEditorMode]
         public Func<bool, Action.Result> Func2;
 
+        [HideInEditorMode]
+        public Func<Action.Request, Action.Result> Func3;
+
         /// <summary>
         /// 获取将要执行的委托函数，也可以在这里面做一些初始化操作
         /// </summary>
@@ -43,6 +46,11 @@ namespace MDDGameFramework
         }
 
         public virtual System.Func<bool, Action.Result> GetFunc2ToBeDone()
+        {
+            return null;
+        }
+
+        public virtual System.Func<Action.Request, Action.Result> GetFun3ToBeDone()
         {
             return null;
         }

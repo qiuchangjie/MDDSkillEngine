@@ -52,7 +52,14 @@ namespace MDDSkillEngine
 
             if (Fsm.GetCurrStateName() == "AkiIdleState")
             {
+                ISkillSystem skillSystem = Game.Skill.GetSkillSystem(Fsm.Owner.Id);
+                skillSystem.SetSkillReleaseResultType(SkillReleaseResultType.PROGRESS);
                 ChangeState<saotangtuiState>(Fsm);
+            }
+            else
+            {
+                ISkillSystem skillSystem = Game.Skill.GetSkillSystem(Fsm.Owner.Id);
+                skillSystem.SetSkillReleaseResultType(SkillReleaseResultType.FAIL);
             }
         }
     }

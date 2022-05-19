@@ -10,8 +10,14 @@ namespace MDDSkillEngine
     {
         private Dictionary<NameNamePair, Skill> skillDic;
 
+        /// <summary>
+        /// 技能系统关联的公共黑板
+        /// </summary>
         private Blackboard m_PublicBlackboard;
 
+        /// <summary>
+        /// 技能系统所有者
+        /// </summary>
         protected T m_Owner;
 
         public T Owner
@@ -21,6 +27,12 @@ namespace MDDSkillEngine
                 return m_Owner;
             }
         }
+        
+
+        /// <summary>
+        /// 用来记录当前技能释放的结果
+        /// </summary>
+        public SkillReleaseResultType CurrentSkillState = SkillReleaseResultType.NONE;
 
 
 
@@ -83,14 +95,7 @@ namespace MDDSkillEngine
             skill.Blackboard.Set<VarBoolean>("input", true);
         }
 
-        public async void UseSkillAsync()
-        {
-            await System.Threading.Tasks.Task.Run(() =>
-            {
-                Debug.LogError("1");
-            });
-        }
-
+      
         /// <summary>
         /// 释放技能
         /// </summary>
@@ -110,6 +115,25 @@ namespace MDDSkillEngine
             {
                 Log.Error("{0}Skill{1}未关联state", LogConst.Skill, id);
             }
+        }
+
+        /// <summary>
+        /// 请求当前技能的释放结果
+        /// </summary>
+        /// <param name="skillID"></param>
+        /// <returns></returns>
+        public SkillReleaseResultType GetSkillReleaseResultType()
+        {
+            return CurrentSkillState;         
+        }
+
+        /// <summary>
+        /// 设置当前技能释放结果
+        /// </summary>
+        /// <param name="skillReleaseResultType"></param>
+        public void SetSkillReleaseResultType(SkillReleaseResultType skillReleaseResultType)
+        {
+            CurrentSkillState = skillReleaseResultType;
         }
 
         public virtual void RemoveSkill(string name)
@@ -149,5 +173,29 @@ namespace MDDSkillEngine
         }
 
 
+    }
+
+    public enum SkillReleaseResultType
+    {
+        /// <summary>
+        /// 无技能被释放
+        /// </summary>
+        NONE,
+        /// <summary>
+        /// 技能释放成功
+        /// </summary>
+        SUCCSE,
+        /// <summary>
+        /// 技能释放了 但是在进入cd前被中止
+        /// </summary>
+        STOP,
+        /// <summary>
+        /// 技能释放失败
+        /// </summary>
+        FAIL,
+        /// <summary>
+        /// 技能在释放过程中
+        /// </summary>
+        PROGRESS,
     }
 }

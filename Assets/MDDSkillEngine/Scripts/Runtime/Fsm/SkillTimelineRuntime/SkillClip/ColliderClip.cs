@@ -21,6 +21,9 @@ namespace MDDSkillEngine
 
         public override void Enter()
         {
+            ISkillSystem skillSystem = Game.Skill.GetSkillSystem(actor.Id);
+            skillSystem.SetSkillReleaseResultType(SkillReleaseResultType.SUCCSE);
+
             int id = Game.Entity.GenerateSerialId();
 
             Game.Entity.ShowCollider(new ColliderData(id, 20001, actor));

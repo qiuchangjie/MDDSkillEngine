@@ -23,5 +23,8 @@ namespace MDDSkillEngine
 
         void SetBlackboard(Blackboard blackboard);
 
+        SkillReleaseResultType GetSkillReleaseResultType();
+
+        void SetSkillReleaseResultType(SkillReleaseResultType releaseResultType);
     }
 }
