@@ -589,7 +589,7 @@ namespace MDDGameFramework
                 throw new MDDGameFrameworkException("Current state is invalid.");
             }
 
-            if (!m_StateStack.Peek().StrongState || !m_StateStack.Peek().CantStop)
+            if (!m_StateStack.Peek().StrongState && !m_StateStack.Peek().CantStop)
             {
                 m_StateStack.Peek().OnLeave(this, false);
                 m_StateStack.Pop();
@@ -628,7 +628,7 @@ namespace MDDGameFramework
                 m_StateStack.Pop();
                 m_StateStack.Push(state);
                 m_StateStack.Peek().OnEnter(this);
-            }
+            } 
             else
             {
                 m_StateStack.Push(state);

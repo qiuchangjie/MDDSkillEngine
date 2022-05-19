@@ -16,14 +16,20 @@ namespace MDDGameFramework
     /// <typeparam name="T">有限状态机持有者类型。</typeparam>
     public abstract class FsmState<T> : FsmState where T : class
     {
+        private bool m_StrongState;
+
+        private bool m_CantStop;
+
         public virtual bool StrongState
         {
-            get { return false; }
+            get { return m_StrongState; }
+            set { m_StrongState = value; }
         }
 
         public virtual bool CantStop
         {
-            get { return false; }
+            get { return m_CantStop; }
+            set { m_CantStop = value; }
         }
 
         public float duration = 0f;

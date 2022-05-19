@@ -16,8 +16,8 @@ namespace MDDSkillEngine
         {
             base.OnInit(fsm);
             skillTimeline = new SkillTimeline<T>();
-
             skillTimeline.owner = fsm.Owner;
+            skillTimeline.fsm = fsm;
             assetCallbacks = new LoadBinaryCallbacks(LoadCallBack);
             Game.Resource.LoadBinary(AssetUtility.GetSkillTimelineAsset(GetType().Name), assetCallbacks);
         }
@@ -30,6 +30,7 @@ namespace MDDSkillEngine
 
             if (Duration >= skillTimeline.length)
             {
+                skillTimeline.SetStateCantStop(false);
                 Finish(fsm);
             }
         }

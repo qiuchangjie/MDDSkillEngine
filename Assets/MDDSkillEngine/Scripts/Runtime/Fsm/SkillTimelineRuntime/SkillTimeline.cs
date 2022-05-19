@@ -1,4 +1,5 @@
 ﻿using MDDGameFramework.Runtime;
+using MDDGameFramework;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -7,7 +8,7 @@ namespace MDDSkillEngine
 {
     public abstract class SkillTimeline
     {
-        
+        public abstract void SetStateCantStop(bool b);
     }
 
     /// <summary>
@@ -24,6 +25,8 @@ namespace MDDSkillEngine
         }
 
         public T owner;
+
+        public IFsm<T> fsm;
 
         public List<SkillClip> skillClips = new List<SkillClip>();
 
@@ -179,6 +182,12 @@ namespace MDDSkillEngine
                     catch (System.Exception e) { Debug.LogException(e); }
                 }
             }
+        }
+
+        public override void SetStateCantStop(bool b)
+        {
+            Log.Info("{0}设置状态：{1},cantstop:{2}",LogConst.FSM, fsm.CurrentState.GetType(), b);
+            fsm.CurrentState.CantStop = b;
         }
     }
 

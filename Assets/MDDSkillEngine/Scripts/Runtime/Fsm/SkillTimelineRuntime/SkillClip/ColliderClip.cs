@@ -21,7 +21,7 @@ namespace MDDSkillEngine
 
         public override void Enter()
         {
-            
+            skillTimeline.SetStateCantStop(true);
 
             ISkillSystem skillSystem = Game.Skill.GetSkillSystem(actor.Id);
             skillSystem.SetSkillReleaseResultType(SkillReleaseResultType.SUCCSE);
