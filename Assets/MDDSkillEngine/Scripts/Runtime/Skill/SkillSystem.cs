@@ -1,8 +1,6 @@
 ﻿using MDDGameFramework;
 using System.Collections.Generic;
-using UnityEngine;
 using MDDGameFramework.Runtime;
-using System.Threading.Tasks;
 
 namespace MDDSkillEngine
 {
@@ -50,7 +48,7 @@ namespace MDDSkillEngine
             return sys;
         }
 
-
+     
         public void AddSkill(int skillId)
         {
             Skill skill = SkillFactory.AcquireSkill(skillId, m_Owner as Entity);
@@ -68,6 +66,7 @@ namespace MDDSkillEngine
             skillDic.Add(new NameNamePair(skillId.ToString(), m_Owner.Id.ToString()), skill);
         }
 
+     
         public Skill GetSkill(int id)
         {
             Skill skill;
@@ -113,6 +112,7 @@ namespace MDDSkillEngine
             }
             else
             {
+                SetSkillReleaseResultType(SkillReleaseResultType.FAIL);
                 Log.Error("{0}Skill{1}未关联state", LogConst.Skill, id);
             }
         }
@@ -133,19 +133,31 @@ namespace MDDSkillEngine
         /// <param name="skillReleaseResultType"></param>
         public void SetSkillReleaseResultType(SkillReleaseResultType skillReleaseResultType)
         {
+            Log.Info("{0}设置技能释放状态，{1}", LogConst.Skill, skillReleaseResultType);
             CurrentSkillState = skillReleaseResultType;
         }
 
+      
         public virtual void RemoveSkill(string name)
         {
 
         }
 
+        /// <summary>
+        /// 升级技能
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public virtual bool UpgradeSkill(int id)
         {
             return false;
         }
 
+        /// <summary>
+        /// 获取技能级黑板
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public Blackboard GetSkillBlackboard(int id)
         {
             Skill skill;
@@ -156,12 +168,20 @@ namespace MDDSkillEngine
 
             return skill.Blackboard;
         }
-
+        
+        /// <summary>
+        /// 获取公共黑板
+        /// </summary>
+        /// <returns></returns>
         public Blackboard GetPubBlackboard()
         {
             return m_PublicBlackboard;
         }
 
+        /// <summary>
+        /// 设置公共黑板
+        /// </summary>
+        /// <param name="blackboard"></param>
         public void SetBlackboard(Blackboard blackboard)
         {
             m_PublicBlackboard = blackboard;

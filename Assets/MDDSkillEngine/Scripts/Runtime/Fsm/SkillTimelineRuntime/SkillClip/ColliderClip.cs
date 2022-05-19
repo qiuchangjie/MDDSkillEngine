@@ -21,6 +21,8 @@ namespace MDDSkillEngine
 
         public override void Enter()
         {
+            
+
             ISkillSystem skillSystem = Game.Skill.GetSkillSystem(actor.Id);
             skillSystem.SetSkillReleaseResultType(SkillReleaseResultType.SUCCSE);
 

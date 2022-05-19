@@ -1,19 +1,13 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using XNode;
-using XNodeEditor;
-using static XNodeEditor.NodeGraphEditor;
-using MDDSkillEngine;
-using MDDGameFramework;
-using Sirenix.OdinInspector;
-using Sirenix.Utilities.Editor;
-using UnityEditor;
+﻿using MDDGameFramework;
 using System;
+using System.Collections.Generic;
+using UnityEditor;
+using UnityEngine;
+using XNodeEditor;
 
 namespace MDDSkillEngine
 {
-	[CustomNodeGraphEditor(typeof(NPBehaveGraph))]
+    [CustomNodeGraphEditor(typeof(NPBehaveGraph))]
 	public class NPBehaveGraphEditor : NodeGraphEditor
 	{
 		NPBehaveNodeMenuTree treeWindow;
@@ -55,10 +49,10 @@ namespace MDDSkillEngine
 
                 //将黑板数据填充进选项
                 foreach (var v in NPBlackBoardEditorInstance.BBValues)
-                {
-                    if (!NPBlackBoardEditorInstance.BBValues.TryGetValue(v.Key, out Variable variable))
+                {                  
+                    if (!NPBlackBoardEditorInstance.AllBB.TryGetValue(v.Key, out Variable variable))
                     {
-                        NPBlackBoardEditorInstance.BBValues.Add(v.Key, v.Value);
+                        NPBlackBoardEditorInstance.AllBB.Add(v.Key, v.Value);
                     }
                 }
 

@@ -83,6 +83,14 @@ namespace MDDGameFramework
                 return action;
             }
 
+            GetFun3ToBeDone();
+            if (this.Func3 != null)
+            {
+                action = ReferencePool.Acquire<Action>();
+                action.SetFunc2(Func3);
+                return action;
+            }
+
             return null;
         }
     }

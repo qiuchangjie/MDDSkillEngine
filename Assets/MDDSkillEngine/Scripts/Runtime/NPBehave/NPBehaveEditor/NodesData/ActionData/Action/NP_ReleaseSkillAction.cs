@@ -9,7 +9,7 @@ using Request = MDDGameFramework.Action.Request;
 namespace MDDSkillEngine
 {
     [Title("释放技能", TitleAlignment = TitleAlignments.Centered)]
-    public class NP_ReleaseSkill : NP_ClassForAction
+    public class NP_ReleaseSkillAction : NP_ClassForAction
     {
         public int SkillId;
 

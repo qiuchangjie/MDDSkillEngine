@@ -56,7 +56,12 @@ namespace MDDSkillEngine
         public void UseSkill_3(CallbackContext ctx)
         {
             //Game.Fsm.GetFsm<Player>(Id.ToString()).SetData<VarBoolean>("skilldatatest", true);
-            Game.Skill.GetSkillSystem(Id).UseSkill(10005);
+            Game.Skill.GetSkillSystem(Id).UseSkill(10007);
+        }
+
+        public void Use_S(CallbackContext ctx)
+        {
+            Game.Fsm.GetFsm<Player>(Id.ToString()).SetData<VarBoolean>("AkiIdleState", true);
         }
 
         public void OnClickLeft(CallbackContext ctx)
@@ -89,6 +94,7 @@ namespace MDDSkillEngine
             Game.Input.Control.Heros_Normal.Skill_2.performed += UseSkill_2;
             Game.Input.Control.Heros_Normal.Skill_3.performed += UseSkill_3;
             Game.Input.Control.Heros_Normal.RightClick.performed += OnClickRight;
+            Game.Input.Control.Heros_Normal.S.performed += Use_S;
 
             Game.Buff.CreatBuffSystem(this.Entity.Id.ToString(),this);
             Game.Fsm.CreateFsm<Player, AkiStateAttribute>(this);
@@ -99,7 +105,7 @@ namespace MDDSkillEngine
             Game.Skill.GetSkillSystem(Id).AddSkill(10001);
             Game.Skill.GetSkillSystem(Id).AddSkill(10004);
             Game.Skill.GetSkillSystem(Id).AddSkill(10005);
-            Game.Skill.GetSkillSystem(Id).AddSkill(10006);
+            Game.Skill.GetSkillSystem(Id).AddSkill(10007);
 
             UIBlackboard uIBlackboard = Game.UI.GetUIForm(UIFormId.Blackboard) as UIBlackboard;
 

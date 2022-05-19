@@ -8,9 +8,11 @@ using UnityEngine;
 namespace MDDSkillEngine
 {
     [AkiState]
-    public class AkiIdleState : FsmState<Player>
+    public class AkiIdleState : MDDFsmState<Player>
     {
         private ClipState.Transition idle;
+
+        IFsm<Player> Fsm;
 
         public override bool StrongState
         {
@@ -23,15 +25,20 @@ namespace MDDSkillEngine
         protected override void OnInit(IFsm<Player> fsm)
         {
             base.OnInit(fsm);
+            Fsm = fsm;
             Log.Info("创建akiIdle状态。");
             idle = fsm.Owner.CachedAnimContainer.GetAnimation("Idle");
             fsm.SetData<VarBoolean>("isMove",false);
+
+            //添加该状态是否激活的观察者
+            fsm.AddObserver(GetType().Name, Observing);
         }
 
         protected override void OnEnter(IFsm<Player> fsm)
         {
             base.OnEnter(fsm);
             Log.Info("进入akiIdle状态。");
+            fsm.SetData<VarBoolean>(GetType().Name, false);
             fsm.Owner.CachedAnimancer.Play(idle);
         }
 
@@ -55,25 +62,45 @@ namespace MDDSkillEngine
                 ChangeState<AkiRunState>(fsm);
             }
 
-            if (fsm.GetData<VarBoolean>("attack1"))
-            {
-                ChangeState<AkiAttack1State>(fsm);
-            }
+            //if (fsm.GetData<VarBoolean>("attack1"))
+            //{
+            //    ChangeState<AkiAttack1State>(fsm);
+            //}
 
-            if (fsm.GetData<VarBoolean>("shunxi"))
-            {
-                ChangeState<AkiShunXiState>(fsm);               
-            }
+            //if (fsm.GetData<VarBoolean>("shunxi"))
+            //{
+            //    ChangeState<AkiShunXiState>(fsm);               
+            //}
 
-            if (fsm.GetData<VarBoolean>("jianrenfengbao"))
-            {
-                ChangeState<Akijianrenfengbao>(fsm);
-            }
+            //if (fsm.GetData<VarBoolean>("jianrenfengbao"))
+            //{
+            //    ChangeState<Akijianrenfengbao>(fsm);
+            //}
 
-            if (fsm.GetData<VarBoolean>("skilldatatest"))
+            //if (fsm.GetData<VarBoolean>("skilldatatest"))
+            //{
+            //    ChangeState<AkiSkillDataTest>(fsm);
+            //}
+        }
+
+        private void Observing(Blackboard.Type type, Variable newValue)
+        {
+            VarBoolean varBoolean = (VarBoolean)newValue;
+
+            if (varBoolean.Value == false)
+                return;
+
+            ISkillSystem skillSystem = Game.Skill.GetSkillSystem(Fsm.Owner.Id);
+
+            if (skillSystem.GetSkillReleaseResultType() == SkillReleaseResultType.NONE)
             {
-                ChangeState<AkiSkillDataTest>(fsm);
+                Fsm.CurrentState.Finish(Fsm);
             }
+            else
+            {
+                skillSystem.SetSkillReleaseResultType(SkillReleaseResultType.STOP);
+                Fsm.CurrentState.Finish(Fsm);
+            }        
         }
     }
 }

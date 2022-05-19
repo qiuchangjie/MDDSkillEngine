@@ -399,6 +399,9 @@ MonoBehaviour:
     - Name: Func2
       Entry: 6
       Data: 
+    - Name: Func3
+      Entry: 6
+      Data: 
     - Name: data
       Entry: 7
       Data: 7|MDDGameFramework.ClassForBlackboard, MDDGameFramework
@@ -606,6 +609,9 @@ MonoBehaviour:
     - Name: Func2
       Entry: 6
       Data: 
+    - Name: Func3
+      Entry: 6
+      Data: 
     - Name: BuffName
       Entry: 1
       Data: KaerIce
@@ -616,7 +622,7 @@ MonoBehaviour:
       Entry: 8
       Data: 
   graph: {fileID: 11400000}
-  position: {x: -920, y: -120}
+  position: {x: -808, y: 104}
   ports:
     keys:
     - input
@@ -659,7 +665,7 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   graph: {fileID: 11400000}
-  position: {x: -1144, y: -280}
+  position: {x: -1128, y: -136}
   ports:
     keys:
     - input
@@ -782,6 +788,9 @@ MonoBehaviour:
     - Name: Func2
       Entry: 6
       Data: 
+    - Name: Func3
+      Entry: 6
+      Data: 
     - Name: data
       Entry: 7
       Data: 7|MDDGameFramework.ClassForBlackboard, MDDGameFramework
@@ -813,7 +822,7 @@ MonoBehaviour:
       Entry: 8
       Data: 
   graph: {fileID: 11400000}
-  position: {x: -920, y: -328}
+  position: {x: -792, y: -360}
   ports:
     keys:
     - input

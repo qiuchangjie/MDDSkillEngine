@@ -65,6 +65,14 @@ public class @MDDInputControls : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""S"",
+                    ""type"": ""Button"",
+                    ""id"": ""6e492507-9c51-49be-a8ef-c8152161a692"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -133,6 +141,17 @@ public class @MDDInputControls : IInputActionCollection, IDisposable
                     ""action"": ""RightClick"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""011d128e-5bc0-4a83-a619-b0929b79c0d3"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""S"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -147,6 +166,7 @@ public class @MDDInputControls : IInputActionCollection, IDisposable
         m_Heros_Normal_Skill_4 = m_Heros_Normal.FindAction("Skill_4", throwIfNotFound: true);
         m_Heros_Normal_LeftClick = m_Heros_Normal.FindAction("LeftClick", throwIfNotFound: true);
         m_Heros_Normal_RightClick = m_Heros_Normal.FindAction("RightClick", throwIfNotFound: true);
+        m_Heros_Normal_S = m_Heros_Normal.FindAction("S", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -202,6 +222,7 @@ public class @MDDInputControls : IInputActionCollection, IDisposable
     private readonly InputAction m_Heros_Normal_Skill_4;
     private readonly InputAction m_Heros_Normal_LeftClick;
     private readonly InputAction m_Heros_Normal_RightClick;
+    private readonly InputAction m_Heros_Normal_S;
     public struct Heros_NormalActions
     {
         private @MDDInputControls m_Wrapper;
@@ -212,6 +233,7 @@ public class @MDDInputControls : IInputActionCollection, IDisposable
         public InputAction @Skill_4 => m_Wrapper.m_Heros_Normal_Skill_4;
         public InputAction @LeftClick => m_Wrapper.m_Heros_Normal_LeftClick;
         public InputAction @RightClick => m_Wrapper.m_Heros_Normal_RightClick;
+        public InputAction @S => m_Wrapper.m_Heros_Normal_S;
         public InputActionMap Get() { return m_Wrapper.m_Heros_Normal; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -239,6 +261,9 @@ public class @MDDInputControls : IInputActionCollection, IDisposable
                 @RightClick.started -= m_Wrapper.m_Heros_NormalActionsCallbackInterface.OnRightClick;
                 @RightClick.performed -= m_Wrapper.m_Heros_NormalActionsCallbackInterface.OnRightClick;
                 @RightClick.canceled -= m_Wrapper.m_Heros_NormalActionsCallbackInterface.OnRightClick;
+                @S.started -= m_Wrapper.m_Heros_NormalActionsCallbackInterface.OnS;
+                @S.performed -= m_Wrapper.m_Heros_NormalActionsCallbackInterface.OnS;
+                @S.canceled -= m_Wrapper.m_Heros_NormalActionsCallbackInterface.OnS;
             }
             m_Wrapper.m_Heros_NormalActionsCallbackInterface = instance;
             if (instance != null)
@@ -261,6 +286,9 @@ public class @MDDInputControls : IInputActionCollection, IDisposable
                 @RightClick.started += instance.OnRightClick;
                 @RightClick.performed += instance.OnRightClick;
                 @RightClick.canceled += instance.OnRightClick;
+                @S.started += instance.OnS;
+                @S.performed += instance.OnS;
+                @S.canceled += instance.OnS;
             }
         }
     }
@@ -273,5 +301,6 @@ public class @MDDInputControls : IInputActionCollection, IDisposable
         void OnSkill_4(InputAction.CallbackContext context);
         void OnLeftClick(InputAction.CallbackContext context);
         void OnRightClick(InputAction.CallbackContext context);
+        void OnS(InputAction.CallbackContext context);
     }
 }
