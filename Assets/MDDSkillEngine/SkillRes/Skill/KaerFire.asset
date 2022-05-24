@@ -205,6 +205,9 @@ MonoBehaviour:
     - Name: Func2
       Entry: 6
       Data: 
+    - Name: Func3
+      Entry: 6
+      Data: 
     - Name: BuffName
       Entry: 1
       Data: KaerFire
@@ -306,7 +309,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a1eea3111da1f5c49afa81600507d50d, type: 3}
-  m_Name: KaerFire
+  m_Name: kaerFire
   m_EditorClassIdentifier: 
   serializationData:
     SerializedFormat: 2
@@ -593,6 +596,9 @@ MonoBehaviour:
     - Name: Func2
       Entry: 6
       Data: 
+    - Name: Func3
+      Entry: 6
+      Data: 
     - Name: data
       Entry: 7
       Data: 7|MDDGameFramework.ClassForBlackboard, MDDGameFramework
@@ -780,6 +786,9 @@ MonoBehaviour:
       Entry: 6
       Data: 
     - Name: Func2
+      Entry: 6
+      Data: 
+    - Name: Func3
       Entry: 6
       Data: 
     - Name: data

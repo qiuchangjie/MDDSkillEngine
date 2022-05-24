@@ -561,7 +561,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a1eea3111da1f5c49afa81600507d50d, type: 3}
-  m_Name: KaerSaotangtui
+  m_Name: kaerSaotangtui
   m_EditorClassIdentifier: 
   serializationData:
     SerializedFormat: 2

@@ -16,7 +16,13 @@ namespace MDDSkillEngine
 
         public ClipState.Transition GetAnimation(string animName)
         {
-            return animDic[animName];
+            ClipState.Transition anim;
+            if (animDic.TryGetValue(animName, out anim))
+            {
+                return anim;
+            }
+
+            return null;
         }
     }
 }

@@ -73,7 +73,7 @@
 
 //    private void UpdatePlayerDistance()
 //    {
-//        Vector3 playerLocalPos = this.transform.InverseTransformPoint(GameObject.FindGameObjectWithTag("Player").transform.position);
+//        Vector3 playerLocalPos = this.transform.InverseTransformPoint(GameObject.FindGameObjectWithTag("Entity").transform.position);
 //        behaviorTree.Blackboard["playerLocalPos"] = playerLocalPos;
 //        behaviorTree.Blackboard["playerDistance"] = playerLocalPos.magnitude;
 //    }

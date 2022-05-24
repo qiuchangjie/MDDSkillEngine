@@ -62,29 +62,7 @@ namespace MDDSkillEngine
             }
 
             return Result.PROGRESS;
-        }
-
-      
-
-#if UNITY_EDITOR
-        private IEnumerable<string> GetBuffs()
-        {
-            if (NPBlackBoardEditorInstance.buffs != null)
-            {
-                return NPBlackBoardEditorInstance.buffs;
-            }
-
-            return null;
-        }
-
-        private void OnBuffsSelect()
-        {
-            if (NPBlackBoardEditorInstance.buffs != null)
-            {
-
-            }
-        }
-#endif
+        }     
     }
 }
 

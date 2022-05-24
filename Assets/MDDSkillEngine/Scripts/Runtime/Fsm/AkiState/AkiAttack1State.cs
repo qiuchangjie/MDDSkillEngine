@@ -8,7 +8,7 @@ using UnityEngine;
 namespace MDDSkillEngine
 {
     [AkiState]
-    public class AkiAttack1State : FsmState<Player>
+    public class AkiAttack1State : MDDFsmState<Entity>
     {
         /// <summary>
         ///  对于普攻动画的处理明显会有一些特殊
@@ -24,7 +24,7 @@ namespace MDDSkillEngine
 
 
        
-        protected override void OnInit(IFsm<Player> fsm)
+        protected override void OnInit(IFsm<Entity> fsm)
         {
             base.OnInit(fsm);
             Log.Info("创建aki攻击状态。");
@@ -43,7 +43,7 @@ namespace MDDSkillEngine
             };
         }
 
-        protected override void OnEnter(IFsm<Player> fsm)
+        protected override void OnEnter(IFsm<Entity> fsm)
         {
             base.OnEnter(fsm);
             Log.Info("进入aki攻击状态。");
@@ -51,20 +51,20 @@ namespace MDDSkillEngine
             fsm.Owner.CachedAnimancer.Play(attack);
         }
 
-        protected override void OnDestroy(IFsm<Player> fsm)
+        protected override void OnDestroy(IFsm<Entity> fsm)
         {
             base.OnDestroy(fsm);
             Log.Info("销毁aki攻击状态。");
         }
 
-        protected override void OnLeave(IFsm<Player> fsm, bool isShutdown)
+        protected override void OnLeave(IFsm<Entity> fsm, bool isShutdown)
         {
             base.OnLeave(fsm, isShutdown);
             attack.Events.OnEnd -= endAction;
             Log.Info("离开aki攻击状态。");
         }
 
-        protected override void OnUpdate(IFsm<Player> fsm, float elapseSeconds, float realElapseSeconds)
+        protected override void OnUpdate(IFsm<Entity> fsm, float elapseSeconds, float realElapseSeconds)
         {
             base.OnUpdate(fsm, elapseSeconds, realElapseSeconds);
             if (!fsm.GetData<VarBoolean>("attack1"))

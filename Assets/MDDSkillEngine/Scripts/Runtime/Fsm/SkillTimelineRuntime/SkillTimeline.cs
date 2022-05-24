@@ -8,6 +8,10 @@ namespace MDDSkillEngine
 {
     public abstract class SkillTimeline
     {
+        /// <summary>
+        /// 用于控制状态是否可以强制切换
+        /// </summary>
+        /// <param name="b"></param>
         public abstract void SetStateCantStop(bool b);
     }
 
@@ -44,6 +48,11 @@ namespace MDDSkillEngine
 
         private List<IDirectableTimePointer> timePointers = new List<IDirectableTimePointer>();
         private List<IDirectableTimePointer> unsortedStartTimePointers = new List<IDirectableTimePointer>();
+
+        public void Init(IFsm<T> fsm)
+        {
+            
+        }
 
 
         public void Updata(float delta)

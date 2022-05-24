@@ -120,6 +120,11 @@ namespace MDDSkillEngine
             this.Coroutine = null;
         }
         
+        /// <summary>
+        /// 用于在untiy自带协程上再进行一次封装
+        /// 给unity自带协程扩展一些生命周期
+        /// </summary>
+        /// <returns></returns>
         IEnumerator CallWrapper()
         {
             yield return null;

@@ -10,7 +10,7 @@ using UnityEngine;
 namespace MDDSkillEngine
 {
     [AkiState]
-    public class Akijianrenfengbao : FsmState<Player>
+    public class Akijianrenfengbao : FsmState<Entity>
     {
         public override bool CantStop
         {
@@ -31,9 +31,9 @@ namespace MDDSkillEngine
         private float distance = 0;
         private float speed = 27;
 
-        IFsm<Player> Fsm;
+        IFsm<Entity> Fsm;
 
-        protected override void OnInit(IFsm<Player> fsm)
+        protected override void OnInit(IFsm<Entity> fsm)
         {
             base.OnInit(fsm);
 
@@ -48,7 +48,7 @@ namespace MDDSkillEngine
             Fsm = fsm;
         }
 
-        protected override void OnEnter(IFsm<Player> fsm)
+        protected override void OnEnter(IFsm<Entity> fsm)
         {
             duration = 5f;
 
@@ -81,13 +81,13 @@ namespace MDDSkillEngine
             Game.Event.Subscribe(ColliderEnterEventArgs.EventId, colliderAction);         
         }
 
-        protected override void OnDestroy(IFsm<Player> fsm)
+        protected override void OnDestroy(IFsm<Entity> fsm)
         {
             base.OnDestroy(fsm);
             Log.Debug("销毁剑刃风暴状态。");
         }
 
-        protected override void OnLeave(IFsm<Player> fsm, bool isShutdown)
+        protected override void OnLeave(IFsm<Entity> fsm, bool isShutdown)
         {
             base.OnLeave(fsm, isShutdown);
             Game.Event.Unsubscribe(ColliderEnterEventArgs.EventId, colliderAction);
@@ -95,7 +95,7 @@ namespace MDDSkillEngine
             Log.Debug("离开剑刃风暴。");
         }
 
-        protected override void OnUpdate(IFsm<Player> fsm, float elapseSeconds, float realElapseSeconds)
+        protected override void OnUpdate(IFsm<Entity> fsm, float elapseSeconds, float realElapseSeconds)
         {
             base.OnUpdate(fsm, elapseSeconds, realElapseSeconds);
 
@@ -123,14 +123,14 @@ namespace MDDSkillEngine
 
             if (target.IsDead)
             {
-                Game.Fsm.GetFsm<Enemy>(target.Id.ToString()).SetData<VarBoolean>("died", true);
+                Game.Fsm.GetFsm<Entity>(target.Id.ToString()).SetData<VarBoolean>("died", true);
                 Game.Entity.HideEntity((Entity)sender);
                 return;
             }
 
             //Game.Buff.AddBuff(target.Id.ToString(), "Dubao", col.Other, col.Owner);
 
-            //Game.Fsm.GetFsm<Enemy>(target.Id.ToString()).SetData<VarBoolean>("damage", true);
+            //Game.Fsm.GetFsm<Entity>(target.Id.ToString()).SetData<VarBoolean>("damage", true);
         }
 
         private void ColliderAction(object sender, GameEventArgs e)
@@ -156,14 +156,14 @@ namespace MDDSkillEngine
 
             if (target.IsDead)
             {
-                Game.Fsm.GetFsm<Enemy>(target.Id.ToString()).SetData<VarBoolean>("died", true);
+                Game.Fsm.GetFsm<Entity>(target.Id.ToString()).SetData<VarBoolean>("died", true);
                 Game.Entity.HideEntity((Entity)sender);
                 return;
             }
 
             Game.Buff.AddBuff(target.Id.ToString(), "Dubao", col.Other, col.Owner);
 
-            Game.Fsm.GetFsm<Enemy>(target.Id.ToString()).SetData<VarBoolean>("damage", true);
+            Game.Fsm.GetFsm<Entity>(target.Id.ToString()).SetData<VarBoolean>("damage", true);
 
 
             Game.Entity.HideEntity((Entity)sender);

@@ -14,6 +14,8 @@ namespace MDDSkillEngine
 
         private int m_EffectID = 0;
 
+        private bool m_IsFollowParent;
+
         public Entity Owner
         {
             get
@@ -36,14 +38,32 @@ namespace MDDSkillEngine
 
         public float Speed
         {
-            get { return m_speed; }
-            set { m_speed = value; }
+            get 
+            { 
+                return m_speed; 
+            }
+            set 
+            { 
+                m_speed = value; 
+            }
         }
 
         public int EffectID
         {
-            get { return EffectID; }
-            set { EffectID = value; }
+            get 
+            { 
+                return m_EffectID; 
+            }
+            set 
+            { 
+                m_EffectID = value; 
+            }
+        }
+
+        public bool IsFollowParent
+        {
+            get { return m_IsFollowParent; }
+            set { m_IsFollowParent = value;}
         }
 
 

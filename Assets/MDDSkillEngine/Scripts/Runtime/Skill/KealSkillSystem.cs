@@ -12,7 +12,7 @@ namespace MDDSkillEngine
 
         public KealSkillSystem()
         {
-            
+
         }
 
         public static KealSkillSystem Create(Entity Owner)
@@ -34,22 +34,21 @@ namespace MDDSkillEngine
             {
                 buffQueue.Enqueue(buff);
 
-                KaerFire buf = buff as KaerFire;
-                if (buf != null)
+                if (buff is KaerFire)
                 {
-                   float num =  blackboard.Get<float>("火");
-                   num++;
-                   blackboard.Set<VarFloat>("火",num);
+                    float num = blackboard.Get<float>("火");
+                    num++;
+                    blackboard.Set<VarFloat>("火", num);
                 }
-                KaerIce buf1 = buff as KaerIce;
-                if (buf1 != null)
+
+                if (buff is KaerIce)
                 {
                     float num = blackboard.Get<float>("冰");
                     num++;
                     blackboard.Set<VarFloat>("冰", num);
                 }
-                KaerThunder buf2 = buff as KaerThunder;
-                if (buf2 != null)
+
+                if (buff is KaerThunder)
                 {
                     float num = blackboard.Get<float>("雷");
                     num++;
@@ -63,22 +62,21 @@ namespace MDDSkillEngine
                 IBuffSystem buffSystem = Game.Buff.GetBuffSystem(Owner.Id.ToString());
                 buffSystem.RemoveBuff(a);
 
-                KaerFire bufff = a as KaerFire;
-                if (bufff != null)
+                if (a is KaerFire)
                 {
                     float num = blackboard.Get<float>("火");
                     num--;
                     blackboard.Set<VarFloat>("火", num);
                 }
-                KaerIce buff1 = a as KaerIce;
-                if (buff1 != null)
+
+                if (a is KaerIce)
                 {
                     float num = blackboard.Get<float>("冰");
                     num--;
                     blackboard.Set<VarFloat>("冰", num);
                 }
-                KaerThunder buff2 = a as KaerThunder;
-                if (buff2 != null)
+
+                if (a is KaerThunder)
                 {
                     float num = blackboard.Get<float>("雷");
                     num--;
@@ -87,22 +85,21 @@ namespace MDDSkillEngine
 
                 buffQueue.Enqueue(buff);
 
-                KaerFire buf = buff as KaerFire;
-                if (buf != null)
+                if (buff is KaerFire)
                 {
                     float num = blackboard.Get<float>("火");
                     num++;
                     blackboard.Set<VarFloat>("火", num);
                 }
-                KaerIce buf1 = buff as KaerIce;
-                if (buf1 != null)
+
+                if (buff is KaerIce)
                 {
                     float num = blackboard.Get<float>("冰");
                     num++;
                     blackboard.Set<VarFloat>("冰", num);
                 }
-                KaerThunder buf2 = buff as KaerThunder;
-                if (buf2 != null)
+
+                if (buff is KaerThunder)
                 {
                     float num = blackboard.Get<float>("雷");
                     num++;

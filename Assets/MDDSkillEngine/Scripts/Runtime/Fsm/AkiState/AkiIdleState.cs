@@ -8,11 +8,11 @@ using UnityEngine;
 namespace MDDSkillEngine
 {
     [AkiState]
-    public class AkiIdleState : MDDFsmState<Player>
+    public class AkiIdleState : MDDFsmState<Entity>
     {
         private ClipState.Transition idle;
 
-        IFsm<Player> Fsm;
+        IFsm<Entity> Fsm;
 
         public override bool StrongState
         {
@@ -22,7 +22,7 @@ namespace MDDSkillEngine
             }
         }
 
-        protected override void OnInit(IFsm<Player> fsm)
+        protected override void OnInit(IFsm<Entity> fsm)
         {
             base.OnInit(fsm);
             Fsm = fsm;
@@ -34,7 +34,7 @@ namespace MDDSkillEngine
             fsm.AddObserver(GetType().Name, Observing);
         }
 
-        protected override void OnEnter(IFsm<Player> fsm)
+        protected override void OnEnter(IFsm<Entity> fsm)
         {
             base.OnEnter(fsm);
             Log.Info("进入akiIdle状态。");
@@ -42,19 +42,19 @@ namespace MDDSkillEngine
             fsm.Owner.CachedAnimancer.Play(idle);
         }
 
-        protected override void OnDestroy(IFsm<Player> fsm)
+        protected override void OnDestroy(IFsm<Entity> fsm)
         {
             base.OnDestroy(fsm);
             Log.Info("销毁akiIdle状态。");
         }
 
-        protected override void OnLeave(IFsm<Player> fsm, bool isShutdown)
+        protected override void OnLeave(IFsm<Entity> fsm, bool isShutdown)
         {
             base.OnLeave(fsm, isShutdown);
             Log.Info("离开akiIdle状态。");
         }
 
-        protected override void OnUpdate(IFsm<Player> fsm, float elapseSeconds, float realElapseSeconds)
+        protected override void OnUpdate(IFsm<Entity> fsm, float elapseSeconds, float realElapseSeconds)
         {
             base.OnUpdate(fsm, elapseSeconds, realElapseSeconds);
             if (fsm.GetData<VarBoolean>("isMove"))

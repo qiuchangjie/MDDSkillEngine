@@ -96,7 +96,7 @@
 
 //    private void UpdateBlackboards()
 //    {
-//        Vector3 playerLocalPos = this.transform.InverseTransformPoint(GameObject.FindGameObjectWithTag("Player").transform.position);
+//        Vector3 playerLocalPos = this.transform.InverseTransformPoint(GameObject.FindGameObjectWithTag("Entity").transform.position);
 
 //        // update all our distances
 //        ownBlackboard.Set("playerLocalPos", playerLocalPos);

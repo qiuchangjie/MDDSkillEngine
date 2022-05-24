@@ -18,7 +18,7 @@ namespace MDDSkillEngine
         {
             base.OnInit(userData);
 
-            Game.Fsm.CreateFsm<Enemy, AiStateAttribute>(this);
+            Game.Fsm.CreateFsm<Entity, AiStateAttribute>(this);
 
             Game.Buff.CreatBuffSystem(Id.ToString(),this);
 
@@ -30,7 +30,7 @@ namespace MDDSkillEngine
             base.OnShow(userData);
             Name = "Ai";
 
-            IFsm<Enemy> fsm = Game.Fsm.GetFsm<Enemy>(Entity.Id.ToString());
+            IFsm<Entity> fsm = Game.Fsm.GetFsm<Entity>(Entity.Id.ToString());
 
             fsm.Start<AiIdleState>();
 

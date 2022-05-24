@@ -6,9 +6,11 @@ using MDDGameFramework.Runtime;
 namespace MDDSkillEngine
 {
     [AiState]
-    public class AiIdleState : FsmState<Enemy>
+    public class AiIdleState : MDDFsmState<Entity>
     {
         private ClipState.Transition idle;
+
+        IFsm<Entity> Fsm;
 
         public override bool StrongState
         {
@@ -19,43 +21,59 @@ namespace MDDSkillEngine
         }
 
 
-        protected override void OnInit(IFsm<Enemy> fsm)
+        protected override void OnInit(IFsm<Entity> fsm)
         {
             base.OnInit(fsm);
+           
             idle = fsm.Owner.CachedAnimContainer.GetAnimation("idle");
             fsm.SetData<VarBoolean>("idle", false);
+            Fsm = fsm;
+            //添加该状态是否激活的观察者
+            fsm.AddObserver(GetType().Name, Observing);
         }
 
-        protected override void OnEnter(IFsm<Enemy> fsm)
+        protected override void OnEnter(IFsm<Entity> fsm)
         {
-            base.OnInit(fsm);
+            base.OnEnter(fsm);
             fsm.Owner.CachedAnimancer.Play(idle);
         }
 
-        protected override void OnDestroy(IFsm<Enemy> fsm)
+        protected override void OnDestroy(IFsm<Entity> fsm)
         {
             base.OnDestroy(fsm);
         }
 
-        protected override void OnLeave(IFsm<Enemy> fsm, bool isShutdown)
+        protected override void OnLeave(IFsm<Entity> fsm, bool isShutdown)
         {
             base.OnLeave(fsm, isShutdown);
         }
 
-        protected override void OnUpdate(IFsm<Enemy> fsm, float elapseSeconds, float realElapseSeconds)
+        protected override void OnUpdate(IFsm<Entity> fsm, float elapseSeconds, float realElapseSeconds)
         {
             base.OnUpdate(fsm, elapseSeconds, realElapseSeconds);
 
-            if (fsm.GetData<VarBoolean>("damage"))
-            {
-                ChangeState<AiDamageState>(fsm);
-            }
+            //if (fsm.GetData<VarBoolean>("damage"))
+            //{
+            //    ChangeState<AiDamageState>(fsm);
+            //}
 
-            if (fsm.GetData<VarBoolean>("died"))
-            {
-                ChangeState<AiDiedState>(fsm);
-            }
+            //if (fsm.GetData<VarBoolean>("died"))
+            //{
+            //    ChangeState<AiDiedState>(fsm);
+            //}
 
+        }
+
+        private void Observing(Blackboard.Type type, Variable newValue)
+        {
+            VarBoolean varBoolean = (VarBoolean)newValue;
+
+            if (varBoolean.Value == false)
+                return;
+            
+
+            Fsm.CurrentState.Finish(Fsm);
+         
         }
     }
 }

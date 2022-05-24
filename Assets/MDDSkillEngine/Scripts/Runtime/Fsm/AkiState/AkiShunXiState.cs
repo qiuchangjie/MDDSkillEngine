@@ -10,7 +10,7 @@ using UnityEngine;
 namespace MDDSkillEngine
 {
     [AkiState]
-    public class AkiShunXiState : FsmState<Player>
+    public class AkiShunXiState : FsmState<Entity>
     {
         public override bool CantStop
         {
@@ -31,9 +31,9 @@ namespace MDDSkillEngine
         private float distance=0;
         private float speed = 27;
 
-        IFsm<Player> Fsm; 
+        IFsm<Entity> Fsm; 
 
-        protected override void OnInit(IFsm<Player> fsm)
+        protected override void OnInit(IFsm<Entity> fsm)
         {
             base.OnInit(fsm);
 
@@ -55,7 +55,7 @@ namespace MDDSkillEngine
             Fsm = fsm;
         }
 
-        protected override void OnEnter(IFsm<Player> fsm)
+        protected override void OnEnter(IFsm<Entity> fsm)
         {
            
             base.OnEnter(fsm);
@@ -84,13 +84,13 @@ namespace MDDSkillEngine
           
         }
 
-        protected override void OnDestroy(IFsm<Player> fsm)
+        protected override void OnDestroy(IFsm<Entity> fsm)
         {
             base.OnDestroy(fsm);
             Log.Debug("销毁aki瞬袭状态。");
         }
 
-        protected override void OnLeave(IFsm<Player> fsm, bool isShutdown)
+        protected override void OnLeave(IFsm<Entity> fsm, bool isShutdown)
         {
             base.OnLeave(fsm, isShutdown);
 
@@ -102,7 +102,7 @@ namespace MDDSkillEngine
             Log.Debug("离开aki瞬袭状态。");
         }
 
-        protected override void OnUpdate(IFsm<Player> fsm, float elapseSeconds, float realElapseSeconds)
+        protected override void OnUpdate(IFsm<Entity> fsm, float elapseSeconds, float realElapseSeconds)
         {
             base.OnUpdate(fsm, elapseSeconds, realElapseSeconds);
 
@@ -150,14 +150,14 @@ namespace MDDSkillEngine
 
             if (target.IsDead)
             {
-                Game.Fsm.GetFsm<Enemy>(target.Id.ToString()).SetData<VarBoolean>("died", true);
+                Game.Fsm.GetFsm<Entity>(target.Id.ToString()).SetData<VarBoolean>("died", true);
                 Game.Entity.HideEntity((Entity)sender);
                 return;
             }
 
             Game.Buff.AddBuff(target.Id.ToString(), "Dubao", col.Other, col.Owner);
 
-            Game.Fsm.GetFsm<Enemy>(target.Id.ToString()).SetData<VarBoolean>("damage", true);
+            Game.Fsm.GetFsm<Entity>(target.Id.ToString()).SetData<VarBoolean>("damage", true);
 
 
             Game.Entity.HideEntity((Entity)sender);

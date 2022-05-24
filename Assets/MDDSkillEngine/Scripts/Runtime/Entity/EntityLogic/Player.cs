@@ -36,7 +36,7 @@ namespace MDDSkillEngine
         #endregion
         public void UseSkill_1(CallbackContext ctx)
         {
-            if (Game.Fsm.GetFsm<Player>(Id.ToString()).GetCurrStateName() != "AkiShunXiState")
+            if (Game.Fsm.GetFsm<Entity>(Id.ToString()).GetCurrStateName() != "AkiShunXiState")
             {
                 Game.Skill.GetSkillSystem(Id).UseSkill(10001);
 
@@ -61,7 +61,7 @@ namespace MDDSkillEngine
 
         public void Use_S(CallbackContext ctx)
         {
-            Game.Fsm.GetFsm<Player>(Id.ToString()).SetData<VarBoolean>("AkiIdleState", true);
+            Game.Fsm.GetFsm<Entity>(Id.ToString()).SetData<VarBoolean>("AkiIdleState", true);
         }
 
         public void OnClickLeft(CallbackContext ctx)
@@ -97,7 +97,7 @@ namespace MDDSkillEngine
             Game.Input.Control.Heros_Normal.S.performed += Use_S;
 
             Game.Buff.CreatBuffSystem(this.Entity.Id.ToString(),this);
-            Game.Fsm.CreateFsm<Player, AkiStateAttribute>(this);
+            Game.Fsm.CreateFsm<Entity, AkiStateAttribute>(this);
             move = GetComponent<PlayerMovement>();
            
             Game.Skill.CreateSkillSystem<Player>(this);
@@ -128,7 +128,7 @@ namespace MDDSkillEngine
 
             Name = "Aki__";
 
-            IFsm<Player> fsm = Game.Fsm.GetFsm<Player>(Entity.Id.ToString());
+            IFsm<Entity> fsm = Game.Fsm.GetFsm<Entity>(Entity.Id.ToString());
 
             fsm.Start<AkiIdleState>();
 

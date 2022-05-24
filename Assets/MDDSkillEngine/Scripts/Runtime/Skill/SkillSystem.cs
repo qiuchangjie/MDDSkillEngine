@@ -101,7 +101,7 @@ namespace MDDSkillEngine
         /// <param name="id"></param>
         public void ReleaseSkill(int id)
         {
-            IFsm<T> fsm = Game.Fsm.GetFsm<T>(m_Owner.Id.ToString());
+            IFsm<Entity> fsm = Game.Fsm.GetFsm<Entity>(m_Owner.Id.ToString());
             IDataTable<DRSkill> dtSkill = Game.DataTable.GetDataTable<DRSkill>();
             DRSkill drSkill = dtSkill.GetDataRow(id);
 

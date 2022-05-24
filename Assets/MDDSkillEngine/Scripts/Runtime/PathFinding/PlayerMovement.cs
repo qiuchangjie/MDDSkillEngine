@@ -185,7 +185,7 @@ namespace MDDSkillEngine
         /// <summary>Time when the last path request was sent</summary>
 		protected float lastRepath = -9999;
 
-        IFsm<Player> fsm;
+        IFsm<Entity> fsm;
 
         public void Awake()
         {
@@ -211,7 +211,7 @@ namespace MDDSkillEngine
 
         private void Init()
         {
-            fsm = Game.Fsm.GetFsm<Player>(player.Id.ToString());
+            fsm = Game.Fsm.GetFsm<Entity>(player.Id.ToString());
 
             if (startHasRun)
             {
