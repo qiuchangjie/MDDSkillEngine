@@ -89,7 +89,6 @@ namespace MDDSkillEngine
         {
             base.OnInit(userData);
 
-
             Game.Input.Control.Heros_Normal.Skill_1.performed += UseSkill_1;
             Game.Input.Control.Heros_Normal.Skill_2.performed += UseSkill_2;
             Game.Input.Control.Heros_Normal.Skill_3.performed += UseSkill_3;

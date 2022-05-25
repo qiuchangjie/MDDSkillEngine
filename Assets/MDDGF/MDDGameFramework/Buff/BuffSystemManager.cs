@@ -50,11 +50,11 @@ namespace MDDGameFramework
             return buffSystem;
         }
 
-        public void AddBuff(string buffSystemName,string buffName, object target, object from)
+        public void AddBuff(string buffSystemName,string buffName, object target, object from,object userData=null)
         {
             if (m_BuffSystems.TryGetValue(buffSystemName, out BuffSystem buffSystem))
             {
-                buffSystem.AddBuff(buffName,from);
+                buffSystem.AddBuff(buffName,from, userData);
             }
             else
             {

@@ -26,9 +26,9 @@ namespace MDDGameFramework.Runtime
            return buffSystemManager.CreatBuffSystem(name, owner);
         }
 
-        public void AddBuff(string BufSystemName, string buffName, object target, object from)
+        public void AddBuff(string BufSystemName, string buffName, object target, object from,object userData=null)
         {
-            buffSystemManager.AddBuff(BufSystemName, buffName,target,from);
+            buffSystemManager.AddBuff(BufSystemName, buffName,target,from,userData);
         }
 
         public IBuffSystem GetBuffSystem(string name)

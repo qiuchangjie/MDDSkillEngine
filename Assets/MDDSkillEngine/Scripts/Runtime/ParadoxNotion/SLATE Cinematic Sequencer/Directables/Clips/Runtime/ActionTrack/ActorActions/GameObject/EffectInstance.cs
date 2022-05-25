@@ -53,6 +53,7 @@ namespace Slate.ActionClips
                 Object asset = UnityEditor.AssetDatabase.LoadAssetAtPath(AssetUtility.GetEntityAsset(EffectName), typeof(Object));
                 GameObject obj = Instantiate(asset) as GameObject;
                 pat = obj.GetComponent<ParticleSystem>();
+                pat.useAutoRandomSeed = false;
                 obj.transform.localPosition = localeftPostion;
                 obj.transform.rotation = localRotation;
                 obj.transform.localScale = localScale;
@@ -66,8 +67,11 @@ namespace Slate.ActionClips
         protected override void OnUpdate(float time, float previousTime)
         {
             base.OnUpdate(time, previousTime);
-          
+
             //time *= PlayableSpeed;
+
+            if((time - previousTime)!=0)
+                Debug.LogError(time - previousTime);
 
             if (pat != null)
                 pat.Simulate((time - previousTime)*PlayableSpeed, true,false);

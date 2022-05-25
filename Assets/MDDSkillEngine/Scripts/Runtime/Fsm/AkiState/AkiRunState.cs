@@ -8,7 +8,7 @@ using UnityEngine;
 namespace MDDSkillEngine
 {
     [AkiState]
-    public class AkiRunState : FsmState<Entity>
+    public class AkiRunState : MDDFsmState<Entity>
     {
         private ClipState.Transition Run;
 

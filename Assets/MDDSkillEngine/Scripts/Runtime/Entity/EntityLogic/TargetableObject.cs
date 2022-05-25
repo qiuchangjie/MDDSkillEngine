@@ -68,29 +68,6 @@ namespace MDDSkillEngine
             Log.Error("ai死亡！！！！！！！！");
 
             //Game.Fsm.GetFsm<Enemy>(Id.ToString()).SetData<VarBoolean>("died", true);
-        }
-
-        private void OnTriggerEnter(Collider other)
-        {
-            return;
-
-            Entity entity = other.gameObject.GetComponent<Entity>();
-
-            Log.Error("发生碰撞");
-
-            if (entity == null)
-            {
-                return;
-            }
-
-            if (entity is TargetableObject && entity.Id <= Id)
-            {
-                // 碰撞事件由 Id 小的一方处理，避免重复处理
-                
-                return;
-            }
-      
-            AIUtility.PerformCollision(this, entity);
-        }
+        }    
     }
 }

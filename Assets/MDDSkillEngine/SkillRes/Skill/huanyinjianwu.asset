@@ -95,7 +95,7 @@ MonoBehaviour:
       Entry: 8
       Data: 
   graph: {fileID: 11400000}
-  position: {x: -904, y: -536}
+  position: {x: -856, y: -488}
   ports:
     keys:
     - input
@@ -106,7 +106,7 @@ MonoBehaviour:
         PublicKeyToken=b77a5c561934e089
       connections:
       - fieldName: output
-        node: {fileID: 6235592457940633334}
+        node: {fileID: 20666187124200387}
         reroutePoints: []
       _direction: 0
       _connectionType: 1
@@ -284,7 +284,7 @@ MonoBehaviour:
       Entry: 8
       Data: 
   graph: {fileID: 11400000}
-  position: {x: -888, y: -72}
+  position: {x: -856, y: -40}
   ports:
     keys:
     - input
@@ -295,7 +295,7 @@ MonoBehaviour:
         PublicKeyToken=b77a5c561934e089
       connections:
       - fieldName: output
-        node: {fileID: 6235592457940633334}
+        node: {fileID: 20666187124200387}
         reroutePoints: []
       _direction: 0
       _connectionType: 1
@@ -505,82 +505,6 @@ MonoBehaviour:
   nodeType: 2
   des: "\u91CD\u7F6E\u8F93\u5165"
   input: 0
---- !u!114 &-6034690454871259982
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 354f69f3cdca8f44e84ed76dc9dfddeb, type: 3}
-  m_Name: NP_Release Skill
-  m_EditorClassIdentifier: 
-  serializationData:
-    SerializedFormat: 2
-    SerializedBytes: 
-    ReferencedUnityObjects: []
-    SerializedBytesString: 
-    Prefab: {fileID: 0}
-    PrefabModificationsReferencedUnityObjects: []
-    PrefabModifications: []
-    SerializationNodes:
-    - Name: data
-      Entry: 7
-      Data: 0|MDDSkillEngine.NP_ActionNodeData, MDDSkillEngine
-    - Name: NpClassForAction
-      Entry: 7
-      Data: 1|MDDSkillEngine.NP_ReleaseSkillAction, MDDSkillEngine
-    - Name: owner
-      Entry: 6
-      Data: 
-    - Name: BelongtoRuntimeTree
-      Entry: 6
-      Data: 
-    - Name: Action
-      Entry: 6
-      Data: 
-    - Name: Func1
-      Entry: 6
-      Data: 
-    - Name: Func2
-      Entry: 6
-      Data: 
-    - Name: Func3
-      Entry: 6
-      Data: 
-    - Name: SkillId
-      Entry: 3
-      Data: 10009
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-  graph: {fileID: 11400000}
-  position: {x: -888, y: -328}
-  ports:
-    keys:
-    - input
-    values:
-    - _fieldName: input
-      _node: {fileID: -6034690454871259982}
-      _typeQualifiedName: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
-        PublicKeyToken=b77a5c561934e089
-      connections:
-      - fieldName: output
-        node: {fileID: 6235592457940633334}
-        reroutePoints: []
-      _direction: 0
-      _connectionType: 1
-      _typeConstraint: 0
-      _dynamic: 0
-  Id: 2
-  nodeType: 2
-  des: 
-  input: 0
 --- !u!114 &-4124545621436819710
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -674,6 +598,82 @@ MonoBehaviour:
   des: "\u91CD\u7F6Ecdq"
   input: 0
   output: 0
+--- !u!114 &-2985146168931120573
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 354f69f3cdca8f44e84ed76dc9dfddeb, type: 3}
+  m_Name: NP_Release Skill
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: data
+      Entry: 7
+      Data: 0|MDDSkillEngine.NP_ActionNodeData, MDDSkillEngine
+    - Name: NpClassForAction
+      Entry: 7
+      Data: 1|MDDSkillEngine.NP_ReleaseSkillAction, MDDSkillEngine
+    - Name: owner
+      Entry: 6
+      Data: 
+    - Name: BelongtoRuntimeTree
+      Entry: 6
+      Data: 
+    - Name: Action
+      Entry: 6
+      Data: 
+    - Name: Func1
+      Entry: 6
+      Data: 
+    - Name: Func2
+      Entry: 6
+      Data: 
+    - Name: Func3
+      Entry: 6
+      Data: 
+    - Name: SkillId
+      Entry: 3
+      Data: 10010
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+  graph: {fileID: 11400000}
+  position: {x: -856, y: -296}
+  ports:
+    keys:
+    - input
+    values:
+    - _fieldName: input
+      _node: {fileID: -2985146168931120573}
+      _typeQualifiedName: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: output
+        node: {fileID: 20666187124200387}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+  Id: 2
+  nodeType: 2
+  des: 
+  input: 0
 --- !u!114 &-2367913706177295472
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -872,7 +872,7 @@ MonoBehaviour:
         PublicKeyToken=b77a5c561934e089
       connections:
       - fieldName: input
-        node: {fileID: 6235592457940633334}
+        node: {fileID: 20666187124200387}
         reroutePoints: []
       _direction: 1
       _connectionType: 1
@@ -893,7 +893,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a1eea3111da1f5c49afa81600507d50d, type: 3}
-  m_Name: kaerjisulengque
+  m_Name: huanyinjianwu
   m_EditorClassIdentifier: 
   serializationData:
     SerializedFormat: 2
@@ -998,14 +998,14 @@ MonoBehaviour:
       Data: 
   nodes:
   - {fileID: -8970143797825262291}
-  - {fileID: -6034690454871259982}
+  - {fileID: -2985146168931120573}
   - {fileID: -7800692944958138104}
   - {fileID: 5857344128352003859}
   - {fileID: 3850027637246563509}
   - {fileID: -6290168704789421218}
-  - {fileID: 6235592457940633334}
+  - {fileID: 20666187124200387}
   - {fileID: -2367913706177295472}
-  - {fileID: 4618494518062421560}
+  - {fileID: 4704415360002005955}
   - {fileID: 3936917385407940047}
   - {fileID: -110579854284733014}
   - {fileID: 7081719465945499085}
@@ -1014,6 +1014,69 @@ MonoBehaviour:
   - {fileID: -7039302347661189890}
   - {fileID: -8012929573533312983}
   PublicBB: {fileID: 11400000, guid: b64ccd45c215fa548ab6217938ea8f3a, type: 2}
+--- !u!114 &20666187124200387
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 645fb2763bfae564497b0b6e60960722, type: 3}
+  m_Name: NP_Sequence
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  graph: {fileID: 11400000}
+  position: {x: -1096, y: -312}
+  ports:
+    keys:
+    - input
+    - output
+    values:
+    - _fieldName: input
+      _node: {fileID: 20666187124200387}
+      _typeQualifiedName: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: output
+        node: {fileID: -110579854284733014}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: output
+      _node: {fileID: 20666187124200387}
+      _typeQualifiedName: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: input
+        node: {fileID: -7800692944958138104}
+        reroutePoints: []
+      - fieldName: input
+        node: {fileID: -2985146168931120573}
+        reroutePoints: []
+      - fieldName: input
+        node: {fileID: -8970143797825262291}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  Id: 7
+  nodeType: 0
+  des: 
+  input: 0
+  output: 0
 --- !u!114 &3536438989022731794
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1259,7 +1322,7 @@ MonoBehaviour:
   des: 
   input: 0
   output: 0
---- !u!114 &4618494518062421560
+--- !u!114 &4704415360002005955
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1317,14 +1380,14 @@ MonoBehaviour:
       Entry: 8
       Data: 
   graph: {fileID: 11400000}
-  position: {x: -1528, y: 248}
+  position: {x: -1576, y: 232}
   ports:
     keys:
     - input
     - output
     values:
     - _fieldName: input
-      _node: {fileID: 4618494518062421560}
+      _node: {fileID: 4704415360002005955}
       _typeQualifiedName: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
       connections:
@@ -1336,7 +1399,7 @@ MonoBehaviour:
       _typeConstraint: 0
       _dynamic: 0
     - _fieldName: output
-      _node: {fileID: 4618494518062421560}
+      _node: {fileID: 4704415360002005955}
       _typeQualifiedName: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
       connections:
@@ -1471,7 +1534,7 @@ MonoBehaviour:
       Entry: 8
       Data: 
   graph: {fileID: 11400000}
-  position: {x: -1304, y: 248}
+  position: {x: -1352, y: 248}
   ports:
     keys:
     - input
@@ -1482,7 +1545,7 @@ MonoBehaviour:
         PublicKeyToken=b77a5c561934e089
       connections:
       - fieldName: output
-        node: {fileID: 4618494518062421560}
+        node: {fileID: 4704415360002005955}
         reroutePoints: []
       _direction: 0
       _connectionType: 1
@@ -1492,69 +1555,6 @@ MonoBehaviour:
   nodeType: 2
   des: "\u91CD\u7F6E\u8F93\u5165"
   input: 0
---- !u!114 &6235592457940633334
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 645fb2763bfae564497b0b6e60960722, type: 3}
-  m_Name: NP_Sequence
-  m_EditorClassIdentifier: 
-  serializationData:
-    SerializedFormat: 2
-    SerializedBytes: 
-    ReferencedUnityObjects: []
-    SerializedBytesString: 
-    Prefab: {fileID: 0}
-    PrefabModificationsReferencedUnityObjects: []
-    PrefabModifications: []
-    SerializationNodes: []
-  graph: {fileID: 11400000}
-  position: {x: -1144, y: -392}
-  ports:
-    keys:
-    - input
-    - output
-    values:
-    - _fieldName: input
-      _node: {fileID: 6235592457940633334}
-      _typeQualifiedName: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
-        PublicKeyToken=b77a5c561934e089
-      connections:
-      - fieldName: output
-        node: {fileID: -110579854284733014}
-        reroutePoints: []
-      _direction: 0
-      _connectionType: 1
-      _typeConstraint: 0
-      _dynamic: 0
-    - _fieldName: output
-      _node: {fileID: 6235592457940633334}
-      _typeQualifiedName: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
-        PublicKeyToken=b77a5c561934e089
-      connections:
-      - fieldName: input
-        node: {fileID: -7800692944958138104}
-        reroutePoints: []
-      - fieldName: input
-        node: {fileID: -6034690454871259982}
-        reroutePoints: []
-      - fieldName: input
-        node: {fileID: -8970143797825262291}
-        reroutePoints: []
-      _direction: 1
-      _connectionType: 0
-      _typeConstraint: 0
-      _dynamic: 0
-  Id: 7
-  nodeType: 0
-  des: 
-  input: 0
-  output: 0
 --- !u!114 &7081719465945499085
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1601,7 +1601,7 @@ MonoBehaviour:
         PublicKeyToken=b77a5c561934e089
       connections:
       - fieldName: input
-        node: {fileID: 4618494518062421560}
+        node: {fileID: 4704415360002005955}
         reroutePoints: []
       - fieldName: input
         node: {fileID: -2367913706177295472}

@@ -85,57 +85,6 @@ MonoBehaviour:
   localScale: {x: 1, y: 1, z: 1}
   boundSize: {x: 1.2760684, y: 0.36364555, z: 0.9329854}
   boundCenter: {x: -0.041453242, y: -0.31817722, z: -0.033507288}
---- !u!1 &370857206421802877
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2586909568768919979}
-  - component: {fileID: 5903738408290657834}
-  m_Layer: 0
-  m_Name: GameObject Track
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2586909568768919979
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 370857206421802877}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1578699025862464819}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5903738408290657834
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 370857206421802877}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b9cb7b110ccf394a9e8eef8d8047e62, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _name: GameObject Track
-  skillDataType: 0
-  _color: {r: 1, g: 1, b: 1, a: 1}
-  _active: 1
-  _isLocked: 0
-  _actionClips: []
-  _customHeight: 300
-  _icon: {fileID: 0}
 --- !u!1 &1095137891673614061
 GameObject:
   m_ObjectHideFlags: 0
@@ -147,7 +96,7 @@ GameObject:
   - component: {fileID: 7026954199551462257}
   - component: {fileID: 8199464004636828458}
   m_Layer: 0
-  m_Name: kaerjisulengqueState
+  m_Name: huanyinjianwuState
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -444,7 +393,6 @@ Transform:
   - {fileID: 6736176873481770646}
   - {fileID: 3378478145511216616}
   - {fileID: 1785880256}
-  - {fileID: 2586909568768919979}
   m_Father: {fileID: 192856560614531560}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -461,7 +409,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _tracks:
-  - {fileID: 5903738408290657834}
   - {fileID: 1785880258}
   - {fileID: 3378478145511216618}
   - {fileID: 4871426869517224130}

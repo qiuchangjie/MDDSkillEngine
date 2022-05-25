@@ -10,6 +10,12 @@ namespace MDDSkillEngine
         [SerializeField]
         private EntityData m_EntityData = null;
 
+        /// <summary>
+        /// 实体黑板
+        /// </summary>
+        public Blackboard blackboard;
+        public Clock clock;
+
         public int Id
         {
             get
@@ -40,6 +46,12 @@ namespace MDDSkillEngine
             private set;
         }
 
+        public Rigidbody Rigidbody
+        {
+            get;
+            private set;
+        }
+
         public AnimationContainer CachedAnimContainer
         {
             get;
@@ -56,10 +68,15 @@ namespace MDDSkillEngine
         protected override void OnInit(object userData)
         {
             base.OnInit(userData);
+            clock = new Clock();
             CachedAnimator = GetComponent<Animator>();
             CachedAnimancer = GetComponent<AnimancerComponent>();
             CachedAnimContainer = GetComponent<AnimationContainer>();
             CacheOutLiner = GetComponent<OutLinerList>();
+            Rigidbody = GetComponent<Rigidbody>();   
+            blackboard = Blackboard.Create(clock);
+
+            blackboard.Set<VarFloat>("PlayableSpeed",1);
         }
 
 
@@ -126,6 +143,7 @@ namespace MDDSkillEngine
 
         {
             base.OnUpdate(elapseSeconds, realElapseSeconds);
+            clock.Update(elapseSeconds);
         }
 
         protected virtual void HideSelf()

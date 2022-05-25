@@ -10,7 +10,7 @@ using UnityEngine;
 namespace MDDSkillEngine
 {
     [AkiState]
-    public class AkiShunXiState : FsmState<Entity>
+    public class AkiShunXiState : MDDFsmState<Entity>
     {
         public override bool CantStop
         {

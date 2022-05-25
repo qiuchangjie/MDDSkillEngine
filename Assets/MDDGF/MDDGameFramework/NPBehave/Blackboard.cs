@@ -55,6 +55,13 @@ namespace MDDGameFramework
             NotifiyObserversActionCache = NotifiyObservers;
         }
 
+        public static Blackboard Create(Clock clock)
+        {
+            Blackboard blackboard = ReferencePool.Acquire<Blackboard>();
+            blackboard.clock = clock;
+            return blackboard;
+        }
+
         public static Blackboard Create(Blackboard parent, Clock clock)
         {
             Blackboard blackboard = ReferencePool.Acquire<Blackboard>();

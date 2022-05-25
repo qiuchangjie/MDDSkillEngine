@@ -6,7 +6,7 @@ namespace MDDGameFramework
 {
     public interface IBuffSystemManager
     {
-        void AddBuff(string buffSystemName,string buffName,object target, object from);
+        void AddBuff(string buffSystemName,string buffName,object target, object from,object userData=null);
 
         IBuffSystem CreatBuffSystem(string name, object owner);
 

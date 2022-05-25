@@ -11,6 +11,8 @@ namespace MDDSkillEngine
 
         public Predicate<DRBuff> drCondition;
 
+        HitData hitData;
+
         private bool dRCondition(DRBuff buff)
         {
             if (buff.Name == this.GetType().Name && buff.Level == 1)
@@ -30,6 +32,16 @@ namespace MDDSkillEngine
 
             data = NormalHitData.Create(drBuff);
 
+            HitData hit = userData as HitData;
+            if (hit != null)
+            {
+                hitData = hit;
+            }
+            else
+            {
+                Log.Error("{0}碰撞信息为空",LogConst.Buff);
+            }
+
             base.OnInit(buffSystem, target, from, data);
 
         }
@@ -47,7 +59,13 @@ namespace MDDSkillEngine
 
             fsm.Blackboard.Set<VarBoolean>(typeof(AiDamageState).Name,true);
 
-            Log.Error("{0}hitbuff", LogConst.Buff);
+            Game.Entity.ShowEffect(new EffectData(Game.Entity.GenerateSerialId(), 70003)
+            {
+                Position = hitData.HitPoint,
+                Rotation = entity.CachedTransform.rotation
+            });
+
+            Log.Info("{0}hitbuff", LogConst.Buff);
         }
 
         public override void OnUpdate(IBuffSystem buffSystem, float elapseSeconds, float realElapseSeconds)
@@ -67,7 +85,13 @@ namespace MDDSkillEngine
         public override void OnFininsh(IBuffSystem buffSystem)
         {
             base.OnFininsh(buffSystem);
-            Log.Error("{0}hitbuff finish", LogConst.Buff);
+
+            if (hitData != null)
+            {
+                ReferencePool.Release(hitData);
+            }    
+            
+            Log.Info("{0}hitbuff finish", LogConst.Buff);
         }
 
 

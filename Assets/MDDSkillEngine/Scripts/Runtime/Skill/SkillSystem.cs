@@ -218,4 +218,12 @@ namespace MDDSkillEngine
         /// </summary>
         PROGRESS,
     }
+
+    public enum TargetType
+    {
+        NONE,
+        SELF,
+        POINT,
+        ENTITY,
+    }
 }

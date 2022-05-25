@@ -17,6 +17,7 @@ namespace MDDSkillEngine
             this.skillTimeline = skillTimeline;
             this.actor = actor;
             anim = actor.CachedAnimContainer.GetAnimation(skillData.AnimationName);
+            
         }
 
         public override void Enter()

@@ -14,6 +14,14 @@ namespace MDDSkillEngine
         [InfoBox("动画资源容器字典")]
         private Dictionary<string, ClipState.Transition> animDic = new Dictionary<string, ClipState.Transition>();
 
+        public void SetSpeed(float speed)
+        {
+            foreach (var item in animDic)
+            {
+                item.Value.Speed = speed;
+            }
+        }
+
         public ClipState.Transition GetAnimation(string animName)
         {
             ClipState.Transition anim;

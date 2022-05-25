@@ -67,7 +67,7 @@ namespace MDDSkillEngine
 
             Vector3 hitPos = other.ClosestPoint(CachedTransform.position);
 
-            Game.Event.Fire(this, ColliderEnterEventArgs.Create(data.Owner, entity, hitPos));
+            Game.Buff.AddBuff(entity.Id.ToString(), "NormalHit", entity, data.Owner, HitData.Create(this, entity, hitPos));
         }
 
 
@@ -87,12 +87,10 @@ namespace MDDSkillEngine
                 return;
             }
 
-            Game.Buff.AddBuff(entity.Id.ToString(), "NormalHit", entity, data.Owner);
-
             Vector3 hitPos = other.ClosestPoint(CachedTransform.position);
 
-            Game.Event.Fire(this, ColliderEnterEventArgs.Create(data.Owner, entity, hitPos));
-
+            //Game.Buff.AddBuff(entity.Id.ToString(), "NormalHit", entity, data.Owner,HitData.Create(this,entity, hitPos));
+                 
             canDamage = false;
         }
 

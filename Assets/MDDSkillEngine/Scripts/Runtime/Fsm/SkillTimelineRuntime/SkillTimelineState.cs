@@ -11,13 +11,13 @@ namespace MDDSkillEngine
         private LoadBinaryCallbacks assetCallbacks;
 
         private float Duration;
+        IFsm<T> fsm1;
 
         protected override void OnInit(IFsm<T> fsm)
         {
             base.OnInit(fsm);
-            skillTimeline = new SkillTimeline<T>();
-            skillTimeline.owner = fsm.Owner;
-            skillTimeline.fsm = fsm;
+            fsm1 = fsm;
+            skillTimeline = new SkillTimeline<T>();         
             assetCallbacks = new LoadBinaryCallbacks(LoadCallBack);
             Game.Resource.LoadBinary(AssetUtility.GetSkillTimelineAsset(GetType().Name), assetCallbacks);
         }
@@ -59,7 +59,7 @@ namespace MDDSkillEngine
                 Log.Error("{0}数据转化失败 name:{1}", LogConst.SKillTimeline, entityAssetName);
             }
 
-            skillTimeline.InitSkillClip(skillData);
+            skillTimeline.Init(fsm1, skillData);
         }
     }
 }
