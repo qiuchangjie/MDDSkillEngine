@@ -36,8 +36,22 @@ namespace MDDSkillEngine
         {
             base.OnEnter(fsm);
             Log.Info("{0}进入ai{1}",LogConst.FSM,GetType().Name);
+
+            fsm.SetData<VarBoolean>(GetType().Name,false);
+
             Damage.Events.OnEnd += endAction;
-            fsm.Owner.CachedAnimancer.Play(Damage);
+            if (fsm.Owner.CachedAnimancer.IsPlaying(Damage))
+            {
+                fsm.Owner.CachedAnimancer.Stop(Damage);
+                fsm.Owner.CachedAnimancer.Play(Damage);
+
+                Log.Error("11111111111111111111111111111111111111111111");
+            }
+            else
+            {
+                fsm.Owner.CachedAnimancer.Play(Damage);
+            }
+            
         }
 
         protected override void OnDestroy(IFsm<Entity> fsm)
@@ -65,7 +79,7 @@ namespace MDDSkillEngine
             if (varBoolean.Value == false)
                 return;
 
-            if (Fsm.GetCurrStateName() == "AiIdleState")
+            if (Fsm.GetCurrStateName() == "AiIdleState" || Fsm.GetCurrStateName() == GetType().Name)
             {                
                 ChangeState<AiDamageState>(Fsm);
             }

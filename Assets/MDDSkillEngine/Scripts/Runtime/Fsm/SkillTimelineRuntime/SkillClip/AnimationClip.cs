@@ -22,7 +22,16 @@ namespace MDDSkillEngine
 
         public override void Enter()
         {
-            actor.CachedAnimancer.Play(anim);
+            if (actor.CachedAnimancer.IsPlaying(anim))
+            {
+                actor.CachedAnimancer.Play(anim, 0);
+            }
+            else
+            {
+                actor.CachedAnimancer.Play(anim);
+            }
+
+          
             SkillTimeline<Entity> skillTimeline1= skillTimeline as SkillTimeline<Entity>;
             Log.Info("{0}进入动画clip name：{1} currenttime:{2}",LogConst.SKillTimeline,skillData.AnimationName, skillTimeline1.currentTime);
         }

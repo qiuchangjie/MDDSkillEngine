@@ -161,7 +161,7 @@ MonoBehaviour:
       _connectionType: 1
       _typeConstraint: 0
       _dynamic: 0
-  Id: 16
+  Id: 14
   nodeType: 1
   des: "\u77AC\u88ADqq"
   output: 0
@@ -284,7 +284,7 @@ MonoBehaviour:
       Entry: 8
       Data: 
   graph: {fileID: 11400000}
-  position: {x: -856, y: -40}
+  position: {x: -840, y: -248}
   ports:
     keys:
     - input
@@ -301,7 +301,7 @@ MonoBehaviour:
       _connectionType: 1
       _typeConstraint: 0
       _dynamic: 0
-  Id: 3
+  Id: 2
   nodeType: 2
   des: "\u91CD\u7F6E\u8F93\u5165"
   input: 0
@@ -360,7 +360,7 @@ MonoBehaviour:
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 0
-  Id: 15
+  Id: 13
   nodeType: 0
   des: 
   input: 0
@@ -501,7 +501,7 @@ MonoBehaviour:
       _connectionType: 1
       _typeConstraint: 0
       _dynamic: 0
-  Id: 6
+  Id: 5
   nodeType: 2
   des: "\u91CD\u7F6E\u8F93\u5165"
   input: 0
@@ -593,7 +593,7 @@ MonoBehaviour:
       _connectionType: 1
       _typeConstraint: 0
       _dynamic: 0
-  Id: 14
+  Id: 12
   nodeType: 1
   des: "\u91CD\u7F6Ecdq"
   input: 0
@@ -613,7 +613,8 @@ MonoBehaviour:
   serializationData:
     SerializedFormat: 2
     SerializedBytes: 
-    ReferencedUnityObjects: []
+    ReferencedUnityObjects:
+    - {fileID: 0}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -626,10 +627,13 @@ MonoBehaviour:
       Entry: 7
       Data: 1|MDDSkillEngine.NP_ReleaseSkillAction, MDDSkillEngine
     - Name: owner
-      Entry: 6
-      Data: 
+      Entry: 10
+      Data: 0
     - Name: BelongtoRuntimeTree
-      Entry: 6
+      Entry: 7
+      Data: 2|MDDGameFramework.Runtime.Skill, MDDGameFrameworkRuntime
+    - Name: 
+      Entry: 8
       Data: 
     - Name: Action
       Entry: 6
@@ -641,11 +645,61 @@ MonoBehaviour:
       Entry: 6
       Data: 
     - Name: Func3
-      Entry: 6
+      Entry: 7
+      Data: 3|System.Func`2[[MDDGameFramework.Action+Request, MDDGameFramework],[MDDGameFramework.Action+Result,
+        MDDGameFramework]], mscorlib
+    - Name: target
+      Entry: 9
+      Data: 1
+    - Name: declaringType
+      Entry: 7
+      Data: 4|System.RuntimeType, mscorlib
+    - Name: 
+      Entry: 1
+      Data: MDDSkillEngine.NP_ReleaseSkillAction, MDDSkillEngine
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: methodName
+      Entry: 1
+      Data: ReleaseSkill
+    - Name: delegateType
+      Entry: 7
+      Data: 5|System.RuntimeType, mscorlib
+    - Name: 
+      Entry: 1
+      Data: System.Func`2[[MDDGameFramework.Action+Request, MDDGameFramework],[MDDGameFramework.Action+Result,
+        MDDGameFramework]], mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: signature
+      Entry: 7
+      Data: 6|System.Type[], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 7|System.RuntimeType, mscorlib
+    - Name: 
+      Entry: 1
+      Data: MDDGameFramework.Action+Request, MDDGameFramework
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
       Data: 
     - Name: SkillId
       Entry: 3
-      Data: 10010
+      Data: 10020
     - Name: 
       Entry: 8
       Data: 
@@ -653,7 +707,7 @@ MonoBehaviour:
       Entry: 8
       Data: 
   graph: {fileID: 11400000}
-  position: {x: -856, y: -296}
+  position: {x: -856, y: 184}
   ports:
     keys:
     - input
@@ -670,7 +724,7 @@ MonoBehaviour:
       _connectionType: 1
       _typeConstraint: 0
       _dynamic: 0
-  Id: 2
+  Id: 3
   nodeType: 2
   des: 
   input: 0
@@ -769,7 +823,7 @@ MonoBehaviour:
       Entry: 8
       Data: 
   graph: {fileID: 11400000}
-  position: {x: -1560, y: -24}
+  position: {x: -1544, y: 184}
   ports:
     keys:
     - input
@@ -786,7 +840,7 @@ MonoBehaviour:
       _connectionType: 1
       _typeConstraint: 0
       _dynamic: 0
-  Id: 8
+  Id: 7
   nodeType: 2
   des: "\u66F4\u65B0cd"
   input: 0
@@ -878,7 +932,7 @@ MonoBehaviour:
       _connectionType: 1
       _typeConstraint: 0
       _dynamic: 0
-  Id: 11
+  Id: 9
   nodeType: 1
   des: "\u5982\u679C\u83B7\u53D6\u8F93\u5165"
   input: 0
@@ -998,14 +1052,12 @@ MonoBehaviour:
       Data: 
   nodes:
   - {fileID: -8970143797825262291}
-  - {fileID: -2985146168931120573}
   - {fileID: -7800692944958138104}
-  - {fileID: 5857344128352003859}
+  - {fileID: -2985146168931120573}
   - {fileID: 3850027637246563509}
   - {fileID: -6290168704789421218}
   - {fileID: 20666187124200387}
   - {fileID: -2367913706177295472}
-  - {fileID: 4704415360002005955}
   - {fileID: 3936917385407940047}
   - {fileID: -110579854284733014}
   - {fileID: 7081719465945499085}
@@ -1060,10 +1112,10 @@ MonoBehaviour:
         PublicKeyToken=b77a5c561934e089
       connections:
       - fieldName: input
-        node: {fileID: -7800692944958138104}
+        node: {fileID: -2985146168931120573}
         reroutePoints: []
       - fieldName: input
-        node: {fileID: -2985146168931120573}
+        node: {fileID: -7800692944958138104}
         reroutePoints: []
       - fieldName: input
         node: {fileID: -8970143797825262291}
@@ -1072,7 +1124,7 @@ MonoBehaviour:
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 0
-  Id: 7
+  Id: 6
   nodeType: 0
   des: 
   input: 0
@@ -1132,7 +1184,7 @@ MonoBehaviour:
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 0
-  Id: 13
+  Id: 11
   nodeType: 0
   des: 
   input: 0
@@ -1258,7 +1310,7 @@ MonoBehaviour:
       _connectionType: 1
       _typeConstraint: 0
       _dynamic: 0
-  Id: 5
+  Id: 4
   nodeType: 2
   des: 
   input: 0
@@ -1317,244 +1369,11 @@ MonoBehaviour:
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 0
-  Id: 10
+  Id: 8
   nodeType: 0
   des: 
   input: 0
   output: 0
---- !u!114 &4704415360002005955
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 74a56e81d9d9eb44da727deac7ca40c1, type: 3}
-  m_Name: NP_Blackboard Condition
-  m_EditorClassIdentifier: 
-  serializationData:
-    SerializedFormat: 2
-    SerializedBytes: 
-    ReferencedUnityObjects: []
-    SerializedBytesString: 
-    Prefab: {fileID: 0}
-    PrefabModificationsReferencedUnityObjects: []
-    PrefabModifications: []
-    SerializationNodes:
-    - Name: data
-      Entry: 7
-      Data: 0|MDDSkillEngine.NP_BlackBoardConditionNodeData, MDDSkillEngine
-    - Name: Ope
-      Entry: 3
-      Data: 2
-    - Name: Stop
-      Entry: 3
-      Data: 4
-    - Name: blackboardData
-      Entry: 7
-      Data: 1|MDDGameFramework.ClassForBlackboard, MDDGameFramework
-    - Name: BBKey
-      Entry: 1
-      Data: input
-    - Name: NP_BBValueType
-      Entry: 1
-      Data: System.Boolean
-    - Name: WriteOrCompareToBB
-      Entry: 5
-      Data: true
-    - Name: NP_BBValue
-      Entry: 7
-      Data: 2|MDDGameFramework.Runtime.VarBoolean, MDDGameFrameworkRuntime
-    - Name: m_Value
-      Entry: 5
-      Data: true
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-  graph: {fileID: 11400000}
-  position: {x: -1576, y: 232}
-  ports:
-    keys:
-    - input
-    - output
-    values:
-    - _fieldName: input
-      _node: {fileID: 4704415360002005955}
-      _typeQualifiedName: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
-        PublicKeyToken=b77a5c561934e089
-      connections:
-      - fieldName: output
-        node: {fileID: 7081719465945499085}
-        reroutePoints: []
-      _direction: 0
-      _connectionType: 1
-      _typeConstraint: 0
-      _dynamic: 0
-    - _fieldName: output
-      _node: {fileID: 4704415360002005955}
-      _typeQualifiedName: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
-        PublicKeyToken=b77a5c561934e089
-      connections:
-      - fieldName: input
-        node: {fileID: 5857344128352003859}
-        reroutePoints: []
-      _direction: 1
-      _connectionType: 1
-      _typeConstraint: 0
-      _dynamic: 0
-  Id: 9
-  nodeType: 1
-  des: "\u5982\u679C\u83B7\u53D6\u8F93\u5165"
-  input: 0
-  output: 0
---- !u!114 &5857344128352003859
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: faa80b27d978c9644bae0a4c400b10b8, type: 3}
-  m_Name: NP_Change Blackboard
-  m_EditorClassIdentifier: 
-  serializationData:
-    SerializedFormat: 2
-    SerializedBytes: 
-    ReferencedUnityObjects:
-    - {fileID: 0}
-    SerializedBytesString: 
-    Prefab: {fileID: 0}
-    PrefabModificationsReferencedUnityObjects: []
-    PrefabModifications: []
-    SerializationNodes:
-    - Name: data
-      Entry: 7
-      Data: 0|MDDSkillEngine.NP_ActionNodeData, MDDSkillEngine
-    - Name: NpClassForAction
-      Entry: 7
-      Data: 1|MDDSkillEngine.NP_ChangeBlackboardAction, MDDSkillEngine
-    - Name: owner
-      Entry: 10
-      Data: 0
-    - Name: BelongtoRuntimeTree
-      Entry: 7
-      Data: 2|MDDGameFramework.Runtime.Skill, MDDGameFrameworkRuntime
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: Action
-      Entry: 7
-      Data: 3|System.Action, mscorlib
-    - Name: target
-      Entry: 9
-      Data: 1
-    - Name: declaringType
-      Entry: 7
-      Data: 4|System.RuntimeType, mscorlib
-    - Name: 
-      Entry: 1
-      Data: MDDSkillEngine.NP_ChangeBlackboardAction, MDDSkillEngine
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: methodName
-      Entry: 1
-      Data: ChangeValue
-    - Name: delegateType
-      Entry: 7
-      Data: 5|System.RuntimeType, mscorlib
-    - Name: 
-      Entry: 1
-      Data: System.Action, mscorlib
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: signature
-      Entry: 7
-      Data: 6|System.Type[], mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: Func1
-      Entry: 6
-      Data: 
-    - Name: Func2
-      Entry: 6
-      Data: 
-    - Name: Func3
-      Entry: 6
-      Data: 
-    - Name: data
-      Entry: 7
-      Data: 7|MDDGameFramework.ClassForBlackboard, MDDGameFramework
-    - Name: BBKey
-      Entry: 1
-      Data: input
-    - Name: NP_BBValueType
-      Entry: 1
-      Data: System.Boolean
-    - Name: WriteOrCompareToBB
-      Entry: 5
-      Data: false
-    - Name: NP_BBValue
-      Entry: 7
-      Data: 8|MDDGameFramework.Runtime.VarBoolean, MDDGameFrameworkRuntime
-    - Name: m_Value
-      Entry: 5
-      Data: false
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-  graph: {fileID: 11400000}
-  position: {x: -1352, y: 248}
-  ports:
-    keys:
-    - input
-    values:
-    - _fieldName: input
-      _node: {fileID: 5857344128352003859}
-      _typeQualifiedName: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
-        PublicKeyToken=b77a5c561934e089
-      connections:
-      - fieldName: output
-        node: {fileID: 4704415360002005955}
-        reroutePoints: []
-      _direction: 0
-      _connectionType: 1
-      _typeConstraint: 0
-      _dynamic: 0
-  Id: 4
-  nodeType: 2
-  des: "\u91CD\u7F6E\u8F93\u5165"
-  input: 0
 --- !u!114 &7081719465945499085
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1601,16 +1420,13 @@ MonoBehaviour:
         PublicKeyToken=b77a5c561934e089
       connections:
       - fieldName: input
-        node: {fileID: 4704415360002005955}
-        reroutePoints: []
-      - fieldName: input
         node: {fileID: -2367913706177295472}
         reroutePoints: []
       _direction: 1
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 0
-  Id: 12
+  Id: 10
   nodeType: 0
   des: 
   input: 0

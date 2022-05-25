@@ -8,8 +8,7 @@ namespace MDDSkillEngine
     public class ColliderClip : SkillClip
     {
         ColliderSkillData skillData;
-
-        Entity col;
+        int colid=8;
 
         public override void Init(SkillDataBase data, Entity actor,SkillTimeline skillTimeline)
         {
@@ -26,24 +25,33 @@ namespace MDDSkillEngine
             ISkillSystem skillSystem = Game.Skill.GetSkillSystem(actor.Id);
             skillSystem.SetSkillReleaseResultType(SkillReleaseResultType.SUCCSE);
 
-            int id = Game.Entity.GenerateSerialId();
+            int colid = Game.Entity.GenerateSerialId();
 
-            Game.Entity.ShowCollider(new ColliderData(id, 20001, actor));
-            col = Game.Entity.GetEntity(id).Logic as Entity;
+            Game.Entity.ShowCollider(new ColliderData(colid, 20001, actor)
+            {
+                localRotation = skillData.localRotation,
+                localScale = skillData.localScale,
+                localeftPostion = skillData.localeftPostion,
+                boundCenter = skillData.boundCenter,
+                boundSize = skillData.boundSize,
+                Duration = this.GetLength()
+            });
+            //col = Game.Entity.GetEntity(id).Logic as Entity;
 
-            Game.Entity.AttachEntity(col.Id,actor.Id);
+            //Game.Entity.AttachEntity(col.Id, actor.Id);
 
-            BoxCollider Box = col.GetComponent<BoxCollider>();
-            Box.size = skillData.boundSize;
-            Box.center = skillData.boundCenter;
+            //BoxCollider Box = col.GetComponent<BoxCollider>();
+            //Box.size = skillData.boundSize;
+            //Box.center = skillData.boundCenter;
 
-            col.CachedTransform.localRotation = skillData.localRotation;
-            col.CachedTransform.localPosition = skillData.localeftPostion;
-            col.CachedTransform.localScale = skillData.localScale;
+            //col.CachedTransform.localRotation = skillData.localRotation;
+            //col.CachedTransform.localPosition = skillData.localeftPostion;
+            //col.CachedTransform.localScale = skillData.localScale;
 
-            
 
-            Log.Info("{0}进入ColliderClip name：{1},time:{2}", LogConst.SKillTimeline, GetType().Name, duration);
+
+            SkillTimeline<Entity> skillTimeline1 = skillTimeline as SkillTimeline<Entity>;
+            Log.Info("{0}进入动画clip name：{1} currenttime:{2}", LogConst.SKillTimeline, skillData.ResouceName, skillTimeline1.currentTime);
         }
 
         public override void Update(float currentTime, float previousTime)
@@ -56,7 +64,7 @@ namespace MDDSkillEngine
 
         public override void Exit()
         {
-            Game.Entity.HideEntity(col);
+            //Game.Entity.HideEntity(colid);
             Log.Info("{0}离开ColliderClip name：{1}", LogConst.SKillTimeline, GetType().Name);
         }
 

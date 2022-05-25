@@ -50,11 +50,10 @@ namespace MDDSkillEngine
         private List<IDirectableTimePointer> unsortedStartTimePointers = new List<IDirectableTimePointer>();
 
         public void Init(IFsm<T> fsm, SkillData skillData)
-        {
-            InitSkillClip(skillData);
+        {         
             this.fsm = fsm;
             owner = fsm.Owner;
-
+            InitSkillClip(skillData);
         }
 
 

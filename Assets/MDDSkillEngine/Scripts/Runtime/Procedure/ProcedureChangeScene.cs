@@ -164,8 +164,7 @@ namespace MDDSkillEngine
                 return;
             }
 
-            Log.Error("打开ui成功");
-
+                
             isOpen = true;
         }
     }

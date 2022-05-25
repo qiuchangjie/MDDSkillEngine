@@ -438,7 +438,7 @@ namespace MDDGameFramework
                     {
                         continue;
                     }
-                    Debug.LogError($"更改key:{notification.key}，为：{notification.value.GetValue()}");
+                    //Debug.LogError($"更改key:{notification.key}，为：{notification.value.GetValue()}");
                     observer(notification.type, notification.value);
                 }
             }

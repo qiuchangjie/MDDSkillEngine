@@ -18,7 +18,7 @@ namespace MDDSkillEngine
 
         public void ChangeValue()
         {
-            Log.Error("更改黑板值:{0},{1}", data.BBKey, data.NP_BBValue);
+            Log.Info("更改黑板值:{0},{1}", data.BBKey, data.NP_BBValue);
             BelongtoRuntimeTree.Root.Blackboard.Set(data.BBKey, data.NP_BBValue.VDeepCopy());
         }
     }

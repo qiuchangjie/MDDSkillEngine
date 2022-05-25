@@ -14,7 +14,18 @@ namespace MDDSkillEngine
 
         private int m_EffectID = 0;
 
-        private bool m_IsFollowParent;
+        private bool m_IsFollowParent=true;
+
+        public Vector3 boundSize;
+
+        public Vector3 boundCenter;
+
+        public Vector3 localeftPostion;
+
+        public Quaternion localRotation;
+
+        public Vector3 localScale;
+
 
         public Entity Owner
         {

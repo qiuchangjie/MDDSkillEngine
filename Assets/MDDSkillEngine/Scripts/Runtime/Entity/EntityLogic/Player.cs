@@ -56,7 +56,7 @@ namespace MDDSkillEngine
         public void UseSkill_3(CallbackContext ctx)
         {
             //Game.Fsm.GetFsm<Player>(Id.ToString()).SetData<VarBoolean>("skilldatatest", true);
-            Game.Skill.GetSkillSystem(Id).UseSkill(10007);
+            Game.Skill.GetSkillSystem(Id).UseSkill(10020);
         }
 
         public void Use_S(CallbackContext ctx)
@@ -104,7 +104,7 @@ namespace MDDSkillEngine
             Game.Skill.GetSkillSystem(Id).AddSkill(10001);
             Game.Skill.GetSkillSystem(Id).AddSkill(10004);
             Game.Skill.GetSkillSystem(Id).AddSkill(10005);
-            Game.Skill.GetSkillSystem(Id).AddSkill(10007);
+            Game.Skill.GetSkillSystem(Id).AddSkill(10020);
 
             UIBlackboard uIBlackboard = Game.UI.GetUIForm(UIFormId.Blackboard) as UIBlackboard;
 

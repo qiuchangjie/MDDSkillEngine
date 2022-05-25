@@ -32,6 +32,17 @@ namespace MDDSkillEngine
             data = userData as ColliderData;
 
             needWaitTime = 1f / damageSettlementPreSecond;
+
+            if (data.IsFollowParent && !data.IsPreLoad)
+            {
+                Game.Entity.AttachEntity(Id, data.Owner.Id);
+                BoxCollider Box = GetComponent<BoxCollider>();
+                Box.size = data.boundSize;
+                Box.center = data.boundCenter;
+                CachedTransform.localScale = data.localScale;
+                CachedTransform.localPosition = data.localeftPostion;
+                CachedTransform.localRotation = data.localRotation;                
+            }
         }
 
         protected override void OnUpdate(float elapseSeconds, float realElapseSeconds)

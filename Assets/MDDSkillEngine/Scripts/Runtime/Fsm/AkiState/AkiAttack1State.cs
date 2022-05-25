@@ -34,7 +34,7 @@ namespace MDDSkillEngine
             fsm.SetData<VarBoolean>("attack1",false);
             attackTime = attack.MaximumDuration;
 
-            Log.Error("attackAnimTime:{0}", attackTime);
+            //Log.Error("attackAnimTime:{0}", attackTime);
 
             endAction += ()=> 
             {
