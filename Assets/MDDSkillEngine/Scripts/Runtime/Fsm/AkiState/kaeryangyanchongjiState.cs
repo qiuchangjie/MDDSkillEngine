@@ -56,7 +56,7 @@ namespace MDDSkillEngine
             {
                 ISkillSystem skillSystem = Game.Skill.GetSkillSystem(Fsm.Owner.Id);
                 skillSystem.SetSkillReleaseResultType(SkillReleaseResultType.PROGRESS);
-                ChangeState<saotangtuiState>(Fsm);
+                ChangeState(Fsm,GetType());
             }
             else
             {
