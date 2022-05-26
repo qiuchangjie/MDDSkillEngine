@@ -26,7 +26,7 @@ namespace MDDSkillEngine
 
             //Damage.Events.OnEnd += endAction;
 
-            //添加该状态是否激活的观察者
+            
            
         }
 
@@ -59,7 +59,7 @@ namespace MDDSkillEngine
         {
             Damage.Events.OnEnd -= endAction;
             base.OnLeave(fsm, isShutdown);
-            Log.Error("离开ai伤害状态");
+            Log.Info("{0}离开ai{1}", LogConst.FSM, GetType().Name);
         }
 
         protected override void OnUpdate(IFsm<Entity> fsm, float elapseSeconds, float realElapseSeconds)

@@ -28,7 +28,7 @@ namespace MDDSkillEngine
             idle = fsm.Owner.CachedAnimContainer.GetAnimation("Idle");
             fsm.SetData<VarBoolean>("isMove",false);
 
-            //添加该状态是否激活的观察者
+            
            
         }
 

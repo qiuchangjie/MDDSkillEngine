@@ -25,7 +25,7 @@ namespace MDDSkillEngine
            
             idle = fsm.Owner.CachedAnimContainer.GetAnimation("idle");
             fsm.SetData<VarBoolean>("idle", false);
-            //添加该状态是否激活的观察者
+            
            
         }
 
@@ -48,17 +48,6 @@ namespace MDDSkillEngine
         protected override void OnUpdate(IFsm<Entity> fsm, float elapseSeconds, float realElapseSeconds)
         {
             base.OnUpdate(fsm, elapseSeconds, realElapseSeconds);
-
-            //if (fsm.GetData<VarBoolean>("damage"))
-            //{
-            //    ChangeState<AiDamageState>(fsm);
-            //}
-
-            //if (fsm.GetData<VarBoolean>("died"))
-            //{
-            //    ChangeState<AiDiedState>(fsm);
-            //}
-
         }
 
         protected override void Observing(Blackboard.Type type, Variable newValue)

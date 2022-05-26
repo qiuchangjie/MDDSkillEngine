@@ -12,9 +12,7 @@ namespace MDDSkillEngine
     {
         protected override void OnInit(IFsm<Entity> fsm)
         {
-            base.OnInit(fsm);
-            //添加该状态是否激活的观察者
-           
+            base.OnInit(fsm);                 
         }
 
         protected override void OnEnter(IFsm<Entity> fsm)

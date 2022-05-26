@@ -14,7 +14,7 @@ namespace MDDSkillEngine
         {
             base.OnInit(fsm);
 
-            //添加该状态是否激活的观察者
+            
             fsm.AddObserver(GetType().Name,Observing);
         }
 
