@@ -12,8 +12,6 @@ namespace MDDSkillEngine
     {
         private ClipState.Transition idle;
 
-        IFsm<Entity> Fsm;
-
         public override bool StrongState
         {
             get
@@ -31,7 +29,7 @@ namespace MDDSkillEngine
             fsm.SetData<VarBoolean>("isMove",false);
 
             //添加该状态是否激活的观察者
-            fsm.AddObserver(GetType().Name, Observing);
+           
         }
 
         protected override void OnEnter(IFsm<Entity> fsm)
@@ -83,7 +81,7 @@ namespace MDDSkillEngine
             //}
         }
 
-        private void Observing(Blackboard.Type type, Variable newValue)
+        protected override void Observing(Blackboard.Type type, Variable newValue)
         {
             VarBoolean varBoolean = (VarBoolean)newValue;
 

@@ -14,7 +14,7 @@ namespace MDDSkillEngine
             base.OnInit(procedureOwner);
             this.procedureOwner = procedureOwner;
             procedureOwner.SetData<VarBoolean>(GetType().Name, false);
-
+            procedureOwner.AddObserver(GetType().Name, Observing);
             Log.Info("{0}设置默认状态黑板变量{1}", LogConst.FSM, GetType().Name);
         }
 
@@ -22,6 +22,11 @@ namespace MDDSkillEngine
         {
             base.OnLeave(procedureOwner, isShutdown);
             procedureOwner.SetData<VarBoolean>(GetType().Name, false);
+        }
+
+        protected virtual void Observing(Blackboard.Type type, Variable newValue)
+        {
+
         }
     }
 }

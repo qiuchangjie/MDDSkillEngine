@@ -10,7 +10,6 @@ namespace MDDSkillEngine
     {
         private ClipState.Transition Damage;
 
-        IFsm<Entity> Fsm;
 
         private System.Action endAction;
 
@@ -19,7 +18,6 @@ namespace MDDSkillEngine
             base.OnInit(fsm);
             Log.Info("创建ai   damage模式 ");
             Damage = fsm.Owner.CachedAnimContainer.GetAnimation("damage");
-            Fsm = fsm;
             endAction += () =>
             {
                 fsm.SetData<VarBoolean>("damage", false);
@@ -29,7 +27,7 @@ namespace MDDSkillEngine
             //Damage.Events.OnEnd += endAction;
 
             //添加该状态是否激活的观察者
-            fsm.AddObserver(GetType().Name, Observing);
+           
         }
 
         protected override void OnEnter(IFsm<Entity> fsm)
@@ -44,8 +42,6 @@ namespace MDDSkillEngine
             {
                 fsm.Owner.CachedAnimancer.Stop(Damage);
                 fsm.Owner.CachedAnimancer.Play(Damage);
-
-                Log.Error("11111111111111111111111111111111111111111111");
             }
             else
             {
@@ -72,7 +68,7 @@ namespace MDDSkillEngine
           
         }
 
-        private void Observing(Blackboard.Type type, Variable newValue)
+        protected override void Observing(Blackboard.Type type, Variable newValue)
         {
             VarBoolean varBoolean = (VarBoolean)newValue;
 

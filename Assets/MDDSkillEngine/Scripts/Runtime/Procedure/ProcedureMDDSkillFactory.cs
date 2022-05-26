@@ -23,7 +23,7 @@ namespace MDDSkillEngine
         {
             base.OnInit(procedureOwner);
 
-            procedureOwner.AddObserver(GetType().Name, Observing);
+           
           
         }
 
@@ -146,7 +146,7 @@ namespace MDDSkillEngine
             yield return new WaitForSecondsRealtime(0.5f);
         }    
 
-        private void Observing(Blackboard.Type type, Variable newValue)
+        protected override void Observing(Blackboard.Type type, Variable newValue)
         {
             VarBoolean varBoolean = (VarBoolean)newValue;
 

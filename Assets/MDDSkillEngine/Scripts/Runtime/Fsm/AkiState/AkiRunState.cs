@@ -54,6 +54,11 @@ namespace MDDSkillEngine
             }
 
         }
+
+        protected override void Observing(Blackboard.Type type, Variable newValue)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }
 

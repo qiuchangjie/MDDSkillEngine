@@ -31,7 +31,6 @@ namespace MDDSkillEngine
         private float distance = 0;
         private float speed = 27;
 
-        IFsm<Entity> Fsm;
 
         protected override void OnInit(IFsm<Entity> fsm)
         {
@@ -168,6 +167,11 @@ namespace MDDSkillEngine
 
             Game.Entity.HideEntity((Entity)sender);
         }
+
+        protected override void Observing(Blackboard.Type type, Variable newValue)
+        {
+        }
+           
     }
 }
 

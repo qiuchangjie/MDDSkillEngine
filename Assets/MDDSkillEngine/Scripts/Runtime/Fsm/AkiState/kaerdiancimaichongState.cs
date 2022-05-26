@@ -10,15 +10,11 @@ namespace MDDSkillEngine
     [AkiState]
     public class kaerdiancimaichongState : SkillTimelineState<Entity>
     {
-        IFsm<Entity> Fsm;
-
         protected override void OnInit(IFsm<Entity> fsm)
         {
             base.OnInit(fsm);
-            Fsm = fsm;
-
             //添加该状态是否激活的观察者
-            fsm.AddObserver(GetType().Name, Observing);
+           
         }
 
         protected override void OnEnter(IFsm<Entity> fsm)
@@ -49,7 +45,7 @@ namespace MDDSkillEngine
         /// </summary>
         /// <param name="type"></param>
         /// <param name="newValue"></param>
-        private void Observing(Blackboard.Type type, Variable newValue)
+        protected override void Observing(Blackboard.Type type, Variable newValue)
         {
             VarBoolean varBoolean = (VarBoolean)newValue;
 
@@ -60,7 +56,7 @@ namespace MDDSkillEngine
             {
                 ISkillSystem skillSystem = Game.Skill.GetSkillSystem(Fsm.Owner.Id);
                 skillSystem.SetSkillReleaseResultType(SkillReleaseResultType.PROGRESS);
-                ChangeState<kaerdiancimaichongState>(Fsm);
+                ChangeState(Fsm,GetType());
             }
             else
             {

@@ -10,13 +10,11 @@ namespace MDDSkillEngine
     {
         private ClipState.Transition died;
 
-        IFsm<Entity> Fsm;
 
         protected override void OnInit(IFsm<Entity> fsm)
         {
             Log.Error("创建死亡状态");
             base.OnInit(fsm);
-            Fsm = fsm;
             died = fsm.Owner.CachedAnimContainer.GetAnimation("died");
             fsm.SetData<VarBoolean>("died", false);
         }
@@ -42,6 +40,11 @@ namespace MDDSkillEngine
         {
             base.OnUpdate(fsm, elapseSeconds, realElapseSeconds);
 
+        }
+
+        protected override void Observing(Blackboard.Type type, Variable newValue)
+        {
+            
         }
     }
 }

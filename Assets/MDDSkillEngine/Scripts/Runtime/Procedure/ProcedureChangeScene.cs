@@ -26,7 +26,7 @@ namespace MDDSkillEngine
         protected override void OnInit(ProcedureOwner procedureOwner)
         {
             base.OnInit(procedureOwner);
-            procedureOwner.AddObserver(GetType().Name, Observing);
+           
         }
 
         protected override void OnEnter(ProcedureOwner procedureOwner)
@@ -107,7 +107,7 @@ namespace MDDSkillEngine
 
         }
 
-        private void Observing(Blackboard.Type type, Variable newValue)
+        protected override void Observing(Blackboard.Type type, Variable newValue)
         {
             VarBoolean varBoolean = (VarBoolean)newValue;
 
