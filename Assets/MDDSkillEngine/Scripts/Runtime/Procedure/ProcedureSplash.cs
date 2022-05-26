@@ -8,7 +8,7 @@ using MDDGameFramework;
 namespace MDDSkillEngine
 {
     [Procedure]
-    public class ProcedureSplash : ProcedureBase
+    public class ProcedureSplash : MDDProcedureBase
     {
         protected override void OnUpdate(ProcedureOwner procedureOwner, float elapseSeconds, float realElapseSeconds)
         {

@@ -29,7 +29,7 @@ namespace MDDSkillEngine
 
         public static string GetFontAsset(string assetName)
         {
-            return Utility.Text.Format("Assets/GameMain/Fonts/{0}.ttf", assetName);
+            return Utility.Text.Format("Assets/MDDSkillEngine/Fonts/{0}.otf", assetName);
         }
 
         /// <summary>

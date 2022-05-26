@@ -17,6 +17,8 @@ namespace MDDSkillEngine
         private CanvasGroup m_CanvasGroup = null;
         private List<Canvas> m_CachedCanvasContainer = new List<Canvas>();
 
+        public System.Action<bool> OpenFadeOverAction;
+
         public int OriginalDepth
         {
             get;
@@ -109,7 +111,7 @@ namespace MDDSkillEngine
 
             m_CanvasGroup.alpha = 0f;
             StopAllCoroutines();
-            StartCoroutine(m_CanvasGroup.FadeToAlpha(1f, FadeTime));
+            m_CanvasGroup.FadeToAlpha(1f, FadeTime).Start(OpenFadeOverAction);
         }
 
 

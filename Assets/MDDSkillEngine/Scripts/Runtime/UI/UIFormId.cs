@@ -13,11 +13,16 @@ namespace MDDSkillEngine
         /// 弹出框。
         /// </summary>
         DialogForm = 1,
+        
+        /// <summary>
+        /// 开始界面
+        /// </summary>
+        Login = 2,
 
         /// <summary>
         /// 加载界面
         /// </summary>
-        LoadingForm = 2,
+        LoadingForm = 3,
 
         /// <summary>
         /// 主菜单。

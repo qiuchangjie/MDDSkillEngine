@@ -13,6 +13,11 @@ namespace MDDSkillEngine
 
         private bool isFllow;
 
+        public Vector3 localeftPostion;
+
+        public Quaternion localRotation;
+
+        public Vector3 localScale;
 
         public EffectData(int entityId, int typeId)
             : base(entityId, typeId)

@@ -5,7 +5,7 @@ using ProcedureOwner = MDDGameFramework.IFsm<MDDGameFramework.IProcedureManager>
 namespace MDDSkillEngine
 {
     [Procedure]
-    public class ProcedureChangeScene : ProcedureBase
+    public class ProcedureChangeScene : MDDProcedureBase
     {
         private const int MenuSceneId = 1;
 
@@ -23,19 +23,24 @@ namespace MDDSkillEngine
             }
         }
 
+        protected override void OnInit(ProcedureOwner procedureOwner)
+        {
+            base.OnInit(procedureOwner);
+            procedureOwner.AddObserver(GetType().Name, Observing);
+        }
+
         protected override void OnEnter(ProcedureOwner procedureOwner)
         {
             base.OnEnter(procedureOwner);
 
             m_IsChangeSceneComplete = false;
 
-            Game.UI.OpenUIForm(UIFormId.LoadingForm , this);
+            Game.UI.OpenUIForm(UIFormId.LoadingForm);
 
             Game.Event.Subscribe(MDDGameFramework.Runtime.LoadSceneSuccessEventArgs.EventId, OnLoadSceneSuccess);
             Game.Event.Subscribe(MDDGameFramework.Runtime.LoadSceneFailureEventArgs.EventId, OnLoadSceneFailure);
             Game.Event.Subscribe(MDDGameFramework.Runtime.LoadSceneUpdateEventArgs.EventId, OnLoadSceneUpdate);
             Game.Event.Subscribe(MDDGameFramework.Runtime.LoadSceneDependencyAssetEventArgs.EventId, OnLoadSceneDependencyAsset);
-            Game.Event.Subscribe(MDDGameFramework.Runtime.OpenUIFormSuccessEventArgs.EventId, OnOpenUIFormSuccess);
             // 停止所有声音
             //Game.Sound.StopAllLoadingSounds();
             //Game.Sound.StopAllLoadedSounds();
@@ -74,7 +79,6 @@ namespace MDDSkillEngine
             Game.Event.Unsubscribe(MDDGameFramework.Runtime.LoadSceneFailureEventArgs.EventId, OnLoadSceneFailure);
             Game.Event.Unsubscribe(MDDGameFramework.Runtime.LoadSceneUpdateEventArgs.EventId, OnLoadSceneUpdate);
             Game.Event.Unsubscribe(MDDGameFramework.Runtime.LoadSceneDependencyAssetEventArgs.EventId, OnLoadSceneDependencyAsset);
-            Game.Event.Unsubscribe(MDDGameFramework.Runtime.OpenUIFormSuccessEventArgs.EventId,OnOpenUIFormSuccess);
 
             isOpen = false;
 
@@ -90,19 +94,27 @@ namespace MDDSkillEngine
                 return;
             }
 
-            if (isOpen)
-            {
-                if (Game.Procedure.procedureType == ProcedureType.Game)
-                {
-                    ChangeState<ProcedureMDDSkillFactory>(procedureOwner);
-                }
-                else
-                {
-                    ChangeState<ProcedureSkillEditor>(procedureOwner);
-                }
-            }
-                
 
+            if (Game.Procedure.procedureType == ProcedureType.Game)
+            {
+                ChangeState<ProcedureMDDSkillFactory>(procedureOwner);
+            }
+            else
+            {
+                ChangeState<ProcedureSkillEditor>(procedureOwner);
+            }
+
+
+        }
+
+        private void Observing(Blackboard.Type type, Variable newValue)
+        {
+            VarBoolean varBoolean = (VarBoolean)newValue;
+
+            if (varBoolean.Value == false)
+                return;
+
+            ChangeState(procedureOwner, GetType());
         }
 
         private void OnLoadSceneSuccess(object sender, GameEventArgs e)

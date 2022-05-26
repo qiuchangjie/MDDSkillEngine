@@ -137,6 +137,15 @@ namespace MDDGameFramework.Runtime
         {
             return m_ProcedureManager.GetProcedure(procedureType);
         }
+
+        /// <summary>
+        /// 获取当前流程状态机
+        /// </summary>
+        /// <returns></returns>
+        public IFsm<IProcedureManager> GetFsm()
+        {
+            return m_ProcedureManager.GetFsm();
+        }
     }
 
     public enum ProcedureType

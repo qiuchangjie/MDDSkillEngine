@@ -16,5 +16,7 @@ namespace MDDSkillEngine
         public static readonly string FSM = "<b><color=#ffff00ff>FSM:</color></b>";
 
         public static readonly string SKillTimeline = "<b><color=#00ffffff>SKillTimeline:</color></b>";
+
+        public static readonly string UI = "<b><color=#00ffffff>UI:</color></b>";
     }
 }

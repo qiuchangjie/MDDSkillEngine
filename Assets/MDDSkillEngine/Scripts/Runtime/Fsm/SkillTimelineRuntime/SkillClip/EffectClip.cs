@@ -24,21 +24,19 @@ namespace MDDSkillEngine
 
             Game.Entity.ShowEffect(new EffectData(id, 70006)
             {
-                //Position = actor.CachedTransform.position + skillData.localeftPostion,
-                //Rotation = actor.CachedTransform.rotation,
-                //LocalScale = skillData.localScale,
+                Owner = actor,
+                localeftPostion=skillData.localeftPostion,
+                localRotation=skillData.localRotation,
+                localScale=skillData.localScale,
             });
 
-            Entity effect = Game.Entity.GetEntity(id).Logic as Entity;
+            //Entity effect = Game.Entity.GetEntity(id).Logic as Entity;
 
-            Game.Entity.AttachEntity(effect.Id,actor.Id);
+            //Game.Entity.AttachEntity(effect.Id,actor.Id);
 
-            float angle;
-            Vector3 vector3;
-            skillData.localRotation.ToAngleAxis(out angle, out vector3);
-            effect.CachedTransform.localRotation = skillData.localRotation;
-            effect.CachedTransform.localPosition = skillData.localeftPostion;
-            effect.CachedTransform.localScale = skillData.localScale;
+            //effect.CachedTransform.localRotation = skillData.localRotation;
+            //effect.CachedTransform.localPosition = skillData.localeftPostion;
+            //effect.CachedTransform.localScale = skillData.localScale;
 
            Log.Info("{0}进入effectclip name：{1}", LogConst.SKillTimeline, "1");
         }

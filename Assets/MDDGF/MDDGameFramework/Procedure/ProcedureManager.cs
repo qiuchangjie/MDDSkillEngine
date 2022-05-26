@@ -192,5 +192,20 @@ namespace MDDGameFramework
 
             return (ProcedureBase)m_ProcedureFsm.GetState(procedureType);
         }
+
+        /// <summary>
+        /// 获取流程状态机
+        /// </summary>
+        /// <returns></returns>
+        /// <exception cref="MDDGameFrameworkException"></exception>
+        public IFsm<IProcedureManager> GetFsm()
+        {
+            if (m_ProcedureFsm == null)
+            {
+                throw new MDDGameFrameworkException("You must initialize procedure first.");
+            }
+
+            return m_ProcedureFsm;
+        }
     }
 }

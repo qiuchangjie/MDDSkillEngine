@@ -12,21 +12,31 @@ using UnityEngine.InputSystem;
 namespace MDDSkillEngine
 {
     [Procedure]
-    public class ProcedureMDDSkillFactory : ProcedureBase
+    public class ProcedureMDDSkillFactory : MDDProcedureBase
     {
         List<int> numList = new List<int>();
         List<int> idList = new List<int>();
+
+        CoroutineHandler hander;
+
+        protected override void OnInit(ProcedureOwner procedureOwner)
+        {
+            base.OnInit(procedureOwner);
+
+            procedureOwner.AddObserver(GetType().Name, Observing);
+          
+        }
 
         protected override void OnEnter(ProcedureOwner procedureOwner)
         {
             base.OnEnter(procedureOwner);
 
-            Game.NPBehave.GetHelper().PreLoad();
+            hander = PreLoadSkillAsset().Start((b) =>
+            {
+                Game.UI.GetUIForm(UIFormId.LoadingForm).Close(false);
+            });
 
-            _ = PreLoadSkillAsset(() =>
-              {
-                  Game.UI.GetUIForm(UIFormId.LoadingForm).Close();
-              });
+            Game.NPBehave.GetHelper().PreLoad();
 
             Game.Select.isWork = true;
 
@@ -81,21 +91,24 @@ namespace MDDSkillEngine
             });
         }
 
-        private async Task PreLoadSkillAsset(System.Action end)
+        private IEnumerator PreLoadSkillAsset()
         {
             IDataTable<DRSkill> dtSkill = Game.DataTable.GetDataTable<DRSkill>();
 
             DRSkill[] dRSkills = dtSkill.GetAllDataRows();
 
+            
             for (int i = 0; i < dRSkills.Length; i++)
-            {
+            {              
                 for (int j = 0; j < dRSkills[i].EffectAsset.Count; j++)
                 {
+                    yield return new WaitForEndOfFrame();
                     PreInitEffect(dRSkills[i].EffectAsset[j]);
                 }
 
                 for (int j = 0; j < dRSkills[i].ColliderEntity.Count; j++)
                 {
+                    yield return new WaitForEndOfFrame();
                     PreInitCol(dRSkills[i].ColliderEntity[j]);
                 }
 
@@ -121,20 +134,27 @@ namespace MDDSkillEngine
                     {
                         for (int k = 0; k < numList[j]; k++)
                         {
+                            yield return new WaitForEndOfFrame();
                             PreInitEffect(idList[j]);
                         }
                     }
                 }
-
-                
+                numList.Clear();
+                idList.Clear();
             }
-          
-            await Task.Delay(3000);
 
-            end?.Invoke();
-        }
+            yield return new WaitForSecondsRealtime(0.5f);
+        }    
 
+        private void Observing(Blackboard.Type type, Variable newValue)
+        {
+            VarBoolean varBoolean = (VarBoolean)newValue;
 
+            if (varBoolean.Value == false)
+                return;
+                      
+            ChangeState(procedureOwner,GetType());
+        }    
     }
 
 

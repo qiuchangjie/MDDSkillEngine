@@ -6,7 +6,7 @@ using MDDGameFramework;
 namespace MDDSkillEngine
 {
     [Procedure]
-    public class ProcedureInitResources : ProcedureBase
+    public class ProcedureInitResources : MDDProcedureBase
     {
         private bool m_InitResourcesComplete = false;
    

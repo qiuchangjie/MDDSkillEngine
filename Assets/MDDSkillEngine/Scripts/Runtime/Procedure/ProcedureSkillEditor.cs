@@ -6,7 +6,7 @@ using MDDGameFramework;
 namespace MDDSkillEngine
 {
     [Procedure]
-    public class ProcedureSkillEditor : ProcedureBase
+    public class ProcedureSkillEditor : MDDProcedureBase
     {
       
         protected override void OnEnter(ProcedureOwner procedureOwner)

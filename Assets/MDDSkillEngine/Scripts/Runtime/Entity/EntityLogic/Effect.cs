@@ -28,7 +28,13 @@ namespace MDDSkillEngine
             m_ElapseSeconds = 0f;
 
             if (m_EffectData.Owner != null)
+            {
                 Game.Entity.AttachEntity(Id, m_EffectData.Owner.Id);
+                CachedTransform.localRotation = m_EffectData.localRotation;
+                CachedTransform.localPosition = m_EffectData.localeftPostion;
+                CachedTransform.localScale = m_EffectData.localScale;
+            }
+
         }
 
         protected override void OnUpdate(float elapseSeconds, float realElapseSeconds)

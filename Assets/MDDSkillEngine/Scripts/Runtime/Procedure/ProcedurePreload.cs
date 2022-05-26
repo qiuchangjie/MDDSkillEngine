@@ -9,7 +9,7 @@ using OpenUIFormSuccessEventArgs = MDDGameFramework.Runtime.OpenUIFormSuccessEve
 namespace MDDSkillEngine
 {
     [Procedure]
-    public class ProcedurePreload : ProcedureBase
+    public class ProcedurePreload : MDDProcedureBase
     {
         public static readonly string[] DataTableNames = new string[]
         {   
@@ -31,7 +31,6 @@ namespace MDDSkillEngine
 
             Game.Event.Subscribe(LoadDataTableSuccessEventArgs.EventId, OnLoadDataTableSuccess);
             Game.Event.Subscribe(LoadDataTableFailureEventArgs.EventId, OnLoadDataTableFailure);
-            Game.Event.Subscribe(OpenUIFormSuccessEventArgs.EventId, OnOpenUIFormSuccess);
 
             m_LoadedFlag.Clear();
 
@@ -43,7 +42,6 @@ namespace MDDSkillEngine
 
             Game.Event.Unsubscribe(LoadDataTableSuccessEventArgs.EventId, OnLoadDataTableSuccess);
             Game.Event.Unsubscribe(LoadDataTableFailureEventArgs.EventId, OnLoadDataTableFailure);
-            Game.Event.Unsubscribe(OpenUIFormSuccessEventArgs.EventId, OnOpenUIFormSuccess);
 
             base.OnLeave(procedureOwner, isShutdown);
         }
@@ -64,7 +62,7 @@ namespace MDDSkillEngine
 
             if (Game.Procedure.procedureType == ProcedureType.Game)
             {
-                ChangeState<ProcedureChangeScene>(procedureOwner);
+                ChangeState<ProcedureLogin>(procedureOwner);
             }
             else
             {
@@ -81,7 +79,10 @@ namespace MDDSkillEngine
                 LoadDataTable(dataTableName);
             }
 
-            //LoadLoadingUIAsset();
+            LoadFont("Vegur-Regular");
+
+            //提前加载技能行为树资源
+            //Game.NPBehave.GetHelper().PreLoad();
         }
 
         private void LoadDataTable(string dataTableName)
@@ -100,33 +101,28 @@ namespace MDDSkillEngine
             }
 
             m_LoadedFlag[ne.DataTableAssetName] = true;
-
-            if (ne.DataTableAssetName == AssetUtility.GetUIFormAsset("UILoadingForm"))
-            {
-                LoadLoadingUIAsset();
-            }
-
+         
             Log.Info("Load data table '{0}' OK.", ne.DataTableAssetName);
-        }
+        }    
 
-        private void LoadLoadingUIAsset()
+        private void LoadFont(string fontName)
         {
-            Game.UI.OpenUIForm(UIFormId.LoadingForm, this);
-            m_LoadedFlag.Add(UIFormId.LoadingForm.ToString(), false);
+            m_LoadedFlag.Add(Utility.Text.Format("Font.{0}", fontName), false);
+            Game.Resource.LoadAsset(AssetUtility.GetFontAsset(fontName), Constant.AssetPriority.FontAsset, new LoadAssetCallbacks(
+                (assetName, asset, duration, userData) =>
+                {
+                    m_LoadedFlag[Utility.Text.Format("Font.{0}", fontName)] = true;
+                    UGuiForm.SetMainFont((Font)asset);
+                    Log.Info("Load font '{0}' OK.", fontName);
+                },
+
+                (assetName, status, errorMessage, userData) =>
+                {
+                    Log.Error("Can not load font '{0}' from '{1}' with error message '{2}'.", fontName, assetName, errorMessage);
+                }));
         }
 
-        private void OnOpenUIFormSuccess(object sender, GameEventArgs e)
-        {
-            MDDGameFramework.Runtime.OpenUIFormSuccessEventArgs ne = (MDDGameFramework.Runtime.OpenUIFormSuccessEventArgs)e;
-            if (ne.UserData != this)
-            {
-                return;
-            }
 
-            Log.Error("打开ui成功");
-            Game.UI.GetUIForm(UIFormId.LoadingForm).Close(true);
-            m_LoadedFlag[UIFormId.LoadingForm.ToString()] = true;
-        }
 
         private void OnLoadDataTableFailure(object sender, GameEventArgs e)
         {

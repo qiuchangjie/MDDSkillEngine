@@ -104,7 +104,10 @@ namespace MDDSkillEngine
 
             if (m_EntityData.IsPreLoad)
             {
-                HideSelf();
+                Game.Coroutine.StartJobDelayed(0.1f).Start((b) => 
+                {
+                    HideSelf();
+                });
             }
         }
 
@@ -115,7 +118,6 @@ namespace MDDSkillEngine
         }
 
         protected override void OnAttached(EntityLogic childEntity, Transform parentTransform, object userData)
-
         {
             base.OnAttached(childEntity, parentTransform, userData);
         }

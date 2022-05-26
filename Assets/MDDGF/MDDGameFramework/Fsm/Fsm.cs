@@ -604,15 +604,15 @@ namespace MDDGameFramework
         /// <param name="stateType">要切换到的有限状态机状态类型。</param>
         internal void ChangeState(Type stateType)
         {
-            if (m_CurrentState.CantStop)
-            {
-                Debug.LogError("CantStopCantStopCantStopCantStopCantStopCantStop");
-                return;
-            }
-
+           
             if (m_CurrentState == null)
             {
                 throw new MDDGameFrameworkException("Current state is invalid.");
+            }
+
+            if (m_CurrentState.CantStop)
+            {
+                return;
             }
 
             FsmState<T> state = GetState(stateType);
