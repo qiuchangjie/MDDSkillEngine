@@ -75,12 +75,12 @@ namespace MDDGameFramework.Runtime
 
         public override void Clear()
         {
-            base.Clear();
+            RootNode.Blackboard.RemoveObserver(key, actionCache);
             key = null;
             value = null;
             Decoratee = null;
-            isObserving = false;
-            RootNode.Blackboard.RemoveObserver(key,actionCache);
+            isObserving = false;       
+            base.Clear();
         }
 
 

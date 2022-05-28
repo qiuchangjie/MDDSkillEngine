@@ -121,14 +121,14 @@ namespace MDDGameFramework
         }
 
         public override void Clear()
-        {
-            base.Clear();
+        {           
+            clock.RemoveTimer(startCache);
             mainNode = null;
             clock = null;
             blackboard = null;
-            Decoratee = null;
-            clock.RemoveTimer(startCache);
+            Decoratee = null;           
             m_Owner = null;
+            base.Clear();
         }
 
         public override void SetRoot(Root rootNode)

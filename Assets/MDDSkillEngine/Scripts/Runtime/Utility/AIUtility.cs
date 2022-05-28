@@ -30,6 +30,7 @@ namespace MDDSkillEngine
             
         }
 
+
         public static void PerformCollision(TargetableObject entity, Entity other)
         {
             if (entity == null || other == null)

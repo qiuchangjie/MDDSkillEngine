@@ -33,7 +33,16 @@ namespace MDDGameFramework
             }
         }
 
-        public abstract void Init(Root m_MainRoot);
+        public virtual void Init(Root m_MainRoot)
+        {
+            node_Tree=new List<Node>();
+
+        }
+
+        public void SetNodeList(List<Node> nodes)
+        {
+            node_Tree=nodes;
+        }
 
         public virtual void SetRootNode(Root root)
         {
@@ -59,7 +68,7 @@ namespace MDDGameFramework
                 ReferencePool.Release(node_Tree[i]);
             }
             
-            node_Tree = null;
+            node_Tree.Clear();
             m_MainRoot = null;
         }
     }
