@@ -665,7 +665,7 @@ MonoBehaviour:
       Entry: 8
       Data: 
   nodes:
-  - {fileID: 7657251038082698612}
+  - {fileID: 7970458389199856961}
   - {fileID: 4962477581847331525}
   - {fileID: 1189293724130988220}
   - {fileID: 3850027637246563509}
@@ -1252,7 +1252,7 @@ MonoBehaviour:
   des: 
   input: 0
   output: 0
---- !u!114 &7657251038082698612
+--- !u!114 &7970458389199856961
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1267,8 +1267,7 @@ MonoBehaviour:
   serializationData:
     SerializedFormat: 2
     SerializedBytes: 
-    ReferencedUnityObjects:
-    - {fileID: 0}
+    ReferencedUnityObjects: []
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -1279,57 +1278,15 @@ MonoBehaviour:
       Data: 0|MDDSkillEngine.NP_ActionNodeData, MDDSkillEngine
     - Name: NpClassForAction
       Entry: 7
-      Data: 1|MDDSkillEngine.NP_ResetCDAction, MDDSkillEngine
+      Data: 1|MDDSkillEngine.NP_RetCDAction, MDDSkillEngine
     - Name: owner
-      Entry: 10
-      Data: 0
+      Entry: 6
+      Data: 
     - Name: BelongtoRuntimeTree
-      Entry: 7
-      Data: 2|MDDGameFramework.Runtime.Skill, MDDGameFrameworkRuntime
-    - Name: 
-      Entry: 8
+      Entry: 6
       Data: 
     - Name: Action
-      Entry: 7
-      Data: 3|System.Action, mscorlib
-    - Name: target
-      Entry: 9
-      Data: 1
-    - Name: declaringType
-      Entry: 7
-      Data: 4|System.RuntimeType, mscorlib
-    - Name: 
-      Entry: 1
-      Data: MDDSkillEngine.NP_ResetCDAction, MDDSkillEngine
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: methodName
-      Entry: 1
-      Data: RetCD
-    - Name: delegateType
-      Entry: 7
-      Data: 5|System.RuntimeType, mscorlib
-    - Name: 
-      Entry: 1
-      Data: System.Action, mscorlib
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: signature
-      Entry: 7
-      Data: 6|System.Type[], mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
+      Entry: 6
       Data: 
     - Name: Func1
       Entry: 6
@@ -1347,13 +1304,13 @@ MonoBehaviour:
       Entry: 8
       Data: 
   graph: {fileID: 11400000}
-  position: {x: -760, y: -600}
+  position: {x: -760, y: -616}
   ports:
     keys:
     - input
     values:
     - _fieldName: input
-      _node: {fileID: 7657251038082698612}
+      _node: {fileID: 7970458389199856961}
       _typeQualifiedName: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
       connections:
@@ -1420,7 +1377,7 @@ MonoBehaviour:
         node: {fileID: 4962477581847331525}
         reroutePoints: []
       - fieldName: input
-        node: {fileID: 7657251038082698612}
+        node: {fileID: 7970458389199856961}
         reroutePoints: []
       _direction: 1
       _connectionType: 0

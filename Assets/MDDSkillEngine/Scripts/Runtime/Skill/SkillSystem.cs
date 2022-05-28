@@ -6,7 +6,14 @@ namespace MDDSkillEngine
 {
     public class SkillSystem<T> : ISkillSystem, IReference where T : Entity
     {
-        private Dictionary<NameNamePair, Skill> skillDic;
+        private Dictionary<int, Skill> skillDic;
+
+        /// <summary>
+        /// 位置映射表
+        /// 因为没做存档机制 
+        /// 用于临时存储技能在技能ui上的位置信息
+        /// </summary>
+        private Dictionary<int, int> skillIndex;
 
         /// <summary>
         /// 技能系统关联的公共黑板
@@ -25,18 +32,16 @@ namespace MDDSkillEngine
                 return m_Owner;
             }
         }
-        
+
 
         /// <summary>
         /// 用来记录当前技能释放的结果
         /// </summary>
         public SkillReleaseResultType CurrentSkillState = SkillReleaseResultType.NONE;
 
-
-
         public SkillSystem()
         {
-            skillDic = new Dictionary<NameNamePair, Skill>();
+            skillDic = new Dictionary<int, Skill>();
         }
 
 
@@ -48,7 +53,7 @@ namespace MDDSkillEngine
             return sys;
         }
 
-     
+
         public void AddSkill(int skillId)
         {
             Skill skill = SkillFactory.AcquireSkill(skillId, m_Owner as Entity);
@@ -63,14 +68,37 @@ namespace MDDSkillEngine
             }
 
             skill.Start();
-            skillDic.Add(new NameNamePair(skillId.ToString(), m_Owner.Id.ToString()), skill);
+            skillDic.Add(skillId, skill);
+
+            Game.Event.Fire(this, AddSkillEventArgs.Create(this, skillId, -1));
         }
 
-     
+        public void AddSkill(int skillId, int index)
+        {
+            Skill skill = SkillFactory.AcquireSkill(skillId, m_Owner as Entity);
+
+            if (skill == null)
+            {
+                Log.Error("技能创建失败id：{0}", skillId);
+            }
+            else
+            {
+                Log.Info("{1}添加技能成功：{0}", skillId, LogConst.Skill);
+            }
+
+            skill.Start();
+            skillDic.Add(skillId, skill);
+
+            Game.Event.Fire(this, AddSkillEventArgs.Create(this, skillId, index));
+        }
+
+
+
+
         public Skill GetSkill(int id)
         {
             Skill skill;
-            if (!skillDic.TryGetValue(new NameNamePair(id.ToString(), m_Owner.Id.ToString()), out skill))
+            if (!skillDic.TryGetValue(id, out skill))
             {
                 Log.Error("{1}尝试获取没有装配的技能id：{0}", id, LogConst.Skill);
                 return null;
@@ -87,14 +115,16 @@ namespace MDDSkillEngine
         public void UseSkill(int id)
         {
             Skill skill;
-            if (!skillDic.TryGetValue(new NameNamePair(id.ToString(), m_Owner.Id.ToString()), out skill))
+            if (!skillDic.TryGetValue(id, out skill))
             {
                 Log.Error("尝试获取没有装配的技能id：{0}", id);
             }
             skill.Blackboard.Set<VarBoolean>("input", true);
+
+            Game.Event.Fire(this, UseSkillEventArgs.Create(this, id));
         }
 
-      
+
         /// <summary>
         /// 释放技能
         /// </summary>
@@ -115,6 +145,8 @@ namespace MDDSkillEngine
                 SetSkillReleaseResultType(SkillReleaseResultType.FAIL);
                 Log.Error("{0}Skill{1}未关联state", LogConst.Skill, id);
             }
+
+            Game.Event.Fire(this, ReleaseSkillEventArgs.Create(this, id));
         }
 
         /// <summary>
@@ -124,7 +156,7 @@ namespace MDDSkillEngine
         /// <returns></returns>
         public SkillReleaseResultType GetSkillReleaseResultType()
         {
-            return CurrentSkillState;         
+            return CurrentSkillState;
         }
 
         /// <summary>
@@ -137,10 +169,18 @@ namespace MDDSkillEngine
             CurrentSkillState = skillReleaseResultType;
         }
 
-      
-        public virtual void RemoveSkill(string name)
-        {
 
+        public void RemoveSkill(int id)
+        {
+            if (skillDic.TryGetValue(id, out Skill skill))
+            {
+                skillDic.Remove(id);
+                Game.Event.Fire(this, RemoveSkillEventArgs.Create(this, id));
+            }
+            else
+            {
+                Log.Error("{0}尝试移除未装配技能，id：{1}", LogConst.Skill, id);
+            }
         }
 
         /// <summary>
@@ -161,14 +201,14 @@ namespace MDDSkillEngine
         public Blackboard GetSkillBlackboard(int id)
         {
             Skill skill;
-            if (!skillDic.TryGetValue(new NameNamePair(id.ToString(), m_Owner.Id.ToString()), out skill))
+            if (!skillDic.TryGetValue(id, out skill))
             {
                 Log.Error("尝试获取没有装配的技能id：{0}", id);
             }
 
             return skill.Blackboard;
         }
-        
+
         /// <summary>
         /// 获取公共黑板
         /// </summary>
@@ -195,6 +235,9 @@ namespace MDDSkillEngine
 
     }
 
+    /// <summary>
+    /// 技能释放结果类型
+    /// </summary>
     public enum SkillReleaseResultType
     {
         /// <summary>

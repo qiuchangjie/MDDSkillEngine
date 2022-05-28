@@ -44,7 +44,10 @@ namespace MDDSkillEngine
         /// </summary>
         Blackboard = 103, 
         
-
+        /// <summary>
+        /// 技能槽
+        /// </summary>
+        Ablities = 104,
       
     }
 }

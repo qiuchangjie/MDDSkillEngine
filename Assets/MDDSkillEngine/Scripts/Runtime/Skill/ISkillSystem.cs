@@ -7,17 +7,21 @@ namespace MDDSkillEngine
 {
     public interface ISkillSystem
     {
-        void AddSkill(int id);
+        void AddSkill(int skillid);
 
-        Skill GetSkill(int id);
+        void AddSkill(int skillid, int index);
 
-        void UseSkill(int id);
+        Skill GetSkill(int skillid);
 
-        void ReleaseSkill(int id);
+        void UseSkill(int skillid);
 
-        bool UpgradeSkill(int id);
+        void ReleaseSkill(int skillid);
 
-        Blackboard GetSkillBlackboard(int id);
+        bool UpgradeSkill(int skillid);
+
+        void RemoveSkill(int skillid);
+
+        Blackboard GetSkillBlackboard(int skillid);
 
         Blackboard GetPubBlackboard();
 

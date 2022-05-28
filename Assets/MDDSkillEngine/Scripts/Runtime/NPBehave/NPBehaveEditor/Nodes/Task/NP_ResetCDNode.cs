@@ -11,7 +11,7 @@ namespace MDDSkillEngine
 
         public NP_ActionNodeData data = new NP_ActionNodeData()
         {
-            NpClassForAction = new NP_ResetCDAction()
+            NpClassForAction = new NP_RetCDAction()
         };
 
         public override Task CreateTask(NP_Tree owner_Tree)

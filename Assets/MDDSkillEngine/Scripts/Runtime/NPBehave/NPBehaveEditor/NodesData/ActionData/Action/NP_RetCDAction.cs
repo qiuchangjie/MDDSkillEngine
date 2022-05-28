@@ -9,7 +9,7 @@ using System;
 namespace MDDSkillEngine
 {
     [Title("重置CD", TitleAlignment = TitleAlignments.Centered)]
-    public class NP_ResetCDAction : NP_ClassForAction
+    public class NP_RetCDAction : NP_ClassForAction
     {
      
         public override System.Action GetActionToBeDone()

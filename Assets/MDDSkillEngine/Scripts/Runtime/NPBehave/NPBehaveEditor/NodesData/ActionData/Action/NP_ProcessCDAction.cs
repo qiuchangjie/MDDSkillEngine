@@ -22,8 +22,7 @@ namespace MDDSkillEngine
         {
            Variable cd = BelongtoRuntimeTree.GetBlackboard().Get("cd");
            VarFloat varFloat = cd as VarFloat;
-           varFloat.Value -= Time.deltaTime;       
-           //Debug.LogError($"cddlet:{cd}");
+           BelongtoRuntimeTree.GetBlackboard().Set<VarFloat>("cd", varFloat.Value -= Time.deltaTime);     
         }
     }
 }

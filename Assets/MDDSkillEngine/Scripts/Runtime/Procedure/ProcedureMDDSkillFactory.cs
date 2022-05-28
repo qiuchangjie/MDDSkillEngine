@@ -41,6 +41,7 @@ namespace MDDSkillEngine
             Game.Select.isWork = true;
 
             Game.UI.OpenUIForm(UIFormId.Blackboard);
+            Game.UI.OpenUIForm(UIFormId.Ablities);
 
             Log.Info("成功进入训练场景");
         }
@@ -67,6 +68,7 @@ namespace MDDSkillEngine
         }
 
 
+        #region 技能需要实体预载预实例
         private void PreInitEffect(int EffectID)
         {
             if (EffectID == 0)
@@ -144,7 +146,9 @@ namespace MDDSkillEngine
             }
 
             yield return new WaitForSecondsRealtime(0.5f);
-        }    
+        }
+
+        #endregion
 
         protected override void Observing(Blackboard.Type type, Variable newValue)
         {

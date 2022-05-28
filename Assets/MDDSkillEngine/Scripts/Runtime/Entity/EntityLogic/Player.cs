@@ -12,53 +12,9 @@ namespace MDDSkillEngine
     public class Player : TargetableObject
     {
 
-        Action<CallbackContext> Skill_1;
-
         PlayerData PlayerData = null;
 
-        PlayerMovement move;
-
-
-        #region 输入用bool值
-        private bool isClickRight;
-
-        private bool isClickLeft;
-
-        private bool isAttact;
-
-        private bool isQ;
-
-        private bool isW;
-
-        private bool isE;
-
-        private bool isR;
-        #endregion
-        public void UseSkill_1(CallbackContext ctx)
-        {
-            if (Game.Fsm.GetFsm<Entity>(Id.ToString()).GetCurrStateName() != "AkiShunXiState")
-            {
-                Game.Skill.GetSkillSystem(Id).UseSkill(10001);
-
-                if (SelectUtility.MouseRayCastByLayer(1 << 0 + 1 << 1, out RaycastHit hit))
-                {
-                    Game.Select.currentClick = hit.point;
-                }
-            }
-        }
-
-        public void UseSkill_2(CallbackContext ctx)
-        {
-            //Game.Fsm.GetFsm<Player>(Id.ToString()).SetData<VarBoolean>("jianrenfengbao", true);
-            Game.Skill.GetSkillSystem(Id).UseSkill(10004);
-        }
-
-        public void UseSkill_3(CallbackContext ctx)
-        {
-            //Game.Fsm.GetFsm<Player>(Id.ToString()).SetData<VarBoolean>("skilldatatest", true);
-            Game.Skill.GetSkillSystem(Id).UseSkill(10020);
-        }
-
+        PlayerMovement move;   
         public void Use_S(CallbackContext ctx)
         {
             Game.Fsm.GetFsm<Entity>(Id.ToString()).SetData<VarBoolean>("AkiIdleState", true);
@@ -88,28 +44,17 @@ namespace MDDSkillEngine
         protected override void OnInit(object userData)
         {
             base.OnInit(userData);
-
-            Game.Input.Control.Heros_Normal.Skill_1.performed += UseSkill_1;
-            Game.Input.Control.Heros_Normal.Skill_2.performed += UseSkill_2;
-            Game.Input.Control.Heros_Normal.Skill_3.performed += UseSkill_3;
+            
             Game.Input.Control.Heros_Normal.RightClick.performed += OnClickRight;
             Game.Input.Control.Heros_Normal.S.performed += Use_S;
 
             Game.Buff.CreatBuffSystem(this.Entity.Id.ToString(),this);
             Game.Fsm.CreateFsm<Entity, AkiStateAttribute>(this);
-            move = GetComponent<PlayerMovement>();
-           
+            move = GetComponent<PlayerMovement>();          
             Game.Skill.CreateSkillSystem<Player>(this);
-
-            Game.Skill.GetSkillSystem(Id).AddSkill(10001);
-            Game.Skill.GetSkillSystem(Id).AddSkill(10004);
-            Game.Skill.GetSkillSystem(Id).AddSkill(10005);
-            Game.Skill.GetSkillSystem(Id).AddSkill(10020);
-
+        
             UIBlackboard uIBlackboard = Game.UI.GetUIForm(UIFormId.Blackboard) as UIBlackboard;
-
             ISkillSystem skillSystem = Game.Skill.GetSkillSystem(1001);
-
             uIBlackboard.InitData(skillSystem.GetPubBlackboard());
 
             PlayerData = userData as PlayerData;
@@ -150,57 +95,10 @@ namespace MDDSkillEngine
         {
             base.OnUpdate(elapseSeconds, realElapseSeconds);
 
-            InputLogic();
-
-            //switch (SelectState)
-            //{
-            //    case EntitySelectState.None:
-            //        CacheOutLiner.SetOutLiner(false);
-            //        break;
-            //    case EntitySelectState.OnHighlight:
-            //        CacheOutLiner.SetOutLiner(true);
-            //        break;
-            //    case EntitySelectState.OnSelect:
-            //        CacheOutLiner.SetOutLiner(false);
-            //        break;
-            //}
-
-            //RaycastHit hit;
-            //if (Physics.Raycast(Game.Scene.MainCamera.ScreenPointToRay(Input.mousePosition), out hit, Mathf.Infinity, 1 << 8))
-            //{
-            //    Entity e = hit.collider.gameObject.GetComponent<Entity>();
-            //    if (e != null)
-            //    {
-            //        if (e == this)
-            //        {
-            //            SwitchEntitySelectState(EntitySelectState.OnHighlight);
-            //        }
-            //        else
-            //        {
-            //            SwitchEntitySelectState(EntitySelectState.None);
-            //        }
-            //    }
-            //    else
-            //    {
-            //        SwitchEntitySelectState(EntitySelectState.None);
-            //    }
-            //}
-            //else
-            //{
-            //    SwitchEntitySelectState(EntitySelectState.None);
-            //}
+            InputLogic();          
         }
 
-        private void OnMouseEnter()
-        {
-            SwitchEntitySelectState(EntitySelectState.OnHighlight);
-        }
-
-        private void OnMouseExit()
-        {
-            SwitchEntitySelectState(EntitySelectState.None);
-        }
-
+    
         private void InputLogic()
         {
             if (Keyboard.current.vKey.wasPressedThisFrame)

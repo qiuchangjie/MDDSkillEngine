@@ -53,6 +53,16 @@ namespace MDDSkillEngine
                 Duration = 7           
             });
         }
+
+        [Command("skillui")]
+        public static void AddSkill()
+        {
+            Entity entity = Game.Entity.GetGameEntity(1001);
+
+            UIAbilities u =  Game.UI.GetUIForm(UIFormId.Ablities) as UIAbilities;
+            u.SetEntity(entity);
+            u.LearnSkill(0, 10020);
+        }
     }
 }
 
