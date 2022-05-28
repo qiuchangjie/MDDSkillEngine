@@ -13,13 +13,19 @@ namespace MDDSkillEngine
         public Text Key;
         public Text SkillName;
         public int SkillID = 0;
+        public int index = 0;
 
         public void Start()
         {
 
         }
 
-        public void Init(ISkillSystem skillSystem,int skillid=0)
+        public void InitIndex(int index)
+        {
+            this.index = index;
+        }
+
+        public void Init(ISkillSystem skillSystem,int skillid = 0)
         {
             if (skillid == 0)
             {

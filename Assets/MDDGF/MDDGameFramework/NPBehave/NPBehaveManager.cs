@@ -62,6 +62,17 @@ namespace MDDGameFramework
             return root;
         }
 
+        public void RemoveBehaviourTree(NameNamePair nameNamePair)
+        {
+            if (behaviourTreeDic.TryGetValue(nameNamePair, out NP_Tree nP_Tree))
+            {
+                ReferencePool.Release(nP_Tree);
+
+                behaviourTreeDic.Remove(nameNamePair);
+                blackboards.Remove(nameNamePair.ToString());
+            }
+        }
+
         public Clock GetClock()
         {
             return clock;
@@ -86,5 +97,7 @@ namespace MDDGameFramework
         {
             clock.Update(elapseSeconds);
         }
+
+       
     }
 }

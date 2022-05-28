@@ -146,7 +146,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 307689312}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2455b0e636f32704ba44a54465a953ab, type: 3}
   m_Name: 
@@ -314,7 +314,7 @@ PrefabInstance:
     - target: {fileID: 5091158754341385321, guid: 881c9baea14e3ad4cbaefeb0ad1e7418,
         type: 3}
       propertyPath: m_UIGroups.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5091158754341385321, guid: 881c9baea14e3ad4cbaefeb0ad1e7418,
         type: 3}
@@ -323,8 +323,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5091158754341385321, guid: 881c9baea14e3ad4cbaefeb0ad1e7418,
         type: 3}
+      propertyPath: m_UIGroups.Array.data[2].m_Name
+      value: Drag
+      objectReference: {fileID: 0}
+    - target: {fileID: 5091158754341385321, guid: 881c9baea14e3ad4cbaefeb0ad1e7418,
+        type: 3}
       propertyPath: m_UIGroups.Array.data[1].m_Depth
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5091158754341385321, guid: 881c9baea14e3ad4cbaefeb0ad1e7418,
+        type: 3}
+      propertyPath: m_UIGroups.Array.data[2].m_Depth
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5091158754374844004, guid: 881c9baea14e3ad4cbaefeb0ad1e7418,
         type: 3}

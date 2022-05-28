@@ -175,6 +175,9 @@ namespace MDDSkillEngine
             if (skillDic.TryGetValue(id, out Skill skill))
             {
                 skillDic.Remove(id);
+                IDataTable<DRSkill> dtSkill = Game.DataTable.GetDataTable<DRSkill>();
+                DRSkill drSkill = dtSkill.GetDataRow(id);
+                Game.NPBehave.RemoveBehaviourTree(new NameNamePair(drSkill.AssetName,m_Owner.Id.ToString()));
                 Game.Event.Fire(this, RemoveSkillEventArgs.Create(this, id));
             }
             else

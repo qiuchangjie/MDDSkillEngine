@@ -42,6 +42,8 @@ namespace MDDSkillEngine
 
             Game.UI.OpenUIForm(UIFormId.Blackboard);
             Game.UI.OpenUIForm(UIFormId.Ablities);
+            Game.UI.OpenUIForm(UIFormId.SkillList);
+            Game.UI.OpenUIForm(UIFormId.Drag);
 
             Log.Info("成功进入训练场景");
         }

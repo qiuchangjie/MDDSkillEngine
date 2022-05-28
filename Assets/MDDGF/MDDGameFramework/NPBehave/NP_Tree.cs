@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace MDDGameFramework
 {
-    public abstract class NP_Tree
+    public abstract class NP_Tree : IReference
     {
         private Root m_MainRoot;
         private List<Node> node_Tree;
@@ -52,11 +52,13 @@ namespace MDDGameFramework
 
         public virtual void Clear()
         {
+            ReferencePool.Release(Blackboard);
+
             for (int i = 0; i < node_Tree.Count; i++)
             {
                 ReferencePool.Release(node_Tree[i]);
             }
-
+            
             node_Tree = null;
             m_MainRoot = null;
         }

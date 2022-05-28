@@ -53,9 +53,12 @@ namespace MDDSkillEngine
             move = GetComponent<PlayerMovement>();          
             Game.Skill.CreateSkillSystem<Player>(this);
         
-            UIBlackboard uIBlackboard = Game.UI.GetUIForm(UIFormId.Blackboard) as UIBlackboard;
-            ISkillSystem skillSystem = Game.Skill.GetSkillSystem(1001);
-            uIBlackboard.InitData(skillSystem.GetPubBlackboard());
+            //UIBlackboard uIBlackboard = Game.UI.GetUIForm(UIFormId.Blackboard) as UIBlackboard;
+            //ISkillSystem skillSystem = Game.Skill.GetSkillSystem(1001);
+            //uIBlackboard.InitData(skillSystem.GetPubBlackboard());
+
+            UIAbilities u = Game.UI.GetUIForm(UIFormId.Ablities) as UIAbilities;
+            u.SetEntity(this);
 
             PlayerData = userData as PlayerData;
             if (PlayerData == null)

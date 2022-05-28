@@ -28,12 +28,13 @@ namespace MDDSkillEngine
             for (int i = 0; i < ablitiesSlots.Count; i++)
             {
                 ablitiesSlots[i].Init(null);
+                ablitiesSlots[i].InitIndex(i);
             }
 
             Game.Input.Control.Heros_Normal.Skill_1.performed += UseSkill_1;
-            Game.Input.Control.Heros_Normal.Skill_1.performed += UseSkill_2;
-            Game.Input.Control.Heros_Normal.Skill_1.performed += UseSkill_3;
-            Game.Input.Control.Heros_Normal.Skill_1.performed += UseSkill_4;
+            Game.Input.Control.Heros_Normal.Skill_2.performed += UseSkill_2;
+            Game.Input.Control.Heros_Normal.Skill_3.performed += UseSkill_3;
+            Game.Input.Control.Heros_Normal.Skill_4.performed += UseSkill_4;
 
             Game.Event.Subscribe(AddSkillEventArgs.EventId, LearnedSkill);
         }

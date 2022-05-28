@@ -65,6 +65,11 @@ namespace MDDGameFramework.Runtime
         //    return m_NPBehaveManager.GetClock();
         //}
 
+        public void RemoveBehaviourTree(NameNamePair nameNamePair)
+        {
+            m_NPBehaveManager.RemoveBehaviourTree(nameNamePair);
+        }
+
         public NP_Tree CreatBehaviourTree(string name, object userdata)
         {
             return m_NPBehaveManager.CreatBehaviourTree(name, userdata);

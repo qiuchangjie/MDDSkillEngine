@@ -48,6 +48,16 @@ namespace MDDSkillEngine
         /// 技能槽
         /// </summary>
         Ablities = 104,
+
+        /// <summary>
+        /// 技能库
+        /// </summary>
+        SkillList = 105,
+
+        /// <summary>
+        /// 拖拽层ui
+        /// </summary>
+        Drag = 106,
       
     }
 }

@@ -42,6 +42,7 @@ namespace MDDSkillEngine
             AddSkillEventArgs e = ReferencePool.Acquire<AddSkillEventArgs>();
             e.SkillSystem = SkillSystem;
             e.SkillID = SkillID;
+            e.Index = Index;
 
             return e;
         }
