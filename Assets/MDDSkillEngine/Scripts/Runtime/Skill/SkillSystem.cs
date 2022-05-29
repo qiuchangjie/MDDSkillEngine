@@ -12,6 +12,7 @@ namespace MDDSkillEngine
         /// 位置映射表
         /// 因为没做存档机制 
         /// 用于临时存储技能在技能ui上的位置信息
+        /// <skillid, index>
         /// </summary>
         private Dictionary<int, int> skillIndex;
 
@@ -33,6 +34,11 @@ namespace MDDSkillEngine
             }
         }
 
+        public Dictionary<int, int> SkillIndex
+        {
+            get { return skillIndex; }
+        }
+
 
         /// <summary>
         /// 用来记录当前技能释放的结果
@@ -42,6 +48,14 @@ namespace MDDSkillEngine
         public SkillSystem()
         {
             skillDic = new Dictionary<int, Skill>();
+            skillIndex = new Dictionary<int, int>() 
+            {
+                {0, 0},
+                {1, 0},                    
+                {2, 0},
+                {3, 0},
+            };
+             
         }
 
 
@@ -88,7 +102,7 @@ namespace MDDSkillEngine
 
             skill.Start();
             skillDic.Add(skillId, skill);
-
+            SkillIndex[index] = skillId;
             Game.Event.Fire(this, AddSkillEventArgs.Create(this, skillId, index));
         }
 
@@ -175,9 +189,27 @@ namespace MDDSkillEngine
             if (skillDic.TryGetValue(id, out Skill skill))
             {
                 skillDic.Remove(id);
+              
                 IDataTable<DRSkill> dtSkill = Game.DataTable.GetDataTable<DRSkill>();
                 DRSkill drSkill = dtSkill.GetDataRow(id);
                 Game.NPBehave.RemoveBehaviourTree(new NameNamePair(drSkill.AssetName,m_Owner.Id.ToString()));
+                Game.Event.Fire(this, RemoveSkillEventArgs.Create(this, id));
+            }
+            else
+            {
+                Log.Error("{0}尝试移除未装配技能，id：{1}", LogConst.Skill, id);
+            }
+        }
+
+        public void RemoveSkill(int id,int index)
+        {
+            if (skillDic.TryGetValue(id, out Skill skill))
+            {
+                skillDic.Remove(id);
+                skillIndex[index] = 0;
+                IDataTable<DRSkill> dtSkill = Game.DataTable.GetDataTable<DRSkill>();
+                DRSkill drSkill = dtSkill.GetDataRow(id);
+                Game.NPBehave.RemoveBehaviourTree(new NameNamePair(drSkill.AssetName, m_Owner.Id.ToString()));
                 Game.Event.Fire(this, RemoveSkillEventArgs.Create(this, id));
             }
             else

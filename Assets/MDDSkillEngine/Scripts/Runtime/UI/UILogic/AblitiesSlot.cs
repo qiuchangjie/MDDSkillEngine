@@ -32,6 +32,7 @@ namespace MDDSkillEngine
                 m_SkillSystem = null;
                 SkillName.text = "";
                 CDImage.fillAmount = 0;
+                SkillID = 0;
             }
             else
             {
@@ -53,9 +54,16 @@ namespace MDDSkillEngine
             }
         }
 
-        public void UpdateCDImage(float fallAcount)
+        public void SwitchSkillSystem(ISkillSystem skillSystem)
         {
-            CDImage.fillAmount = fallAcount;
+            if (skillSystem == m_SkillSystem)
+                return;
+
+            if (SkillID != 0)
+                m_SkillSystem.GetSkillBlackboard(SkillID).RemoveObserver("cd", Observing);
+
+
+            Init(skillSystem, skillSystem.SkillIndex[index]);                    
         }
 
         private void Observing(Blackboard.Type type, Variable newValue)

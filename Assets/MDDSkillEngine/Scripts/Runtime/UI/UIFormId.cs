@@ -13,7 +13,7 @@ namespace MDDSkillEngine
         /// 弹出框。
         /// </summary>
         DialogForm = 1,
-        
+
         /// <summary>
         /// 开始界面
         /// </summary>
@@ -42,8 +42,8 @@ namespace MDDSkillEngine
         /// <summary>
         /// 黑板
         /// </summary>
-        Blackboard = 103, 
-        
+        Blackboard = 103,
+
         /// <summary>
         /// 技能槽
         /// </summary>
@@ -58,6 +58,11 @@ namespace MDDSkillEngine
         /// 拖拽层ui
         /// </summary>
         Drag = 106,
-      
+
+        /// <summary>
+        /// 主界面
+        /// </summary>
+        Main = 107,
+
     }
 }

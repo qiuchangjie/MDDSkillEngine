@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using MDDGameFramework;
 using MDDGameFramework.Runtime;
+using static UnityEngine.InputSystem.InputAction;
+using UnityEngine.InputSystem;
 
 namespace MDDSkillEngine
 {
@@ -20,11 +22,33 @@ namespace MDDSkillEngine
 
         public bool isWork;
 
+
+        public void InitState()
+        {
+            Game.Input.Control.Heros_Normal.LeftClick.performed += OnClickLeft;
+        }
+
+
+        private void OnClickLeft(CallbackContext ctx)
+        {
+            if (SelectUtility.MouseRayCastByLayer(1 << 8 | 1 << 11, out RaycastHit hit))
+            {
+                MDDGameFramework.Runtime.Entity entity = hit.transform.GetComponent<MDDGameFramework.Runtime.Entity>();
+
+                if (entity != null)
+                {
+                    Game.Event.Fire(this,SelectEntityEventArgs.Create(entity.Logic as Entity));
+                    selectEntity = entity.Logic as Entity;
+                }
+            }                    
+        }
+
         public void InitPlayer(Entity entity)
         {
             if (entity != null)
             {
-                Player = entity;
+                Game.Event.Fire(this, SelectEntityEventArgs.Create(entity));
+                selectEntity = entity;
             }
         }
 
@@ -44,26 +68,7 @@ namespace MDDSkillEngine
         public void ClearSelectEntity(IEntity entity)
         {
             selectEntity = null;
-        }
-
-        private void Update()
-        {
-            if (!isWork)
-                return;
-
-            //RaycastHit hit;
-            //if (Physics.Raycast(Game.Scene.MainCamera.ScreenPointToRay(Input.mousePosition), out hit, Mathf.Infinity, 1 << 8))
-            //{
-            //    Entity e = hit.collider.gameObject.GetComponent<Entity>();
-            //    if (e != null)
-            //    {
-            //        if (e.SelectState != EntitySelectState.OnSelect)
-            //        {
-            //            e.SwitchEntitySelectState(EntitySelectState.OnHighlight);
-            //        }
-            //    }
-            //}
-        }
+        }      
 
         private void AddHighLight(Entity e)
         {

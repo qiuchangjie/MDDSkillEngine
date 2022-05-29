@@ -21,8 +21,9 @@ namespace MDDSkillEngine
             Game.Fsm.CreateFsm<Entity, AiStateAttribute>(this);
 
             Game.Buff.CreatBuffSystem(Id.ToString(),this);
-
+            Game.Skill.CreateSkillSystem<Entity>(this);
             Game.HpBar.ShowHPBar(this,1,1);
+
         }
 
         protected override void OnShow(object userData)

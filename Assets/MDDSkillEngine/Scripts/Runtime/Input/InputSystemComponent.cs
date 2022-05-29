@@ -9,6 +9,14 @@ namespace MDDSkillEngine
 {
     public class InputSystemComponent : MDDGameFrameworkComponent
     {
+        public Mouse Mouse
+        {
+            get
+            {
+               return Mouse.current;
+            }
+        }
+
 
         private MDDInputControls m_Control;
 

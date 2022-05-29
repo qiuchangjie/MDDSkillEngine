@@ -67,10 +67,10 @@ namespace MDDSkillEngine
             {
                 if (args.ablitiesSlot.SkillID != 0)
                 {
-                    Game.Skill.GetSkillSystem(1001).RemoveSkill(args.ablitiesSlot.SkillID);
+                    Game.Skill.GetSkillSystem(Game.Select.selectEntity.Id).RemoveSkill(args.ablitiesSlot.SkillID, args.ablitiesSlot.index);
                 }
 
-                Game.Skill.GetSkillSystem(1001).AddSkill(args.SkillID, args.ablitiesSlot.index);
+                Game.Skill.GetSkillSystem(Game.Select.selectEntity.Id).AddSkill(args.SkillID, args.ablitiesSlot.index);
             }
         }
     }

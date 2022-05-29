@@ -17,6 +17,8 @@ namespace MDDSkillEngine
         List<int> numList = new List<int>();
         List<int> idList = new List<int>();
 
+        List<int> uGuiForms = new List<int>();
+
         CoroutineHandler hander;
 
         protected override void OnInit(ProcedureOwner procedureOwner)
@@ -40,10 +42,13 @@ namespace MDDSkillEngine
 
             Game.Select.isWork = true;
 
-            Game.UI.OpenUIForm(UIFormId.Blackboard);
-            Game.UI.OpenUIForm(UIFormId.Ablities);
-            Game.UI.OpenUIForm(UIFormId.SkillList);
-            Game.UI.OpenUIForm(UIFormId.Drag);
+            uGuiForms.Add((int)Game.UI.OpenUIForm(UIFormId.Blackboard));
+            uGuiForms.Add((int)Game.UI.OpenUIForm(UIFormId.Ablities));
+            uGuiForms.Add((int)Game.UI.OpenUIForm(UIFormId.SkillList));
+            uGuiForms.Add((int)Game.UI.OpenUIForm(UIFormId.Drag));
+            uGuiForms.Add((int)Game.UI.OpenUIForm(UIFormId.Main));
+
+            Game.Select.InitState();
 
             Log.Info("成功进入训练场景");
         }
@@ -69,6 +74,15 @@ namespace MDDSkillEngine
             }             
         }
 
+        protected override void OnLeave(ProcedureOwner procedureOwner, bool isShutdown)
+        {
+            base.OnLeave(procedureOwner, isShutdown);
+
+            for (int i = 0; i < uGuiForms.Count; i++)
+            {
+                Game.UI.CloseUIForm(uGuiForms[i]);
+            }
+        }
 
         #region 技能需要实体预载预实例
         private void PreInitEffect(int EffectID)

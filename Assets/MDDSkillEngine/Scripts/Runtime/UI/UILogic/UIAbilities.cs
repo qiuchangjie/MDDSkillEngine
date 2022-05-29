@@ -37,6 +37,7 @@ namespace MDDSkillEngine
             Game.Input.Control.Heros_Normal.Skill_4.performed += UseSkill_4;
 
             Game.Event.Subscribe(AddSkillEventArgs.EventId, LearnedSkill);
+            Game.Event.Subscribe(SelectEntityEventArgs.EventId, SwitchEntity);
         }
 
 
@@ -46,11 +47,23 @@ namespace MDDSkillEngine
             Log.Info("{0}ui关闭name：{1}", LogConst.UI, Name);
 
             Game.Event.Unsubscribe(AddSkillEventArgs.EventId, LearnedSkill);
+            Game.Event.Unsubscribe(SelectEntityEventArgs.EventId, SwitchEntity);
         }
 
         public void SetEntity(Entity entity)
         {
-            m_Entity = entity;
+            if (m_Entity != entity)
+            {
+                m_Entity = entity;
+                ISkillSystem skillSystem = Game.Skill.GetSkillSystem(entity.Id);
+                if (skillSystem != null)
+                {
+                    for (int i = 0; i < ablitiesSlots.Count; i++)
+                    {
+                        ablitiesSlots[i].SwitchSkillSystem(skillSystem);
+                    }
+                }
+            }                   
         }
 
         public void LearnSkill(int index, int Skillid)
@@ -68,6 +81,13 @@ namespace MDDSkillEngine
             }          
         }
 
+        private void SwitchEntity(object sender, GameEventArgs n)
+        {
+            SelectEntityEventArgs e = n as SelectEntityEventArgs;
+
+            SetEntity(e.entity);
+        }
+      
         public void UseSkill_1(CallbackContext ctx)
         {
             ablitiesSlots[0].UseSkill();

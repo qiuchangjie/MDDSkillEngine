@@ -13,10 +13,29 @@ namespace MDDSkillEngine
     {
 
         PlayerData PlayerData = null;
+        private bool IsPlaying = false;
 
-        PlayerMovement move;   
+        PlayerMovement move;
+
+        private void SetIsPlaying(object sender,GameEventArgs e)
+        {
+            SelectEntityEventArgs n = (SelectEntityEventArgs)e;
+
+            if (n.entity == this)
+            {
+                IsPlaying = true;
+            }
+            else
+            {
+                IsPlaying = false;
+            }
+        }
+
         public void Use_S(CallbackContext ctx)
         {
+            if (!IsPlaying)
+                return;
+
             Game.Fsm.GetFsm<Entity>(Id.ToString()).SetData<VarBoolean>("AkiIdleState", true);
         }
 
@@ -27,6 +46,9 @@ namespace MDDSkillEngine
 
         public void OnClickRight(CallbackContext ctx)
         {
+            if (!IsPlaying)
+                return;
+
             if (SelectUtility.MouseRayCastByLayer(1 << 0 | 1 << 1, out RaycastHit vector3))
             {
                 Game.Select.pathFindingTarget.transform.position = vector3.point;
@@ -45,18 +67,21 @@ namespace MDDSkillEngine
         {
             base.OnInit(userData);
             
+
+            //实体级输入绑定
             Game.Input.Control.Heros_Normal.RightClick.performed += OnClickRight;
             Game.Input.Control.Heros_Normal.S.performed += Use_S;
 
+            //组件初始化
             Game.Buff.CreatBuffSystem(this.Entity.Id.ToString(),this);
             Game.Fsm.CreateFsm<Entity, AkiStateAttribute>(this);
             move = GetComponent<PlayerMovement>();          
             Game.Skill.CreateSkillSystem<Player>(this);
-        
-            //UIBlackboard uIBlackboard = Game.UI.GetUIForm(UIFormId.Blackboard) as UIBlackboard;
-            //ISkillSystem skillSystem = Game.Skill.GetSkillSystem(1001);
-            //uIBlackboard.InitData(skillSystem.GetPubBlackboard());
 
+            //事件
+            Game.Event.Subscribe(SelectEntityEventArgs.EventId, SetIsPlaying);
+                     
+            //ui
             UIAbilities u = Game.UI.GetUIForm(UIFormId.Ablities) as UIAbilities;
             u.SetEntity(this);
 
@@ -90,7 +115,7 @@ namespace MDDSkillEngine
 
 
             Game.HpBar.HideHPBar(this);
-
+            Game.Event.Unsubscribe(SelectEntityEventArgs.EventId, SetIsPlaying);
             //IFsm<Player> fsm = Game.Fsm.GetFsm<Player>(Entity.Id.ToString());          
         }
 

@@ -9,11 +9,14 @@ namespace MDDSkillEngine
 {
     public class UISkillList : UGuiForm
     {
-
-        public SkillSlot SlotInstance;
+        [SerializeField]
+        private SkillSlot SlotInstance;
 
         [SerializeField]
         private Transform insTransform;
+
+        [SerializeField]
+        private Button CloseBtn;
 
         protected override void OnInit(object userData)
         {
@@ -24,7 +27,9 @@ namespace MDDSkillEngine
             {
                 SkillSlot s = Instantiate(SlotInstance, insTransform);
                 s.Init(item);
-            }         
+            }
+
+            CloseBtn.onClick.AddListener(CloseUI);
         }
 
         protected override void OnClose(bool isShutdown, object userData)
@@ -32,7 +37,10 @@ namespace MDDSkillEngine
             base.OnClose(isShutdown, userData);
         }
 
-
+        private void CloseUI()
+        {
+            Close();
+        }
     }
 
 }

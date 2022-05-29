@@ -1913,7 +1913,7 @@ GameObject:
   - component: {fileID: 1968328655112805011}
   - component: {fileID: 8449351480565201583}
   - component: {fileID: 4933422673670441044}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Ai_Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}

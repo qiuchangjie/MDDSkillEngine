@@ -21,6 +21,8 @@ namespace MDDSkillEngine
 
         void RemoveSkill(int skillid);
 
+        void RemoveSkill(int skillid,int index);
+
         Blackboard GetSkillBlackboard(int skillid);
 
         Blackboard GetPubBlackboard();
@@ -30,5 +32,10 @@ namespace MDDSkillEngine
         SkillReleaseResultType GetSkillReleaseResultType();
 
         void SetSkillReleaseResultType(SkillReleaseResultType releaseResultType);
+
+        Dictionary<int, int> SkillIndex
+        {
+            get;
+        }
     }
 }
