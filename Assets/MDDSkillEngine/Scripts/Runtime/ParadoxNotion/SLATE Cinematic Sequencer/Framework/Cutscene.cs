@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using MDDGameFramework.Runtime;
+using MDDSkillEngine;
 
 namespace Slate
 {
@@ -77,6 +78,10 @@ namespace Slate
         [SerializeField]
         [Tooltip("The layers to enable, all other layers will be disabled. Only affects gameobjects in the scene root.")]
         private LayerMask _activeLayers = -1;
+
+        [SerializeField]
+        [Tooltip("技能目标类型.")]
+        private TargetType _targetType = TargetType.NONE;
 
         [SerializeField, HideInInspector]
         public List<CutsceneGroup> groups = new List<CutsceneGroup>();

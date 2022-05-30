@@ -52,6 +52,7 @@ MonoBehaviour:
   _activeLayers:
     serializedVersion: 2
     m_Bits: 4294967295
+  _targetType: 0
   groups:
   - {fileID: 7232431185629851885}
   _length: 4

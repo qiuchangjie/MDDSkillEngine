@@ -12,6 +12,8 @@ namespace Slate
         {
             base.OnCreate();
             name = "技能中断控制轨道";
+
+
         }
 
         public override SkillDataType SkillDataType

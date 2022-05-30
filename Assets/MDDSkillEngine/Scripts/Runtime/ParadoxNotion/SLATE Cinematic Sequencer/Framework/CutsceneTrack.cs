@@ -17,7 +17,7 @@ namespace Slate
         [SerializeField]
         private Color _color = Color.white;
         [SerializeField]
-        [HideInInspector]
+        [HideInInspector]   
         private bool _active = true;
         [SerializeField]
         [HideInInspector]

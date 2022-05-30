@@ -299,9 +299,21 @@ namespace MDDSkillEngine
 
     public enum TargetType
     {
+        /// <summary>
+        /// 无
+        /// </summary>
         NONE,
+        /// <summary>
+        /// 自身
+        /// </summary>
         SELF,
+        /// <summary>
+        /// 点目标
+        /// </summary>
         POINT,
+        /// <summary>
+        /// 具体实体目标
+        /// </summary>
         ENTITY,
     }
 }

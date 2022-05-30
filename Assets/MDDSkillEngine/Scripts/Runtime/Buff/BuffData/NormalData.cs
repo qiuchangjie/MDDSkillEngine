@@ -9,7 +9,7 @@ namespace MDDSkillEngine
 
         private void Init(DRBuff dRBuff)
         {
-            Init(dRBuff.Id, dRBuff.Level, dRBuff.Duration);
+            Init(dRBuff.Id, dRBuff.Name,dRBuff.Level, dRBuff.Duration);
         }
 
         public static NormalData Create(DRBuff dRBuff)

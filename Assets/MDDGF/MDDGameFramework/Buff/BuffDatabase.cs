@@ -12,6 +12,8 @@ namespace MDDGameFramework
     {
         private int m_Id;
         private int m_Level;
+        private string m_Name;
+        private bool m_CanOverlying;
         private float m_Duration;      
         private float m_PassDuration;
         private float m_accumulateDuration;
@@ -22,6 +24,20 @@ namespace MDDGameFramework
         public int Id
         {
             get { return m_Id; }
+        }
+
+        public int UId
+        {
+            get { return GetHashCode(); }
+        }
+
+        /// <summary>
+        /// buffname
+        /// </summary>
+        public string Name
+        {
+            get { return m_Name; }
+            set { m_Name = value; }
         }
 
         /// <summary>
@@ -61,6 +77,15 @@ namespace MDDGameFramework
         }
 
         /// <summary>
+        /// 是否可叠加
+        /// </summary>
+        public bool CanOverlying
+        {
+            get { return m_CanOverlying; }
+            set { m_CanOverlying = value;}
+        }
+
+        /// <summary>
         /// buff行进百分比
         /// 若是永久buff则直接返回百分之百
         /// 永久buff持续时间默认为-1
@@ -82,9 +107,10 @@ namespace MDDGameFramework
             m_PassDuration = 0f;
         }
 
-        public void Init(int id,int level,float duration)
+        public void Init(int id,string name,int level,float duration)
         {
             m_Id = id;
+            m_Name = name;
             m_Level = level;
             m_Duration = duration;
         }

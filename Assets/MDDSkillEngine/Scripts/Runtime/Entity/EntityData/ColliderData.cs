@@ -10,11 +10,12 @@ namespace MDDSkillEngine
 
         private float m_duration = 999;
 
-        private float m_speed = 5f;
 
         private int m_EffectID = 0;
 
         private bool m_IsFollowParent=true;
+
+        public string buffName="";
 
         public Vector3 boundSize;
 
@@ -47,17 +48,7 @@ namespace MDDSkillEngine
             }
         }
 
-        public float Speed
-        {
-            get 
-            { 
-                return m_speed; 
-            }
-            set 
-            { 
-                m_speed = value; 
-            }
-        }
+
 
         public int EffectID
         {

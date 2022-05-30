@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -23,7 +24,7 @@ namespace MDDGameFramework
             m_Owner = null;
             m_TempBuffs = new List<BuffBase>();
         }
-      
+
 
         internal override void OnUpdate(float elapseSeconds, float realElapseSeconds)
         {
@@ -61,6 +62,15 @@ namespace MDDGameFramework
 
         public void RemoveBuff(int bufID)
         {
+            foreach (var v in buffs)
+            {
+                if (v.buffData.Id == bufID)
+                {
+                    v.OnFininsh(this);
+                    ReferencePool.Release(v);
+                    buffs.Remove(v);
+                }
+            }
         }
 
         public void RemoveBuff(BuffBase buf)
@@ -68,6 +78,35 @@ namespace MDDGameFramework
             buf.OnFininsh(this);
             buffs.Remove(buf);
             ReferencePool.Release(buf);
+        }
+
+        public void RemoveBuff(object from)
+        {
+            foreach (var v in buffs)
+            {
+                if (v.From == from)
+                {
+                    v.OnFininsh(this);
+                    ReferencePool.Release(v);
+                    buffs.Remove(v);
+                }
+            }
+        }
+
+        public void Removebuff(object from, Type type)
+        {
+            foreach (var v in buffs)
+            {
+                if (v.From == from)
+                {
+                    if (v.GetType() == type)
+                    {
+                        v.OnFininsh(this);
+                        ReferencePool.Release(v);
+                        buffs.Remove(v);
+                    }                 
+                }
+            }
         }
 
         public bool HasBuff(int bufID)
@@ -83,16 +122,80 @@ namespace MDDGameFramework
             return false;
         }
 
-        public void ClearBuff()
+        public bool HasBuff(string name)
         {
-            throw new System.NotImplementedException();
+            foreach (var v in buffs)
+            {
+                if (v.buffData.Name == name)
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        public bool HasBuff(Type type)
+        {
+            foreach (var v in buffs)
+            {
+                if (v.GetType() == type)
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        public BuffBase GetBuff(string name)
+        {
+            foreach (var v in buffs)
+            {
+                if (v.buffData.Name == name)
+                {
+                    return v;
+                }
+            }
+
+            return null;
+        }
+
+        public void ClearAllBuff()
+        {
+            m_TempBuffs.Clear();
+
+            foreach (var v in buffs)
+            {
+                RemoveBuff(v);
+            }
+
+            buffs.Clear();
         }
 
         internal override void AddBuff(string buffName, object from,object userData=null)
         {
-            BuffBase buff = BuffFactory.AcquireBuff(buffName, m_Owner, from, userData);
-            buffs.Add(buff);
-            buff.OnExecute(this);
+            BuffBase buf = GetBuff(buffName);
+            if (buf != null)
+            {
+                if (buf.buffData.CanOverlying)
+                {
+                    buf.OnRefresh(this);
+                }
+                else
+                {
+                    BuffBase buff = BuffFactory.AcquireBuff(buffName, m_Owner, from, userData);
+                    buffs.Add(buff);
+                    buff.OnExecute(this);
+                }
+            }
+            else
+            {
+                BuffBase buff = BuffFactory.AcquireBuff(buffName, m_Owner, from, userData);
+                buffs.Add(buff);
+                buff.OnExecute(this);
+            }
+           
         }
 
         public static BuffSystem Create(object owner)
@@ -118,6 +221,6 @@ namespace MDDGameFramework
             buffs.Clear();
             m_Owner = null;
             m_TempBuffs.Clear();
-        }
+        }     
     }
 }

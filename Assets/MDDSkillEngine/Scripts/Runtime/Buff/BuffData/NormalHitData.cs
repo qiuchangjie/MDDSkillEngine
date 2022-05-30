@@ -12,7 +12,7 @@ namespace MDDSkillEngine
 
         private void Init(DRBuff dRBuff, object userdata = null)
         {
-            Init(dRBuff.Id, dRBuff.Level, dRBuff.Duration);
+            Init(dRBuff.Id, dRBuff.Name, dRBuff.Level, dRBuff.Duration);
         }
 
         public static NormalHitData Create(DRBuff dRBuff,object userdata=null)

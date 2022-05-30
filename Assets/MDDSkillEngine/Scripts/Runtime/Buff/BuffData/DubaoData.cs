@@ -17,7 +17,7 @@ namespace MDDSkillEngine
 
         public void Init(DRBuff dRBuff)
         {
-            Init(dRBuff.Id, dRBuff.Level, dRBuff.Duration);
+            Init(dRBuff.Id, dRBuff.Name,dRBuff.Level, dRBuff.Duration);
 
             m_damage = dRBuff.OverDamage;
         }

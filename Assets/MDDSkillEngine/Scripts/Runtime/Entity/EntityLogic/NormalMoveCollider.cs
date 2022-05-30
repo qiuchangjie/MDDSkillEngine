@@ -7,7 +7,7 @@ namespace MDDSkillEngine
 {
     public class NormalMoveCollider : ColliderBase
     {
-        ColliderData data;
+        MoveColliderData data;
 
         private int damageSettlementPreSecond = 4;
 
@@ -32,7 +32,7 @@ namespace MDDSkillEngine
         {
             base.OnShow(userData);
 
-            data = userData as ColliderData;
+            data = userData as MoveColliderData;
 
             needWaitTime = 1f / damageSettlementPreSecond;
 
@@ -63,7 +63,7 @@ namespace MDDSkillEngine
                 HideSelf();
             }
 
-            MoveWithDirAndSpeed(dir, data.Speed, elapseSeconds);
+            MoveWithDirAndSpeed(data.Dir, data.Speed, elapseSeconds);
 
             waitTime += elapseSeconds;
 
