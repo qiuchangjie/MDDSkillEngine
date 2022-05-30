@@ -93,6 +93,9 @@ namespace MDDSkillEngine
         Move,
         Camera,
         Sound,
+        CD,
+        Buff,
+        InOut
     }
 
 }

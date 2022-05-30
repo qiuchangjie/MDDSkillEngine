@@ -17,6 +17,7 @@ namespace Slate
         [SerializeField]
         protected Texture _icon;
 
+
         public override Texture icon {
             get { return _icon != null ? _icon : base.icon; }
         }

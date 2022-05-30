@@ -8,7 +8,7 @@ namespace MDDSkillEngine
     public class ColliderClip : SkillClip
     {
         ColliderSkillData skillData;
-        int colid=8;
+
 
         public override void Init(SkillDataBase data, Entity actor,SkillTimeline skillTimeline)
         {
@@ -20,10 +20,10 @@ namespace MDDSkillEngine
 
         public override void Enter()
         {
-            skillTimeline.SetStateCantStop(true);
+            //skillTimeline.SetStateCantStop(true);
 
-            ISkillSystem skillSystem = Game.Skill.GetSkillSystem(actor.Id);
-            skillSystem.SetSkillReleaseResultType(SkillReleaseResultType.SUCCSE);
+            //ISkillSystem skillSystem = Game.Skill.GetSkillSystem(actor.Id);
+            //skillSystem.SetSkillReleaseResultType(SkillReleaseResultType.SUCCSE);
 
             int colid = Game.Entity.GenerateSerialId();
 

@@ -6,7 +6,7 @@ namespace MDDSkillEngine
     /// <summary>
     /// 特效类。
     /// </summary>
-    public class Effect : Entity
+    public class Effect : EffectBase
     {
         [SerializeField]
         private EffectData m_EffectData = null;

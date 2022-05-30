@@ -80,7 +80,7 @@ namespace MDDSkillEngine
                     switch (track.SkillDataType)
                     {
                         case SkillDataType.None:
-                            Debug.LogError("检测到未指定类型的技能数据");
+                            Debug.LogError($"检测到未指定类型的技能数据{track.name}");
                             continue;
                         case SkillDataType.Effect:
                             {
@@ -119,6 +119,34 @@ namespace MDDSkillEngine
                                         InstanceCollider instanceCollider = (InstanceCollider)clip;
                                         ColliderSkillData data = new ColliderSkillData();
                                         data.OnInit(instanceCollider);
+                                        dataList.Add(data);
+                                    }
+                                }
+                                break;
+                            }
+                        case (SkillDataType.CD):
+                            {
+                                foreach (var clip in track.clips)
+                                {
+                                    if (clip is CD)
+                                    {
+                                        CD cd = (CD)clip;
+                                        CDSkillData data = new CDSkillData();
+                                        data.OnInit(cd);
+                                        dataList.Add(data);
+                                    }
+                                }
+                                break;
+                            }
+                        case (SkillDataType.InOut):
+                            {
+                                foreach (var clip in track.clips)
+                                {
+                                    if (clip is SkillFadeInOut)
+                                    {
+                                        SkillFadeInOut skillFadeInOut = (SkillFadeInOut)clip;
+                                        FadeInOutSkillData data = new FadeInOutSkillData();
+                                        data.OnInit(skillFadeInOut);
                                         dataList.Add(data);
                                     }
                                 }

@@ -6,8 +6,8 @@ using Sirenix.OdinInspector;
 
 namespace Slate.ActionClips
 {
-    [Category("GameObject")]
     [Description("生成特效")]
+    [Attachable(typeof(EffectTrack))]
     public class EffectInstance : ActorActionClip
     {
 

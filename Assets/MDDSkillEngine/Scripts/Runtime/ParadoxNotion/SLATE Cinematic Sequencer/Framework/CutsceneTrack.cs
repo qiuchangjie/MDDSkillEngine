@@ -12,7 +12,7 @@ namespace Slate
 
         [SerializeField]
         private string _name;
-        [SerializeField]
+        //[SerializeField]
         private SkillDataType skillDataType = SkillDataType.None; 
         [SerializeField]
         private Color _color = Color.white;
@@ -31,9 +31,10 @@ namespace Slate
             get { return parent != null ? parent.actor : null; }
         }
 
-        public SkillDataType SkillDataType
+        public virtual SkillDataType SkillDataType
         {
             get { return skillDataType; }
+            set { skillDataType = value; } 
         }
 
         ///The name...

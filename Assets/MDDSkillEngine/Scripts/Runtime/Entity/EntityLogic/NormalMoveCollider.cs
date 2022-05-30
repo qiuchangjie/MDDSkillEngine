@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace MDDSkillEngine
 {
-    public class NormalMoveCollider : Entity
+    public class NormalMoveCollider : ColliderBase
     {
         ColliderData data;
 

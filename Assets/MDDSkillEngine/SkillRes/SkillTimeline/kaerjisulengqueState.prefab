@@ -45,7 +45,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _name: Collider
-  skillDataType: 3
   _color: {r: 1, g: 1, b: 1, a: 1}
   _active: 1
   _isLocked: 0
@@ -129,7 +128,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _name: GameObject Track
-  skillDataType: 0
   _color: {r: 1, g: 1, b: 1, a: 1}
   _active: 1
   _isLocked: 0
@@ -239,7 +237,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _name: "\u52A8\u753B\u8F68\u9053"
-  skillDataType: 1
   _color: {r: 1, g: 1, b: 1, a: 1}
   _active: 1
   _isLocked: 0
@@ -521,7 +518,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _name: Effect
-  skillDataType: 2
   _color: {r: 1, g: 1, b: 1, a: 1}
   _active: 1
   _isLocked: 0

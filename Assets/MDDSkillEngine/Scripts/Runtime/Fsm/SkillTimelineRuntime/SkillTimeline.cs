@@ -109,6 +109,20 @@ namespace MDDSkillEngine
                             skillClips.Add(colliderClip);
                         }
                         break;
+                    case SkillDataType.CD:
+                        {
+                            CDClip cdClip = new CDClip();
+                            cdClip.Init(data, owner, this);
+                            skillClips.Add(cdClip);
+                        }
+                        break;
+                    case SkillDataType.InOut:
+                        {
+                            FadeInOutClip fadeInOutClip = new FadeInOutClip();
+                            fadeInOutClip.Init(data, owner, this);
+                            skillClips.Add(fadeInOutClip);
+                        }
+                        break;
 
                 }
             }

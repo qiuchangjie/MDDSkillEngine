@@ -42,6 +42,11 @@ namespace MDDSkillEngine
             return Utility.Text.Format("Assets/MDDSkillEngine/SkillRes/Skill/{0}.asset", assetName);
         }
 
+        public static string GetIconAsset(string assetName)
+        {
+            return Utility.Text.Format("Assets/GUIPack-Clean&Minimalist/Sprites/Icons-Demo-Small/Icons-Small-White_PNG/{0}.png", assetName);
+        }
+
         public static string GetSkillTimelineAsset(string assetName)
         {
             return Utility.Text.Format("Assets/MDDSkillEngine/SkillRes/SkillTimelineRuntime/{0}.bytes", assetName);
@@ -81,6 +86,8 @@ namespace MDDSkillEngine
                     return Utility.Text.Format("Assets/MDDSkillEngine/Prefabs/Effect/{0}.prefab", assetName);
                 case EntityType.Collider:
                     return Utility.Text.Format("Assets/MDDSkillEngine/Prefabs/Collider/{0}.prefab", assetName);
+                case EntityType.Hero:
+                    return Utility.Text.Format("Assets/MDDSkillEngine/Prefabs/Hero/{0}.prefab", assetName);
             }
 
             return Utility.Text.Format("Assets/MDDSkillEngine/Prefabs/{0}.prefab", assetName);

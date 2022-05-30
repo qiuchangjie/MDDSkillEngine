@@ -11,6 +11,10 @@ namespace MDDGameFramework
         public static Dictionary<string, Variable> AllBB = new Dictionary<string, Variable>();
 
         public static List<string> buffs = new List<string>();
+
+        public static List<string> Effects = new List<string>();
+
+        public static List<string> Collider = new List<string>();
     }
 
 }

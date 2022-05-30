@@ -23,6 +23,7 @@ namespace MDDSkillEngine
             : base(entityId, typeId)
         {
             //m_KeepTime = 3f;
+            EntityType = EntityType.Effect;
         }
 
         public float KeepTime

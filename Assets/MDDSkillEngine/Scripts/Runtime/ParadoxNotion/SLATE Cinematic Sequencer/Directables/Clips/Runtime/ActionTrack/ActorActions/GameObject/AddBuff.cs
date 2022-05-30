@@ -9,14 +9,14 @@ using System;
 
 namespace Slate.ActionClips
 {
-    [Category("GameObject")]
     [Description("添加buff")]
+    [Attachable(typeof(AddBuffTrack))]
     public class AddBuff : ActorActionClip
     {
 
         [SerializeField]
         [HideInInspector]
-        private float _length = 1f;
+        private float _length = 0;
 
         [ValueDropdown("GetBuffs")]
         [OnValueChanged("OnBuffsSelect")]

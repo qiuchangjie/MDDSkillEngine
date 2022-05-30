@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace MDDSkillEngine
 {
-    public class MDDCollider : Entity
+    public class MDDCollider : ColliderBase
     {
         ColliderData data;
 

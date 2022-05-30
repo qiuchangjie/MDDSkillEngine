@@ -13,6 +13,7 @@ namespace Slate
     [Description("The Animator Track works with an 'Animator' Component attached on the actor, but does not require or use the Controller assigned. Instead animation clips can be played directly.\n\nMultiple Animator Tracks can also be added each representing a different animation layer. Root Motion will only be used in Animator Track of Layer 0 (if enabled), which is always the first (bottom) Track.")]
     [Icon(typeof(Animator))]
     [Attachable(typeof(ActorGroup))]
+    [Name("动画轨道")]
     partial class AnimatorTrack
     {
 

@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace MDDSkillEngine
 {
-    public class chaoxidazhao : MonoBehaviour
+    public class chaoxidazhao : ColliderBase
     {
 
 

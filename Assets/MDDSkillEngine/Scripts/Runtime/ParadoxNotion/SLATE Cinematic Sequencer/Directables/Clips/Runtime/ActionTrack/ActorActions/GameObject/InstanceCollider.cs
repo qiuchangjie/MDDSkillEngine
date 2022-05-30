@@ -6,8 +6,8 @@ using Sirenix.OdinInspector;
 
 namespace Slate.ActionClips
 {
-    [Category("GameObject")]
     [Description("生成碰撞体")]
+    [Attachable(typeof(ColliderTrack))]
     public class InstanceCollider : ActorActionClip
     {
 

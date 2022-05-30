@@ -1,1076 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1785880255
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1785880256}
-  - component: {fileID: 1785880258}
-  - component: {fileID: 1785880257}
-  - component: {fileID: 7077765813225660326}
-  - component: {fileID: 9144182716606128381}
-  - component: {fileID: 3474087445780176047}
-  - component: {fileID: 6322990029289984812}
-  - component: {fileID: 6133443892013472465}
-  - component: {fileID: 1763644837124958834}
-  - component: {fileID: 4396784291227834215}
-  - component: {fileID: 6721089696107127256}
-  - component: {fileID: 1854745790259478791}
-  - component: {fileID: 4927222245147293171}
-  - component: {fileID: 3579299880773241868}
-  - component: {fileID: 6822682931394934897}
-  - component: {fileID: 883848646143132673}
-  - component: {fileID: 780381334998790251}
-  - component: {fileID: 2983597625681061210}
-  - component: {fileID: 4491178443139076278}
-  - component: {fileID: 4157901409682749140}
-  - component: {fileID: 6321077961742329675}
-  - component: {fileID: 5480052667555470174}
-  - component: {fileID: 5254721223729052341}
-  - component: {fileID: 1895153756061270512}
-  - component: {fileID: 8371975729781158259}
-  - component: {fileID: 3242439547204909560}
-  - component: {fileID: 5020916278942631599}
-  - component: {fileID: 2512602148439060365}
-  - component: {fileID: 6707736022032887852}
-  - component: {fileID: 3325386359149255816}
-  - component: {fileID: 1056452850095839852}
-  - component: {fileID: 899102830572842329}
-  m_Layer: 0
-  m_Name: GameObject Track
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1785880256
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1785880255}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1578699025862464819}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1785880258
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1785880255}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b9cb7b110ccf394a9e8eef8d8047e62, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _name: Collider
-  skillDataType: 3
-  _color: {r: 1, g: 1, b: 1, a: 1}
-  _active: 1
-  _isLocked: 0
-  _actionClips:
-  - {fileID: 1785880257}
-  - {fileID: 7077765813225660326}
-  - {fileID: 9144182716606128381}
-  - {fileID: 3474087445780176047}
-  - {fileID: 6322990029289984812}
-  - {fileID: 6133443892013472465}
-  - {fileID: 1763644837124958834}
-  - {fileID: 4396784291227834215}
-  - {fileID: 6721089696107127256}
-  - {fileID: 1854745790259478791}
-  - {fileID: 4927222245147293171}
-  - {fileID: 3579299880773241868}
-  - {fileID: 6822682931394934897}
-  - {fileID: 883848646143132673}
-  - {fileID: 780381334998790251}
-  - {fileID: 2983597625681061210}
-  - {fileID: 4491178443139076278}
-  - {fileID: 4157901409682749140}
-  - {fileID: 6321077961742329675}
-  - {fileID: 5480052667555470174}
-  - {fileID: 5254721223729052341}
-  - {fileID: 1895153756061270512}
-  - {fileID: 8371975729781158259}
-  - {fileID: 3242439547204909560}
-  - {fileID: 5020916278942631599}
-  - {fileID: 2512602148439060365}
-  - {fileID: 6707736022032887852}
-  - {fileID: 3325386359149255816}
-  - {fileID: 1056452850095839852}
-  - {fileID: 899102830572842329}
-  _customHeight: 300
-  _icon: {fileID: 0}
---- !u!114 &1785880257
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1785880255}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 588eafea20dc9ef47b93a25e5d679b23, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  serializationData:
-    SerializedFormat: 2
-    SerializedBytes: 
-    ReferencedUnityObjects: []
-    SerializedBytesString: 
-    Prefab: {fileID: 0}
-    PrefabModificationsReferencedUnityObjects: []
-    PrefabModifications: []
-    SerializationNodes: []
-  _startTime: 0
-  _animationData:
-    _animatedParameters: []
-  _length: 0.13333334
-  ColliderName: NormalBoxCollider
-  col: {fileID: 0}
-  localeftPostion: {x: -0.098, y: 0.51, z: 0.437}
-  localRotation: {x: 0, y: 0, z: 0, w: 1}
-  localScale: {x: 1, y: 1, z: 1}
-  boundSize: {x: 1.2760684, y: 0.36364555, z: 0.9329854}
-  boundCenter: {x: -0.041453242, y: -0.31817722, z: -0.033507288}
---- !u!114 &7077765813225660326
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1785880255}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 588eafea20dc9ef47b93a25e5d679b23, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  serializationData:
-    SerializedFormat: 2
-    SerializedBytes: 
-    ReferencedUnityObjects: []
-    SerializedBytesString: 
-    Prefab: {fileID: 0}
-    PrefabModificationsReferencedUnityObjects: []
-    PrefabModifications: []
-    SerializationNodes: []
-  _startTime: 0.13333334
-  _animationData:
-    _animatedParameters: []
-  _length: 0.13333334
-  ColliderName: NormalBoxCollider
-  col: {fileID: 0}
-  localeftPostion: {x: -0.098, y: 0.51, z: 0.437}
-  localRotation: {x: 0, y: 0, z: 0, w: 1}
-  localScale: {x: 1, y: 1, z: 1}
-  boundSize: {x: 1.2760684, y: 0.36364555, z: 0.9329854}
-  boundCenter: {x: -0.041453242, y: -0.31817722, z: -0.033507288}
---- !u!114 &9144182716606128381
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1785880255}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 588eafea20dc9ef47b93a25e5d679b23, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  serializationData:
-    SerializedFormat: 2
-    SerializedBytes: 
-    ReferencedUnityObjects: []
-    SerializedBytesString: 
-    Prefab: {fileID: 0}
-    PrefabModificationsReferencedUnityObjects: []
-    PrefabModifications: []
-    SerializationNodes: []
-  _startTime: 0.26666668
-  _animationData:
-    _animatedParameters: []
-  _length: 0.116666675
-  ColliderName: NormalBoxCollider
-  col: {fileID: 0}
-  localeftPostion: {x: -0.098, y: 0.51, z: 0.437}
-  localRotation: {x: 0, y: 0, z: 0, w: 1}
-  localScale: {x: 1, y: 1, z: 1}
-  boundSize: {x: 1.2760684, y: 0.36364555, z: 0.9329854}
-  boundCenter: {x: -0.041453242, y: -0.31817722, z: -0.033507288}
---- !u!114 &3474087445780176047
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1785880255}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 588eafea20dc9ef47b93a25e5d679b23, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  serializationData:
-    SerializedFormat: 2
-    SerializedBytes: 
-    ReferencedUnityObjects: []
-    SerializedBytesString: 
-    Prefab: {fileID: 0}
-    PrefabModificationsReferencedUnityObjects: []
-    PrefabModifications: []
-    SerializationNodes: []
-  _startTime: 0.38333336
-  _animationData:
-    _animatedParameters: []
-  _length: 0.13333336
-  ColliderName: NormalBoxCollider
-  col: {fileID: 0}
-  localeftPostion: {x: -0.098, y: 0.51, z: 0.437}
-  localRotation: {x: 0, y: 0, z: 0, w: 1}
-  localScale: {x: 1, y: 1, z: 1}
-  boundSize: {x: 1.2760684, y: 0.36364555, z: 0.9329854}
-  boundCenter: {x: -0.041453242, y: -0.31817722, z: -0.033507288}
---- !u!114 &6322990029289984812
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1785880255}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 588eafea20dc9ef47b93a25e5d679b23, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  serializationData:
-    SerializedFormat: 2
-    SerializedBytes: 
-    ReferencedUnityObjects: []
-    SerializedBytesString: 
-    Prefab: {fileID: 0}
-    PrefabModificationsReferencedUnityObjects: []
-    PrefabModifications: []
-    SerializationNodes: []
-  _startTime: 0.5166667
-  _animationData:
-    _animatedParameters: []
-  _length: 0.13333333
-  ColliderName: NormalBoxCollider
-  col: {fileID: 0}
-  localeftPostion: {x: -0.098, y: 0.51, z: 0.437}
-  localRotation: {x: 0, y: 0, z: 0, w: 1}
-  localScale: {x: 1, y: 1, z: 1}
-  boundSize: {x: 1.2760684, y: 0.36364555, z: 0.9329854}
-  boundCenter: {x: -0.041453242, y: -0.31817722, z: -0.033507288}
---- !u!114 &6133443892013472465
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1785880255}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 588eafea20dc9ef47b93a25e5d679b23, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  serializationData:
-    SerializedFormat: 2
-    SerializedBytes: 
-    ReferencedUnityObjects: []
-    SerializedBytesString: 
-    Prefab: {fileID: 0}
-    PrefabModificationsReferencedUnityObjects: []
-    PrefabModifications: []
-    SerializationNodes: []
-  _startTime: 0.65000004
-  _animationData:
-    _animatedParameters: []
-  _length: 0.13333333
-  ColliderName: NormalBoxCollider
-  col: {fileID: 0}
-  localeftPostion: {x: -0.098, y: 0.51, z: 0.437}
-  localRotation: {x: 0, y: 0, z: 0, w: 1}
-  localScale: {x: 1, y: 1, z: 1}
-  boundSize: {x: 1.2760684, y: 0.36364555, z: 0.9329854}
-  boundCenter: {x: -0.041453242, y: -0.31817722, z: -0.033507288}
---- !u!114 &1763644837124958834
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1785880255}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 588eafea20dc9ef47b93a25e5d679b23, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  serializationData:
-    SerializedFormat: 2
-    SerializedBytes: 
-    ReferencedUnityObjects: []
-    SerializedBytesString: 
-    Prefab: {fileID: 0}
-    PrefabModificationsReferencedUnityObjects: []
-    PrefabModifications: []
-    SerializationNodes: []
-  _startTime: 0.78333336
-  _animationData:
-    _animatedParameters: []
-  _length: 0.13333333
-  ColliderName: NormalBoxCollider
-  col: {fileID: 0}
-  localeftPostion: {x: -0.098, y: 0.51, z: 0.437}
-  localRotation: {x: 0, y: 0, z: 0, w: 1}
-  localScale: {x: 1, y: 1, z: 1}
-  boundSize: {x: 1.2760684, y: 0.36364555, z: 0.9329854}
-  boundCenter: {x: -0.041453242, y: -0.31817722, z: -0.033507288}
---- !u!114 &4396784291227834215
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1785880255}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 588eafea20dc9ef47b93a25e5d679b23, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  serializationData:
-    SerializedFormat: 2
-    SerializedBytes: 
-    ReferencedUnityObjects: []
-    SerializedBytesString: 
-    Prefab: {fileID: 0}
-    PrefabModificationsReferencedUnityObjects: []
-    PrefabModifications: []
-    SerializationNodes: []
-  _startTime: 0.9166667
-  _animationData:
-    _animatedParameters: []
-  _length: 0.13333333
-  ColliderName: NormalBoxCollider
-  col: {fileID: 0}
-  localeftPostion: {x: -0.098, y: 0.51, z: 0.437}
-  localRotation: {x: 0, y: 0, z: 0, w: 1}
-  localScale: {x: 1, y: 1, z: 1}
-  boundSize: {x: 1.2760684, y: 0.36364555, z: 0.9329854}
-  boundCenter: {x: -0.041453242, y: -0.31817722, z: -0.033507288}
---- !u!114 &6721089696107127256
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1785880255}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 588eafea20dc9ef47b93a25e5d679b23, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  serializationData:
-    SerializedFormat: 2
-    SerializedBytes: 
-    ReferencedUnityObjects: []
-    SerializedBytesString: 
-    Prefab: {fileID: 0}
-    PrefabModificationsReferencedUnityObjects: []
-    PrefabModifications: []
-    SerializationNodes: []
-  _startTime: 1.05
-  _animationData:
-    _animatedParameters: []
-  _length: 0.13333333
-  ColliderName: NormalBoxCollider
-  col: {fileID: 0}
-  localeftPostion: {x: -0.098, y: 0.51, z: 0.437}
-  localRotation: {x: 0, y: 0, z: 0, w: 1}
-  localScale: {x: 1, y: 1, z: 1}
-  boundSize: {x: 1.2760684, y: 0.36364555, z: 0.9329854}
-  boundCenter: {x: -0.041453242, y: -0.31817722, z: -0.033507288}
---- !u!114 &1854745790259478791
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1785880255}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 588eafea20dc9ef47b93a25e5d679b23, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  serializationData:
-    SerializedFormat: 2
-    SerializedBytes: 
-    ReferencedUnityObjects: []
-    SerializedBytesString: 
-    Prefab: {fileID: 0}
-    PrefabModificationsReferencedUnityObjects: []
-    PrefabModifications: []
-    SerializationNodes: []
-  _startTime: 1.1833334
-  _animationData:
-    _animatedParameters: []
-  _length: 0.13333333
-  ColliderName: NormalBoxCollider
-  col: {fileID: 0}
-  localeftPostion: {x: -0.098, y: 0.51, z: 0.437}
-  localRotation: {x: 0, y: 0, z: 0, w: 1}
-  localScale: {x: 1, y: 1, z: 1}
-  boundSize: {x: 1.2760684, y: 0.36364555, z: 0.9329854}
-  boundCenter: {x: -0.041453242, y: -0.31817722, z: -0.033507288}
---- !u!114 &4927222245147293171
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1785880255}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 588eafea20dc9ef47b93a25e5d679b23, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  serializationData:
-    SerializedFormat: 2
-    SerializedBytes: 
-    ReferencedUnityObjects: []
-    SerializedBytesString: 
-    Prefab: {fileID: 0}
-    PrefabModificationsReferencedUnityObjects: []
-    PrefabModifications: []
-    SerializationNodes: []
-  _startTime: 1.3166667
-  _animationData:
-    _animatedParameters: []
-  _length: 0.13333333
-  ColliderName: NormalBoxCollider
-  col: {fileID: 0}
-  localeftPostion: {x: -0.098, y: 0.51, z: 0.437}
-  localRotation: {x: 0, y: 0, z: 0, w: 1}
-  localScale: {x: 1, y: 1, z: 1}
-  boundSize: {x: 1.2760684, y: 0.36364555, z: 0.9329854}
-  boundCenter: {x: -0.041453242, y: -0.31817722, z: -0.033507288}
---- !u!114 &3579299880773241868
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1785880255}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 588eafea20dc9ef47b93a25e5d679b23, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  serializationData:
-    SerializedFormat: 2
-    SerializedBytes: 
-    ReferencedUnityObjects: []
-    SerializedBytesString: 
-    Prefab: {fileID: 0}
-    PrefabModificationsReferencedUnityObjects: []
-    PrefabModifications: []
-    SerializationNodes: []
-  _startTime: 1.45
-  _animationData:
-    _animatedParameters: []
-  _length: 0.13333333
-  ColliderName: NormalBoxCollider
-  col: {fileID: 0}
-  localeftPostion: {x: -0.098, y: 0.51, z: 0.437}
-  localRotation: {x: 0, y: 0, z: 0, w: 1}
-  localScale: {x: 1, y: 1, z: 1}
-  boundSize: {x: 1.2760684, y: 0.36364555, z: 0.9329854}
-  boundCenter: {x: -0.041453242, y: -0.31817722, z: -0.033507288}
---- !u!114 &6822682931394934897
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1785880255}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 588eafea20dc9ef47b93a25e5d679b23, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  serializationData:
-    SerializedFormat: 2
-    SerializedBytes: 
-    ReferencedUnityObjects: []
-    SerializedBytesString: 
-    Prefab: {fileID: 0}
-    PrefabModificationsReferencedUnityObjects: []
-    PrefabModifications: []
-    SerializationNodes: []
-  _startTime: 1.5833334
-  _animationData:
-    _animatedParameters: []
-  _length: 0.13333333
-  ColliderName: NormalBoxCollider
-  col: {fileID: 0}
-  localeftPostion: {x: -0.098, y: 0.51, z: 0.437}
-  localRotation: {x: 0, y: 0, z: 0, w: 1}
-  localScale: {x: 1, y: 1, z: 1}
-  boundSize: {x: 1.2760684, y: 0.36364555, z: 0.9329854}
-  boundCenter: {x: -0.041453242, y: -0.31817722, z: -0.033507288}
---- !u!114 &883848646143132673
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1785880255}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 588eafea20dc9ef47b93a25e5d679b23, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  serializationData:
-    SerializedFormat: 2
-    SerializedBytes: 
-    ReferencedUnityObjects: []
-    SerializedBytesString: 
-    Prefab: {fileID: 0}
-    PrefabModificationsReferencedUnityObjects: []
-    PrefabModifications: []
-    SerializationNodes: []
-  _startTime: 1.7166667
-  _animationData:
-    _animatedParameters: []
-  _length: 0.13333333
-  ColliderName: NormalBoxCollider
-  col: {fileID: 0}
-  localeftPostion: {x: -0.098, y: 0.51, z: 0.437}
-  localRotation: {x: 0, y: 0, z: 0, w: 1}
-  localScale: {x: 1, y: 1, z: 1}
-  boundSize: {x: 1.2760684, y: 0.36364555, z: 0.9329854}
-  boundCenter: {x: -0.041453242, y: -0.31817722, z: -0.033507288}
---- !u!114 &780381334998790251
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1785880255}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 588eafea20dc9ef47b93a25e5d679b23, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  serializationData:
-    SerializedFormat: 2
-    SerializedBytes: 
-    ReferencedUnityObjects: []
-    SerializedBytesString: 
-    Prefab: {fileID: 0}
-    PrefabModificationsReferencedUnityObjects: []
-    PrefabModifications: []
-    SerializationNodes: []
-  _startTime: 1.85
-  _animationData:
-    _animatedParameters: []
-  _length: 0.13333333
-  ColliderName: NormalBoxCollider
-  col: {fileID: 0}
-  localeftPostion: {x: -0.098, y: 0.51, z: 0.437}
-  localRotation: {x: 0, y: 0, z: 0, w: 1}
-  localScale: {x: 1, y: 1, z: 1}
-  boundSize: {x: 1.2760684, y: 0.36364555, z: 0.9329854}
-  boundCenter: {x: -0.041453242, y: -0.31817722, z: -0.033507288}
---- !u!114 &2983597625681061210
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1785880255}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 588eafea20dc9ef47b93a25e5d679b23, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  serializationData:
-    SerializedFormat: 2
-    SerializedBytes: 
-    ReferencedUnityObjects: []
-    SerializedBytesString: 
-    Prefab: {fileID: 0}
-    PrefabModificationsReferencedUnityObjects: []
-    PrefabModifications: []
-    SerializationNodes: []
-  _startTime: 1.9833333
-  _animationData:
-    _animatedParameters: []
-  _length: 0.13333333
-  ColliderName: NormalBoxCollider
-  col: {fileID: 0}
-  localeftPostion: {x: -0.098, y: 0.51, z: 0.437}
-  localRotation: {x: 0, y: 0, z: 0, w: 1}
-  localScale: {x: 1, y: 1, z: 1}
-  boundSize: {x: 1.2760684, y: 0.36364555, z: 0.9329854}
-  boundCenter: {x: -0.041453242, y: -0.31817722, z: -0.033507288}
---- !u!114 &4491178443139076278
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1785880255}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 588eafea20dc9ef47b93a25e5d679b23, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  serializationData:
-    SerializedFormat: 2
-    SerializedBytes: 
-    ReferencedUnityObjects: []
-    SerializedBytesString: 
-    Prefab: {fileID: 0}
-    PrefabModificationsReferencedUnityObjects: []
-    PrefabModifications: []
-    SerializationNodes: []
-  _startTime: 2.1166668
-  _animationData:
-    _animatedParameters: []
-  _length: 0.13333333
-  ColliderName: NormalBoxCollider
-  col: {fileID: 0}
-  localeftPostion: {x: -0.098, y: 0.51, z: 0.437}
-  localRotation: {x: 0, y: 0, z: 0, w: 1}
-  localScale: {x: 1, y: 1, z: 1}
-  boundSize: {x: 1.2760684, y: 0.36364555, z: 0.9329854}
-  boundCenter: {x: -0.041453242, y: -0.31817722, z: -0.033507288}
---- !u!114 &4157901409682749140
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1785880255}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 588eafea20dc9ef47b93a25e5d679b23, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  serializationData:
-    SerializedFormat: 2
-    SerializedBytes: 
-    ReferencedUnityObjects: []
-    SerializedBytesString: 
-    Prefab: {fileID: 0}
-    PrefabModificationsReferencedUnityObjects: []
-    PrefabModifications: []
-    SerializationNodes: []
-  _startTime: 2.25
-  _animationData:
-    _animatedParameters: []
-  _length: 0.13333333
-  ColliderName: NormalBoxCollider
-  col: {fileID: 0}
-  localeftPostion: {x: -0.098, y: 0.51, z: 0.437}
-  localRotation: {x: 0, y: 0, z: 0, w: 1}
-  localScale: {x: 1, y: 1, z: 1}
-  boundSize: {x: 1.2760684, y: 0.36364555, z: 0.9329854}
-  boundCenter: {x: -0.041453242, y: -0.31817722, z: -0.033507288}
---- !u!114 &6321077961742329675
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1785880255}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 588eafea20dc9ef47b93a25e5d679b23, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  serializationData:
-    SerializedFormat: 2
-    SerializedBytes: 
-    ReferencedUnityObjects: []
-    SerializedBytesString: 
-    Prefab: {fileID: 0}
-    PrefabModificationsReferencedUnityObjects: []
-    PrefabModifications: []
-    SerializationNodes: []
-  _startTime: 2.3833332
-  _animationData:
-    _animatedParameters: []
-  _length: 0.13333333
-  ColliderName: NormalBoxCollider
-  col: {fileID: 0}
-  localeftPostion: {x: -0.098, y: 0.51, z: 0.437}
-  localRotation: {x: 0, y: 0, z: 0, w: 1}
-  localScale: {x: 1, y: 1, z: 1}
-  boundSize: {x: 1.2760684, y: 0.36364555, z: 0.9329854}
-  boundCenter: {x: -0.041453242, y: -0.31817722, z: -0.033507288}
---- !u!114 &5480052667555470174
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1785880255}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 588eafea20dc9ef47b93a25e5d679b23, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  serializationData:
-    SerializedFormat: 2
-    SerializedBytes: 
-    ReferencedUnityObjects: []
-    SerializedBytesString: 
-    Prefab: {fileID: 0}
-    PrefabModificationsReferencedUnityObjects: []
-    PrefabModifications: []
-    SerializationNodes: []
-  _startTime: 2.5166664
-  _animationData:
-    _animatedParameters: []
-  _length: 0.13333333
-  ColliderName: NormalBoxCollider
-  col: {fileID: 0}
-  localeftPostion: {x: -0.098, y: 0.51, z: 0.437}
-  localRotation: {x: 0, y: 0, z: 0, w: 1}
-  localScale: {x: 1, y: 1, z: 1}
-  boundSize: {x: 1.2760684, y: 0.36364555, z: 0.9329854}
-  boundCenter: {x: -0.041453242, y: -0.31817722, z: -0.033507288}
---- !u!114 &5254721223729052341
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1785880255}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 588eafea20dc9ef47b93a25e5d679b23, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  serializationData:
-    SerializedFormat: 2
-    SerializedBytes: 
-    ReferencedUnityObjects: []
-    SerializedBytesString: 
-    Prefab: {fileID: 0}
-    PrefabModificationsReferencedUnityObjects: []
-    PrefabModifications: []
-    SerializationNodes: []
-  _startTime: 2.6499996
-  _animationData:
-    _animatedParameters: []
-  _length: 0.13333333
-  ColliderName: NormalBoxCollider
-  col: {fileID: 0}
-  localeftPostion: {x: -0.098, y: 0.51, z: 0.437}
-  localRotation: {x: 0, y: 0, z: 0, w: 1}
-  localScale: {x: 1, y: 1, z: 1}
-  boundSize: {x: 1.2760684, y: 0.36364555, z: 0.9329854}
-  boundCenter: {x: -0.041453242, y: -0.31817722, z: -0.033507288}
---- !u!114 &1895153756061270512
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1785880255}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 588eafea20dc9ef47b93a25e5d679b23, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  serializationData:
-    SerializedFormat: 2
-    SerializedBytes: 
-    ReferencedUnityObjects: []
-    SerializedBytesString: 
-    Prefab: {fileID: 0}
-    PrefabModificationsReferencedUnityObjects: []
-    PrefabModifications: []
-    SerializationNodes: []
-  _startTime: 2.7833328
-  _animationData:
-    _animatedParameters: []
-  _length: 0.13333333
-  ColliderName: NormalBoxCollider
-  col: {fileID: 0}
-  localeftPostion: {x: -0.098, y: 0.51, z: 0.437}
-  localRotation: {x: 0, y: 0, z: 0, w: 1}
-  localScale: {x: 1, y: 1, z: 1}
-  boundSize: {x: 1.2760684, y: 0.36364555, z: 0.9329854}
-  boundCenter: {x: -0.041453242, y: -0.31817722, z: -0.033507288}
---- !u!114 &8371975729781158259
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1785880255}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 588eafea20dc9ef47b93a25e5d679b23, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  serializationData:
-    SerializedFormat: 2
-    SerializedBytes: 
-    ReferencedUnityObjects: []
-    SerializedBytesString: 
-    Prefab: {fileID: 0}
-    PrefabModificationsReferencedUnityObjects: []
-    PrefabModifications: []
-    SerializationNodes: []
-  _startTime: 2.916666
-  _animationData:
-    _animatedParameters: []
-  _length: 0.13333333
-  ColliderName: NormalBoxCollider
-  col: {fileID: 0}
-  localeftPostion: {x: -0.098, y: 0.51, z: 0.437}
-  localRotation: {x: 0, y: 0, z: 0, w: 1}
-  localScale: {x: 1, y: 1, z: 1}
-  boundSize: {x: 1.2760684, y: 0.36364555, z: 0.9329854}
-  boundCenter: {x: -0.041453242, y: -0.31817722, z: -0.033507288}
---- !u!114 &3242439547204909560
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1785880255}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 588eafea20dc9ef47b93a25e5d679b23, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  serializationData:
-    SerializedFormat: 2
-    SerializedBytes: 
-    ReferencedUnityObjects: []
-    SerializedBytesString: 
-    Prefab: {fileID: 0}
-    PrefabModificationsReferencedUnityObjects: []
-    PrefabModifications: []
-    SerializationNodes: []
-  _startTime: 3.0499992
-  _animationData:
-    _animatedParameters: []
-  _length: 0.13333333
-  ColliderName: NormalBoxCollider
-  col: {fileID: 0}
-  localeftPostion: {x: -0.098, y: 0.51, z: 0.437}
-  localRotation: {x: 0, y: 0, z: 0, w: 1}
-  localScale: {x: 1, y: 1, z: 1}
-  boundSize: {x: 1.2760684, y: 0.36364555, z: 0.9329854}
-  boundCenter: {x: -0.041453242, y: -0.31817722, z: -0.033507288}
---- !u!114 &5020916278942631599
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1785880255}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 588eafea20dc9ef47b93a25e5d679b23, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  serializationData:
-    SerializedFormat: 2
-    SerializedBytes: 
-    ReferencedUnityObjects: []
-    SerializedBytesString: 
-    Prefab: {fileID: 0}
-    PrefabModificationsReferencedUnityObjects: []
-    PrefabModifications: []
-    SerializationNodes: []
-  _startTime: 3.1833324
-  _animationData:
-    _animatedParameters: []
-  _length: 0.13333333
-  ColliderName: NormalBoxCollider
-  col: {fileID: 0}
-  localeftPostion: {x: -0.098, y: 0.51, z: 0.437}
-  localRotation: {x: 0, y: 0, z: 0, w: 1}
-  localScale: {x: 1, y: 1, z: 1}
-  boundSize: {x: 1.2760684, y: 0.36364555, z: 0.9329854}
-  boundCenter: {x: -0.041453242, y: -0.31817722, z: -0.033507288}
---- !u!114 &2512602148439060365
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1785880255}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 588eafea20dc9ef47b93a25e5d679b23, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  serializationData:
-    SerializedFormat: 2
-    SerializedBytes: 
-    ReferencedUnityObjects: []
-    SerializedBytesString: 
-    Prefab: {fileID: 0}
-    PrefabModificationsReferencedUnityObjects: []
-    PrefabModifications: []
-    SerializationNodes: []
-  _startTime: 3.3166656
-  _animationData:
-    _animatedParameters: []
-  _length: 0.13333333
-  ColliderName: NormalBoxCollider
-  col: {fileID: 0}
-  localeftPostion: {x: -0.098, y: 0.51, z: 0.437}
-  localRotation: {x: 0, y: 0, z: 0, w: 1}
-  localScale: {x: 1, y: 1, z: 1}
-  boundSize: {x: 1.2760684, y: 0.36364555, z: 0.9329854}
-  boundCenter: {x: -0.041453242, y: -0.31817722, z: -0.033507288}
---- !u!114 &6707736022032887852
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1785880255}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 588eafea20dc9ef47b93a25e5d679b23, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  serializationData:
-    SerializedFormat: 2
-    SerializedBytes: 
-    ReferencedUnityObjects: []
-    SerializedBytesString: 
-    Prefab: {fileID: 0}
-    PrefabModificationsReferencedUnityObjects: []
-    PrefabModifications: []
-    SerializationNodes: []
-  _startTime: 3.4499989
-  _animationData:
-    _animatedParameters: []
-  _length: 0.13333333
-  ColliderName: NormalBoxCollider
-  col: {fileID: 0}
-  localeftPostion: {x: -0.098, y: 0.51, z: 0.437}
-  localRotation: {x: 0, y: 0, z: 0, w: 1}
-  localScale: {x: 1, y: 1, z: 1}
-  boundSize: {x: 1.2760684, y: 0.36364555, z: 0.9329854}
-  boundCenter: {x: -0.041453242, y: -0.31817722, z: -0.033507288}
---- !u!114 &3325386359149255816
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1785880255}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 588eafea20dc9ef47b93a25e5d679b23, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  serializationData:
-    SerializedFormat: 2
-    SerializedBytes: 
-    ReferencedUnityObjects: []
-    SerializedBytesString: 
-    Prefab: {fileID: 0}
-    PrefabModificationsReferencedUnityObjects: []
-    PrefabModifications: []
-    SerializationNodes: []
-  _startTime: 3.583332
-  _animationData:
-    _animatedParameters: []
-  _length: 0.13333488
-  ColliderName: NormalBoxCollider
-  col: {fileID: 0}
-  localeftPostion: {x: -0.098, y: 0.51, z: 0.437}
-  localRotation: {x: 0, y: 0, z: 0, w: 1}
-  localScale: {x: 1, y: 1, z: 1}
-  boundSize: {x: 1.2760684, y: 0.36364555, z: 0.9329854}
-  boundCenter: {x: -0.041453242, y: -0.31817722, z: -0.033507288}
---- !u!114 &1056452850095839852
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1785880255}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 588eafea20dc9ef47b93a25e5d679b23, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  serializationData:
-    SerializedFormat: 2
-    SerializedBytes: 
-    ReferencedUnityObjects: []
-    SerializedBytesString: 
-    Prefab: {fileID: 0}
-    PrefabModificationsReferencedUnityObjects: []
-    PrefabModifications: []
-    SerializationNodes: []
-  _startTime: 3.716667
-  _animationData:
-    _animatedParameters: []
-  _length: 0.13333333
-  ColliderName: NormalBoxCollider
-  col: {fileID: 0}
-  localeftPostion: {x: -0.098, y: 0.51, z: 0.437}
-  localRotation: {x: 0, y: 0, z: 0, w: 1}
-  localScale: {x: 1, y: 1, z: 1}
-  boundSize: {x: 1.2760684, y: 0.36364555, z: 0.9329854}
-  boundCenter: {x: -0.041453242, y: -0.31817722, z: -0.033507288}
---- !u!114 &899102830572842329
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1785880255}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 588eafea20dc9ef47b93a25e5d679b23, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  serializationData:
-    SerializedFormat: 2
-    SerializedBytes: 
-    ReferencedUnityObjects: []
-    SerializedBytesString: 
-    Prefab: {fileID: 0}
-    PrefabModificationsReferencedUnityObjects: []
-    PrefabModifications: []
-    SerializationNodes: []
-  _startTime: 3.8500004
-  _animationData:
-    _animatedParameters: []
-  _length: 0.13333333
-  ColliderName: NormalBoxCollider
-  col: {fileID: 0}
-  localeftPostion: {x: -0.098, y: 0.51, z: 0.437}
-  localRotation: {x: 0, y: 0, z: 0, w: 1}
-  localScale: {x: 1, y: 1, z: 1}
-  boundSize: {x: 1.2760684, y: 0.36364555, z: 0.9329854}
-  boundCenter: {x: -0.041453242, y: -0.31817722, z: -0.033507288}
 --- !u!1 &1095137891673614061
 GameObject:
   m_ObjectHideFlags: 0
@@ -1126,8 +55,191 @@ MonoBehaviour:
   groups:
   - {fileID: 7232431185629851885}
   _length: 4
-  _viewTimeMin: -0.87751496
-  _viewTimeMax: 5.77521
+  _viewTimeMin: -1.592332
+  _viewTimeMax: 3.852148
+--- !u!1 &2882366116594116339
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7354930286832087321}
+  - component: {fileID: 2238054730856486535}
+  - component: {fileID: 5564464504489634890}
+  m_Layer: 0
+  m_Name: "CD\u8F68\u9053"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7354930286832087321
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2882366116594116339}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1578699025862464819}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2238054730856486535
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2882366116594116339}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38746670c4378f74c89854e2d8c568b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _name: "CD\u8F68\u9053"
+  _color: {r: 1, g: 1, b: 1, a: 1}
+  _active: 1
+  _isLocked: 0
+  _actionClips:
+  - {fileID: 5564464504489634890}
+  _customHeight: 300
+  _icon: {fileID: 0}
+--- !u!114 &5564464504489634890
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2882366116594116339}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a64481dd0c43dcd43ac3af365bb4165b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  _startTime: 0.38333336
+  _animationData:
+    _animatedParameters: []
+  _length: 0
+--- !u!1 &3188944609929985493
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1007091786322199534}
+  - component: {fileID: 8382713012444369176}
+  - component: {fileID: 8905578316745127168}
+  - component: {fileID: 8593321963199963045}
+  m_Layer: 0
+  m_Name: "\u6280\u80FD\u4E2D\u65AD\u63A7\u5236\u8F68\u9053"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1007091786322199534
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3188944609929985493}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1578699025862464819}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8382713012444369176
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3188944609929985493}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aec75c59144611a4eb25f5db2e6373f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _name: "\u6280\u80FD\u4E2D\u65AD\u63A7\u5236\u8F68\u9053"
+  _color: {r: 1, g: 1, b: 1, a: 1}
+  _active: 1
+  _isLocked: 0
+  _actionClips:
+  - {fileID: 8905578316745127168}
+  - {fileID: 8593321963199963045}
+  _customHeight: 300
+  _icon: {fileID: 0}
+--- !u!114 &8905578316745127168
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3188944609929985493}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2965ed3037b712499199d409a546b8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  _startTime: 1.45
+  _animationData:
+    _animatedParameters: []
+  _length: 0
+  Type: 0
+--- !u!114 &8593321963199963045
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3188944609929985493}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2965ed3037b712499199d409a546b8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  _startTime: 3.966667
+  _animationData:
+    _animatedParameters: []
+  _length: 0
+  Type: 1
 --- !u!1 &3378478145511216615
 GameObject:
   m_ObjectHideFlags: 0
@@ -1169,7 +281,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1578699025862464819}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3378478145511216618
 MonoBehaviour:
@@ -1184,7 +296,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _name: "\u52A8\u753B\u8F68\u9053"
-  skillDataType: 1
   _color: {r: 1, g: 1, b: 1, a: 1}
   _active: 1
   _isLocked: 0
@@ -2108,9 +1219,11 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 6736176873481770646}
   - {fileID: 3378478145511216616}
-  - {fileID: 1785880256}
+  - {fileID: 7354930286832087321}
+  - {fileID: 1007091786322199534}
+  - {fileID: 8183742346437641864}
+  - {fileID: 2503991307436626136}
   m_Father: {fileID: 192856560614531560}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2127,9 +1240,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _tracks:
-  - {fileID: 1785880258}
+  - {fileID: 6259407564336725206}
+  - {fileID: 4834773990415758771}
+  - {fileID: 8382713012444369176}
+  - {fileID: 2238054730856486535}
   - {fileID: 3378478145511216618}
-  - {fileID: 4871426869517224130}
   _sections: []
   _isCollapsed: 0
   _active: 1
@@ -2141,7 +1256,7 @@ MonoBehaviour:
   _initialLocalPosition: {x: 0, y: 0, z: 0}
   _initialLocalRotation: {x: 0, y: 0, z: 0}
   _displayVirtualMeshGizmo: 1
---- !u!1 &3450132935525475907
+--- !u!1 &3676808733166676256
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2149,117 +1264,60 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6736176873481770646}
-  - component: {fileID: 4871426869517224130}
-  - component: {fileID: 4353259953826499718}
-  - component: {fileID: 6852552111169234913}
-  - component: {fileID: 8324878071291021015}
-  - component: {fileID: 4290843173105663198}
-  - component: {fileID: 240856039738381513}
-  - component: {fileID: 1788688334317356248}
-  - component: {fileID: 1313993258869545018}
-  - component: {fileID: 3883839683604185149}
-  - component: {fileID: 1363362059090515070}
-  - component: {fileID: 4930233411187548018}
-  - component: {fileID: 3650243891966280053}
-  - component: {fileID: 5038328675623356924}
-  - component: {fileID: 883497818845729601}
-  - component: {fileID: 5529178601837545702}
-  - component: {fileID: 2624298745231705562}
-  - component: {fileID: 7968171802124101573}
-  - component: {fileID: 1296551660943095277}
-  - component: {fileID: 8375513195471574957}
-  - component: {fileID: 6378634927310924683}
-  - component: {fileID: 7544342942038262315}
-  - component: {fileID: 5776316029920651630}
-  - component: {fileID: 5657252447753511169}
-  - component: {fileID: 2701414254142169067}
-  - component: {fileID: 5459452882057787816}
-  - component: {fileID: 5220826984851503577}
-  - component: {fileID: 2068796573579291010}
-  - component: {fileID: 4103436960526923482}
-  - component: {fileID: 347224042204913228}
-  - component: {fileID: 1724928089987302519}
+  - component: {fileID: 2503991307436626136}
+  - component: {fileID: 6259407564336725206}
+  - component: {fileID: 8203542930212598063}
   m_Layer: 0
-  m_Name: GameObject Track
+  m_Name: "\u78B0\u649E\u4F53\u8F68\u9053"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &6736176873481770646
+--- !u!4 &2503991307436626136
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3450132935525475907}
+  m_GameObject: {fileID: 3676808733166676256}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1578699025862464819}
-  m_RootOrder: 0
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4871426869517224130
+--- !u!114 &6259407564336725206
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3450132935525475907}
+  m_GameObject: {fileID: 3676808733166676256}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b9cb7b110ccf394a9e8eef8d8047e62, type: 3}
+  m_Script: {fileID: 11500000, guid: 9267c29a2b8ee8e468fd9da2ac7648fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _name: Effect
-  skillDataType: 2
+  _name: "\u78B0\u649E\u4F53\u8F68\u9053"
   _color: {r: 1, g: 1, b: 1, a: 1}
   _active: 1
   _isLocked: 0
   _actionClips:
-  - {fileID: 4353259953826499718}
-  - {fileID: 6852552111169234913}
-  - {fileID: 8324878071291021015}
-  - {fileID: 4290843173105663198}
-  - {fileID: 240856039738381513}
-  - {fileID: 1788688334317356248}
-  - {fileID: 1313993258869545018}
-  - {fileID: 3883839683604185149}
-  - {fileID: 1363362059090515070}
-  - {fileID: 4930233411187548018}
-  - {fileID: 3650243891966280053}
-  - {fileID: 5038328675623356924}
-  - {fileID: 883497818845729601}
-  - {fileID: 5529178601837545702}
-  - {fileID: 2624298745231705562}
-  - {fileID: 7968171802124101573}
-  - {fileID: 1296551660943095277}
-  - {fileID: 8375513195471574957}
-  - {fileID: 6378634927310924683}
-  - {fileID: 7544342942038262315}
-  - {fileID: 5776316029920651630}
-  - {fileID: 5657252447753511169}
-  - {fileID: 2701414254142169067}
-  - {fileID: 5459452882057787816}
-  - {fileID: 5220826984851503577}
-  - {fileID: 2068796573579291010}
-  - {fileID: 4103436960526923482}
-  - {fileID: 347224042204913228}
-  - {fileID: 1724928089987302519}
+  - {fileID: 8203542930212598063}
   _customHeight: 300
   _icon: {fileID: 0}
---- !u!114 &4353259953826499718
+--- !u!114 &8203542930212598063
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3450132935525475907}
+  m_GameObject: {fileID: 3676808733166676256}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 483d42241718b7547b50464f7294571f, type: 3}
+  m_Script: {fileID: 11500000, guid: 588eafea20dc9ef47b93a25e5d679b23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   serializationData:
@@ -2271,884 +1329,17 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  _startTime: 0
+  _startTime: 0.5
   _animationData:
     _animatedParameters: []
-  _length: 0.13333334
-  EffectName: daoguang_green_1
-  pat: {fileID: 0}
-  PlayableSpeed: 1
-  localeftPostion: {x: -0.148, y: 0.648, z: -0.049}
-  localRotation: {x: 0.32798165, y: -0.000000014336459, z: 0.9446841, w: -0.00000004129348}
-  localScale: {x: 0.3, y: 0.3, z: 0.3}
---- !u!114 &6852552111169234913
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3450132935525475907}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 483d42241718b7547b50464f7294571f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  serializationData:
-    SerializedFormat: 2
-    SerializedBytes: 
-    ReferencedUnityObjects: []
-    SerializedBytesString: 
-    Prefab: {fileID: 0}
-    PrefabModificationsReferencedUnityObjects: []
-    PrefabModifications: []
-    SerializationNodes: []
-  _startTime: 0.13333334
-  _animationData:
-    _animatedParameters: []
-  _length: 0.13333334
-  EffectName: daoguang_green_1
-  pat: {fileID: 0}
-  PlayableSpeed: 1
-  localeftPostion: {x: -0.148, y: 0.648, z: -0.049}
-  localRotation: {x: 0.32798165, y: -0.000000014336459, z: 0.9446841, w: -0.00000004129348}
-  localScale: {x: 0.3, y: 0.3, z: 0.3}
---- !u!114 &8324878071291021015
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3450132935525475907}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 483d42241718b7547b50464f7294571f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  serializationData:
-    SerializedFormat: 2
-    SerializedBytes: 
-    ReferencedUnityObjects: []
-    SerializedBytesString: 
-    Prefab: {fileID: 0}
-    PrefabModificationsReferencedUnityObjects: []
-    PrefabModifications: []
-    SerializationNodes: []
-  _startTime: 0.26666668
-  _animationData:
-    _animatedParameters: []
-  _length: 0.116666675
-  EffectName: daoguang_green_1
-  pat: {fileID: 0}
-  PlayableSpeed: 1
-  localeftPostion: {x: -0.148, y: 0.648, z: -0.049}
-  localRotation: {x: 0.32798165, y: -0.000000014336459, z: 0.9446841, w: -0.00000004129348}
-  localScale: {x: 0.3, y: 0.3, z: 0.3}
---- !u!114 &4290843173105663198
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3450132935525475907}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 483d42241718b7547b50464f7294571f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  serializationData:
-    SerializedFormat: 2
-    SerializedBytes: 
-    ReferencedUnityObjects: []
-    SerializedBytesString: 
-    Prefab: {fileID: 0}
-    PrefabModificationsReferencedUnityObjects: []
-    PrefabModifications: []
-    SerializationNodes: []
-  _startTime: 0.38333336
-  _animationData:
-    _animatedParameters: []
-  _length: 0.13333334
-  EffectName: daoguang_green_1
-  pat: {fileID: 0}
-  PlayableSpeed: 1
-  localeftPostion: {x: -0.148, y: 0.648, z: -0.049}
-  localRotation: {x: 0.32798165, y: -0.000000014336459, z: 0.9446841, w: -0.00000004129348}
-  localScale: {x: 0.3, y: 0.3, z: 0.3}
---- !u!114 &240856039738381513
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3450132935525475907}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 483d42241718b7547b50464f7294571f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  serializationData:
-    SerializedFormat: 2
-    SerializedBytes: 
-    ReferencedUnityObjects: []
-    SerializedBytesString: 
-    Prefab: {fileID: 0}
-    PrefabModificationsReferencedUnityObjects: []
-    PrefabModifications: []
-    SerializationNodes: []
-  _startTime: 0.5166667
-  _animationData:
-    _animatedParameters: []
-  _length: 0.13333334
-  EffectName: daoguang_green_1
-  pat: {fileID: 0}
-  PlayableSpeed: 1
-  localeftPostion: {x: -0.148, y: 0.648, z: -0.049}
-  localRotation: {x: 0.32798165, y: -0.000000014336459, z: 0.9446841, w: -0.00000004129348}
-  localScale: {x: 0.3, y: 0.3, z: 0.3}
---- !u!114 &1788688334317356248
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3450132935525475907}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 483d42241718b7547b50464f7294571f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  serializationData:
-    SerializedFormat: 2
-    SerializedBytes: 
-    ReferencedUnityObjects: []
-    SerializedBytesString: 
-    Prefab: {fileID: 0}
-    PrefabModificationsReferencedUnityObjects: []
-    PrefabModifications: []
-    SerializationNodes: []
-  _startTime: 0.65000004
-  _animationData:
-    _animatedParameters: []
-  _length: 0.13333334
-  EffectName: daoguang_green_1
-  pat: {fileID: 0}
-  PlayableSpeed: 1
-  localeftPostion: {x: -0.148, y: 0.648, z: -0.049}
-  localRotation: {x: 0.32798165, y: -0.000000014336459, z: 0.9446841, w: -0.00000004129348}
-  localScale: {x: 0.3, y: 0.3, z: 0.3}
---- !u!114 &1313993258869545018
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3450132935525475907}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 483d42241718b7547b50464f7294571f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  serializationData:
-    SerializedFormat: 2
-    SerializedBytes: 
-    ReferencedUnityObjects: []
-    SerializedBytesString: 
-    Prefab: {fileID: 0}
-    PrefabModificationsReferencedUnityObjects: []
-    PrefabModifications: []
-    SerializationNodes: []
-  _startTime: 0.78333336
-  _animationData:
-    _animatedParameters: []
-  _length: 0.13333334
-  EffectName: daoguang_green_1
-  pat: {fileID: 0}
-  PlayableSpeed: 1
-  localeftPostion: {x: -0.148, y: 0.648, z: -0.049}
-  localRotation: {x: 0.32798165, y: -0.000000014336459, z: 0.9446841, w: -0.00000004129348}
-  localScale: {x: 0.3, y: 0.3, z: 0.3}
---- !u!114 &3883839683604185149
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3450132935525475907}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 483d42241718b7547b50464f7294571f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  serializationData:
-    SerializedFormat: 2
-    SerializedBytes: 
-    ReferencedUnityObjects: []
-    SerializedBytesString: 
-    Prefab: {fileID: 0}
-    PrefabModificationsReferencedUnityObjects: []
-    PrefabModifications: []
-    SerializationNodes: []
-  _startTime: 0.9166667
-  _animationData:
-    _animatedParameters: []
-  _length: 0.13333334
-  EffectName: daoguang_green_1
-  pat: {fileID: 0}
-  PlayableSpeed: 1
-  localeftPostion: {x: -0.148, y: 0.648, z: -0.049}
-  localRotation: {x: 0.32798165, y: -0.000000014336459, z: 0.9446841, w: -0.00000004129348}
-  localScale: {x: 0.3, y: 0.3, z: 0.3}
---- !u!114 &1363362059090515070
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3450132935525475907}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 483d42241718b7547b50464f7294571f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  serializationData:
-    SerializedFormat: 2
-    SerializedBytes: 
-    ReferencedUnityObjects: []
-    SerializedBytesString: 
-    Prefab: {fileID: 0}
-    PrefabModificationsReferencedUnityObjects: []
-    PrefabModifications: []
-    SerializationNodes: []
-  _startTime: 1.0500001
-  _animationData:
-    _animatedParameters: []
-  _length: 0.13333334
-  EffectName: daoguang_green_1
-  pat: {fileID: 0}
-  PlayableSpeed: 1
-  localeftPostion: {x: -0.148, y: 0.648, z: -0.049}
-  localRotation: {x: 0.32798165, y: -0.000000014336459, z: 0.9446841, w: -0.00000004129348}
-  localScale: {x: 0.3, y: 0.3, z: 0.3}
---- !u!114 &4930233411187548018
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3450132935525475907}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 483d42241718b7547b50464f7294571f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  serializationData:
-    SerializedFormat: 2
-    SerializedBytes: 
-    ReferencedUnityObjects: []
-    SerializedBytesString: 
-    Prefab: {fileID: 0}
-    PrefabModificationsReferencedUnityObjects: []
-    PrefabModifications: []
-    SerializationNodes: []
-  _startTime: 1.1833334
-  _animationData:
-    _animatedParameters: []
-  _length: 0.13333334
-  EffectName: daoguang_green_1
-  pat: {fileID: 0}
-  PlayableSpeed: 1
-  localeftPostion: {x: -0.148, y: 0.648, z: -0.049}
-  localRotation: {x: 0.32798165, y: -0.000000014336459, z: 0.9446841, w: -0.00000004129348}
-  localScale: {x: 0.3, y: 0.3, z: 0.3}
---- !u!114 &3650243891966280053
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3450132935525475907}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 483d42241718b7547b50464f7294571f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  serializationData:
-    SerializedFormat: 2
-    SerializedBytes: 
-    ReferencedUnityObjects: []
-    SerializedBytesString: 
-    Prefab: {fileID: 0}
-    PrefabModificationsReferencedUnityObjects: []
-    PrefabModifications: []
-    SerializationNodes: []
-  _startTime: 1.3166667
-  _animationData:
-    _animatedParameters: []
-  _length: 0.13333334
-  EffectName: daoguang_green_1
-  pat: {fileID: 0}
-  PlayableSpeed: 1
-  localeftPostion: {x: -0.148, y: 0.648, z: -0.049}
-  localRotation: {x: 0.32798165, y: -0.000000014336459, z: 0.9446841, w: -0.00000004129348}
-  localScale: {x: 0.3, y: 0.3, z: 0.3}
---- !u!114 &5038328675623356924
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3450132935525475907}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 483d42241718b7547b50464f7294571f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  serializationData:
-    SerializedFormat: 2
-    SerializedBytes: 
-    ReferencedUnityObjects: []
-    SerializedBytesString: 
-    Prefab: {fileID: 0}
-    PrefabModificationsReferencedUnityObjects: []
-    PrefabModifications: []
-    SerializationNodes: []
-  _startTime: 1.45
-  _animationData:
-    _animatedParameters: []
-  _length: 0.13333334
-  EffectName: daoguang_green_1
-  pat: {fileID: 0}
-  PlayableSpeed: 1
-  localeftPostion: {x: -0.148, y: 0.648, z: -0.049}
-  localRotation: {x: 0.32798165, y: -0.000000014336459, z: 0.9446841, w: -0.00000004129348}
-  localScale: {x: 0.3, y: 0.3, z: 0.3}
---- !u!114 &883497818845729601
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3450132935525475907}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 483d42241718b7547b50464f7294571f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  serializationData:
-    SerializedFormat: 2
-    SerializedBytes: 
-    ReferencedUnityObjects: []
-    SerializedBytesString: 
-    Prefab: {fileID: 0}
-    PrefabModificationsReferencedUnityObjects: []
-    PrefabModifications: []
-    SerializationNodes: []
-  _startTime: 1.5833334
-  _animationData:
-    _animatedParameters: []
-  _length: 0.13333334
-  EffectName: daoguang_green_1
-  pat: {fileID: 0}
-  PlayableSpeed: 1
-  localeftPostion: {x: -0.148, y: 0.648, z: -0.049}
-  localRotation: {x: 0.32798165, y: -0.000000014336459, z: 0.9446841, w: -0.00000004129348}
-  localScale: {x: 0.3, y: 0.3, z: 0.3}
---- !u!114 &5529178601837545702
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3450132935525475907}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 483d42241718b7547b50464f7294571f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  serializationData:
-    SerializedFormat: 2
-    SerializedBytes: 
-    ReferencedUnityObjects: []
-    SerializedBytesString: 
-    Prefab: {fileID: 0}
-    PrefabModificationsReferencedUnityObjects: []
-    PrefabModifications: []
-    SerializationNodes: []
-  _startTime: 1.7166667
-  _animationData:
-    _animatedParameters: []
-  _length: 0.1500001
-  EffectName: daoguang_green_1
-  pat: {fileID: 0}
-  PlayableSpeed: 1
-  localeftPostion: {x: -0.148, y: 0.648, z: -0.049}
-  localRotation: {x: 0.32798165, y: -0.000000014336459, z: 0.9446841, w: -0.00000004129348}
-  localScale: {x: 0.3, y: 0.3, z: 0.3}
---- !u!114 &2624298745231705562
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3450132935525475907}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 483d42241718b7547b50464f7294571f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  serializationData:
-    SerializedFormat: 2
-    SerializedBytes: 
-    ReferencedUnityObjects: []
-    SerializedBytesString: 
-    Prefab: {fileID: 0}
-    PrefabModificationsReferencedUnityObjects: []
-    PrefabModifications: []
-    SerializationNodes: []
-  _startTime: 1.8666668
-  _animationData:
-    _animatedParameters: []
-  _length: 0.13333334
-  EffectName: daoguang_green_1
-  pat: {fileID: 0}
-  PlayableSpeed: 1
-  localeftPostion: {x: -0.148, y: 0.648, z: -0.049}
-  localRotation: {x: 0.32798165, y: -0.000000014336459, z: 0.9446841, w: -0.00000004129348}
-  localScale: {x: 0.3, y: 0.3, z: 0.3}
---- !u!114 &7968171802124101573
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3450132935525475907}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 483d42241718b7547b50464f7294571f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  serializationData:
-    SerializedFormat: 2
-    SerializedBytes: 
-    ReferencedUnityObjects: []
-    SerializedBytesString: 
-    Prefab: {fileID: 0}
-    PrefabModificationsReferencedUnityObjects: []
-    PrefabModifications: []
-    SerializationNodes: []
-  _startTime: 2.0000002
-  _animationData:
-    _animatedParameters: []
-  _length: 0.16666651
-  EffectName: daoguang_green_1
-  pat: {fileID: 0}
-  PlayableSpeed: 1
-  localeftPostion: {x: -0.148, y: 0.648, z: -0.049}
-  localRotation: {x: 0.32798165, y: -0.000000014336459, z: 0.9446841, w: -0.00000004129348}
-  localScale: {x: 0.3, y: 0.3, z: 0.3}
---- !u!114 &1296551660943095277
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3450132935525475907}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 483d42241718b7547b50464f7294571f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  serializationData:
-    SerializedFormat: 2
-    SerializedBytes: 
-    ReferencedUnityObjects: []
-    SerializedBytesString: 
-    Prefab: {fileID: 0}
-    PrefabModificationsReferencedUnityObjects: []
-    PrefabModifications: []
-    SerializationNodes: []
-  _startTime: 2.1666667
-  _animationData:
-    _animatedParameters: []
-  _length: 0.13333334
-  EffectName: daoguang_green_1
-  pat: {fileID: 0}
-  PlayableSpeed: 1
-  localeftPostion: {x: -0.148, y: 0.648, z: -0.049}
-  localRotation: {x: 0.32798165, y: -0.000000014336459, z: 0.9446841, w: -0.00000004129348}
-  localScale: {x: 0.3, y: 0.3, z: 0.3}
---- !u!114 &8375513195471574957
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3450132935525475907}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 483d42241718b7547b50464f7294571f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  serializationData:
-    SerializedFormat: 2
-    SerializedBytes: 
-    ReferencedUnityObjects: []
-    SerializedBytesString: 
-    Prefab: {fileID: 0}
-    PrefabModificationsReferencedUnityObjects: []
-    PrefabModifications: []
-    SerializationNodes: []
-  _startTime: 2.3000002
-  _animationData:
-    _animatedParameters: []
-  _length: 0.13333334
-  EffectName: daoguang_green_1
-  pat: {fileID: 0}
-  PlayableSpeed: 1
-  localeftPostion: {x: -0.148, y: 0.648, z: -0.049}
-  localRotation: {x: 0.32798165, y: -0.000000014336459, z: 0.9446841, w: -0.00000004129348}
-  localScale: {x: 0.3, y: 0.3, z: 0.3}
---- !u!114 &6378634927310924683
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3450132935525475907}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 483d42241718b7547b50464f7294571f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  serializationData:
-    SerializedFormat: 2
-    SerializedBytes: 
-    ReferencedUnityObjects: []
-    SerializedBytesString: 
-    Prefab: {fileID: 0}
-    PrefabModificationsReferencedUnityObjects: []
-    PrefabModifications: []
-    SerializationNodes: []
-  _startTime: 2.4333336
-  _animationData:
-    _animatedParameters: []
-  _length: 0.13333334
-  EffectName: daoguang_green_1
-  pat: {fileID: 0}
-  PlayableSpeed: 1
-  localeftPostion: {x: -0.148, y: 0.648, z: -0.049}
-  localRotation: {x: 0.32798165, y: -0.000000014336459, z: 0.9446841, w: -0.00000004129348}
-  localScale: {x: 0.3, y: 0.3, z: 0.3}
---- !u!114 &7544342942038262315
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3450132935525475907}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 483d42241718b7547b50464f7294571f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  serializationData:
-    SerializedFormat: 2
-    SerializedBytes: 
-    ReferencedUnityObjects: []
-    SerializedBytesString: 
-    Prefab: {fileID: 0}
-    PrefabModificationsReferencedUnityObjects: []
-    PrefabModifications: []
-    SerializationNodes: []
-  _startTime: 2.566667
-  _animationData:
-    _animatedParameters: []
-  _length: 0.13333334
-  EffectName: daoguang_green_1
-  pat: {fileID: 0}
-  PlayableSpeed: 1
-  localeftPostion: {x: -0.148, y: 0.648, z: -0.049}
-  localRotation: {x: 0.32798165, y: -0.000000014336459, z: 0.9446841, w: -0.00000004129348}
-  localScale: {x: 0.3, y: 0.3, z: 0.3}
---- !u!114 &5776316029920651630
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3450132935525475907}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 483d42241718b7547b50464f7294571f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  serializationData:
-    SerializedFormat: 2
-    SerializedBytes: 
-    ReferencedUnityObjects: []
-    SerializedBytesString: 
-    Prefab: {fileID: 0}
-    PrefabModificationsReferencedUnityObjects: []
-    PrefabModifications: []
-    SerializationNodes: []
-  _startTime: 2.7000005
-  _animationData:
-    _animatedParameters: []
-  _length: 0.116666555
-  EffectName: daoguang_green_1
-  pat: {fileID: 0}
-  PlayableSpeed: 1
-  localeftPostion: {x: -0.148, y: 0.648, z: -0.049}
-  localRotation: {x: 0.32798165, y: -0.000000014336459, z: 0.9446841, w: -0.00000004129348}
-  localScale: {x: 0.3, y: 0.3, z: 0.3}
---- !u!114 &5657252447753511169
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3450132935525475907}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 483d42241718b7547b50464f7294571f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  serializationData:
-    SerializedFormat: 2
-    SerializedBytes: 
-    ReferencedUnityObjects: []
-    SerializedBytesString: 
-    Prefab: {fileID: 0}
-    PrefabModificationsReferencedUnityObjects: []
-    PrefabModifications: []
-    SerializationNodes: []
-  _startTime: 2.816667
-  _animationData:
-    _animatedParameters: []
-  _length: 0.13333334
-  EffectName: daoguang_green_1
-  pat: {fileID: 0}
-  PlayableSpeed: 1
-  localeftPostion: {x: -0.148, y: 0.648, z: -0.049}
-  localRotation: {x: 0.32798165, y: -0.000000014336459, z: 0.9446841, w: -0.00000004129348}
-  localScale: {x: 0.3, y: 0.3, z: 0.3}
---- !u!114 &2701414254142169067
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3450132935525475907}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 483d42241718b7547b50464f7294571f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  serializationData:
-    SerializedFormat: 2
-    SerializedBytes: 
-    ReferencedUnityObjects: []
-    SerializedBytesString: 
-    Prefab: {fileID: 0}
-    PrefabModificationsReferencedUnityObjects: []
-    PrefabModifications: []
-    SerializationNodes: []
-  _startTime: 2.9500005
-  _animationData:
-    _animatedParameters: []
-  _length: 0.13333334
-  EffectName: daoguang_green_1
-  pat: {fileID: 0}
-  PlayableSpeed: 1
-  localeftPostion: {x: -0.148, y: 0.648, z: -0.049}
-  localRotation: {x: 0.32798165, y: -0.000000014336459, z: 0.9446841, w: -0.00000004129348}
-  localScale: {x: 0.3, y: 0.3, z: 0.3}
---- !u!114 &5459452882057787816
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3450132935525475907}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 483d42241718b7547b50464f7294571f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  serializationData:
-    SerializedFormat: 2
-    SerializedBytes: 
-    ReferencedUnityObjects: []
-    SerializedBytesString: 
-    Prefab: {fileID: 0}
-    PrefabModificationsReferencedUnityObjects: []
-    PrefabModifications: []
-    SerializationNodes: []
-  _startTime: 3.083334
-  _animationData:
-    _animatedParameters: []
-  _length: 0.13333334
-  EffectName: daoguang_green_1
-  pat: {fileID: 0}
-  PlayableSpeed: 1
-  localeftPostion: {x: -0.148, y: 0.648, z: -0.049}
-  localRotation: {x: 0.32798165, y: -0.000000014336459, z: 0.9446841, w: -0.00000004129348}
-  localScale: {x: 0.3, y: 0.3, z: 0.3}
---- !u!114 &5220826984851503577
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3450132935525475907}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 483d42241718b7547b50464f7294571f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  serializationData:
-    SerializedFormat: 2
-    SerializedBytes: 
-    ReferencedUnityObjects: []
-    SerializedBytesString: 
-    Prefab: {fileID: 0}
-    PrefabModificationsReferencedUnityObjects: []
-    PrefabModifications: []
-    SerializationNodes: []
-  _startTime: 3.2166674
-  _animationData:
-    _animatedParameters: []
-  _length: 0.13333334
-  EffectName: daoguang_green_1
-  pat: {fileID: 0}
-  PlayableSpeed: 1
-  localeftPostion: {x: -0.148, y: 0.648, z: -0.049}
-  localRotation: {x: 0.32798165, y: -0.000000014336459, z: 0.9446841, w: -0.00000004129348}
-  localScale: {x: 0.3, y: 0.3, z: 0.3}
---- !u!114 &2068796573579291010
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3450132935525475907}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 483d42241718b7547b50464f7294571f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  serializationData:
-    SerializedFormat: 2
-    SerializedBytes: 
-    ReferencedUnityObjects: []
-    SerializedBytesString: 
-    Prefab: {fileID: 0}
-    PrefabModificationsReferencedUnityObjects: []
-    PrefabModifications: []
-    SerializationNodes: []
-  _startTime: 3.3500009
-  _animationData:
-    _animatedParameters: []
-  _length: 0.13333334
-  EffectName: daoguang_green_1
-  pat: {fileID: 0}
-  PlayableSpeed: 1
-  localeftPostion: {x: -0.148, y: 0.648, z: -0.049}
-  localRotation: {x: 0.32798165, y: -0.000000014336459, z: 0.9446841, w: -0.00000004129348}
-  localScale: {x: 0.3, y: 0.3, z: 0.3}
---- !u!114 &4103436960526923482
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3450132935525475907}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 483d42241718b7547b50464f7294571f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  serializationData:
-    SerializedFormat: 2
-    SerializedBytes: 
-    ReferencedUnityObjects: []
-    SerializedBytesString: 
-    Prefab: {fileID: 0}
-    PrefabModificationsReferencedUnityObjects: []
-    PrefabModifications: []
-    SerializationNodes: []
-  _startTime: 3.4833343
-  _animationData:
-    _animatedParameters: []
-  _length: 0.13333334
-  EffectName: daoguang_green_1
-  pat: {fileID: 0}
-  PlayableSpeed: 1
-  localeftPostion: {x: -0.148, y: 0.648, z: -0.049}
-  localRotation: {x: 0.32798165, y: -0.000000014336459, z: 0.9446841, w: -0.00000004129348}
-  localScale: {x: 0.3, y: 0.3, z: 0.3}
---- !u!114 &347224042204913228
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3450132935525475907}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 483d42241718b7547b50464f7294571f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  serializationData:
-    SerializedFormat: 2
-    SerializedBytes: 
-    ReferencedUnityObjects: []
-    SerializedBytesString: 
-    Prefab: {fileID: 0}
-    PrefabModificationsReferencedUnityObjects: []
-    PrefabModifications: []
-    SerializationNodes: []
-  _startTime: 3.6166677
-  _animationData:
-    _animatedParameters: []
-  _length: 0.16666675
-  EffectName: daoguang_green_1
-  pat: {fileID: 0}
-  PlayableSpeed: 1
-  localeftPostion: {x: -0.148, y: 0.648, z: -0.049}
-  localRotation: {x: 0.32798165, y: -0.000000014336459, z: 0.9446841, w: -0.00000004129348}
-  localScale: {x: 0.3, y: 0.3, z: 0.3}
---- !u!114 &1724928089987302519
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3450132935525475907}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 483d42241718b7547b50464f7294571f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  serializationData:
-    SerializedFormat: 2
-    SerializedBytes: 
-    ReferencedUnityObjects: []
-    SerializedBytesString: 
-    Prefab: {fileID: 0}
-    PrefabModificationsReferencedUnityObjects: []
-    PrefabModifications: []
-    SerializationNodes: []
-  _startTime: 3.7833345
-  _animationData:
-    _animatedParameters: []
-  _length: 0.2166655
-  EffectName: daoguang_green_1
-  pat: {fileID: 0}
-  PlayableSpeed: 1
-  localeftPostion: {x: -0.148, y: 0.648, z: -0.049}
-  localRotation: {x: 0.32798165, y: -0.000000014336459, z: 0.9446841, w: -0.00000004129348}
-  localScale: {x: 0.3, y: 0.3, z: 0.3}
+  _length: 0.28333336
+  ColliderName: 
+  col: {fileID: 0}
+  localeftPostion: {x: 0, y: 0, z: 0}
+  localRotation: {x: 0, y: 0, z: 0, w: 0}
+  localScale: {x: 0, y: 0, z: 0}
+  boundSize: {x: 0, y: 0, z: 0}
+  boundCenter: {x: 0, y: 0, z: 0}
 --- !u!1 &5283733973731255988
 GameObject:
   m_ObjectHideFlags: 0
@@ -3180,3 +1371,86 @@ Transform:
   m_Father: {fileID: 7026954199551462257}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &7315056354201300008
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8183742346437641864}
+  - component: {fileID: 4834773990415758771}
+  - component: {fileID: 2658928508496079047}
+  m_Layer: 0
+  m_Name: "\u7279\u6548\u8F68\u9053"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8183742346437641864
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7315056354201300008}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1578699025862464819}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4834773990415758771
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7315056354201300008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7eca0a5576517cb4aa0b9d28161de00f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _name: "\u7279\u6548\u8F68\u9053"
+  _color: {r: 1, g: 1, b: 1, a: 1}
+  _active: 1
+  _isLocked: 0
+  _actionClips:
+  - {fileID: 2658928508496079047}
+  _customHeight: 300
+  _icon: {fileID: 0}
+--- !u!114 &2658928508496079047
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7315056354201300008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 483d42241718b7547b50464f7294571f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  _startTime: 0.5
+  _animationData:
+    _animatedParameters: []
+  _length: 0.28333336
+  EffectName: 
+  pat: {fileID: 0}
+  PlayableSpeed: 1
+  localeftPostion: {x: 0, y: 0, z: 0}
+  localRotation: {x: 0, y: 0, z: 0, w: 0}
+  localScale: {x: 0, y: 0, z: 0}
