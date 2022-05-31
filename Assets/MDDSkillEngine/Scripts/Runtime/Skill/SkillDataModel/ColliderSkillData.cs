@@ -20,6 +20,20 @@ namespace MDDSkillEngine
 
         public Vector3 boundCenter;
 
+        public string ColliderName;
+
+        public float Speed;
+
+        public string AddBuffName;
+
+        public int Effectid;
+
+        public float Force;
+
+        public float BuffDuration;
+
+
+
         public override void OnInit(ActionClip data)
         {
             base.OnInit(data);
@@ -33,13 +47,18 @@ namespace MDDSkillEngine
             DataType = SkillDataType.Collider;
 
             ResouceName = instanceCollider.ColliderName;
-
             localeftPostion = instanceCollider.localeftPostion;
             localRotation = instanceCollider.localRotation;
             localScale = instanceCollider.localScale;
             boundSize = instanceCollider.boundSize;                
             boundCenter = instanceCollider.boundCenter;
             ResouceName = instanceCollider.ColliderName;
+            ColliderName = instanceCollider.ColliderName;
+            Speed = instanceCollider.Speed;
+            AddBuffName = instanceCollider.AddBuffName;
+            Effectid = instanceCollider.EffectID;
+            Force = instanceCollider.duration;
+            BuffDuration = instanceCollider.duration;
         }
     }
 }

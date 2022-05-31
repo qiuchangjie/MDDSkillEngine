@@ -10,7 +10,7 @@ namespace MDDSkillEngine
         ColliderSkillData skillData;
 
 
-        public override void Init(SkillDataBase data, Entity actor,SkillTimeline skillTimeline)
+        public override void Init(SkillDataBase data, Entity actor, SkillTimeline skillTimeline)
         {
             base.Init(data, actor, skillTimeline);
             skillData = data as ColliderSkillData;
@@ -20,38 +20,38 @@ namespace MDDSkillEngine
 
         public override void Enter()
         {
-            //skillTimeline.SetStateCantStop(true);
 
-            //ISkillSystem skillSystem = Game.Skill.GetSkillSystem(actor.Id);
-            //skillSystem.SetSkillReleaseResultType(SkillReleaseResultType.SUCCSE);
-
-            int colid = Game.Entity.GenerateSerialId();
-
-            Game.Entity.ShowCollider(new ColliderData(colid, 20001, actor)
+            if (skillData.Speed == 0)
             {
-                localRotation = skillData.localRotation,
-                localScale = skillData.localScale,
-                localeftPostion = skillData.localeftPostion,
-                boundCenter = skillData.boundCenter,
-                boundSize = skillData.boundSize,
-                Duration = this.GetLength()
-            });
-            //col = Game.Entity.GetEntity(id).Logic as Entity;
-
-            //Game.Entity.AttachEntity(col.Id, actor.Id);
-
-            //BoxCollider Box = col.GetComponent<BoxCollider>();
-            //Box.size = skillData.boundSize;
-            //Box.center = skillData.boundCenter;
-
-            //col.CachedTransform.localRotation = skillData.localRotation;
-            //col.CachedTransform.localPosition = skillData.localeftPostion;
-            //col.CachedTransform.localScale = skillData.localScale;
-
-
-
+                Game.Entity.ShowCollider(new ColliderData(Game.Entity.GenerateSerialId(), 20001, actor)
+                {
+                    localRotation = skillData.localRotation,
+                    localScale = skillData.localScale,
+                    localeftPostion = skillData.localeftPostion,
+                    boundCenter = skillData.boundCenter,
+                    boundSize = skillData.boundSize,
+                    Duration = this.GetLength()
+                });
+            }
+            else
+            {
+                Game.Entity.ShowCollider(typeof(NormalMoveCollider), skillData.ColliderName, new MoveColliderData(Game.Entity.GenerateSerialId(), 0, actor)
+                {
+                    Speed = skillData.Speed,
+                    HitBuffDuration = skillData.BuffDuration,
+                    HitForce = skillData.Force,
+                    buffName = skillData.AddBuffName,
+                    EffectID = skillData.Effectid,
+                    localRotation = skillData.localRotation,
+                    localScale = skillData.localScale,
+                    localeftPostion = skillData.localeftPostion,
+                    boundCenter = skillData.boundCenter,
+                    boundSize = skillData.boundSize,
+                    Duration = this.GetLength()
+                });
+            }
             SkillTimeline<Entity> skillTimeline1 = skillTimeline as SkillTimeline<Entity>;
-            Log.Info("{0}进入动画clip name：{1} currenttime:{2}", LogConst.SKillTimeline, skillData.ResouceName, skillTimeline1.currentTime);
+            Log.Info("{0}进入动画clip na1111111111111111me：{1} currenttime:{2}", LogConst.SKillTimeline, skillData.ResouceName, skillTimeline1.currentTime);
         }
 
         public override void Update(float currentTime, float previousTime)

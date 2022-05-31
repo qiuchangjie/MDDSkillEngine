@@ -38,12 +38,18 @@ namespace MDDSkillEngine
 
             effectid = Game.Entity.GenerateSerialId();
 
-            Game.Entity.ShowEffect(new EffectData(effectid, 70007)
+            Game.Entity.AttachEntity(Id,data.Owner.Id);
+            CachedTransform.localRotation = data.localRotation;
+            CachedTransform.localPosition = data.localeftPostion;
+            CachedTransform.localScale = data.localScale;
+
+
+            Game.Entity.ShowEffect(new EffectData(effectid, data.EffectID)
             {
                 Owner = this,
-                Position = CachedTransform.position,
-                Rotation = CachedTransform.rotation,
-                LocalScale = new Vector3(0.2f, 0.2f, 0.2f),
+                localeftPostion = CachedTransform.localPosition,
+                localRotation = CachedTransform.localRotation,
+                localScale = CachedTransform.localScale,
                 KeepTime = 999
 
             });

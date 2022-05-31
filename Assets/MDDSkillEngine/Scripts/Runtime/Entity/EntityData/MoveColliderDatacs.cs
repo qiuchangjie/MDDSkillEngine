@@ -17,12 +17,18 @@ namespace MDDSkillEngine
         /// <summary>
         /// 移动方向
         /// </summary>
-        public Vector3 Dir;
+        public Vector3 Dir
+        {
+            get
+            {
+                return Owner.transform.forward;
+            }
+        }
 
 
-        public float HitBuffDuration;
+        public float HitBuffDuration = 0;
 
-        public float HitForce; 
+        public float HitForce = 0; 
 
         public MoveColliderData(int entityId, int typeId, Entity owner) : base(entityId, typeId, owner)
         {

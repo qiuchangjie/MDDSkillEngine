@@ -52,6 +52,7 @@ MonoBehaviour:
   _activeLayers:
     serializedVersion: 2
     m_Bits: 4294967295
+  _targetType: 0
   groups:
   - {fileID: 7232431185629851885}
   _length: 0.8333334
@@ -602,6 +603,11 @@ MonoBehaviour:
     _animatedParameters: []
   _length: 0.45000002
   ColliderName: NormalBoxCollider
+  Speed: 0
+  AddBuffName: 
+  EffectID: 0
+  force: 0
+  duration: 0
   col: {fileID: 0}
   localeftPostion: {x: -0.098, y: 0.51, z: 0.437}
   localRotation: {x: 0, y: 0, z: 0, w: 1}

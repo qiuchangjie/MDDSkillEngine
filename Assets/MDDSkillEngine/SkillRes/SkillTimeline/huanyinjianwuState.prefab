@@ -56,8 +56,8 @@ MonoBehaviour:
   groups:
   - {fileID: 7232431185629851885}
   _length: 4
-  _viewTimeMin: -1.0570828
-  _viewTimeMax: 5.564831
+  _viewTimeMin: -0.26698992
+  _viewTimeMax: 4.3998227
 --- !u!1 &2882366116594116339
 GameObject:
   m_ObjectHideFlags: 0
@@ -1333,17 +1333,17 @@ MonoBehaviour:
   _startTime: 0.5
   _animationData:
     _animatedParameters: []
-  _length: 0.28333336
+  _length: 2.5499992
   ColliderName: NormalMoveCollider
-  Speed: 0
+  Speed: 5
   AddBuffName: PushHit
-  EffectID: 0
-  force: 0
-  duration: 0
+  EffectID: 70008
+  force: 2
+  duration: 3
   col: {fileID: 0}
   localeftPostion: {x: 0, y: 0, z: 0}
   localRotation: {x: 0, y: 0, z: 0, w: 0}
-  localScale: {x: 0, y: 0, z: 0}
+  localScale: {x: 1, y: 1, z: 1}
   boundSize: {x: 0, y: 0, z: 0}
   boundCenter: {x: 0, y: 0, z: 0}
 --- !u!1 &5283733973731255988
@@ -1387,7 +1387,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8183742346437641864}
   - component: {fileID: 4834773990415758771}
-  - component: {fileID: 2658928508496079047}
   m_Layer: 0
   m_Name: "\u7279\u6548\u8F68\u9053"
   m_TagString: Untagged
@@ -1425,38 +1424,6 @@ MonoBehaviour:
   _color: {r: 1, g: 1, b: 1, a: 1}
   _active: 1
   _isLocked: 0
-  _actionClips:
-  - {fileID: 2658928508496079047}
+  _actionClips: []
   _customHeight: 300
   _icon: {fileID: 0}
---- !u!114 &2658928508496079047
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7315056354201300008}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 483d42241718b7547b50464f7294571f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  serializationData:
-    SerializedFormat: 2
-    SerializedBytes: 
-    ReferencedUnityObjects: []
-    SerializedBytesString: 
-    Prefab: {fileID: 0}
-    PrefabModificationsReferencedUnityObjects: []
-    PrefabModifications: []
-    SerializationNodes: []
-  _startTime: 0.5
-  _animationData:
-    _animatedParameters: []
-  _length: 0.28333336
-  EffectName: 
-  pat: {fileID: 0}
-  PlayableSpeed: 1
-  localeftPostion: {x: 0, y: 0, z: 0}
-  localRotation: {x: 0, y: 0, z: 0, w: 0}
-  localScale: {x: 0, y: 0, z: 0}
