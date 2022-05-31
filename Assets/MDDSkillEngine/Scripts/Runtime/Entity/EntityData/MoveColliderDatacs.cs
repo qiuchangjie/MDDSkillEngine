@@ -19,6 +19,11 @@ namespace MDDSkillEngine
         /// </summary>
         public Vector3 Dir;
 
+
+        public float HitBuffDuration;
+
+        public float HitForce; 
+
         public MoveColliderData(int entityId, int typeId, Entity owner) : base(entityId, typeId, owner)
         {
 

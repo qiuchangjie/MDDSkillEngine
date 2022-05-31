@@ -13,8 +13,8 @@ namespace MDDSkillEngine
     public class MDDSkillDataGenerator : EditorWindow
     {
         /// <summary>
-        /// 处理技能数据函数
-        /// 用来导出存在slate中的timeline数据到 skilldata中
+        /// 处理技能数据
+        /// 导出slate中的timeline数据到 skilldata中
         /// </summary>
         [MenuItem("MDDSkillEngine/GeneratorSkillData")]
         public static void GeneratorSkillData()
@@ -29,6 +29,7 @@ namespace MDDSkillEngine
                 DirectoryInfo dirInfo = new DirectoryInfo(fullPath);
                 FileInfo[] files = dirInfo.GetFiles("*", SearchOption.AllDirectories); //包括子目录
                 Debug.Log(files.Length);
+
                 for (int i = 0; i < files.Length; i++)
                 {
                     if (files[i].Name.EndsWith(".prefab"))

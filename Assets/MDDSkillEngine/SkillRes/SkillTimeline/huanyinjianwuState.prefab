@@ -56,8 +56,8 @@ MonoBehaviour:
   groups:
   - {fileID: 7232431185629851885}
   _length: 4
-  _viewTimeMin: -1.592332
-  _viewTimeMax: 3.852148
+  _viewTimeMin: -1.0570828
+  _viewTimeMax: 5.564831
 --- !u!1 &2882366116594116339
 GameObject:
   m_ObjectHideFlags: 0
@@ -710,7 +710,7 @@ MonoBehaviour:
         m_PostInfinity: 2
         m_RotationOrder: 4
       _scriptExpression: 
-  _length: 0.45000002
+  _length: 0.39999998
   _blendIn: 0.0333333
   _blendOut: 0.05000007
   animationClip: {fileID: 7400000, guid: 3e2cf120e49d5394c9178923b58fa920, type: 3}
@@ -930,7 +930,7 @@ MonoBehaviour:
   startingTransformsMode: 0
   transformSpace: 0
   startingPosition: {x: 0, y: 0, z: 0}
-  startingRotation: {x: 0, y: 0, z: 0}
+  startingRotation: {x: -0, y: 0, z: 0}
   steerLocalRotation: {x: 0, y: 0}
 --- !u!114 &3520590441369547337
 MonoBehaviour:
@@ -982,7 +982,7 @@ MonoBehaviour:
   startingTransformsMode: 0
   transformSpace: 0
   startingPosition: {x: 0, y: 0, z: 0}
-  startingRotation: {x: 0, y: 0, z: 0}
+  startingRotation: {x: -0, y: 0, z: 0}
   steerLocalRotation: {x: 0, y: 0}
 --- !u!114 &6306829215831848600
 MonoBehaviour:
@@ -1034,7 +1034,7 @@ MonoBehaviour:
   startingTransformsMode: 0
   transformSpace: 0
   startingPosition: {x: 0, y: 0, z: 0}
-  startingRotation: {x: 0, y: 0, z: 0}
+  startingRotation: {x: -0, y: 0, z: 0}
   steerLocalRotation: {x: 0, y: 0}
 --- !u!114 &1187859510971272853
 MonoBehaviour:
@@ -1086,7 +1086,7 @@ MonoBehaviour:
   startingTransformsMode: 0
   transformSpace: 0
   startingPosition: {x: 0, y: 0, z: 0}
-  startingRotation: {x: 0, y: 0, z: 0}
+  startingRotation: {x: -0, y: 0, z: 0}
   steerLocalRotation: {x: 0, y: 0}
 --- !u!114 &4673270961654631968
 MonoBehaviour:
@@ -1138,7 +1138,7 @@ MonoBehaviour:
   startingTransformsMode: 0
   transformSpace: 0
   startingPosition: {x: 0, y: 0, z: 0}
-  startingRotation: {x: 0, y: 0, z: 0}
+  startingRotation: {x: -0, y: 0, z: 0}
   steerLocalRotation: {x: 0, y: 0}
 --- !u!114 &8959291962669110991
 MonoBehaviour:
@@ -1178,7 +1178,7 @@ MonoBehaviour:
         m_PostInfinity: 2
         m_RotationOrder: 4
       _scriptExpression: 
-  _length: 0.43333337
+  _length: 0.21666574
   _blendIn: 0
   _blendOut: 0.100000024
   animationClip: {fileID: 7400000, guid: 8bafdcd44e3f81a49b836567ce6b6017, type: 3}
@@ -1190,7 +1190,7 @@ MonoBehaviour:
   startingTransformsMode: 0
   transformSpace: 0
   startingPosition: {x: 0, y: 0, z: 0}
-  startingRotation: {x: 0, y: 0, z: 0}
+  startingRotation: {x: -0, y: 0, z: 0}
   steerLocalRotation: {x: 0, y: 0}
 --- !u!1 &3434212522798387710
 GameObject:
@@ -1334,7 +1334,12 @@ MonoBehaviour:
   _animationData:
     _animatedParameters: []
   _length: 0.28333336
-  ColliderName: 
+  ColliderName: NormalMoveCollider
+  Speed: 0
+  AddBuffName: PushHit
+  EffectID: 0
+  force: 0
+  duration: 0
   col: {fileID: 0}
   localeftPostion: {x: 0, y: 0, z: 0}
   localRotation: {x: 0, y: 0, z: 0, w: 0}

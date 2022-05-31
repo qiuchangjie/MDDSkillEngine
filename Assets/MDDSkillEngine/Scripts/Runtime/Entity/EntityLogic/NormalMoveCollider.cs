@@ -43,11 +43,11 @@ namespace MDDSkillEngine
                 Owner = this,
                 Position = CachedTransform.position,
                 Rotation = CachedTransform.rotation,
-                LocalScale = new Vector3(0.2f,0.2f,0.2f),
+                LocalScale = new Vector3(0.2f, 0.2f, 0.2f),
                 KeepTime = 999
-                
+
             });
-                
+
 
             dir = data.Owner.CachedTransform.forward;
         }
@@ -79,10 +79,11 @@ namespace MDDSkillEngine
             base.OnHide(isShutdown, userData);
         }
 
-        private void MoveWithDirAndSpeed(Vector3 dir,float speed,float elapseSeconds)
+        private void MoveWithDirAndSpeed(Vector3 dir, float speed, float elapseSeconds)
         {
             transform.Translate(dir * speed * elapseSeconds);
         }
+
 
         private void OnTriggerEnter(Collider other)
         {
@@ -97,31 +98,11 @@ namespace MDDSkillEngine
 
             Vector3 hitPos = other.ClosestPoint(CachedTransform.position);
 
-            Game.Event.Fire(this, ColliderEnterEventArgs.Create(data.Owner, entity, hitPos));
-        }
-
-
-        private void OnTriggerStay(Collider other)
-        {
-            if (!canDamage)
-            {
-                return;
-            }
-
-            Log.Error("触发Stay碰撞");
-
-            Entity entity = other.gameObject.GetComponent<Entity>();
-
-            if (entity == null)
-            {
-                return;
-            }
-
-            Vector3 hitPos = other.ClosestPoint(CachedTransform.position);
-
-            Game.Event.Fire(this, ColliderEnterEventArgs.Create(data.Owner, entity, hitPos));
-
-            canDamage = false;
+            if (data.buffName == "")
+                Game.Buff.AddBuff(entity.Id.ToString(), "NormalHit", entity, data.Owner, HitData.Create(this, entity, hitPos, this.transform.forward));
+            else
+                Game.Buff.AddBuff(entity.Id.ToString(), data.buffName, entity, data.Owner, HitData.Create(this, entity, hitPos,
+                    this.transform.forward, data.HitBuffDuration, data.HitForce, data.EffectID));
         }
 
 
