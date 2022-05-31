@@ -34,15 +34,15 @@ namespace Slate.ActionClips
         [OnValueChanged("OnBuffChange")]
         public string AddBuffName;
 
-        [BoxGroup("碰撞体设置")]
+        [BoxGroup("hitbuff参数")]
         [ShowIf("_enabled1", 1)]
         public int EffectID;
 
-        [BoxGroup("碰撞体设置")]
+        [BoxGroup("hitbuff参数")]
         [ShowIf("_enabled1", 1)]
         public float force;
 
-        [BoxGroup("碰撞体设置")]
+        [BoxGroup("hitbuff参数")]
         [ShowIf("_enabled1", 1)]
         public float duration;
 
@@ -63,11 +63,14 @@ namespace Slate.ActionClips
         [OnValueChanged("OnSetColCenter")]
         public Vector3 boundCenter;
 
+        [OnValueChanged("OnPathChange")]
+        public Path path;
         
         private bool _enabled = false;
 
         private bool _enabled1 = false;
 
+        private bool _pathisnotnull = false;
 
         public override float length
         {
@@ -75,12 +78,35 @@ namespace Slate.ActionClips
             set { _length = value; }
         }
 
-       
+        [HideIf("_pathisnotnull")]
+        [Button("CreatePath")]
+        public void CreatePath()
+        {
+            if (path == null)
+            {               
+                path = BezierPath.Create(((Cutscene)root).transform);           
+            }
+        }
+
+        [Button("切换到对应的path")]
+        public void ChangeSelect()
+        {
+            Selection.activeGameObject = path.gameObject;
+        }
 
         //public override string info
         //{
         //    get { return string.Format("{0} Actor", activeState); }
         //}
+
+
+
+        protected override void OnDrawGizmosSelected()
+        {
+            base.OnDrawGizmosSelected();
+            OnBuffChange();
+            OnColliderChange();
+        }
 
         protected override void OnEnter()
         {
@@ -174,6 +200,19 @@ namespace Slate.ActionClips
 
 
 #if UNITY_EDITOR
+
+        private void OnPathChange()
+        {
+            if (path == null)
+            {
+                _pathisnotnull = false;
+            }
+            else
+            {
+                _pathisnotnull = true;
+            }
+        }
+
         private IEnumerable<string> GetBuffs()
         {
             if (NPBlackBoardEditorInstance.buffs.Count == 0)
@@ -203,6 +242,7 @@ namespace Slate.ActionClips
                 _enabled1 = false;
             }
         }
+
 
         private IEnumerable<string> GetColliders()
         {
