@@ -34,6 +34,11 @@ namespace MDDSkillEngine
             entityComponent.HideEntity(entity.Entity);
         }
 
+        public static Entity GetEntity(this EntityComponent entityComponent, int id)
+        {
+           return (Entity)entityComponent.GetEntity(id).Logic;
+        }
+
         public static void AttachEntity(this EntityComponent entityComponent, Entity entity, int ownerId, string parentTransformPath = null, object userData = null)
         {
             entityComponent.AttachEntity(entity.Entity, ownerId, parentTransformPath, userData);

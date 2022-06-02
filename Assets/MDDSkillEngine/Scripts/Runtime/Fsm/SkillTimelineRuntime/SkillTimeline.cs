@@ -238,7 +238,10 @@ namespace MDDSkillEngine
         }
 
         abstract public void Enter();
-        abstract public void Exit();
+        virtual public void Exit()
+        {
+            time = 0;
+        }
         virtual public void Update(float currentTime, float previousTime)
         {
             time += currentTime;

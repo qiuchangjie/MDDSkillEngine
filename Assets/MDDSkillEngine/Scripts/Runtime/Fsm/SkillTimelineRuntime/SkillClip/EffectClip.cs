@@ -8,7 +8,7 @@ namespace MDDSkillEngine
     public class EffectClip : SkillClip
     {
         EffectSkillData skillData;
-
+        int id;
 
         public override void Init(SkillDataBase data, Entity actor, SkillTimeline skillTimeline)
         {
@@ -20,7 +20,7 @@ namespace MDDSkillEngine
 
         public override void Enter()
         {
-            int id = Game.Entity.GenerateSerialId();
+            id = Game.Entity.GenerateSerialId();
 
             Game.Entity.ShowEffect(typeof(Effect),skillData.ResouceName,new EffectData(id, 70006)
             {
@@ -29,11 +29,11 @@ namespace MDDSkillEngine
                 localeftPostion=skillData.localeftPostion,
                 localRotation=skillData.localRotation,
                 localScale=skillData.localScale,
-                hasPath=skillData.hasPath,
-                bezierPath=skillData.bezierPath,
-                bezierPathLength=skillData.bezierPathLength,
-                bezierPathParentPosition=skillData.bezierPathParentPosition,
-                bezierPathParentRotation=skillData.bezierPathParentRotation,              
+                //hasPath=skillData.hasPath,
+                //bezierPath=skillData.bezierPath,
+                //bezierPathLength=skillData.bezierPathLength,
+                //bezierPathParentPosition=skillData.bezierPathParentPosition,
+                //bezierPathParentRotation=skillData.bezierPathParentRotation,              
             });
 
             //Entity effect = Game.Entity.GetEntity(id).Logic as Entity;
@@ -50,11 +50,20 @@ namespace MDDSkillEngine
         public override void Update(float currentTime, float previousTime)
         {
             base.Update(currentTime, previousTime);
+
+            if (skillData.hasPath)
+            {
+                if (Game.Entity.HasEntity(id))
+                {
+                   Entity entity = Game.Entity.GetGameEntity(id);
+                   entity.transform.position = AIUtility.GetPoint(currentTime/this.GetLength(), skillData.bezierPathLength, skillData.bezierPath);
+                }
+            }
         }
 
         public override void Exit()
         {
-
+            base.Exit();
         }
 
 
