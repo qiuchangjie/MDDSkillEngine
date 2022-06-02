@@ -3,6 +3,9 @@ using System.Collections;
 using MDDSkillEngine;
 using UnityEditor;
 using Sirenix.OdinInspector;
+using System.IO;
+using MDDGameFramework;
+using System.Collections.Generic;
 
 namespace Slate.ActionClips
 {
@@ -15,6 +18,7 @@ namespace Slate.ActionClips
         [HideInInspector]
         private float _length = 1f;
 
+        [ValueDropdown("GetEffects")]
         public string EffectName;
 
         public ParticleSystem pat;
@@ -31,6 +35,23 @@ namespace Slate.ActionClips
         [OnValueChanged("OnSetScale")]
         public Vector3 localScale;
 
+        public Path path;
+
+
+        [Button("CreatePath")]
+        public void CreatePath()
+        {
+            if (path == null)
+            {
+                path = BezierPath.Create(((Cutscene)root).transform);
+            }
+        }
+
+        [Button("切换到对应的path")]
+        public void ChangeSelect()
+        {
+            Selection.activeGameObject = path.gameObject;
+        }
 
 
         public override float length
@@ -50,7 +71,7 @@ namespace Slate.ActionClips
 
             if (pat == null)
             {
-                Object asset = UnityEditor.AssetDatabase.LoadAssetAtPath(AssetUtility.GetEntityAsset(EffectName), typeof(Object));
+                Object asset = UnityEditor.AssetDatabase.LoadAssetAtPath(AssetUtility.GetEntityAsset(EffectName, EntityType.Effect), typeof(Object));
                 GameObject obj = Instantiate(asset) as GameObject;
                 pat = obj.GetComponent<ParticleSystem>();
                 pat.useAutoRandomSeed = false;
@@ -61,7 +82,7 @@ namespace Slate.ActionClips
                 main.simulationSpeed = PlayableSpeed;
 
             }
-            
+
         }
 
         protected override void OnUpdate(float time, float previousTime)
@@ -70,11 +91,22 @@ namespace Slate.ActionClips
 
             //time *= PlayableSpeed;
 
-            if((time - previousTime)!=0)
+            if ((time - previousTime) != 0)
                 Debug.LogError(time - previousTime);
 
             if (pat != null)
-                pat.Simulate((time - previousTime)*PlayableSpeed, true,false);
+            {
+                if (path != null)
+                {
+                    var newPos = path.GetPointAt(time / length);
+                    pat.transform.position = newPos;
+                }
+          
+                pat.Simulate((time - previousTime) * PlayableSpeed, true, false);
+
+
+            }
+
 
             SceneView.RepaintAll();
         }
@@ -90,7 +122,7 @@ namespace Slate.ActionClips
 
         protected override void OnReverseEnter()
         {
-            
+
         }
 
         protected override void OnReverse()
@@ -124,11 +156,41 @@ namespace Slate.ActionClips
             Debug.LogError("change");
             if (pat != null)
             {
-                var main=pat.main;
+                var main = pat.main;
                 main.simulationSpeed = PlayableSpeed;
-              
+
             }
-               
+
         }
+
+
+#if UNITY_EDITOR
+        private IEnumerable<string> GetEffects()
+        {
+            if (NPBlackBoardEditorInstance.Effects.Count == 0)
+            {
+                string fullPath = Application.dataPath + "/MDDSkillEngine/Prefabs/Effect";
+                //获得指定路径下面的所有资源文件
+                if (Directory.Exists(fullPath))
+                {
+                    DirectoryInfo dirInfo = new DirectoryInfo(fullPath);
+                    System.IO.FileInfo[] files = dirInfo.GetFiles("*", SearchOption.AllDirectories); //包括子目录
+                    Debug.Log(files.Length);
+
+                    for (int i = 0; i < files.Length; i++)
+                    {
+                        if (files[i].Name.EndsWith(".prefab"))
+                        {
+                            NPBlackBoardEditorInstance.Effects.Add(files[i].Name.Remove(files[i].Name.LastIndexOf(".")));
+                        }
+
+                    }
+                }
+            }
+
+            return NPBlackBoardEditorInstance.Effects;
+        }
+
+#endif
     }
 }

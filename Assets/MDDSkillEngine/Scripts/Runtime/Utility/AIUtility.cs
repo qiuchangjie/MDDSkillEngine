@@ -13,7 +13,34 @@ namespace MDDSkillEngine
     /// </summary>
     public static class AIUtility
     {
-       
+
+        public static Vector3 GetPoint(float t, float length,params Vector3[] path)
+        {
+            if (t <= 0) return path[0];
+            if (t >= 1) return path[path.Length - 1];
+            var a = Vector3.zero;
+            var b = Vector3.zero;
+            var total = 0f;
+            var segmentDistance = 0f;
+            var pathLength = length;
+            for (var i = 0; i < path.Length - 1; i++)
+            {
+                segmentDistance = Vector3.Distance(path[i], path[i + 1]) / pathLength;
+                if (total + segmentDistance > t)
+                {
+                    a = path[i];
+                    b = path[i + 1];
+                    break;
+                }
+                else
+                {
+                    total += segmentDistance;
+                }
+            }
+            t -= total;
+            return Vector3.Lerp(a, b, t / segmentDistance);
+        }
+
         /// <summary>
         /// 获取实体间的距离。
         /// </summary>

@@ -490,6 +490,7 @@ MonoBehaviour:
   localScale: {x: 0, y: 0, z: 0}
   boundSize: {x: 0, y: 0, z: 0}
   boundCenter: {x: 0, y: 0, z: 0}
+  path: {fileID: 0}
 --- !u!1 &8088848725484461217
 GameObject:
   m_ObjectHideFlags: 0

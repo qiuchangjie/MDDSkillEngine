@@ -121,9 +121,7 @@ namespace Slate.ActionClips
                 obj.transform.localScale = localScale;
 
                 col.size = boundSize;
-                col.center = boundCenter;
-              
-
+                col.center = boundCenter;          
             }
 
         }
@@ -132,6 +130,15 @@ namespace Slate.ActionClips
         {
             base.OnUpdate(time, previousTime);
 
+            if (col!=null)
+            {
+                if (path != null)
+                {
+                    var newPos = path.GetPointAt(time / length);
+                    col.transform.position = newPos;
+                }
+              
+            }
 
 
             SceneView.RepaintAll();
@@ -267,7 +274,7 @@ namespace Slate.ActionClips
                 }                                      
             }
 
-            return NPBlackBoardEditorInstance.Collider; ;
+            return NPBlackBoardEditorInstance.Collider; 
         }
 
         private IEnumerable<string> GetEffect()

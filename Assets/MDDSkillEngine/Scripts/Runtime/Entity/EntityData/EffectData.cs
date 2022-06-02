@@ -19,6 +19,13 @@ namespace MDDSkillEngine
 
         public Vector3 localScale;
 
+
+        public bool hasPath;
+        public Vector3[] bezierPath;
+        public Vector3 bezierPathParentPosition;
+        public Quaternion bezierPathParentRotation;
+        public float bezierPathLength;
+
         public EffectData(int entityId, int typeId)
             : base(entityId, typeId)
         {

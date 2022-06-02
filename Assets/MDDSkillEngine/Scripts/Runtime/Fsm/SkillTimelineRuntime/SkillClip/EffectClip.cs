@@ -22,12 +22,18 @@ namespace MDDSkillEngine
         {
             int id = Game.Entity.GenerateSerialId();
 
-            Game.Entity.ShowEffect(new EffectData(id, 70006)
+            Game.Entity.ShowEffect(typeof(Effect),skillData.ResouceName,new EffectData(id, 70006)
             {
                 Owner = actor,
+                KeepTime = this.GetLength(),
                 localeftPostion=skillData.localeftPostion,
                 localRotation=skillData.localRotation,
                 localScale=skillData.localScale,
+                hasPath=skillData.hasPath,
+                bezierPath=skillData.bezierPath,
+                bezierPathLength=skillData.bezierPathLength,
+                bezierPathParentPosition=skillData.bezierPathParentPosition,
+                bezierPathParentRotation=skillData.bezierPathParentRotation,              
             });
 
             //Entity effect = Game.Entity.GetEntity(id).Logic as Entity;
@@ -44,7 +50,6 @@ namespace MDDSkillEngine
         public override void Update(float currentTime, float previousTime)
         {
             base.Update(currentTime, previousTime);
-
         }
 
         public override void Exit()

@@ -15,8 +15,16 @@ namespace MDDSkillEngine
 
         public Vector3 localScale;
 
+
+        public bool hasPath;
+        public Vector3[] bezierPath;
+        public Vector3 bezierPathParentPosition;
+        public Quaternion bezierPathParentRotation;
+        public float bezierPathLength;
+
         public override void OnInit(ActionClip data)
         {
+  
             base.OnInit(data);
             EffectInstance clip = data as EffectInstance;
             if (clip == null)
@@ -30,6 +38,16 @@ namespace MDDSkillEngine
             localeftPostion = clip.localeftPostion;
             localRotation = clip.localRotation;
             localScale = clip.localScale;
+
+            if (clip.path != null)
+            {
+                BezierPath path = clip.path as BezierPath;
+                hasPath = true;
+                bezierPath = path._sampledPathPoints;
+                bezierPathParentPosition = path.transform.localPosition;
+                bezierPathParentRotation = path.transform.localRotation;
+                bezierPathLength = path.length;
+            }
         }
     }
 }

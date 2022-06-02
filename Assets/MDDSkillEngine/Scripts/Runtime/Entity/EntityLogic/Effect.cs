@@ -48,10 +48,17 @@ namespace MDDSkillEngine
                 CachedTransform.position = m_EffectData.Owner.CachedTransform.position;
             }
 
+            if (m_EffectData.hasPath)
+            {
+                CachedTransform.position = AIUtility.GetPoint(m_ElapseSeconds,m_EffectData.bezierPathLength,m_EffectData.bezierPath);
+            }
+
             if (m_ElapseSeconds >= m_EffectData.KeepTime)
             {
                 Game.Entity.HideEntity(this);
             }
+
+
 
             
         }

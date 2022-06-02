@@ -89,6 +89,7 @@ MonoBehaviour:
   localScale: {x: 1, y: 1, z: 1}
   boundSize: {x: 1.2760684, y: 0.36364555, z: 0.9329854}
   boundCenter: {x: -0.041453242, y: -0.31817722, z: -0.033507288}
+  path: {fileID: 0}
 --- !u!1 &370857206421802877
 GameObject:
   m_ObjectHideFlags: 0
@@ -562,6 +563,7 @@ MonoBehaviour:
   localeftPostion: {x: -0.148, y: 0.648, z: -0.049}
   localRotation: {x: 0.32798165, y: -0.000000014336459, z: 0.9446841, w: -0.00000004129348}
   localScale: {x: 0.3, y: 0.3, z: 0.3}
+  path: {fileID: 0}
 --- !u!1 &5283733973731255988
 GameObject:
   m_ObjectHideFlags: 0

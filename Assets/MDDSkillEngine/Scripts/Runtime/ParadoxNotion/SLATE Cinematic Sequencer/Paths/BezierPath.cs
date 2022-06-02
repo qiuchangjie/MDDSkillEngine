@@ -19,7 +19,7 @@ namespace Slate
         [SerializeField]
         private List<BezierPoint> _points = new List<BezierPoint>();
 
-        private Vector3[] _sampledPathPoints;
+        public Vector3[] _sampledPathPoints;
         private float _length;
         private bool _closed;//not used right now
 

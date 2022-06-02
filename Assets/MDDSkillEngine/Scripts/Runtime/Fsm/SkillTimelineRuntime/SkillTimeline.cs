@@ -225,6 +225,8 @@ namespace MDDSkillEngine
 
         public float duration;
 
+        public float time;
+
         public float startTime;
 
         public float endTime;
@@ -239,7 +241,7 @@ namespace MDDSkillEngine
         abstract public void Exit();
         virtual public void Update(float currentTime, float previousTime)
         {
-
+            time += currentTime;
         }
     }
 
