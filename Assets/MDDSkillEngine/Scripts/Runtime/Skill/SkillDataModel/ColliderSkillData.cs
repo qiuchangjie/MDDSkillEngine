@@ -26,13 +26,18 @@ namespace MDDSkillEngine
 
         public string AddBuffName;
 
-        public int Effectid;
+        public string EffectName;
 
         public float Force;
 
         public float BuffDuration;
 
 
+        public bool hasPath;
+        public Vector3[] bezierPath;
+        public Vector3 bezierPathParentPosition;
+        public Quaternion bezierPathParentRotation;
+        public float bezierPathLength;
 
         public override void OnInit(ActionClip data)
         {
@@ -56,9 +61,19 @@ namespace MDDSkillEngine
             ColliderName = instanceCollider.ColliderName;
             Speed = instanceCollider.Speed;
             AddBuffName = instanceCollider.AddBuffName;
-            Effectid = instanceCollider.EffectID;
+            EffectName = instanceCollider.EffectName;
             Force = instanceCollider.duration;
             BuffDuration = instanceCollider.duration;
+
+            if (instanceCollider.path != null)
+            {
+                BezierPath path = instanceCollider.path as BezierPath;
+                hasPath = true;
+                bezierPath = path._sampledPathPoints;
+                bezierPathParentPosition = path.transform.localPosition;
+                bezierPathParentRotation = path.transform.localRotation;
+                bezierPathLength = path.length;
+            }
         }
     }
 }

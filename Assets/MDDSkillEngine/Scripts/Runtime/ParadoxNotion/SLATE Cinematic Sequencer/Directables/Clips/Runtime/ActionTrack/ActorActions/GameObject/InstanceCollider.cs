@@ -36,7 +36,8 @@ namespace Slate.ActionClips
 
         [BoxGroup("hitbuff参数")]
         [ShowIf("_enabled1", 1)]
-        public int EffectID;
+        [ValueDropdown("GetEffect")]
+        public string EffectName;
 
         [BoxGroup("hitbuff参数")]
         [ShowIf("_enabled1", 1)]
@@ -279,7 +280,7 @@ namespace Slate.ActionClips
 
         private IEnumerable<string> GetEffect()
         {
-            if (NPBlackBoardEditorInstance.Collider.Count == 0)
+            if (NPBlackBoardEditorInstance.Effects.Count == 0)
             {
                 string fullPath = Application.dataPath + "/MDDSkillEngine/Prefabs/Effect";
                 //获得指定路径下面的所有资源文件
@@ -293,14 +294,14 @@ namespace Slate.ActionClips
                     {
                         if (files[i].Name.EndsWith(".prefab"))
                         {
-                            NPBlackBoardEditorInstance.Collider.Add(files[i].Name.Remove(files[i].Name.LastIndexOf(".")));
+                            NPBlackBoardEditorInstance.Effects.Add(files[i].Name.Remove(files[i].Name.LastIndexOf(".")));
                         }
 
                     }
                 }
             }
 
-            return NPBlackBoardEditorInstance.Collider; ;
+            return NPBlackBoardEditorInstance.Effects; ;
         }
 
         private void OnColliderChange()

@@ -481,7 +481,7 @@ MonoBehaviour:
   ColliderName: 
   Speed: 0
   AddBuffName: 
-  EffectID: 0
+  EffectName: 
   force: 0
   duration: 0
   col: {fileID: 0}

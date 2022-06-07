@@ -14,16 +14,16 @@ namespace MDDSkillEngine
     public static class AIUtility
     {
 
-        public static Vector3 GetPoint(float t, float length,params Vector3[] path)
+        public static Vector3 GetPoint(float t, float length,List<Vector3> path)
         {
             if (t <= 0) return path[0];
-            if (t >= 1) return path[path.Length - 1];
+            if (t >= 1) return path[path.Count - 1];
             var a = Vector3.zero;
             var b = Vector3.zero;
             var total = 0f;
             var segmentDistance = 0f;
             var pathLength = length;
-            for (var i = 0; i < path.Length - 1; i++)
+            for (var i = 0; i < path.Count - 1; i++)
             {
                 segmentDistance = Vector3.Distance(path[i], path[i + 1]) / pathLength;
                 if (total + segmentDistance > t)

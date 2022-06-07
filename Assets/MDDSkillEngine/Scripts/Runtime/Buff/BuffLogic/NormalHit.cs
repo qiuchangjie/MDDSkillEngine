@@ -59,12 +59,13 @@ namespace MDDSkillEngine
 
             fsm.Blackboard.Set<VarBoolean>(typeof(AiDamageState).Name,true);
 
-            Game.Entity.ShowEffect(new EffectData(Game.Entity.GenerateSerialId(), 70003)
+            Game.Entity.ShowEffect(typeof(Effect), hitData.EffectName ,new EffectData(Game.Entity.GenerateSerialId(), 0)
             {
+                KeepTime = 3f,
                 Position = hitData.HitPoint,
                 Rotation = entity.CachedTransform.rotation
             });
-
+           
             Log.Info("{0}hitbuff", LogConst.Buff);
         }
 

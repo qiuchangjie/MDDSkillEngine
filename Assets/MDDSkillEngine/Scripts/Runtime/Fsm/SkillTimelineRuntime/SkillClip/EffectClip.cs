@@ -2,6 +2,7 @@
 using Animancer;
 using MDDGameFramework.Runtime;
 using UnityEngine;
+using System.Collections.Generic;
 
 namespace MDDSkillEngine
 {
@@ -9,6 +10,8 @@ namespace MDDSkillEngine
     {
         EffectSkillData skillData;
         int id;
+
+        List<Vector3> bezierPath=new List<Vector3>();
 
         public override void Init(SkillDataBase data, Entity actor, SkillTimeline skillTimeline)
         {
@@ -36,14 +39,17 @@ namespace MDDSkillEngine
                 //bezierPathParentRotation=skillData.bezierPathParentRotation,              
             });
 
-            //Entity effect = Game.Entity.GetEntity(id).Logic as Entity;
+            bezierPath.Clear();
 
-            //Game.Entity.AttachEntity(effect.Id,actor.Id);
+            //坐标转换 将曲线本地坐标转换为世界坐标
+            for (int i = 0; i < skillData.bezierPath.Length; i++)
+            {
+                Vector3 vec3;
+                vec3 = actor.CachedTransform.TransformPoint(skillData.bezierPath[i]);
+                bezierPath.Add(vec3);
+            }
 
-            //effect.CachedTransform.localRotation = skillData.localRotation;
-            //effect.CachedTransform.localPosition = skillData.localeftPostion;
-            //effect.CachedTransform.localScale = skillData.localScale;
-
+           
            Log.Info("{0}进入effectclip name：{1}", LogConst.SKillTimeline, "1");
         }
 
@@ -51,12 +57,13 @@ namespace MDDSkillEngine
         {
             base.Update(currentTime, previousTime);
 
+            //利用贝塞尔曲线
             if (skillData.hasPath)
             {
                 if (Game.Entity.HasEntity(id))
                 {
-                   Entity entity = Game.Entity.GetGameEntity(id);
-                   entity.transform.position = AIUtility.GetPoint(currentTime/this.GetLength(), skillData.bezierPathLength, skillData.bezierPath);
+                   Entity entity = Game.Entity.GetGameEntity(id);                 
+                   entity.transform.position = AIUtility.GetPoint(currentTime/this.GetLength(), skillData.bezierPathLength, bezierPath);
                 }
             }
         }

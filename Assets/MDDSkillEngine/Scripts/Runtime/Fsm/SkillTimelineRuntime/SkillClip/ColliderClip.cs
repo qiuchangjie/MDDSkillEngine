@@ -25,6 +25,8 @@ namespace MDDSkillEngine
             {
                 Game.Entity.ShowCollider(new ColliderData(Game.Entity.GenerateSerialId(), 20001, actor)
                 {
+                    HitEffectName = skillData.EffectName,
+                    buffName = skillData.AddBuffName,
                     localRotation = skillData.localRotation,
                     localScale = skillData.localScale,
                     localeftPostion = skillData.localeftPostion,
@@ -41,7 +43,7 @@ namespace MDDSkillEngine
                     HitBuffDuration = skillData.BuffDuration,
                     HitForce = skillData.Force,
                     buffName = skillData.AddBuffName,
-                    EffectID = skillData.Effectid,
+                    HitEffectName = skillData.EffectName,
                     localRotation = skillData.localRotation,
                     localScale = skillData.localScale,
                     localeftPostion = skillData.localeftPostion,

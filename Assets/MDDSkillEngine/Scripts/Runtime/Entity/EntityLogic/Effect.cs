@@ -29,10 +29,21 @@ namespace MDDSkillEngine
 
             if (m_EffectData.Owner != null)
             {
-                Game.Entity.AttachEntity(Id, m_EffectData.Owner.Id);
-                CachedTransform.localRotation = m_EffectData.localRotation;
-                CachedTransform.localPosition = m_EffectData.localeftPostion;
-                CachedTransform.localScale = m_EffectData.localScale;
+                if (m_EffectData.IsFllow)
+                {
+                    Game.Entity.AttachEntity(Id, m_EffectData.Owner.Id);
+                    CachedTransform.localRotation = m_EffectData.localRotation;
+                    CachedTransform.localPosition = m_EffectData.localeftPostion;
+                    CachedTransform.localScale = m_EffectData.localScale;
+                }
+                else
+                {
+                    Game.Entity.AttachEntity(Id, m_EffectData.Owner.Id);
+                    CachedTransform.localRotation = m_EffectData.localRotation;
+                    CachedTransform.localPosition = m_EffectData.localeftPostion;
+                    CachedTransform.localScale = m_EffectData.localScale;
+                    Game.Entity.DetachEntity(Id);
+                }              
             }
 
         }
@@ -48,10 +59,10 @@ namespace MDDSkillEngine
                 CachedTransform.position = m_EffectData.Owner.CachedTransform.position;
             }
 
-            if (m_EffectData.hasPath)
-            {
-                CachedTransform.position = AIUtility.GetPoint(m_ElapseSeconds,m_EffectData.bezierPathLength,m_EffectData.bezierPath);
-            }
+            //if (m_EffectData.hasPath)
+            //{
+            //    CachedTransform.position = AIUtility.GetPoint(m_ElapseSeconds,m_EffectData.bezierPathLength,m_EffectData.bezierPath);
+            //}
 
             if (m_ElapseSeconds >= m_EffectData.KeepTime)
             {

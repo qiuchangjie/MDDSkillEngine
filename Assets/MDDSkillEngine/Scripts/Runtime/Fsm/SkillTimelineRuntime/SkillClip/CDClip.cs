@@ -19,6 +19,7 @@ namespace MDDSkillEngine
 
         public override void Enter()
         {
+            //将技能状态设置为成功 
             ISkillSystem skillSystem = Game.Skill.GetSkillSystem(actor.Id);
             skillSystem.SetSkillReleaseResultType(SkillReleaseResultType.SUCCSE);
 

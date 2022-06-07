@@ -17,15 +17,12 @@ namespace MDDSkillEngine
 
         private float needWaitTime;
 
-        private int effectid;
 
         Vector3 dir;
 
         protected override void OnInit(object userData)
         {
             base.OnInit(userData);
-
-
         }
 
         protected override void OnShow(object userData)
@@ -36,25 +33,19 @@ namespace MDDSkillEngine
 
             needWaitTime = 1f / damageSettlementPreSecond;
 
-            effectid = Game.Entity.GenerateSerialId();
-
-            Game.Entity.AttachEntity(Id,data.Owner.Id);
-            CachedTransform.localRotation = data.localRotation;
-            CachedTransform.localPosition = data.localeftPostion;
-            CachedTransform.localScale = data.localScale;
-
-
-            Game.Entity.ShowEffect(new EffectData(effectid, data.EffectID)
+            if (data.Owner != null)
             {
-                Owner = this,
-                localeftPostion = CachedTransform.localPosition,
-                localRotation = CachedTransform.localRotation,
-                localScale = CachedTransform.localScale,
-                KeepTime = 999
+                Game.Entity.AttachEntity(Id, data.Owner.Id);
+                CachedTransform.localRotation = data.localRotation;
+                CachedTransform.localPosition = data.localeftPostion;
+                CachedTransform.localScale = data.localScale;
 
-            });
-
-
+                if (!data.IsFollowParent)
+                {
+                    Game.Entity.DetachEntity(Id);
+                }           
+            }
+              
             dir = data.Owner.CachedTransform.forward;
         }
 
@@ -108,7 +99,7 @@ namespace MDDSkillEngine
                 Game.Buff.AddBuff(entity.Id.ToString(), "NormalHit", entity, data.Owner, HitData.Create(this, entity, hitPos, this.transform.forward));
             else
                 Game.Buff.AddBuff(entity.Id.ToString(), data.buffName, entity, data.Owner, HitData.Create(this, entity, hitPos,
-                    this.transform.forward, data.HitBuffDuration, data.HitForce, data.EffectID));
+                    this.transform.forward, data.HitBuffDuration, data.HitForce, data.HitEffectName));
         }
 
 

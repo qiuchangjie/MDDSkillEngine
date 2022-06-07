@@ -43,11 +43,11 @@ namespace MDDSkillEngine
         /// <summary>
         /// 特效id 
         /// </summary>
-        public float Effectid;
+        public string EffectName;
 
         public HitData() { }
 
-        public static HitData Create(object from,object target,Vector3 hitpoint,Vector3 hitDir,float Duration = 0,float hitForce = 0,float effectid=0)
+        public static HitData Create(object from,object target,Vector3 hitpoint,Vector3 hitDir,float Duration = 0,float hitForce = 0,string EffectName="")
         {
             HitData hitData = ReferencePool.Acquire<HitData>();
             hitData.From = from;
@@ -56,7 +56,7 @@ namespace MDDSkillEngine
             hitData.HitForce = hitForce;
             hitData.HitDuration = Duration;
             hitData.HitDir = hitDir;
-            hitData.Effectid = effectid;
+            hitData.EffectName = EffectName;
 
             return hitData;
         }

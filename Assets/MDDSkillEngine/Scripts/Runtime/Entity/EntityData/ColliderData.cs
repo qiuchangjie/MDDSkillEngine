@@ -11,7 +11,7 @@ namespace MDDSkillEngine
         private float m_duration = 999;
 
 
-        private int m_EffectID = 0;
+        private string m_HitEffectName = "";
 
         private bool m_IsFollowParent=true;
 
@@ -50,15 +50,15 @@ namespace MDDSkillEngine
 
 
 
-        public int EffectID
+        public string HitEffectName
         {
             get 
             { 
-                return m_EffectID; 
+                return m_HitEffectName; 
             }
             set 
-            { 
-                m_EffectID = value; 
+            {
+                m_HitEffectName = value; 
             }
         }
 

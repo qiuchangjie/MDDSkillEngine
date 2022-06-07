@@ -19,6 +19,7 @@ namespace MDDSkillEngine
 
         public override void Enter()
         {
+            //控制状态是否可以中断
             if (skillData.type == FadeInOutType.In)
                 skillTimeline.SetStateCantStop(true);
             else

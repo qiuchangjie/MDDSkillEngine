@@ -96,6 +96,17 @@ namespace MDDSkillEngine
             entityComponent.ShowEntity(data.Id, logicType, AssetUtility.GetEntityAsset(AssetName, data.EntityType), "Collider", Constant.AssetPriority.EffectAsset, data);
         }
 
+        public static void ShowEffect(this EntityComponent entityComponent, Type logicType, string AssetName, ColliderData data)
+        {
+            if (data == null)
+            {
+                Log.Warning("Data is invalid.");
+                return;
+            }
+
+            entityComponent.ShowEntity(data.Id, logicType, AssetUtility.GetEntityAsset(AssetName, data.EntityType), "Effect", Constant.AssetPriority.EffectAsset, data);
+        }
+
         private static void ShowEntity(this EntityComponent entityComponent, Type logicType, string entityGroup, int priority, EntityData data)
         {
             if (data == null)
