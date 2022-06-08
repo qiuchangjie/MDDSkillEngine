@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Animancer;
 using MDDGameFramework.Runtime;
 using UnityEngine;
@@ -9,6 +10,9 @@ namespace MDDSkillEngine
     {
         ColliderSkillData skillData;
 
+        int id;
+
+        List<Vector3> bezierPath = new List<Vector3>();
 
         public override void Init(SkillDataBase data, Entity actor, SkillTimeline skillTimeline)
         {
@@ -20,10 +24,11 @@ namespace MDDSkillEngine
 
         public override void Enter()
         {
+            id = Game.Entity.GenerateSerialId();
 
             if (skillData.Speed == 0)
             {
-                Game.Entity.ShowCollider(new ColliderData(Game.Entity.GenerateSerialId(), 20001, actor)
+                Game.Entity.ShowCollider(new ColliderData(id, 20001, actor)
                 {
                     HitEffectName = skillData.EffectName,
                     buffName = skillData.AddBuffName,
@@ -37,7 +42,7 @@ namespace MDDSkillEngine
             }
             else
             {
-                Game.Entity.ShowCollider(typeof(NormalMoveCollider), skillData.ColliderName, new MoveColliderData(Game.Entity.GenerateSerialId(), 0, actor)
+                Game.Entity.ShowCollider(typeof(NormalMoveCollider), skillData.ColliderName, new MoveColliderData(id, 0, actor)
                 {
                     Speed = skillData.Speed,
                     HitBuffDuration = skillData.BuffDuration,
@@ -52,8 +57,19 @@ namespace MDDSkillEngine
                     Duration = this.GetLength()
                 });
             }
+
+            bezierPath.Clear();
+
+            //坐标转换 将曲线本地坐标转换为世界坐标
+            for (int i = 0; i < skillData.bezierPath.Length; i++)
+            {
+                Vector3 vec3;
+                vec3 = actor.CachedTransform.TransformPoint(skillData.bezierPath[i]);
+                bezierPath.Add(vec3);
+            }
+
             SkillTimeline<Entity> skillTimeline1 = skillTimeline as SkillTimeline<Entity>;
-            Log.Info("{0}进入动画clip na1111111111111111me：{1} currenttime:{2}", LogConst.SKillTimeline, skillData.ResouceName, skillTimeline1.currentTime);
+            Log.Info("{0}进入Colliderclip ：{1} currenttime:{2}", LogConst.SKillTimeline, skillData.ResouceName, skillTimeline1.currentTime);
         }
 
         public override void Update(float currentTime, float previousTime)
@@ -61,6 +77,16 @@ namespace MDDSkillEngine
             base.Update(currentTime, previousTime);
             Log.Info("{0}upodateColliderClip name：{1}", LogConst.SKillTimeline, GetType().Name);
             duration += currentTime;
+
+            //利用贝塞尔曲线
+            if (skillData.hasPath)
+            {
+                if (Game.Entity.HasEntity(id))
+                {
+                    Entity entity = Game.Entity.GetGameEntity(id);
+                    entity.transform.position = AIUtility.GetPoint(currentTime / this.GetLength(), skillData.bezierPathLength, bezierPath);
+                }
+            }
 
         }
 

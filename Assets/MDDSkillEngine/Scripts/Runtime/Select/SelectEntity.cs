@@ -12,13 +12,21 @@ namespace MDDSkillEngine
     {
         public GameObject pathFindingTarget;
 
+
         public List<Entity> entities = new List<Entity>();
+        /// <summary>
+        /// 鼠标左键选择的实体
+        /// </summary>
         public Entity selectEntity;
+        /// <summary>
+        /// 鼠标悬停的实体
+        /// </summary>
+        public Entity mouseSeeEntity;
         public Entity Player;
 
         public List<Entity> highLightEntity = new List<Entity>();
 
-        public Vector3 currentClick;
+        public Vector3 currentMouse;
 
         public bool isWork;
 

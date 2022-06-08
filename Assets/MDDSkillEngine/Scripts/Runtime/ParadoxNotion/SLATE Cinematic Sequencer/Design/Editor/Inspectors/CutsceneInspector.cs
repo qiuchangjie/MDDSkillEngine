@@ -24,6 +24,7 @@ namespace Slate
         SerializedProperty explLayersProp;
         SerializedProperty activeLayersProp;
         SerializedProperty playbackSpeedProp;
+        SerializedProperty targetType;
 
         private static Cutscene cutscene;
         private static bool willResample;
@@ -43,6 +44,7 @@ namespace Slate
             explLayersProp = serializedObject.FindProperty("_explicitActiveLayers");
             activeLayersProp = serializedObject.FindProperty("_activeLayers");
             playbackSpeedProp = serializedObject.FindProperty("_playbackSpeed");
+            targetType = serializedObject.FindProperty("_targetType");
         }
 
         //...
@@ -133,6 +135,7 @@ namespace Slate
                 EditorGUILayout.PropertyField(stopModeProp);
                 EditorGUILayout.PropertyField(playbackSpeedProp);
                 EditorGUILayout.PropertyField(explLayersProp);
+                EditorGUILayout.PropertyField(targetType);
                 if ( explLayersProp.boolValue == true ) {
                     EditorGUILayout.PropertyField(activeLayersProp);
                 }

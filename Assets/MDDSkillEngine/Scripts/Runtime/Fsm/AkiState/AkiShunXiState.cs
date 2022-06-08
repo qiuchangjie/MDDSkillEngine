@@ -64,7 +64,7 @@ namespace MDDSkillEngine
 
             fsm.Owner.CachedAnimancer.Play(shunXi);
 
-            fsm.Owner.CachedTransform.LookAt(Game.Select.currentClick);
+            fsm.Owner.CachedTransform.LookAt(Game.Select.currentMouse);
 
             Game.Entity.ShowEffect(new EffectData(Game.Entity.GenerateSerialId(), 70001) 
             { 
@@ -121,7 +121,7 @@ namespace MDDSkillEngine
                 distance += speed * elapseSeconds;
 
                 fsm.Owner.CachedTransform.position =
-                    Vector3.MoveTowards(fsm.Owner.CachedTransform.position, Game.Select.currentClick, speed * elapseSeconds);
+                    Vector3.MoveTowards(fsm.Owner.CachedTransform.position, Game.Select.currentMouse, speed * elapseSeconds);
             }          
         }
 

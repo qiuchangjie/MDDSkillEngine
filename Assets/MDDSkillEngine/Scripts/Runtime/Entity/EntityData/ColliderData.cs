@@ -13,7 +13,7 @@ namespace MDDSkillEngine
 
         private string m_HitEffectName = "";
 
-        private bool m_IsFollowParent=true;
+        private bool m_IsFollowParent = false;
 
         public string buffName="";
 

@@ -34,7 +34,7 @@ namespace MDDSkillEngine
 
         protected override void OnEnter(IFsm<Entity> fsm)
         {
-            base.OnEnter(fsm);
+            //base.OnEnter(fsm);
             Log.Info("进入akiIdle状态。");
             fsm.SetData<VarBoolean>(GetType().Name, false);
             fsm.Owner.CachedAnimancer.Play(idle);

@@ -21,7 +21,7 @@ namespace MDDSkillEngine
 
         protected override void OnEnter(IFsm<Entity> fsm)
         {
-            base.OnEnter(fsm);
+            //base.OnEnter(fsm);
             Log.Info("进入akiRun状态。");
             fsm.Owner.CachedAnimancer.Play(Run);            
         }

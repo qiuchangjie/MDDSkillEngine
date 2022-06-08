@@ -1,92 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &110415256039217248
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4646284751494707101}
-  - component: {fileID: 710645358207640115}
-  m_Layer: 0
-  m_Name: Path
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &4646284751494707101
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 110415256039217248}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.54, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 8602648601221346076}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &710645358207640115
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 110415256039217248}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4234cd2c43978e041bbe9323c195c4bd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  resolution: 30
-  drawColor: {r: 0.9855094, g: 1, b: 0, a: 1}
-  _points:
-  - _path: {fileID: 710645358207640115}
-    _position: {x: -3.4264157, y: 1.3793774, z: 0}
-    _handle1: {x: -0.23834133, y: -0.024436235, z: 0.5885391}
-    _handle2: {x: 0.60665965, y: 0.121217966, z: -0.054512024}
-    _handleStyle: 1
-  - _path: {fileID: 710645358207640115}
-    _position: {x: 3.129283, y: 0, z: 0}
-    _handle1: {x: 0, y: 0, z: 0}
-    _handle2: {x: 0, y: 0, z: 0}
-    _handleStyle: 2
-  _sampledPathPoints:
-  - {x: -3.3800354, y: 2.9256563, z: -0.0035129972}
-  - {x: -3.3217838, y: 2.9283319, z: -0.0067837187}
-  - {x: -3.2516599, y: 2.9274027, z: -0.009812165}
-  - {x: -3.1696644, y: 2.9228702, z: -0.012598335}
-  - {x: -3.0757964, y: 2.9147327, z: -0.015142229}
-  - {x: -2.9700568, y: 2.902992, z: -0.017443847}
-  - {x: -2.852445, y: 2.887647, z: -0.019503191}
-  - {x: -2.7229614, y: 2.868698, z: -0.02132026}
-  - {x: -2.5816057, y: 2.846145, z: -0.022895051}
-  - {x: -2.428378, y: 2.8199878, z: -0.024227567}
-  - {x: -2.2632787, y: 2.7902267, z: -0.025317807}
-  - {x: -2.086307, y: 2.7568617, z: -0.02616577}
-  - {x: -1.8974638, y: 2.7198925, z: -0.02677146}
-  - {x: -1.6967485, y: 2.6793191, z: -0.027134875}
-  - {x: -1.4841611, y: 2.635142, z: -0.027256012}
-  - {x: -1.2597016, y: 2.5873609, z: -0.027134873}
-  - {x: -1.0233707, y: 2.5359755, z: -0.02677146}
-  - {x: -0.77516747, y: 2.4809859, z: -0.02616577}
-  - {x: -0.5150924, y: 2.4223928, z: -0.025317807}
-  - {x: -0.24314511, y: 2.3601952, z: -0.024227565}
-  - {x: 0.040673614, y: 2.294394, z: -0.022895051}
-  - {x: 0.33636475, y: 2.2249885, z: -0.021320257}
-  - {x: 0.64392734, y: 2.151979, z: -0.019503193}
-  - {x: 0.9633628, y: 2.0753655, z: -0.017443847}
-  - {x: 1.2946693, y: 1.9951482, z: -0.015142229}
-  - {x: 1.6378484, y: 1.9113264, z: -0.012598334}
-  - {x: 1.9928987, y: 1.8239009, z: -0.009812166}
-  - {x: 2.3598216, y: 1.7328712, z: -0.0067837182}
-  - {x: 2.738616, y: 1.6382376, z: -0.003513}
-  - {x: 3.129283, y: 1.54, z: 0}
 --- !u!1 &1095137891673614061
 GameObject:
   m_ObjectHideFlags: 0
@@ -140,12 +53,12 @@ MonoBehaviour:
   _activeLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  _targetType: 0
+  _targetType: 2
   groups:
   - {fileID: 7232431185629851885}
-  _length: 5
-  _viewTimeMin: -5.7272234
-  _viewTimeMax: 6.009638
+  _length: 1
+  _viewTimeMin: -0.27256003
+  _viewTimeMax: 1.8088437
 --- !u!1 &2882366116594116339
 GameObject:
   m_ObjectHideFlags: 0
@@ -219,7 +132,7 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  _startTime: 0.38333336
+  _startTime: 0.43333337
   _animationData:
     _animatedParameters: []
   _length: 0
@@ -298,7 +211,7 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  _startTime: 1.45
+  _startTime: 0.33333334
   _animationData:
     _animatedParameters: []
   _length: 0
@@ -324,11 +237,98 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  _startTime: 3.966667
+  _startTime: 0.5833334
   _animationData:
     _animatedParameters: []
   _length: 0
   Type: 1
+--- !u!1 &3294473366967677388
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8739965951246402258}
+  - component: {fileID: 2218856397312163239}
+  m_Layer: 0
+  m_Name: Path
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8739965951246402258
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3294473366967677388}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8602648601221346076}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2218856397312163239
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3294473366967677388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4234cd2c43978e041bbe9323c195c4bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  resolution: 30
+  drawColor: {r: 1, g: 1, b: 1, a: 1}
+  _points:
+  - _path: {fileID: 2218856397312163239}
+    _position: {x: 0, y: 0, z: 0}
+    _handle1: {x: 0, y: 0, z: 0}
+    _handle2: {x: 0, y: 0, z: 0}
+    _handleStyle: 2
+  - _path: {fileID: 2218856397312163239}
+    _position: {x: -0.14091825, y: 0, z: 7.395523}
+    _handle1: {x: 0, y: 0, z: 0}
+    _handle2: {x: -0, y: -0, z: 0}
+    _handleStyle: 2
+  _sampledPathPoints:
+  - {x: -0.0046972753, y: 0, z: 0.24651745}
+  - {x: -0.009394551, y: 0, z: 0.4930349}
+  - {x: -0.014091826, y: 0, z: 0.7395523}
+  - {x: -0.018789101, y: 0, z: 0.9860698}
+  - {x: -0.023486376, y: 0, z: 1.2325872}
+  - {x: -0.028183652, y: 0, z: 1.4791046}
+  - {x: -0.032880925, y: 0, z: 1.725622}
+  - {x: -0.037578203, y: 0, z: 1.9721396}
+  - {x: -0.042275477, y: 0, z: 2.218657}
+  - {x: -0.04697275, y: 0, z: 2.4651744}
+  - {x: -0.05167003, y: 0, z: 2.7116919}
+  - {x: -0.056367304, y: 0, z: 2.9582093}
+  - {x: -0.06106458, y: 0, z: 3.2047267}
+  - {x: -0.06576185, y: 0, z: 3.451244}
+  - {x: -0.07045913, y: 0, z: 3.6977615}
+  - {x: -0.075156406, y: 0, z: 3.9442792}
+  - {x: -0.079853676, y: 0, z: 4.1907964}
+  - {x: -0.084550954, y: 0, z: 4.437314}
+  - {x: -0.089248225, y: 0, z: 4.683831}
+  - {x: -0.0939455, y: 0, z: 4.930349}
+  - {x: -0.098642774, y: 0, z: 5.176866}
+  - {x: -0.10334006, y: 0, z: 5.4233837}
+  - {x: -0.10803732, y: 0, z: 5.669901}
+  - {x: -0.11273461, y: 0, z: 5.9164186}
+  - {x: -0.11743188, y: 0, z: 6.1629357}
+  - {x: -0.12212916, y: 0, z: 6.4094534}
+  - {x: -0.12682642, y: 0, z: 6.6559706}
+  - {x: -0.1315237, y: 0, z: 6.902488}
+  - {x: -0.13622098, y: 0, z: 7.1490054}
+  - {x: -0.14091825, y: 0, z: 7.395523}
 --- !u!1 &3378478145511216615
 GameObject:
   m_ObjectHideFlags: 0
@@ -341,16 +341,6 @@ GameObject:
   - component: {fileID: 3378478145511216618}
   - component: {fileID: 3378478145511216617}
   - component: {fileID: 1999051077788113825}
-  - component: {fileID: 5124734976766521443}
-  - component: {fileID: 2914917278312256407}
-  - component: {fileID: 8854445804255664140}
-  - component: {fileID: 8876754434225244730}
-  - component: {fileID: 8935310708252338324}
-  - component: {fileID: 3520590441369547337}
-  - component: {fileID: 6306829215831848600}
-  - component: {fileID: 1187859510971272853}
-  - component: {fileID: 4673270961654631968}
-  - component: {fileID: 8959291962669110991}
   m_Layer: 0
   m_Name: Animator Track
   m_TagString: Untagged
@@ -391,16 +381,6 @@ MonoBehaviour:
   _actionClips:
   - {fileID: 3378478145511216617}
   - {fileID: 1999051077788113825}
-  - {fileID: 8935310708252338324}
-  - {fileID: 5124734976766521443}
-  - {fileID: 3520590441369547337}
-  - {fileID: 2914917278312256407}
-  - {fileID: 6306829215831848600}
-  - {fileID: 8854445804255664140}
-  - {fileID: 1187859510971272853}
-  - {fileID: 8876754434225244730}
-  - {fileID: 4673270961654631968}
-  - {fileID: 8959291962669110991}
   _customHeight: 300
   mask: {fileID: 0}
   blendMode: 0
@@ -441,250 +421,8 @@ MonoBehaviour:
   - {x: 0, y: 0, z: 0}
   - {x: 0, y: 0, z: 0}
   - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
   rmRotations:
   - {x: 0, y: 0, z: 0, w: 1}
-  - {x: -0, y: -0, z: -0, w: 1}
-  - {x: -0, y: -0, z: -0, w: 1}
-  - {x: -0, y: -0, z: -0, w: 1}
-  - {x: -0, y: -0, z: -0, w: 1}
-  - {x: -0, y: -0, z: -0, w: 1}
-  - {x: -0, y: -0, z: -0, w: 1}
-  - {x: -0, y: -0, z: -0, w: 1}
-  - {x: -0, y: -0, z: -0, w: 1}
-  - {x: -0, y: -0, z: -0, w: 1}
-  - {x: -0, y: -0, z: -0, w: 1}
-  - {x: -0, y: -0, z: -0, w: 1}
-  - {x: -0, y: -0, z: -0, w: 1}
-  - {x: -0, y: -0, z: -0, w: 1}
-  - {x: -0, y: -0, z: -0, w: 1}
-  - {x: -0, y: -0, z: -0, w: 1}
-  - {x: -0, y: -0, z: -0, w: 1}
-  - {x: -0, y: -0, z: -0, w: 1}
-  - {x: -0, y: -0, z: -0, w: 1}
-  - {x: -0, y: -0, z: -0, w: 1}
-  - {x: -0, y: -0, z: -0, w: 1}
-  - {x: -0, y: -0, z: -0, w: 1}
-  - {x: -0, y: -0, z: -0, w: 1}
-  - {x: -0, y: -0, z: -0, w: 1}
-  - {x: -0, y: -0, z: -0, w: 1}
-  - {x: -0, y: -0, z: -0, w: 1}
-  - {x: -0, y: -0, z: -0, w: 1}
-  - {x: -0, y: -0, z: -0, w: 1}
-  - {x: -0, y: -0, z: -0, w: 1}
-  - {x: -0, y: -0, z: -0, w: 1}
-  - {x: -0, y: -0, z: -0, w: 1}
-  - {x: -0, y: -0, z: -0, w: 1}
-  - {x: -0, y: -0, z: -0, w: 1}
-  - {x: -0, y: -0, z: -0, w: 1}
-  - {x: -0, y: -0, z: -0, w: 1}
-  - {x: -0, y: -0, z: -0, w: 1}
-  - {x: -0, y: -0, z: -0, w: 1}
-  - {x: -0, y: -0, z: -0, w: 1}
-  - {x: -0, y: -0, z: -0, w: 1}
-  - {x: -0, y: -0, z: -0, w: 1}
-  - {x: -0, y: -0, z: -0, w: 1}
-  - {x: -0, y: -0, z: -0, w: 1}
-  - {x: -0, y: -0, z: -0, w: 1}
-  - {x: -0, y: -0, z: -0, w: 1}
-  - {x: -0, y: -0, z: -0, w: 1}
-  - {x: -0, y: -0, z: -0, w: 1}
-  - {x: -0, y: -0, z: -0, w: 1}
-  - {x: -0, y: -0, z: -0, w: 1}
-  - {x: -0, y: -0, z: -0, w: 1}
-  - {x: -0, y: -0, z: -0, w: 1}
-  - {x: -0, y: -0, z: -0, w: 1}
-  - {x: -0, y: -0, z: -0, w: 1}
-  - {x: -0, y: -0, z: -0, w: 1}
-  - {x: -0, y: -0, z: -0, w: 1}
-  - {x: -0, y: -0, z: -0, w: 1}
-  - {x: -0, y: -0, z: -0, w: 1}
-  - {x: -0, y: -0, z: -0, w: 1}
-  - {x: -0, y: -0, z: -0, w: 1}
-  - {x: -0, y: -0, z: -0, w: 1}
-  - {x: -0, y: -0, z: -0, w: 1}
-  - {x: -0, y: -0, z: -0, w: 1}
-  - {x: -0, y: -0, z: -0, w: 1}
-  - {x: -0, y: -0, z: -0, w: 1}
-  - {x: -0, y: -0, z: -0, w: 1}
-  - {x: -0, y: -0, z: -0, w: 1}
-  - {x: -0, y: -0, z: -0, w: 1}
-  - {x: -0, y: -0, z: -0, w: 1}
-  - {x: -0, y: -0, z: -0, w: 1}
-  - {x: -0, y: -0, z: -0, w: 1}
-  - {x: -0, y: -0, z: -0, w: 1}
-  - {x: -0, y: -0, z: -0, w: 1}
-  - {x: -0, y: -0, z: -0, w: 1}
-  - {x: -0, y: -0, z: -0, w: 1}
-  - {x: -0, y: -0, z: -0, w: 1}
-  - {x: -0, y: -0, z: -0, w: 1}
-  - {x: -0, y: -0, z: -0, w: 1}
-  - {x: -0, y: -0, z: -0, w: 1}
-  - {x: -0, y: -0, z: -0, w: 1}
-  - {x: -0, y: -0, z: -0, w: 1}
-  - {x: -0, y: -0, z: -0, w: 1}
-  - {x: -0, y: -0, z: -0, w: 1}
-  - {x: -0, y: -0, z: -0, w: 1}
-  - {x: -0, y: -0, z: -0, w: 1}
-  - {x: -0, y: -0, z: -0, w: 1}
-  - {x: -0, y: -0, z: -0, w: 1}
-  - {x: -0, y: -0, z: -0, w: 1}
-  - {x: -0, y: -0, z: -0, w: 1}
-  - {x: -0, y: -0, z: -0, w: 1}
-  - {x: -0, y: -0, z: -0, w: 1}
-  - {x: -0, y: -0, z: -0, w: 1}
-  - {x: -0, y: -0, z: -0, w: 1}
-  - {x: -0, y: -0, z: -0, w: 1}
-  - {x: -0, y: -0, z: -0, w: 1}
-  - {x: -0, y: -0, z: -0, w: 1}
-  - {x: -0, y: -0, z: -0, w: 1}
-  - {x: -0, y: -0, z: -0, w: 1}
-  - {x: -0, y: -0, z: -0, w: 1}
-  - {x: -0, y: -0, z: -0, w: 1}
-  - {x: -0, y: -0, z: -0, w: 1}
-  - {x: -0, y: -0, z: -0, w: 1}
-  - {x: -0, y: -0, z: -0, w: 1}
-  - {x: -0, y: -0, z: -0, w: 1}
-  - {x: -0, y: -0, z: -0, w: 1}
-  - {x: -0, y: -0, z: -0, w: 1}
-  - {x: -0, y: -0, z: -0, w: 1}
-  - {x: -0, y: -0, z: -0, w: 1}
-  - {x: -0, y: -0, z: -0, w: 1}
-  - {x: -0, y: -0, z: -0, w: 1}
-  - {x: -0, y: -0, z: -0, w: 1}
-  - {x: -0, y: -0, z: -0, w: 1}
-  - {x: -0, y: -0, z: -0, w: 1}
-  - {x: -0, y: -0, z: -0, w: 1}
-  - {x: -0, y: -0, z: -0, w: 1}
-  - {x: -0, y: -0, z: -0, w: 1}
-  - {x: -0, y: -0, z: -0, w: 1}
-  - {x: -0, y: -0, z: -0, w: 1}
-  - {x: -0, y: -0, z: -0, w: 1}
-  - {x: -0, y: -0, z: -0, w: 1}
-  - {x: -0, y: -0, z: -0, w: 1}
-  - {x: -0, y: -0, z: -0, w: 1}
-  - {x: -0, y: -0, z: -0, w: 1}
-  - {x: -0, y: -0, z: -0, w: 1}
   - {x: -0, y: -0, z: -0, w: 1}
   - {x: -0, y: -0, z: -0, w: 1}
   - {x: -0, y: -0, z: -0, w: 1}
@@ -754,9 +492,9 @@ MonoBehaviour:
         m_PostInfinity: 2
         m_RotationOrder: 4
       _scriptExpression: 
-  _length: 0.43333337
+  _length: 0.6833334
   _blendIn: 0
-  _blendOut: 0.100000024
+  _blendOut: 0.13333344
   animationClip: {fileID: 7400000, guid: 8bafdcd44e3f81a49b836567ce6b6017, type: 3}
   animationName: Cutepose
   clipOffset: 0
@@ -789,7 +527,7 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  _startTime: 0.33333334
+  _startTime: 0.54999995
   _animationData:
     _animatedParameters:
     - _serializedData: '{"parameterName":"steerLocalRotation","declaringTypeName":"Slate.ActionClips.PlayAnimatorClip","transformHierarchyPath":"","parameterType":2}'
@@ -807,530 +545,10 @@ MonoBehaviour:
         m_RotationOrder: 4
       _scriptExpression: 
   _length: 0.45000002
-  _blendIn: 0.100000024
+  _blendIn: 0.13333344
   _blendOut: 0.13333333
   animationClip: {fileID: 7400000, guid: 3e2cf120e49d5394c9178923b58fa920, type: 3}
   animationName: Attack4
-  clipOffset: 0
-  clipWrapMode: 0
-  clipWeight: 1
-  playbackSpeed: 1
-  startingTransformsMode: 0
-  transformSpace: 0
-  startingPosition: {x: 0, y: 0, z: 0}
-  startingRotation: {x: -0, y: 0, z: 0}
-  steerLocalRotation: {x: 0, y: 0}
---- !u!114 &5124734976766521443
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3378478145511216615}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4792578f693c06841a5b299345830d63, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  serializationData:
-    SerializedFormat: 2
-    SerializedBytes: 
-    ReferencedUnityObjects: []
-    SerializedBytesString: 
-    Prefab: {fileID: 0}
-    PrefabModificationsReferencedUnityObjects: []
-    PrefabModifications: []
-    SerializationNodes: []
-  _startTime: 1.0500001
-  _animationData:
-    _animatedParameters:
-    - _serializedData: '{"parameterName":"steerLocalRotation","declaringTypeName":"Slate.ActionClips.PlayAnimatorClip","transformHierarchyPath":"","parameterType":2}'
-      _isDisabled: 0
-      _curves:
-      - serializedVersion: 2
-        m_Curve: []
-        m_PreInfinity: 2
-        m_PostInfinity: 2
-        m_RotationOrder: 4
-      - serializedVersion: 2
-        m_Curve: []
-        m_PreInfinity: 2
-        m_PostInfinity: 2
-        m_RotationOrder: 4
-      _scriptExpression: 
-  _length: 0.39999998
-  _blendIn: 0.0333333
-  _blendOut: 0.05000007
-  animationClip: {fileID: 7400000, guid: 3e2cf120e49d5394c9178923b58fa920, type: 3}
-  animationName: Attack4
-  clipOffset: 0
-  clipWrapMode: 0
-  clipWeight: 1
-  playbackSpeed: 1
-  startingTransformsMode: 0
-  transformSpace: 0
-  startingPosition: {x: 0, y: 0, z: 0}
-  startingRotation: {x: -0, y: 0, z: 0}
-  steerLocalRotation: {x: 0, y: 0}
---- !u!114 &2914917278312256407
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3378478145511216615}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4792578f693c06841a5b299345830d63, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  serializationData:
-    SerializedFormat: 2
-    SerializedBytes: 
-    ReferencedUnityObjects: []
-    SerializedBytesString: 
-    Prefab: {fileID: 0}
-    PrefabModificationsReferencedUnityObjects: []
-    PrefabModifications: []
-    SerializationNodes: []
-  _startTime: 1.7166667
-  _animationData:
-    _animatedParameters:
-    - _serializedData: '{"parameterName":"steerLocalRotation","declaringTypeName":"Slate.ActionClips.PlayAnimatorClip","transformHierarchyPath":"","parameterType":2}'
-      _isDisabled: 0
-      _curves:
-      - serializedVersion: 2
-        m_Curve: []
-        m_PreInfinity: 2
-        m_PostInfinity: 2
-        m_RotationOrder: 4
-      - serializedVersion: 2
-        m_Curve: []
-        m_PreInfinity: 2
-        m_PostInfinity: 2
-        m_RotationOrder: 4
-      _scriptExpression: 
-  _length: 0.45000002
-  _blendIn: 0.08333349
-  _blendOut: 0.049999952
-  animationClip: {fileID: 7400000, guid: 3e2cf120e49d5394c9178923b58fa920, type: 3}
-  animationName: Attack4
-  clipOffset: 0
-  clipWrapMode: 0
-  clipWeight: 1
-  playbackSpeed: 1
-  startingTransformsMode: 0
-  transformSpace: 0
-  startingPosition: {x: 0, y: 0, z: 0}
-  startingRotation: {x: -0, y: 0, z: 0}
-  steerLocalRotation: {x: 0, y: 0}
---- !u!114 &8854445804255664140
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3378478145511216615}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4792578f693c06841a5b299345830d63, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  serializationData:
-    SerializedFormat: 2
-    SerializedBytes: 
-    ReferencedUnityObjects: []
-    SerializedBytesString: 
-    Prefab: {fileID: 0}
-    PrefabModificationsReferencedUnityObjects: []
-    PrefabModifications: []
-    SerializationNodes: []
-  _startTime: 2.466666
-  _animationData:
-    _animatedParameters:
-    - _serializedData: '{"parameterName":"steerLocalRotation","declaringTypeName":"Slate.ActionClips.PlayAnimatorClip","transformHierarchyPath":"","parameterType":2}'
-      _isDisabled: 0
-      _curves:
-      - serializedVersion: 2
-        m_Curve: []
-        m_PreInfinity: 2
-        m_PostInfinity: 2
-        m_RotationOrder: 4
-      - serializedVersion: 2
-        m_Curve: []
-        m_PreInfinity: 2
-        m_PostInfinity: 2
-        m_RotationOrder: 4
-      _scriptExpression: 
-  _length: 0.45000002
-  _blendIn: 0.08333421
-  _blendOut: 0.033334017
-  animationClip: {fileID: 7400000, guid: 3e2cf120e49d5394c9178923b58fa920, type: 3}
-  animationName: Attack4
-  clipOffset: 0
-  clipWrapMode: 0
-  clipWeight: 1
-  playbackSpeed: 1
-  startingTransformsMode: 0
-  transformSpace: 0
-  startingPosition: {x: 0, y: 0, z: 0}
-  startingRotation: {x: -0, y: 0, z: 0}
-  steerLocalRotation: {x: 0, y: 0}
---- !u!114 &8876754434225244730
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3378478145511216615}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4792578f693c06841a5b299345830d63, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  serializationData:
-    SerializedFormat: 2
-    SerializedBytes: 
-    ReferencedUnityObjects: []
-    SerializedBytesString: 
-    Prefab: {fileID: 0}
-    PrefabModificationsReferencedUnityObjects: []
-    PrefabModifications: []
-    SerializationNodes: []
-  _startTime: 2.9999988
-  _animationData:
-    _animatedParameters:
-    - _serializedData: '{"parameterName":"steerLocalRotation","declaringTypeName":"Slate.ActionClips.PlayAnimatorClip","transformHierarchyPath":"","parameterType":2}'
-      _isDisabled: 0
-      _curves:
-      - serializedVersion: 2
-        m_Curve: []
-        m_PreInfinity: 2
-        m_PostInfinity: 2
-        m_RotationOrder: 4
-      - serializedVersion: 2
-        m_Curve: []
-        m_PreInfinity: 2
-        m_PostInfinity: 2
-        m_RotationOrder: 4
-      _scriptExpression: 
-  _length: 0.45000002
-  _blendIn: 0.05000043
-  _blendOut: 0.099998
-  animationClip: {fileID: 7400000, guid: 3e2cf120e49d5394c9178923b58fa920, type: 3}
-  animationName: Attack4
-  clipOffset: 0
-  clipWrapMode: 0
-  clipWeight: 1
-  playbackSpeed: 1
-  startingTransformsMode: 0
-  transformSpace: 0
-  startingPosition: {x: 0, y: 0, z: 0}
-  startingRotation: {x: -0, y: 0, z: 0}
-  steerLocalRotation: {x: 0, y: 0}
---- !u!114 &8935310708252338324
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3378478145511216615}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4792578f693c06841a5b299345830d63, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  serializationData:
-    SerializedFormat: 2
-    SerializedBytes: 
-    ReferencedUnityObjects: []
-    SerializedBytesString: 
-    Prefab: {fileID: 0}
-    PrefabModificationsReferencedUnityObjects: []
-    PrefabModifications: []
-    SerializationNodes: []
-  _startTime: 0.65000004
-  _animationData:
-    _animatedParameters:
-    - _serializedData: '{"parameterName":"steerLocalRotation","declaringTypeName":"Slate.ActionClips.PlayAnimatorClip","transformHierarchyPath":"","parameterType":2}'
-      _isDisabled: 0
-      _curves:
-      - serializedVersion: 2
-        m_Curve: []
-        m_PreInfinity: 2
-        m_PostInfinity: 2
-        m_RotationOrder: 4
-      - serializedVersion: 2
-        m_Curve: []
-        m_PreInfinity: 2
-        m_PostInfinity: 2
-        m_RotationOrder: 4
-      _scriptExpression: 
-  _length: 0.43333337
-  _blendIn: 0.13333333
-  _blendOut: 0.0333333
-  animationClip: {fileID: 7400000, guid: 8bafdcd44e3f81a49b836567ce6b6017, type: 3}
-  animationName: Cutepose
-  clipOffset: 0
-  clipWrapMode: 0
-  clipWeight: 1
-  playbackSpeed: 1
-  startingTransformsMode: 0
-  transformSpace: 0
-  startingPosition: {x: 0, y: 0, z: 0}
-  startingRotation: {x: -0, y: 0, z: 0}
-  steerLocalRotation: {x: 0, y: 0}
---- !u!114 &3520590441369547337
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3378478145511216615}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4792578f693c06841a5b299345830d63, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  serializationData:
-    SerializedFormat: 2
-    SerializedBytes: 
-    ReferencedUnityObjects: []
-    SerializedBytesString: 
-    Prefab: {fileID: 0}
-    PrefabModificationsReferencedUnityObjects: []
-    PrefabModifications: []
-    SerializationNodes: []
-  _startTime: 1.45
-  _animationData:
-    _animatedParameters:
-    - _serializedData: '{"parameterName":"steerLocalRotation","declaringTypeName":"Slate.ActionClips.PlayAnimatorClip","transformHierarchyPath":"","parameterType":2}'
-      _isDisabled: 0
-      _curves:
-      - serializedVersion: 2
-        m_Curve: []
-        m_PreInfinity: 2
-        m_PostInfinity: 2
-        m_RotationOrder: 4
-      - serializedVersion: 2
-        m_Curve: []
-        m_PreInfinity: 2
-        m_PostInfinity: 2
-        m_RotationOrder: 4
-      _scriptExpression: 
-  _length: 0.35000014
-  _blendIn: 0.05000007
-  _blendOut: 0.08333349
-  animationClip: {fileID: 7400000, guid: 8bafdcd44e3f81a49b836567ce6b6017, type: 3}
-  animationName: Cutepose
-  clipOffset: 0
-  clipWrapMode: 0
-  clipWeight: 1
-  playbackSpeed: 1
-  startingTransformsMode: 0
-  transformSpace: 0
-  startingPosition: {x: 0, y: 0, z: 0}
-  startingRotation: {x: -0, y: 0, z: 0}
-  steerLocalRotation: {x: 0, y: 0}
---- !u!114 &6306829215831848600
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3378478145511216615}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4792578f693c06841a5b299345830d63, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  serializationData:
-    SerializedFormat: 2
-    SerializedBytes: 
-    ReferencedUnityObjects: []
-    SerializedBytesString: 
-    Prefab: {fileID: 0}
-    PrefabModificationsReferencedUnityObjects: []
-    PrefabModifications: []
-    SerializationNodes: []
-  _startTime: 2.1166668
-  _animationData:
-    _animatedParameters:
-    - _serializedData: '{"parameterName":"steerLocalRotation","declaringTypeName":"Slate.ActionClips.PlayAnimatorClip","transformHierarchyPath":"","parameterType":2}'
-      _isDisabled: 0
-      _curves:
-      - serializedVersion: 2
-        m_Curve: []
-        m_PreInfinity: 2
-        m_PostInfinity: 2
-        m_RotationOrder: 4
-      - serializedVersion: 2
-        m_Curve: []
-        m_PreInfinity: 2
-        m_PostInfinity: 2
-        m_RotationOrder: 4
-      _scriptExpression: 
-  _length: 0.43333337
-  _blendIn: 0.049999952
-  _blendOut: 0.08333421
-  animationClip: {fileID: 7400000, guid: 8bafdcd44e3f81a49b836567ce6b6017, type: 3}
-  animationName: Cutepose
-  clipOffset: 0
-  clipWrapMode: 0
-  clipWeight: 1
-  playbackSpeed: 1
-  startingTransformsMode: 0
-  transformSpace: 0
-  startingPosition: {x: 0, y: 0, z: 0}
-  startingRotation: {x: -0, y: 0, z: 0}
-  steerLocalRotation: {x: 0, y: 0}
---- !u!114 &1187859510971272853
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3378478145511216615}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4792578f693c06841a5b299345830d63, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  serializationData:
-    SerializedFormat: 2
-    SerializedBytes: 
-    ReferencedUnityObjects: []
-    SerializedBytesString: 
-    Prefab: {fileID: 0}
-    PrefabModificationsReferencedUnityObjects: []
-    PrefabModifications: []
-    SerializationNodes: []
-  _startTime: 2.883332
-  _animationData:
-    _animatedParameters:
-    - _serializedData: '{"parameterName":"steerLocalRotation","declaringTypeName":"Slate.ActionClips.PlayAnimatorClip","transformHierarchyPath":"","parameterType":2}'
-      _isDisabled: 0
-      _curves:
-      - serializedVersion: 2
-        m_Curve: []
-        m_PreInfinity: 2
-        m_PostInfinity: 2
-        m_RotationOrder: 4
-      - serializedVersion: 2
-        m_Curve: []
-        m_PreInfinity: 2
-        m_PostInfinity: 2
-        m_RotationOrder: 4
-      _scriptExpression: 
-  _length: 0.16666722
-  _blendIn: 0.033334017
-  _blendOut: 0.05000043
-  animationClip: {fileID: 7400000, guid: 8bafdcd44e3f81a49b836567ce6b6017, type: 3}
-  animationName: Cutepose
-  clipOffset: 0
-  clipWrapMode: 0
-  clipWeight: 1
-  playbackSpeed: 1
-  startingTransformsMode: 0
-  transformSpace: 0
-  startingPosition: {x: 0, y: 0, z: 0}
-  startingRotation: {x: -0, y: 0, z: 0}
-  steerLocalRotation: {x: 0, y: 0}
---- !u!114 &4673270961654631968
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3378478145511216615}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4792578f693c06841a5b299345830d63, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  serializationData:
-    SerializedFormat: 2
-    SerializedBytes: 
-    ReferencedUnityObjects: []
-    SerializedBytesString: 
-    Prefab: {fileID: 0}
-    PrefabModificationsReferencedUnityObjects: []
-    PrefabModifications: []
-    SerializationNodes: []
-  _startTime: 3.3500009
-  _animationData:
-    _animatedParameters:
-    - _serializedData: '{"parameterName":"steerLocalRotation","declaringTypeName":"Slate.ActionClips.PlayAnimatorClip","transformHierarchyPath":"","parameterType":2}'
-      _isDisabled: 0
-      _curves:
-      - serializedVersion: 2
-        m_Curve: []
-        m_PreInfinity: 2
-        m_PostInfinity: 2
-        m_RotationOrder: 4
-      - serializedVersion: 2
-        m_Curve: []
-        m_PreInfinity: 2
-        m_PostInfinity: 2
-        m_RotationOrder: 4
-      _scriptExpression: 
-  _length: 0.43333337
-  _blendIn: 0.099998
-  _blendOut: 0.100000024
-  animationClip: {fileID: 7400000, guid: 8bafdcd44e3f81a49b836567ce6b6017, type: 3}
-  animationName: Cutepose
-  clipOffset: 0
-  clipWrapMode: 0
-  clipWeight: 1
-  playbackSpeed: 1
-  startingTransformsMode: 0
-  transformSpace: 0
-  startingPosition: {x: 0, y: 0, z: 0}
-  startingRotation: {x: -0, y: 0, z: 0}
-  steerLocalRotation: {x: 0, y: 0}
---- !u!114 &8959291962669110991
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3378478145511216615}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4792578f693c06841a5b299345830d63, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  serializationData:
-    SerializedFormat: 2
-    SerializedBytes: 
-    ReferencedUnityObjects: []
-    SerializedBytesString: 
-    Prefab: {fileID: 0}
-    PrefabModificationsReferencedUnityObjects: []
-    PrefabModifications: []
-    SerializationNodes: []
-  _startTime: 3.7833343
-  _animationData:
-    _animatedParameters:
-    - _serializedData: '{"parameterName":"steerLocalRotation","declaringTypeName":"Slate.ActionClips.PlayAnimatorClip","transformHierarchyPath":"","parameterType":2}'
-      _isDisabled: 0
-      _curves:
-      - serializedVersion: 2
-        m_Curve: []
-        m_PreInfinity: 2
-        m_PostInfinity: 2
-        m_RotationOrder: 4
-      - serializedVersion: 2
-        m_Curve: []
-        m_PreInfinity: 2
-        m_PostInfinity: 2
-        m_RotationOrder: 4
-      _scriptExpression: 
-  _length: 0.21666574
-  _blendIn: 0
-  _blendOut: 0.100000024
-  animationClip: {fileID: 7400000, guid: 8bafdcd44e3f81a49b836567ce6b6017, type: 3}
-  animationName: Cutepose
   clipOffset: 0
   clipWrapMode: 0
   clipWeight: 1
@@ -1481,7 +699,7 @@ MonoBehaviour:
   _startTime: 0
   _animationData:
     _animatedParameters: []
-  _length: 4.7166667
+  _length: 1
   ColliderName: NormalBoxCollider
   Speed: 0
   AddBuffName: NormalHit
@@ -1489,13 +707,13 @@ MonoBehaviour:
   force: 0
   duration: 0
   col: {fileID: 0}
-  localeftPostion: {x: 0, y: 0, z: 0}
-  localRotation: {x: 0, y: 0, z: 0, w: 0}
-  localScale: {x: 0, y: 0, z: 0}
-  boundSize: {x: 0, y: 0, z: 0}
+  localeftPostion: {x: -0.14091825, y: 0, z: 7.395523}
+  localRotation: {x: 0, y: 0, z: 0, w: 1}
+  localScale: {x: 1, y: 1, z: 1}
+  boundSize: {x: 1, y: 1, z: 1}
   boundCenter: {x: 0, y: 0, z: 0}
-  path: {fileID: 0}
---- !u!1 &5004232071486689483
+  path: {fileID: 2218856397312163239}
+--- !u!1 &4811968143746247710
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1503,8 +721,8 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1862233796340233434}
-  - component: {fileID: 4531031670100850899}
+  - component: {fileID: 323046075783742661}
+  - component: {fileID: 4596429897108265496}
   m_Layer: 0
   m_Name: Path
   m_TagString: Untagged
@@ -1512,146 +730,76 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1862233796340233434
+--- !u!4 &323046075783742661
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5004232071486689483}
+  m_GameObject: {fileID: 4811968143746247710}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.27, y: 0.41, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8602648601221346076}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4531031670100850899
+--- !u!114 &4596429897108265496
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5004232071486689483}
+  m_GameObject: {fileID: 4811968143746247710}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4234cd2c43978e041bbe9323c195c4bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   resolution: 30
-  drawColor: {r: 0, g: 1, b: 0.37760258, a: 1}
+  drawColor: {r: 1, g: 1, b: 1, a: 1}
   _points:
-  - _path: {fileID: 4531031670100850899}
-    _position: {x: -0.2028358, y: 0, z: -0.17227578}
-    _handle1: {x: 0, y: 0, z: -1.4218082}
-    _handle2: {x: -0, y: -0, z: 1.4218082}
-    _handleStyle: 0
-  - _path: {fileID: 4531031670100850899}
-    _position: {x: 3.2211637, y: 1.7291117, z: 1.7376912}
-    _handle1: {x: -1.2479777, y: -0.33504343, z: 0.62879264}
-    _handle2: {x: 1.2479777, y: 0.33504343, z: -0.62879264}
-    _handleStyle: 0
-  - _path: {fileID: 4531031670100850899}
-    _position: {x: 0.3641274, y: 3.36, z: -4.2586746}
-    _handle1: {x: 2.26557, y: -1.072017, z: -1.1323047}
-    _handle2: {x: -2.26557, y: 1.072017, z: 1.1323047}
-    _handleStyle: 0
-  - _path: {fileID: 4531031670100850899}
-    _position: {x: -1.3217564, y: 7.1411676, z: 0.39749074}
-    _handle1: {x: -0.06026423, y: 1.1528594, z: -0.23248577}
-    _handle2: {x: 0.06026423, y: -1.1528594, z: 0.23248577}
-    _handleStyle: 0
+  - _path: {fileID: 4596429897108265496}
+    _position: {x: 0, y: 0, z: 0}
+    _handle1: {x: 0, y: 0, z: 0}
+    _handle2: {x: -0, y: -0, z: 0}
+    _handleStyle: 2
+  - _path: {fileID: 4596429897108265496}
+    _position: {x: -0.14498472, y: 0, z: 7.319234}
+    _handle1: {x: 0, y: 0, z: 0}
+    _handle2: {x: -0, y: -0, z: 0}
+    _handleStyle: 2
   _sampledPathPoints:
-  - {x: -2.4656968, y: 0.41455603, z: -0.0311645}
-  - {x: -2.4447417, y: 0.4278607, z: 0.1075942}
-  - {x: -2.410659, y: 0.44936892, z: 0.24368009}
-  - {x: -2.364139, y: 0.4785356, z: 0.37677312}
-  - {x: -2.305871, y: 0.51481545, z: 0.5065528}
-  - {x: -2.2365458, y: 0.5576635, z: 0.6326993}
-  - {x: -2.156852, y: 0.6065344, z: 0.75489205}
-  - {x: -2.0674803, y: 0.66088337, z: 0.87281126}
-  - {x: -1.9691197, y: 0.7201649, z: 0.9861363}
-  - {x: -1.8624603, y: 0.7838341, z: 1.0945473}
-  - {x: -1.7481925, y: 0.8513458, z: 1.197724}
-  - {x: -1.6270057, y: 0.92215484, z: 1.295346}
-  - {x: -1.4995891, y: 0.9957161, z: 1.3870933}
-  - {x: -1.3666329, y: 1.0714842, z: 1.4726456}
-  - {x: -1.2288277, y: 1.1489146, z: 1.551683}
-  - {x: -1.0868621, y: 1.2274617, z: 1.6238849}
-  - {x: -0.9414266, y: 1.3065803, z: 1.6889312}
-  - {x: -0.7932104, y: 1.3857256, z: 1.7465018}
-  - {x: -0.6429039, y: 1.4643523, z: 1.7962768}
-  - {x: -0.49119642, y: 1.5419154, z: 1.8379354}
-  - {x: -0.33877832, y: 1.6178694, z: 1.8711575}
-  - {x: -0.18633881, y: 1.6916697, z: 1.8956234}
-  - {x: -0.03456813, y: 1.7627705, z: 1.9110124}
-  - {x: 0.1158444, y: 1.8306274, z: 1.9170046}
-  - {x: 0.26420844, y: 1.8946948, z: 1.9132795}
-  - {x: 0.40983486, y: 1.954428, z: 1.8995173}
-  - {x: 0.55203307, y: 2.009281, z: 1.8753974}
-  - {x: 0.690114, y: 2.0587096, z: 1.8406}
-  - {x: 0.8233874, y: 2.102168, z: 1.7948048}
-  - {x: 0.95116377, y: 2.1391118, z: 1.7376912}
-  - {x: 1.0657687, y: 2.1722808, z: 1.6557417}
-  - {x: 1.1603822, y: 2.2049217, z: 1.5376524}
-  - {x: 1.2355956, y: 2.2372475, z: 1.386424}
-  - {x: 1.2920008, y: 2.2694721, z: 1.2050574}
-  - {x: 1.3301882, y: 2.3018072, z: 0.99655277}
-  - {x: 1.3507502, y: 2.3344674, z: 0.76391155}
-  - {x: 1.3542775, y: 2.3676648, z: 0.5101338}
-  - {x: 1.341362, y: 2.4016137, z: 0.23822078}
-  - {x: 1.3125948, y: 2.4365263, z: -0.048827127}
-  - {x: 1.2685671, y: 2.4726167, z: -0.34800914}
-  - {x: 1.2098712, y: 2.5100977, z: -0.6563241}
-  - {x: 1.1370975, y: 2.5491824, z: -0.9707719}
-  - {x: 1.0508378, y: 2.5900838, z: -1.2883514}
-  - {x: 0.9516833, y: 2.6330154, z: -1.6060622}
-  - {x: 0.84022593, y: 2.6781907, z: -1.9209032}
-  - {x: 0.7170565, y: 2.7258227, z: -2.2298744}
-  - {x: 0.5827669, y: 2.776124, z: -2.5299737}
-  - {x: 0.4379479, y: 2.8293085, z: -2.8182018}
-  - {x: 0.28319156, y: 2.8855891, z: -3.0915573}
-  - {x: 0.11908877, y: 2.9451795, z: -3.3470397}
-  - {x: -0.053768575, y: 3.0082917, z: -3.5816479}
-  - {x: -0.23478967, y: 3.0751405, z: -3.7923813}
-  - {x: -0.42338243, y: 3.1459374, z: -3.9762394}
-  - {x: -0.6189562, y: 3.2208972, z: -4.130222}
-  - {x: -0.8209188, y: 3.300232, z: -4.2513266}
-  - {x: -1.0286797, y: 3.3841558, z: -4.3365545}
-  - {x: -1.2416464, y: 3.472881, z: -4.3829036}
-  - {x: -1.4592289, y: 3.5666213, z: -4.387374}
-  - {x: -1.6808344, y: 3.66559, z: -4.346965}
-  - {x: -1.9058726, y: 3.77, z: -4.2586746}
-  - {x: -2.1232662, y: 3.8862123, z: -4.13844}
-  - {x: -2.3228147, y: 4.0192904, z: -4.0049725}
-  - {x: -2.5052378, y: 4.1674995, z: -3.859429}
-  - {x: -2.6712577, y: 4.3291063, z: -3.702971}
-  - {x: -2.821594, y: 4.502374, z: -3.5367565}
-  - {x: -2.956969, y: 4.6855707, z: -3.361947}
-  - {x: -3.078102, y: 4.87696, z: -3.1797004}
-  - {x: -3.185716, y: 5.074809, z: -2.9911773}
-  - {x: -3.2805297, y: 5.2773824, z: -2.7975366}
-  - {x: -3.3632653, y: 5.4829454, z: -2.5999372}
-  - {x: -3.434644, y: 5.689765, z: -2.3995404}
-  - {x: -3.4953864, y: 5.8961062, z: -2.197505}
-  - {x: -3.5462127, y: 6.1002336, z: -1.9949895}
-  - {x: -3.587844, y: 6.3004136, z: -1.7931546}
-  - {x: -3.6210024, y: 6.4949126, z: -1.5931599}
-  - {x: -3.6464076, y: 6.6819944, z: -1.3961642}
-  - {x: -3.664781, y: 6.859926, z: -1.2033278}
-  - {x: -3.6768432, y: 7.026973, z: -1.0158094}
-  - {x: -3.683316, y: 7.1813993, z: -0.8347694}
-  - {x: -3.6849194, y: 7.321473, z: -0.66136694}
-  - {x: -3.6823747, y: 7.4454575, z: -0.49676168}
-  - {x: -3.6764026, y: 7.5516195, z: -0.34211284}
-  - {x: -3.6677241, y: 7.6382246, z: -0.19858052}
-  - {x: -3.6570606, y: 7.703538, z: -0.067323714}
-  - {x: -3.6451323, y: 7.745825, z: 0.050497606}
-  - {x: -3.6326606, y: 7.7633524, z: 0.15372422}
-  - {x: -3.620366, y: 7.754384, z: 0.24119624}
-  - {x: -3.60897, y: 7.717187, z: 0.31175447}
-  - {x: -3.5991933, y: 7.6500263, z: 0.3642391}
-  - {x: -3.5917563, y: 7.5511675, z: 0.39749074}
+  - {x: -0.004832824, y: 0, z: 0.24397448}
+  - {x: -0.009665648, y: 0, z: 0.48794895}
+  - {x: -0.014498472, y: 0, z: 0.7319234}
+  - {x: -0.019331297, y: 0, z: 0.9758979}
+  - {x: -0.024164122, y: 0, z: 1.2198724}
+  - {x: -0.028996944, y: 0, z: 1.4638468}
+  - {x: -0.033829767, y: 0, z: 1.7078212}
+  - {x: -0.038662594, y: 0, z: 1.9517958}
+  - {x: -0.043495417, y: 0, z: 2.1957703}
+  - {x: -0.048328243, y: 0, z: 2.4397447}
+  - {x: -0.053161066, y: 0, z: 2.6837192}
+  - {x: -0.05799389, y: 0, z: 2.9276936}
+  - {x: -0.062826715, y: 0, z: 3.171668}
+  - {x: -0.067659535, y: 0, z: 3.4156425}
+  - {x: -0.07249236, y: 0, z: 3.659617}
+  - {x: -0.07732519, y: 0, z: 3.9035916}
+  - {x: -0.08215801, y: 0, z: 4.147566}
+  - {x: -0.08699083, y: 0, z: 4.3915405}
+  - {x: -0.09182366, y: 0, z: 4.6355147}
+  - {x: -0.09665649, y: 0, z: 4.8794894}
+  - {x: -0.101489305, y: 0, z: 5.1234636}
+  - {x: -0.10632213, y: 0, z: 5.3674383}
+  - {x: -0.11115495, y: 0, z: 5.6114125}
+  - {x: -0.11598778, y: 0, z: 5.855387}
+  - {x: -0.1208206, y: 0, z: 6.0993614}
+  - {x: -0.12565343, y: 0, z: 6.343336}
+  - {x: -0.13048625, y: 0, z: 6.5873103}
+  - {x: -0.13531907, y: 0, z: 6.831285}
+  - {x: -0.14015189, y: 0, z: 7.075259}
+  - {x: -0.14498472, y: 0, z: 7.319234}
 --- !u!1 &5283733973731255988
 GameObject:
   m_ObjectHideFlags: 0
@@ -1710,8 +858,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 4646284751494707101}
-  - {fileID: 1862233796340233434}
+  - {fileID: 323046075783742661}
+  - {fileID: 8739965951246402258}
   m_Father: {fileID: 7026954199551462257}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1791,11 +939,11 @@ MonoBehaviour:
   _startTime: 0
   _animationData:
     _animatedParameters: []
-  _length: 5
+  _length: 1
   EffectName: KaerShengbo
   pat: {fileID: 0}
   PlayableSpeed: 1
-  localeftPostion: {x: -1.5344517, y: 2.9499621, z: 1.1825902}
+  localeftPostion: {x: -0.14498472, y: 0, z: 7.319234}
   localRotation: {x: 0, y: 0, z: 0, w: 1}
   localScale: {x: 1, y: 1, z: 1}
-  path: {fileID: 4531031670100850899}
+  path: {fileID: 4596429897108265496}

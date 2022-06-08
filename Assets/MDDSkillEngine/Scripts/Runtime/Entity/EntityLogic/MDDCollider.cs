@@ -41,7 +41,18 @@ namespace MDDSkillEngine
                 Box.center = data.boundCenter;
                 CachedTransform.localScale = data.localScale;
                 CachedTransform.localPosition = data.localeftPostion;
-                CachedTransform.localRotation = data.localRotation;                
+                CachedTransform.localRotation = data.localRotation;
+            }
+            else if (!data.IsFollowParent && !data.IsPreLoad)
+            {
+                Game.Entity.AttachEntity(Id, data.Owner.Id);
+                BoxCollider Box = GetComponent<BoxCollider>();
+                Box.size = data.boundSize;
+                Box.center = data.boundCenter;
+                CachedTransform.localScale = data.localScale;
+                CachedTransform.localPosition = data.localeftPostion;
+                CachedTransform.localRotation = data.localRotation;
+                Game.Entity.DetachEntity(Id);
             }
         }
 

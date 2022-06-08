@@ -56,10 +56,10 @@ namespace Slate.ActionClips
         public Quaternion localRotation;
 
         [OnValueChanged("OnSetScale")]
-        public Vector3 localScale;
+        public Vector3 localScale = Vector3.one;
 
         [OnValueChanged("OnSetColSize")]
-        public Vector3 boundSize;
+        public Vector3 boundSize = Vector3.one;
 
         [OnValueChanged("OnSetColCenter")]
         public Vector3 boundCenter;
