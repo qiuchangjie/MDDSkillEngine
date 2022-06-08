@@ -10,6 +10,8 @@ namespace MDDSkillEngine
         [SerializeField]
         private EntityData m_EntityData = null;
 
+        public float wasDuration;
+
         /// <summary>
         /// 实体黑板
         /// </summary>
@@ -102,6 +104,8 @@ namespace MDDSkillEngine
             CachedTransform.localRotation = m_EntityData.Rotation;
             CachedTransform.localScale = m_EntityData.LocalScale;
 
+            wasDuration = 0;
+
             if (m_EntityData.IsPreLoad)
             {
                 Game.Coroutine.StartJobDelayed(0.1f).Start((b) => 
@@ -145,6 +149,7 @@ namespace MDDSkillEngine
 
         {
             base.OnUpdate(elapseSeconds, realElapseSeconds);
+            wasDuration+=elapseSeconds;
             clock.Update(elapseSeconds);
         }
 

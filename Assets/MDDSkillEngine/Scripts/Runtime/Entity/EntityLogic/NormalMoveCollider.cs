@@ -7,7 +7,7 @@ namespace MDDSkillEngine
 {
     public class NormalMoveCollider : ColliderBase
     {
-        MoveColliderData data;
+        MoveColliderData dataMoveCollider;
 
         private int damageSettlementPreSecond = 4;
 
@@ -28,8 +28,8 @@ namespace MDDSkillEngine
         protected override void OnShow(object userData)
         {
             base.OnShow(userData);
-
             data = userData as MoveColliderData;
+            dataMoveCollider = userData as MoveColliderData;
 
             needWaitTime = 1f / damageSettlementPreSecond;
 
@@ -53,14 +53,13 @@ namespace MDDSkillEngine
         {
             base.OnUpdate(elapseSeconds, realElapseSeconds);
 
-            data.Duration -= elapseSeconds;
-            if (data.Duration <= 0)
+            if (data.Duration <= wasDuration)
             {
                 Log.Info("{0}回收collider, name :{1}", LogConst.Skill, Name);
                 HideSelf();
             }
 
-            MoveWithDirAndSpeed(data.Dir, data.Speed, elapseSeconds);
+            MoveWithDirAndSpeed(dataMoveCollider.Dir, dataMoveCollider.Speed, elapseSeconds);
 
             waitTime += elapseSeconds;
 
@@ -99,7 +98,7 @@ namespace MDDSkillEngine
                 Game.Buff.AddBuff(entity.Id.ToString(), "NormalHit", entity, data.Owner, HitData.Create(this, entity, hitPos, this.transform.forward));
             else
                 Game.Buff.AddBuff(entity.Id.ToString(), data.buffName, entity, data.Owner, HitData.Create(this, entity, hitPos,
-                    this.transform.forward, data.HitBuffDuration, data.HitForce, data.HitEffectName));
+                    this.transform.forward, dataMoveCollider.HitBuffDuration, dataMoveCollider.HitForce, data.HitEffectName));
         }
 
 

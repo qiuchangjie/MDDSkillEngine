@@ -19,6 +19,12 @@ namespace Slate.ActionClips
         [HideInInspector]
         private float _length = 1f;
 
+        public override float length
+        {
+            get { return useSpeed && path != null ? path.length / Mathf.Max(speed, 0.01f) : _length; }
+            set { _length = value; }
+        }
+
         [BoxGroup("碰撞体设置")]
         [ValueDropdown("GetColliders")]
         [OnValueChanged("OnColliderChange")]
@@ -66,6 +72,12 @@ namespace Slate.ActionClips
 
         [OnValueChanged("OnPathChange")]
         public Path path;
+
+        [InfoBox("曲线运动是否使用自定义速度 \n" +
+            "使用了自定义速度将激发魔法弹效应，timeline只负责生成物体，之后的行为由物体本身驱动")]
+        public bool useSpeed;
+        public float speed = 3f;
+
         
         private bool _enabled = false;
 
@@ -73,14 +85,9 @@ namespace Slate.ActionClips
 
         private bool _pathisnotnull = false;
 
-        public override float length
-        {
-            get { return _length; }
-            set { _length = value; }
-        }
-
+      
         [HideIf("_pathisnotnull")]
-        [Button("CreatePath")]
+        [Button("创建位移路径")]
         public void CreatePath()
         {
             if (path == null)

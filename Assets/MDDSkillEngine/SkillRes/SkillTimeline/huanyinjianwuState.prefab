@@ -57,8 +57,8 @@ MonoBehaviour:
   groups:
   - {fileID: 7232431185629851885}
   _length: 1
-  _viewTimeMin: -0.27256003
-  _viewTimeMax: 1.8088437
+  _viewTimeMin: -0.46026042
+  _viewTimeMax: 1.8064842
 --- !u!1 &2882366116594116339
 GameObject:
   m_ObjectHideFlags: 0
@@ -555,7 +555,7 @@ MonoBehaviour:
   playbackSpeed: 1
   startingTransformsMode: 0
   transformSpace: 0
-  startingPosition: {x: 0, y: 0, z: 0}
+  startingPosition: {x: 0.7361205, y: 0, z: 0.7286821}
   startingRotation: {x: -0, y: 0, z: 0}
   steerLocalRotation: {x: 0, y: 0}
 --- !u!1 &3434212522798387710
@@ -703,7 +703,7 @@ MonoBehaviour:
   ColliderName: NormalBoxCollider
   Speed: 0
   AddBuffName: NormalHit
-  EffectName: shunxieff
+  EffectName: Hit
   force: 0
   duration: 0
   col: {fileID: 0}
@@ -713,6 +713,8 @@ MonoBehaviour:
   boundSize: {x: 1, y: 1, z: 1}
   boundCenter: {x: 0, y: 0, z: 0}
   path: {fileID: 2218856397312163239}
+  useSpeed: 0
+  speed: 6.35
 --- !u!1 &4811968143746247710
 GameObject:
   m_ObjectHideFlags: 0
@@ -947,3 +949,5 @@ MonoBehaviour:
   localRotation: {x: 0, y: 0, z: 0, w: 1}
   localScale: {x: 1, y: 1, z: 1}
   path: {fileID: 4596429897108265496}
+  useSpeed: 0
+  speed: 3

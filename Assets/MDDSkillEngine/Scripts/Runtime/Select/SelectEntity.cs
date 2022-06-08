@@ -46,7 +46,7 @@ namespace MDDSkillEngine
                 if (entity != null)
                 {
                     Game.Event.Fire(this,SelectEntityEventArgs.Create(entity.Logic as Entity));
-                    selectEntity = entity.Logic as Entity;
+                    selectEntity = entity.Logic as Entity; 
                 }
             }                    
         }

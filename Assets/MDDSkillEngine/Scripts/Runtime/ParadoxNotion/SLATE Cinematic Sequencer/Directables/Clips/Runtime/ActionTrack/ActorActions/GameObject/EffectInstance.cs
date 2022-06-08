@@ -18,6 +18,12 @@ namespace Slate.ActionClips
         [HideInInspector]
         private float _length = 1f;
 
+        public override float length
+        {
+            get { return useSpeed && path != null ? path.length / Mathf.Max(speed, 0.01f) : _length; }
+            set { _length = value; }
+        }
+
         [ValueDropdown("GetEffects")]
         public string EffectName;
 
@@ -33,12 +39,16 @@ namespace Slate.ActionClips
         public Quaternion localRotation;
 
         [OnValueChanged("OnSetScale")]
-        public Vector3 localScale;
+        public Vector3 localScale = Vector3.one;
 
         public Path path;
 
+        [InfoBox("曲线运动是否使用自定义速度 \n" +
+           "使用了自定义速度将激发魔法弹效应，timeline只负责生成物体，之后的行为由物体本身驱动")]
+        public bool useSpeed;
+        public float speed = 3f;
 
-        [Button("CreatePath")]
+        [Button("创建位移路径")]
         public void CreatePath()
         {
             if (path == null)
@@ -54,12 +64,7 @@ namespace Slate.ActionClips
         }
 
 
-        public override float length
-        {
-            get { return _length; }
-            set { _length = value; }
-        }
-
+     
 
         //public override string info
         //{

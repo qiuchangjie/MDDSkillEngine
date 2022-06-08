@@ -37,7 +37,13 @@ namespace MDDSkillEngine
                     localeftPostion = skillData.localeftPostion,
                     boundCenter = skillData.boundCenter,
                     boundSize = skillData.boundSize,
-                    Duration = this.GetLength()
+                    Duration = this.GetLength(),
+                    hasPath = skillData.hasPath,
+                    useSpeed = skillData.useSpeed,
+                    bezierPath = skillData.bezierPath,
+                    bezierPathLength = skillData.bezierPathLength,
+                    bezierPathParentPosition = skillData.bezierPathParentPosition,
+                    bezierPathParentRotation = skillData.bezierPathParentRotation,
                 });
             }
             else
@@ -54,7 +60,13 @@ namespace MDDSkillEngine
                     localeftPostion = skillData.localeftPostion,
                     boundCenter = skillData.boundCenter,
                     boundSize = skillData.boundSize,
-                    Duration = this.GetLength()
+                    Duration = this.GetLength(),
+                    hasPath = skillData.hasPath,
+                    useSpeed = skillData.useSpeed,
+                    bezierPath = skillData.bezierPath,
+                    bezierPathLength = skillData.bezierPathLength,
+                    bezierPathParentPosition = skillData.bezierPathParentPosition,
+                    bezierPathParentRotation = skillData.bezierPathParentRotation,
                 });
             }
 
@@ -79,15 +91,17 @@ namespace MDDSkillEngine
             duration += currentTime;
 
             //利用贝塞尔曲线
-            if (skillData.hasPath)
+            if (!skillData.useSpeed)
             {
-                if (Game.Entity.HasEntity(id))
+                if (skillData.hasPath)
                 {
-                    Entity entity = Game.Entity.GetGameEntity(id);
-                    entity.transform.position = AIUtility.GetPoint(currentTime / this.GetLength(), skillData.bezierPathLength, bezierPath);
+                    if (Game.Entity.HasEntity(id))
+                    {
+                        Entity entity = Game.Entity.GetGameEntity(id);
+                        entity.transform.position = AIUtility.GetPoint(currentTime / this.GetLength(), skillData.bezierPathLength, bezierPath);
+                    }
                 }
-            }
-
+            }         
         }
 
         public override void Exit()

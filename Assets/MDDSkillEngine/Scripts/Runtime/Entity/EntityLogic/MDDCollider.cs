@@ -7,8 +7,6 @@ namespace MDDSkillEngine
 {
     public class MDDCollider : ColliderBase
     {
-        ColliderData data;
-
         private int damageSettlementPreSecond = 4;
 
         private bool canDamage;
@@ -22,7 +20,7 @@ namespace MDDSkillEngine
         {
             base.OnInit(userData);
 
-           
+
         }
 
         protected override void OnShow(object userData)
@@ -60,8 +58,7 @@ namespace MDDSkillEngine
         {
             base.OnUpdate(elapseSeconds, realElapseSeconds);
 
-            data.Duration -= elapseSeconds;
-            if (data.Duration <= 0)
+            if (data.Duration <= wasDuration)
             {
                 HideSelf();
             }
@@ -71,7 +68,7 @@ namespace MDDSkillEngine
             if (waitTime >= needWaitTime)
             {
                 canDamage = true;
-                waitTime -= needWaitTime; 
+                waitTime -= needWaitTime;
             }
         }
 
@@ -89,11 +86,11 @@ namespace MDDSkillEngine
 
             Vector3 hitPos = other.ClosestPoint(CachedTransform.position);
 
-            if(data.buffName=="")
-                Game.Buff.AddBuff(entity.Id.ToString(), "NormalHit", entity, data.Owner, HitData.Create(this, entity, hitPos,this.transform.forward));
+            if (data.buffName == "")
+                Game.Buff.AddBuff(entity.Id.ToString(), "NormalHit", entity, data.Owner, HitData.Create(this, entity, hitPos, this.transform.forward, EffectName: data.HitEffectName));
             else
-                Game.Buff.AddBuff(entity.Id.ToString(), data.buffName, entity, data.Owner, HitData.Create(this, entity, hitPos, this.transform.forward));
-        }          
+                Game.Buff.AddBuff(entity.Id.ToString(), data.buffName, entity, data.Owner, HitData.Create(this, entity, hitPos, this.transform.forward, EffectName: data.HitEffectName));
+        }
     }
 
 }

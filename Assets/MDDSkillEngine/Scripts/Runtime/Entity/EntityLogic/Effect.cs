@@ -8,12 +8,7 @@ namespace MDDSkillEngine
     /// </summary>
     public class Effect : EffectBase
     {
-        [SerializeField]
-        private EffectData m_EffectData = null;
-
-        private float m_ElapseSeconds = 0f;
-
-
+      
         protected override void OnShow(object userData)
         {
             base.OnShow(userData);
@@ -24,8 +19,6 @@ namespace MDDSkillEngine
                 Log.Error("Effect data is invalid.");
                 return;
             }
-
-            m_ElapseSeconds = 0f;
 
             if (m_EffectData.Owner != null)
             {
@@ -52,26 +45,10 @@ namespace MDDSkillEngine
         {
             base.OnUpdate(elapseSeconds, realElapseSeconds);
 
-            m_ElapseSeconds += elapseSeconds;
-
-            if (m_EffectData.IsFllow)
-            {
-                CachedTransform.position = m_EffectData.Owner.CachedTransform.position;
-            }
-
-            //if (m_EffectData.hasPath)
-            //{
-            //    CachedTransform.position = AIUtility.GetPoint(m_ElapseSeconds,m_EffectData.bezierPathLength,m_EffectData.bezierPath);
-            //}
-
-            if (m_ElapseSeconds >= m_EffectData.KeepTime)
+            if (wasDuration >= m_EffectData.KeepTime)
             {
                 Game.Entity.HideEntity(this);
-            }
-
-
-
-            
+            }          
         }
     }
 }

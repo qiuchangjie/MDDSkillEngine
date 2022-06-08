@@ -27,6 +27,12 @@ namespace MDDSkillEngine
 
         public Vector3 localScale;
 
+        public bool hasPath;
+        public bool useSpeed;
+        public Vector3[] bezierPath;
+        public Vector3 bezierPathParentPosition;
+        public Quaternion bezierPathParentRotation;
+        public float bezierPathLength;
 
         public Entity Owner
         {

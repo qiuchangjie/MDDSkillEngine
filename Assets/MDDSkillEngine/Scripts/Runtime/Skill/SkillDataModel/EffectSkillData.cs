@@ -17,6 +17,7 @@ namespace MDDSkillEngine
 
 
         public bool hasPath;
+        public bool useSpeed;
         public Vector3[] bezierPath;
         public Vector3 bezierPathParentPosition;
         public Quaternion bezierPathParentRotation;
@@ -43,6 +44,7 @@ namespace MDDSkillEngine
             {
                 BezierPath path = clip.path as BezierPath;
                 hasPath = true;
+                useSpeed = clip.useSpeed; 
                 bezierPath = path._sampledPathPoints;
                 bezierPathParentPosition = path.transform.localPosition;
                 bezierPathParentRotation = path.transform.localRotation;
