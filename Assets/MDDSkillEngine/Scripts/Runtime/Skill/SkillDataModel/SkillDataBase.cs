@@ -70,6 +70,8 @@ namespace MDDSkillEngine
 
         public List<SkillDataBase> skillData = new List<SkillDataBase>();
 
+        public TargetType targetType;
+
         public SkillData() { }
 
         public SkillData(List<SkillDataBase> skillDatas)

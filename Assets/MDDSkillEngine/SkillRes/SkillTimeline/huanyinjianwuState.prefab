@@ -57,8 +57,8 @@ MonoBehaviour:
   groups:
   - {fileID: 7232431185629851885}
   _length: 1
-  _viewTimeMin: 0.069839574
-  _viewTimeMax: 0.45077884
+  _viewTimeMin: -2.1345363
+  _viewTimeMax: 2.8158956
 --- !u!1 &2882366116594116339
 GameObject:
   m_ObjectHideFlags: 0
@@ -699,7 +699,7 @@ MonoBehaviour:
   _startTime: 0.21666668
   _animationData:
     _animatedParameters: []
-  _length: 1
+  _length: 1.1260322
   ColliderName: NormalBoxCollider
   Speed: 0
   AddBuffName: NormalHit
@@ -713,8 +713,8 @@ MonoBehaviour:
   boundSize: {x: 1, y: 1, z: 1}
   boundCenter: {x: 0, y: 0, z: 0}
   path: {fileID: 2218856397312163239}
-  useSpeed: 0
-  speed: 6.35
+  useSpeed: 1
+  speed: 2.56
 --- !u!1 &4811968143746247710
 GameObject:
   m_ObjectHideFlags: 0
@@ -941,7 +941,7 @@ MonoBehaviour:
   _startTime: 0.21666668
   _animationData:
     _animatedParameters: []
-  _length: 2.9333334
+  _length: 2.8081927
   EffectName: KaerShengbo
   pat: {fileID: 0}
   PlayableSpeed: 1

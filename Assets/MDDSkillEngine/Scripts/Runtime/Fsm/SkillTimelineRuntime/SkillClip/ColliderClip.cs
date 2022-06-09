@@ -28,8 +28,9 @@ namespace MDDSkillEngine
 
             if (skillData.Speed == 0)
             {
-                Game.Entity.ShowCollider(new ColliderData(id, 20001, actor)
+                Game.Entity.ShowCollider(typeof(MDDCollider), skillData.ColliderName, new ColliderData(id, 0, actor)
                 {
+                    targetType = skillTimeline.TargetType,
                     HitEffectName = skillData.EffectName,
                     buffName = skillData.AddBuffName,
                     localRotation = skillData.localRotation,
@@ -44,12 +45,13 @@ namespace MDDSkillEngine
                     bezierPathLength = skillData.bezierPathLength,
                     bezierPathParentPosition = skillData.bezierPathParentPosition,
                     bezierPathParentRotation = skillData.bezierPathParentRotation,
-                });
+                }) ;
             }
             else
             {
                 Game.Entity.ShowCollider(typeof(NormalMoveCollider), skillData.ColliderName, new MoveColliderData(id, 0, actor)
                 {
+                    targetType = skillTimeline.TargetType,
                     Speed = skillData.Speed,
                     HitBuffDuration = skillData.BuffDuration,
                     HitForce = skillData.Force,

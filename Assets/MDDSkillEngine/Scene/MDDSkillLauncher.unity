@@ -306,41 +306,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 5091158753441318962, guid: 881c9baea14e3ad4cbaefeb0ad1e7418,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5091158754143614263, guid: 881c9baea14e3ad4cbaefeb0ad1e7418,
         type: 3}
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 307689314}
-    - target: {fileID: 5091158754341385321, guid: 881c9baea14e3ad4cbaefeb0ad1e7418,
-        type: 3}
-      propertyPath: m_UIGroups.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 5091158754341385321, guid: 881c9baea14e3ad4cbaefeb0ad1e7418,
-        type: 3}
-      propertyPath: m_UIGroups.Array.data[1].m_Name
-      value: Loading
-      objectReference: {fileID: 0}
-    - target: {fileID: 5091158754341385321, guid: 881c9baea14e3ad4cbaefeb0ad1e7418,
-        type: 3}
-      propertyPath: m_UIGroups.Array.data[2].m_Name
-      value: Drag
-      objectReference: {fileID: 0}
-    - target: {fileID: 5091158754341385321, guid: 881c9baea14e3ad4cbaefeb0ad1e7418,
-        type: 3}
-      propertyPath: m_UIGroups.Array.data[1].m_Depth
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5091158754341385321, guid: 881c9baea14e3ad4cbaefeb0ad1e7418,
-        type: 3}
-      propertyPath: m_UIGroups.Array.data[2].m_Depth
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 5091158754374844004, guid: 881c9baea14e3ad4cbaefeb0ad1e7418,
         type: 3}
       propertyPath: m_RootOrder

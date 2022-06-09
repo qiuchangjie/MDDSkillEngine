@@ -14,11 +14,11 @@ namespace MDDSkillEngine
         /// </summary>
         Entity m_Entity;
 
-        public List<AblitiesSlot> ablitiesSlots = new List<AblitiesSlot>(); 
+        public List<AblitiesSlot> ablitiesSlots = new List<AblitiesSlot>();
 
         protected override void OnInit(object userData)
         {
-            base.OnInit(userData);                         
+            base.OnInit(userData);
         }
 
         protected override void OnOpen(object userData)
@@ -63,7 +63,7 @@ namespace MDDSkillEngine
                         ablitiesSlots[i].SwitchSkillSystem(skillSystem);
                     }
                 }
-            }                   
+            }
         }
 
         public void LearnSkill(int index, int Skillid)
@@ -74,11 +74,11 @@ namespace MDDSkillEngine
 
         private void LearnedSkill(object sender, GameEventArgs e)
         {
-            AddSkillEventArgs a=e as AddSkillEventArgs;
+            AddSkillEventArgs a = e as AddSkillEventArgs;
             if (a != null && a.SkillSystem == Game.Skill.GetSkillSystem(m_Entity.Id))
             {
-                ablitiesSlots[a.Index].Init(a.SkillSystem,a.SkillID);
-            }          
+                ablitiesSlots[a.Index].Init(a.SkillSystem, a.SkillID);
+            }
         }
 
         private void SwitchEntity(object sender, GameEventArgs n)
@@ -87,7 +87,7 @@ namespace MDDSkillEngine
 
             SetEntity(e.entity);
         }
-      
+
         public void UseSkill_1(CallbackContext ctx)
         {
             ablitiesSlots[0].UseSkill();

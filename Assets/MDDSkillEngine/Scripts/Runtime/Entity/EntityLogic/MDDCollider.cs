@@ -25,9 +25,10 @@ namespace MDDSkillEngine
 
         protected override void OnShow(object userData)
         {
+            data = userData as ColliderData;
             base.OnShow(userData);
 
-            data = userData as ColliderData;
+            
 
             needWaitTime = 1f / damageSettlementPreSecond;
 

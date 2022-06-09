@@ -12,6 +12,7 @@ namespace MDDSkillEngine
     {
         public GameObject pathFindingTarget;
 
+        public GameObject mouseTarget;
 
         public List<Entity> entities = new List<Entity>();
         /// <summary>

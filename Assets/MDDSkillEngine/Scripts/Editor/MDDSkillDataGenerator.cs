@@ -159,6 +159,7 @@ namespace MDDSkillEngine
             SkillData resultData = new SkillData(dataList);
 
             resultData.Length = Data.length;
+            resultData.targetType = Data._targetType;
 
             Debug.LogError(resultData.Length);
 

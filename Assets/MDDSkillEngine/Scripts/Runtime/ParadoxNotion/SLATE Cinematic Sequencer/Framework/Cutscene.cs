@@ -81,7 +81,7 @@ namespace Slate
 
         [SerializeField]
         [Tooltip("技能目标类型.")]
-        private TargetType _targetType = TargetType.NONE;
+        public TargetType _targetType = TargetType.NONE;
 
         [SerializeField, HideInInspector]
         public List<CutsceneGroup> groups = new List<CutsceneGroup>();

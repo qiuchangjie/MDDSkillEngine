@@ -27,6 +27,7 @@ namespace MDDSkillEngine
 
             Game.Entity.ShowEffect(typeof(Effect),skillData.ResouceName,new EffectData(id, 70006)
             {
+                targetType = skillTimeline.TargetType,
                 Owner = actor,
                 KeepTime = this.GetLength(),
                 localeftPostion=skillData.localeftPostion,

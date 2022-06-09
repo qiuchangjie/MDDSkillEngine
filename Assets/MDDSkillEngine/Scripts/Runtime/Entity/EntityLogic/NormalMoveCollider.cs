@@ -27,10 +27,10 @@ namespace MDDSkillEngine
 
         protected override void OnShow(object userData)
         {
-            base.OnShow(userData);
             data = userData as MoveColliderData;
             dataMoveCollider = userData as MoveColliderData;
-
+            base.OnShow(userData);         
+        
             needWaitTime = 1f / damageSettlementPreSecond;
 
             if (data.Owner != null)

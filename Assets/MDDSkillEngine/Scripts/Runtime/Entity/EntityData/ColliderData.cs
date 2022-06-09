@@ -27,6 +27,7 @@ namespace MDDSkillEngine
 
         public Vector3 localScale;
 
+        public TargetType targetType;
         public bool hasPath;
         public bool useSpeed;
         public Vector3[] bezierPath;

@@ -36,9 +36,7 @@ namespace MDDSkillEngine
         protected override void OnLeave(IFsm<T> fsm, bool isShutdown)
         {
             base.OnLeave(fsm, isShutdown);
-            skillTimeline.currentTime = 0;
-            skillTimeline.previousTime = 0;
-            skillTimeline.lastTime = 0;
+           
             Duration = 0f;
 
             skillTimeline.Exit();

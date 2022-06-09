@@ -24,12 +24,25 @@ namespace MDDSkillEngine
                 {
                     bezierPath.Clear();
 
-                    //坐标转换 将曲线本地坐标转换为世界坐标
-                    for (int i = 0; i < m_EffectData.bezierPath.Length; i++)
+                    if (m_EffectData.targetType == TargetType.POINT)
                     {
-                        Vector3 vec3;
-                        vec3 = m_EffectData.Owner.CachedTransform.TransformPoint(m_EffectData.bezierPath[i]);
-                        bezierPath.Add(vec3);
+                        //坐标转换 将曲线本地坐标转换为世界坐标
+                        for (int i = 0; i < m_EffectData.bezierPath.Length; i++)
+                        {
+                            Vector3 vec3;
+                            vec3 = Game.Select.mouseTarget.transform.TransformPoint(m_EffectData.bezierPath[i]);
+                            bezierPath.Add(vec3);
+                        }
+                    }
+                    else if (m_EffectData.targetType == TargetType.NONE)
+                    {
+                        //坐标转换 将曲线本地坐标转换为世界坐标
+                        for (int i = 0; i < m_EffectData.bezierPath.Length; i++)
+                        {
+                            Vector3 vec3;
+                            vec3 = m_EffectData.Owner.CachedTransform.TransformPoint(m_EffectData.bezierPath[i]);
+                            bezierPath.Add(vec3);
+                        }
                     }
                 }
             }           

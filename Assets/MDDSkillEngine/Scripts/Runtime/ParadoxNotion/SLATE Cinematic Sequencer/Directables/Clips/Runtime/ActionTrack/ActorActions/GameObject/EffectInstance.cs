@@ -96,9 +96,7 @@ namespace Slate.ActionClips
 
             //time *= PlayableSpeed;
 
-            if ((time - previousTime) != 0)
-                Debug.LogError(time - previousTime);
-
+        
             if (pat != null)
             {
                 if (path != null)
