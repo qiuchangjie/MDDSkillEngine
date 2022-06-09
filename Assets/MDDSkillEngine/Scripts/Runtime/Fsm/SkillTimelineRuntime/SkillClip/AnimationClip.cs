@@ -44,7 +44,7 @@ namespace MDDSkillEngine
 
         public override void Exit()
         {
-            
+            base.Exit();
         }
 
         

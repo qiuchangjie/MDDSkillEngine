@@ -66,6 +66,12 @@ namespace MDDSkillEngine
             private set;
         }
 
+        public PlayerMovement CacheMove
+        {
+            get;
+            private set;
+        }
+
 
         protected override void OnInit(object userData)
         {
@@ -75,7 +81,9 @@ namespace MDDSkillEngine
             CachedAnimancer = GetComponent<AnimancerComponent>();
             CachedAnimContainer = GetComponent<AnimationContainer>();
             CacheOutLiner = GetComponent<OutLinerList>();
-            Rigidbody = GetComponent<Rigidbody>();   
+            Rigidbody = GetComponent<Rigidbody>();
+            CacheMove = GetComponent<PlayerMovement>();
+
             blackboard = Blackboard.Create(clock);
 
             blackboard.Set<VarFloat>("PlayableSpeed",1);
@@ -158,6 +166,11 @@ namespace MDDSkillEngine
             Game.Entity.HideEntity(Id);
         }
 
+        public virtual void SetState(EntityNormalState state,bool b)
+        {
+            
+        }
+
         public void SwitchEntitySelectState(EntitySelectState state)
         {
             if (!m_EntityData.IsCanSelect)
@@ -174,5 +187,30 @@ namespace MDDSkillEngine
         OnSelect,
 
         OnHighlight,
+    }
+
+    public enum EntityNormalState
+    {
+        NONE,
+        /// <summary>
+        /// 待机
+        /// </summary>
+        IDLE,
+        /// <summary>
+        /// 移动
+        /// </summary>
+        RUN,
+        /// <summary>
+        /// 被击飞
+        /// </summary>
+        FLYSKY,
+        /// <summary>
+        /// 被击中
+        /// </summary>
+        ATTACKED,
+        /// <summary>
+        /// 被抓取 眩晕
+        /// </summary>
+        CONTROLLED,
     }
 }

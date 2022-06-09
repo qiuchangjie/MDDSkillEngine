@@ -12,7 +12,7 @@ namespace MDDSkillEngine
     {
         private ClipState.Transition idle;
 
-        public override bool StrongState
+        public override bool IsButtomState
         {
             get
             {
@@ -25,11 +25,7 @@ namespace MDDSkillEngine
             base.OnInit(fsm);
             Fsm = fsm;
             Log.Info("创建akiIdle状态。");
-            idle = fsm.Owner.CachedAnimContainer.GetAnimation("Idle");
-            fsm.SetData<VarBoolean>("isMove",false);
-
-            
-           
+            idle = fsm.Owner.CachedAnimContainer.GetAnimation("Idle");      
         }
 
         protected override void OnEnter(IFsm<Entity> fsm)
@@ -54,31 +50,7 @@ namespace MDDSkillEngine
 
         protected override void OnUpdate(IFsm<Entity> fsm, float elapseSeconds, float realElapseSeconds)
         {
-            base.OnUpdate(fsm, elapseSeconds, realElapseSeconds);
-            if (fsm.GetData<VarBoolean>("isMove"))
-            {
-                ChangeState<AkiRunState>(fsm);
-            }
-
-            //if (fsm.GetData<VarBoolean>("attack1"))
-            //{
-            //    ChangeState<AkiAttack1State>(fsm);
-            //}
-
-            //if (fsm.GetData<VarBoolean>("shunxi"))
-            //{
-            //    ChangeState<AkiShunXiState>(fsm);               
-            //}
-
-            //if (fsm.GetData<VarBoolean>("jianrenfengbao"))
-            //{
-            //    ChangeState<Akijianrenfengbao>(fsm);
-            //}
-
-            //if (fsm.GetData<VarBoolean>("skilldatatest"))
-            //{
-            //    ChangeState<AkiSkillDataTest>(fsm);
-            //}
+            base.OnUpdate(fsm, elapseSeconds, realElapseSeconds);                 
         }
 
         protected override void Observing(Blackboard.Type type, Variable newValue)
@@ -92,12 +64,12 @@ namespace MDDSkillEngine
 
             if (skillSystem.GetSkillReleaseResultType() == SkillReleaseResultType.NONE)
             {
-                Fsm.CurrentState.Finish(Fsm);
+                Fsm.CurrentState.ChangeState(Fsm,GetType());
             }
             else
             {
                 skillSystem.SetSkillReleaseResultType(SkillReleaseResultType.STOP);
-                Fsm.CurrentState.Finish(Fsm);
+                Fsm.CurrentState.ChangeState(Fsm, GetType());
             }        
         }
     }

@@ -14,6 +14,7 @@ namespace MDDGameFramework
         private readonly Dictionary<Type, FsmState<T>> m_States;
         private Dictionary<string, Variable> m_Datas;
         private Stack<FsmState<T>> m_StateStack;
+        private FsmState<T> m_ButtonState;
         private FsmState<T> m_CurrentState;
         private float m_CurrentStateTime;
         private bool m_IsDestroyed;
@@ -102,6 +103,14 @@ namespace MDDGameFramework
             }
         }
 
+        public FsmState<T> ButtomState
+        {
+            get 
+            {
+                return m_ButtonState; 
+            }
+        }
+
         /// <summary>
         /// 获取当前有限状态机状态名称。
         /// </summary>
@@ -170,6 +179,7 @@ namespace MDDGameFramework
                     throw new MDDGameFrameworkException("FSM states is invalid.");
                 }
 
+              
                 Type stateType = state.GetType();
                 if (fsm.m_States.ContainsKey(stateType))
                 {
@@ -178,9 +188,17 @@ namespace MDDGameFramework
 
                 fsm.m_States.Add(stateType, state);
                 state.OnInit(fsm);
+
+                if (fsm.m_ButtonState == null)
+                {
+                    if (state.IsButtomState)
+                    {
+                        fsm.m_ButtonState = state;
+                        fsm.m_CurrentStateTime = 0f;
+                        fsm.m_StateStack.Push(state);
+                    }
+                }
             }
-
-
 
             return fsm;
         }
@@ -223,6 +241,16 @@ namespace MDDGameFramework
 
                 fsm.m_States.Add(stateType, state);
                 state.OnInit(fsm);
+
+                if (fsm.m_ButtonState == null)
+                {
+                    if (state.IsButtomState)
+                    {
+                        fsm.m_ButtonState = state;
+                        fsm.m_CurrentStateTime = 0f;
+                        fsm.m_StateStack.Push(state);
+                    }
+                }
             }
 
 
@@ -248,6 +276,7 @@ namespace MDDGameFramework
             Name = null;
             m_Owner = null;
             m_States.Clear();
+            m_ButtonState = null;
 
             if (m_Datas != null)
             {
@@ -290,10 +319,19 @@ namespace MDDGameFramework
                 throw new MDDGameFrameworkException(Utility.Text.Format("FSM '{0}' can not start state '{1}' which is not exist.", new TypeNamePair(typeof(T), Name), typeof(TState).FullName));
             }
 
-            m_CurrentStateTime = 0f;
-            m_CurrentState = state;
-            m_StateStack.Push(state);
-            m_CurrentState.OnEnter(this);
+            if (state == m_ButtonState)
+            {
+                m_CurrentState = state;
+                m_CurrentState.OnEnter(this);
+                
+            }
+            else
+            {
+                m_CurrentStateTime = 0f;
+                m_CurrentState = state;
+                m_StateStack.Push(state);
+                m_CurrentState.OnEnter(this);
+            }           
         }
 
         /// <summary>
@@ -323,10 +361,18 @@ namespace MDDGameFramework
                 throw new MDDGameFrameworkException(Utility.Text.Format("FSM '{0}' can not start state '{1}' which is not exist.", new TypeNamePair(typeof(T), Name), stateType.FullName));
             }
 
-            m_CurrentStateTime = 0f;
-            m_CurrentState = state;
-            m_StateStack.Push(state);
-            m_CurrentState.OnEnter(this);
+            if (state == m_ButtonState)
+            {
+                m_CurrentState = state;
+                m_CurrentState.OnEnter(this);
+            }
+            else
+            {
+                m_CurrentStateTime = 0f;
+                m_CurrentState = state;
+                m_StateStack.Push(state);
+                m_CurrentState.OnEnter(this);
+            }
         }
 
         /// <summary>
@@ -589,7 +635,7 @@ namespace MDDGameFramework
                 throw new MDDGameFrameworkException("Current state is invalid.");
             }
 
-            if (!m_StateStack.Peek().StrongState && !m_StateStack.Peek().CantStop)
+            if (!m_StateStack.Peek().IsButtomState && !m_StateStack.Peek().CantStop)
             {
                 m_StateStack.Peek().OnLeave(this, false);
                 m_StateStack.Pop();
@@ -603,8 +649,7 @@ namespace MDDGameFramework
         /// </summary>
         /// <param name="stateType">要切换到的有限状态机状态类型。</param>
         internal void ChangeState(Type stateType)
-        {
-           
+        {         
             if (m_CurrentState == null)
             {
                 throw new MDDGameFrameworkException("Current state is invalid.");
@@ -621,8 +666,29 @@ namespace MDDGameFramework
                 throw new MDDGameFrameworkException(Utility.Text.Format("FSM '{0}' can not change state to '{1}' which is not exist.", new TypeNamePair(typeof(T), Name), stateType.FullName));
             }
 
-            if (!m_StateStack.Peek().StrongState)
+            if (m_StateStack.Peek().CantStop)
             {
+                return;
+            }
+
+            if (state.IsButtomState)
+            {
+                foreach (var item in m_StateStack)
+                {
+                    if (!item.StrongState)
+                    {
+                        item.OnLeave(this, false);
+                    }
+                }
+                m_StateStack.Clear();
+                m_StateStack.Push(state);
+                m_CurrentStateTime = 0f;
+                m_StateStack.Peek().OnEnter(this);
+                return;
+            }
+
+            if (!m_StateStack.Peek().StrongState && !m_StateStack.Peek().IsButtomState)
+            {               
                 m_StateStack.Peek().OnLeave(this, false);
                 m_CurrentStateTime = 0f;
                 m_StateStack.Pop();
@@ -633,14 +699,7 @@ namespace MDDGameFramework
             {
                 m_StateStack.Push(state);
                 m_StateStack.Peek().OnEnter(this);
-            }
-
-            //Debug.LogError(m_StateStack.Count);
-
-            //m_CurrentState.OnLeave(this, false);
-            //m_CurrentStateTime = 0f;
-            //m_CurrentState = state;
-            //m_CurrentState.OnEnter(this);
+            }            
         }
 
         public void AddObserver(string key, System.Action<Blackboard.Type, Variable> action)

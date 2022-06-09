@@ -67,6 +67,11 @@ namespace MDDSkillEngine
 
         public void Exit()
         {
+            currentTime = 0f;
+            lastTime = 0f;
+            previousTime = 0f;
+
+
             foreach (var v in timePointers)
             {
                 v.isTrigger = false;
@@ -75,6 +80,11 @@ namespace MDDSkillEngine
             foreach (var v in unsortedStartTimePointers)
             {
                 v.isTrigger = false;
+            }
+
+            foreach (var v in skillClips)
+            {
+                v.Exit();
             }
         }
       

@@ -57,8 +57,8 @@ MonoBehaviour:
   groups:
   - {fileID: 7232431185629851885}
   _length: 1
-  _viewTimeMin: -3.7510982
-  _viewTimeMax: 3.4183435
+  _viewTimeMin: 0.069839574
+  _viewTimeMax: 0.45077884
 --- !u!1 &2882366116594116339
 GameObject:
   m_ObjectHideFlags: 0
@@ -132,7 +132,7 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  _startTime: 0.43333337
+  _startTime: 0.20000002
   _animationData:
     _animatedParameters: []
   _length: 0
@@ -211,7 +211,7 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  _startTime: 0.33333334
+  _startTime: 0.20000002
   _animationData:
     _animatedParameters: []
   _length: 0
@@ -696,7 +696,7 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  _startTime: 0
+  _startTime: 0.21666668
   _animationData:
     _animatedParameters: []
   _length: 1
@@ -938,7 +938,7 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  _startTime: 0
+  _startTime: 0.21666668
   _animationData:
     _animatedParameters: []
   _length: 2.9333334

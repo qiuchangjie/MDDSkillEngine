@@ -39,6 +39,7 @@ namespace MDDSkillEngine
 
         public override void Exit()
         {
+            base.Exit();
             //Game.Entity.HideEntity(colid);
             Log.Info("{0}离开fadeClip name：{1}", LogConst.SKillTimeline, GetType().Name);
         }

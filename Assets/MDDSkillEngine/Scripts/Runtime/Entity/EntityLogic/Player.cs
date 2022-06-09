@@ -11,11 +11,8 @@ namespace MDDSkillEngine
 {
     public class Player : TargetableObject
     {
-
         PlayerData PlayerData = null;
         private bool IsPlaying = false;
-
-        PlayerMovement move;
 
         private void SetIsPlaying(object sender,GameEventArgs e)
         {
@@ -52,7 +49,8 @@ namespace MDDSkillEngine
             if (SelectUtility.MouseRayCastByLayer(1 << 0 | 1 << 1, out RaycastHit vector3))
             {
                 Game.Select.pathFindingTarget.transform.position = vector3.point;
-                move.SearchPath();
+                CacheMove.SearchPath();
+                SetState(EntityNormalState.RUN,true);
                 Game.Entity.ShowEffect(new EffectData(Game.Entity.GenerateSerialId(), 70000) { Position = vector3.point });
             }
         }
@@ -67,15 +65,13 @@ namespace MDDSkillEngine
         {
             base.OnInit(userData);
             
-
             //实体级输入绑定
             Game.Input.Control.Heros_Normal.RightClick.performed += OnClickRight;
             Game.Input.Control.Heros_Normal.S.performed += Use_S;
 
             //组件初始化
             Game.Buff.CreatBuffSystem(this.Entity.Id.ToString(),this);
-            Game.Fsm.CreateFsm<Entity, AkiStateAttribute>(this);
-            move = GetComponent<PlayerMovement>();          
+            Game.Fsm.CreateFsm<Entity, AkiStateAttribute>(this);       
             Game.Skill.CreateSkillSystem<Player>(this);
 
             //事件
@@ -136,6 +132,16 @@ namespace MDDSkillEngine
 
         }
 
+        public override void SetState(EntityNormalState state, bool b)
+        {
+            base.SetState(state, b);
+            switch (state)
+            {
+                case EntityNormalState.RUN:
+                    Game.Fsm.GetFsm<Entity>(Id.ToString()).SetData<VarBoolean>(typeof(AkiRunState).Name,b);
+                    break;
+            }
+        }
 
     }
 }

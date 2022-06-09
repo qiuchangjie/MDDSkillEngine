@@ -42,22 +42,27 @@ namespace MDDSkillEngine
         {
             base.OnUpdate(fsm, elapseSeconds, realElapseSeconds);
 
-            if (!fsm.GetData<VarBoolean>("isMove"))
-            {
-                //ChangeState<AkiIdleState>(fsm);
-                Finish(fsm);
-            }
-
-            if (fsm.GetData<VarBoolean>("attack1"))
-            {
-                ChangeState<AkiAttack1State>(fsm);
-            }
-
+            fsm.Owner.CacheMove.Moving(elapseSeconds);
         }
 
         protected override void Observing(Blackboard.Type type, Variable newValue)
         {
-           
+            VarBoolean varBoolean = (VarBoolean)newValue;
+
+            if (varBoolean.Value == false)
+            {
+                ChangeState(Fsm,typeof(AkiIdleState));
+                return;
+            }
+
+            Log.Info("{0}----------------------{1}---{2}",LogConst.FSM,GetType().Name, varBoolean.Value);
+
+            if (Fsm.CurrentState == this)
+            {
+                return;
+            }
+
+            ChangeState(Fsm, GetType());
         }
     }
 }

@@ -10,7 +10,7 @@ namespace MDDSkillEngine
     {
         private ClipState.Transition idle;
 
-        public override bool StrongState
+        public override bool IsButtomState
         {
             get
             {

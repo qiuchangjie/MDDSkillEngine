@@ -13,7 +13,7 @@ namespace MDDSkillEngine
 
         public Seeker seeker;
 
-        public Player player;
+        public Entity player;
 
         public Transform tr;
 
@@ -185,8 +185,6 @@ namespace MDDSkillEngine
         /// <summary>Time when the last path request was sent</summary>
 		protected float lastRepath = -9999;
 
-        IFsm<Entity> fsm;
-
         public void Awake()
         {
             tr = transform;
@@ -198,7 +196,7 @@ namespace MDDSkillEngine
 
         private void Start()
         {
-            player = GetComponent<Player>();
+            player = GetComponent<Entity>();
             seeker.pathCallback += OnPathComplete;
             startHasRun = true;
             Init();
@@ -211,8 +209,6 @@ namespace MDDSkillEngine
 
         private void Init()
         {
-            fsm = Game.Fsm.GetFsm<Entity>(player.Id.ToString());
-
             if (startHasRun)
             {
                 // The Teleport call will make sure some variables are properly initialized (like #prevPosition1 and #prevPosition2)
@@ -324,9 +320,8 @@ namespace MDDSkillEngine
             Log.Info("寻路结束");
 
             interpolator.SetPath(null);
-                
 
-            fsm.SetData<VarBoolean>("isMove", false);
+            player.SetState(EntityNormalState.RUN,false);
         }
 
 
@@ -457,15 +452,30 @@ namespace MDDSkillEngine
 
         private void Update()
         {
+            //if (shouldRecalculatePath) SearchPath();
+
+            //if (canMove && interpolator.valid)
+            //{
+            //    Vector3 nextPosition;
+            //    Quaternion nextRotation;
+            //    MovementUpdate(Time.deltaTime, out nextPosition, out nextRotation);
+            //    FinalizeMovement(nextPosition, nextRotation);
+            //}
+        }
+
+
+        /// <summary>
+        /// 该移动函数由状态机调用
+        /// </summary>
+        /// <param name="deltaTime"></param>
+        public void Moving(float deltaTime)
+        {
             if (shouldRecalculatePath) SearchPath();
 
-            if (canMove && interpolator.valid)
-            {
-                Vector3 nextPosition;
-                Quaternion nextRotation;
-                MovementUpdate(Time.deltaTime, out nextPosition, out nextRotation);
-                FinalizeMovement(nextPosition, nextRotation);
-            }
+            Vector3 nextPosition;
+            Quaternion nextRotation;
+            MovementUpdate(deltaTime, out nextPosition, out nextRotation);
+            FinalizeMovement(nextPosition, nextRotation);
         }
 
         /// <summary>
@@ -524,9 +534,6 @@ namespace MDDSkillEngine
             }
 
             //Log.Info("寻路进行中。。。。。。。");
-
-            fsm.SetData<VarBoolean>("isMove", true);
-
             interpolator.distance += deltaTime * speed;
 
             direction = interpolator.tangent;

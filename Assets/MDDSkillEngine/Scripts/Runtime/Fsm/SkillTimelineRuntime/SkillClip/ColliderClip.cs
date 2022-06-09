@@ -107,6 +107,7 @@ namespace MDDSkillEngine
         public override void Exit()
         {
             //Game.Entity.HideEntity(colid);
+            base.Exit();
             Log.Info("{0}离开ColliderClip name：{1}", LogConst.SKillTimeline, GetType().Name);
         }
 

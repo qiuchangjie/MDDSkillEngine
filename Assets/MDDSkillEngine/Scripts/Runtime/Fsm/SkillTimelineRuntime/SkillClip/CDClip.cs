@@ -38,6 +38,7 @@ namespace MDDSkillEngine
 
         public override void Exit()
         {
+            base.Exit();
             Log.Info("{0}离开CD name：{1}", LogConst.SKillTimeline, GetType().Name);
         }
 

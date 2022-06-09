@@ -20,6 +20,8 @@ namespace MDDGameFramework
 
         private bool m_CantStop;
 
+        private bool m_IsButtomState;
+
         public virtual bool StrongState
         {
             get { return m_StrongState; }
@@ -30,6 +32,12 @@ namespace MDDGameFramework
         {
             get { return m_CantStop; }
             set { m_CantStop = value; }
+        }
+
+        public virtual bool IsButtomState
+        {
+            get { return m_IsButtomState; }
+            set { m_IsButtomState = value; }
         }
 
         public float duration = 0f;
