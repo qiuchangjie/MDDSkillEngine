@@ -57,8 +57,8 @@ MonoBehaviour:
   groups:
   - {fileID: 7232431185629851885}
   _length: 1
-  _viewTimeMin: -0.46026042
-  _viewTimeMax: 1.8064842
+  _viewTimeMin: -3.7510982
+  _viewTimeMax: 3.4183435
 --- !u!1 &2882366116594116339
 GameObject:
   m_ObjectHideFlags: 0
@@ -941,7 +941,7 @@ MonoBehaviour:
   _startTime: 0
   _animationData:
     _animatedParameters: []
-  _length: 1
+  _length: 2.9333334
   EffectName: KaerShengbo
   pat: {fileID: 0}
   PlayableSpeed: 1
@@ -949,5 +949,5 @@ MonoBehaviour:
   localRotation: {x: 0, y: 0, z: 0, w: 1}
   localScale: {x: 1, y: 1, z: 1}
   path: {fileID: 4596429897108265496}
-  useSpeed: 0
-  speed: 3
+  useSpeed: 1
+  speed: 2.52

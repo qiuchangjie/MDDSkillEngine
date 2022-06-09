@@ -11,9 +11,11 @@ namespace MDDSkillEngine
       
         protected override void OnShow(object userData)
         {
-            base.OnShow(userData);
 
             m_EffectData = userData as EffectData;
+
+            base.OnShow(userData);
+       
             if (m_EffectData == null)
             {
                 Log.Error("Effect data is invalid.");
