@@ -73,6 +73,8 @@ namespace MDDSkillEngine
         {
             List<SkillDataBase> dataList = new List<SkillDataBase>();
 
+            float FinishTime = 0f;
+
             foreach (var group in Data.groups)
             {
                 foreach (var track in group.tracks)
@@ -152,12 +154,25 @@ namespace MDDSkillEngine
                                 }
                                 break;
                             }
+                        case (SkillDataType.FinishState):
+                            {
+                                foreach (var clip in track.clips)
+                                {
+                                    if (clip is FinishStateTime)
+                                    {
+                                        FinishTime = clip.startTime;
+                                    }
+                                }
+                                break;
+                            }
+
                     }
                 }
             }
 
             SkillData resultData = new SkillData(dataList);
 
+            resultData.FinishStateTime = FinishTime;
             resultData.Length = Data.length;
             resultData.targetType = Data._targetType;
 

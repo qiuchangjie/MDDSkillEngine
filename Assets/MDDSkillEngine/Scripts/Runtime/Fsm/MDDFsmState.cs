@@ -8,7 +8,7 @@ namespace MDDSkillEngine
     public abstract class MDDFsmState<T> : FsmState<T> where T : Entity
     {
         protected IFsm<T> Fsm;
-
+        protected float FinishTime = 0f;
         protected override void OnInit(IFsm<T> fsm)
         {
             base.OnInit(fsm);

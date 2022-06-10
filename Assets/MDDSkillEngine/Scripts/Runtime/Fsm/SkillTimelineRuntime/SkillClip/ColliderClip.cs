@@ -89,7 +89,7 @@ namespace MDDSkillEngine
         public override void Update(float currentTime, float previousTime)
         {
             base.Update(currentTime, previousTime);
-            Log.Info("{0}upodateColliderClip name：{1}", LogConst.SKillTimeline, GetType().Name);
+           // Log.Info("{0}upodateColliderClip name：{1}", LogConst.SKillTimeline, GetType().Name);
             duration += currentTime;
 
             //利用贝塞尔曲线

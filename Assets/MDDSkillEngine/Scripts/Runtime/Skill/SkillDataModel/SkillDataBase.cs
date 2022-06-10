@@ -65,7 +65,7 @@ namespace MDDSkillEngine
         public string SkillName;
 
         public float Length;
-
+        public float FinishStateTime;
         public Entity Entity;
 
         public List<SkillDataBase> skillData = new List<SkillDataBase>();
@@ -97,7 +97,8 @@ namespace MDDSkillEngine
         Sound,
         CD,
         Buff,
-        InOut
+        InOut,
+        FinishState
     }
 
 }

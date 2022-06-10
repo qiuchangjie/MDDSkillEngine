@@ -88,7 +88,7 @@ namespace MDDSkillEngine
 
             foreach (var v in skillClips)
             {
-                v.Exit();
+                v.Close();
             }
         }
       
@@ -252,9 +252,15 @@ namespace MDDSkillEngine
         }
 
         abstract public void Enter();
-        virtual public void Exit()
+
+        virtual public void Close()
         {
             time = 0;
+            duration = 0;
+        }
+
+        virtual public void Exit()
+        {
         }
         virtual public void Update(float currentTime, float previousTime)
         {

@@ -56,7 +56,13 @@ namespace MDDSkillEngine
             {
                 ISkillSystem skillSystem = Game.Skill.GetSkillSystem(Fsm.Owner.Id);
                 skillSystem.SetSkillReleaseResultType(SkillReleaseResultType.PROGRESS);
-                ChangeState(Fsm,GetType());
+                ChangeState(Fsm, GetType());
+            }
+            else if (Fsm.CurrentState == this)
+            {
+                ISkillSystem skillSystem = Game.Skill.GetSkillSystem(Fsm.Owner.Id);
+                skillSystem.SetSkillReleaseResultType(SkillReleaseResultType.PROGRESS);
+                ChangeState(Fsm, GetType());
             }
             else
             {
