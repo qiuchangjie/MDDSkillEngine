@@ -210,7 +210,7 @@ MonoBehaviour:
   _targetType: 2
   groups:
   - {fileID: 7232431185629851885}
-  _length: 0.4666667
+  _length: 1.9833335
   _viewTimeMin: -7.192176
   _viewTimeMax: 8.686748
 --- !u!1 &3378478145511216615
@@ -319,7 +319,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   serializationData:
-    SerializedFormat: 2
+    SerializedFormat: 0
     SerializedBytes: 
     ReferencedUnityObjects: []
     SerializedBytesString: 
@@ -608,7 +608,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   serializationData:
-    SerializedFormat: 2
+    SerializedFormat: 0
     SerializedBytes: 
     ReferencedUnityObjects: []
     SerializedBytesString: 
@@ -725,7 +725,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   serializationData:
-    SerializedFormat: 2
+    SerializedFormat: 0
     SerializedBytes: 
     ReferencedUnityObjects: []
     SerializedBytesString: 
@@ -802,7 +802,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   serializationData:
-    SerializedFormat: 2
+    SerializedFormat: 0
     SerializedBytes: 
     ReferencedUnityObjects: []
     SerializedBytesString: 
@@ -815,6 +815,7 @@ MonoBehaviour:
     _animatedParameters: []
   _length: 4.4666667
   ColliderName: NormalBoxCollider
+  ColliderLogic: 
   Speed: 0
   AddBuffName: NormalHit
   EffectName: Hit

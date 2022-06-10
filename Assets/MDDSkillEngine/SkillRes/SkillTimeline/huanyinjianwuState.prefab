@@ -701,6 +701,7 @@ MonoBehaviour:
     _animatedParameters: []
   _length: 1.1260322
   ColliderName: NormalBoxCollider
+  ColliderLogic: 
   Speed: 0
   AddBuffName: NormalHit
   EffectName: Hit

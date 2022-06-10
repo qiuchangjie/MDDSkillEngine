@@ -479,6 +479,7 @@ MonoBehaviour:
     _animatedParameters: []
   _length: 0
   ColliderName: 
+  ColliderLogic: 
   Speed: 0
   AddBuffName: 
   EffectName: 

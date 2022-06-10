@@ -31,6 +31,10 @@ namespace Slate.ActionClips
         public string ColliderName;
 
         [BoxGroup("碰撞体设置")]
+        [ValueDropdown("GetColliderLogic")]
+        public string ColliderLogic;
+
+        [BoxGroup("碰撞体设置")]
         [ShowIf("_enabled", 1)]
         public float Speed;
 
@@ -244,6 +248,24 @@ namespace Slate.ActionClips
             }
 
             return NPBlackBoardEditorInstance.buffs; ;
+        }
+
+        private IEnumerable<string> GetColliderLogic()
+        {
+            if (NPBlackBoardEditorInstance.ColliderLogic.Count == 0)
+            {
+                //通过反射获取所有ColliderLogic的名字
+                List<Type> types = new List<Type>();
+                Utility.Assembly.GetTypesByFather(types, typeof(ColliderBase));
+                List<string> colliderName = new List<string>();
+                foreach (var type in types)
+                {
+                    colliderName.Add(type.Name);
+                }
+                NPBlackBoardEditorInstance.ColliderLogic = colliderName;
+            }
+
+            return NPBlackBoardEditorInstance.ColliderLogic; ;
         }
 
         private void OnBuffChange()

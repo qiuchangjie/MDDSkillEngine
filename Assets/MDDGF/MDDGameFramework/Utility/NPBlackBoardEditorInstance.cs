@@ -15,6 +15,12 @@ namespace MDDGameFramework
         public static List<string> Effects = new List<string>();
 
         public static List<string> Collider = new List<string>();
+
+        public static List<string> ColliderLogic = new List<string>();
+
+        public static List<string> EffectLogic = new List<string>();
+
+
     }
 
 }

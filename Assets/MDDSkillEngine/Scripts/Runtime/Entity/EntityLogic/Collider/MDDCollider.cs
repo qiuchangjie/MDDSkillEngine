@@ -27,9 +27,7 @@ namespace MDDSkillEngine
         {
             data = userData as ColliderData;
             base.OnShow(userData);
-
             
-
             needWaitTime = 1f / damageSettlementPreSecond;
 
             if (data.IsFollowParent && !data.IsPreLoad)
