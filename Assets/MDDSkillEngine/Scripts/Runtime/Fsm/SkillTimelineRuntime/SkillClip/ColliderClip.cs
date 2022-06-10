@@ -72,16 +72,21 @@ namespace MDDSkillEngine
                 });
             }
 
-            bezierPath.Clear();
 
-            //坐标转换 将曲线本地坐标转换为世界坐标
-            for (int i = 0; i < skillData.bezierPath.Length; i++)
+
+            if (!skillData.useSpeed && skillData.hasPath)
             {
-                Vector3 vec3;
-                vec3 = actor.CachedTransform.TransformPoint(skillData.bezierPath[i]);
-                bezierPath.Add(vec3);
-            }
+                bezierPath.Clear();
 
+                //坐标转换 将曲线本地坐标转换为世界坐标
+                for (int i = 0; i < skillData.bezierPath.Length; i++)
+                {
+                    Vector3 vec3;
+                    vec3 = actor.CachedTransform.TransformPoint(skillData.bezierPath[i]);
+                    bezierPath.Add(vec3);
+                }
+            }
+        
             SkillTimeline<Entity> skillTimeline1 = skillTimeline as SkillTimeline<Entity>;
             Log.Info("{0}进入Colliderclip ：{1} currenttime:{2}", LogConst.SKillTimeline, skillData.ResouceName, skillTimeline1.currentTime);
         }

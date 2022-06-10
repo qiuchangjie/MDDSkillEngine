@@ -211,8 +211,8 @@ MonoBehaviour:
   groups:
   - {fileID: 7232431185629851885}
   _length: 6.053412
-  _viewTimeMin: -10.169722
-  _viewTimeMax: 9.694895
+  _viewTimeMin: -0.30932704
+  _viewTimeMax: 0.826362
 --- !u!1 &3378478145511216615
 GameObject:
   m_ObjectHideFlags: 0
@@ -583,7 +583,7 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  _startTime: 0.4666667
+  _startTime: 0.45000002
   _animationData:
     _animatedParameters: []
   _length: 0

@@ -33,19 +33,10 @@ namespace MDDSkillEngine
         
             needWaitTime = 1f / damageSettlementPreSecond;
 
-            if (data.Owner != null)
-            {
-                Game.Entity.AttachEntity(Id, data.Owner.Id);
-                CachedTransform.localRotation = data.localRotation;
-                CachedTransform.localPosition = data.localeftPostion;
-                CachedTransform.localScale = data.localScale;
+            BoxCollider Box = GetComponent<BoxCollider>();
+            Box.size = data.boundSize;
+            Box.center = data.boundCenter;
 
-                if (!data.IsFollowParent)
-                {
-                    Game.Entity.DetachEntity(Id);
-                }           
-            }
-              
             dir = data.Owner.CachedTransform.forward;
         }
 
@@ -53,12 +44,7 @@ namespace MDDSkillEngine
         {
             base.OnUpdate(elapseSeconds, realElapseSeconds);
 
-            if (data.Duration <= wasDuration)
-            {
-                Log.Info("{0}回收collider, name :{1}", LogConst.Skill, Name);
-                HideSelf();
-            }
-
+         
             MoveWithDirAndSpeed(dataMoveCollider.Dir, dataMoveCollider.Speed, elapseSeconds);
 
             waitTime += elapseSeconds;

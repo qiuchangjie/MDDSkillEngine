@@ -41,17 +41,19 @@ namespace MDDSkillEngine
                 bezierPathParentRotation = skillData.bezierPathParentRotation,
             });
 
-            bezierPath.Clear();
-
-            //坐标转换 将曲线本地坐标转换为世界坐标
-            for (int i = 0; i < skillData.bezierPath.Length; i++)
+            if (skillData.hasPath)
             {
-                Vector3 vec3;
-                vec3 = actor.CachedTransform.TransformPoint(skillData.bezierPath[i]);
-                bezierPath.Add(vec3);
-            }
+                bezierPath.Clear();
 
-           
+                //坐标转换 将曲线本地坐标转换为世界坐标
+                for (int i = 0; i < skillData.bezierPath.Length; i++)
+                {
+                    Vector3 vec3;
+                    vec3 = actor.CachedTransform.TransformPoint(skillData.bezierPath[i]);
+                    bezierPath.Add(vec3);
+                }
+            }
+          
            Log.Info("{0}进入effectclip name：{1}", LogConst.SKillTimeline, "1");
         }
 

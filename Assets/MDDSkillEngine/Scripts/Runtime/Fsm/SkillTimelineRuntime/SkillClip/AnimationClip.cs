@@ -25,7 +25,7 @@ namespace MDDSkillEngine
             if (actor.CachedAnimancer.IsPlaying(anim))
             {
                 actor.CachedAnimancer.Stop(anim);
-                actor.CachedAnimancer.Play(anim);
+                actor.CachedAnimancer.Play(anim,0);
             }
             else
             {

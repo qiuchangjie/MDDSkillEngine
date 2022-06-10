@@ -20,6 +20,30 @@ namespace MDDSkillEngine
 
             if (data != null)
             {
+                if (data.targetType == TargetType.NONE)
+                {
+                    if (data.Owner != null)
+                    {
+                        Game.Entity.AttachEntity(Id, data.Owner.Id);
+                        CachedTransform.localRotation = data.localRotation;
+                        CachedTransform.localPosition = data.localeftPostion;
+                        CachedTransform.localScale = data.localScale;
+
+                        if (!data.IsFollowParent)
+                        {
+                            Game.Entity.DetachEntity(Id);
+                        }
+                    }
+                    
+                }
+                else if (data.targetType == TargetType.POINT)
+                {
+                    CachedTransform.localRotation = Game.Select.mouseTarget.transform.rotation;
+                    CachedTransform.localPosition = Game.Select.mouseTarget.transform.position;
+                    CachedTransform.localScale = data.localScale;
+                }
+               
+
                 if (data.useSpeed && data.hasPath)
                 {
                     bezierPath.Clear();
@@ -60,7 +84,12 @@ namespace MDDSkillEngine
                 {
                     CachedTransform.position = AIUtility.GetPoint(wasDuration / data.Duration, data.bezierPathLength, bezierPath);
                 }
-            }          
+            }
+
+            if (data.Duration <= wasDuration)
+            {
+                HideSelf();
+            }
         }
     }
 }
