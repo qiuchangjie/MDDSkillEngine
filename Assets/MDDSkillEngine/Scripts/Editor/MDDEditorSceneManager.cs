@@ -28,6 +28,8 @@ namespace MDDSkillEngine
             if (scene.name == "EditorSkillTimeline")
             {
                 MDDSkillTimelineEditor.Instance.ClearRoot();
+                MDDSkillTimelineEditor.Instance.Cutscene = "";
+                Selection.activeGameObject = MDDSkillTimelineEditor.Instance.instanceRoot.gameObject;
             }
         }
 

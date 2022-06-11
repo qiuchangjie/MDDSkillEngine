@@ -11,6 +11,7 @@ using System.IO;
 
 namespace MDDSkillEngine
 {
+    
     public class MDDSkillTimelineEditor : MonoBehaviour
     {
         private static MDDSkillTimelineEditor instance;
@@ -41,7 +42,7 @@ namespace MDDSkillEngine
         [ValueDropdown("GetSkillTimeline")]
         [OnValueChanged("ChangeSlate")]
         [SerializeField]
-        private string Cutscene;
+        public string Cutscene;
 
         [BoxGroup("EditorSkillTimeline")]
         [Button("ClearRoot")]
@@ -55,6 +56,8 @@ namespace MDDSkillEngine
                     DestroyImmediate(instanceRoot.GetChild(i).gameObject);
                 }
             }
+
+            Cutscene = "";
         }
 
       
@@ -80,12 +83,24 @@ namespace MDDSkillEngine
         }
 
 
+        private void ClearRootInterior()
+        {
+            if (instanceRoot.childCount > 0)
+            {
+                int count = instanceRoot.childCount;
+                for (int i = count - 1; i >= 0; i--)
+                {
+                    DestroyImmediate(instanceRoot.GetChild(i).gameObject);
+                }
+            }
+        }
+
         private void ChangeSlate()
         {
             if (Cutscene == "")
                 return;
 
-            ClearRoot();
+            ClearRootInterior();
             UnityEngine.Object asset = UnityEditor.AssetDatabase.LoadAssetAtPath(AssetUtility.GetSkillTimelinePrefab(Cutscene), typeof(UnityEngine.Object));
             curCutscene = (PrefabUtility.InstantiatePrefab(asset, transform) as GameObject).GetComponent<Cutscene>();
         }
