@@ -92,6 +92,7 @@ namespace MDDGameFramework
 
         public virtual void Clear()
         {
+            ReferencePool.Release(buffData);
             buffData = null;
         }
     }

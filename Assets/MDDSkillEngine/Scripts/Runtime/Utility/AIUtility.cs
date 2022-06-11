@@ -14,6 +14,13 @@ namespace MDDSkillEngine
     public static class AIUtility
     {
 
+        /// <summary>
+        /// 按照贝塞尔曲线编辑路径运行 runtime函数
+        /// </summary>
+        /// <param name="t"></param>
+        /// <param name="length"></param>
+        /// <param name="path"></param>
+        /// <returns></returns>
         public static Vector3 GetPoint(float t, float length,List<Vector3> path)
         {
             if (t <= 0) return path[0];

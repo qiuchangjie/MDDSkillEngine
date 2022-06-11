@@ -52,6 +52,11 @@ namespace MDDSkillEngine
             return Utility.Text.Format("Assets/MDDSkillEngine/SkillRes/SkillTimelineRuntime/{0}.bytes", assetName);
         }
 
+        public static string GetSkillTimelinePrefab(string assetName)
+        {
+            return Utility.Text.Format("Assets/MDDSkillEngine/SkillRes/SkillTimeline/{0}.prefab", assetName);
+        }
+
         /// <summary>
         /// 获取公共黑板资源
         /// </summary>

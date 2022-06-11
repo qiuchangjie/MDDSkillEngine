@@ -31,11 +31,6 @@ namespace MDDSkillEngine
         public Vector3 HitDir;
 
         /// <summary>
-        /// 碰撞持续时间
-        /// </summary>
-        public float HitDuration;
-
-        /// <summary>
         /// 碰撞力的大小
         /// </summary>
         public float HitForce;
@@ -47,14 +42,12 @@ namespace MDDSkillEngine
 
         public HitData() { }
 
-        public static HitData Create(object from,object target,Vector3 hitpoint,Vector3 hitDir,float Duration = 0,float hitForce = 0,string EffectName="")
+        public static HitData Create(object from,object target,Vector3 hitpoint,Vector3 hitDir,string EffectName="")
         {
             HitData hitData = ReferencePool.Acquire<HitData>();
             hitData.From = from;
             hitData.Target = target;
             hitData.HitPoint = hitpoint;
-            hitData.HitForce = hitForce;
-            hitData.HitDuration = Duration;
             hitData.HitDir = hitDir;
             hitData.EffectName = EffectName;
 

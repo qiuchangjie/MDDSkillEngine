@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Animancer;
 using MDDGameFramework.Runtime;
 using UnityEngine;
+using MDDGameFramework;
 
 namespace MDDSkillEngine
 {
@@ -26,51 +27,70 @@ namespace MDDSkillEngine
         {
             id = Game.Entity.GenerateSerialId();
 
-            if (skillData.Speed == 0)
+            Game.Entity.ShowCollider(Utility.Assembly.GetType(skillData.ColliderLogic), skillData.ColliderName,new ColliderData(id, 0, actor)
             {
-                Game.Entity.ShowCollider(typeof(MDDCollider), skillData.ColliderName, new ColliderData(id, 0, actor)
-                {
-                    targetType = skillTimeline.TargetType,
-                    HitEffectName = skillData.EffectName,
-                    buffName = skillData.AddBuffName,
-                    localRotation = skillData.localRotation,
-                    localScale = skillData.localScale,
-                    localeftPostion = skillData.localeftPostion,
-                    boundCenter = skillData.boundCenter,
-                    boundSize = skillData.boundSize,
-                    Duration = this.GetLength(),
-                    hasPath = skillData.hasPath,
-                    useSpeed = skillData.useSpeed,
-                    bezierPath = skillData.bezierPath,
-                    bezierPathLength = skillData.bezierPathLength,
-                    bezierPathParentPosition = skillData.bezierPathParentPosition,
-                    bezierPathParentRotation = skillData.bezierPathParentRotation,
-                }) ;
-            }
-            else
-            {
-                Game.Entity.ShowCollider(typeof(NormalMoveCollider), skillData.ColliderName, new MoveColliderData(id, 0, actor)
-                {
-                    targetType = skillTimeline.TargetType,
-                    Speed = skillData.Speed,
-                    HitBuffDuration = skillData.BuffDuration,
-                    HitForce = skillData.Force,
-                    buffName = skillData.AddBuffName,
-                    HitEffectName = skillData.EffectName,
-                    localRotation = skillData.localRotation,
-                    localScale = skillData.localScale,
-                    localeftPostion = skillData.localeftPostion,
-                    boundCenter = skillData.boundCenter,
-                    boundSize = skillData.boundSize,
-                    Duration = this.GetLength(),
-                    hasPath = skillData.hasPath,
-                    useSpeed = skillData.useSpeed,
-                    bezierPath = skillData.bezierPath,
-                    bezierPathLength = skillData.bezierPathLength,
-                    bezierPathParentPosition = skillData.bezierPathParentPosition,
-                    bezierPathParentRotation = skillData.bezierPathParentRotation,
-                });
-            }
+                targetType = skillTimeline.TargetType,
+                HitEffectName = skillData.EffectName,
+                buffName = skillData.AddBuffName,
+                localRotation = skillData.localRotation,
+                localScale = skillData.localScale,
+                localeftPostion = skillData.localeftPostion,
+                boundCenter = skillData.boundCenter,
+                boundSize = skillData.boundSize,
+                Duration = this.GetLength(),
+                hasPath = skillData.hasPath,
+                useSpeed = skillData.useSpeed,
+                bezierPath = skillData.bezierPath,
+                bezierPathLength = skillData.bezierPathLength,
+                bezierPathParentPosition = skillData.bezierPathParentPosition,
+                bezierPathParentRotation = skillData.bezierPathParentRotation,
+            });
+
+            //if (skillData.Speed == 0)
+            //{
+            //    Game.Entity.ShowCollider(typeof(MDDCollider), skillData.ColliderName, new ColliderData(id, 0, actor)
+            //    {
+            //        targetType = skillTimeline.TargetType,
+            //        HitEffectName = skillData.EffectName,
+            //        buffName = skillData.AddBuffName,
+            //        localRotation = skillData.localRotation,
+            //        localScale = skillData.localScale,
+            //        localeftPostion = skillData.localeftPostion,
+            //        boundCenter = skillData.boundCenter,
+            //        boundSize = skillData.boundSize,
+            //        Duration = this.GetLength(),
+            //        hasPath = skillData.hasPath,
+            //        useSpeed = skillData.useSpeed,
+            //        bezierPath = skillData.bezierPath,
+            //        bezierPathLength = skillData.bezierPathLength,
+            //        bezierPathParentPosition = skillData.bezierPathParentPosition,
+            //        bezierPathParentRotation = skillData.bezierPathParentRotation,
+            //    }) ;
+            //}
+            //else
+            //{
+            //    Game.Entity.ShowCollider(typeof(NormalMoveCollider), skillData.ColliderName, new MoveColliderData(id, 0, actor)
+            //    {
+            //        targetType = skillTimeline.TargetType,
+            //        Speed = skillData.Speed,
+            //        HitBuffDuration = skillData.BuffDuration,
+            //        HitForce = skillData.Force,
+            //        buffName = skillData.AddBuffName,
+            //        HitEffectName = skillData.EffectName,
+            //        localRotation = skillData.localRotation,
+            //        localScale = skillData.localScale,
+            //        localeftPostion = skillData.localeftPostion,
+            //        boundCenter = skillData.boundCenter,
+            //        boundSize = skillData.boundSize,
+            //        Duration = this.GetLength(),
+            //        hasPath = skillData.hasPath,
+            //        useSpeed = skillData.useSpeed,
+            //        bezierPath = skillData.bezierPath,
+            //        bezierPathLength = skillData.bezierPathLength,
+            //        bezierPathParentPosition = skillData.bezierPathParentPosition,
+            //        bezierPathParentRotation = skillData.bezierPathParentRotation,
+            //    });
+            //}
 
 
 

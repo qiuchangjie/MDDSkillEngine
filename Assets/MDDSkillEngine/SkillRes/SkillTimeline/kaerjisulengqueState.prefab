@@ -73,7 +73,7 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  _startTime: 0.38333336
+  _startTime: 0.116666675
   _animationData:
     _animatedParameters: []
   _length: 0.45000002
@@ -82,8 +82,6 @@ MonoBehaviour:
   Speed: 0
   AddBuffName: 
   EffectName: 
-  force: 0
-  duration: 0
   col: {fileID: 0}
   localeftPostion: {x: -0.098, y: 0.51, z: 0.437}
   localRotation: {x: 0, y: 0, z: 0, w: 1}

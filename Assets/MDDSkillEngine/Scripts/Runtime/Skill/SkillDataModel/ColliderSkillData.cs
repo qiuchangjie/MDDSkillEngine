@@ -22,15 +22,13 @@ namespace MDDSkillEngine
 
         public string ColliderName;
 
+        public string ColliderLogic;
+
         public float Speed;
 
         public string AddBuffName;
 
         public string EffectName;
-
-        public float Force;
-
-        public float BuffDuration;
 
 
         public bool hasPath;
@@ -58,13 +56,11 @@ namespace MDDSkillEngine
             localScale = instanceCollider.localScale;
             boundSize = instanceCollider.boundSize;                
             boundCenter = instanceCollider.boundCenter;
-            ResouceName = instanceCollider.ColliderName;
             ColliderName = instanceCollider.ColliderName;
+            ColliderLogic = instanceCollider.ColliderLogic;
             Speed = instanceCollider.Speed;
             AddBuffName = instanceCollider.AddBuffName;
             EffectName = instanceCollider.EffectName;
-            Force = instanceCollider.duration;
-            BuffDuration = instanceCollider.duration;
 
             if (instanceCollider.path != null)
             {

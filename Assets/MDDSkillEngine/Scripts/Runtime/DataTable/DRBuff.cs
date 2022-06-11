@@ -1,6 +1,6 @@
 ﻿//------------------------------------------------------------
 // 此文件由工具自动生成，请勿直接修改。
-// 生成时间：2022-06-09 22:50:49.599
+// 生成时间：2022-06-11 15:56:48.373
 //------------------------------------------------------------
 
 using MDDGameFramework;
@@ -85,6 +85,15 @@ namespace MDDSkillEngine
             private set;
         }
 
+        /// <summary>
+        /// 获取buff特化字段。
+        /// </summary>
+        public List<int> Specializedfields
+        {
+            get;
+            private set;
+        }
+
         public override bool ParseDataRow(string dataRowString, object userData)
         {
             string[] columnStrings = dataRowString.Split(DataTableExtension.DataSplitSeparators);
@@ -103,6 +112,7 @@ namespace MDDSkillEngine
             Duration = float.Parse(columnStrings[index++]);
             OverDamage = int.Parse(columnStrings[index++]);
             DoT = int.Parse(columnStrings[index++]);
+            Specializedfields =  DataTableExtension.ParseList(columnStrings[index++]);
 
             GeneratePropertyArray();
             return true;
@@ -121,6 +131,7 @@ namespace MDDSkillEngine
                     Duration = binaryReader.ReadSingle();
                     OverDamage = binaryReader.Read7BitEncodedInt32();
                     DoT = binaryReader.Read7BitEncodedInt32();
+                    Specializedfields = binaryReader.ReadList();
                 }
             }
 

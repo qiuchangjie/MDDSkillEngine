@@ -27,7 +27,6 @@ namespace Slate.ActionClips
 
         [BoxGroup("碰撞体设置")]
         [ValueDropdown("GetColliders")]
-        [OnValueChanged("OnColliderChange")]
         public string ColliderName;
 
         [BoxGroup("碰撞体设置")]
@@ -35,27 +34,16 @@ namespace Slate.ActionClips
         public string ColliderLogic;
 
         [BoxGroup("碰撞体设置")]
-        [ShowIf("_enabled", 1)]
         public float Speed;
 
         [BoxGroup("碰撞体设置")]
-        [ShowIf("_enabled", 1)]
         [ValueDropdown("GetBuffs")]
-        [OnValueChanged("OnBuffChange")]
         public string AddBuffName;
 
         [BoxGroup("hitbuff参数")]
-        [ShowIf("_enabled1", 1)]
         [ValueDropdown("GetEffect")]
         public string EffectName;
 
-        [BoxGroup("hitbuff参数")]
-        [ShowIf("_enabled1", 1)]
-        public float force;
-
-        [BoxGroup("hitbuff参数")]
-        [ShowIf("_enabled1", 1)]
-        public float duration;
 
         public BoxCollider col;
 
@@ -74,7 +62,6 @@ namespace Slate.ActionClips
         [OnValueChanged("OnSetColCenter")]
         public Vector3 boundCenter;
 
-        [OnValueChanged("OnPathChange")]
         public Path path;
 
         [InfoBox("曲线运动是否使用自定义速度 \n" +
@@ -82,15 +69,8 @@ namespace Slate.ActionClips
         public bool useSpeed;
         public float speed = 3f;
 
-        
-        private bool _enabled = false;
-
-        private bool _enabled1 = false;
-
-        private bool _pathisnotnull = false;
 
       
-        [HideIf("_pathisnotnull")]
         [Button("创建位移路径")]
         public void CreatePath()
         {
@@ -116,8 +96,6 @@ namespace Slate.ActionClips
         protected override void OnDrawGizmosSelected()
         {
             base.OnDrawGizmosSelected();
-            OnBuffChange();
-            OnColliderChange();
         }
 
         protected override void OnEnter()
@@ -126,7 +104,7 @@ namespace Slate.ActionClips
             if (col == null)
             {
                 UnityEngine.Object asset = UnityEditor.AssetDatabase.LoadAssetAtPath(AssetUtility.GetEntityAsset(ColliderName, EntityType.Collider), typeof(UnityEngine.Object));
-                GameObject obj = Instantiate(asset) as GameObject;
+                GameObject obj = Instantiate(asset,((Cutscene)root).transform.parent) as GameObject;
                 col = obj.GetComponent<BoxCollider>();               
                 obj.transform.localPosition = localeftPostion;
                 obj.transform.rotation = localRotation;
@@ -219,19 +197,6 @@ namespace Slate.ActionClips
 
 
 #if UNITY_EDITOR
-
-        private void OnPathChange()
-        {
-            if (path == null)
-            {
-                _pathisnotnull = false;
-            }
-            else
-            {
-                _pathisnotnull = true;
-            }
-        }
-
         private IEnumerable<string> GetBuffs()
         {
             if (NPBlackBoardEditorInstance.buffs.Count == 0)
@@ -268,18 +233,7 @@ namespace Slate.ActionClips
             return NPBlackBoardEditorInstance.ColliderLogic; ;
         }
 
-        private void OnBuffChange()
-        {
-            if (AddBuffName == "PushHit")
-            {
-                _enabled1 = true;
-            }
-            else
-            {
-                _enabled1 = false;
-            }
-        }
-
+   
 
         private IEnumerable<string> GetColliders()
         {
@@ -333,18 +287,7 @@ namespace Slate.ActionClips
             return NPBlackBoardEditorInstance.Effects; ;
         }
 
-        private void OnColliderChange()
-        {
-            if (ColliderName == "NormalMoveCollider")
-            {
-                _enabled = true;
-            }
-            else
-            {
-                _enabled = false;
-            }
-        }
-
+     
         
 #endif
     }

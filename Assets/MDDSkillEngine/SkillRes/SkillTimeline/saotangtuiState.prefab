@@ -607,8 +607,6 @@ MonoBehaviour:
   Speed: 0
   AddBuffName: 
   EffectName: 
-  force: 0
-  duration: 0
   col: {fileID: 0}
   localeftPostion: {x: -0.098, y: 0.51, z: 0.437}
   localRotation: {x: 0, y: 0, z: 0, w: 1}

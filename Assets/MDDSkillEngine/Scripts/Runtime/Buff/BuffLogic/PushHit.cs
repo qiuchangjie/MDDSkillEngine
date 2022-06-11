@@ -13,6 +13,8 @@ namespace MDDSkillEngine
 
         HitData hitData;
 
+        DRBuff drBuff;
+
         private bool dRCondition(DRBuff buff)
         {
             if (buff.Name == this.GetType().Name && buff.Level == 1)
@@ -28,7 +30,7 @@ namespace MDDSkillEngine
 
             IDataTable<DRBuff> dtBuff = Game.DataTable.GetDataTable<DRBuff>();
 
-            DRBuff drBuff = dtBuff.GetDataRow(drCondition);
+            drBuff = dtBuff.GetDataRow(drCondition);
 
             data = NormalHitData.Create(drBuff);
 
@@ -55,12 +57,11 @@ namespace MDDSkillEngine
                 Log.Error("{0}hitbuff 目标丢失", LogConst.Buff);
             }
 
-            IFsm<Entity> fsm = Game.Fsm.GetFsm<Entity>(entity.Id.ToString());
+            entity.SetState(EntityNormalState.ATTACKED,true);
 
-            fsm.Blackboard.Set<VarBoolean>(typeof(AiDamageState).Name, true);
-
-            Game.Entity.ShowEffect(new EffectData(Game.Entity.GenerateSerialId(), 70003)
+            Game.Entity.ShowEffect(typeof(Effect), hitData.EffectName, new EffectData(Game.Entity.GenerateSerialId(), 0)
             {
+                KeepTime = 3f,
                 Position = hitData.HitPoint,
                 Rotation = entity.CachedTransform.rotation
             });
@@ -71,6 +72,8 @@ namespace MDDSkillEngine
         public override void OnUpdate(IBuffSystem buffSystem, float elapseSeconds, float realElapseSeconds)
         {
             base.OnUpdate(buffSystem, elapseSeconds, realElapseSeconds);
+            Entity entity = Target as Entity;
+            entity.Rigidbody.AddForce(hitData.HitDir * drBuff.Specializedfields[0] , ForceMode.Impulse);
         }
 
 
@@ -84,13 +87,7 @@ namespace MDDSkillEngine
 
         public override void OnFininsh(IBuffSystem buffSystem)
         {
-            base.OnFininsh(buffSystem);
-
-            if (hitData != null)
-            {
-                ReferencePool.Release(hitData);
-            }
-
+            base.OnFininsh(buffSystem);         
             Log.Info("{0}hitbuff finish", LogConst.Buff);
         }
 

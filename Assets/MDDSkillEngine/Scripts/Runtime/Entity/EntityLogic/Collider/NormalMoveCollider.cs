@@ -29,8 +29,8 @@ namespace MDDSkillEngine
         {
             data = userData as MoveColliderData;
             dataMoveCollider = userData as MoveColliderData;
-            base.OnShow(userData);         
-        
+            base.OnShow(userData);
+
             needWaitTime = 1f / damageSettlementPreSecond;
 
             BoxCollider Box = GetComponent<BoxCollider>();
@@ -44,7 +44,7 @@ namespace MDDSkillEngine
         {
             base.OnUpdate(elapseSeconds, realElapseSeconds);
 
-         
+
             MoveWithDirAndSpeed(dataMoveCollider.Dir, dataMoveCollider.Speed, elapseSeconds);
 
             waitTime += elapseSeconds;
@@ -63,7 +63,8 @@ namespace MDDSkillEngine
 
         private void MoveWithDirAndSpeed(Vector3 dir, float speed, float elapseSeconds)
         {
-            transform.Translate(dir * speed * elapseSeconds);
+            if (speed != 0)
+                transform.Translate(dir * speed * elapseSeconds);
         }
 
 
@@ -84,7 +85,7 @@ namespace MDDSkillEngine
                 Game.Buff.AddBuff(entity.Id.ToString(), "NormalHit", entity, data.Owner, HitData.Create(this, entity, hitPos, this.transform.forward));
             else
                 Game.Buff.AddBuff(entity.Id.ToString(), data.buffName, entity, data.Owner, HitData.Create(this, entity, hitPos,
-                    this.transform.forward, dataMoveCollider.HitBuffDuration, dataMoveCollider.HitForce, data.HitEffectName));
+                    this.transform.forward, data.HitEffectName));
         }
 
 

@@ -47,7 +47,18 @@ namespace MDDSkillEngine
         protected override void OnUpdate(float elapseSeconds, float realElapseSeconds)
         {
             base.OnUpdate(elapseSeconds, realElapseSeconds);         
-        }     
+        }
+
+        public override void SetState(EntityNormalState state, bool b)
+        {
+            base.SetState(state, b);
+            switch (state)
+            {
+                case EntityNormalState.ATTACKED:
+                    Game.Fsm.GetFsm<Entity>(Id.ToString()).SetData<VarBoolean>(typeof(AiDamageState).Name, b);
+                    break;
+            }
+        }
     }
 }
 

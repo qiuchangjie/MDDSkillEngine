@@ -77,7 +77,7 @@ namespace Slate.ActionClips
             if (pat == null)
             {
                 Object asset = UnityEditor.AssetDatabase.LoadAssetAtPath(AssetUtility.GetEntityAsset(EffectName, EntityType.Effect), typeof(Object));
-                GameObject obj = Instantiate(asset) as GameObject;
+                GameObject obj = Instantiate(asset,((Cutscene)root).transform.parent) as GameObject;
                 pat = obj.GetComponent<ParticleSystem>();
                 pat.useAutoRandomSeed = false;
                 obj.transform.localPosition = localeftPostion;

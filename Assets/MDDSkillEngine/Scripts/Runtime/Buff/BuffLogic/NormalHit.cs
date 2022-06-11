@@ -80,6 +80,11 @@ namespace MDDSkillEngine
             base.Clear();
             ReferencePool.Release(data);
 
+            if (hitData != null)
+            {
+                ReferencePool.Release(hitData);
+            }
+
             data = null;
         }
 

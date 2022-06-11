@@ -20,7 +20,7 @@ namespace MDDGameFramework
 
         public static List<string> EffectLogic = new List<string>();
 
-
+        public static List<string> SkillTimelines = new List<string>();
     }
 
 }

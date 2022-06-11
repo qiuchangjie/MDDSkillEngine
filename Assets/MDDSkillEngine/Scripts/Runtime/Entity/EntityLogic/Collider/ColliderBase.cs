@@ -48,7 +48,7 @@ namespace MDDSkillEngine
                 {
                     bezierPath.Clear();
 
-                    if (data.targetType == TargetType.POINT)
+                    if (data.targetType == TargetType.POINT)//如果是点目标则按照鼠标摆放位置转换坐标
                     {
                         //坐标转换 将曲线本地坐标转换为世界坐标
                         for (int i = 0; i < data.bezierPath.Length; i++)

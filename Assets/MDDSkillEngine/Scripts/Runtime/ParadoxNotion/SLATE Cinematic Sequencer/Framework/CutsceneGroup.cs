@@ -399,7 +399,7 @@ namespace Slate
                 var original = actor;
                 refDuplicateActor = (GameObject)Instantiate(original);
                 SceneManager.MoveGameObjectToScene(refDuplicateActor, root.context.scene);
-                refDuplicateActor.transform.SetParent(original.transform.parent, false);
+                refDuplicateActor.transform.SetParent(((Cutscene)root).transform.parent, false);
                 original.SetActive(false);
                 refDuplicateActor.SetActive(true);
             }
