@@ -168,7 +168,7 @@ MonoBehaviour:
       Entry: 8
       Data: 
   graph: {fileID: 11400000}
-  position: {x: -904, y: -440}
+  position: {x: -904, y: -456}
   ports:
     keys:
     - input
@@ -613,7 +613,8 @@ MonoBehaviour:
   serializationData:
     SerializedFormat: 2
     SerializedBytes: 
-    ReferencedUnityObjects: []
+    ReferencedUnityObjects:
+    - {fileID: 0}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -626,10 +627,13 @@ MonoBehaviour:
       Entry: 7
       Data: 1|MDDSkillEngine.NP_ReleaseSkillAction, MDDSkillEngine
     - Name: owner
-      Entry: 6
-      Data: 
+      Entry: 10
+      Data: 0
     - Name: BelongtoRuntimeTree
-      Entry: 6
+      Entry: 7
+      Data: 2|MDDGameFramework.Runtime.Skill, MDDGameFrameworkRuntime
+    - Name: 
+      Entry: 8
       Data: 
     - Name: Action
       Entry: 6
@@ -641,7 +645,57 @@ MonoBehaviour:
       Entry: 6
       Data: 
     - Name: Func3
-      Entry: 6
+      Entry: 7
+      Data: 3|System.Func`2[[MDDGameFramework.Action+Request, MDDGameFramework],[MDDGameFramework.Action+Result,
+        MDDGameFramework]], mscorlib
+    - Name: target
+      Entry: 9
+      Data: 1
+    - Name: declaringType
+      Entry: 7
+      Data: 4|System.RuntimeType, mscorlib
+    - Name: 
+      Entry: 1
+      Data: MDDSkillEngine.NP_ReleaseSkillAction, MDDSkillEngine
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: methodName
+      Entry: 1
+      Data: ReleaseSkill
+    - Name: delegateType
+      Entry: 7
+      Data: 5|System.RuntimeType, mscorlib
+    - Name: 
+      Entry: 1
+      Data: System.Func`2[[MDDGameFramework.Action+Request, MDDGameFramework],[MDDGameFramework.Action+Result,
+        MDDGameFramework]], mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: signature
+      Entry: 7
+      Data: 6|System.Type[], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 7|System.RuntimeType, mscorlib
+    - Name: 
+      Entry: 1
+      Data: MDDGameFramework.Action+Request, MDDGameFramework
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
       Data: 
     - Name: SkillId
       Entry: 3
@@ -689,7 +743,8 @@ MonoBehaviour:
   serializationData:
     SerializedFormat: 2
     SerializedBytes: 
-    ReferencedUnityObjects: []
+    ReferencedUnityObjects:
+    - {fileID: 0}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -702,13 +757,55 @@ MonoBehaviour:
       Entry: 7
       Data: 1|MDDSkillEngine.NP_RetCDAction, MDDSkillEngine
     - Name: owner
-      Entry: 6
-      Data: 
+      Entry: 10
+      Data: 0
     - Name: BelongtoRuntimeTree
-      Entry: 6
+      Entry: 7
+      Data: 2|MDDGameFramework.Runtime.Skill, MDDGameFrameworkRuntime
+    - Name: 
+      Entry: 8
       Data: 
     - Name: Action
-      Entry: 6
+      Entry: 7
+      Data: 3|System.Action, mscorlib
+    - Name: target
+      Entry: 9
+      Data: 1
+    - Name: declaringType
+      Entry: 7
+      Data: 4|System.RuntimeType, mscorlib
+    - Name: 
+      Entry: 1
+      Data: MDDSkillEngine.NP_RetCDAction, MDDSkillEngine
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: methodName
+      Entry: 1
+      Data: RetCD
+    - Name: delegateType
+      Entry: 7
+      Data: 5|System.RuntimeType, mscorlib
+    - Name: 
+      Entry: 1
+      Data: System.Action, mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: signature
+      Entry: 7
+      Data: 6|System.Type[], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
       Data: 
     - Name: Func1
       Entry: 6

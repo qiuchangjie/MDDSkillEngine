@@ -191,6 +191,15 @@ namespace MDDGameFramework.Runtime
         }
 
         /// <summary>
+        /// 实体物理轮询。
+        /// </summary>
+        /// <param name="elapseSeconds">逻辑流逝时间，以秒为单位。</param>
+        /// <param name="realElapseSeconds">真实流逝时间，以秒为单位。</param>
+        protected internal virtual void OnFixedUpdate(float elapseSeconds, float realElapseSeconds)
+        {
+        }
+
+        /// <summary>
         /// 设置实体的可见性。
         /// </summary>
         /// <param name="visible">实体的可见性。</param>

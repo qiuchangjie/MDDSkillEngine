@@ -25,6 +25,14 @@ namespace MDDGameFramework
             }
         }
 
+        public static void FixedUpdate(float elapseSeconds, float realElapseSeconds)
+        {
+            foreach (MDDGameFrameworkModule module in s_GameFrameworkModules)
+            {
+                module.FixedUpdate(elapseSeconds, realElapseSeconds);
+            }
+        }
+
         /// <summary>
         /// 关闭并清理所有游戏框架模块。
         /// </summary>

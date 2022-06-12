@@ -27,7 +27,7 @@ namespace MDDSkillEngine
         {
             id = Game.Entity.GenerateSerialId();
 
-            Game.Entity.ShowCollider(Utility.Assembly.GetType(skillData.ColliderLogic), skillData.ColliderName,new ColliderData(id, 0, actor)
+            Game.Entity.ShowCollider(Utility.Assembly.GetType(Utility.Text.Format("MDDSkillEngine.{0}",skillData.ColliderLogic)), skillData.ColliderName,new ColliderData(id, 0, actor)
             {
                 targetType = skillTimeline.TargetType,
                 HitEffectName = skillData.EffectName,

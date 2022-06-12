@@ -64,6 +64,7 @@ namespace MDDGameFramework
             m_EventPool.Update(elapseSeconds, realElapseSeconds);
         }
 
+
         /// <summary>
         /// 关闭并清理事件管理器。
         /// </summary>

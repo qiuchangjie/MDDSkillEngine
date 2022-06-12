@@ -74,6 +74,17 @@ namespace MDDGameFramework
         }
 
         /// <summary>
+        /// buff轮询
+        /// </summary>
+        /// <param name="buffSystem"></param>
+        /// <param name="elapseSeconds"></param>
+        /// <param name="realElapseSeconds"></param>
+        public virtual void OnFixedUpdate(IBuffSystem buffSystem, float elapseSeconds, float realElapseSeconds)
+        {
+           
+        }
+
+        /// <summary>
         /// buff结束
         /// </summary>
         /// <param name="buffSystem"></param>

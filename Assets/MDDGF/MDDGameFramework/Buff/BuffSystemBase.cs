@@ -9,6 +9,8 @@ namespace MDDGameFramework
     {
         internal abstract void OnUpdate(float elapseSeconds, float realElapseSeconds);
 
+        internal abstract void OnFixedUpdate(float elapseSeconds, float realElapseSeconds);
+
         internal abstract void AddBuff(string buffName,object from,object userData=null);
 
         internal abstract void Shutdown();

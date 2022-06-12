@@ -41,6 +41,26 @@ namespace MDDGameFramework
             }
         }
 
+        internal override void FixedUpdate(float elapseSeconds, float realElapseSeconds)
+        {
+            if (m_BuffSystems.Count == 0)
+            {
+                return;
+            }
+
+            m_tempBuffSystems.Clear();
+
+            foreach (var v in m_BuffSystems)
+            {
+                m_tempBuffSystems.Add(v.Value);
+            }
+
+            foreach (var bufsystem in m_tempBuffSystems)
+            {
+                bufsystem.OnFixedUpdate(elapseSeconds, realElapseSeconds);
+            }
+        }
+
         public IBuffSystem CreatBuffSystem(string name, object owner)
         {
             BuffSystem buffSystem = BuffSystem.Create(owner);

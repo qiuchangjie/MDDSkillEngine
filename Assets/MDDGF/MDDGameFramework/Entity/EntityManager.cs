@@ -178,6 +178,38 @@ namespace MDDGameFramework
         }
 
         /// <summary>
+        /// 实体物理管理器轮询。
+        /// </summary>
+        /// <param name="elapseSeconds">逻辑流逝时间，以秒为单位。</param>
+        /// <param name="realElapseSeconds">真实流逝时间，以秒为单位。</param>
+        internal override void FixedUpdate(float elapseSeconds, float realElapseSeconds)
+        {
+            base.FixedUpdate(elapseSeconds, realElapseSeconds);
+
+            while (m_RecycleQueue.Count > 0)
+            {
+                EntityInfo entityInfo = m_RecycleQueue.Dequeue();
+                IEntity entity = entityInfo.Entity;
+                EntityGroup entityGroup = (EntityGroup)entity.EntityGroup;
+                if (entityGroup == null)
+                {
+                    throw new MDDGameFrameworkException("Entity group is invalid.");
+                }
+
+                entityInfo.Status = EntityStatus.WillRecycle;
+                entity.OnRecycle();
+                entityInfo.Status = EntityStatus.Recycled;
+                entityGroup.UnspawnEntity(entity);
+                ReferencePool.Release(entityInfo);
+            }
+
+            foreach (KeyValuePair<string, EntityGroup> entityGroup in m_EntityGroups)
+            {
+                entityGroup.Value.Update(elapseSeconds, realElapseSeconds);
+            }
+        }
+
+        /// <summary>
         /// 关闭并清理实体管理器。
         /// </summary>
         internal override void Shutdown()

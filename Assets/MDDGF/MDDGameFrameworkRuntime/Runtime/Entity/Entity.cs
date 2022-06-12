@@ -269,5 +269,23 @@ namespace MDDGameFramework.Runtime
                 Log.Error("Entity '[{0}]{1}' OnUpdate with exception '{2}'.", m_Id, m_EntityAssetName, exception);
             }
         }
+
+        /// <summary>
+        /// 实体物理轮询。
+        /// </summary>
+        /// <param name="elapseSeconds">逻辑流逝时间，以秒为单位。</param>
+        /// <param name="realElapseSeconds">真实流逝时间，以秒为单位。</param>
+        public void OnFixedUpdate(float elapseSeconds, float realElapseSeconds)
+        {
+            try
+            {
+                m_EntityLogic.OnFixedUpdate(elapseSeconds, realElapseSeconds);
+            }
+            catch (Exception exception)
+
+            {
+                Log.Error("Entity '[{0}]{1}' OnFixedUpdate with exception '{2}'.", m_Id, m_EntityAssetName, exception);
+            }
+        }
     }
 }

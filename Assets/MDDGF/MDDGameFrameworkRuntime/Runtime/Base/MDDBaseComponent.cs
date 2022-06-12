@@ -50,6 +50,11 @@ namespace MDDGameFramework.Runtime
             MDDGameFrameworkEntry.Update(Time.deltaTime,Time.unscaledDeltaTime);
         }
 
+        private void FixedUpdate()
+        {
+            MDDGameFrameworkEntry.FixedUpdate(Time.deltaTime, Time.unscaledDeltaTime);
+        }
+
         private void InitTextHelper()
         {
             if (string.IsNullOrEmpty(m_TextHelperTypeName))

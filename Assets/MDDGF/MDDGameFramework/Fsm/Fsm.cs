@@ -612,6 +612,22 @@ namespace MDDGameFramework
         }
 
         /// <summary>
+        /// 有限状态机物理轮询。
+        /// </summary>
+        /// <param name="elapseSeconds">逻辑流逝时间，以秒为单位。</param>
+        /// <param name="realElapseSeconds">真实流逝时间，以秒为单位。</param>
+        internal override void FixedUpdate(float elapseSeconds, float realElapseSeconds)
+        {
+            if (m_CurrentState == null)
+            {
+                return;
+            }
+
+            m_CurrentStateTime += elapseSeconds;
+            m_StateStack.Peek().OnFixedUpdate(this, elapseSeconds, realElapseSeconds);
+        }
+
+        /// <summary>
         /// 关闭并清理有限状态机。
         /// </summary>
         internal override void Shutdown()

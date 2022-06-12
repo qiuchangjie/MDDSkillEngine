@@ -30,6 +30,16 @@ namespace MDDGameFramework
         internal abstract void Update(float elapseSeconds, float realElapseSeconds);
 
         /// <summary>
+        /// 游戏框架模块物理轮询。
+        /// </summary>
+        /// <param name="elapseSeconds">逻辑流逝时间，以秒为单位。</param>
+        /// <param name="realElapseSeconds">真实流逝时间，以秒为单位。</param>
+        internal virtual void FixedUpdate(float elapseSeconds, float realElapseSeconds)
+        {
+            
+        }
+
+        /// <summary>
         /// 关闭并清理游戏框架模块。
         /// </summary>
         internal abstract void Shutdown();

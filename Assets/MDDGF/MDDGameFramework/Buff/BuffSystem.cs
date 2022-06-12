@@ -47,6 +47,27 @@ namespace MDDGameFramework
 
         }
 
+        internal override void OnFixedUpdate(float elapseSeconds, float realElapseSeconds)
+        {
+            if (buffs.Count == 0)
+            {
+                return;
+            }
+
+            m_TempBuffs.Clear();
+
+            foreach (var v in buffs)
+            {
+                m_TempBuffs.Add(v);
+            }
+
+            foreach (var v in m_TempBuffs)
+            {
+                v.OnFixedUpdate(this, elapseSeconds, realElapseSeconds);
+            }
+
+        }
+
         internal void Finish(BuffBase buff)
         {
             buff.OnFininsh(this);

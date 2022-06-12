@@ -72,8 +72,14 @@ namespace MDDSkillEngine
         public override void OnUpdate(IBuffSystem buffSystem, float elapseSeconds, float realElapseSeconds)
         {
             base.OnUpdate(buffSystem, elapseSeconds, realElapseSeconds);
+        }
+
+        public override void OnFixedUpdate(IBuffSystem buffSystem, float elapseSeconds, float realElapseSeconds)
+        {
+            base.OnFixedUpdate(buffSystem, elapseSeconds, realElapseSeconds);
             Entity entity = Target as Entity;
-            entity.Rigidbody.AddForce(hitData.HitDir * drBuff.Specializedfields[0] , ForceMode.Impulse);
+            Log.Error("{0}pushing", LogConst.Buff);
+            entity.Rigidbody.AddRelativeForce(hitData.HitDir * elapseSeconds, ForceMode.Impulse);
         }
 
 

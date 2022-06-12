@@ -57,8 +57,8 @@ MonoBehaviour:
   groups:
   - {fileID: 7232431185629851885}
   _length: 2
-  _viewTimeMin: -0.15092178
-  _viewTimeMax: 0.8236692
+  _viewTimeMin: -0.62165564
+  _viewTimeMax: 2.1607342
 --- !u!1 &3378478145511216615
 GameObject:
   m_ObjectHideFlags: 0
@@ -445,7 +445,7 @@ MonoBehaviour:
   EffectName: Hit
   col: {fileID: 0}
   localeftPostion: {x: 0, y: 0, z: 20}
-  localRotation: {x: 0, y: 0, z: 0, w: 1}
+  localRotation: {x: -0, y: -0, z: -0, w: 1}
   localScale: {x: 1, y: 1, z: 1}
   boundSize: {x: 1, y: 1, z: 1}
   boundCenter: {x: 0, y: 0, z: 0}
@@ -920,11 +920,11 @@ MonoBehaviour:
   _animationData:
     _animatedParameters: []
   _length: 2
-  EffectName: kaerchuifeng
+  EffectName: KaerShengbo
   pat: {fileID: 0}
   PlayableSpeed: 1
   localeftPostion: {x: 0, y: 0, z: 20}
-  localRotation: {x: 0, y: 0, z: 0, w: 1}
+  localRotation: {x: -0, y: -0, z: -0, w: 1}
   localScale: {x: 0.3, y: 0.3, z: 0.3}
   path: {fileID: 1426060463439021549}
   useSpeed: 0

@@ -31,6 +31,25 @@ namespace MDDGameFramework
                 return s_Assemblies;
             }
 
+            public static System.Reflection.Assembly GetRuntimeAssembly()
+            {
+                if (runTimeAssembly == null)
+                {
+                    for (int i = 0; i < s_Assemblies.Length; i++)
+                    {
+                        if (s_Assemblies[i].GetName().Name == "MDDSkillEngine")
+                        {
+                            runTimeAssembly = s_Assemblies[i];
+                            break;
+                        }
+                    }
+
+                    runTimeTypes = runTimeAssembly.GetTypes();
+                }
+
+                return runTimeAssembly;
+            }
+
             /// <summary>
             /// 获取已加载的程序集中的所有类型。
             /// </summary>
