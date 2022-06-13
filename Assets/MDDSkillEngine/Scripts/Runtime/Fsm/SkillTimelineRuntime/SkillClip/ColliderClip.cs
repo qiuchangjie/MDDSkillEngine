@@ -46,53 +46,7 @@ namespace MDDSkillEngine
                 bezierPathParentRotation = skillData.bezierPathParentRotation,
             });
 
-            //if (skillData.Speed == 0)
-            //{
-            //    Game.Entity.ShowCollider(typeof(MDDCollider), skillData.ColliderName, new ColliderData(id, 0, actor)
-            //    {
-            //        targetType = skillTimeline.TargetType,
-            //        HitEffectName = skillData.EffectName,
-            //        buffName = skillData.AddBuffName,
-            //        localRotation = skillData.localRotation,
-            //        localScale = skillData.localScale,
-            //        localeftPostion = skillData.localeftPostion,
-            //        boundCenter = skillData.boundCenter,
-            //        boundSize = skillData.boundSize,
-            //        Duration = this.GetLength(),
-            //        hasPath = skillData.hasPath,
-            //        useSpeed = skillData.useSpeed,
-            //        bezierPath = skillData.bezierPath,
-            //        bezierPathLength = skillData.bezierPathLength,
-            //        bezierPathParentPosition = skillData.bezierPathParentPosition,
-            //        bezierPathParentRotation = skillData.bezierPathParentRotation,
-            //    }) ;
-            //}
-            //else
-            //{
-            //    Game.Entity.ShowCollider(typeof(NormalMoveCollider), skillData.ColliderName, new MoveColliderData(id, 0, actor)
-            //    {
-            //        targetType = skillTimeline.TargetType,
-            //        Speed = skillData.Speed,
-            //        HitBuffDuration = skillData.BuffDuration,
-            //        HitForce = skillData.Force,
-            //        buffName = skillData.AddBuffName,
-            //        HitEffectName = skillData.EffectName,
-            //        localRotation = skillData.localRotation,
-            //        localScale = skillData.localScale,
-            //        localeftPostion = skillData.localeftPostion,
-            //        boundCenter = skillData.boundCenter,
-            //        boundSize = skillData.boundSize,
-            //        Duration = this.GetLength(),
-            //        hasPath = skillData.hasPath,
-            //        useSpeed = skillData.useSpeed,
-            //        bezierPath = skillData.bezierPath,
-            //        bezierPathLength = skillData.bezierPathLength,
-            //        bezierPathParentPosition = skillData.bezierPathParentPosition,
-            //        bezierPathParentRotation = skillData.bezierPathParentRotation,
-            //    });
-            //}
-
-
+          
 
             if (!skillData.useSpeed && skillData.hasPath)
             {
@@ -135,6 +89,7 @@ namespace MDDSkillEngine
         {
             //Game.Entity.HideEntity(colid);
             base.Exit();
+            id = 0;
             Log.Info("{0}离开ColliderClip name：{1}", LogConst.SKillTimeline, GetType().Name);
         }
 

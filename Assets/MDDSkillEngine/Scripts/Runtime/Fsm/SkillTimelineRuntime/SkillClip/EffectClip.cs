@@ -79,6 +79,7 @@ namespace MDDSkillEngine
         public override void Exit()
         {
             base.Exit();
+            id = 0;
         }
 
 

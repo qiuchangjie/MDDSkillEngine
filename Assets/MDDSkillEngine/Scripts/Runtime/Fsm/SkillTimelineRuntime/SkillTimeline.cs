@@ -50,6 +50,8 @@ namespace MDDSkillEngine
 
         public float playbackSpeed = 1f;
 
+        private bool isActive = true;
+
         private List<IDirectableTimePointer> timePointers = new List<IDirectableTimePointer>();
         private List<IDirectableTimePointer> unsortedStartTimePointers = new List<IDirectableTimePointer>();
 
@@ -66,7 +68,13 @@ namespace MDDSkillEngine
             delta *= playbackSpeed;
             currentTime += playingDirection == PlayingDirection.Forwards ? delta : -delta;
 
-            Sample(currentTime);
+            if (currentTime >= length && playingDirection == PlayingDirection.Forwards)
+            {
+                Sample(currentTime ,false);
+                return;
+            }
+
+            Sample(currentTime ,true);
         }
 
         public void Exit()
@@ -74,7 +82,7 @@ namespace MDDSkillEngine
             currentTime = 0f;
             lastTime = 0f;
             previousTime = 0f;
-
+            isActive = true;
 
             foreach (var v in timePointers)
             {
@@ -166,9 +174,14 @@ namespace MDDSkillEngine
             timePointers = timePointers.OrderBy(p => p.time).ToList();
         }
 
-        private void Sample(float time)
+        private void Sample(float time,bool b)
         {
             currentTime = time;
+
+            if (!isActive)
+                return;
+
+            isActive = b;
 
             //ignore same minmax times
             if ((currentTime == 0 || currentTime == length) && previousTime == currentTime)

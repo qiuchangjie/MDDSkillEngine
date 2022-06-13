@@ -86,7 +86,6 @@ namespace MDDSkillEngine
 
             if (wasDuration >= m_EffectData.KeepTime)
             {
-                Debug.LogError($"-------------------------{wasDuration}---------------------");
                 Game.Entity.HideEntity(this);
             }
         }   

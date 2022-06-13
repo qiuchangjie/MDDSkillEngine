@@ -121,7 +121,7 @@ namespace MDDGameFramework
         /// </summary>
         /// <typeparam name="TState">要切换到的有限状态机状态类型。</typeparam>
         /// <param name="fsm">有限状态机引用。</param>
-        public void ChangeState<TState>(IFsm<T> fsm) where TState : FsmState<T>
+        protected void ChangeState<TState>(IFsm<T> fsm) where TState : FsmState<T>
         {
             Fsm<T> fsmImplement = (Fsm<T>)fsm;
             if (fsmImplement == null)
@@ -137,7 +137,7 @@ namespace MDDGameFramework
         /// </summary>
         /// <param name="fsm">有限状态机引用。</param>
         /// <param name="stateType">要切换到的有限状态机状态类型。</param>
-        public void ChangeState(IFsm<T> fsm, Type stateType)
+        protected void ChangeState(IFsm<T> fsm, Type stateType)
         {
             Fsm<T> fsmImplement = (Fsm<T>)fsm;
             if (fsmImplement == null)

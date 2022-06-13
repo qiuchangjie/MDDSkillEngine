@@ -28,6 +28,23 @@ namespace MDDSkillEngine
             }
         }
 
+        private void SetAttack(object sender, GameEventArgs e)
+        {
+            SelectEntityEventArgs n = (SelectEntityEventArgs)e;
+
+            if (n.entity == this)
+            {
+                return;
+            }
+            else
+            {
+                if (IsPlaying)
+                {
+                    
+                }
+            }
+        }
+
         public void Use_S(CallbackContext ctx)
         {
             if (!IsPlaying)

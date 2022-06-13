@@ -8,13 +8,11 @@ using UnityEngine;
 namespace MDDSkillEngine
 {
     [AkiState]
-    public class kaerchaozhenshengboState : SkillTimelineState<Entity>
+    public class kaernormalattackState : SkillTimelineState<Entity>
     {
         protected override void OnInit(IFsm<Entity> fsm)
         {
             base.OnInit(fsm);
-            
-           
         }
 
         protected override void OnEnter(IFsm<Entity> fsm)
@@ -31,14 +29,21 @@ namespace MDDSkillEngine
         protected override void OnLeave(IFsm<Entity> fsm, bool isShutdown)
         {
             base.OnLeave(fsm, isShutdown);
-            fsm.SetData<VarBoolean>(GetType().Name, true);
             Log.Info("{0}离开{1}状态", LogConst.FSM, GetType().Name);
+
+            if (Game.Select.attackTarget != null)
+            {
+                ChangeState(Fsm, GetType());
+                //fsm.SetData<VarBoolean>(GetType().Name , true);
+            }
         }
 
         protected override void OnUpdate(IFsm<Entity> fsm, float elapseSeconds, float realElapseSeconds)
         {
             base.OnUpdate(fsm, elapseSeconds, realElapseSeconds);
         }
+
+      
 
         /// <summary>
         /// 状态跳转
@@ -57,7 +62,13 @@ namespace MDDSkillEngine
             {
                 ISkillSystem skillSystem = Game.Skill.GetSkillSystem(Fsm.Owner.Id);
                 skillSystem.SetSkillReleaseResultType(SkillReleaseResultType.PROGRESS);
-                ChangeState(Fsm,GetType());
+                ChangeState(Fsm, GetType());
+            }
+            else if (Fsm.CurrentState == this)
+            {
+                ISkillSystem skillSystem = Game.Skill.GetSkillSystem(Fsm.Owner.Id);
+                skillSystem.SetSkillReleaseResultType(SkillReleaseResultType.PROGRESS);
+                ChangeState(Fsm, GetType());
             }
             else
             {

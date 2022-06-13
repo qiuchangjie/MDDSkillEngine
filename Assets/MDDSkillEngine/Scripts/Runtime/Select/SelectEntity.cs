@@ -14,6 +14,8 @@ namespace MDDSkillEngine
 
         public GameObject mouseTarget;
 
+        public Entity attackTarget;
+
         public List<Entity> entities = new List<Entity>();
         /// <summary>
         /// 鼠标左键选择的实体
@@ -35,6 +37,7 @@ namespace MDDSkillEngine
         public void InitState()
         {
             Game.Input.Control.Heros_Normal.LeftClick.performed += OnClickLeft;
+            Game.Input.Control.Heros_Normal.RightClick.performed += OnClickRight;
         }
 
 
@@ -46,10 +49,24 @@ namespace MDDSkillEngine
 
                 if (entity != null)
                 {
-                    Game.Event.Fire(this,SelectEntityEventArgs.Create(entity.Logic as Entity));
-                    selectEntity = entity.Logic as Entity; 
+                    Game.Event.Fire(this, SelectEntityEventArgs.Create(entity.Logic as Entity));
+                    selectEntity = entity.Logic as Entity;
                 }
-            }                    
+            }
+        }
+
+        private void OnClickRight(CallbackContext ctx)
+        {
+            if (SelectUtility.MouseRayCastByLayer(1 << 8 | 1 << 11, out RaycastHit hit))
+            {
+                MDDGameFramework.Runtime.Entity entity = hit.transform.GetComponent<MDDGameFramework.Runtime.Entity>();
+
+                if (entity != null)
+                {
+                    Game.Event.Fire(this, SelectAttackEntityEventArgs.Create(entity.Logic as Entity));
+                    selectEntity = entity.Logic as Entity;
+                }
+            }
         }
 
         public void InitPlayer(Entity entity)
@@ -77,7 +94,7 @@ namespace MDDSkillEngine
         public void ClearSelectEntity(IEntity entity)
         {
             selectEntity = null;
-        }      
+        }
 
         private void AddHighLight(Entity e)
         {

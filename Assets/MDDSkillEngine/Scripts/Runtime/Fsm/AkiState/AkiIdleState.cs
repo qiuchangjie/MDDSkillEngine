@@ -50,7 +50,7 @@ namespace MDDSkillEngine
 
         protected override void OnUpdate(IFsm<Entity> fsm, float elapseSeconds, float realElapseSeconds)
         {
-            base.OnUpdate(fsm, elapseSeconds, realElapseSeconds);                 
+            base.OnUpdate(fsm, elapseSeconds, realElapseSeconds); 
         }
 
         protected override void Observing(Blackboard.Type type, Variable newValue)
@@ -64,13 +64,13 @@ namespace MDDSkillEngine
 
             if (skillSystem.GetSkillReleaseResultType() == SkillReleaseResultType.NONE)
             {
-                Fsm.CurrentState.ChangeState(Fsm,GetType());
+                ChangeState(Fsm, GetType());
             }
             else
             {
                 skillSystem.SetSkillReleaseResultType(SkillReleaseResultType.STOP);
-                Fsm.CurrentState.ChangeState(Fsm, GetType());
-            }        
+                ChangeState(Fsm, GetType());
+            }
         }
     }
 }

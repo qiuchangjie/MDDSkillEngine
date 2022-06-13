@@ -37,5 +37,36 @@ namespace MDDSkillEngine
         }
     }
 
+    public class SelectAttackEntityEventArgs : GameEventArgs
+    {
+        public static readonly int EventId = typeof(SelectAttackEntityEventArgs).GetHashCode();
+
+        public override int Id
+        {
+            get
+            {
+                return EventId;
+            }
+        }
+
+        public Entity entity
+        {
+            get;
+            private set;
+        }
+
+        public static SelectAttackEntityEventArgs Create(Entity entity)
+        {
+            SelectAttackEntityEventArgs e = ReferencePool.Acquire<SelectAttackEntityEventArgs>();
+            e.entity = entity;
+            return e;
+        }
+
+        public override void Clear()
+        {
+            entity = null;
+        }
+    }
+
 }
 

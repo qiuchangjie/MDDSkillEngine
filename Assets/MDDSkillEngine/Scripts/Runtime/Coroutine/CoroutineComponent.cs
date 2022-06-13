@@ -111,7 +111,7 @@ namespace MDDSkillEngine
         private void Finish()
         {
             CompletedAction?.Invoke(Stopped);
-            ReferencePool.Release(this);
+            //ReferencePool.Release(this);
         }
 
         public void Clear()
