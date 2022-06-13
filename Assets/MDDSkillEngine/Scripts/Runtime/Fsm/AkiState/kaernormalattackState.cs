@@ -33,8 +33,7 @@ namespace MDDSkillEngine
 
             if (Game.Select.attackTarget != null)
             {
-                ChangeState(Fsm, GetType());
-                //fsm.SetData<VarBoolean>(GetType().Name , true);
+                fsm.SetData<VarBoolean>(GetType().Name , true);
             }
         }
 

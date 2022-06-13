@@ -40,7 +40,7 @@ namespace MDDSkillEngine
             {
                 if (IsPlaying)
                 {
-                    
+                    Game.Fsm.GetFsm<Entity>(Id.ToString()).SetData<VarBoolean>(typeof(kaernormalattackState).Name, true);
                 }
             }
         }
