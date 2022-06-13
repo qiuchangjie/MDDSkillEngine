@@ -36,6 +36,7 @@ namespace MDDSkillEngine
             hander = PreLoadSkillAsset().Start((b) =>
             {
                 Game.UI.GetUIForm(UIFormId.LoadingForm).Close(false);
+                ReferencePool.Release(hander);
             });
 
             Game.NPBehave.GetHelper().PreLoad();

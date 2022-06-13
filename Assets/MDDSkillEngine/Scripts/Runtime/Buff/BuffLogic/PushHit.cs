@@ -79,7 +79,7 @@ namespace MDDSkillEngine
             base.OnFixedUpdate(buffSystem, elapseSeconds, realElapseSeconds);
             Entity entity = Target as Entity;
             Log.Error("{0}pushing", LogConst.Buff);
-            entity.Rigidbody.AddRelativeForce(hitData.HitDir * elapseSeconds, ForceMode.Impulse);
+            entity.Rigidbody.AddRelativeForce(hitData.HitDir * drBuff.Specializedfields[0] * elapseSeconds, ForceMode.Impulse);
         }
 
 
@@ -93,7 +93,9 @@ namespace MDDSkillEngine
 
         public override void OnFininsh(IBuffSystem buffSystem)
         {
-            base.OnFininsh(buffSystem);         
+            base.OnFininsh(buffSystem);
+            Entity entity = Target as Entity;
+            entity.Rigidbody.velocity = Vector3.zero;   
             Log.Info("{0}hitbuff finish", LogConst.Buff);
         }
 

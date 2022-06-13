@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
+﻿
 namespace MDDGameFramework
 {
     public abstract class BuffBase : IReference
@@ -74,7 +71,7 @@ namespace MDDGameFramework
         }
 
         /// <summary>
-        /// buff轮询
+        /// buff物理轮询轮询
         /// </summary>
         /// <param name="buffSystem"></param>
         /// <param name="elapseSeconds"></param>

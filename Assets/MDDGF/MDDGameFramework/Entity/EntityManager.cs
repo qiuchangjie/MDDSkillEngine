@@ -205,7 +205,7 @@ namespace MDDGameFramework
 
             foreach (KeyValuePair<string, EntityGroup> entityGroup in m_EntityGroups)
             {
-                entityGroup.Value.Update(elapseSeconds, realElapseSeconds);
+                entityGroup.Value.FixedUpdate(elapseSeconds, realElapseSeconds);
             }
         }
 

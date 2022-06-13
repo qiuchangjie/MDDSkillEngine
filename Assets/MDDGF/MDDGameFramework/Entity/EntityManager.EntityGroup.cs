@@ -155,6 +155,18 @@ namespace MDDGameFramework
                 }
             }
 
+            public void FixedUpdate(float elapseSeconds, float realElapseSeconds)
+            {
+                LinkedListNode<IEntity> current = m_Entities.First;
+                while (current != null)
+                {
+                    m_CachedNode = current.Next;
+                    current.Value.OnFixedUpdate(elapseSeconds, realElapseSeconds);
+                    current = m_CachedNode;
+                    m_CachedNode = null;
+                }
+            }
+
             /// <summary>
             /// 实体组中是否存在实体。
             /// </summary>
