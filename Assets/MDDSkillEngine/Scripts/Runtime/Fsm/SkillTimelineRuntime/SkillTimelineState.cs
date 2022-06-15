@@ -99,8 +99,6 @@ namespace MDDSkillEngine
         {
             float DurationTime = 0;
 
-            Log.Error("{0}回收skilltimeline{1}", LogConst.SKillTimeline, DurationTime);
-
             while (DurationTime <= skillTimeline.length)
             {               
                 skillTimeline.Updata(Time.deltaTime);
@@ -113,10 +111,7 @@ namespace MDDSkillEngine
             ReferencePool.Release(coroutineHandlerDic[skillTimeline]);
             coroutineHandlerDic.Remove(skillTimeline);           
             skillTimelineQuene.Enqueue(skillTimeline);
-            Log.Error("{0}回收skilltimeline{1}.count{2}", LogConst.SKillTimeline, DurationTime, skillTimelineQuene.Count);
-
-            //if (Duration != 0f)
-            //    Finish(Fsm);
+            Log.Info("{0}回收skilltimeline{1}.count{2}", LogConst.SKillTimeline, DurationTime, skillTimelineQuene.Count);
         }
 
 

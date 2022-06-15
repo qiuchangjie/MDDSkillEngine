@@ -57,6 +57,8 @@ namespace MDDSkillEngine
                 Log.Error("{0}hitbuff 目标丢失", LogConst.Buff);
             }
 
+            Game.Coroutine.StopForSecondsUnScale(0.1f).Start();
+
             entity.SetState(EntityNormalState.ATTACKED,true);
 
             Game.Entity.ShowEffect(typeof(Effect), hitData.EffectName, new EffectData(Game.Entity.GenerateSerialId(), 0)

@@ -57,8 +57,8 @@ MonoBehaviour:
   groups:
   - {fileID: 7232431185629851885}
   _length: 1
-  _viewTimeMin: -2.1345363
-  _viewTimeMax: 2.8158956
+  _viewTimeMin: -0.72154784
+  _viewTimeMax: 1.4206308
 --- !u!1 &2882366116594116339
 GameObject:
   m_ObjectHideFlags: 0
@@ -701,7 +701,7 @@ MonoBehaviour:
     _animatedParameters: []
   _length: 1.1260322
   ColliderName: NormalBoxCollider
-  ColliderLogic: 
+  ColliderLogic: NormalMoveCollider
   Speed: 0
   AddBuffName: NormalHit
   EffectName: Hit

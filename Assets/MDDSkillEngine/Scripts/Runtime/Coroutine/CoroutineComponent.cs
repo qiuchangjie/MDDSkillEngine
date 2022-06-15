@@ -17,22 +17,39 @@ namespace MDDSkillEngine
 
         public IEnumerator StartJobDelayed(float delayedTime)
         {
-            yield return new WaitForSeconds(delayedTime);         
+            yield return new WaitForSeconds(delayedTime);
+        }
+
+        public IEnumerator StopForSecondsUnScale(float time)
+        {
+            Time.timeScale = 0;
+            yield return YieldHelper.WaitForSeconds(time, true);
+            Time.timeScale = 1;
+        }
+
+        public IEnumerator StopFixedFrame(int num = 1)
+        {
+            Time.timeScale = 0;
+            for (int i = 0; i < num; i++)
+            {
+                yield return YieldHelper.WaitForSeconds(0.02f, true);
+            }
+            Time.timeScale = 1;
         }
 
         public IEnumerator StartJobDelayed<T>(float delayedTime, T t)
         {
-            yield return new WaitForSeconds(delayedTime);      
+            yield return new WaitForSeconds(delayedTime);
         }
 
         public IEnumerator StartJobUntil(Func<bool> funtion)
         {
-            yield return new WaitUntil(funtion);         
+            yield return new WaitUntil(funtion);
         }
 
         public IEnumerator StartJobUntil<T>(Func<bool> funtion, T t)
         {
-            yield return new WaitUntil(funtion);       
+            yield return new WaitUntil(funtion);
         }
 
 
@@ -47,7 +64,7 @@ namespace MDDSkillEngine
             return handler;
         }
 
-        public static CoroutineHandler Start(this IEnumerator enumerator,Action<bool> Callback)
+        public static CoroutineHandler Start(this IEnumerator enumerator, Action<bool> Callback)
         {
             CoroutineHandler handler = ReferencePool.Acquire<CoroutineHandler>();
             handler.Coroutine = enumerator;
@@ -63,12 +80,12 @@ namespace MDDSkillEngine
         public bool Paused { get; private set; } = false;
         public bool Running { get; private set; } = false;
         public bool Stopped { get; private set; } = false;
-      
+
         public Action<bool> CompletedAction;
 
         public CoroutineHandler()
         {
-            
+
         }
 
         public CoroutineHandler(IEnumerator c)
@@ -119,7 +136,7 @@ namespace MDDSkillEngine
             this.CompletedAction = null;
             this.Coroutine = null;
         }
-        
+
         /// <summary>
         /// 用于在untiy自带协程上再进行一次封装
         /// 给unity自带协程扩展一些生命周期
@@ -147,7 +164,7 @@ namespace MDDSkillEngine
             }
             Finish();
         }
-   
+
     }
 }
 

@@ -31,7 +31,7 @@ namespace MDDSkillEngine
         protected override void OnLeave(IFsm<Entity> fsm, bool isShutdown)
         {
             base.OnLeave(fsm, isShutdown);
-            fsm.SetData<VarBoolean>(GetType().Name, true);
+            //fsm.SetData<VarBoolean>(GetType().Name, true);
             Log.Info("{0}离开{1}状态", LogConst.FSM, GetType().Name);
         }
 

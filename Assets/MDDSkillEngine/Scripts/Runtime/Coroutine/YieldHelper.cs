@@ -14,9 +14,14 @@ namespace MDDSkillEngine
         
         public static WaitForFixedUpdate WaitForFixedUpdate = new WaitForFixedUpdate();
 
-        public static IEnumerator WaitForFrame()
+        public static IEnumerator WaitForSeconds(float waittime = 0.1f,bool ignoreTimeScale = false)
         {
-            yield return null;
+            float duration = 0;
+            while (duration <= waittime)
+            {
+                duration += (ignoreTimeScale ? Time.unscaledDeltaTime : Time.timeScale);
+                yield return null;
+            }
         }
     }
 }

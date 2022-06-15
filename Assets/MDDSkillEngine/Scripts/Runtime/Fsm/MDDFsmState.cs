@@ -26,10 +26,19 @@ namespace MDDSkillEngine
             {
                 if (SelectUtility.MouseRayCastByLayer(1 << 0 | 1 << 1, out RaycastHit vector3))
                 {
-                    Game.Select.currentMouse = vector3.point;
-                    Game.Select.mouseTarget.transform.position = vector3.point;                 
-                    fsm.Owner.CachedTransform.LookAt(Game.Select.currentMouse);
-                    Game.Select.mouseTarget.transform.rotation = fsm.Owner.CachedTransform.rotation;
+                    if(Game.Select.attackTarget!=null)
+                    {
+                        fsm.Owner.CachedTransform.LookAt(Game.Select.attackTarget.CachedTransform);
+                        Game.Select.mouseTarget.transform.position = Game.Select.attackTarget.CachedTransform.position;
+                        Game.Select.mouseTarget.transform.rotation = fsm.Owner.CachedTransform.rotation;
+                    }
+                    else
+                    {
+                        Game.Select.currentMouse = vector3.point;
+                        Game.Select.mouseTarget.transform.position = vector3.point;
+                        fsm.Owner.CachedTransform.LookAt(Game.Select.currentMouse);
+                        Game.Select.mouseTarget.transform.rotation = fsm.Owner.CachedTransform.rotation;
+                    }                  
                 }
 
                 if (SelectUtility.MouseRayCastByLayer(1 << 8 | 1 << 11, out RaycastHit hit))

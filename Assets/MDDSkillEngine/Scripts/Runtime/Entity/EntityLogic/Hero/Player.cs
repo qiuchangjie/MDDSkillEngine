@@ -30,7 +30,7 @@ namespace MDDSkillEngine
 
         private void SetAttack(object sender, GameEventArgs e)
         {
-            SelectEntityEventArgs n = (SelectEntityEventArgs)e;
+            SelectAttackEntityEventArgs n = (SelectAttackEntityEventArgs)e;
 
             if (n.entity == this)
             {
@@ -52,27 +52,7 @@ namespace MDDSkillEngine
 
             Game.Fsm.GetFsm<Entity>(Id.ToString()).SetData<VarBoolean>("AkiIdleState", true);
         }
-
-        public void OnClickLeft(CallbackContext ctx)
-        {
-            
-        }
-
-        public void OnClickRight(CallbackContext ctx)
-        {
-            if (!IsPlaying)
-                return;
-
-            if (SelectUtility.MouseRayCastByLayer(1 << 0 | 1 << 1, out RaycastHit vector3))
-            {
-                Game.Select.pathFindingTarget.transform.position = vector3.point;
-                CacheMove.SearchPath();
-                SetState(EntityNormalState.RUN,true);
-                Game.Entity.ShowEffect(new EffectData(Game.Entity.GenerateSerialId(), 70000) { Position = vector3.point });
-            }
-        }
-
-        
+       
         public override ImpactData GetImpactData()
         {
             return new ImpactData(PlayerData.HP, 200);
@@ -83,7 +63,6 @@ namespace MDDSkillEngine
             base.OnInit(userData);
             
             //实体级输入绑定
-            Game.Input.Control.Heros_Normal.RightClick.performed += OnClickRight;
             Game.Input.Control.Heros_Normal.S.performed += Use_S;
 
             //组件初始化
@@ -93,6 +72,7 @@ namespace MDDSkillEngine
 
             //事件
             Game.Event.Subscribe(SelectEntityEventArgs.EventId, SetIsPlaying);
+            Game.Event.Subscribe(SelectAttackEntityEventArgs.EventId, SetAttack);
                      
             //ui
             UIAbilities u = Game.UI.GetUIForm(UIFormId.Ablities) as UIAbilities;
@@ -118,7 +98,6 @@ namespace MDDSkillEngine
             fsm.Start<AkiIdleState>();
 
             Game.HpBar.ShowHPBar(this, 1, 1);
-
             Game.Select.InitPlayer(this);
         }
 
@@ -129,6 +108,7 @@ namespace MDDSkillEngine
 
             Game.HpBar.HideHPBar(this);
             Game.Event.Unsubscribe(SelectEntityEventArgs.EventId, SetIsPlaying);
+            Game.Event.Unsubscribe(SelectAttackEntityEventArgs.EventId, SetAttack);
             //IFsm<Player> fsm = Game.Fsm.GetFsm<Player>(Entity.Id.ToString());          
         }
 
