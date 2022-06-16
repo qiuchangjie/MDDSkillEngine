@@ -12,6 +12,11 @@ namespace MDDSkillEngine
         /// 技能目标类型
         /// </summary>
         public TargetType TargetType;
+
+        /// <summary>
+        /// 技能进入cd的时间
+        /// </summary>
+        public float CDTime = 0f;
         /// <summary>
         /// 用于控制状态是否可以强制切换
         /// </summary>
@@ -59,6 +64,11 @@ namespace MDDSkillEngine
         {         
             this.fsm = fsm;
             owner = fsm.Owner;
+
+            length = skillData.Length;
+            TargetType = skillData.targetType;
+            CDTime = skillData.CDTime;
+
             InitSkillClip(skillData);
         }
 
@@ -149,8 +159,7 @@ namespace MDDSkillEngine
                 }
             }
 
-            length = skillData.Length;
-            TargetType = skillData.targetType;
+          
             InitTimePointer();
 
             Log.Info("{0}初始化Skilltimeline:name:{1} 成功.", LogConst.SKillTimeline, owner.Name);

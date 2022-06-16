@@ -3,8 +3,6 @@ using DG.Tweening;
 using MDDGameFramework;
 using MDDGameFramework.Runtime;
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace MDDSkillEngine
@@ -20,13 +18,13 @@ namespace MDDSkillEngine
             }
         }
 
+        //动画
         private ClipState.Transition shunXi;
         private ClipState.Transition shunXi2;
 
+        
         private System.Action endAction;
         private EventHandler<GameEventArgs> colliderAction;
-
-        private float duration;
 
         private float distance=0;
         private float speed = 27;
@@ -44,7 +42,7 @@ namespace MDDSkillEngine
 
             endAction += () => 
             {
-                Log.Debug("瞬息结束");
+                Log.Info("瞬息结束");
                 fsm.SetData<VarBoolean>("shunxi", false);
                 Finish(fsm);                                
             };
@@ -108,7 +106,7 @@ namespace MDDSkillEngine
             {
                 distance = 0f;
                 fsm.Owner.CachedAnimancer.Play(shunXi2);
-                fsm.SetData<VarBoolean>("shunxi", false);
+                Finish(fsm);
                 Game.Entity.ShowEffect(new EffectData(Game.Entity.GenerateSerialId(), 70002) 
                 { 
                     Position = fsm.Owner.CachedTransform.position ,
@@ -116,15 +114,18 @@ namespace MDDSkillEngine
                 });              
             }
 
-            if (fsm.GetData<VarBoolean>("shunxi"))
-            {
-                distance += speed * elapseSeconds;
+            distance += speed * elapseSeconds;
 
-                fsm.Owner.CachedTransform.position =
-                    Vector3.MoveTowards(fsm.Owner.CachedTransform.position, Game.Select.currentMouse, speed * elapseSeconds);
-            }          
+            fsm.Owner.CachedTransform.position =
+                Vector3.MoveTowards(fsm.Owner.CachedTransform.position, Game.Select.currentMouse, speed * elapseSeconds);
+
         }
 
+        /// <summary>
+        /// 碰撞事件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ColliderAction(object sender,GameEventArgs e)
         {
             ColliderEnterEventArgs col = (ColliderEnterEventArgs)e;
@@ -154,16 +155,27 @@ namespace MDDSkillEngine
             }
 
             Game.Buff.AddBuff(target.Id.ToString(), "Dubao", col.Other, col.Owner);
-
             Game.Fsm.GetFsm<Entity>(target.Id.ToString()).SetData<VarBoolean>("damage", true);
 
 
             Game.Entity.HideEntity((Entity)sender);
         }
 
+        /// <summary>
+        /// 状态跳转
+        /// 基于黑板的观察函数
+        /// </summary>
+        /// <param name="type"></param>
+        /// <param name="newValue"></param>
         protected override void Observing(Blackboard.Type type, Variable newValue)
         {
-            
+            VarBoolean varBoolean = (VarBoolean)newValue;
+
+            if (varBoolean.Value == false)
+                return;
+
+            //可以根据需求自定跳转条件
+            ChangeState(Fsm, GetType());
         }
     }
 }

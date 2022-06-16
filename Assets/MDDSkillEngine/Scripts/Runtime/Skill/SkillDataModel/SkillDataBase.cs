@@ -66,6 +66,7 @@ namespace MDDSkillEngine
 
         public float Length;
         public float FinishStateTime;
+        public float CDTime;
         public Entity Entity;
 
         public List<SkillDataBase> skillData = new List<SkillDataBase>();

@@ -22,28 +22,16 @@ namespace MDDSkillEngine
 
         private ClipState.Transition jianrenfengbao;
 
-        private System.Action endAction;
-
         private EventHandler<GameEventArgs> colliderAction;
-
-        private float duration = 5f;
-
-        private float distance = 0;
-        private float speed = 27;
 
 
         protected override void OnInit(IFsm<Entity> fsm)
         {
             base.OnInit(fsm);
-
             Log.Info("创建剑刃风暴状态。");
-
-            //shunXi = fsm.Owner.CachedAnimContainer.GetAnimation("ShunXi");
-            //shunXi2 = fsm.Owner.CachedAnimContainer.GetAnimation("ShunXi2");
-
+            jianrenfengbao = fsm.Owner.CachedAnimContainer.GetAnimation("jianrenfengbao");
             colliderAction = ColliderStayAction;
           
-            fsm.SetData<VarBoolean>("jianrenfengbao", false);
             Fsm = fsm;
         }
 
@@ -59,6 +47,10 @@ namespace MDDSkillEngine
             effid = Game.Entity.GenerateSerialId();
             colid = Game.Entity.GenerateSerialId();
 
+            //动画
+            fsm.Owner.CachedAnimancer.Play(jianrenfengbao);
+
+            //特效
             Game.Entity.ShowEffect(new EffectData(effid, 70005)
             {
                 Position = fsm.Owner.CachedTransform.position,
@@ -66,6 +58,7 @@ namespace MDDSkillEngine
                 KeepTime = 5f
             });
 
+            //碰撞体
             Game.Entity.ShowCollider(new ColliderData(colid, 20000, fsm.Owner)
             {
                 Rotation = fsm.Owner.CachedTransform.rotation,
@@ -73,9 +66,6 @@ namespace MDDSkillEngine
                 LocalScale = new Vector3(1f, 1f, 1f),
                 Duration = 5f
             });
-
-            Game.Entity.AttachEntity(effid, fsm.Owner.Id);
-            Game.Entity.AttachEntity(colid, fsm.Owner.Id);
 
             Game.Event.Subscribe(ColliderEnterEventArgs.EventId, colliderAction);         
         }
@@ -98,13 +88,13 @@ namespace MDDSkillEngine
         {
             base.OnUpdate(fsm, elapseSeconds, realElapseSeconds);
 
-            duration -= elapseSeconds;
-            if (duration <= 0)
+            if (duration >= 5f)
             {
                 Finish(fsm);             
             }
         }
 
+        //碰撞事件
         private void ColliderStayAction(object sender, GameEventArgs e)
         {
             ColliderEnterEventArgs col = (ColliderEnterEventArgs)e;
@@ -127,51 +117,29 @@ namespace MDDSkillEngine
                 return;
             }
 
-            //Game.Buff.AddBuff(target.Id.ToString(), "Dubao", col.Other, col.Owner);
-
-            //Game.Fsm.GetFsm<Entity>(target.Id.ToString()).SetData<VarBoolean>("damage", true);
-        }
-
-        private void ColliderAction(object sender, GameEventArgs e)
-        {
-            ColliderEnterEventArgs col = (ColliderEnterEventArgs)e;
-
-            if (col.Owner != Fsm.Owner)
-            {
-                return;
-            }
-
-            TargetableObject target = col.Other as TargetableObject;
-
-            Game.Entity.ShowEffect(new EffectData(Game.Entity.GenerateSerialId(), 70003)
-            {
-                Position = col.Other.CachedTransform.position,
-                Rotation = col.Other.CachedTransform.rotation
-            });
-
-            int entityDamageHP = AIUtility.CalcDamageHP(200, 0);
-
-            target.ApplyDamage(target, entityDamageHP);
-
-            if (target.IsDead)
-            {
-                Game.Fsm.GetFsm<Entity>(target.Id.ToString()).SetData<VarBoolean>("died", true);
-                Game.Entity.HideEntity((Entity)sender);
-                return;
-            }
-
             Game.Buff.AddBuff(target.Id.ToString(), "Dubao", col.Other, col.Owner);
 
             Game.Fsm.GetFsm<Entity>(target.Id.ToString()).SetData<VarBoolean>("damage", true);
-
-
-            Game.Entity.HideEntity((Entity)sender);
         }
 
+
+        /// <summary>
+        /// 状态跳转
+        /// 基于黑板的观察函数
+        /// </summary>
+        /// <param name="type"></param>
+        /// <param name="newValue"></param>
         protected override void Observing(Blackboard.Type type, Variable newValue)
         {
+            VarBoolean varBoolean = (VarBoolean)newValue;
+
+            if (varBoolean.Value == false)
+                return;
+
+            //可以根据需求自定跳转条件
+            ChangeState(Fsm, GetType());
         }
-           
+
     }
 }
 

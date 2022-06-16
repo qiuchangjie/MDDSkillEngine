@@ -15,9 +15,23 @@ namespace MDDSkillEngine
             return StartCoroutine(target);
         }
 
+        public CoroutineHandler Run(MonoBehaviour game, IEnumerator target, Action<bool> Callback = null)
+        {
+            CoroutineHandler hander = CoroutineHandler.Create(target, Callback);
+            hander.Start();
+  
+            return hander;
+        }
+
+        public void StopCoroutineByHander(CoroutineHandler hander)
+        {
+            StopCoroutine(hander.CoroutineWapper); 
+        }
+
+
         public IEnumerator StartJobDelayed(float delayedTime)
         {
-            yield return new WaitForSeconds(delayedTime);
+            yield return YieldHelper.WaitForSeconds(delayedTime);
         }
 
         public IEnumerator StopForSecondsUnScale(float time)
@@ -39,7 +53,7 @@ namespace MDDSkillEngine
 
         public IEnumerator StartJobDelayed<T>(float delayedTime, T t)
         {
-            yield return new WaitForSeconds(delayedTime);
+            yield return YieldHelper.WaitForSeconds(delayedTime);
         }
 
         public IEnumerator StartJobUntil(Func<bool> funtion)
@@ -77,6 +91,8 @@ namespace MDDSkillEngine
     public class CoroutineHandler : IReference
     {
         public IEnumerator Coroutine = null;
+        public Coroutine CoroutineWapper = null;
+
         public bool Paused { get; private set; } = false;
         public bool Running { get; private set; } = false;
         public bool Stopped { get; private set; } = false;
@@ -85,12 +101,21 @@ namespace MDDSkillEngine
 
         public CoroutineHandler()
         {
-
+            
         }
 
         public CoroutineHandler(IEnumerator c)
         {
             Coroutine = c;
+        }
+
+        public static CoroutineHandler Create(IEnumerator target, Action<bool> Callback = null)
+        {
+            CoroutineHandler handler = ReferencePool.Acquire<CoroutineHandler>();
+            handler.CompletedAction = Callback;
+            handler.Coroutine = target;
+
+            return handler;
         }
 
         public void Pause()
@@ -103,12 +128,17 @@ namespace MDDSkillEngine
             Paused = false;
         }
 
+        public void RealeaseCoroutine()
+        {
+
+        }
+
         public void Start()
         {
             if (null != Coroutine)
             {
                 Running = true;
-                Game.Coroutine.Run(CallWrapper());
+                CoroutineWapper = Game.Coroutine.Run(CallWrapper());
             }
             else
             {
@@ -135,6 +165,7 @@ namespace MDDSkillEngine
         {
             this.CompletedAction = null;
             this.Coroutine = null;
+            this.CoroutineWapper = null;
         }
 
         /// <summary>

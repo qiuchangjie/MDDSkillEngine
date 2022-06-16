@@ -61,7 +61,7 @@ namespace MDDSkillEngine
 
         private void FixedUpdate()
         {
-            if (SelectUtility.MouseRayCastByLayer(1 << 8 | 1 << 11, out RaycastHit hit))
+            if (SelectUtility.MouseRayCastByLayer(1 << 8 | 1 << 11|1 << 0 | 1 << 1, out RaycastHit hit))
             {
                 MDDGameFramework.Runtime.Entity entity = hit.transform.GetComponent<MDDGameFramework.Runtime.Entity>();
 

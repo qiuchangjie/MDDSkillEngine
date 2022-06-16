@@ -84,7 +84,7 @@ namespace MDDGameFramework
         }
 
         /// <summary>
-        /// 获取当前状态机的计时器
+        /// 获取当前状态机的黑板
         /// </summary>
         Blackboard Blackboard
         {
@@ -117,6 +117,10 @@ namespace MDDGameFramework
         /// <returns>是否存在有限状态机状态。</returns>
         bool HasState(Type stateType);
 
+        /// <summary>
+        /// 获取当前状态名
+        /// </summary>
+        /// <returns></returns>
         string GetCurrStateName();
 
         /// <summary>
@@ -189,6 +193,11 @@ namespace MDDGameFramework
         /// <returns>是否移除有限状态机数据成功。</returns>
         void RemoveData(string name);
 
+        /// <summary>
+        /// 为状态机黑板添加需要观察的数据
+        /// </summary>
+        /// <param name="key"></param>
+        /// <param name="action"></param>
         void AddObserver(string key, System.Action<Blackboard.Type, Variable> action);
     }
 }

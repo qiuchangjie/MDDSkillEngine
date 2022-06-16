@@ -1,9 +1,6 @@
 ﻿using Animancer;
 using MDDGameFramework;
 using MDDGameFramework.Runtime;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 
 namespace MDDSkillEngine
 {
@@ -23,6 +20,7 @@ namespace MDDSkillEngine
         {
             //base.OnEnter(fsm);
             Log.Info("进入akiRun状态。");
+            //播放跑步动画
             fsm.Owner.CachedAnimancer.Play(Run);            
         }
 
@@ -42,26 +40,36 @@ namespace MDDSkillEngine
         {
             base.OnUpdate(fsm, elapseSeconds, realElapseSeconds);
 
+            //根据寻路数据位移
             fsm.Owner.CacheMove.Moving(elapseSeconds);
         }
 
+        /// <summary>
+        /// 跳转凭据
+        /// </summary>
+        /// <param name="type"></param>
+        /// <param name="newValue"></param>
         protected override void Observing(Blackboard.Type type, Variable newValue)
         {
             VarBoolean varBoolean = (VarBoolean)newValue;
 
+            //如果为false 且还处在run状态则结束run状态
             if (varBoolean.Value == false)
             {
-                ChangeState(Fsm,typeof(AkiIdleState));
+                if (Fsm.CurrentState == this)
+                    ChangeState(Fsm,typeof(AkiIdleState));
+
                 return;
             }
 
             Log.Info("{0}----------------------{1}---{2}",LogConst.FSM,GetType().Name, varBoolean.Value);
-
+            
             if (Fsm.CurrentState == this)
             {
                 return;
             }
 
+            //可以根据需求自定义条件
             ChangeState(Fsm, GetType());
         }
     }

@@ -19,6 +19,10 @@ namespace MDDSkillEngine
         /// </summary>
         private Dictionary<SkillTimeline<T>, CoroutineHandler> coroutineHandlerDic;
 
+        /// <summary>
+        /// 与当前激活状态相匹配的timline
+        /// </summary>
+        private SkillTimeline<T> currentSkillTimeline;
 
         /// <summary>
         /// skilltimeline数据资源加载回调
@@ -57,6 +61,7 @@ namespace MDDSkillEngine
                 SkillTimeline<T> skillTimeline = new SkillTimeline<T>();
                 skillTimeline.Init(fsm, skillData);
                 //开启协程
+                currentSkillTimeline=skillTimeline; 
                 coroutineHandlerDic.Add(skillTimeline, UpdateSkillTimeline(skillTimeline).Start());
                 Log.Info("{0}储备不足创建新的skilltimeline", LogConst.FSM);
             }
@@ -64,6 +69,7 @@ namespace MDDSkillEngine
             {
                 SkillTimeline<T> skillTimeline = skillTimelineQuene.Dequeue();
                 //开启协程
+                currentSkillTimeline = skillTimeline;
                 coroutineHandlerDic.Add(skillTimeline, UpdateSkillTimeline(skillTimeline).Start());              
                 Log.Info("{0}使用储备的skilltimeline", LogConst.FSM);
             }
@@ -86,6 +92,18 @@ namespace MDDSkillEngine
         protected override void OnLeave(IFsm<T> fsm, bool isShutdown)
         {
             base.OnLeave(fsm, isShutdown);
+
+            if (currentSkillTimeline != null)
+            {
+                if (currentSkillTimeline.CDTime >= Duration)
+                {
+                    currentSkillTimeline.Exit();
+                    Game.Coroutine.StopCoroutine(coroutineHandlerDic[currentSkillTimeline].CoroutineWapper);
+                    ReferencePool.Release(coroutineHandlerDic[currentSkillTimeline]);
+                    coroutineHandlerDic.Remove(currentSkillTimeline);
+                    skillTimelineQuene.Enqueue(currentSkillTimeline);
+                }
+            }
 
             Duration = 0f;
         }

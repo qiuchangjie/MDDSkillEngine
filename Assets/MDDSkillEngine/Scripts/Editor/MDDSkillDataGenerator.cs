@@ -76,6 +76,7 @@ namespace MDDSkillEngine
             List<SkillDataBase> dataList = new List<SkillDataBase>();
 
             float FinishTime = 0f;
+            float CDTime = 0f;
 
             foreach (var group in Data.groups)
             {
@@ -138,6 +139,7 @@ namespace MDDSkillEngine
                                         CDSkillData data = new CDSkillData();
                                         data.OnInit(cd);
                                         dataList.Add(data);
+                                        CDTime = clip.startTime;
                                     }
                                 }
                                 break;
@@ -177,6 +179,7 @@ namespace MDDSkillEngine
             resultData.FinishStateTime = FinishTime;
             resultData.Length = Data.length;
             resultData.targetType = Data._targetType;
+            resultData.CDTime = CDTime;
 
             Debug.LogError(resultData.Length);
 

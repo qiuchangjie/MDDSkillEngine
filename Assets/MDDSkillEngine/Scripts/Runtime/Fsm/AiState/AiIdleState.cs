@@ -58,7 +58,7 @@ namespace MDDSkillEngine
                 return;
             
 
-            Fsm.CurrentState.Finish(Fsm);
+            Finish(Fsm);
          
         }
     }

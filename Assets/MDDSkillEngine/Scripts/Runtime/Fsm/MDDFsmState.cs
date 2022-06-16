@@ -13,7 +13,9 @@ namespace MDDSkillEngine
         {
             base.OnInit(fsm);
             Fsm = fsm;
+            //向黑板添加此默认的状态跳转标记bool值
             fsm.SetData<VarBoolean>(GetType().Name, false);
+            //添加观察者，监听是否有跳转到此状态的请求
             fsm.AddObserver(GetType().Name, Observing);
             Log.Info("{0}设置默认状态黑板变量{1}", LogConst.FSM, GetType().Name);
         }

@@ -644,6 +644,10 @@ namespace MDDGameFramework
             ChangeState(typeof(TState));
         }
 
+        /// <summary>
+        /// 结束当前状态的生命周期
+        /// </summary>
+        /// <exception cref="MDDGameFrameworkException"></exception>
         internal void FinishState()
         {
             if (m_CurrentState == null)
@@ -651,6 +655,7 @@ namespace MDDGameFramework
                 throw new MDDGameFrameworkException("Current state is invalid.");
             }
 
+            //栈底状态无法结束生命周
             if (!m_StateStack.Peek().IsButtomState && !m_StateStack.Peek().CantStop)
             {
                 m_StateStack.Peek().OnLeave(this, false);
@@ -682,16 +687,18 @@ namespace MDDGameFramework
                 throw new MDDGameFrameworkException(Utility.Text.Format("FSM '{0}' can not change state to '{1}' which is not exist.", new TypeNamePair(typeof(T), Name), stateType.FullName));
             }
 
+            //如果状态无法中断则返回操作
             if (m_StateStack.Peek().CantStop)
             {
                 return;
             }
 
+            //如果为栈底状态则清空其他所有状态直接进入栈底状态
             if (state.IsButtomState)
             {
                 foreach (var item in m_StateStack)
                 {
-                    if (!item.StrongState)
+                    if (!item.IsButtomState)
                     {
                         item.OnLeave(this, false);
                     }
@@ -703,6 +710,7 @@ namespace MDDGameFramework
                 return;
             }
 
+            //如果为可保存状态则正常切换
             if (!m_StateStack.Peek().StrongState && !m_StateStack.Peek().IsButtomState)
             {               
                 m_StateStack.Peek().OnLeave(this, false);
@@ -710,8 +718,8 @@ namespace MDDGameFramework
                 m_StateStack.Pop();
                 m_StateStack.Push(state);
                 m_StateStack.Peek().OnEnter(this);
-            } 
-            else
+            }
+            else//如果为可保存状态则保存状态不出栈
             {
                 m_StateStack.Push(state);
                 m_StateStack.Peek().OnEnter(this);

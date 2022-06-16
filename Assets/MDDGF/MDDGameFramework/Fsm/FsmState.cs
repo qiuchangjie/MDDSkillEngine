@@ -16,10 +16,19 @@ namespace MDDGameFramework
     /// <typeparam name="T">有限状态机持有者类型。</typeparam>
     public abstract class FsmState<T> : FsmState where T : class
     {
+        /// <summary>
+        /// 该状态是否可以保存
+        /// </summary>
         private bool m_StrongState;
 
+        /// <summary>
+        /// 该状态是否可被中断
+        /// </summary>
         private bool m_CantStop;
 
+        /// <summary>
+        /// 该状态是否为栈底状态
+        /// </summary>
         private bool m_IsButtomState;
 
         public virtual bool StrongState
@@ -104,7 +113,7 @@ namespace MDDGameFramework
         {
         }
 
-        public void Finish(IFsm<T> fsm) 
+        protected void Finish(IFsm<T> fsm) 
         {
             Fsm<T> fsmImplement = (Fsm<T>)fsm;
 
