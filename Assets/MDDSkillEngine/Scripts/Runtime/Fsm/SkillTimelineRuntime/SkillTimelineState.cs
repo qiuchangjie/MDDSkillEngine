@@ -95,6 +95,7 @@ namespace MDDSkillEngine
 
             if (currentSkillTimeline != null)
             {
+                //适配cdtrack
                 if (currentSkillTimeline.CDTime >= Duration)
                 {
                     currentSkillTimeline.Exit();

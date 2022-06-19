@@ -4,34 +4,22 @@ using UnityEngine;
 namespace MDDSkillEngine
 {
     [Serializable]
-    public abstract class TargetableObjectData : EntityData
+    public abstract class SummonedBaseData : EntityData
     {
-        [SerializeField]
-        private CampType m_Camp = CampType.Unknown;
-
         [SerializeField]
         private int m_HP = 0;
 
         [SerializeField]
         private float m_Speed = 0;
 
-        public TargetableObjectData(int entityId, int typeId, CampType camp)
+        private Entity m_Owner = null;
+
+        public SummonedBaseData(int entityId, int typeId, Entity Owner)
             : base(entityId, typeId)
         {
-            m_Camp = camp;
-            m_HP = 0;
-            EntityType = EntityType.Hero;
-        }
-
-        /// <summary>
-        /// 角色阵营。
-        /// </summary>
-        public CampType Camp
-        {
-            get
-            {
-                return m_Camp;
-            }
+            m_Owner = Owner;
+            m_HP = 1000;
+            m_Speed = 10;
         }
 
         /// <summary>
@@ -47,6 +35,15 @@ namespace MDDSkillEngine
             {
                 m_HP = value;
             }
+        }
+
+        /// <summary>
+        /// 拥有者
+        /// </summary>
+        public Entity Owner
+        {
+            get { return m_Owner; }
+            set { m_Owner = value; }
         }
 
         /// <summary>

@@ -99,7 +99,8 @@ namespace MDDSkillEngine
         CD,
         Buff,
         InOut,
-        FinishState
+        FinishState,
+        Entity
     }
 
 }
