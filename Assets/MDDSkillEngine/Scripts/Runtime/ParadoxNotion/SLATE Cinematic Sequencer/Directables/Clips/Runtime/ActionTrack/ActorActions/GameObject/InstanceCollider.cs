@@ -230,7 +230,7 @@ namespace Slate.ActionClips
                 NPBlackBoardEditorInstance.ColliderLogic = colliderName;
             }
 
-            return NPBlackBoardEditorInstance.ColliderLogic; ;
+            return NPBlackBoardEditorInstance.ColliderLogic; 
         }
 
    

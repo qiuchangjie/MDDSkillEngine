@@ -494,7 +494,6 @@ MonoBehaviour:
   _blendOut: 0.03333333
   animationClip: {fileID: 6492525100718304639, guid: f3c38c9e9498e5846a42eb1f1602f5c3,
     type: 3}
-  animationName: cutpos
   clipOffset: 0
   clipWrapMode: 0
   clipWeight: 1
@@ -547,7 +546,6 @@ MonoBehaviour:
   _blendOut: 0
   animationClip: {fileID: 3631276447588215611, guid: f3c38c9e9498e5846a42eb1f1602f5c3,
     type: 3}
-  animationName: 
   clipOffset: 0
   clipWrapMode: 0
   clipWeight: 1

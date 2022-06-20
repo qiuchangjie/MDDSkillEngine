@@ -318,7 +318,7 @@ MonoBehaviour:
   _length: 0.8333334
   _blendIn: 0
   _blendOut: 0
-  animationClip: {fileID: 7400000, guid: 0410ef4f2fe3e2c4a87a695d81aeeeaf, type: 2}
+  animationClip: {fileID: 0}
   clipOffset: 0
   clipWrapMode: 0
   clipWeight: 1

@@ -21,6 +21,10 @@ namespace MDDGameFramework
         public static List<string> EffectLogic = new List<string>();
 
         public static List<string> SkillTimelines = new List<string>();
+
+        public static List<string> Hero = new List<string>();
+
+        public static List<string> HeroLogic = new List<string>();
     }
 
 }

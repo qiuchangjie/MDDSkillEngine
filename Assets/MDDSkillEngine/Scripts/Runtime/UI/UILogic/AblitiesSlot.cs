@@ -68,7 +68,7 @@ namespace MDDSkillEngine
 
         private void Observing(Blackboard.Type type, Variable newValue)
         {
-            Log.Info("chang{0}", type);
+            //Log.Info("chang{0}", type);
             if (type == Blackboard.Type.CHANGE)
             {
                 float cdtime = m_SkillSystem.GetSkillBlackboard(SkillID).Get<float>("cdtime");

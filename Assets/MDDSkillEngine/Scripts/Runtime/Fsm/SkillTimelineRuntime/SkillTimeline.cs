@@ -155,6 +155,13 @@ namespace MDDSkillEngine
                             skillClips.Add(fadeInOutClip);
                         }
                         break;
+                    case SkillDataType.Entity:
+                        {
+                            EntityClip entityClip = new EntityClip();
+                            entityClip.Init(data, owner, this);
+                            skillClips.Add(entityClip);
+                        }
+                        break;
 
                 }
             }

@@ -496,7 +496,6 @@ MonoBehaviour:
   _blendIn: 0
   _blendOut: 0.13333344
   animationClip: {fileID: 7400000, guid: 8bafdcd44e3f81a49b836567ce6b6017, type: 3}
-  animationName: Cutepose
   clipOffset: 0
   clipWrapMode: 0
   clipWeight: 1
@@ -548,7 +547,6 @@ MonoBehaviour:
   _blendIn: 0.13333344
   _blendOut: 0.13333333
   animationClip: {fileID: 7400000, guid: 3e2cf120e49d5394c9178923b58fa920, type: 3}
-  animationName: Attack4
   clipOffset: 0
   clipWrapMode: 0
   clipWeight: 1

@@ -348,7 +348,6 @@ MonoBehaviour:
   _blendIn: 0
   _blendOut: 0.050000012
   animationClip: {fileID: 7400000, guid: 8bafdcd44e3f81a49b836567ce6b6017, type: 3}
-  animationName: Cutepose
   clipOffset: 0
   clipWrapMode: 0
   clipWeight: 1

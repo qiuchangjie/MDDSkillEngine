@@ -32,10 +32,10 @@ namespace MDDSkillEngine
 
             if (request == Request.START)
             {
-               skillSystem.ReleaseSkill(SkillId);
-               return Result.PROGRESS;
+                skillSystem.ReleaseSkill(SkillId);
+                return Result.PROGRESS;
             }
-            else if(request == Request.UPDATE)
+            else if (request == Request.UPDATE)
             {
                 if (skillSystem.GetSkillReleaseResultType() == SkillReleaseResultType.STOP)
                 {
@@ -60,6 +60,12 @@ namespace MDDSkillEngine
                     return Result.SUCCESS;
                 }
             }
+            else if (request == Request.CANCEL)
+            {
+                skillSystem.SetSkillReleaseResultType(SkillReleaseResultType.NONE);
+                return Result.FAILED;
+            }
+
 
             return Result.PROGRESS;
         }     

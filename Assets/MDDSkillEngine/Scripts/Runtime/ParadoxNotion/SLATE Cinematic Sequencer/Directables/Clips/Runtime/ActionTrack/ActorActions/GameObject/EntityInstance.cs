@@ -6,6 +6,7 @@ using Sirenix.OdinInspector;
 using System.IO;
 using MDDGameFramework;
 using System.Collections.Generic;
+using System;
 
 namespace Slate.ActionClips
 {
@@ -18,9 +19,10 @@ namespace Slate.ActionClips
         [HideInInspector]
         private float _length = 1f;
 
-        [ValueDropdown("GetEffects")]
+        [ValueDropdown("GetHero")]
         public string EntityName;
 
+        [ValueDropdown("GetHeroLogic")]
         public string EntityLogic;
 
         public GameObject point;
@@ -106,11 +108,11 @@ namespace Slate.ActionClips
 
 
 #if UNITY_EDITOR
-        private IEnumerable<string> GetEffects()
+        private IEnumerable<string> GetHero()
         {
-            if (NPBlackBoardEditorInstance.Effects.Count == 0)
+            if (NPBlackBoardEditorInstance.Hero.Count == 0)
             {
-                string fullPath = Application.dataPath + "/MDDSkillEngine/Prefabs/Effect";
+                string fullPath = Application.dataPath + "/MDDSkillEngine/Prefabs/Hero";
                 //获得指定路径下面的所有资源文件
                 if (Directory.Exists(fullPath))
                 {
@@ -122,14 +124,33 @@ namespace Slate.ActionClips
                     {
                         if (files[i].Name.EndsWith(".prefab"))
                         {
-                            NPBlackBoardEditorInstance.Effects.Add(files[i].Name.Remove(files[i].Name.LastIndexOf(".")));
+                            NPBlackBoardEditorInstance.Hero.Add(files[i].Name.Remove(files[i].Name.LastIndexOf(".")));
                         }
 
                     }
                 }
             }
 
-            return NPBlackBoardEditorInstance.Effects;
+            return NPBlackBoardEditorInstance.Hero;
+        }
+
+
+        private IEnumerable<string> GetHeroLogic()
+        {
+            if (NPBlackBoardEditorInstance.HeroLogic.Count == 0)
+            {
+                //通过反射获取所有ColliderLogic的名字
+                List<Type> types = new List<Type>();
+                Utility.Assembly.GetTypesByFather(types, typeof(TargetableObject));
+                List<string> colliderName = new List<string>();
+                foreach (var type in types)
+                {
+                    colliderName.Add(type.Name);
+                }
+                NPBlackBoardEditorInstance.HeroLogic = colliderName;
+            }
+
+            return NPBlackBoardEditorInstance.HeroLogic;
         }
 
 #endif

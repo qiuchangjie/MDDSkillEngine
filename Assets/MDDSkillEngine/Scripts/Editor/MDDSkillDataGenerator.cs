@@ -169,6 +169,20 @@ namespace MDDSkillEngine
                                 }
                                 break;
                             }
+                        case (SkillDataType.Entity):
+                            {
+                                foreach (var clip in track.clips)
+                                {
+                                    if (clip is EntityInstance)
+                                    {
+                                        EntityInstance entityInstance = (EntityInstance)clip;
+                                        EntitySkillData data = new EntitySkillData();
+                                        data.OnInit(entityInstance);
+                                        dataList.Add(data);
+                                    }
+                                }
+                                break;
+                            }
 
                     }
                 }
