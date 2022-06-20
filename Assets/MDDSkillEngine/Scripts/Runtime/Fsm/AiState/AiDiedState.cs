@@ -15,7 +15,7 @@ namespace MDDSkillEngine
         {
             Log.Info("{0}创建{1}", LogConst.FSM, GetType().Name);
             base.OnInit(fsm);
-            died = fsm.Owner.CachedAnimContainer.GetAnimation("died");
+            died = fsm.Owner.CachedAnimContainer.GetAnimation("die");
             fsm.SetData<VarBoolean>("died", false);
         }
 

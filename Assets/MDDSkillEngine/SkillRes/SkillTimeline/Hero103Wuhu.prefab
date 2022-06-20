@@ -174,8 +174,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3378478145511216616}
   - component: {fileID: 3378478145511216618}
-  - component: {fileID: 3378478145511216617}
-  - component: {fileID: 6656019555421836286}
+  - component: {fileID: 2387362244180783754}
   m_Layer: 0
   m_Name: Animator Track
   m_TagString: Untagged
@@ -214,8 +213,7 @@ MonoBehaviour:
   _active: 1
   _isLocked: 0
   _actionClips:
-  - {fileID: 3378478145511216617}
-  - {fileID: 6656019555421836286}
+  - {fileID: 2387362244180783754}
   _customHeight: 300
   mask: {fileID: 0}
   blendMode: 0
@@ -279,7 +277,7 @@ MonoBehaviour:
   - {x: -0, y: -0, z: -0, w: 1}
   - {x: -0, y: -0, z: -0, w: 1}
   - {x: -0, y: -0, z: -0, w: 1}
---- !u!114 &3378478145511216617
+--- !u!114 &2387362244180783754
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -317,63 +315,10 @@ MonoBehaviour:
         m_PostInfinity: 2
         m_RotationOrder: 4
       _scriptExpression: 
-  _length: 0.43333337
+  _length: 0.8333334
   _blendIn: 0
-  _blendOut: 0.050000012
-  animationClip: {fileID: 7400000, guid: 8bafdcd44e3f81a49b836567ce6b6017, type: 3}
-  animationName: Cutepose
-  clipOffset: 0
-  clipWrapMode: 0
-  clipWeight: 1
-  playbackSpeed: 1
-  startingTransformsMode: 0
-  transformSpace: 0
-  startingPosition: {x: 0, y: 0, z: 0}
-  startingRotation: {x: -0, y: 0, z: 0}
-  steerLocalRotation: {x: 0, y: 0}
---- !u!114 &6656019555421836286
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3378478145511216615}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4792578f693c06841a5b299345830d63, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  serializationData:
-    SerializedFormat: 2
-    SerializedBytes: 
-    ReferencedUnityObjects: []
-    SerializedBytesString: 
-    Prefab: {fileID: 0}
-    PrefabModificationsReferencedUnityObjects: []
-    PrefabModifications: []
-    SerializationNodes: []
-  _startTime: 0.38333336
-  _animationData:
-    _animatedParameters:
-    - _serializedData: '{"parameterName":"steerLocalRotation","declaringTypeName":"Slate.ActionClips.PlayAnimatorClip","transformHierarchyPath":"","parameterType":2}'
-      _isDisabled: 0
-      _curves:
-      - serializedVersion: 2
-        m_Curve: []
-        m_PreInfinity: 2
-        m_PostInfinity: 2
-        m_RotationOrder: 4
-      - serializedVersion: 2
-        m_Curve: []
-        m_PreInfinity: 2
-        m_PostInfinity: 2
-        m_RotationOrder: 4
-      _scriptExpression: 
-  _length: 0.45
-  _blendIn: 0.050000012
   _blendOut: 0
-  animationClip: {fileID: 7400000, guid: 3e2cf120e49d5394c9178923b58fa920, type: 3}
-  animationName: Attack4
+  animationClip: {fileID: 7400000, guid: 0410ef4f2fe3e2c4a87a695d81aeeeaf, type: 2}
   clipOffset: 0
   clipWrapMode: 0
   clipWeight: 1
@@ -609,7 +554,7 @@ MonoBehaviour:
   EffectName: 
   col: {fileID: 0}
   localeftPostion: {x: -0.098, y: 0.51, z: 0.437}
-  localRotation: {x: 0, y: 0, z: 0, w: 1}
+  localRotation: {x: -0, y: -0, z: -0, w: 1}
   localScale: {x: 1, y: 1, z: 1}
   boundSize: {x: 1.2760684, y: 0.36364555, z: 0.9329854}
   boundCenter: {x: -0.041453242, y: -0.31817722, z: -0.033507288}

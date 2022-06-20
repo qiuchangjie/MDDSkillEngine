@@ -64,7 +64,15 @@ namespace MDDSkillEngine
 
                         ClipState.Transition transition = new ClipState.Transition();
                         transition.Clip = obj;
-                        animDic.Add(obj.name,transition);
+                        if (animDic.ContainsKey(obj.name))
+                        {
+
+                        }
+                        else
+                        {
+                            animDic.Add(obj.name, transition);
+                        }
+                        
                     }
                 }
             }

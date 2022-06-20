@@ -22,17 +22,25 @@ namespace MDDSkillEngine
 
         public override void Enter()
         {
-            if (actor.CachedAnimancer.IsPlaying(anim))
+            //动画通用流程
+            if (anim == null)//如果没有对应的特化动画 则 播放通用动画
             {
-                actor.CachedAnimancer.Stop(anim);
-                actor.CachedAnimancer.Play(anim,0);
+                actor.CachedAnimancer.Play(actor.CachedAnimContainer.GetAnimation("Normal"));
             }
             else
             {
-                actor.CachedAnimancer.Play(anim);
+                if (actor.CachedAnimancer.IsPlaying(anim))
+                {
+                    actor.CachedAnimancer.Stop(anim);
+                    actor.CachedAnimancer.Play(anim, 0);
+                }
+                else
+                {
+                    actor.CachedAnimancer.Play(anim);
+                }
             }
 
-          
+                     
             SkillTimeline<Entity> skillTimeline1= skillTimeline as SkillTimeline<Entity>;
             Log.Info("{0}进入动画clip name：{1} currenttime:{2}",LogConst.SKillTimeline,skillData.AnimationName, skillTimeline1.currentTime);
         }

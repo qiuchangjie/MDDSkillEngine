@@ -35,7 +35,6 @@ namespace Slate.ActionClips
         [Header("Animation Clip Settings")]
         [Required]
         public AnimationClip animationClip;
-        public string animationName;
         public float clipOffset;
         public ClipWrapMode clipWrapMode = ClipWrapMode.Loop;
         [Range(0, 1)]

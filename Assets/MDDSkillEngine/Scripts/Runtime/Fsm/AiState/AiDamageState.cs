@@ -17,7 +17,7 @@ namespace MDDSkillEngine
         {
             base.OnInit(fsm);
             Log.Info("创建ai   damage模式 ");
-            Damage = fsm.Owner.CachedAnimContainer.GetAnimation("damage");
+            Damage = fsm.Owner.CachedAnimContainer.GetAnimation("Damaged");
             endAction += () =>
             {
                 fsm.SetData<VarBoolean>("damage", false);

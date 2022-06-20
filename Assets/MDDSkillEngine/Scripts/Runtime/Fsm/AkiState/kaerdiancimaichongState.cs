@@ -7,7 +7,7 @@ using UnityEngine;
 
 namespace MDDSkillEngine
 {
-    [AkiState]
+    [Skill]
     public class kaerdiancimaichongState : SkillTimelineState<Entity>
     {
         protected override void OnInit(IFsm<Entity> fsm)

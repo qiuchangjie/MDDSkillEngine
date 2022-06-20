@@ -22,7 +22,8 @@ namespace MDDSkillEngine
 
             DataType = SkillDataType.Animation;
 
-            AnimationName = Clip.animationName;
+            if (Clip.animationClip != null)
+                AnimationName = Clip.animationClip.name;
         }
     }
 }

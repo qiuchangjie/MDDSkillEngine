@@ -12,5 +12,9 @@ namespace MDDGameFramework.Runtime
     public class AkiStateAttribute : Attribute { }
 
     public class AiStateAttribute : Attribute { }
+
+    public class Hero103Attribute : Attribute { }
+
+    public class SkillAttribute : Attribute { }
 }
 

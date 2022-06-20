@@ -7,14 +7,12 @@ using UnityEngine;
 
 namespace MDDSkillEngine
 {
-    [AkiState]
+    [Skill]
     public class kaerhundunyunshiState : SkillTimelineState<Entity>
     {
         protected override void OnInit(IFsm<Entity> fsm)
         {
-            base.OnInit(fsm);
-            
-           
+            base.OnInit(fsm);                
         }
 
         protected override void OnEnter(IFsm<Entity> fsm)

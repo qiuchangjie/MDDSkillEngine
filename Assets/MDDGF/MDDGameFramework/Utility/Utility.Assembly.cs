@@ -166,7 +166,7 @@ namespace MDDGameFramework
             /// </summary>
             /// <typeparam name="TAttribute"></typeparam>
             /// <param name="results"></param>
-            public static void GetTypesByAttribute<TAttribute>(List<Type> results,Type interfaceType)
+            public static void GetTypesByAttribute<TAttribute>(List<Type> results,Type interfaceType) where TAttribute : Attribute
             {
                 if (results == null)
                 {

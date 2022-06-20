@@ -7785,6 +7785,36 @@ MonoBehaviour:
     - {fileID: 7400000, guid: b1aaf4a201740844ca11d88ad6f64349, type: 3}
     - {fileID: 7400000, guid: d3dc7873b48531c43a7e90cfe4b993db, type: 3}
     - {fileID: 7400000, guid: 3f8c48c32ab4a7741b5c62b8375910a4, type: 3}
+    - {fileID: 7400000, guid: 63b0e35d92a73e44aa483307621c5fda, type: 2}
+    - {fileID: 7400000, guid: 7e3caa69ef39f8041858a3af4ca11844, type: 2}
+    - {fileID: 7400000, guid: cf4bcbb805791b84dbf7e78895b18faa, type: 2}
+    - {fileID: 7400000, guid: 280c4f1a94a1aa348a73e1c4f08d4387, type: 2}
+    - {fileID: 7400000, guid: e74e3eba3f26d6145a9a029293554448, type: 2}
+    - {fileID: 7400000, guid: 43e9267f3320abd448b3b039852b6e9d, type: 2}
+    - {fileID: 7400000, guid: 7fa73ebf1f673aa4dba88d80b5ea4220, type: 2}
+    - {fileID: 7400000, guid: b34c4cf6d900e8142aa35011d30c7414, type: 2}
+    - {fileID: 7400000, guid: 02444bb8d62a8844db98a1f217e95c67, type: 2}
+    - {fileID: 7400000, guid: f4eb8cdc095f5c740a4244ebbe40d8ed, type: 2}
+    - {fileID: 7400000, guid: 90ac599a6eff5cd49ae01a249bd64095, type: 2}
+    - {fileID: 7400000, guid: bffc6352b1556e84d80998bb957213ab, type: 2}
+    - {fileID: 7400000, guid: 219b2f58795b53f42a3502e6841278a1, type: 2}
+    - {fileID: 7400000, guid: 5b31ac07ee5db8c44a8937195a4cd7fb, type: 2}
+    - {fileID: 7400000, guid: c27965ba063c8354b83001ec3aeae1af, type: 2}
+    - {fileID: 7400000, guid: 974971ef2b438b84081038c425bb49a0, type: 2}
+    - {fileID: 7400000, guid: cf817d4534b83124ebad3cbe8b3ae9fc, type: 2}
+    - {fileID: 7400000, guid: aec7407a828d50e4d9d53264bb804651, type: 2}
+    - {fileID: 7400000, guid: e72ad27b400d7954aaadae3c8f606d60, type: 2}
+    - {fileID: 7400000, guid: 478ef69f9a8ec4f4b9e7252ae156c90e, type: 2}
+    - {fileID: 7400000, guid: ab54b1dc8bf8ca64d8270d7094c40f40, type: 2}
+    - {fileID: 7400000, guid: 61e0b8558c4c674488541ec58bc39bf2, type: 2}
+    - {fileID: 7400000, guid: 2e64b600b80c71d4fa3e416fbbf0ee33, type: 2}
+    - {fileID: 7400000, guid: 4aa63c742aaf7b442bcbd57d68169ea3, type: 2}
+    - {fileID: 7400000, guid: fcc0828d0a05ace4b94d0b96ad0109d9, type: 2}
+    - {fileID: 7400000, guid: 81daf70b975e35e4484669b93270b68e, type: 2}
+    - {fileID: 7400000, guid: 42d54749a3471e34b8c3c0fbd76f635e, type: 2}
+    - {fileID: 7400000, guid: a67ac060190386b439432bf4f19f9aaf, type: 2}
+    - {fileID: 7400000, guid: 19cd13398ad6d34498cfda49396ffc06, type: 2}
+    - {fileID: 7400000, guid: 0f9cc4a298eff6645929350b0f6e462a, type: 2}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -7803,7 +7833,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 12
-      Data: 3
+      Data: 34
     - Name: 
       Entry: 7
       Data: 
@@ -8012,11 +8042,993 @@ MonoBehaviour:
       Entry: 8
       Data: 
     - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: ANG2
+    - Name: $v
+      Entry: 7
+      Data: 17|Animancer.ClipState+Transition, Animancer
+    - Name: _FadeDuration
+      Entry: 4
+      Data: 0.25
+    - Name: _Events
+      Entry: 6
+      Data: 
+    - Name: _Clip
+      Entry: 10
+      Data: 3
+    - Name: _Speed
+      Entry: 4
+      Data: 1
+    - Name: _NormalizedStartTime
+      Entry: 4
+      Data: NaN
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: Atk1
+    - Name: $v
+      Entry: 7
+      Data: 18|Animancer.ClipState+Transition, Animancer
+    - Name: _FadeDuration
+      Entry: 4
+      Data: 0.25
+    - Name: _Events
+      Entry: 6
+      Data: 
+    - Name: _Clip
+      Entry: 10
+      Data: 4
+    - Name: _Speed
+      Entry: 4
+      Data: 1
+    - Name: _NormalizedStartTime
+      Entry: 4
+      Data: NaN
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: Atk2
+    - Name: $v
+      Entry: 7
+      Data: 19|Animancer.ClipState+Transition, Animancer
+    - Name: _FadeDuration
+      Entry: 4
+      Data: 0.25
+    - Name: _Events
+      Entry: 6
+      Data: 
+    - Name: _Clip
+      Entry: 10
+      Data: 5
+    - Name: _Speed
+      Entry: 4
+      Data: 1
+    - Name: _NormalizedStartTime
+      Entry: 4
+      Data: NaN
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: Atk3
+    - Name: $v
+      Entry: 7
+      Data: 20|Animancer.ClipState+Transition, Animancer
+    - Name: _FadeDuration
+      Entry: 4
+      Data: 0.25
+    - Name: _Events
+      Entry: 6
+      Data: 
+    - Name: _Clip
+      Entry: 10
+      Data: 6
+    - Name: _Speed
+      Entry: 4
+      Data: 1
+    - Name: _NormalizedStartTime
+      Entry: 4
+      Data: NaN
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: bye
+    - Name: $v
+      Entry: 7
+      Data: 21|Animancer.ClipState+Transition, Animancer
+    - Name: _FadeDuration
+      Entry: 4
+      Data: 0.25
+    - Name: _Events
+      Entry: 6
+      Data: 
+    - Name: _Clip
+      Entry: 10
+      Data: 7
+    - Name: _Speed
+      Entry: 4
+      Data: 1
+    - Name: _NormalizedStartTime
+      Entry: 4
+      Data: NaN
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: Cry
+    - Name: $v
+      Entry: 7
+      Data: 22|Animancer.ClipState+Transition, Animancer
+    - Name: _FadeDuration
+      Entry: 4
+      Data: 0.25
+    - Name: _Events
+      Entry: 6
+      Data: 
+    - Name: _Clip
+      Entry: 10
+      Data: 8
+    - Name: _Speed
+      Entry: 4
+      Data: 1
+    - Name: _NormalizedStartTime
+      Entry: 4
+      Data: NaN
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: Cry_loop
+    - Name: $v
+      Entry: 7
+      Data: 23|Animancer.ClipState+Transition, Animancer
+    - Name: _FadeDuration
+      Entry: 4
+      Data: 0.25
+    - Name: _Events
+      Entry: 6
+      Data: 
+    - Name: _Clip
+      Entry: 10
+      Data: 9
+    - Name: _Speed
+      Entry: 4
+      Data: 1
+    - Name: _NormalizedStartTime
+      Entry: 4
+      Data: NaN
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: Cry_nUp
+    - Name: $v
+      Entry: 7
+      Data: 24|Animancer.ClipState+Transition, Animancer
+    - Name: _FadeDuration
+      Entry: 4
+      Data: 0.25
+    - Name: _Events
+      Entry: 6
+      Data: 
+    - Name: _Clip
+      Entry: 10
+      Data: 10
+    - Name: _Speed
+      Entry: 4
+      Data: 1
+    - Name: _NormalizedStartTime
+      Entry: 4
+      Data: NaN
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: Cute1
+    - Name: $v
+      Entry: 7
+      Data: 25|Animancer.ClipState+Transition, Animancer
+    - Name: _FadeDuration
+      Entry: 4
+      Data: 0.25
+    - Name: _Events
+      Entry: 6
+      Data: 
+    - Name: _Clip
+      Entry: 10
+      Data: 11
+    - Name: _Speed
+      Entry: 4
+      Data: 1
+    - Name: _NormalizedStartTime
+      Entry: 4
+      Data: NaN
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: Cutepose
+    - Name: $v
+      Entry: 7
+      Data: 26|Animancer.ClipState+Transition, Animancer
+    - Name: _FadeDuration
+      Entry: 4
+      Data: 0.25
+    - Name: _Events
+      Entry: 7
+      Data: 27|Animancer.AnimancerEvent+Sequence+Serializable, Animancer
+    - Name: _Names
+      Entry: 6
+      Data: 
+    - Name: _NormalizedTimes
+      Entry: 6
+      Data: 
+    - Name: _Callbacks
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _Clip
+      Entry: 10
+      Data: 12
+    - Name: _Speed
+      Entry: 4
+      Data: 1
+    - Name: _NormalizedStartTime
+      Entry: 4
+      Data: NaN
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: Damaged
+    - Name: $v
+      Entry: 7
+      Data: 28|Animancer.ClipState+Transition, Animancer
+    - Name: _FadeDuration
+      Entry: 4
+      Data: 0.25
+    - Name: _Events
+      Entry: 6
+      Data: 
+    - Name: _Clip
+      Entry: 10
+      Data: 13
+    - Name: _Speed
+      Entry: 4
+      Data: 1
+    - Name: _NormalizedStartTime
+      Entry: 4
+      Data: NaN
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: die
+    - Name: $v
+      Entry: 7
+      Data: 29|Animancer.ClipState+Transition, Animancer
+    - Name: _FadeDuration
+      Entry: 4
+      Data: 0.25
+    - Name: _Events
+      Entry: 6
+      Data: 
+    - Name: _Clip
+      Entry: 10
+      Data: 14
+    - Name: _Speed
+      Entry: 4
+      Data: 1
+    - Name: _NormalizedStartTime
+      Entry: 4
+      Data: NaN
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: Idle_A
+    - Name: $v
+      Entry: 7
+      Data: 30|Animancer.ClipState+Transition, Animancer
+    - Name: _FadeDuration
+      Entry: 4
+      Data: 0.25
+    - Name: _Events
+      Entry: 6
+      Data: 
+    - Name: _Clip
+      Entry: 10
+      Data: 15
+    - Name: _Speed
+      Entry: 4
+      Data: 1
+    - Name: _NormalizedStartTime
+      Entry: 4
+      Data: NaN
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: Idle_Atk
+    - Name: $v
+      Entry: 7
+      Data: 31|Animancer.ClipState+Transition, Animancer
+    - Name: _FadeDuration
+      Entry: 4
+      Data: 0.25
+    - Name: _Events
+      Entry: 6
+      Data: 
+    - Name: _Clip
+      Entry: 10
+      Data: 16
+    - Name: _Speed
+      Entry: 4
+      Data: 1
+    - Name: _NormalizedStartTime
+      Entry: 4
+      Data: NaN
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: Idle_B
+    - Name: $v
+      Entry: 7
+      Data: 32|Animancer.ClipState+Transition, Animancer
+    - Name: _FadeDuration
+      Entry: 4
+      Data: 0.25
+    - Name: _Events
+      Entry: 6
+      Data: 
+    - Name: _Clip
+      Entry: 10
+      Data: 17
+    - Name: _Speed
+      Entry: 4
+      Data: 1
+    - Name: _NormalizedStartTime
+      Entry: 4
+      Data: NaN
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: Idle_C
+    - Name: $v
+      Entry: 7
+      Data: 33|Animancer.ClipState+Transition, Animancer
+    - Name: _FadeDuration
+      Entry: 4
+      Data: 0.25
+    - Name: _Events
+      Entry: 6
+      Data: 
+    - Name: _Clip
+      Entry: 10
+      Data: 18
+    - Name: _Speed
+      Entry: 4
+      Data: 1
+    - Name: _NormalizedStartTime
+      Entry: 4
+      Data: NaN
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: Jump
+    - Name: $v
+      Entry: 7
+      Data: 34|Animancer.ClipState+Transition, Animancer
+    - Name: _FadeDuration
+      Entry: 4
+      Data: 0.25
+    - Name: _Events
+      Entry: 6
+      Data: 
+    - Name: _Clip
+      Entry: 10
+      Data: 19
+    - Name: _Speed
+      Entry: 4
+      Data: 1
+    - Name: _NormalizedStartTime
+      Entry: 4
+      Data: NaN
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: Run
+    - Name: $v
+      Entry: 7
+      Data: 35|Animancer.ClipState+Transition, Animancer
+    - Name: _FadeDuration
+      Entry: 4
+      Data: 0.25
+    - Name: _Events
+      Entry: 6
+      Data: 
+    - Name: _Clip
+      Entry: 10
+      Data: 20
+    - Name: _Speed
+      Entry: 4
+      Data: 1
+    - Name: _NormalizedStartTime
+      Entry: 4
+      Data: NaN
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: Run_L
+    - Name: $v
+      Entry: 7
+      Data: 36|Animancer.ClipState+Transition, Animancer
+    - Name: _FadeDuration
+      Entry: 4
+      Data: 0.25
+    - Name: _Events
+      Entry: 6
+      Data: 
+    - Name: _Clip
+      Entry: 10
+      Data: 21
+    - Name: _Speed
+      Entry: 4
+      Data: 1
+    - Name: _NormalizedStartTime
+      Entry: 4
+      Data: NaN
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: Run_R
+    - Name: $v
+      Entry: 7
+      Data: 37|Animancer.ClipState+Transition, Animancer
+    - Name: _FadeDuration
+      Entry: 4
+      Data: 0.25
+    - Name: _Events
+      Entry: 6
+      Data: 
+    - Name: _Clip
+      Entry: 10
+      Data: 22
+    - Name: _Speed
+      Entry: 4
+      Data: 1
+    - Name: _NormalizedStartTime
+      Entry: 4
+      Data: NaN
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: SS_C
+    - Name: $v
+      Entry: 7
+      Data: 38|Animancer.ClipState+Transition, Animancer
+    - Name: _FadeDuration
+      Entry: 4
+      Data: 0.25
+    - Name: _Events
+      Entry: 6
+      Data: 
+    - Name: _Clip
+      Entry: 10
+      Data: 23
+    - Name: _Speed
+      Entry: 4
+      Data: 1
+    - Name: _NormalizedStartTime
+      Entry: 4
+      Data: NaN
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: SS_L2
+    - Name: $v
+      Entry: 7
+      Data: 39|Animancer.ClipState+Transition, Animancer
+    - Name: _FadeDuration
+      Entry: 4
+      Data: 0.25
+    - Name: _Events
+      Entry: 6
+      Data: 
+    - Name: _Clip
+      Entry: 10
+      Data: 24
+    - Name: _Speed
+      Entry: 4
+      Data: 1
+    - Name: _NormalizedStartTime
+      Entry: 4
+      Data: NaN
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: SS_R
+    - Name: $v
+      Entry: 7
+      Data: 40|Animancer.ClipState+Transition, Animancer
+    - Name: _FadeDuration
+      Entry: 4
+      Data: 0.25
+    - Name: _Events
+      Entry: 6
+      Data: 
+    - Name: _Clip
+      Entry: 10
+      Data: 25
+    - Name: _Speed
+      Entry: 4
+      Data: 1
+    - Name: _NormalizedStartTime
+      Entry: 4
+      Data: NaN
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: Walk_back
+    - Name: $v
+      Entry: 7
+      Data: 41|Animancer.ClipState+Transition, Animancer
+    - Name: _FadeDuration
+      Entry: 4
+      Data: 0.25
+    - Name: _Events
+      Entry: 6
+      Data: 
+    - Name: _Clip
+      Entry: 10
+      Data: 26
+    - Name: _Speed
+      Entry: 4
+      Data: 1
+    - Name: _NormalizedStartTime
+      Entry: 4
+      Data: NaN
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: Walk_back_skirt
+    - Name: $v
+      Entry: 7
+      Data: 42|Animancer.ClipState+Transition, Animancer
+    - Name: _FadeDuration
+      Entry: 4
+      Data: 0.25
+    - Name: _Events
+      Entry: 6
+      Data: 
+    - Name: _Clip
+      Entry: 10
+      Data: 27
+    - Name: _Speed
+      Entry: 4
+      Data: 1
+    - Name: _NormalizedStartTime
+      Entry: 4
+      Data: NaN
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: Walk_L
+    - Name: $v
+      Entry: 7
+      Data: 43|Animancer.ClipState+Transition, Animancer
+    - Name: _FadeDuration
+      Entry: 4
+      Data: 0.25
+    - Name: _Events
+      Entry: 6
+      Data: 
+    - Name: _Clip
+      Entry: 10
+      Data: 28
+    - Name: _Speed
+      Entry: 4
+      Data: 1
+    - Name: _NormalizedStartTime
+      Entry: 4
+      Data: NaN
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: Walk_R
+    - Name: $v
+      Entry: 7
+      Data: 44|Animancer.ClipState+Transition, Animancer
+    - Name: _FadeDuration
+      Entry: 4
+      Data: 0.25
+    - Name: _Events
+      Entry: 6
+      Data: 
+    - Name: _Clip
+      Entry: 10
+      Data: 29
+    - Name: _Speed
+      Entry: 4
+      Data: 1
+    - Name: _NormalizedStartTime
+      Entry: 4
+      Data: NaN
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: Walk_skirt
+    - Name: $v
+      Entry: 7
+      Data: 45|Animancer.ClipState+Transition, Animancer
+    - Name: _FadeDuration
+      Entry: 4
+      Data: 0.25
+    - Name: _Events
+      Entry: 6
+      Data: 
+    - Name: _Clip
+      Entry: 10
+      Data: 30
+    - Name: _Speed
+      Entry: 4
+      Data: 1
+    - Name: _NormalizedStartTime
+      Entry: 4
+      Data: NaN
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: Walk_skirt_L
+    - Name: $v
+      Entry: 7
+      Data: 46|Animancer.ClipState+Transition, Animancer
+    - Name: _FadeDuration
+      Entry: 4
+      Data: 0.25
+    - Name: _Events
+      Entry: 6
+      Data: 
+    - Name: _Clip
+      Entry: 10
+      Data: 31
+    - Name: _Speed
+      Entry: 4
+      Data: 1
+    - Name: _NormalizedStartTime
+      Entry: 4
+      Data: NaN
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: Walk_skirt_R
+    - Name: $v
+      Entry: 7
+      Data: 47|Animancer.ClipState+Transition, Animancer
+    - Name: _FadeDuration
+      Entry: 4
+      Data: 0.25
+    - Name: _Events
+      Entry: 6
+      Data: 
+    - Name: _Clip
+      Entry: 10
+      Data: 32
+    - Name: _Speed
+      Entry: 4
+      Data: 1
+    - Name: _NormalizedStartTime
+      Entry: 4
+      Data: NaN
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: Normal
+    - Name: $v
+      Entry: 7
+      Data: 48|Animancer.ClipState+Transition, Animancer
+    - Name: _FadeDuration
+      Entry: 4
+      Data: 0.25
+    - Name: _Events
+      Entry: 7
+      Data: 49|Animancer.AnimancerEvent+Sequence+Serializable, Animancer
+    - Name: _Names
+      Entry: 7
+      Data: 50|System.String[], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
       Entry: 13
       Data: 
     - Name: 
       Entry: 8
       Data: 
+    - Name: _NormalizedTimes
+      Entry: 7
+      Data: 51|System.Single[], mscorlib
+    - Name: 
+      Entry: 14
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _Callbacks
+      Entry: 7
+      Data: 52|UnityEngine.Events.UnityEvent[], UnityEngine.CoreModule
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _Clip
+      Entry: 10
+      Data: 12
+    - Name: _Speed
+      Entry: 4
+      Data: 1
+    - Name: _NormalizedStartTime
+      Entry: 4
+      Data: NaN
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+  animid: Ai
 --- !u!114 &4292233552860702237
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -23,7 +23,7 @@ namespace MDDSkillEngine
         {
             base.OnInit(fsm);
            
-            idle = fsm.Owner.CachedAnimContainer.GetAnimation("idle");
+            idle = fsm.Owner.CachedAnimContainer.GetAnimation("Idle_A");
             fsm.SetData<VarBoolean>("idle", false);
             
            

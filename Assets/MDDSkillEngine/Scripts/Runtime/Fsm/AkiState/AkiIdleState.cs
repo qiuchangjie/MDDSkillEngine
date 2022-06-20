@@ -25,7 +25,7 @@ namespace MDDSkillEngine
             base.OnInit(fsm);
             Fsm = fsm;
             Log.Info("创建akiIdle状态。");
-            idle = fsm.Owner.CachedAnimContainer.GetAnimation("Idle");      
+            idle = fsm.Owner.CachedAnimContainer.GetAnimation("Idle_A");      
         }
 
         protected override void OnEnter(IFsm<Entity> fsm)

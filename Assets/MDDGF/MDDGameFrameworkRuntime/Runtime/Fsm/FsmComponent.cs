@@ -153,8 +153,11 @@ namespace MDDGameFramework.Runtime
         public IFsm<T> CreateFsm<T,TFsmAttribute>(T owner) where T : class where TFsmAttribute : Attribute
         {
             typeList.Clear();
-
+            //获取专属状态
             Utility.Assembly.GetTypesByAttribute<TFsmAttribute>(typeList, typeof(FsmState));
+            //获取通用技能状态
+            Utility.Assembly.GetTypesByAttribute<SkillAttribute>(typeList, typeof(FsmState));
+
             FsmState<T>[] states = new FsmState<T>[typeList.Count];
 
             for (int i = 0; i < states.Length; i++)

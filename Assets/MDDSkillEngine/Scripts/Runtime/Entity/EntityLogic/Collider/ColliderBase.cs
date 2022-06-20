@@ -84,12 +84,12 @@ namespace MDDSkillEngine
                 {
                     CachedTransform.position = AIUtility.GetPoint(wasDuration / data.Duration, data.bezierPathLength, bezierPath);
                 }
-            }
 
-            if (data.Duration <= wasDuration)
-            {
-                HideSelf();
-            }
+                if (data.Duration <= wasDuration)
+                {
+                    HideSelf();
+                }
+            }          
         }
     }
 }
