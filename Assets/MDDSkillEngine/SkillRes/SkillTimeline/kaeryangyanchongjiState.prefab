@@ -52,7 +52,7 @@ MonoBehaviour:
   _activeLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  _targetType: 0
+  _targetType: 2
   groups:
   - {fileID: 7232431185629851885}
   _length: 0.8333334
@@ -215,7 +215,6 @@ MonoBehaviour:
   _blendIn: 0
   _blendOut: 0.050000012
   animationClip: {fileID: 7400000, guid: 8bafdcd44e3f81a49b836567ce6b6017, type: 3}
-  animationName: Cutepose
   clipOffset: 0
   clipWrapMode: 0
   clipWeight: 1
@@ -267,7 +266,6 @@ MonoBehaviour:
   _blendIn: 0.050000012
   _blendOut: 0
   animationClip: {fileID: 7400000, guid: 3e2cf120e49d5394c9178923b58fa920, type: 3}
-  animationName: Attack4
   clipOffset: 0
   clipWrapMode: 0
   clipWeight: 1
