@@ -37,7 +37,6 @@ namespace MDDSkillEngine
 
             fsm.SetData<VarBoolean>(GetType().Name,false);
 
-            Damage.Events.OnEnd += endAction;
             if (fsm.Owner.CachedAnimancer.IsPlaying(Damage))
             {
                 fsm.Owner.CachedAnimancer.Stop(Damage);
@@ -57,7 +56,6 @@ namespace MDDSkillEngine
 
         protected override void OnLeave(IFsm<Entity> fsm, bool isShutdown)
         {
-            Damage.Events.OnEnd -= endAction;
             base.OnLeave(fsm, isShutdown);
             Log.Info("{0}离开ai{1}", LogConst.FSM, GetType().Name);
         }
@@ -65,7 +63,10 @@ namespace MDDSkillEngine
         protected override void OnUpdate(IFsm<Entity> fsm, float elapseSeconds, float realElapseSeconds)
         {
             base.OnUpdate(fsm, elapseSeconds, realElapseSeconds);
-          
+            if (duration >= 1f)
+            {
+                Finish(fsm);
+            }
         }
 
         protected override void Observing(Blackboard.Type type, Variable newValue)

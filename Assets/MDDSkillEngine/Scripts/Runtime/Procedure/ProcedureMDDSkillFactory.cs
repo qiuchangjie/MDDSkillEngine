@@ -70,7 +70,6 @@ namespace MDDSkillEngine
                 Game.Entity.ShowEntity(typeof(Hero103), "Hero_103", new PlayerData(1002, 0)
                 {
                     Position = new Vector3(3f, 0f, 0f),
-                    LocalScale=new Vector3(100f,100f,100f)
                 });
 
                 Game.Entity.ShowEnemy(new EnemyData(Game.Entity.GenerateSerialId(), 10001)

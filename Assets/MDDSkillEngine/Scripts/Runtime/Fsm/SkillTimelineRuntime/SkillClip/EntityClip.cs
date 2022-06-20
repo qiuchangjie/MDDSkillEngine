@@ -20,7 +20,13 @@ namespace MDDSkillEngine
 
         public override void Enter()
         {
-            
+            Game.Entity.ShowEntity(Utility.Assembly.GetType(Utility.Text.Format("MDDSkillEngine.{0}", skillData.EntityLogic)), skillData.EntityName, new ColliderData(id, 0, actor)
+            {
+                targetType = skillTimeline.TargetType,               
+                localRotation = skillData.localRotation,
+                localScale = skillData.localScale,
+                localeftPostion = skillData.localeftPostion,              
+            });
         }
 
         public override void Update(float currentTime, float previousTime)

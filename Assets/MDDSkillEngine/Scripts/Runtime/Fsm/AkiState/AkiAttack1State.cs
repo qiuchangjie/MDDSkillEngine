@@ -29,10 +29,10 @@ namespace MDDSkillEngine
             base.OnInit(fsm);
             Log.Info("创建aki攻击状态。");
 
-            attack = fsm.Owner.CachedAnimContainer.GetAnimation("Attack1");
+            //attack = fsm.Owner.CachedAnimContainer.GetAnimation("Attack1");
 
             fsm.SetData<VarBoolean>("attack1",false);
-            attackTime = attack.MaximumDuration;
+            //attackTime = attack.MaximumDuration;
 
             //Log.Error("attackAnimTime:{0}", attackTime);
 
@@ -47,7 +47,7 @@ namespace MDDSkillEngine
         {
             base.OnEnter(fsm);
             Log.Info("进入aki攻击状态。");
-            attack.Events.OnEnd += endAction;
+            //attack.Events.OnEnd += endAction;
             fsm.Owner.CachedAnimancer.Play(attack);
         }
 
@@ -60,7 +60,7 @@ namespace MDDSkillEngine
         protected override void OnLeave(IFsm<Entity> fsm, bool isShutdown)
         {
             base.OnLeave(fsm, isShutdown);
-            attack.Events.OnEnd -= endAction;
+            //attack.Events.OnEnd -= endAction;
             Log.Info("离开aki攻击状态。");
         }
 
