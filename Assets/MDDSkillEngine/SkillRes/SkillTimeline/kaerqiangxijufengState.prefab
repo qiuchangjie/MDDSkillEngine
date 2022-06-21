@@ -920,11 +920,16 @@ MonoBehaviour:
   AddBuffName: PushHit
   EffectName: Hit
   col: {fileID: 0}
+  m_SphereCollider: {fileID: 0}
+  m_CapsuleCollider: {fileID: 0}
+  m_Collider: {fileID: 0}
   localeftPostion: {x: 0, y: 0, z: 15}
   localRotation: {x: -0, y: -0, z: -0, w: 1}
   localScale: {x: 1, y: 1, z: 1}
   boundSize: {x: 1, y: 1, z: 1}
   boundCenter: {x: 0, y: 0, z: 0}
+  radius: 1
+  height: 1
   path: {fileID: 8946138657727833838}
   useSpeed: 0
   speed: 3

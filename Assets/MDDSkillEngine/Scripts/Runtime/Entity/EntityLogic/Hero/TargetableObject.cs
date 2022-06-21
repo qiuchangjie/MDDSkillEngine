@@ -56,7 +56,7 @@ namespace MDDSkillEngine
             m_TargetableObjectData = userData as TargetableObjectData;
             if (m_TargetableObjectData == null)
             {
-                Log.Error("Targetable object data is invalid.");
+                //Log.Error("Targetable object data is invalid.");
                 return;
             }
 

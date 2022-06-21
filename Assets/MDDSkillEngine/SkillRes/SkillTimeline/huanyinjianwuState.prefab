@@ -704,11 +704,16 @@ MonoBehaviour:
   AddBuffName: NormalHit
   EffectName: Hit
   col: {fileID: 0}
+  m_SphereCollider: {fileID: 0}
+  m_CapsuleCollider: {fileID: 0}
+  m_Collider: {fileID: 0}
   localeftPostion: {x: -0.14091825, y: 0, z: 7.395523}
   localRotation: {x: 0, y: 0, z: 0, w: 1}
   localScale: {x: 1, y: 1, z: 1}
   boundSize: {x: 1, y: 1, z: 1}
   boundCenter: {x: 0, y: 0, z: 0}
+  radius: 1
+  height: 1
   path: {fileID: 2218856397312163239}
   useSpeed: 1
   speed: 2.56

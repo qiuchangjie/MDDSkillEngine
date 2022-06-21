@@ -27,7 +27,7 @@ namespace MDDSkillEngine
         {
             id = Game.Entity.GenerateSerialId();
 
-            Game.Entity.ShowCollider(Utility.Assembly.GetType(Utility.Text.Format("MDDSkillEngine.{0}",skillData.ColliderLogic)), skillData.ColliderName,new ColliderData(id, 0, actor)
+            Game.Entity.ShowCollider(Utility.Assembly.GetType(Utility.Text.Format("MDDSkillEngine.{0}", skillData.ColliderLogic)), skillData.ColliderName, new ColliderData(id, 0, actor)
             {
                 targetType = skillTimeline.TargetType,
                 HitEffectName = skillData.EffectName,
@@ -37,6 +37,8 @@ namespace MDDSkillEngine
                 localeftPostion = skillData.localeftPostion,
                 boundCenter = skillData.boundCenter,
                 boundSize = skillData.boundSize,
+                height = skillData.height,
+                radius = skillData.redius,
                 Duration = this.GetLength(),
                 hasPath = skillData.hasPath,
                 useSpeed = skillData.useSpeed,
@@ -46,7 +48,7 @@ namespace MDDSkillEngine
                 bezierPathParentRotation = skillData.bezierPathParentRotation,
             });
 
-          
+
 
             if (!skillData.useSpeed && skillData.hasPath)
             {
@@ -60,7 +62,7 @@ namespace MDDSkillEngine
                     bezierPath.Add(vec3);
                 }
             }
-        
+
             SkillTimeline<Entity> skillTimeline1 = skillTimeline as SkillTimeline<Entity>;
             Log.Info("{0}进入Colliderclip ：{1} currenttime:{2}", LogConst.SKillTimeline, skillData.ResouceName, skillTimeline1.currentTime);
         }
@@ -68,7 +70,7 @@ namespace MDDSkillEngine
         public override void Update(float currentTime, float previousTime)
         {
             base.Update(currentTime, previousTime);
-           // Log.Info("{0}upodateColliderClip name：{1}", LogConst.SKillTimeline, GetType().Name);
+            // Log.Info("{0}upodateColliderClip name：{1}", LogConst.SKillTimeline, GetType().Name);
             duration += currentTime;
 
             //利用贝塞尔曲线
@@ -82,7 +84,7 @@ namespace MDDSkillEngine
                         entity.transform.position = AIUtility.GetPoint(currentTime / this.GetLength(), skillData.bezierPathLength, bezierPath);
                     }
                 }
-            }         
+            }
         }
 
         public override void Exit()

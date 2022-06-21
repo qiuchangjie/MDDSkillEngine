@@ -10,7 +10,7 @@ namespace MDDSkillEngine
     {
         EntitySkillData skillData;
 
-        int id = 2000;
+        int id = 20000000;
 
         public override void Init(SkillDataBase data, Entity actor, SkillTimeline skillTimeline)
         {
@@ -23,12 +23,12 @@ namespace MDDSkillEngine
 
         public override void Enter()
         {
-            Game.Entity.ShowEntity(Utility.Assembly.GetType(Utility.Text.Format("MDDSkillEngine.{0}", skillData.EntityLogic)), skillData.EntityName, new PlayerData(id++, 0)
+            Game.Entity.ShowEntity(Utility.Assembly.GetType(Utility.Text.Format("MDDSkillEngine.{0}", skillData.EntityLogic)), skillData.EntityName, new HeroData(Game.Entity.GenerateSerialId(), 0, actor)
             {
                 //targetType = skillTimeline.TargetType,               
-                Rotation = skillData.localRotation,
-                LocalScale = skillData.localScale,
-                Position = skillData.localeftPostion,              
+                localRotation = skillData.localRotation,
+                localScale = skillData.localScale,
+                localeftPostion = skillData.localeftPostion,              
             });
         }
 

@@ -4,8 +4,16 @@ using UnityEngine;
 namespace MDDSkillEngine
 {
     [Serializable]
-    public abstract class HeroData : EntityData
+    public class HeroData : EntityData
     {
+        public Vector3 localeftPostion;
+
+        public Quaternion localRotation;
+
+        public Vector3 localScale;
+
+        public Entity m_Owner;
+
         /// <summary>
         /// 阵营
         /// </summary>
@@ -107,10 +115,11 @@ namespace MDDSkillEngine
         [SerializeField]
         private float m_Speed = 0;
 
-        public HeroData(int entityId, int typeId)
+        public HeroData(int entityId, int typeId, Entity owner)
             : base(entityId, typeId)
         {
-           
+            m_Owner = owner;
+            EntityType = EntityType.Hero;
         }
 
         /// <summary>
@@ -142,7 +151,7 @@ namespace MDDSkillEngine
         /// <summary>
         /// 最大生命。
         /// </summary>
-        public abstract float MaxHP
+        public virtual float MaxHP
         {
             get;
         }

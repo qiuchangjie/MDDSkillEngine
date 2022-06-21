@@ -33,8 +33,7 @@ namespace MDDSkillEngine
                         {
                             Game.Entity.DetachEntity(Id);
                         }
-                    }
-                    
+                    }                   
                 }
                 else if (data.targetType == TargetType.POINT)
                 {

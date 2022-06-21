@@ -19,8 +19,6 @@ namespace MDDSkillEngine
         protected override void OnInit(object userData)
         {
             base.OnInit(userData);
-
-
         }
 
         protected override void OnShow(object userData)
@@ -28,10 +26,28 @@ namespace MDDSkillEngine
             data = userData as ColliderData;
             base.OnShow(userData);
 
-            BoxCollider Box = GetComponent<BoxCollider>();
-            Box.size = data.boundSize;
-            Box.center = data.boundCenter;
+            Collider Col = GetComponent<Collider>();
 
+            if (Col is BoxCollider)
+            {
+                BoxCollider Box = (BoxCollider)Col;
+                Box.size = data.boundSize;
+                Box.center = data.boundCenter;
+            }
+            else if (Col is SphereCollider)
+            {
+                SphereCollider Sphere = (SphereCollider)Col;
+                Sphere.center = data.boundCenter;
+                Sphere.radius = data.radius;
+            }
+            else if (Col is CapsuleCollider)
+            {
+                CapsuleCollider Capsule = (CapsuleCollider)Col;
+                Capsule.height = data.height;
+                Capsule.radius = data.radius;
+                Capsule.center = data.boundCenter;
+            }
+         
             needWaitTime = 1f / damageSettlementPreSecond;
         }
 

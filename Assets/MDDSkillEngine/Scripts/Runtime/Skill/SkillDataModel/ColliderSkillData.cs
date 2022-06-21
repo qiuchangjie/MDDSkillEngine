@@ -20,6 +20,10 @@ namespace MDDSkillEngine
 
         public Vector3 boundCenter;
 
+        public float redius;
+
+        public float height;
+
         public string ColliderName;
 
         public string ColliderLogic;
@@ -56,6 +60,8 @@ namespace MDDSkillEngine
             localScale = instanceCollider.localScale;
             boundSize = instanceCollider.boundSize;                
             boundCenter = instanceCollider.boundCenter;
+            redius = instanceCollider.radius;
+            height = instanceCollider.height;   
             ColliderName = instanceCollider.ColliderName;
             ColliderLogic = instanceCollider.ColliderLogic;
             Speed = instanceCollider.Speed;

@@ -21,6 +21,10 @@ namespace MDDSkillEngine
 
         public Vector3 boundCenter;
 
+        public float radius;
+
+        public float height;
+
         public Vector3 localeftPostion;
 
         public Quaternion localRotation;

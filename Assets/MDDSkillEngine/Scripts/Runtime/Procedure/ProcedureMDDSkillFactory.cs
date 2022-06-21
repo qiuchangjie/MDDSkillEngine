@@ -67,10 +67,10 @@ namespace MDDSkillEngine
                     Position = new Vector3(0f, 0f, 0f),
                 });
 
-                Game.Entity.ShowEntity(typeof(Hero103), "Hero_103", new PlayerData(1002, 0)
-                {
-                    Position = new Vector3(3f, 0f, 0f),
-                });
+                //Game.Entity.ShowEntity(typeof(Hero103), "Hero_103", new (1002, 0)
+                //{
+                //    Position = new Vector3(3f, 0f, 0f),
+                //});
 
                 Game.Entity.ShowEnemy(new EnemyData(Game.Entity.GenerateSerialId(), 10001)
                 {

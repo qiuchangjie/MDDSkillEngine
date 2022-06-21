@@ -774,11 +774,16 @@ MonoBehaviour:
   AddBuffName: PushHit
   EffectName: Hit
   col: {fileID: 0}
+  m_SphereCollider: {fileID: 0}
+  m_CapsuleCollider: {fileID: 0}
+  m_Collider: {fileID: 0}
   localeftPostion: {x: 0, y: 0, z: 0}
   localRotation: {x: 0, y: 0, z: 0, w: 0}
   localScale: {x: 0, y: 0, z: 0}
   boundSize: {x: 0, y: 0, z: 0}
   boundCenter: {x: 0, y: 0, z: 0}
+  radius: 1
+  height: 1
   path: {fileID: 113597794931733359}
   useSpeed: 0
   speed: 3

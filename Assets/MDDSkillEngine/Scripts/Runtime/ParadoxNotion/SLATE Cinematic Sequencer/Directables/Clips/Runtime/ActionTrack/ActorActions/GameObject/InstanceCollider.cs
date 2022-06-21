@@ -47,6 +47,12 @@ namespace Slate.ActionClips
 
         public BoxCollider col;
 
+        public SphereCollider m_SphereCollider;
+
+        public CapsuleCollider m_CapsuleCollider;
+
+        public Collider m_Collider;
+
         [OnValueChanged("OnSetPosition")]
         public Vector3 localeftPostion;
 
@@ -61,6 +67,10 @@ namespace Slate.ActionClips
 
         [OnValueChanged("OnSetColCenter")]
         public Vector3 boundCenter;
+
+        public float radius = 1f;
+
+        public float height = 1f;
 
         public Path path;
 
@@ -101,17 +111,36 @@ namespace Slate.ActionClips
         protected override void OnEnter()
         {
 
-            if (col == null)
+            if (m_Collider == null)
             {
                 UnityEngine.Object asset = UnityEditor.AssetDatabase.LoadAssetAtPath(AssetUtility.GetEntityAsset(ColliderName, EntityType.Collider), typeof(UnityEngine.Object));
                 GameObject obj = Instantiate(asset,((Cutscene)root).transform.parent) as GameObject;
-                col = obj.GetComponent<BoxCollider>();               
+                m_Collider = obj.GetComponent<Collider>();               
                 obj.transform.localPosition = localeftPostion;
                 obj.transform.rotation = localRotation;
                 obj.transform.localScale = localScale;
 
-                col.size = boundSize;
-                col.center = boundCenter;          
+                if (m_Collider is BoxCollider)
+                {
+                    col = (BoxCollider)m_Collider;
+                    col.size = boundSize;
+                    col.center = boundCenter;
+                }
+
+                if (m_Collider is SphereCollider)
+                {
+                    m_SphereCollider = (SphereCollider)m_Collider;
+                    m_SphereCollider.radius = radius;
+                    m_SphereCollider.center = boundCenter;
+                }
+
+                if (m_Collider is CapsuleCollider)
+                {
+                    m_CapsuleCollider = (CapsuleCollider)m_Collider;
+                    m_CapsuleCollider.radius = radius;
+                    m_CapsuleCollider.height = height;
+                    m_CapsuleCollider.center = boundCenter;
+                }
             }
 
         }
@@ -120,12 +149,12 @@ namespace Slate.ActionClips
         {
             base.OnUpdate(time, previousTime);
 
-            if (col!=null)
+            if (m_Collider != null)
             {
                 if (path != null)
                 {
                     var newPos = path.GetPointAt(time / length);
-                    col.transform.position = newPos;
+                    m_Collider.transform.position = newPos;
                 }
               
             }
@@ -136,12 +165,34 @@ namespace Slate.ActionClips
 
         protected override void OnExit()
         {
-            localeftPostion = col.gameObject.transform.localPosition;
-            localRotation = col.gameObject.transform.localRotation;
-            localScale = col.gameObject.transform.localScale;
-            boundCenter = col.center;
-            boundSize = col.size;
-            DestroyImmediate(col.gameObject);
+            localeftPostion = m_Collider.gameObject.transform.localPosition;
+            localRotation = m_Collider.gameObject.transform.localRotation;
+            localScale = m_Collider.gameObject.transform.localScale;
+
+
+            if (m_Collider is BoxCollider)
+            {
+                col = (BoxCollider)m_Collider;
+                boundCenter = col.center;
+                boundSize = col.size;
+            }
+
+            if (m_Collider is SphereCollider)
+            {
+                m_SphereCollider = (SphereCollider)m_Collider;
+                boundCenter = m_SphereCollider.center;
+                radius = m_SphereCollider.radius;
+            }
+
+            if (m_Collider is CapsuleCollider)
+            {
+                m_CapsuleCollider = (CapsuleCollider)m_Collider;
+                radius = m_CapsuleCollider.radius;
+                height = m_CapsuleCollider.height;
+                boundCenter = m_CapsuleCollider.center;
+            }
+
+            DestroyImmediate(m_Collider.gameObject);
         }
 
         protected override void OnReverseEnter()
@@ -154,6 +205,10 @@ namespace Slate.ActionClips
             //Debug.LogError("OnReverse");
         }
 
+
+
+
+#if UNITY_EDITOR
         private void OnSetPosition()
         {
             Debug.LogError("change");
@@ -182,21 +237,18 @@ namespace Slate.ActionClips
             {
                 col.size = boundSize;
             }
-           
         }
-
         private void OnSetColCenter()
         {
             Debug.LogError("change");
             if (col != null)
             {
-              col.center = boundCenter;
+                col.center = boundCenter;
             }
-               
+
         }
 
 
-#if UNITY_EDITOR
         private IEnumerable<string> GetBuffs()
         {
             if (NPBlackBoardEditorInstance.buffs.Count == 0)

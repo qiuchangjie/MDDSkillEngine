@@ -15,6 +15,12 @@ namespace MDDSkillEngine
         [SerializeField]
         private float m_Speed = 0;
 
+        public Vector3 localeftPostion;
+
+        public Quaternion localRotation;
+
+        public Vector3 localScale;
+
         public TargetableObjectData(int entityId, int typeId, CampType camp)
             : base(entityId, typeId)
         {

@@ -11,7 +11,7 @@ namespace MDDSkillEngine
 {
     public class Hero103 : TargetableObject
     {
-        PlayerData PlayerData = null;
+        HeroData PlayerData = null;
         private bool IsPlaying = false;
 
         private void SetIsPlaying(object sender, GameEventArgs e)
@@ -55,7 +55,7 @@ namespace MDDSkillEngine
 
         public override ImpactData GetImpactData()
         {
-            return new ImpactData(PlayerData.HP, 200);
+            return new ImpactData();
         }
 
         protected override void OnInit(object userData)
@@ -78,7 +78,7 @@ namespace MDDSkillEngine
             //UIAbilities u = Game.UI.GetUIForm(UIFormId.Ablities) as UIAbilities;
             //u.SetEntity(this);
 
-            PlayerData = userData as PlayerData;
+            PlayerData = userData as HeroData;
             if (PlayerData == null)
             {
                 Log.Error("PlayerData is invalid.");
@@ -95,6 +95,18 @@ namespace MDDSkillEngine
 
             IFsm<Entity> fsm = Game.Fsm.GetFsm<Entity>(Entity.Id.ToString());
             fsm.Start<Hero103Spawn>();
+
+            if (PlayerData.m_Owner != null)
+            {
+                Game.Entity.AttachEntity(Id, PlayerData.m_Owner.Id);
+                CachedTransform.localRotation = PlayerData.localRotation;
+                CachedTransform.localPosition = PlayerData.localeftPostion;
+                CachedTransform.localScale = PlayerData.localScale;
+
+               
+                Game.Entity.DetachEntity(Id);
+                
+            }
 
             Game.HpBar.ShowHPBar(this, 1, 1);
         }

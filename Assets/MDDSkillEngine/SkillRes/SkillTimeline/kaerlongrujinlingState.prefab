@@ -133,7 +133,7 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  _startTime: 0.21666668
+  _startTime: 0.15
   _animationData:
     _animatedParameters: []
   _length: 0.04816486
@@ -165,16 +165,16 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  _startTime: 0.26483154
+  _startTime: 0.4166667
   _animationData:
     _animatedParameters: []
-  _length: 0.03516847
+  _length: 0.050000012
   EntityName: Hero_103
   EntityLogic: Hero103
   point: {fileID: 0}
   PlayableSpeed: 1
-  localeftPostion: {x: 0, y: 0, z: 0}
-  localRotation: {x: 0, y: 0, z: 0, w: 1}
+  localeftPostion: {x: 2.3, y: 0, z: 0}
+  localRotation: {x: -0, y: -0, z: -0, w: 1}
   localScale: {x: 1, y: 1, z: 1}
 --- !u!1 &3378478145511216615
 GameObject:
@@ -256,7 +256,7 @@ MonoBehaviour:
   - {x: 0, y: 0, z: 0}
   - {x: 0, y: 0, z: 0}
   rmRotations:
-  - {x: 0, y: 0, z: 0, w: 1}
+  - {x: -0, y: -0, z: -0, w: 1}
   - {x: -0, y: -0, z: -0, w: 1}
   - {x: -0, y: -0, z: -0, w: 1}
   - {x: -0, y: -0, z: -0, w: 1}
