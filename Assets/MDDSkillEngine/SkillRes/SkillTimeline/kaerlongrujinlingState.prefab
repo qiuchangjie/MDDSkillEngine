@@ -52,10 +52,10 @@ MonoBehaviour:
   _activeLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  _targetType: 0
+  _targetType: 1
   groups:
   - {fileID: 7232431185629851885}
-  _length: 0.6166667
+  _length: 0.5
   _viewTimeMin: -0.5665021
   _viewTimeMax: 1.4365346
 --- !u!1 &1470344263223260475
@@ -68,8 +68,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2602975927732483039}
   - component: {fileID: 189096054507302361}
-  - component: {fileID: 2040837041122901693}
-  - component: {fileID: 8232454783888073402}
   m_Layer: 0
   m_Name: "\u5B9E\u4F53\u8F68\u9053"
   m_TagString: Untagged
@@ -107,75 +105,9 @@ MonoBehaviour:
   _color: {r: 1, g: 1, b: 1, a: 1}
   _active: 1
   _isLocked: 0
-  _actionClips:
-  - {fileID: 2040837041122901693}
-  - {fileID: 8232454783888073402}
+  _actionClips: []
   _customHeight: 300
   _icon: {fileID: 0}
---- !u!114 &2040837041122901693
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1470344263223260475}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c3bf3a0e12657ff4dabfc04b8be667d9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  serializationData:
-    SerializedFormat: 2
-    SerializedBytes: 
-    ReferencedUnityObjects: []
-    SerializedBytesString: 
-    Prefab: {fileID: 0}
-    PrefabModificationsReferencedUnityObjects: []
-    PrefabModifications: []
-    SerializationNodes: []
-  _startTime: 0.15
-  _animationData:
-    _animatedParameters: []
-  _length: 0.04816486
-  EntityName: Hero_103
-  EntityLogic: Hero103
-  point: {fileID: 0}
-  PlayableSpeed: 1
-  localeftPostion: {x: -1.5, y: 0, z: 1.92}
-  localRotation: {x: -0, y: -0, z: -0, w: 1}
-  localScale: {x: 1, y: 1, z: 1}
---- !u!114 &8232454783888073402
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1470344263223260475}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c3bf3a0e12657ff4dabfc04b8be667d9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  serializationData:
-    SerializedFormat: 2
-    SerializedBytes: 
-    ReferencedUnityObjects: []
-    SerializedBytesString: 
-    Prefab: {fileID: 0}
-    PrefabModificationsReferencedUnityObjects: []
-    PrefabModifications: []
-    SerializationNodes: []
-  _startTime: 0.4166667
-  _animationData:
-    _animatedParameters: []
-  _length: 0.050000012
-  EntityName: Hero_103
-  EntityLogic: Hero103
-  point: {fileID: 0}
-  PlayableSpeed: 1
-  localeftPostion: {x: 2.3, y: 0, z: 0}
-  localRotation: {x: -0, y: -0, z: -0, w: 1}
-  localScale: {x: 1, y: 1, z: 1}
 --- !u!1 &3378478145511216615
 GameObject:
   m_ObjectHideFlags: 0
@@ -315,7 +247,7 @@ MonoBehaviour:
         m_PostInfinity: 2
         m_RotationOrder: 4
       _scriptExpression: 
-  _length: 0.6166667
+  _length: 0.5
   _blendIn: 0
   _blendOut: 0.050000012
   animationClip: {fileID: 7400000, guid: 8bafdcd44e3f81a49b836567ce6b6017, type: 3}
@@ -464,7 +396,7 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  _startTime: 0.5833334
+  _startTime: 0.4666667
   _animationData:
     _animatedParameters: []
   _length: 0

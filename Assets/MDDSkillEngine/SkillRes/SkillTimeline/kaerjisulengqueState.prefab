@@ -130,7 +130,7 @@ MonoBehaviour:
   _activeLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  _targetType: 1
+  _targetType: 3
   groups:
   - {fileID: 7232431185629851885}
   _length: 0.8333334

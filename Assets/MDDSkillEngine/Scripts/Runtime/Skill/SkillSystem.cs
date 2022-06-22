@@ -34,7 +34,7 @@ namespace MDDSkillEngine
             }
         }
 
-        public Dictionary<int, int> SkillIndex
+        public virtual Dictionary<int, int> SkillIndex
         {
             get { return skillIndex; }
         }
@@ -54,8 +54,7 @@ namespace MDDSkillEngine
                 {1, 0},                    
                 {2, 0},
                 {3, 0},
-            };
-             
+            };           
         }
 
 
@@ -143,7 +142,7 @@ namespace MDDSkillEngine
         /// 释放技能
         /// </summary>
         /// <param name="id"></param>
-        public void ReleaseSkill(int id)
+        public virtual void ReleaseSkill(int id)
         {
             IFsm<Entity> fsm = Game.Fsm.GetFsm<Entity>(m_Owner.Id.ToString());
             IDataTable<DRSkill> dtSkill = Game.DataTable.GetDataTable<DRSkill>();
@@ -156,7 +155,7 @@ namespace MDDSkillEngine
             }
             else
             {
-                SetSkillReleaseResultType(SkillReleaseResultType.FAIL);
+                SetSkillReleaseResultType(SkillReleaseResultType.PROGRESS);
                 Log.Error("{0}Skill{1}未关联state", LogConst.Skill, id);
             }
 

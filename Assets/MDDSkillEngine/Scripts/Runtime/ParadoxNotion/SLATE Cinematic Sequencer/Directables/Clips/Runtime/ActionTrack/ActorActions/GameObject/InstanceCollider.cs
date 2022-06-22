@@ -96,13 +96,6 @@ namespace Slate.ActionClips
             Selection.activeGameObject = path.gameObject;
         }
 
-        //public override string info
-        //{
-        //    get { return string.Format("{0} Actor", activeState); }
-        //}
-
-
-
         protected override void OnDrawGizmosSelected()
         {
             base.OnDrawGizmosSelected();
@@ -202,7 +195,7 @@ namespace Slate.ActionClips
 
         protected override void OnReverse()
         {
-            //Debug.LogError("OnReverse");
+            
         }
 
 
@@ -247,7 +240,6 @@ namespace Slate.ActionClips
             }
 
         }
-
 
         private IEnumerable<string> GetBuffs()
         {
