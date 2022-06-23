@@ -16,6 +16,8 @@ namespace MDDSkillEngine
 
         public List<AblitiesSlot> ablitiesSlots = new List<AblitiesSlot>();
 
+        public List<AblitiesSlot> kaerablitiesSlots = new List<AblitiesSlot>();
+
         protected override void OnInit(object userData)
         {
             base.OnInit(userData);
@@ -28,7 +30,12 @@ namespace MDDSkillEngine
             for (int i = 0; i < ablitiesSlots.Count; i++)
             {
                 ablitiesSlots[i].Init(null);
-                ablitiesSlots[i].InitIndex(i);
+                ablitiesSlots[i].InitIndex(i);            
+            }
+
+            for (int i = 0; i < kaerablitiesSlots.Count; i++)
+            {
+                kaerablitiesSlots[i].Init(null);
             }
 
             Game.Input.Control.Heros_Normal.Skill_1.performed += UseSkill_1;
@@ -38,6 +45,7 @@ namespace MDDSkillEngine
 
             Game.Event.Subscribe(AddSkillEventArgs.EventId, LearnedSkill);
             Game.Event.Subscribe(SelectEntityEventArgs.EventId, SwitchEntity);
+            Game.Event.Subscribe(KaerQihuanEventArgs.EventId, KaerQihuan);
         }
 
 
@@ -48,6 +56,7 @@ namespace MDDSkillEngine
 
             Game.Event.Unsubscribe(AddSkillEventArgs.EventId, LearnedSkill);
             Game.Event.Unsubscribe(SelectEntityEventArgs.EventId, SwitchEntity);
+            Game.Event.Unsubscribe(KaerQihuanEventArgs.EventId, KaerQihuan);
         }
 
         public void SetEntity(Entity entity)
@@ -58,6 +67,21 @@ namespace MDDSkillEngine
                 ISkillSystem skillSystem = Game.Skill.GetSkillSystem(entity.Id);
                 if (skillSystem != null)
                 {
+                    if (skillSystem is KealSkillSystem)
+                    {
+                        for (int i = 0; i < kaerablitiesSlots.Count; i++)
+                        {
+                            kaerablitiesSlots[i].gameObject.SetActive(true);
+                        }
+                    }
+                    else
+                    {
+                        for (int i = 0; i < kaerablitiesSlots.Count; i++)
+                        {
+                            kaerablitiesSlots[i].gameObject.SetActive(false);
+                        }
+                    }
+
                     for (int i = 0; i < ablitiesSlots.Count; i++)
                     {
                         ablitiesSlots[i].SwitchSkillSystem(skillSystem);
@@ -75,9 +99,30 @@ namespace MDDSkillEngine
         private void LearnedSkill(object sender, GameEventArgs e)
         {
             AddSkillEventArgs a = e as AddSkillEventArgs;
+
+            if (a.Index == -1)
+            {
+                return;
+            }
+
             if (a != null && a.SkillSystem == Game.Skill.GetSkillSystem(m_Entity.Id))
             {
                 ablitiesSlots[a.Index].Init(a.SkillSystem, a.SkillID);
+            }
+        }
+
+        private void KaerQihuan(object sender, GameEventArgs e)
+        {
+            KaerQihuanEventArgs a = e as KaerQihuanEventArgs;
+            if (a != null && a.SkillSystem == Game.Skill.GetSkillSystem(m_Entity.Id))
+            {
+                if (kaerablitiesSlots[0].SkillID == a.SkillID)
+                    return;
+
+                if (kaerablitiesSlots[0].SkillID != 0)
+                    kaerablitiesSlots[1].Init(kaerablitiesSlots[0].m_SkillSystem, kaerablitiesSlots[0].SkillID);
+
+                kaerablitiesSlots[0].Init(a.SkillSystem, a.SkillID);
             }
         }
 
@@ -106,6 +151,16 @@ namespace MDDSkillEngine
         public void UseSkill_4(CallbackContext ctx)
         {
             ablitiesSlots[3].UseSkill();
+        }
+
+        public void UseSkill_5(CallbackContext ctx)
+        {
+            kaerablitiesSlots[0].UseSkill();
+        }
+
+        public void UseSkill_6(CallbackContext ctx)
+        {
+            kaerablitiesSlots[1].UseSkill();
         }
     }
 

@@ -60,7 +60,8 @@ namespace MDDSkillEngine
             {
                 BuffBase a = buffQueue.Dequeue() as BuffBase;
                 IBuffSystem buffSystem = Game.Buff.GetBuffSystem(Owner.Id.ToString());
-                buffSystem.RemoveBuff(a);
+                buffSystem.
+                    RemoveBuff(a);
 
                 if (a is KaerFire)
                 {
@@ -104,6 +105,56 @@ namespace MDDSkillEngine
                     float num = blackboard.Get<float>("雷");
                     num++;
                     blackboard.Set<VarFloat>("雷", num);
+                }
+            }
+        }
+
+
+        public override void ReleaseSkill(int id)
+        {
+            base.ReleaseSkill(id);
+            if (id == 10019)
+            {
+                if (GetPubBlackboard().Get<float>("冰") == 1 && GetPubBlackboard().Get<float>("火") == 2)
+                {
+                    Game.Event.Fire(this, KaerQihuanEventArgs.Create(this, 10016));
+                }
+                else if (GetPubBlackboard().Get<float>("冰") == 1 && GetPubBlackboard().Get<float>("雷") == 2)
+                {
+                    Game.Event.Fire(this, KaerQihuanEventArgs.Create(this, 10011));
+                }
+                else if (GetPubBlackboard().Get<float>("冰") == 3)
+                {
+                    Game.Event.Fire(this, KaerQihuanEventArgs.Create(this, 10009));
+                }
+                else if (GetPubBlackboard().Get<float>("冰") == 2 && GetPubBlackboard().Get<float>("火") == 1)
+                {
+                    Game.Event.Fire(this, KaerQihuanEventArgs.Create(this, 10017));
+                }
+                else if (GetPubBlackboard().Get<float>("冰") == 2 && GetPubBlackboard().Get<float>("雷") == 1)
+                {
+                    Game.Event.Fire(this, KaerQihuanEventArgs.Create(this, 10010));
+                }
+                else if (GetPubBlackboard().Get<float>("火") == 3)
+                {
+                    Game.Event.Fire(this, KaerQihuanEventArgs.Create(this, 10015));
+                }
+                else if (GetPubBlackboard().Get<float>("雷") == 3)
+                {
+                    Game.Event.Fire(this, KaerQihuanEventArgs.Create(this, 10012));
+                }
+                else if (GetPubBlackboard().Get<float>("火") == 2 && GetPubBlackboard().Get<float>("雷") == 1)
+                {
+                    Game.Event.Fire(this, KaerQihuanEventArgs.Create(this, 10014));
+                }
+                else if (GetPubBlackboard().Get<float>("火") == 1 && GetPubBlackboard().Get<float>("雷") == 2)
+                {
+                    Game.Event.Fire(this, KaerQihuanEventArgs.Create(this, 10013));
+                }
+                else if (GetPubBlackboard().Get<float>("火") == 1 && GetPubBlackboard().Get<float>("雷") == 1
+                    && GetPubBlackboard().Get<float>("冰") == 1)
+                {
+                    Game.Event.Fire(this, KaerQihuanEventArgs.Create(this, 10018));
                 }
             }
         }

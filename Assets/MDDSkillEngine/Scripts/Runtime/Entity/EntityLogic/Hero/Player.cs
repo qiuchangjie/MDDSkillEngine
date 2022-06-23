@@ -70,6 +70,8 @@ namespace MDDSkillEngine
             Game.Fsm.CreateFsm<Entity, AkiStateAttribute>(this);       
             Game.Skill.CreateSkillSystem<Player>(this);
 
+           
+
             //事件
             Game.Event.Subscribe(SelectEntityEventArgs.EventId, SetIsPlaying);
             Game.Event.Subscribe(SelectAttackEntityEventArgs.EventId, SetAttack);
@@ -77,6 +79,22 @@ namespace MDDSkillEngine
             //ui
             UIAbilities u = Game.UI.GetUIForm(UIFormId.Ablities) as UIAbilities;
             u.SetEntity(this);
+
+            ISkillSystem skillSystem = Game.Skill.GetSkillSystem(Id);
+            skillSystem.AddSkill(10004, 0);
+            skillSystem.AddSkill(10005, 1);
+            skillSystem.AddSkill(10006, 2);
+            skillSystem.AddSkill(10019, 3);
+            skillSystem.AddSkill(10009);
+            skillSystem.AddSkill(10010);
+            skillSystem.AddSkill(10011);
+            skillSystem.AddSkill(10012);
+            skillSystem.AddSkill(10013);
+            skillSystem.AddSkill(10014);
+            skillSystem.AddSkill(10015);
+            skillSystem.AddSkill(10016);
+            skillSystem.AddSkill(10017);
+            skillSystem.AddSkill(10018);
 
             PlayerData = userData as PlayerData;
             if (PlayerData == null)

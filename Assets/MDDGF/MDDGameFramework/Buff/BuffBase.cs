@@ -87,7 +87,8 @@ namespace MDDGameFramework
         /// <param name="buffSystem"></param>
         public virtual void OnFininsh(IBuffSystem buffSystem)
         {
-            buffData.PassDuration = 0f;
+            if(buffData!=null)
+               buffData.PassDuration = 0f;
         }
 
         /// <summary>

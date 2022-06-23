@@ -70,6 +70,21 @@ namespace MDDGameFramework
             return buffSystem;
         }
 
+        public void RemoveBuffSystem(string name)
+        {
+            if (m_BuffSystems.TryGetValue(name, out BuffSystem buffsystem))
+            {
+                ReferencePool.Release(buffsystem);
+                m_BuffSystems.Remove(name);
+                
+            }
+            else
+            {
+                throw new MDDGameFrameworkException(Utility.Text.Format("m_BuffSystems is null:{0}", name));
+            }
+        }
+
+
         public void AddBuff(string buffSystemName,string buffName, object target, object from,object userData=null)
         {
             if (m_BuffSystems.TryGetValue(buffSystemName, out BuffSystem buffSystem))

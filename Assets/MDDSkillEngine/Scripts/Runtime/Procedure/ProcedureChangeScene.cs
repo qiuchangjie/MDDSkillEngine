@@ -95,16 +95,11 @@ namespace MDDSkillEngine
             }
 
 
-            if (Game.Procedure.procedureType == ProcedureType.Game)
+            if (procedureOwner.GetData<VarInt32>("NextSceneId").Value == 2)
             {
                 ChangeState<ProcedureMDDSkillFactory>(procedureOwner);
             }
-            else
-            {
-                ChangeState<ProcedureSkillEditor>(procedureOwner);
-            }
-
-
+         
         }
 
         protected override void Observing(Blackboard.Type type, Variable newValue)

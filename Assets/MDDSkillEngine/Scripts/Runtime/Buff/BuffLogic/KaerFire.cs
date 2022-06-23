@@ -58,10 +58,7 @@ namespace MDDSkillEngine
 
         public override void Clear()
         {
-            base.Clear();
-            ReferencePool.Release(data);
-
-            data = null;
+            base.Clear();      
         }
 
         public override void OnFininsh(IBuffSystem buffSystem)
