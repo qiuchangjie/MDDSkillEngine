@@ -36,11 +36,29 @@ namespace MDDSkillEngine
             }
             else
             {
+                if (SkillID != 0)
+                    m_SkillSystem.GetSkillBlackboard(SkillID).RemoveObserver("cd", Observing);
+
+
                 IDataTable<DRSkill> dtSkill = Game.DataTable.GetDataTable<DRSkill>();
                 DRSkill drSkill = dtSkill.GetDataRow(skillid);               
                 m_SkillSystem = skillSystem;
                 SkillName.text=drSkill.Name;
                 this.SkillID = skillid;
+
+                float cdtime = m_SkillSystem.GetSkillBlackboard(SkillID).Get<float>("cdtime");
+                float cd = m_SkillSystem.GetSkillBlackboard(SkillID).Get<float>("cd");
+
+                if (cdtime == 0)
+                {
+                    CDImage.fillAmount = 0;
+                }
+                else
+                {
+                    float amount = cd / cdtime;
+                    CDImage.fillAmount = amount;
+                }
+               
 
                 m_SkillSystem.GetSkillBlackboard(SkillID).AddObserver("cd", Observing);
             }
@@ -59,8 +77,8 @@ namespace MDDSkillEngine
             if (skillSystem == m_SkillSystem)
                 return;
 
-            if (SkillID != 0)
-                m_SkillSystem.GetSkillBlackboard(SkillID).RemoveObserver("cd", Observing);
+            //if (SkillID != 0)
+            //    m_SkillSystem.GetSkillBlackboard(SkillID).RemoveObserver("cd", Observing);
 
 
             Init(skillSystem, skillSystem.SkillIndex[index]);                    

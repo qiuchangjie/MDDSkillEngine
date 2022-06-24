@@ -86,7 +86,7 @@ namespace MDDSkillEngine
 
             blackboard = Blackboard.Create(clock);
 
-            blackboard.Set<VarFloat>("PlayableSpeed",1);
+            blackboard.Set<VarFloat>("PlayableSpeed", 1);
         }
 
 
@@ -116,7 +116,7 @@ namespace MDDSkillEngine
 
             if (m_EntityData.IsPreLoad)
             {
-                Game.Coroutine.StartJobDelayed(0.1f).Start((b) => 
+                Game.Coroutine.StartJobDelayed(0.1f).Start((b) =>
                 {
                     HideSelf();
                 });
@@ -144,7 +144,7 @@ namespace MDDSkillEngine
 
         {
             base.OnAttachTo(parentEntity, parentTransform, userData);
-            
+
         }
 
 
@@ -157,7 +157,7 @@ namespace MDDSkillEngine
 
         {
             base.OnUpdate(elapseSeconds, realElapseSeconds);
-            wasDuration+=elapseSeconds;
+            wasDuration += elapseSeconds;
             clock.Update(elapseSeconds);
         }
 
@@ -166,9 +166,9 @@ namespace MDDSkillEngine
             Game.Entity.HideEntity(Id);
         }
 
-        public virtual void SetState(EntityNormalState state,bool b)
+        public virtual void SetState(EntityNormalState state, bool b)
         {
-            
+
         }
 
         public void SwitchEntitySelectState(EntitySelectState state)
@@ -201,7 +201,7 @@ namespace MDDSkillEngine
         /// </summary>
         RUN,
         /// <summary>
-        /// 被击飞
+        /// 被吹飞
         /// </summary>
         FLYSKY,
         /// <summary>
@@ -212,5 +212,6 @@ namespace MDDSkillEngine
         /// 被抓取 眩晕
         /// </summary>
         CONTROLLED,
+
     }
 }

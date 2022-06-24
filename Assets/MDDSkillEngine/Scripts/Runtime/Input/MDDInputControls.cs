@@ -51,6 +51,22 @@ public class @MDDInputControls : IInputActionCollection, IDisposable
                     ""interactions"": """"
                 },
                 {
+                    ""name"": ""Skill_5"",
+                    ""type"": ""Button"",
+                    ""id"": ""ae628417-2872-46cf-98c0-d80635016327"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Skill_6"",
+                    ""type"": ""Button"",
+                    ""id"": ""8fa3b690-f20b-4312-ae36-c385887944e2"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
                     ""name"": ""LeftClick"",
                     ""type"": ""Button"",
                     ""id"": ""353aed27-22d4-4d8c-9f78-7c5359ea6c5c"",
@@ -152,6 +168,55 @@ public class @MDDInputControls : IInputActionCollection, IDisposable
                     ""action"": ""S"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ae792403-9926-412e-b588-1e789afa6eb5"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Skill_5"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""21e7135c-7ef2-40a3-9191-f4a47a8d55ec"",
+                    ""path"": ""<Keyboard>/f"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Skill_6"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
+        },
+        {
+            ""name"": ""1"",
+            ""id"": ""a8bef54c-9752-486b-9fe0-352b1a074097"",
+            ""actions"": [
+                {
+                    ""name"": ""New action"",
+                    ""type"": ""Button"",
+                    ""id"": ""c07b546b-720c-496b-8500-4f53314c2093"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""6182c75b-6375-4020-8b9d-4919a6a5dfc5"",
+                    ""path"": """",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""New action"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -164,9 +229,14 @@ public class @MDDInputControls : IInputActionCollection, IDisposable
         m_Heros_Normal_Skill_2 = m_Heros_Normal.FindAction("Skill_2", throwIfNotFound: true);
         m_Heros_Normal_Skill_3 = m_Heros_Normal.FindAction("Skill_3", throwIfNotFound: true);
         m_Heros_Normal_Skill_4 = m_Heros_Normal.FindAction("Skill_4", throwIfNotFound: true);
+        m_Heros_Normal_Skill_5 = m_Heros_Normal.FindAction("Skill_5", throwIfNotFound: true);
+        m_Heros_Normal_Skill_6 = m_Heros_Normal.FindAction("Skill_6", throwIfNotFound: true);
         m_Heros_Normal_LeftClick = m_Heros_Normal.FindAction("LeftClick", throwIfNotFound: true);
         m_Heros_Normal_RightClick = m_Heros_Normal.FindAction("RightClick", throwIfNotFound: true);
         m_Heros_Normal_S = m_Heros_Normal.FindAction("S", throwIfNotFound: true);
+        // 1
+        m__1 = asset.FindActionMap("1", throwIfNotFound: true);
+        m__1_Newaction = m__1.FindAction("New action", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -220,6 +290,8 @@ public class @MDDInputControls : IInputActionCollection, IDisposable
     private readonly InputAction m_Heros_Normal_Skill_2;
     private readonly InputAction m_Heros_Normal_Skill_3;
     private readonly InputAction m_Heros_Normal_Skill_4;
+    private readonly InputAction m_Heros_Normal_Skill_5;
+    private readonly InputAction m_Heros_Normal_Skill_6;
     private readonly InputAction m_Heros_Normal_LeftClick;
     private readonly InputAction m_Heros_Normal_RightClick;
     private readonly InputAction m_Heros_Normal_S;
@@ -231,6 +303,8 @@ public class @MDDInputControls : IInputActionCollection, IDisposable
         public InputAction @Skill_2 => m_Wrapper.m_Heros_Normal_Skill_2;
         public InputAction @Skill_3 => m_Wrapper.m_Heros_Normal_Skill_3;
         public InputAction @Skill_4 => m_Wrapper.m_Heros_Normal_Skill_4;
+        public InputAction @Skill_5 => m_Wrapper.m_Heros_Normal_Skill_5;
+        public InputAction @Skill_6 => m_Wrapper.m_Heros_Normal_Skill_6;
         public InputAction @LeftClick => m_Wrapper.m_Heros_Normal_LeftClick;
         public InputAction @RightClick => m_Wrapper.m_Heros_Normal_RightClick;
         public InputAction @S => m_Wrapper.m_Heros_Normal_S;
@@ -255,6 +329,12 @@ public class @MDDInputControls : IInputActionCollection, IDisposable
                 @Skill_4.started -= m_Wrapper.m_Heros_NormalActionsCallbackInterface.OnSkill_4;
                 @Skill_4.performed -= m_Wrapper.m_Heros_NormalActionsCallbackInterface.OnSkill_4;
                 @Skill_4.canceled -= m_Wrapper.m_Heros_NormalActionsCallbackInterface.OnSkill_4;
+                @Skill_5.started -= m_Wrapper.m_Heros_NormalActionsCallbackInterface.OnSkill_5;
+                @Skill_5.performed -= m_Wrapper.m_Heros_NormalActionsCallbackInterface.OnSkill_5;
+                @Skill_5.canceled -= m_Wrapper.m_Heros_NormalActionsCallbackInterface.OnSkill_5;
+                @Skill_6.started -= m_Wrapper.m_Heros_NormalActionsCallbackInterface.OnSkill_6;
+                @Skill_6.performed -= m_Wrapper.m_Heros_NormalActionsCallbackInterface.OnSkill_6;
+                @Skill_6.canceled -= m_Wrapper.m_Heros_NormalActionsCallbackInterface.OnSkill_6;
                 @LeftClick.started -= m_Wrapper.m_Heros_NormalActionsCallbackInterface.OnLeftClick;
                 @LeftClick.performed -= m_Wrapper.m_Heros_NormalActionsCallbackInterface.OnLeftClick;
                 @LeftClick.canceled -= m_Wrapper.m_Heros_NormalActionsCallbackInterface.OnLeftClick;
@@ -280,6 +360,12 @@ public class @MDDInputControls : IInputActionCollection, IDisposable
                 @Skill_4.started += instance.OnSkill_4;
                 @Skill_4.performed += instance.OnSkill_4;
                 @Skill_4.canceled += instance.OnSkill_4;
+                @Skill_5.started += instance.OnSkill_5;
+                @Skill_5.performed += instance.OnSkill_5;
+                @Skill_5.canceled += instance.OnSkill_5;
+                @Skill_6.started += instance.OnSkill_6;
+                @Skill_6.performed += instance.OnSkill_6;
+                @Skill_6.canceled += instance.OnSkill_6;
                 @LeftClick.started += instance.OnLeftClick;
                 @LeftClick.performed += instance.OnLeftClick;
                 @LeftClick.canceled += instance.OnLeftClick;
@@ -293,14 +379,53 @@ public class @MDDInputControls : IInputActionCollection, IDisposable
         }
     }
     public Heros_NormalActions @Heros_Normal => new Heros_NormalActions(this);
+
+    // 1
+    private readonly InputActionMap m__1;
+    private I_1Actions m__1ActionsCallbackInterface;
+    private readonly InputAction m__1_Newaction;
+    public struct _1Actions
+    {
+        private @MDDInputControls m_Wrapper;
+        public _1Actions(@MDDInputControls wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Newaction => m_Wrapper.m__1_Newaction;
+        public InputActionMap Get() { return m_Wrapper.m__1; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(_1Actions set) { return set.Get(); }
+        public void SetCallbacks(I_1Actions instance)
+        {
+            if (m_Wrapper.m__1ActionsCallbackInterface != null)
+            {
+                @Newaction.started -= m_Wrapper.m__1ActionsCallbackInterface.OnNewaction;
+                @Newaction.performed -= m_Wrapper.m__1ActionsCallbackInterface.OnNewaction;
+                @Newaction.canceled -= m_Wrapper.m__1ActionsCallbackInterface.OnNewaction;
+            }
+            m_Wrapper.m__1ActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @Newaction.started += instance.OnNewaction;
+                @Newaction.performed += instance.OnNewaction;
+                @Newaction.canceled += instance.OnNewaction;
+            }
+        }
+    }
+    public _1Actions @_1 => new _1Actions(this);
     public interface IHeros_NormalActions
     {
         void OnSkill_1(InputAction.CallbackContext context);
         void OnSkill_2(InputAction.CallbackContext context);
         void OnSkill_3(InputAction.CallbackContext context);
         void OnSkill_4(InputAction.CallbackContext context);
+        void OnSkill_5(InputAction.CallbackContext context);
+        void OnSkill_6(InputAction.CallbackContext context);
         void OnLeftClick(InputAction.CallbackContext context);
         void OnRightClick(InputAction.CallbackContext context);
         void OnS(InputAction.CallbackContext context);
+    }
+    public interface I_1Actions
+    {
+        void OnNewaction(InputAction.CallbackContext context);
     }
 }

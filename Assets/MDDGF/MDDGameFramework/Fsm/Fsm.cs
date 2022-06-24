@@ -656,7 +656,7 @@ namespace MDDGameFramework
             }
 
             //栈底状态无法结束生命周
-            if (!m_StateStack.Peek().IsButtomState && !m_StateStack.Peek().CantStop)
+            if (!m_StateStack.Peek().IsButtomState)
             {
                 m_StateStack.Peek().OnLeave(this, false);
                 m_StateStack.Pop();

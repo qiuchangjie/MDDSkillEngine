@@ -82,8 +82,8 @@ namespace MDDSkillEngine
 
             ISkillSystem skillSystem = Game.Skill.GetSkillSystem(Id);
             skillSystem.AddSkill(10004, 0);
-            skillSystem.AddSkill(10005, 1);
-            skillSystem.AddSkill(10006, 2);
+            skillSystem.AddSkill(10005, 2);
+            skillSystem.AddSkill(10006, 1);
             skillSystem.AddSkill(10019, 3);
             skillSystem.AddSkill(10009);
             skillSystem.AddSkill(10010);

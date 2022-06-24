@@ -52,10 +52,10 @@ MonoBehaviour:
   _activeLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  _targetType: 0
+  _targetType: 1
   groups:
   - {fileID: 7232431185629851885}
-  _length: 0.18333334
+  _length: 0.5
   _viewTimeMin: -0.49269336
   _viewTimeMax: 1.4618562
 --- !u!1 &2595117485157372347
@@ -286,7 +286,7 @@ MonoBehaviour:
         m_PostInfinity: 2
         m_RotationOrder: 4
       _scriptExpression: 
-  _length: 0.18333334
+  _length: 0.5
   _blendIn: 0
   _blendOut: 0.050000012
   animationClip: {fileID: 7400000, guid: 8bafdcd44e3f81a49b836567ce6b6017, type: 3}
@@ -372,7 +372,7 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  _startTime: 0.06666667
+  _startTime: 0.4666667
   _animationData:
     _animatedParameters: []
   _length: 0
@@ -543,7 +543,7 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  _startTime: 0.033333335
+  _startTime: 0.050000004
   _animationData:
     _animatedParameters: []
   _length: 0

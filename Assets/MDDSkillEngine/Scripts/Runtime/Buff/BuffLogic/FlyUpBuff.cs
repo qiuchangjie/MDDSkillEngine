@@ -5,15 +5,22 @@ using UnityEngine;
 
 namespace MDDSkillEngine
 {
-    public class PushHit : BuffBase
+    public class FlyUpBuff : BuffBase
     {
-        NormalHitData data;
+        NormalData data;
 
         public Predicate<DRBuff> drCondition;
 
+        DRBuff drBuff;
+
         HitData hitData;
 
-        DRBuff drBuff;
+        private float speed = 3.5f;
+        private float height = 2f;
+        private bool isUp;
+        private float downTime;
+
+        private Vector3 cachePoint;
 
         private bool dRCondition(DRBuff buff)
         {
@@ -32,8 +39,6 @@ namespace MDDSkillEngine
 
             drBuff = dtBuff.GetDataRow(drCondition);
 
-            data = NormalHitData.Create(drBuff);
-
             HitData hit = userData as HitData;
             if (hit != null)
             {
@@ -43,6 +48,8 @@ namespace MDDSkillEngine
             {
                 Log.Error("{0}碰撞信息为空", LogConst.Buff);
             }
+
+            data = NormalData.Create(drBuff);   
 
             base.OnInit(buffSystem, target, from, data);
 
@@ -57,49 +64,73 @@ namespace MDDSkillEngine
                 Log.Error("{0}hitbuff 目标丢失", LogConst.Buff);
             }
 
-            //全局顿帧数
-            //Game.Coroutine.StopForSecondsUnScale(0.1f).Start();
+            downTime = height / speed;
+            cachePoint = entity.CachedTransform.position;
 
-            entity.SetState(EntityNormalState.ATTACKED,true);
 
-            Game.Entity.ShowEffect(typeof(Effect), hitData.EffectName, new EffectData(Game.Entity.GenerateSerialId(), 0)
+            entity.SetState(EntityNormalState.FLYSKY, true);
+
+            Game.Entity.ShowEffect(typeof(Effect), "fengbaodown", new EffectData(Game.Entity.GenerateSerialId(), 0)
             {
-                KeepTime = 3f,
-                Position = hitData.HitPoint,
-                Rotation = entity.CachedTransform.rotation
-            });
+                KeepTime = drBuff.Duration,
+                Position = cachePoint,
+                Rotation = entity.CachedTransform.rotation,
+                LocalScale = new Vector3(0.1f,0.2f,0.1f)
+            }) ;
 
-            Log.Info("{0}hitbuff", LogConst.Buff);
+            Log.Info("{0}FlyUpBuff", LogConst.Buff);
         }
 
         public override void OnUpdate(IBuffSystem buffSystem, float elapseSeconds, float realElapseSeconds)
         {
             base.OnUpdate(buffSystem, elapseSeconds, realElapseSeconds);
+            Entity entity = Target as Entity;
+
+            if (entity.CachedTransform.position.y <= height && !isUp)
+            {
+                entity.CachedTransform.position += new Vector3(0f, speed * elapseSeconds, 0f);
+            }
+            else
+            {
+                isUp = true;
+            }
+
+            Log.Error("{0}FlyUpBuff", LogConst.Buff);
+
+            entity.CachedTransform.Rotate(new Vector3(0f,-500f,0f) * elapseSeconds, Space.Self);
+
+
+            if ((data.Duration - data.PassDuration) <= downTime)
+            {
+                entity.CachedTransform.position -= new Vector3(0f, speed * elapseSeconds, 0f);
+            }
+
         }
 
         public override void OnFixedUpdate(IBuffSystem buffSystem, float elapseSeconds, float realElapseSeconds)
         {
             base.OnFixedUpdate(buffSystem, elapseSeconds, realElapseSeconds);
-            Entity entity = Target as Entity;
-            Log.Error("{0}pushing", LogConst.Buff);
-            entity.Rigidbody.AddRelativeForce(hitData.HitDir * drBuff.Specializedfields[0] * elapseSeconds, ForceMode.Impulse);
         }
 
 
         public override void Clear()
         {
             base.Clear();
-            ReferencePool.Release(data);
-
-            data = null;
         }
 
         public override void OnFininsh(IBuffSystem buffSystem)
         {
             base.OnFininsh(buffSystem);
             Entity entity = Target as Entity;
-            entity.Rigidbody.velocity = Vector3.zero;   
-            Log.Info("{0}hitbuff finish", LogConst.Buff);
+            if (entity != null)
+            {
+                entity.CachedTransform.position = cachePoint;
+                entity.SetState(EntityNormalState.FLYSKY,false);
+            }
+               
+
+            isUp = false;
+            Log.Info("{0}FlyUpBuff finish", LogConst.Buff);
         }
 
 

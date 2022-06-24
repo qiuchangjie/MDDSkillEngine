@@ -917,7 +917,7 @@ MonoBehaviour:
   ColliderName: NormalBoxCollider
   ColliderLogic: MDDCollider
   Speed: 0
-  AddBuffName: PushHit
+  AddBuffName: FlyUpBuff
   EffectName: Hit
   col: {fileID: 0}
   m_SphereCollider: {fileID: 0}

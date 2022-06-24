@@ -2,7 +2,6 @@
 using MDDGameFramework.Runtime;
 using Sirenix.OdinInspector;
 using System;
-using System.Collections.Generic;
 using Result = MDDGameFramework.Action.Result;
 using Request = MDDGameFramework.Action.Request;
 
@@ -32,7 +31,7 @@ namespace MDDSkillEngine
 
             if (request == Request.START)
             {
-                skillSystem.ReleaseSkill(SkillId);
+                skillSystem.ReleaseSkill(SkillId);//请求释放技能
                 return Result.PROGRESS;
             }
             else if (request == Request.UPDATE)

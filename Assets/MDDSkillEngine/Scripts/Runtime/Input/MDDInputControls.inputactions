@@ -38,6 +38,22 @@
                     "interactions": ""
                 },
                 {
+                    "name": "Skill_5",
+                    "type": "Button",
+                    "id": "ae628417-2872-46cf-98c0-d80635016327",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Skill_6",
+                    "type": "Button",
+                    "id": "8fa3b690-f20b-4312-ae36-c385887944e2",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
                     "name": "LeftClick",
                     "type": "Button",
                     "id": "353aed27-22d4-4d8c-9f78-7c5359ea6c5c",
@@ -137,6 +153,55 @@
                     "processors": "",
                     "groups": "",
                     "action": "S",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ae792403-9926-412e-b588-1e789afa6eb5",
+                    "path": "<Keyboard>/d",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Skill_5",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "21e7135c-7ef2-40a3-9191-f4a47a8d55ec",
+                    "path": "<Keyboard>/f",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Skill_6",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "1",
+            "id": "a8bef54c-9752-486b-9fe0-352b1a074097",
+            "actions": [
+                {
+                    "name": "New action",
+                    "type": "Button",
+                    "id": "c07b546b-720c-496b-8500-4f53314c2093",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "6182c75b-6375-4020-8b9d-4919a6a5dfc5",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "New action",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

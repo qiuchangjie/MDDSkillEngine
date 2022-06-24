@@ -101,9 +101,7 @@ namespace MDDSkillEngine
                 Game.Entity.AttachEntity(Id, PlayerData.m_Owner.Id);
                 CachedTransform.localRotation = PlayerData.localRotation;
                 CachedTransform.localPosition = PlayerData.localeftPostion;
-                CachedTransform.localScale = PlayerData.localScale;
-
-               
+                CachedTransform.localScale = PlayerData.localScale;              
                 Game.Entity.DetachEntity(Id);
                 
             }
@@ -118,8 +116,7 @@ namespace MDDSkillEngine
 
             Game.HpBar.HideHPBar(this);
             Game.Event.Unsubscribe(SelectEntityEventArgs.EventId, SetIsPlaying);
-            Game.Event.Unsubscribe(SelectAttackEntityEventArgs.EventId, SetAttack);
-            //IFsm<Player> fsm = Game.Fsm.GetFsm<Player>(Entity.Id.ToString());          
+            Game.Event.Unsubscribe(SelectAttackEntityEventArgs.EventId, SetAttack);        
         }
 
         protected override void OnUpdate(float elapseSeconds, float realElapseSeconds)
@@ -145,6 +142,9 @@ namespace MDDSkillEngine
             {
                 case EntityNormalState.RUN:
                     Game.Fsm.GetFsm<Entity>(Id.ToString()).SetData<VarBoolean>(typeof(Hero103Run).Name, b);
+                    break;
+                case EntityNormalState.FLYSKY:
+                    Game.Fsm.GetFsm<Entity>(Id.ToString()).SetData<VarBoolean>(typeof(Hero103FlyUp).Name, b);
                     break;
             }
         }

@@ -42,6 +42,8 @@ namespace MDDSkillEngine
             Game.Input.Control.Heros_Normal.Skill_2.performed += UseSkill_2;
             Game.Input.Control.Heros_Normal.Skill_3.performed += UseSkill_3;
             Game.Input.Control.Heros_Normal.Skill_4.performed += UseSkill_4;
+            Game.Input.Control.Heros_Normal.Skill_5.performed += UseSkill_5;
+            Game.Input.Control.Heros_Normal.Skill_6.performed += UseSkill_6;
 
             Game.Event.Subscribe(AddSkillEventArgs.EventId, LearnedSkill);
             Game.Event.Subscribe(SelectEntityEventArgs.EventId, SwitchEntity);

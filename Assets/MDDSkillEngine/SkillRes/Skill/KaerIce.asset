@@ -547,7 +547,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 12
-      Data: 1
+      Data: 3
     - Name: 
       Entry: 7
       Data: 
@@ -560,6 +560,42 @@ MonoBehaviour:
     - Name: m_Value
       Entry: 5
       Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: cd
+    - Name: $v
+      Entry: 7
+      Data: 3|MDDGameFramework.Runtime.VarFloat, MDDGameFrameworkRuntime
+    - Name: m_Value
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: cdtime
+    - Name: $v
+      Entry: 7
+      Data: 4|MDDGameFramework.Runtime.VarFloat, MDDGameFrameworkRuntime
+    - Name: m_Value
+      Entry: 4
+      Data: 10
     - Name: 
       Entry: 8
       Data: 
