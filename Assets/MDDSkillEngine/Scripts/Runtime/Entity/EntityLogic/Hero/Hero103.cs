@@ -135,6 +135,24 @@ namespace MDDSkillEngine
             }
         }
 
+        public override void ObservingPlayableSpeed(Blackboard.Type type, Variable newValue)
+        {
+            base.ObservingPlayableSpeed(type, newValue);
+            if (type == Blackboard.Type.CHANGE)
+            {
+                VarFloat varFloat = (VarFloat)newValue;
+                IBuffSystem buffsystem = Game.Buff.GetBuffSystem(Id.ToString());
+                if (buffsystem != null)
+                {
+                    buffsystem.PlayableSpeed = varFloat.Value;
+                }
+
+                IFsm<Entity> fsm = Game.Fsm.GetFsm<Entity>(Id.ToString());
+                fsm.PlayableSpeed = varFloat.Value;
+            }
+            
+        }
+
         public override void SetState(EntityNormalState state, bool b)
         {
             base.SetState(state, b);

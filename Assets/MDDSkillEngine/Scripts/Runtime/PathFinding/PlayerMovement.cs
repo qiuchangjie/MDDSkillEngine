@@ -83,6 +83,11 @@ namespace MDDSkillEngine
         public float Speed { get; set; }
 
         /// <summary>
+        /// 时间缩放尺度
+        /// </summary>
+        public float PlayableSpeed = 1f;
+
+        /// <summary>
         /// 是否到达目的地
         /// </summary>
         public bool reachedDestination { get; }
@@ -534,7 +539,7 @@ namespace MDDSkillEngine
             }
 
             //Log.Info("寻路进行中。。。。。。。");
-            interpolator.distance += deltaTime * speed;
+            interpolator.distance += deltaTime * speed * PlayableSpeed;
 
             direction = interpolator.tangent;
 

@@ -20,6 +20,7 @@ namespace MDDGameFramework
         private bool m_IsDestroyed;
         private Clock m_Clock;
         private Blackboard m_Blackboard;
+        private float m_PlayableSpeed = 1f;
 
         /// <summary>
         /// 初始化有限状态机的新实例。
@@ -46,6 +47,15 @@ namespace MDDGameFramework
             {
                 return m_Owner;
             }
+        }
+
+        /// <summary>
+        /// 获取时间缩放速度
+        /// </summary>
+        public float PlayableSpeed
+        {
+            get { return m_PlayableSpeed; }
+            set { m_PlayableSpeed = value; }
         }
 
         /// <summary>

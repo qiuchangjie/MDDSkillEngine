@@ -11,7 +11,13 @@ namespace MDDGameFramework
         private object m_Owner;
         private readonly List<BuffBase> buffs;
         private readonly List<BuffBase> m_TempBuffs;
+        private float m_PlayableSpeed = 1f;
 
+        public float PlayableSpeed
+        {
+            get { return m_PlayableSpeed; }
+            set { m_PlayableSpeed = value; }
+        }
 
         public object Owner
         {

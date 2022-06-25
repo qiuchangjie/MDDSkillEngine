@@ -18,6 +18,8 @@ namespace MDDSkillEngine
         public Blackboard blackboard;
         public Clock clock;
 
+        public System.Action<Blackboard.Type,Variable> CacheAction;
+
         public int Id
         {
             get
@@ -87,12 +89,16 @@ namespace MDDSkillEngine
             blackboard = Blackboard.Create(clock);
 
             blackboard.Set<VarFloat>("PlayableSpeed", 1);
+
+            CacheAction = ObservingPlayableSpeed;
         }
 
 
         protected override void OnRecycle()
         {
             base.OnRecycle();
+
+            blackboard.RemoveObserver("PlayableSpeed", CacheAction);
         }
 
 
@@ -111,6 +117,8 @@ namespace MDDSkillEngine
             CachedTransform.localPosition = m_EntityData.Position;
             CachedTransform.localRotation = m_EntityData.Rotation;
             CachedTransform.localScale = m_EntityData.LocalScale;
+
+            blackboard.AddObserver("PlayableSpeed",CacheAction);
 
             wasDuration = 0;
 
@@ -169,6 +177,23 @@ namespace MDDSkillEngine
         public virtual void SetState(EntityNormalState state, bool b)
         {
 
+        }
+
+        public virtual void ObservingPlayableSpeed(Blackboard.Type type, Variable newValue)
+        {
+            if (type == Blackboard.Type.CHANGE)
+            {
+                VarFloat varFloat = (VarFloat)newValue;
+                if (CachedAnimancer != null)
+                {
+                    CachedAnimancer.Playable.Speed = varFloat.Value;
+                }
+
+                if (CacheMove != null)
+                {
+                    CacheMove.speed = varFloat.Value;
+                }
+            }           
         }
 
         public void SwitchEntitySelectState(EntitySelectState state)

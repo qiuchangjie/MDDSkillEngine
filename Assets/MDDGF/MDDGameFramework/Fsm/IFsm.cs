@@ -35,6 +35,12 @@ namespace MDDGameFramework
             get;
         }
 
+        float PlayableSpeed
+        {
+            get;
+            set;
+        }
+
         /// <summary>
         /// 获取有限状态机中状态的数量。
         /// </summary>

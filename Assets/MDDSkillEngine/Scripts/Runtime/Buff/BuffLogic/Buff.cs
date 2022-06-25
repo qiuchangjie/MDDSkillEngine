@@ -5,28 +5,21 @@ using UnityEngine;
 
 namespace MDDSkillEngine
 {
-    public class Buff : BuffBase
+    public class MDDBuff : BuffBase
     {
-
         public override void OnExecute(IBuffSystem buffSytem)
-        {           
-            //订阅近战攻击击中事件
-        }
-
-        public override void OnFininsh(IBuffSystem buffSystem)
-        {
-            //取消近战攻击击中事件
-        }
-
-        //事件触发函数
-        private void CacheEvent()
         {
             
         }
 
-        public override void Clear()
+        public override void OnUpdate(IBuffSystem buffSystem, float elapseSeconds, float realElapseSeconds)
         {
-            buffData = null;
+            base.OnUpdate(buffSystem, elapseSeconds, realElapseSeconds);
+        }
+
+        public override void OnFixedUpdate(IBuffSystem buffSystem, float elapseSeconds, float realElapseSeconds)
+        {
+            base.OnFixedUpdate(buffSystem, elapseSeconds, realElapseSeconds);
         }
     }
 }

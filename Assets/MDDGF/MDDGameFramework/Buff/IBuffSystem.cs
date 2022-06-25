@@ -9,6 +9,12 @@ namespace MDDGameFramework
     {
         //void AddBuff(int bufID,object target,object from);
 
+        float PlayableSpeed
+        {
+            get;
+            set;
+        }
+
         object Owner
         {
             get;

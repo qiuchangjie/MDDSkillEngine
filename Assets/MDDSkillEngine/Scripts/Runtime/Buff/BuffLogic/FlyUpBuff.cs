@@ -78,6 +78,8 @@ namespace MDDSkillEngine
                 LocalScale = new Vector3(0.1f,0.2f,0.1f)
             }) ;
 
+            entity.CachedAnimancer.Playable.Speed = 0.5f;
+
             Log.Info("{0}FlyUpBuff", LogConst.Buff);
         }
 
@@ -127,7 +129,6 @@ namespace MDDSkillEngine
                 entity.CachedTransform.position = cachePoint;
                 entity.SetState(EntityNormalState.FLYSKY,false);
             }
-               
 
             isUp = false;
             Log.Info("{0}FlyUpBuff finish", LogConst.Buff);
