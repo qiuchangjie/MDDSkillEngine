@@ -106,12 +106,12 @@ namespace MDDGameFramework
             this.SetRoot(this);
         }
 
-        public static Root Create(Node mainNode,IEntity Owner)
+        public static Root Create(Node mainNode,IEntity Owner,Clock clock = null)
         {
             Root root = ReferencePool.Acquire<Root>();
             root.Name = "Root";
             root.mainNode = mainNode;
-            root.clock = UnityContext.GetClock();
+            root.clock = clock;
             root.blackboard = new Blackboard(root.clock);
             root.Decoratee = mainNode;
             root.Decoratee.SetParent(root);

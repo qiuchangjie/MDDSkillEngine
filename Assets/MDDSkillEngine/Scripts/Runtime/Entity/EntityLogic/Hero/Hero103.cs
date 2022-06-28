@@ -159,7 +159,7 @@ namespace MDDSkillEngine
             switch (state)
             {
                 case EntityNormalState.RUN:
-                    Game.Fsm.GetFsm<Entity>(Id.ToString()).SetData<VarBoolean>(typeof(Hero103Run).Name, b);
+                    Game.Fsm.GetFsm<Entity>(Id.ToString()).SetData<VarBoolean>(typeof(Hero103SpaceWalk).Name, b);
                     break;
                 case EntityNormalState.FLYSKY:
                     Game.Fsm.GetFsm<Entity>(Id.ToString()).SetData<VarBoolean>(typeof(Hero103FlyUp).Name, b);

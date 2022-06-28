@@ -61,19 +61,22 @@ namespace MDDSkillEngine
 
         private void FixedUpdate()
         {
-            if (SelectUtility.MouseRayCastByLayer(1 << 8 | 1 << 11|1 << 0 | 1 << 1, out RaycastHit hit))
+            if (isWork)
             {
-                MDDGameFramework.Runtime.Entity entity = hit.transform.GetComponent<MDDGameFramework.Runtime.Entity>();
+                if (SelectUtility.MouseRayCastByLayer(1 << 8 | 1 << 11 | 1 << 0 | 1 << 1, out RaycastHit hit))
+                {
+                    MDDGameFramework.Runtime.Entity entity = hit.transform.GetComponent<MDDGameFramework.Runtime.Entity>();
 
-                if (entity != null)
-                {
-                    attackTarget = entity.Logic as Entity;
+                    if (entity != null)
+                    {
+                        attackTarget = entity.Logic as Entity;
+                    }
+                    else
+                    {
+                        attackTarget = null;
+                    }
                 }
-                else
-                {
-                    attackTarget = null;
-                }
-            }
+            }         
         }
 
         private void OnClickLeft(CallbackContext ctx)
