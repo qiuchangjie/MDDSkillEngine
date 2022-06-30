@@ -9,6 +9,10 @@ namespace MDDSkillEngine
         [SerializeField]
         private string HeroName;
 
+        private void Start()
+        {
+            SpawnHero();
+        }
 
         private void SpawnHero()
         {

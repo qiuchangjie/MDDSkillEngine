@@ -43,6 +43,8 @@ namespace MDDSkillEngine
         protected override void OnUpdate(IFsm<Entity> fsm, float elapseSeconds, float realElapseSeconds)
         {
             base.OnUpdate(fsm, elapseSeconds, realElapseSeconds);
+            //太空漫步物理旋转 加上playablespeed
+            fsm.Owner.Rigidbody.angularVelocity = new Vector3(0f, 2000f, 0f) * elapseSeconds * fsm.PlayableSpeed;
         }
 
         protected override void Observing(Blackboard.Type type, Variable newValue)

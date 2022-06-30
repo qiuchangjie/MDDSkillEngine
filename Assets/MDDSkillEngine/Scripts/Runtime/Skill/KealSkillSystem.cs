@@ -60,8 +60,7 @@ namespace MDDSkillEngine
             {
                 BuffBase a = buffQueue.Dequeue() as BuffBase;
                 IBuffSystem buffSystem = Game.Buff.GetBuffSystem(Owner.Id.ToString());
-                buffSystem.
-                    RemoveBuff(a);
+                buffSystem.RemoveBuff(a);
 
                 if (a is KaerFire)
                 {

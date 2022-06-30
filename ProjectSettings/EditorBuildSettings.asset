@@ -17,6 +17,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/GUIPack-Clean&Minimalist/Demo/Scenes/DarkSkin-DemoScene.unity
     guid: 3e961f553cad04680b4e67a97dbaf86a
+  - enabled: 1
+    path: Assets/MDDSkillEngine/Scene/TimeScaleDemo.unity
+    guid: af64e7ef9b2d6b647b9591e7f8d7146f
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: d0f6535f19c45214b802af751dd39bae,
       type: 2}

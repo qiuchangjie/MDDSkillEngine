@@ -11,6 +11,7 @@ namespace MDDGameFramework
         private object m_Owner;
         private readonly List<BuffBase> buffs;
         private readonly List<BuffBase> m_TempBuffs;
+        private readonly List<BuffBase> m_RemoveBuffs;
         private float m_PlayableSpeed = 1f;
 
         public float PlayableSpeed
@@ -29,6 +30,7 @@ namespace MDDGameFramework
             buffs = new List<BuffBase>();
             m_Owner = null;
             m_TempBuffs = new List<BuffBase>();
+            m_RemoveBuffs = new List<BuffBase>();
         }
 
 
@@ -120,7 +122,20 @@ namespace MDDGameFramework
             }
         }
 
-        public void Removebuff(object from, Type type)
+        public void RemoveBuff(Type type)
+        {
+            for (int i = buffs.Count - 1; i >= 0; i--)
+            {
+                if (buffs[i].GetType() == type)
+                {
+                    buffs[i].OnFininsh(this);
+                    ReferencePool.Release(buffs[i]);
+                    buffs.RemoveAt(i);
+                }
+            }
+        }
+
+        public void RemoveBuff(object from, Type type)
         {
             foreach (var v in buffs)
             {
@@ -248,6 +263,7 @@ namespace MDDGameFramework
             buffs.Clear();
             m_Owner = null;
             m_TempBuffs.Clear();
-        }     
+        }
+
     }
 }

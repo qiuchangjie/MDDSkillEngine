@@ -99,7 +99,11 @@ namespace MDDSkillEngine
             {
                 ChangeState<ProcedureMDDSkillFactory>(procedureOwner);
             }
-         
+            else if (procedureOwner.GetData<VarInt32>("NextSceneId").Value == 4)
+            {
+                ChangeState<ProcedureTimeScaleScene>(procedureOwner);
+            }
+
         }
 
         protected override void Observing(Blackboard.Type type, Variable newValue)

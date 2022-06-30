@@ -29,6 +29,7 @@ namespace MDDSkillEngine
             base.OnInit(userData);
             about.onClick.AddListener(AboutAction);
             skillLaunch.onClick.AddListener(SkillLaunchAction);
+            timescaledemo.onClick.AddListener(TimeScaleAction);
         }
 
         protected override void OnClose(bool isShutdown, object userData)
@@ -51,7 +52,9 @@ namespace MDDSkillEngine
 
         private void TimeScaleAction()
         {
-            
+            Game.Procedure.GetFsm().Blackboard.Set<VarInt32>("NextSceneId", 4);
+            Game.UI.OpenUIForm(UIFormId.LoadingForm);
+            Close(false);
         }
 
         private void AboutAction()

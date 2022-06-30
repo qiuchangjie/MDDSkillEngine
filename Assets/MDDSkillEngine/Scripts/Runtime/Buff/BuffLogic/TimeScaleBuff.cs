@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace MDDSkillEngine
 {
-    public class PlaybleSpeedTestBuff : BuffBase
+    public class TimeScaleBuff : BuffBase
     {
         NormalData data;
 
@@ -44,16 +44,7 @@ namespace MDDSkillEngine
                 Log.Error("{0}PlaybleSpeedTestBuff", LogConst.Buff);
             }
 
-            Game.Entity.ShowEffect(typeof(Effect), "fengbaodown", new EffectData(Game.Entity.GenerateSerialId(), 0)
-            {
-                Owner = entity,
-                KeepTime = 90f,
-                IsFllow = true,            
-                LocalScale = new Vector3(1f, 1f, 1f),
-
-            });
-
-            entity.SetState(EntityNormalState.RUN , true);
+            entity.blackboard.Set<VarFloat>("PlayableSpeed",0.3f);
 
             Log.Error("{0}PlaybleSpeedTestBuff", LogConst.Buff);
         }
@@ -61,10 +52,7 @@ namespace MDDSkillEngine
         public override void OnUpdate(IBuffSystem buffSystem, float elapseSeconds, float realElapseSeconds)
         {
             base.OnUpdate(buffSystem, elapseSeconds, realElapseSeconds);
-            if (buffSystem.Owner is Entity)
-            {
-                ((Entity)buffSystem.Owner).CachedTransform.position += new Vector3(-2f, 0, 0f) * elapseSeconds * buffSystem.PlayableSpeed;
-            }
+
         }
 
 
@@ -76,6 +64,13 @@ namespace MDDSkillEngine
         public override void OnFininsh(IBuffSystem buffSystem)
         {
             base.OnFininsh(buffSystem);
+            Entity entity = Target as Entity;
+
+            if (entity == null)
+            {
+                Log.Error("{0}PlaybleSpeedTestBuff", LogConst.Buff);
+            }
+            entity.blackboard.Set<VarFloat>("PlayableSpeed", 1f);
             Log.Error("{0}PlaybleSpeedTestBuff", LogConst.Buff);
         }
 
