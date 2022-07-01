@@ -52,7 +52,15 @@ namespace MDDSkillEngine
             return null;
         }
 
-
+        public void RemoveSkillSystem(int id)
+        {
+            ISkillSystem skillSystem;
+            if (skillSystemDic.TryGetValue(id, out skillSystem))
+            {
+                skillSystemDic.Remove(id);
+                skillSystem.Shutdown();
+            }
+        }    
 
 
     }

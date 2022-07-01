@@ -62,7 +62,14 @@ namespace MDDSkillEngine
         {
             SkillSystem<T> sys = ReferencePool.Acquire<SkillSystem<T>>();
             sys.m_Owner = Owner as T;
-
+            sys.skillDic = new Dictionary<int, Skill>();
+            sys.skillIndex = new Dictionary<int, int>()
+            {
+                {0, 0},
+                {1, 0},
+                {2, 0},
+                {3, 0},
+            };
             return sys;
         }
 
@@ -243,6 +250,11 @@ namespace MDDSkillEngine
             return skill.Blackboard;
         }
 
+        public void Shutdown()
+        {
+            ReferencePool.Release(this);
+        }
+
         /// <summary>
         /// 获取公共黑板
         /// </summary>
@@ -263,10 +275,21 @@ namespace MDDSkillEngine
 
         public void Clear()
         {
+            m_Owner = null;
 
+            if (m_PublicBlackboard != null)
+            {
+                ReferencePool.Release(m_PublicBlackboard);
+                m_PublicBlackboard = null;
+            }
+          
+            foreach (var v in skillDic)
+            {
+                ReferencePool.Release(v.Value);
+            }
+
+            skillDic = null;
         }
-
-
     }
 
     /// <summary>

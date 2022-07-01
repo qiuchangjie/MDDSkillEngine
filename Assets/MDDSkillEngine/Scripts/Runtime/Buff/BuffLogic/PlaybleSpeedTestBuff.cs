@@ -44,13 +44,13 @@ namespace MDDSkillEngine
                 Log.Error("{0}PlaybleSpeedTestBuff", LogConst.Buff);
             }
 
-            Game.Entity.ShowEffect(typeof(Effect), "fengbaodown", new EffectData(Game.Entity.GenerateSerialId(), 0)
+            Game.Entity.ShowEffect(typeof(Effect), "KaerShengbo", new EffectData(Game.Entity.GenerateSerialId(), 0)
             {
                 Owner = entity,
                 KeepTime = 90f,
                 IsFllow = true,            
                 LocalScale = new Vector3(1f, 1f, 1f),
-
+                localScale = new Vector3(1f, 1f,1f)
             });
 
             entity.SetState(EntityNormalState.RUN , true);

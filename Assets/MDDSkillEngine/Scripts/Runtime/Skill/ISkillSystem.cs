@@ -37,5 +37,7 @@ namespace MDDSkillEngine
         {
             get;
         }
+
+        void Shutdown();
     }
 }

@@ -35,6 +35,11 @@ namespace MDDGameFramework.Runtime
         {
             return buffSystemManager.GetBuffSystem(name);
         }
+
+        public void RemoveBuffSystem(string name)
+        {
+            buffSystemManager.RemoveBuffSystem(name);
+        }
     }
 }
 

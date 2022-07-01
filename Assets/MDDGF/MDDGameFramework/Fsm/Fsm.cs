@@ -182,6 +182,9 @@ namespace MDDGameFramework
             fsm.Name = name;
             fsm.m_Owner = owner;
             fsm.m_IsDestroyed = false;
+            fsm.m_StateStack = new Stack<FsmState<T>>();
+            fsm.m_Clock = new Clock();
+            fsm.m_Blackboard = Blackboard.Create(fsm.m_Blackboard, fsm.m_Clock);
             foreach (FsmState<T> state in states)
             {
                 if (state == null)
@@ -236,6 +239,9 @@ namespace MDDGameFramework
             fsm.Name = name;
             fsm.m_Owner = owner;
             fsm.m_IsDestroyed = false;
+            fsm.m_StateStack = new Stack<FsmState<T>>();
+            fsm.m_Clock = new Clock();
+            fsm.m_Blackboard = Blackboard.Create(fsm.m_Blackboard, fsm.m_Clock);
             foreach (FsmState<T> state in states)
             {
                 if (state == null)

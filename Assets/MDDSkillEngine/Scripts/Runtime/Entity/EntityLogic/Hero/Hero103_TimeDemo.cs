@@ -9,11 +9,12 @@ using static UnityEngine.InputSystem.InputAction;
 
 namespace MDDSkillEngine
 {
-    public class Hero103 : TargetableObject
+    public class Hero103_TimeDemo : TargetableObject
     {
         HeroData PlayerData = null;
         private bool IsPlaying = false;
-
+        private bool isCreate = false;
+        private float duration = 0f;
         private void SetIsPlaying(object sender, GameEventArgs e)
         {
             SelectEntityEventArgs n = (SelectEntityEventArgs)e;
@@ -61,22 +62,41 @@ namespace MDDSkillEngine
         protected override void OnInit(object userData)
         {
             base.OnInit(userData);
-
+                       
             //实体级输入绑定
-            Game.Input.Control.Heros_Normal.S.performed += Use_S;
+            //Game.Input.Control.Heros_Normal.S.performed += Use_S;
 
             //组件初始化
-            Game.Buff.CreatBuffSystem(this.Entity.Id.ToString(), this);
-            Game.Fsm.CreateFsm<Entity, Hero103Attribute>(this);
-            Game.Skill.CreateSkillSystem<Entity>(this);
-
+            
             //事件
-            Game.Event.Subscribe(SelectEntityEventArgs.EventId, SetIsPlaying);
-            Game.Event.Subscribe(SelectAttackEntityEventArgs.EventId, SetAttack);
+            //Game.Event.Subscribe(SelectEntityEventArgs.EventId, SetIsPlaying);
+            //Game.Event.Subscribe(SelectAttackEntityEventArgs.EventId, SetAttack);
 
             //ui
             //UIAbilities u = Game.UI.GetUIForm(UIFormId.Ablities) as UIAbilities;
             //u.SetEntity(this);
+
+          
+        }
+
+        protected override void OnRecycle()
+        {
+            base.OnRecycle();
+            duration = 0f;
+        }
+
+        protected override void OnShow(object userData)
+        {
+            base.OnShow(userData);
+
+            Name = "Hero103_TimeDemo";
+
+            Game.Buff.CreatBuffSystem(this.Entity.Id.ToString(), this);
+            Game.Fsm.CreateFsm<Entity, Hero103Attribute>(this);
+            Game.Skill.CreateSkillSystem<Entity>(this);
+
+            IFsm<Entity> fsm = Game.Fsm.GetFsm<Entity>(Entity.Id.ToString());
+            fsm.Start<Hero103Spawn>();
 
             PlayerData = userData as HeroData;
             if (PlayerData == null)
@@ -84,40 +104,42 @@ namespace MDDSkillEngine
                 Log.Error("PlayerData is invalid.");
                 return;
             }
-        }
-
-
-        protected override void OnShow(object userData)
-        {
-            base.OnShow(userData);
-
-            Name = "Hero103";
 
             if (PlayerData.m_Owner != null)
             {
                 Game.Entity.AttachEntity(Id, PlayerData.m_Owner.Id);
                 CachedTransform.localRotation = PlayerData.localRotation;
                 CachedTransform.localPosition = PlayerData.localeftPostion;
-                CachedTransform.localScale = PlayerData.localScale;              
-                Game.Entity.DetachEntity(Id);               
+                CachedTransform.localScale = PlayerData.localScale;
+                Game.Entity.DetachEntity(Id);
             }
 
-            Game.HpBar.ShowHPBar(this, 1, 1);
+            Game.Buff.AddBuff(Id.ToString(), "PlaybleSpeedTestBuff", this, null);
+
+            //Game.HpBar.ShowHPBar(this, 1, 1);
         }
 
         protected override void OnHide(bool isShutdown, object userData)
         {
             base.OnHide(isShutdown, userData);
 
+            PlayerData = null;
 
-            Game.HpBar.HideHPBar(this);
-            Game.Event.Unsubscribe(SelectEntityEventArgs.EventId, SetIsPlaying);
-            Game.Event.Unsubscribe(SelectAttackEntityEventArgs.EventId, SetAttack);        
+            Game.Buff.RemoveBuffSystem(Id.ToString());
+            Game.Fsm.DestroyFsm<Entity>(Id.ToString());
+            Game.Skill.RemoveSkillSystem(Id);
         }
 
         protected override void OnUpdate(float elapseSeconds, float realElapseSeconds)
         {
             base.OnUpdate(elapseSeconds, realElapseSeconds);
+
+            duration += elapseSeconds;
+
+            if (duration >= 15f)
+            {
+                Game.Entity.HideEntity(this);
+            }
 
             InputLogic();
         }
@@ -146,7 +168,7 @@ namespace MDDSkillEngine
                 IFsm<Entity> fsm = Game.Fsm.GetFsm<Entity>(Id.ToString());
                 fsm.PlayableSpeed = varFloat.Value;
             }
-            
+
         }
 
         public override void SetState(EntityNormalState state, bool b)

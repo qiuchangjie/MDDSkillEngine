@@ -11,5 +11,6 @@ namespace MDDGameFramework
         IBuffSystem CreatBuffSystem(string name, object owner);
 
         IBuffSystem GetBuffSystem(string name);
+        void RemoveBuffSystem(string name);
     }
 }
