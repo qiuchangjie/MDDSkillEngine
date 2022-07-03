@@ -238,5 +238,10 @@ namespace MDDSkillEngine
         /// </summary>
         CONTROLLED,
 
+        /// <summary>
+        /// 太空漫步
+        /// </summary>
+        SPACEWALK,
+
     }
 }

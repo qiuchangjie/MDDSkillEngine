@@ -25,6 +25,19 @@ namespace MDDSkillEngine
         /// </summary>
         public SerializedScriptableObject PublicBB;
 
+        public override NodeGraph Copy()
+        {
+            NodeGraph graph = base.Copy();
+
+            NPBehaveGraph nPBehaveGraph = graph as NPBehaveGraph;
+            if (nPBehaveGraph != null)
+            {
+                nPBehaveGraph.BBValues = this.BBValues.DeepCopy();
+            }
+
+            return nPBehaveGraph;
+        }
+
         public XNode.Node GetRootNode()
         {
             for (int i = 0; i < nodes.Count; i++)

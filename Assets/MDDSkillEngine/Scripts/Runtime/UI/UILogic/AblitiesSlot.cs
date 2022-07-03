@@ -9,6 +9,15 @@ namespace MDDSkillEngine
     public class AblitiesSlot : MonoBehaviour
     {
         public ISkillSystem m_SkillSystem;
+
+        private ISkillSystem M_SkillSystem
+        {
+            get 
+            {
+                return m_SkillSystem;
+            }
+        }
+
         public Image CDImage;
         public Text Key;
         public Text SkillName;
@@ -46,8 +55,8 @@ namespace MDDSkillEngine
                 SkillName.text=drSkill.Name;
                 this.SkillID = skillid;
 
-                float cdtime = m_SkillSystem.GetSkillBlackboard(SkillID).Get<float>("cdtime");
-                float cd = m_SkillSystem.GetSkillBlackboard(SkillID).Get<float>("cd");
+                float cdtime = M_SkillSystem.GetSkillBlackboard(SkillID).Get<float>("cdtime");
+                float cd = M_SkillSystem.GetSkillBlackboard(SkillID).Get<float>("cd");
 
                 if (cdtime == 0)
                 {
@@ -58,9 +67,8 @@ namespace MDDSkillEngine
                     float amount = cd / cdtime;
                     CDImage.fillAmount = amount;
                 }
-               
 
-                m_SkillSystem.GetSkillBlackboard(SkillID).AddObserver("cd", Observing);
+                M_SkillSystem.GetSkillBlackboard(SkillID).AddObserver("cd", Observing);
             }
         }
 
@@ -68,13 +76,13 @@ namespace MDDSkillEngine
         {
             if (this.SkillID != 0)
             {
-                m_SkillSystem.UseSkill(SkillID);
+                M_SkillSystem.UseSkill(SkillID);
             }
         }
 
         public void SwitchSkillSystem(ISkillSystem skillSystem)
         {
-            if (skillSystem == m_SkillSystem)
+            if (skillSystem == M_SkillSystem)
                 return;
 
             //if (SkillID != 0)
@@ -86,6 +94,17 @@ namespace MDDSkillEngine
 
         private void Observing(Blackboard.Type type, Variable newValue)
         {
+            ISkillSystem skillSystem = null;
+            if (Game.Select.selectEntity != null)
+            {
+                skillSystem = Game.Skill.GetSkillSystem(Game.Select.selectEntity.Id);
+            }
+
+            if (skillSystem != M_SkillSystem)
+            {
+                return;
+            }
+
             //Log.Info("chang{0}", type);
             if (type == Blackboard.Type.CHANGE)
             {

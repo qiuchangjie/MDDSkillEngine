@@ -139,8 +139,8 @@ namespace MDDSkillEngine
             {
                 Log.Error("尝试获取没有装配的技能id：{0}", id);
             }
-            skill.Blackboard.Set<VarBoolean>("input", true);
 
+            skill.Blackboard.Set<VarBoolean>("input", true);
             Game.Event.Fire(this, UseSkillEventArgs.Create(this, id));
         }
 

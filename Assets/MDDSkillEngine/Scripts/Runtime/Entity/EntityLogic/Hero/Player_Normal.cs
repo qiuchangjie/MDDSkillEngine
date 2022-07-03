@@ -9,12 +9,12 @@ using static UnityEngine.InputSystem.InputAction;
 
 namespace MDDSkillEngine
 {
-    public class Player : TargetableObject
+    public class Player_Normal : TargetableObject
     {
         PlayerData PlayerData = null;
         private bool IsPlaying = false;
 
-        private void SetIsPlaying(object sender,GameEventArgs e)
+        private void SetIsPlaying(object sender, GameEventArgs e)
         {
             SelectEntityEventArgs n = (SelectEntityEventArgs)e;
 
@@ -52,7 +52,7 @@ namespace MDDSkillEngine
 
             Game.Fsm.GetFsm<Entity>(Id.ToString()).SetData<VarBoolean>("AkiIdleState", true);
         }
-       
+
         public override ImpactData GetImpactData()
         {
             return new ImpactData(PlayerData.HP, 200);
@@ -61,46 +61,30 @@ namespace MDDSkillEngine
         protected override void OnInit(object userData)
         {
             base.OnInit(userData);
-            
+
             //实体级输入绑定
             Game.Input.Control.Heros_Normal.S.performed += Use_S;
 
             //组件初始化
-            Game.Buff.CreatBuffSystem(this.Entity.Id.ToString(),this);
-            Game.Fsm.CreateFsm<Entity, AkiStateAttribute>(this);       
-            Game.Skill.CreateSkillSystem<Player>(this);
+            Game.Buff.CreatBuffSystem(this.Entity.Id.ToString(), this);
+            Game.Fsm.CreateFsm<Entity, AkiStateAttribute>(this);
+            Game.Skill.CreateSkillSystem<Player_Normal>(this);
 
-          
+
             //事件
             Game.Event.Subscribe(SelectEntityEventArgs.EventId, SetIsPlaying);
             Game.Event.Subscribe(SelectAttackEntityEventArgs.EventId, SetAttack);
-                     
+
             //ui
             UIAbilities u = Game.UI.GetUIForm(UIFormId.Ablities) as UIAbilities;
             u.SetEntity(this);
-
-            ISkillSystem skillSystem = Game.Skill.GetSkillSystem(Id);
-            skillSystem.AddSkill(10004, 0);
-            skillSystem.AddSkill(10005, 2);
-            skillSystem.AddSkill(10006, 1);
-            skillSystem.AddSkill(10019, 3);
-            skillSystem.AddSkill(10009);
-            skillSystem.AddSkill(10010);
-            skillSystem.AddSkill(10011);
-            skillSystem.AddSkill(10012);
-            skillSystem.AddSkill(10013);
-            skillSystem.AddSkill(10014);
-            skillSystem.AddSkill(10015);
-            skillSystem.AddSkill(10016);
-            skillSystem.AddSkill(10017);
-            skillSystem.AddSkill(10018);
 
             PlayerData = userData as PlayerData;
             if (PlayerData == null)
             {
                 Log.Error("PlayerData is invalid.");
                 return;
-            }         
+            }
         }
 
 
@@ -133,10 +117,10 @@ namespace MDDSkillEngine
         {
             base.OnUpdate(elapseSeconds, realElapseSeconds);
 
-            InputLogic();          
+            InputLogic();
         }
 
-    
+
         private void InputLogic()
         {
             if (Keyboard.current.vKey.wasPressedThisFrame)
@@ -152,7 +136,7 @@ namespace MDDSkillEngine
             switch (state)
             {
                 case EntityNormalState.RUN:
-                    Game.Fsm.GetFsm<Entity>(Id.ToString()).SetData<VarBoolean>(typeof(AkiRunState).Name,b);
+                    Game.Fsm.GetFsm<Entity>(Id.ToString()).SetData<VarBoolean>(typeof(AkiRunState).Name, b);
                     break;
             }
         }

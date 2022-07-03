@@ -53,7 +53,7 @@ namespace MDDSkillEngine
                 localScale = new Vector3(1f, 1f,1f)
             });
 
-            entity.SetState(EntityNormalState.RUN , true);
+            entity.SetState(EntityNormalState.SPACEWALK , true);
 
             //Log.Error("{0}PlaybleSpeedTestBuff", LogConst.Buff);
         }

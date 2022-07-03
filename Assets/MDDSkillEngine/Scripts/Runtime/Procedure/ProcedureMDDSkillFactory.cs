@@ -62,15 +62,30 @@ namespace MDDSkillEngine
 
             if (Keyboard.current.cKey.wasPressedThisFrame)
             {
-                Game.Entity.ShowPlayer(new PlayerData(1001, 10003)
+                //Game.Entity.ShowPlayer(new PlayerData(1001, 10003)
+                //{
+                //    Position = new Vector3(0f, 0f, 0f),
+                //});
+
+                //Game.Entity.ShowPlayer(new PlayerData(1002, 10003)
+                //{
+                //    Position = new Vector3(2f, 0f, 0f),
+                //});
+
+                Game.Entity.ShowEntity(typeof(Player_Normal), "Ai_Player", new PlayerData(1001, 0)
                 {
                     Position = new Vector3(0f, 0f, 0f),
                 });
 
-                Game.Entity.ShowEntity(typeof(Hero103), "Hero_103", new HeroData(1002, 0,null)
+                Game.Entity.ShowEntity(typeof(Player_Normal), "Ai_Player", new PlayerData(1002, 0)
                 {
                     Position = new Vector3(2f, 0f, 0f),
                 });
+
+                //Game.Entity.ShowEntity(typeof(Hero103), "Hero_103", new HeroData(1002, 0,null)
+                //{
+                //    Position = new Vector3(2f, 0f, 0f),
+                //});
 
                 //Game.Entity.ShowEnemy(new EnemyData(Game.Entity.GenerateSerialId(), 10001)
                 //{

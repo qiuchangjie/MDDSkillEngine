@@ -40,16 +40,20 @@ namespace MDDSkillEngine
 
         public NP_Tree CreatBehaviourTree(string Name, object userData, NPType nPType = NPType.skill)
         {
-            NPBehaveGraph nP;
-            if (!m_GraphDic.TryGetValue(AssetUtility.GetSkillAsset(Name), out nP))
+            NPBehaveGraph NP;
+            if (!m_GraphDic.TryGetValue(AssetUtility.GetSkillAsset(Name), out NP))
             {
                 Log.Error("行为树文件：{0}  不存在", Name);
                 return null;
             }
 
             //用来辅助缓存行为树节点 以便回收管理
-            List<Node> nodes1=new List<Node>();
-
+            List<Node> nodes1 = new List<Node>();
+            //这里也需要优化 GC跟傻逼一样大
+            //但是我暂时不写了
+            //思路是把数据从xnode剥离出来就轻量无数倍
+            //剥离出来的数据实例还可以池化进一步减少GC
+            NPBehaveGraph nP = (NPBehaveGraph)NP.Copy();
             Skill skill = new Skill();
             Root root = null;
             foreach (var v in nP.nodes)

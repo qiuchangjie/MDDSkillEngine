@@ -102,6 +102,8 @@ namespace MDDSkillEngine
                 Game.Entity.DetachEntity(Id);               
             }
 
+            IFsm<Entity> fsm = Game.Fsm.GetFsm<Entity>(Entity.Id.ToString());
+            fsm.Start<Hero103Spawn>();
             Game.HpBar.ShowHPBar(this, 1, 1);
         }
 
@@ -155,10 +157,13 @@ namespace MDDSkillEngine
             switch (state)
             {
                 case EntityNormalState.RUN:
-                    Game.Fsm.GetFsm<Entity>(Id.ToString()).SetData<VarBoolean>(typeof(Hero103SpaceWalk).Name, b);
+                    Game.Fsm.GetFsm<Entity>(Id.ToString()).SetData<VarBoolean>(typeof(Hero103Run).Name, b);
                     break;
                 case EntityNormalState.FLYSKY:
                     Game.Fsm.GetFsm<Entity>(Id.ToString()).SetData<VarBoolean>(typeof(Hero103FlyUp).Name, b);
+                    break;
+                case EntityNormalState.SPACEWALK:
+                    Game.Fsm.GetFsm<Entity>(Id.ToString()).SetData<VarBoolean>(typeof(Hero103SpaceWalk).Name, b);
                     break;
             }
         }

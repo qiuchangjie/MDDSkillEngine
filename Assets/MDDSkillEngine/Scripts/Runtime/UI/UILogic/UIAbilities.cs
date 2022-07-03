@@ -84,6 +84,8 @@ namespace MDDSkillEngine
                         }
                     }
 
+                    Log.Info("{0}切换：{1}", LogConst.UI, skillSystem.GetType());
+
                     for (int i = 0; i < ablitiesSlots.Count; i++)
                     {
                         ablitiesSlots[i].SwitchSkillSystem(skillSystem);

@@ -23,6 +23,7 @@ namespace MDDSkillEngine
             {
                 KealSkillSystem sys = KealSkillSystem.Create(player);
                 skillSystemDic.Add(sys.Owner.Id, sys);
+                Log.Info("{1}创建技能系统成功 挂载实体:{0}", Owner.Id, LogConst.Skill);
                 return sys;
             }
 
