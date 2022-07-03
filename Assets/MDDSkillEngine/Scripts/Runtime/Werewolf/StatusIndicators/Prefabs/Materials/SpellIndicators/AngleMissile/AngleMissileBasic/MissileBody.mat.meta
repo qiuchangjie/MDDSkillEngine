@@ -1,8 +1,8 @@
 fileFormatVersion: 2
 guid: f96f98a7d8c014143a1563c44fca2484
-timeCreated: 1487337091
-licenseType: Store
 NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
   userData: 
-  assetBundleName: 
+  assetBundleName: scripts/runtime/werewolf/statusindicators/prefabs/materials/spellindicators/anglemissile/anglemissilebasic/missilebody
   assetBundleVariant: 

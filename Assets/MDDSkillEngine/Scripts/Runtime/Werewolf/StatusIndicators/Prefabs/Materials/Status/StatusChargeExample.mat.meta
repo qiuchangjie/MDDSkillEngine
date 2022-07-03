@@ -1,8 +1,8 @@
 fileFormatVersion: 2
 guid: f8351f932398ef942969d148b2ebbb35
-timeCreated: 1493808389
-licenseType: Store
 NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
   userData: 
-  assetBundleName: 
+  assetBundleName: scripts/runtime/werewolf/statusindicators/prefabs/materials/status/statuschargeexample
   assetBundleVariant: 

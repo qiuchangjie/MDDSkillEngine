@@ -1,8 +1,7 @@
 fileFormatVersion: 2
 guid: ad444a8ba62b9452ba70e38f4767f0e7
-timeCreated: 1451480651
-licenseType: Store
 DefaultImporter:
+  externalObjects: {}
   userData: 
-  assetBundleName: 
+  assetBundleName: scripts/runtime/astarpathfindingproject/examplescenes/example14_turnbased_hexagon/turnbased
   assetBundleVariant: 

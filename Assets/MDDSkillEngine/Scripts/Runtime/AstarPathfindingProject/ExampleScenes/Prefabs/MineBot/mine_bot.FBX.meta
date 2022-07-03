@@ -1,7 +1,7 @@
 fileFormatVersion: 2
 guid: caeffedc34d9f4161b7694ad0d84bbd3
 ModelImporter:
-  serializedVersion: 26
+  serializedVersion: 19301
   internalIDToNameTable:
   - first:
       4: 400014
@@ -164,7 +164,7 @@ ModelImporter:
     second: minebot_front_lowerleg
   - first:
       74: 7400000
-    second: Take 001 //// mine_bot
+    second: Take 001
   - first:
       1001: 100100000
     second: DataTemplate __Singleton__
@@ -178,7 +178,7 @@ ModelImporter:
       name: 01 - Default
     second: {fileID: 2100000, guid: 1829738127541482a895692670703544, type: 2}
   materials:
-    importMaterials: 1
+    materialImportMode: 1
     materialName: 3
     materialSearch: 1
     materialLocation: 0
@@ -216,6 +216,7 @@ ModelImporter:
     importBlendShapes: 1
     importCameras: 0
     importLights: 0
+    fileIdsGeneration: 1
     swapUVChannels: 1
     generateSecondaryUV: 0
     useFileUnits: 1
@@ -247,7 +248,6 @@ ModelImporter:
   - b667956babf1f0446a76fa8b99404ab8
   - f8136785e54fd1d459d2a3a0849fe770
   importAnimation: 1
-  copyAvatar: 0
   humanDescription:
     serializedVersion: 3
     human: []
@@ -265,9 +265,11 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 1
   humanoidOversampling: 1
+  avatarSetup: 0
   additionalBone: 0
   userData: 
-  assetBundleName: 
+  assetBundleName: scripts/runtime/astarpathfindingproject/examplescenes/prefabs/minebot/mine_bot
   assetBundleVariant: 

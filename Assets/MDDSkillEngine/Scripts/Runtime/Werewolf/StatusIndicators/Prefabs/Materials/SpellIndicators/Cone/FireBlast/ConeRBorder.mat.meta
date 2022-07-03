@@ -1,8 +1,8 @@
 fileFormatVersion: 2
 guid: db58ebe94db5dc04b81b2ab8716525bf
-timeCreated: 1487225280
-licenseType: Store
 NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
   userData: 
-  assetBundleName: 
+  assetBundleName: scripts/runtime/werewolf/statusindicators/prefabs/materials/spellindicators/cone/fireblast/conerborder
   assetBundleVariant: 

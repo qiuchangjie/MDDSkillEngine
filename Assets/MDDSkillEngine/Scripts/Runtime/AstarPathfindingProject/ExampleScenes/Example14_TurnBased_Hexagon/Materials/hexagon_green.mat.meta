@@ -1,8 +1,8 @@
 fileFormatVersion: 2
 guid: 57eb4c059e0b3467cac0a46a3b859a2d
-timeCreated: 1453726625
-licenseType: Store
 NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
   userData: 
-  assetBundleName: 
+  assetBundleName: scripts/runtime/astarpathfindingproject/examplescenes/example14_turnbased_hexagon/materials/hexagon_green
   assetBundleVariant: 

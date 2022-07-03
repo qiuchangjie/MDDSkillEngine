@@ -467,7 +467,7 @@ MonoBehaviour:
   _animationData:
     _animatedParameters: []
   _length: 0
-  Type: 0
+  Type: 1
 --- !u!1 &5283733973731255988
 GameObject:
   m_ObjectHideFlags: 0

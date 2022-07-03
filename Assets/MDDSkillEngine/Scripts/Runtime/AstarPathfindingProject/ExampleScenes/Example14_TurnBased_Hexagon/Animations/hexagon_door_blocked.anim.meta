@@ -1,8 +1,8 @@
 fileFormatVersion: 2
 guid: db9b9289ebef24e71a6f303a59884985
-timeCreated: 1453727230
-licenseType: Store
 NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
   userData: 
-  assetBundleName: 
+  assetBundleName: scripts/runtime/astarpathfindingproject/examplescenes/example14_turnbased_hexagon/animations/hexagon_door_blocked
   assetBundleVariant: 

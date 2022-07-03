@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿#if UNITY_EDITOR
+using UnityEngine;
 using System.Collections;
 using MDDSkillEngine;
 using UnityEditor;
@@ -128,3 +129,4 @@ namespace Slate.ActionClips
         }
     }
 }
+#endif

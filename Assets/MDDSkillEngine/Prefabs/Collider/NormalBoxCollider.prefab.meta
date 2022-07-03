@@ -3,5 +3,5 @@ guid: fe27e011a897973468ce3c416a204f11
 PrefabImporter:
   externalObjects: {}
   userData: 
-  assetBundleName: 
+  assetBundleName: prefabs/collider/normalboxcollider
   assetBundleVariant: 

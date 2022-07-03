@@ -1,8 +1,7 @@
 fileFormatVersion: 2
 guid: b7cbe30da9fd11a44ad7b2dc22583f72
-timeCreated: 1491204791
-licenseType: Store
-NativeFormatImporter:
+PrefabImporter:
+  externalObjects: {}
   userData: 
-  assetBundleName: 
+  assetBundleName: scripts/runtime/werewolf/statusindicators/prefabs/examples/example2
   assetBundleVariant: 

@@ -2,21 +2,351 @@
 <UnityGameFramework>
   <ResourceCollection>
     <Resources>
+      <Resource Name="Animation/103/103_m_a_attack" LoadType="0" Packed="False" />
+      <Resource Name="Animation/103/103_m_a_attacked" LoadType="0" Packed="False" />
+      <Resource Name="Animation/103/103_m_a_back" LoadType="0" Packed="False" />
+      <Resource Name="Animation/103/103_m_a_dash" LoadType="0" Packed="False" />
+      <Resource Name="Animation/103/103_m_a_dead" LoadType="0" Packed="False" />
+      <Resource Name="Animation/103/103_m_a_flyloop" LoadType="0" Packed="False" />
+      <Resource Name="Animation/103/103_m_a_flyup" LoadType="0" Packed="False" />
+      <Resource Name="Animation/103/103_m_a_left" LoadType="0" Packed="False" />
+      <Resource Name="Animation/103/103_m_a_right" LoadType="0" Packed="False" />
+      <Resource Name="Animation/103/103_m_a_run" LoadType="0" Packed="False" />
+      <Resource Name="Animation/103/103_m_a_skill_01" LoadType="0" Packed="False" />
+      <Resource Name="Animation/103/103_m_a_skill_02" LoadType="0" Packed="False" />
+      <Resource Name="Animation/103/103_m_a_spawn" LoadType="0" Packed="False" />
+      <Resource Name="Animation/103/103_m_a_standby" LoadType="0" Packed="False" />
+      <Resource Name="Animation/103/103_m_a_standup" LoadType="0" Packed="False" />
+      <Resource Name="Animation/103/103_m_a_up" LoadType="0" Packed="False" />
+      <Resource Name="Animation/Ai/ANG2" LoadType="0" Packed="False" />
+      <Resource Name="Animation/Ai/Atk1" LoadType="0" Packed="False" />
+      <Resource Name="Animation/Ai/Atk2" LoadType="0" Packed="False" />
+      <Resource Name="Animation/Ai/Atk3" LoadType="0" Packed="False" />
+      <Resource Name="Animation/Ai/bye" LoadType="0" Packed="False" />
+      <Resource Name="Animation/Ai/Cry" LoadType="0" Packed="False" />
+      <Resource Name="Animation/Ai/Cry_loop" LoadType="0" Packed="False" />
+      <Resource Name="Animation/Ai/Cry_nUp" LoadType="0" Packed="False" />
+      <Resource Name="Animation/Ai/Cute1" LoadType="0" Packed="False" />
+      <Resource Name="Animation/Ai/Cutepose" LoadType="0" Packed="False" />
+      <Resource Name="Animation/Ai/Damaged" LoadType="0" Packed="False" />
+      <Resource Name="Animation/Ai/die" LoadType="0" Packed="False" />
+      <Resource Name="Animation/Ai/Idle_A" LoadType="0" Packed="False" />
+      <Resource Name="Animation/Ai/Idle_Atk" LoadType="0" Packed="False" />
+      <Resource Name="Animation/Ai/Idle_B" LoadType="0" Packed="False" />
+      <Resource Name="Animation/Ai/Idle_C" LoadType="0" Packed="False" />
+      <Resource Name="Animation/Ai/Jump" LoadType="0" Packed="False" />
+      <Resource Name="Animation/Ai/Run" LoadType="0" Packed="False" />
+      <Resource Name="Animation/Ai/Run_L" LoadType="0" Packed="False" />
+      <Resource Name="Animation/Ai/Run_R" LoadType="0" Packed="False" />
+      <Resource Name="Animation/Ai/SS_C" LoadType="0" Packed="False" />
+      <Resource Name="Animation/Ai/SS_L2" LoadType="0" Packed="False" />
+      <Resource Name="Animation/Ai/SS_R" LoadType="0" Packed="False" />
+      <Resource Name="Animation/Ai/Walk_back" LoadType="0" Packed="False" />
+      <Resource Name="Animation/Ai/Walk_back_skirt" LoadType="0" Packed="False" />
+      <Resource Name="Animation/Ai/Walk_L" LoadType="0" Packed="False" />
+      <Resource Name="Animation/Ai/Walk_R" LoadType="0" Packed="False" />
+      <Resource Name="Animation/Ai/Walk_skirt" LoadType="0" Packed="False" />
+      <Resource Name="Animation/Ai/Walk_skirt_L" LoadType="0" Packed="False" />
+      <Resource Name="Animation/Ai/Walk_skirt_R" LoadType="0" Packed="False" />
+      <Resource Name="Animation/Aki/ANG2" LoadType="0" Packed="False" />
+      <Resource Name="Animation/Aki/Atk1" LoadType="0" Packed="False" />
+      <Resource Name="Animation/Aki/Atk2" LoadType="0" Packed="False" />
+      <Resource Name="Animation/Aki/Atk3" LoadType="0" Packed="False" />
+      <Resource Name="Animation/Aki/bye" LoadType="0" Packed="False" />
+      <Resource Name="Animation/Aki/Cry" LoadType="0" Packed="False" />
+      <Resource Name="Animation/Aki/Cry_loop" LoadType="0" Packed="False" />
+      <Resource Name="Animation/Aki/Cry_nUp" LoadType="0" Packed="False" />
+      <Resource Name="Animation/Aki/Cute1" LoadType="0" Packed="False" />
+      <Resource Name="Animation/Aki/Cutepose" LoadType="0" Packed="False" />
+      <Resource Name="Animation/Aki/Damaged" LoadType="0" Packed="False" />
+      <Resource Name="Animation/Aki/die" LoadType="0" Packed="False" />
+      <Resource Name="Animation/Aki/Idle_A" LoadType="0" Packed="False" />
+      <Resource Name="Animation/Aki/Idle_Atk" LoadType="0" Packed="False" />
+      <Resource Name="Animation/Aki/Idle_B" LoadType="0" Packed="False" />
+      <Resource Name="Animation/Aki/Idle_C" LoadType="0" Packed="False" />
+      <Resource Name="Animation/Aki/Jump" LoadType="0" Packed="False" />
+      <Resource Name="Animation/Aki/Run" LoadType="0" Packed="False" />
+      <Resource Name="Animation/Aki/Run_L" LoadType="0" Packed="False" />
+      <Resource Name="Animation/Aki/Run_R" LoadType="0" Packed="False" />
+      <Resource Name="Animation/Aki/SS_C" LoadType="0" Packed="False" />
+      <Resource Name="Animation/Aki/SS_L2" LoadType="0" Packed="False" />
+      <Resource Name="Animation/Aki/SS_R" LoadType="0" Packed="False" />
+      <Resource Name="Animation/Aki/Walk_back" LoadType="0" Packed="False" />
+      <Resource Name="Animation/Aki/Walk_back_skirt" LoadType="0" Packed="False" />
+      <Resource Name="Animation/Aki/Walk_L" LoadType="0" Packed="False" />
+      <Resource Name="Animation/Aki/Walk_R" LoadType="0" Packed="False" />
+      <Resource Name="Animation/Aki/Walk_skirt" LoadType="0" Packed="False" />
+      <Resource Name="Animation/Aki/Walk_skirt_L" LoadType="0" Packed="False" />
+      <Resource Name="Animation/Aki/Walk_skirt_R" LoadType="0" Packed="False" />
       <Resource Name="Configs/DefaultConfig" LoadType="0" Packed="False" />
-      <Resource Name="Configs/ResourceCollection" LoadType="0" Packed="False" />
-      <Resource Name="ResourceDataTable/Aircraft" LoadType="0" Packed="False" />
+      <Resource Name="Fonts/Vegur-Regular" LoadType="0" Packed="False" />
+      <Resource Name="Prefabs/aki" LoadType="0" Packed="False" />
+      <Resource Name="Prefabs/Bullet" LoadType="0" Packed="False" />
+      <Resource Name="Prefabs/Collider/Collider" LoadType="0" Packed="False" />
+      <Resource Name="Prefabs/Collider/NormalBoxCollider" LoadType="0" Packed="False" />
+      <Resource Name="Prefabs/Collider/NormalCapsuleCollider" LoadType="0" Packed="False" />
+      <Resource Name="Prefabs/Collider/NormalEmtpy" LoadType="0" Packed="False" />
+      <Resource Name="Prefabs/Collider/NormalMoveCollider" LoadType="0" Packed="False" />
+      <Resource Name="Prefabs/Collider/NormalSphereCollider" LoadType="0" Packed="False" />
+      <Resource Name="Prefabs/Effect/ClickMove" LoadType="0" Packed="False" />
+      <Resource Name="Prefabs/Effect/daoguang_green_1" LoadType="0" Packed="False" />
+      <Resource Name="Prefabs/Effect/Dubaoeff" LoadType="0" Packed="False" />
+      <Resource Name="Prefabs/Effect/Dubaoeff2" LoadType="0" Packed="False" />
+      <Resource Name="Prefabs/Effect/fengbaodown" LoadType="0" Packed="False" />
+      <Resource Name="Prefabs/Effect/Hit" LoadType="0" Packed="False" />
+      <Resource Name="Prefabs/Effect/jianrenfengbao" LoadType="0" Packed="False" />
+      <Resource Name="Prefabs/Effect/kaerbingqiang" LoadType="0" Packed="False" />
+      <Resource Name="Prefabs/Effect/kaerchuifeng" LoadType="0" Packed="False" />
+      <Resource Name="Prefabs/Effect/kaercibao" LoadType="0" Packed="False" />
+      <Resource Name="Prefabs/Effect/kaercibao2" LoadType="0" Packed="False" />
+      <Resource Name="Prefabs/Effect/KaerShengbo" LoadType="0" Packed="False" />
+      <Resource Name="Prefabs/Effect/kaertianhuo" LoadType="0" Packed="False" />
+      <Resource Name="Prefabs/Effect/kaeryunshi" LoadType="0" Packed="False" />
+      <Resource Name="Prefabs/Effect/shunxieff" LoadType="0" Packed="False" />
+      <Resource Name="Prefabs/Effect/shunxieff2" LoadType="0" Packed="False" />
+      <Resource Name="Prefabs/Flash" LoadType="0" Packed="False" />
+      <Resource Name="Prefabs/Hero/Ai" LoadType="0" Packed="False" />
+      <Resource Name="Prefabs/Hero/Ai_Player" LoadType="0" Packed="False" />
+      <Resource Name="Prefabs/Hero/Hero_103" LoadType="0" Packed="False" />
+      <Resource Name="Prefabs/Hero/mob_119_a" LoadType="0" Packed="False" />
+      <Resource Name="Prefabs/Hero/player_Aki" LoadType="0" Packed="False" />
+      <Resource Name="Prefabs/MDDGameFramework" LoadType="0" Packed="False" />
+      <Resource Name="Prefabs/SimpleEnemy" LoadType="0" Packed="False" />
+      <Resource Name="Prefabs/SwarmEnemy" LoadType="0" Packed="False" />
+      <Resource Name="Prefabs/TextBar" LoadType="0" Packed="False" />
+      <Resource Name="ResourceDataTable/Buff" LoadType="0" Packed="False" />
+      <Resource Name="ResourceDataTable/Entity" LoadType="0" Packed="False" />
+      <Resource Name="ResourceDataTable/Hero" LoadType="0" Packed="False" />
+      <Resource Name="ResourceDataTable/Player" LoadType="0" Packed="False" />
       <Resource Name="ResourceDataTable/Scene" LoadType="0" Packed="False" />
+      <Resource Name="ResourceDataTable/Skill" LoadType="0" Packed="False" />
+      <Resource Name="ResourceDataTable/UIForm" LoadType="0" Packed="False" />
+      <Resource Name="Scene/EditorSkillTimeline" LoadType="0" Packed="False" />
+      <Resource Name="Scene/KealSkillDemo" LoadType="0" Packed="False" />
       <Resource Name="Scene/MDDSkillFactory" LoadType="0" Packed="False" />
       <Resource Name="Scene/MDDSkillLauncher" LoadType="0" Packed="False" />
+      <Resource Name="Scene/TimeScaleDemo" LoadType="0" Packed="False" />
+      <Resource Name="SkillRes/PublicBBData/KealBB" LoadType="0" Packed="False" />
+      <Resource Name="SkillRes/Skill/huanyinjianwu" LoadType="0" Packed="False" />
+      <Resource Name="SkillRes/Skill/KaerCall" LoadType="0" Packed="False" />
+      <Resource Name="SkillRes/Skill/kaerchaozhenshengbo" LoadType="0" Packed="False" />
+      <Resource Name="SkillRes/Skill/Kaerchuifeng" LoadType="0" Packed="False" />
+      <Resource Name="SkillRes/Skill/kaerdiancimaichong" LoadType="0" Packed="False" />
+      <Resource Name="SkillRes/Skill/KaerFire" LoadType="0" Packed="False" />
+      <Resource Name="SkillRes/Skill/kaerhaibinzhiqiang" LoadType="0" Packed="False" />
+      <Resource Name="SkillRes/Skill/kaerhundunyunshi" LoadType="0" Packed="False" />
+      <Resource Name="SkillRes/Skill/KaerIce" LoadType="0" Packed="False" />
+      <Resource Name="SkillRes/Skill/kaerjisulengque" LoadType="0" Packed="False" />
+      <Resource Name="SkillRes/Skill/kaerlingdongxunjie" LoadType="0" Packed="False" />
+      <Resource Name="SkillRes/Skill/kaerlongrujinling" LoadType="0" Packed="False" />
+      <Resource Name="SkillRes/Skill/kaernormalhit" LoadType="0" Packed="False" />
+      <Resource Name="SkillRes/Skill/kaerqiangxijufeng" LoadType="0" Packed="False" />
+      <Resource Name="SkillRes/Skill/KaerSaotangtui" LoadType="0" Packed="False" />
+      <Resource Name="SkillRes/Skill/KaerThunder" LoadType="0" Packed="False" />
+      <Resource Name="SkillRes/Skill/kaeryangyanchongji" LoadType="0" Packed="False" />
+      <Resource Name="SkillRes/Skill/kaeryoulingmanbu" LoadType="0" Packed="False" />
+      <Resource Name="SkillRes/Skill/kaeryuansuqihuan" LoadType="0" Packed="False" />
+      <Resource Name="SkillRes/Skill/shunxi" LoadType="0" Packed="False" />
+      <Resource Name="SkillRes/SkillTimelineRuntime/chuifengState" LoadType="4" Packed="False" />
+      <Resource Name="SkillRes/SkillTimelineRuntime/Hero103Wuhu" LoadType="4" Packed="False" />
+      <Resource Name="SkillRes/SkillTimelineRuntime/huanyinjianwuState" LoadType="4" Packed="False" />
+      <Resource Name="SkillRes/SkillTimelineRuntime/kaerchaozhenshengboState" LoadType="4" Packed="False" />
+      <Resource Name="SkillRes/SkillTimelineRuntime/kaerdiancimaichongState" LoadType="4" Packed="False" />
+      <Resource Name="SkillRes/SkillTimelineRuntime/kaerhaibinzhiqiangState" LoadType="4" Packed="False" />
+      <Resource Name="SkillRes/SkillTimelineRuntime/kaerhundunyunshiState" LoadType="4" Packed="False" />
+      <Resource Name="SkillRes/SkillTimelineRuntime/kaerjisulengqueState" LoadType="4" Packed="False" />
+      <Resource Name="SkillRes/SkillTimelineRuntime/kaerlingdongxunjieState" LoadType="4" Packed="False" />
+      <Resource Name="SkillRes/SkillTimelineRuntime/kaerlongrujinlingState" LoadType="4" Packed="False" />
+      <Resource Name="SkillRes/SkillTimelineRuntime/kaernormalattackState" LoadType="4" Packed="False" />
+      <Resource Name="SkillRes/SkillTimelineRuntime/kaernormalhitState" LoadType="4" Packed="False" />
+      <Resource Name="SkillRes/SkillTimelineRuntime/kaerqiangxijufengState" LoadType="4" Packed="False" />
+      <Resource Name="SkillRes/SkillTimelineRuntime/kaeryangyanchongjiState" LoadType="4" Packed="False" />
+      <Resource Name="SkillRes/SkillTimelineRuntime/kaeryoulingmanbuState" LoadType="4" Packed="False" />
+      <Resource Name="SkillRes/SkillTimelineRuntime/saotangtuiState" LoadType="4" Packed="False" />
+      <Resource Name="UI/SkillSlot" LoadType="0" Packed="False" />
+      <Resource Name="UI/UI_Login" LoadType="0" Packed="False" />
+      <Resource Name="UI/UIAbilities" LoadType="0" Packed="False" />
+      <Resource Name="UI/UIBlackborad" LoadType="0" Packed="False" />
+      <Resource Name="UI/UIDrag" LoadType="0" Packed="False" />
+      <Resource Name="UI/UIKeyValue" LoadType="0" Packed="False" />
+      <Resource Name="UI/UILoadingForm" LoadType="0" Packed="False" />
+      <Resource Name="UI/UIMain" LoadType="0" Packed="False" />
+      <Resource Name="UI/UISkillList" LoadType="0" Packed="False" />
+      <Resource Name="UI/wallhaven-pkgkkp" LoadType="0" Packed="False" />
     </Resources>
     <Assets>
-      <Asset Guid="3a15d565d9c7cd142b496914d645b1bc" ResourceName="ResourceDataTable/Aircraft" />
+      <Asset Guid="005d216a1e75a7b49af4b27c147bb971" ResourceName="SkillRes/Skill/kaeryuansuqihuan" />
+      <Asset Guid="014094332042db44595a2de2a4240266" ResourceName="Animation/103/103_m_a_skill_02" />
+      <Asset Guid="01d6a911cafebb84e865eb58d854ad56" ResourceName="UI/UISkillList" />
+      <Asset Guid="01e9e5a7b43f70f49917008a9766dbab" ResourceName="Animation/103/103_m_a_attacked" />
+      <Asset Guid="02444bb8d62a8844db98a1f217e95c67" ResourceName="Animation/Ai/Cute1" />
+      <Asset Guid="04667b5ac43b9564c912d47bb2cb1680" ResourceName="Prefabs/Effect/Dubaoeff" />
+      <Asset Guid="050a8299d8274a14c9a7510de3c77a00" ResourceName="ResourceDataTable/Hero" />
+      <Asset Guid="087e4e9ab4b472247bbdab3e0aaaaf7d" ResourceName="SkillRes/SkillTimelineRuntime/huanyinjianwuState" />
+      <Asset Guid="0d7836efb9dd7534ea8511ca094e40b8" ResourceName="SkillRes/SkillTimelineRuntime/kaernormalattackState" />
+      <Asset Guid="0f9cc4a298eff6645929350b0f6e462a" ResourceName="Animation/Ai/Walk_skirt_R" />
+      <Asset Guid="11a8a2a6010ab3647b39b6be05559579" ResourceName="Animation/103/103_m_a_run" />
+      <Asset Guid="120add58f52479a4d9466ee76a0a99de" ResourceName="SkillRes/SkillTimelineRuntime/kaerhaibinzhiqiangState" />
+      <Asset Guid="12b295370e4c34c4b87e21f4127bd611" ResourceName="SkillRes/Skill/KaerFire" />
+      <Asset Guid="144e1717c7be6e545b79cfab1abe4267" ResourceName="UI/UIMain" />
+      <Asset Guid="14d8693dfee37e2458227deb132929ee" ResourceName="Animation/Aki/ANG2" />
+      <Asset Guid="152e2feb3f7b9114f877ac78ba79920d" ResourceName="Animation/Aki/bye" />
+      <Asset Guid="15427f25ef34f7b4bb6b69eba345ecc9" ResourceName="Animation/Aki/Run_R" />
+      <Asset Guid="19cd13398ad6d34498cfda49396ffc06" ResourceName="Animation/Ai/Walk_skirt_L" />
+      <Asset Guid="1ad0f45ddfc606b4dbe252007311bcdf" ResourceName="SkillRes/Skill/kaeryoulingmanbu" />
+      <Asset Guid="1b743071dde9c9049ab622bdd4f43997" ResourceName="Animation/Aki/Atk1" />
+      <Asset Guid="1bcce446404f5ab488b4707734f1adce" ResourceName="Animation/Aki/SS_C" />
+      <Asset Guid="1ca4b0d30e796674681aba13b0b67455" ResourceName="SkillRes/Skill/KaerSaotangtui" />
+      <Asset Guid="1dae65a24eaea7e459941fda262581a4" ResourceName="Animation/103/103_m_a_standup" />
+      <Asset Guid="20cadcff32be44b40839f1e805e159bd" ResourceName="Animation/Aki/Walk_skirt_R" />
+      <Asset Guid="219b2f58795b53f42a3502e6841278a1" ResourceName="Animation/Ai/Idle_A" />
+      <Asset Guid="2238c52cbd7345443ae50fe2b0bf27e5" ResourceName="Animation/Aki/Walk_L" />
+      <Asset Guid="26ee7cac4964cd64996dc0962a5023d1" ResourceName="SkillRes/Skill/kaerhundunyunshi" />
+      <Asset Guid="280c4f1a94a1aa348a73e1c4f08d4387" ResourceName="Animation/Ai/Atk3" />
+      <Asset Guid="290cf9a017b3b0e49b32f28243f909d3" ResourceName="Animation/103/103_m_a_standby" />
+      <Asset Guid="2a6578744920ea44e8371ac1c08c1bec" ResourceName="Prefabs/Hero/Ai_Player" />
+      <Asset Guid="2ae84d47b92ed5942a49dd4cd92fc6bb" ResourceName="Prefabs/Effect/kaertianhuo" />
+      <Asset Guid="2d75b16184e76de449f6d6922f75f990" ResourceName="Prefabs/Effect/shunxieff" />
+      <Asset Guid="2dfacf906aa5a4ac08f806f703e61283" ResourceName="Fonts/Vegur-Regular" />
+      <Asset Guid="2e64b600b80c71d4fa3e416fbbf0ee33" ResourceName="Animation/Ai/SS_R" />
+      <Asset Guid="2e7ceccd3e32aee43ba45386e722d9a3" ResourceName="ResourceDataTable/Player" />
+      <Asset Guid="329248e84f857a7499c16eea15650d8c" ResourceName="Animation/103/103_m_a_attack" />
+      <Asset Guid="336b895282f53a043b6d2cbaa43681ff" ResourceName="SkillRes/Skill/kaerdiancimaichong" />
+      <Asset Guid="33a1fc3e78dd7dd4db39eab99823dee1" ResourceName="Prefabs/Collider/NormalCapsuleCollider" />
+      <Asset Guid="36710be5f98087440b64f7fdbe584256" ResourceName="SkillRes/Skill/KaerCall" />
+      <Asset Guid="39919289c4b2405498483d4e30df3d35" ResourceName="SkillRes/SkillTimelineRuntime/kaerqiangxijufengState" />
+      <Asset Guid="39968d7742125b34bb287e625c2167f3" ResourceName="UI/UIDrag" />
+      <Asset Guid="3b5d91b241938b647b9e5056fdd23032" ResourceName="Animation/103/103_m_a_up" />
+      <Asset Guid="3bed33336b323d84c8ef782c0b3f76b1" ResourceName="Prefabs/Flash" />
+      <Asset Guid="3d492cb4a37a2914e9ba823878e59c88" ResourceName="Prefabs/TextBar" />
+      <Asset Guid="3e7f3847f1c8fcd43b97b10df7a3d76a" ResourceName="Prefabs/Effect/ClickMove" />
+      <Asset Guid="3ea6a41011406924eb210e3541f80d5e" ResourceName="SkillRes/Skill/kaeryangyanchongji" />
+      <Asset Guid="405812f1d671ee44f989901838651899" ResourceName="Prefabs/Effect/kaerchuifeng" />
+      <Asset Guid="42d54749a3471e34b8c3c0fbd76f635e" ResourceName="Animation/Ai/Walk_R" />
+      <Asset Guid="43e9267f3320abd448b3b039852b6e9d" ResourceName="Animation/Ai/Cry" />
       <Asset Guid="44c8db52241385c45bbb14a1718f17bf" ResourceName="Configs/DefaultConfig" />
+      <Asset Guid="4704c449983e4614bbd38fed22c908dd" ResourceName="Animation/103/103_m_a_right" />
+      <Asset Guid="478ef69f9a8ec4f4b9e7252ae156c90e" ResourceName="Animation/Ai/Run_R" />
+      <Asset Guid="48ab8afd112605149a2d0d07caf148c0" ResourceName="Animation/Aki/Cry" />
+      <Asset Guid="4aa63c742aaf7b442bcbd57d68169ea3" ResourceName="Animation/Ai/Walk_back" />
+      <Asset Guid="4f8f45151a2ed2344ba311cc1360c08c" ResourceName="Prefabs/Collider/NormalSphereCollider" />
+      <Asset Guid="500dc4ef4d5db8c4d97c690b9f9619e5" ResourceName="SkillRes/SkillTimelineRuntime/Hero103Wuhu" />
+      <Asset Guid="50db8d74e7a164545a714e3f1239fc2e" ResourceName="Animation/103/103_m_a_left" />
+      <Asset Guid="50e42336ed7fcbb4fb318022b4f1f7b0" ResourceName="Animation/Aki/die" />
+      <Asset Guid="52bb607ed82b5c745bba01a9db0affc0" ResourceName="UI/wallhaven-pkgkkp" />
+      <Asset Guid="534fcc37ab2ace548a994338cd12ca9e" ResourceName="Animation/Aki/Idle_Atk" />
+      <Asset Guid="5853be09bca73434f9d8d8fef1acf9b5" ResourceName="ResourceDataTable/UIForm" />
+      <Asset Guid="5add31c2f01594a478adc832130a1403" ResourceName="Animation/Aki/Atk3" />
+      <Asset Guid="5b31ac07ee5db8c44a8937195a4cd7fb" ResourceName="Animation/Ai/Idle_Atk" />
+      <Asset Guid="5dc38d4ee94f82f4d9d36a299f7687a2" ResourceName="Animation/103/103_m_a_back" />
+      <Asset Guid="60744b53e589b014984f1d6dc879536a" ResourceName="SkillRes/SkillTimelineRuntime/saotangtuiState" />
+      <Asset Guid="609878e9d7b8ba54c8cc5b0f1158e7be" ResourceName="Animation/Aki/Cry_nUp" />
+      <Asset Guid="60c094daed4b20347bb7aad9fbf86bb2" ResourceName="Animation/103/103_m_a_flyup" />
+      <Asset Guid="612847bd5bbd8bc47ad2945cab0d0ba5" ResourceName="Prefabs/Effect/Dubaoeff2" />
+      <Asset Guid="615510a3b2600484d826c77f14a50bec" ResourceName="Animation/Aki/Idle_B" />
+      <Asset Guid="61e0b8558c4c674488541ec58bc39bf2" ResourceName="Animation/Ai/SS_L2" />
+      <Asset Guid="63694dc1c9ca84448b1b6e37cbb3e72e" ResourceName="Animation/Aki/Run" />
+      <Asset Guid="63b0e35d92a73e44aa483307621c5fda" ResourceName="Animation/Ai/ANG2" />
+      <Asset Guid="6454666447bf64d469b0f3af0d3c411b" ResourceName="SkillRes/SkillTimelineRuntime/kaernormalhitState" />
+      <Asset Guid="6b1991ea4ce363f409a618db39a112bf" ResourceName="SkillRes/Skill/shunxi" />
+      <Asset Guid="6b9cfc36688607a45b47979fd6908230" ResourceName="Animation/Aki/Idle_A" />
+      <Asset Guid="7043499fb79c6394ca115fd1d1941087" ResourceName="SkillRes/SkillTimelineRuntime/kaerlingdongxunjieState" />
+      <Asset Guid="7467868fbadd37e418c1b7b82ea2fc4c" ResourceName="ResourceDataTable/Buff" />
+      <Asset Guid="7728a078fbba7be409dd95a39ac7d58b" ResourceName="Prefabs/Hero/mob_119_a" />
+      <Asset Guid="7e3caa69ef39f8041858a3af4ca11844" ResourceName="Animation/Ai/Atk1" />
+      <Asset Guid="7fa73ebf1f673aa4dba88d80b5ea4220" ResourceName="Animation/Ai/Cry_loop" />
       <Asset Guid="7fd11dc5d29076d469d414dec2818f11" ResourceName="Configs/DefaultConfig" />
+      <Asset Guid="81daf70b975e35e4484669b93270b68e" ResourceName="Animation/Ai/Walk_L" />
+      <Asset Guid="832079fa5e3e6164c9da18e33d83bc02" ResourceName="SkillRes/Skill/kaerqiangxijufeng" />
+      <Asset Guid="8489aa2f0eae3db43b9dda22af8006d4" ResourceName="Animation/Aki/Cutepose" />
+      <Asset Guid="854cd8d3816484790b6a34c46956792d" ResourceName="Prefabs/SwarmEnemy" />
       <Asset Guid="8634c7428e9a440448e16d5119663ea3" ResourceName="ResourceDataTable/Scene" />
+      <Asset Guid="86f58dfab3247c849bee2e6fdf47576e" ResourceName="Prefabs/Effect/shunxieff2" />
+      <Asset Guid="881c9baea14e3ad4cbaefeb0ad1e7418" ResourceName="Prefabs/MDDGameFramework" />
+      <Asset Guid="884fffc489579c348946578729ffb5bf" ResourceName="Prefabs/Collider/Collider" />
+      <Asset Guid="8bb160f0cd45b2843a1324f040f4aa3e" ResourceName="Prefabs/Effect/Hit" />
+      <Asset Guid="8dc4761763da1b74889c4e462af44013" ResourceName="Prefabs/Effect/jianrenfengbao" />
+      <Asset Guid="8e76b93c817662148bfbad3751066e52" ResourceName="Animation/Aki/Walk_skirt_L" />
+      <Asset Guid="8eff01bbb3c48114b947280631668e01" ResourceName="Prefabs/Hero/Hero_103" />
+      <Asset Guid="8fbe30884ba67654aa375a1a5dda7699" ResourceName="Animation/Aki/Cute1" />
+      <Asset Guid="901163d7649aa2f41a43dca62564fdf9" ResourceName="SkillRes/Skill/Kaerchuifeng" />
+      <Asset Guid="9065329512e7cf5478a68b4ec101d2bc" ResourceName="SkillRes/Skill/kaerlongrujinling" />
+      <Asset Guid="90ac599a6eff5cd49ae01a249bd64095" ResourceName="Animation/Ai/Damaged" />
       <Asset Guid="9620f10aeb13f76499f1f4234654d8dd" ResourceName="Scene/MDDSkillFactory" />
-      <Asset Guid="b44bfac45a6cb7f448eb320ecc030a9c" ResourceName="Configs/ResourceCollection" />
+      <Asset Guid="974971ef2b438b84081038c425bb49a0" ResourceName="Animation/Ai/Idle_C" />
+      <Asset Guid="983c07fb948cf08439f8f72fa644bcd9" ResourceName="Prefabs/aki" />
+      <Asset Guid="991eba41b78b72048b0cac3881defb24" ResourceName="Prefabs/Collider/NormalEmtpy" />
+      <Asset Guid="9c8a75433d357be4f9179ef47fdbf626" ResourceName="SkillRes/Skill/KaerThunder" />
+      <Asset Guid="9fe99b83e02351f4cb478218f6ad3efd" ResourceName="SkillRes/SkillTimelineRuntime/kaerlongrujinlingState" />
+      <Asset Guid="a02406ef6e3729146a6529822355ae3c" ResourceName="Animation/Aki/Cry_loop" />
+      <Asset Guid="a3bc4f283ac23f44485792849c79a973" ResourceName="SkillRes/SkillTimelineRuntime/kaerchaozhenshengboState" />
+      <Asset Guid="a4005fd698f8b564ea9bd201cc9afc3d" ResourceName="Animation/Aki/Walk_skirt" />
+      <Asset Guid="a5a0b935c4c57244d929fba1874a45af" ResourceName="Prefabs/Hero/player_Aki" />
+      <Asset Guid="a67ac060190386b439432bf4f19f9aaf" ResourceName="Animation/Ai/Walk_skirt" />
+      <Asset Guid="a8e9b7cb108efc246ae2bfcc5091a339" ResourceName="Prefabs/Effect/fengbaodown" />
+      <Asset Guid="ab54b1dc8bf8ca64d8270d7094c40f40" ResourceName="Animation/Ai/SS_C" />
+      <Asset Guid="ab62e4b884c6ba346a6d9736ef680f63" ResourceName="UI/UIKeyValue" />
+      <Asset Guid="abb75706d6a71ee408321450fe858e79" ResourceName="UI/UIBlackborad" />
+      <Asset Guid="acf2917329552b34999b8d0aeb1c9006" ResourceName="Prefabs/Effect/kaerbingqiang" />
+      <Asset Guid="aec7407a828d50e4d9d53264bb804651" ResourceName="Animation/Ai/Run" />
+      <Asset Guid="aecb26ebc9a241a4e81d1148fc8daac3" ResourceName="Animation/Aki/SS_L2" />
+      <Asset Guid="af64e7ef9b2d6b647b9591e7f8d7146f" ResourceName="Scene/TimeScaleDemo" />
+      <Asset Guid="b017e0fef61c44812a39c9eed84f2434" ResourceName="Prefabs/SimpleEnemy" />
+      <Asset Guid="b3147b021c4517544b77646c87c1cc6e" ResourceName="Scene/EditorSkillTimeline" />
+      <Asset Guid="b34c4cf6d900e8142aa35011d30c7414" ResourceName="Animation/Ai/Cry_nUp" />
+      <Asset Guid="b39ce2922c58fa348bbff84de983885f" ResourceName="Prefabs/Effect/kaercibao" />
+      <Asset Guid="b64ccd45c215fa548ab6217938ea8f3a" ResourceName="SkillRes/PublicBBData/KealBB" />
+      <Asset Guid="b6bd68543bbe7a8488d73b6552e9d670" ResourceName="SkillRes/Skill/kaerhaibinzhiqiang" />
+      <Asset Guid="b6ce65a5430eb214ebe3004f4a11e0e5" ResourceName="UI/SkillSlot" />
+      <Asset Guid="b79c7a2e6c664774fb185a55e33f13ce" ResourceName="SkillRes/SkillTimelineRuntime/kaerdiancimaichongState" />
+      <Asset Guid="b905dcc0fdbfad644b7d5063c83ca74d" ResourceName="Animation/103/103_m_a_spawn" />
+      <Asset Guid="b9c6d8a209a7f7542905ba276dce0c7c" ResourceName="SkillRes/SkillTimelineRuntime/kaerhundunyunshiState" />
+      <Asset Guid="ba6bda0b4412e134ab6b560057d86093" ResourceName="SkillRes/Skill/kaerjisulengque" />
+      <Asset Guid="bb0c393186f9ec74ab99a2b7f9740129" ResourceName="ResourceDataTable/Skill" />
+      <Asset Guid="bbcb0673d6bc4624cb27624074e1518a" ResourceName="Animation/Aki/Damaged" />
+      <Asset Guid="bc9f60fbaabb35d4bac48ddacb2203df" ResourceName="SkillRes/Skill/huanyinjianwu" />
+      <Asset Guid="bcafe0fa3e41d0244a28260f99408f21" ResourceName="SkillRes/SkillTimelineRuntime/kaeryangyanchongjiState" />
+      <Asset Guid="bcfcb1b16ebed974ea8244e270af8d4a" ResourceName="Prefabs/Hero/Ai" />
+      <Asset Guid="bffc6352b1556e84d80998bb957213ab" ResourceName="Animation/Ai/die" />
+      <Asset Guid="c27965ba063c8354b83001ec3aeae1af" ResourceName="Animation/Ai/Idle_B" />
+      <Asset Guid="c29d635e0f7e40649be3a01cdfd4dc12" ResourceName="SkillRes/SkillTimelineRuntime/chuifengState" />
+      <Asset Guid="cca9aaf88f6c5204eb9525cfc306e016" ResourceName="Animation/103/103_m_a_flyloop" />
+      <Asset Guid="cd08a9fe916d63149b63a686e16b057d" ResourceName="SkillRes/Skill/kaerlingdongxunjie" />
+      <Asset Guid="cdb89f09586adfb458916494a99e9978" ResourceName="Animation/103/103_m_a_dash" />
+      <Asset Guid="cf11cb6c2718ef348b3a246bfd146d69" ResourceName="Animation/103/103_m_a_dead" />
+      <Asset Guid="cf1919b6f8b25ae448bf79f2b34c1e89" ResourceName="Animation/Aki/Walk_back" />
+      <Asset Guid="cf4bcbb805791b84dbf7e78895b18faa" ResourceName="Animation/Ai/Atk2" />
+      <Asset Guid="cf817d4534b83124ebad3cbe8b3ae9fc" ResourceName="Animation/Ai/Jump" />
+      <Asset Guid="d022408ffed2c674b8280c5aed4a208e" ResourceName="UI/UIAbilities" />
+      <Asset Guid="d054112ba89de834291f418df62000e2" ResourceName="Animation/Aki/Walk_back_skirt" />
+      <Asset Guid="d151447e3a9cb634b8f1275932b05b4d" ResourceName="Animation/103/103_m_a_skill_01" />
+      <Asset Guid="d8165c51255f61742a56555d0e29e73b" ResourceName="UI/UILoadingForm" />
+      <Asset Guid="d8ed6b7cb5abdf945bc2c58386b16a1e" ResourceName="Animation/Aki/Idle_C" />
+      <Asset Guid="dfd8a30593424a540908de5a19b188fd" ResourceName="Prefabs/Effect/daoguang_green_1" />
+      <Asset Guid="e03af7c44e3e5a04fb883a0026e30ad9" ResourceName="SkillRes/Skill/KaerIce" />
+      <Asset Guid="e62c97e96921800429bcb0e2216d9411" ResourceName="Animation/Aki/Jump" />
+      <Asset Guid="e6756938a9b51484d9e4ff103649784d" ResourceName="Prefabs/Bullet" />
+      <Asset Guid="e72ad27b400d7954aaadae3c8f606d60" ResourceName="Animation/Ai/Run_L" />
+      <Asset Guid="e74e3eba3f26d6145a9a029293554448" ResourceName="Animation/Ai/bye" />
+      <Asset Guid="e95ad56891bb7cf4ab615f708c644d3c" ResourceName="Animation/Aki/Atk2" />
+      <Asset Guid="ee86e6ed4501d2b4a8a93b17ed064029" ResourceName="Scene/KealSkillDemo" />
+      <Asset Guid="ef9db8e4353d5114c828daf1e1a0d33e" ResourceName="Animation/Aki/Run_L" />
+      <Asset Guid="f00656986af069b4b9ab0966e4d6f0c9" ResourceName="SkillRes/SkillTimelineRuntime/kaeryoulingmanbuState" />
       <Asset Guid="f097c29f76fe80045bd98a958e38f9de" ResourceName="Scene/MDDSkillLauncher" />
+      <Asset Guid="f2ef811778b77574c8dc8af591ffd88c" ResourceName="Prefabs/Effect/KaerShengbo" />
+      <Asset Guid="f4eb8cdc095f5c740a4244ebbe40d8ed" ResourceName="Animation/Ai/Cutepose" />
+      <Asset Guid="f62d68aba466f1441b487eb4455507f4" ResourceName="UI/UI_Login" />
+      <Asset Guid="f79e7aa585ce613499ffee02a5b9de3a" ResourceName="ResourceDataTable/Entity" />
+      <Asset Guid="f7d6652c5c73d644486939571c0cab34" ResourceName="SkillRes/Skill/kaernormalhit" />
+      <Asset Guid="f814eaa949b67ce45a2cad7bcd37ff4d" ResourceName="Animation/Aki/Walk_R" />
+      <Asset Guid="f84141cbf0c55dc46b0a5dbf44b27309" ResourceName="Prefabs/Effect/kaeryunshi" />
+      <Asset Guid="f8f59a8d84edc2e4d8b61eaa27cc9483" ResourceName="Prefabs/Effect/kaercibao2" />
+      <Asset Guid="fab8844c002363345b5300a89fd0d60d" ResourceName="SkillRes/Skill/kaerchaozhenshengbo" />
+      <Asset Guid="fb3b8daf8e49c1847bef2921bd9f6bc9" ResourceName="SkillRes/SkillTimelineRuntime/kaerjisulengqueState" />
+      <Asset Guid="fcc0828d0a05ace4b94d0b96ad0109d9" ResourceName="Animation/Ai/Walk_back_skirt" />
+      <Asset Guid="fe069d24414ffab48b6d0b5a5bdcf64a" ResourceName="Animation/Aki/SS_R" />
+      <Asset Guid="fe27e011a897973468ce3c416a204f11" ResourceName="Prefabs/Collider/NormalBoxCollider" />
+      <Asset Guid="ff12b0ef7949099469e26c13f325ee5a" ResourceName="Prefabs/Collider/NormalMoveCollider" />
     </Assets>
   </ResourceCollection>
 </UnityGameFramework>

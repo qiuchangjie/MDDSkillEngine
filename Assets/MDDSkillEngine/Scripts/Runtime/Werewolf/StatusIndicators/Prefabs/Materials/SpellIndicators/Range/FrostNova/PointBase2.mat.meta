@@ -1,8 +1,8 @@
 fileFormatVersion: 2
 guid: 59900c11ced673f41b14cae66389a029
-timeCreated: 1486795700
-licenseType: Store
 NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
   userData: 
-  assetBundleName: 
+  assetBundleName: scripts/runtime/werewolf/statusindicators/prefabs/materials/spellindicators/range/frostnova/pointbase2
   assetBundleVariant: 

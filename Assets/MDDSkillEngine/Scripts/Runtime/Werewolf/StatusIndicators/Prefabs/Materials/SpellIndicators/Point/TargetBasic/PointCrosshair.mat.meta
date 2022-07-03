@@ -1,8 +1,8 @@
 fileFormatVersion: 2
 guid: fcfaa285bc446514fa5db3da6b325389
-timeCreated: 1487336157
-licenseType: Store
 NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
   userData: 
-  assetBundleName: 
+  assetBundleName: scripts/runtime/werewolf/statusindicators/prefabs/materials/spellindicators/point/targetbasic/pointcrosshair
   assetBundleVariant: 

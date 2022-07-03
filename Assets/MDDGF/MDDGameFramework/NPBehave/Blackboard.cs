@@ -372,7 +372,7 @@ namespace MDDGameFramework
         }
 
 
-#if UNITY_EDITOR
+
         public List<string> Keys
         {
             get
@@ -389,7 +389,7 @@ namespace MDDGameFramework
                 }
             }
         }
-
+#if UNITY_EDITOR
         public int NumObservers
         {
             get

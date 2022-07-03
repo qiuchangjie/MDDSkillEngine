@@ -1,8 +1,8 @@
 fileFormatVersion: 2
 guid: ab567e467f606514382fd522752b457b
-timeCreated: 1465537711
-licenseType: Store
 NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
   userData: 
-  assetBundleName: 
+  assetBundleName: scripts/runtime/werewolf/statusindicators/demos/spellindicators/materials/planematerial
   assetBundleVariant: 

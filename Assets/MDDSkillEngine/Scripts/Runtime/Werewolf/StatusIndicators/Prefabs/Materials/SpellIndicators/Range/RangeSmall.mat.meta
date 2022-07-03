@@ -1,8 +1,8 @@
 fileFormatVersion: 2
 guid: 6463b097a140edd418d29ace49b15dcf
-timeCreated: 1494238849
-licenseType: Store
 NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
   userData: 
-  assetBundleName: 
+  assetBundleName: scripts/runtime/werewolf/statusindicators/prefabs/materials/spellindicators/range/rangesmall
   assetBundleVariant: 

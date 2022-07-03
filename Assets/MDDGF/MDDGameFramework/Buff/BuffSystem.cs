@@ -203,6 +203,11 @@ namespace MDDGameFramework
             return null;
         }
 
+        public void RemoveAllBuff()
+        {
+            ClearAllBuff();
+        }
+
         public void ClearAllBuff()
         {
             m_TempBuffs.Clear();

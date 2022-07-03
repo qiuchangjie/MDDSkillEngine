@@ -1,9 +1,9 @@
 fileFormatVersion: 2
 guid: b3a90e9cefb770f4290abba235d26e12
-timeCreated: 1487054608
-licenseType: Store
 ShaderImporter:
+  externalObjects: {}
   defaultTextures: []
+  nonModifiableTextures: []
   userData: 
-  assetBundleName: 
+  assetBundleName: scripts/runtime/werewolf/statusindicators/scripts/shaders/projectorholoradial
   assetBundleVariant: 

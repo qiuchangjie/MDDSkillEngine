@@ -1,8 +1,7 @@
 fileFormatVersion: 2
 guid: bcfcb1b16ebed974ea8244e270af8d4a
-timeCreated: 1484403937
-licenseType: Store
-NativeFormatImporter:
+PrefabImporter:
+  externalObjects: {}
   userData: 
-  assetBundleName: 
+  assetBundleName: prefabs/hero/ai
   assetBundleVariant: 

@@ -46,7 +46,7 @@ namespace MDDSkillEngine
 
             entity.blackboard.Set<VarFloat>("PlayableSpeed",0.3f);
 
-            Log.Error("{0}PlaybleSpeedTestBuff", LogConst.Buff);
+          //  Log.Error("{0}PlaybleSpeedTestBuff", LogConst.Buff);
         }
 
         public override void OnUpdate(IBuffSystem buffSystem, float elapseSeconds, float realElapseSeconds)

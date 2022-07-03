@@ -48,7 +48,17 @@ namespace MDDSkillEngine
             skillTimelineQuene = new Queue<SkillTimeline<T>>();
             coroutineHandlerDic = new Dictionary<SkillTimeline<T>, CoroutineHandler>();
             assetCallbacks = new LoadBinaryCallbacks(LoadCallBack);
-            Game.Resource.LoadBinary(AssetUtility.GetSkillTimelineAsset(GetType().Name), assetCallbacks);
+
+            if (Game.Base.EditorResourceMode)
+            {
+                Game.Resource.LoadBinary(AssetUtility.GetSkillTimelineAsset(GetType().Name), assetCallbacks);
+            }
+            else
+            {
+                Game.Resource.LoadBinary(AssetUtility.GetSkillTimelineAsset(GetType().Name), assetCallbacks);
+            }
+
+           
         }
 
         protected override void OnEnter(IFsm<T> fsm)

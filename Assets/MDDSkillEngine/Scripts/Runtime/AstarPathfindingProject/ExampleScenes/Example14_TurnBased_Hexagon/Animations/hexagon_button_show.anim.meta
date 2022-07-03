@@ -1,8 +1,8 @@
 fileFormatVersion: 2
 guid: 66c93f14e4d21416eb0774bf83c05bdc
-timeCreated: 1453734781
-licenseType: Store
 NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
   userData: 
-  assetBundleName: 
+  assetBundleName: scripts/runtime/astarpathfindingproject/examplescenes/example14_turnbased_hexagon/animations/hexagon_button_show
   assetBundleVariant: 

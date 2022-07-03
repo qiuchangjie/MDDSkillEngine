@@ -39,6 +39,9 @@ namespace MDDSkillEngine
             return null;
         }
 
+
+#if UNITY_EDITOR
+
         [Button]
         private void InitAnimDic()
         {
@@ -81,6 +84,7 @@ namespace MDDSkillEngine
                 Debug.Log("资源路径不存在");
             }
         }
+# endif
     }
 }
 

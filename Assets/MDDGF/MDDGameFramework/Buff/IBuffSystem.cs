@@ -25,6 +25,7 @@ namespace MDDGameFramework
         void RemoveBuff(object from);
         void RemoveBuff(Type type);
         void RemoveBuff(object from,Type type);
+        void RemoveAllBuff();
 
         bool HasBuff(int bufID);
 

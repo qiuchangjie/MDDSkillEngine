@@ -62,12 +62,15 @@ namespace MDDSkillEngine
         protected override void OnInit(object userData)
         {
             base.OnInit(userData);
-                       
+
+           
+
+
             //实体级输入绑定
             //Game.Input.Control.Heros_Normal.S.performed += Use_S;
 
             //组件初始化
-            
+
             //事件
             //Game.Event.Subscribe(SelectEntityEventArgs.EventId, SetIsPlaying);
             //Game.Event.Subscribe(SelectAttackEntityEventArgs.EventId, SetAttack);
@@ -76,12 +79,13 @@ namespace MDDSkillEngine
             //UIAbilities u = Game.UI.GetUIForm(UIFormId.Ablities) as UIAbilities;
             //u.SetEntity(this);
 
-          
+
         }
 
         protected override void OnRecycle()
         {
             base.OnRecycle();
+            
             duration = 0f;
         }
 
@@ -91,9 +95,17 @@ namespace MDDSkillEngine
 
             Name = "Hero103_TimeDemo";
 
+            UnityEngine.Profiling.Profiler.BeginSample("CreatBuffSystem");
             Game.Buff.CreatBuffSystem(this.Entity.Id.ToString(), this);
+            UnityEngine.Profiling.Profiler.EndSample();
+
+            UnityEngine.Profiling.Profiler.BeginSample("CreateFsm");
             Game.Fsm.CreateFsm<Entity, Hero103Attribute>(this);
+            UnityEngine.Profiling.Profiler.EndSample();
+
+            UnityEngine.Profiling.Profiler.BeginSample("CreateSkillSystem");
             Game.Skill.CreateSkillSystem<Entity>(this);
+            UnityEngine.Profiling.Profiler.EndSample();
 
             IFsm<Entity> fsm = Game.Fsm.GetFsm<Entity>(Entity.Id.ToString());
             fsm.Start<Hero103Spawn>();
@@ -124,6 +136,12 @@ namespace MDDSkillEngine
             base.OnHide(isShutdown, userData);
 
             PlayerData = null;
+
+            //IBuffSystem buffSystem = Game.Buff.GetBuffSystem(Id.ToString());
+            //if (buffSystem != null)
+            //{
+            //    buffSystem.RemoveAllBuff();
+            //}
 
             Game.Buff.RemoveBuffSystem(Id.ToString());
             Game.Fsm.DestroyFsm<Entity>(Id.ToString());

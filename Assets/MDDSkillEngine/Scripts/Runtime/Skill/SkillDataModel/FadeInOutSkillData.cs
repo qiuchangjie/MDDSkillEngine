@@ -11,6 +11,7 @@ namespace MDDSkillEngine
     {
         public FadeInOutType type;
 
+# if UNITY_EDITOR
         public override void OnInit(ActionClip data)
         {
             base.OnInit(data);
@@ -23,6 +24,7 @@ namespace MDDSkillEngine
             DataType = SkillDataType.InOut;
             type = clip.Type;
         }
+#endif
     }
 
     public enum FadeInOutType

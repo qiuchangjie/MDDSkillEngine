@@ -1,8 +1,8 @@
 fileFormatVersion: 2
 guid: a1026b362c664644e86319bd4e26bf4e
-timeCreated: 1487335226
-licenseType: Store
 NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
   userData: 
-  assetBundleName: 
+  assetBundleName: scripts/runtime/werewolf/statusindicators/prefabs/materials/spellindicators/linemissile/linemissilebasic4/missilehead
   assetBundleVariant: 

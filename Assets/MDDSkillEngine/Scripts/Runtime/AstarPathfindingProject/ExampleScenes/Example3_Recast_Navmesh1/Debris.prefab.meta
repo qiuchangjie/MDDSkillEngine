@@ -1,4 +1,7 @@
 fileFormatVersion: 2
 guid: deba0a6f7ec514207b7e850591a6f942
-NativeFormatImporter:
+PrefabImporter:
+  externalObjects: {}
   userData: 
+  assetBundleName: scripts/runtime/astarpathfindingproject/examplescenes/example3_recast_navmesh1/debris
+  assetBundleVariant: 

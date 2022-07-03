@@ -5,7 +5,7 @@ namespace MDDGameFramework
     /// <summary>
     /// 有限状态机基类。
     /// </summary>
-    public abstract class FsmBase
+    public abstract class FsmBase 
     {
         private string m_Name;
 

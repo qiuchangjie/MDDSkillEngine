@@ -3,5 +3,5 @@ guid: 4f8f45151a2ed2344ba311cc1360c08c
 PrefabImporter:
   externalObjects: {}
   userData: 
-  assetBundleName: 
+  assetBundleName: prefabs/collider/normalspherecollider
   assetBundleVariant: 

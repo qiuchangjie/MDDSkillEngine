@@ -10,6 +10,7 @@ namespace MDDSkillEngine
     {
         public string AnimationName= "";
 
+# if UNITY_EDITOR
         public override void OnInit(ActionClip data)
         {
             base.OnInit(data);
@@ -25,6 +26,7 @@ namespace MDDSkillEngine
             if (Clip.animationClip != null)
                 AnimationName = Clip.animationClip.name;
         }
+#endif
     }
 }
 

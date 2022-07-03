@@ -18,6 +18,7 @@ namespace MDDSkillEngine
         public string EntityLogic;
         public string EntityName;
 
+# if UNITY_EDITOR
         public override void OnInit(ActionClip data)
         {
             base.OnInit(data);
@@ -31,6 +32,8 @@ namespace MDDSkillEngine
             localRotation = EntityData.localRotation;
             localScale = EntityData.localScale;
         }
+#endif
     }
+
 }
 

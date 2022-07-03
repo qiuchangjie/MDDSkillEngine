@@ -1,7 +1,7 @@
 fileFormatVersion: 2
 guid: 7fdfb9a3e0fdf4df880ebc7fa5f56398
 ModelImporter:
-  serializedVersion: 26
+  serializedVersion: 19301
   internalIDToNameTable:
   - first:
       4: 400000
@@ -28,14 +28,8 @@ ModelImporter:
       43: 4300002
     second: Plane
   - first:
-      74: 7400000
-    second: Default Take //// office
-  - first:
-      74: 7400002
-    second: Default Take //// navmesh
-  - first:
       74: 7400004
-    second: Default Take //// example6
+    second: Default Take
   - first:
       1001: 100100000
     second: DataTemplate __Singleton__
@@ -44,7 +38,7 @@ ModelImporter:
     second: Default Take
   externalObjects: {}
   materials:
-    importMaterials: 0
+    materialImportMode: 0
     materialName: 3
     materialSearch: 1
     materialLocation: 0
@@ -82,6 +76,7 @@ ModelImporter:
     importBlendShapes: 1
     importCameras: 0
     importLights: 0
+    fileIdsGeneration: 1
     swapUVChannels: 0
     generateSecondaryUV: 1
     useFileUnits: 1
@@ -108,7 +103,6 @@ ModelImporter:
     normalSmoothingSource: 0
   referencedClips: []
   importAnimation: 1
-  copyAvatar: 0
   humanDescription:
     serializedVersion: 3
     human: []
@@ -126,9 +120,11 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 1
   humanoidOversampling: 1
+  avatarSetup: 0
   additionalBone: 0
   userData: 
-  assetBundleName: 
+  assetBundleName: scripts/runtime/astarpathfindingproject/examplescenes/example6_navmesh/example6
   assetBundleVariant: 

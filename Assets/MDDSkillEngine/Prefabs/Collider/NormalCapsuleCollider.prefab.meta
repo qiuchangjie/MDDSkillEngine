@@ -3,5 +3,5 @@ guid: 33a1fc3e78dd7dd4db39eab99823dee1
 PrefabImporter:
   externalObjects: {}
   userData: 
-  assetBundleName: 
+  assetBundleName: prefabs/collider/normalcapsulecollider
   assetBundleVariant: 

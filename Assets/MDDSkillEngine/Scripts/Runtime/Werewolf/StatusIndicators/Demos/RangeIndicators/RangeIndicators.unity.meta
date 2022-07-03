@@ -1,8 +1,7 @@
 fileFormatVersion: 2
 guid: c8f32e9bb2f293848afa5609002c800c
-timeCreated: 1493537796
-licenseType: Store
 DefaultImporter:
+  externalObjects: {}
   userData: 
-  assetBundleName: 
+  assetBundleName: scripts/runtime/werewolf/statusindicators/demos/rangeindicators/rangeindicators
   assetBundleVariant: 

@@ -1,4 +1,8 @@
 fileFormatVersion: 2
 guid: 721d41bbaa30847f6b93ae9c25cc0041
 NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
   userData: 
+  assetBundleName: scripts/runtime/astarpathfindingproject/examplescenes/example4_recast_navmesh2/animations/climbtest
+  assetBundleVariant: 

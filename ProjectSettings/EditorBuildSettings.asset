@@ -12,12 +12,6 @@ EditorBuildSettings:
     path: Assets/MDDSkillEngine/Scene/MDDSkillFactory.unity
     guid: 9620f10aeb13f76499f1f4234654d8dd
   - enabled: 1
-    path: Assets/GUIPack-Clean&Minimalist/Demo/Scenes/DarkSkin-DemoHomeScene.unity
-    guid: 68c3b27ea42954caab63ca4b921ad14d
-  - enabled: 1
-    path: Assets/GUIPack-Clean&Minimalist/Demo/Scenes/DarkSkin-DemoScene.unity
-    guid: 3e961f553cad04680b4e67a97dbaf86a
-  - enabled: 1
     path: Assets/MDDSkillEngine/Scene/TimeScaleDemo.unity
     guid: af64e7ef9b2d6b647b9591e7f8d7146f
   m_configObjects:

@@ -5,9 +5,9 @@ using UnityEngine;
 
 namespace MDDGameFramework
 {
-    public abstract class FsmState
+    public abstract class FsmState : IReference
     {
-        
+       public abstract void Clear();     
     }
 
     /// <summary>
@@ -165,6 +165,11 @@ namespace MDDGameFramework
             }
 
             fsmImplement.ChangeState(stateType);
+        }
+
+        public override void Clear()
+        {
+            
         }
     }
 }

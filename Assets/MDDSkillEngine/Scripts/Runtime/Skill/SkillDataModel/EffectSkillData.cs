@@ -23,6 +23,7 @@ namespace MDDSkillEngine
         public Quaternion bezierPathParentRotation;
         public float bezierPathLength;
 
+#if UNITY_EDITOR
         public override void OnInit(ActionClip data)
         {
   
@@ -51,6 +52,7 @@ namespace MDDSkillEngine
                 bezierPathLength = path.length;
             }
         }
+#endif
     }
 }
 

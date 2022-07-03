@@ -55,7 +55,7 @@ namespace MDDSkillEngine
 
             entity.SetState(EntityNormalState.RUN , true);
 
-            Log.Error("{0}PlaybleSpeedTestBuff", LogConst.Buff);
+            //Log.Error("{0}PlaybleSpeedTestBuff", LogConst.Buff);
         }
 
         public override void OnUpdate(IBuffSystem buffSystem, float elapseSeconds, float realElapseSeconds)
