@@ -156,6 +156,11 @@ namespace MDDSkillEngine
                 Log.Error("行为树文件：{0} 读取失败", entityAssetName);
             }
 
+            if (m_GraphDic.Count != 0)
+            {
+                return;
+            }
+
             Log.Info("加载行为树文件：{0}  成功", entityAssetName);
             m_GraphDic.Add(entityAssetName, np);
         }

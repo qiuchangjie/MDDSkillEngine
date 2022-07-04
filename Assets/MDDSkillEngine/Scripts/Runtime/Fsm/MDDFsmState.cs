@@ -9,6 +9,18 @@ namespace MDDSkillEngine
     {
         protected IFsm<T> Fsm;
         protected float FinishTime = 0f;
+
+        /// <summary>
+        /// 状态标识
+        /// </summary>
+        public virtual StateType StateType
+        {
+            get
+            {
+                return StateType.NONE;
+            }
+        }
+
         protected override void OnInit(IFsm<T> fsm)
         {
             base.OnInit(fsm);
@@ -75,5 +87,12 @@ namespace MDDSkillEngine
         protected abstract void Observing(Blackboard.Type type, Variable newValue);
 
 
+    }
+
+    public enum StateType
+    {
+        NONE,
+        IDLE,
+        Control
     }
 }

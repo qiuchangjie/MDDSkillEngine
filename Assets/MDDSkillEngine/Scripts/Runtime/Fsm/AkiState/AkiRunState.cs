@@ -53,6 +53,8 @@ namespace MDDSkillEngine
         {
             VarBoolean varBoolean = (VarBoolean)newValue;
 
+            //可以根据需求自定义条件
+
             //如果为false 且还处在run状态则结束run状态
             if (varBoolean.Value == false)
             {
@@ -69,7 +71,12 @@ namespace MDDSkillEngine
                 return;
             }
 
-            //可以根据需求自定义条件
+            if (((MDDFsmState<Entity>)Fsm.CurrentState).StateType == StateType.Control)
+            {
+                return;
+            }
+
+           
             ChangeState(Fsm, GetType());
         }
     }

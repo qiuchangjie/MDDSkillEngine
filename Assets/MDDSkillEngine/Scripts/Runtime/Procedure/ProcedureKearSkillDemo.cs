@@ -12,7 +12,7 @@ using UnityEngine.InputSystem;
 namespace MDDSkillEngine
 {
     [Procedure]
-    public class ProcedureMDDSkillFactory : MDDProcedureBase
+    public class ProcedureKearSkillDemo : MDDProcedureBase
     {
         List<int> numList = new List<int>();
         List<int> idList = new List<int>();
@@ -23,7 +23,7 @@ namespace MDDSkillEngine
 
         protected override void OnInit(ProcedureOwner procedureOwner)
         {
-            base.OnInit(procedureOwner);         
+            base.OnInit(procedureOwner);
         }
 
         protected override void OnEnter(ProcedureOwner procedureOwner)
@@ -38,8 +38,6 @@ namespace MDDSkillEngine
             Game.NPBehave.GetHelper().PreLoad();
 
             Game.Select.isWork = true;
-
-            uGuiForms.Clear();
 
             uGuiForms.Add((int)Game.UI.OpenUIForm(UIFormId.Blackboard));
             uGuiForms.Add((int)Game.UI.OpenUIForm(UIFormId.Ablities));
@@ -59,37 +57,17 @@ namespace MDDSkillEngine
 
 
             if (Keyboard.current.cKey.wasPressedThisFrame)
-            {
-                //Game.Entity.ShowPlayer(new PlayerData(1001, 10003)
-                //{
-                //    Position = new Vector3(0f, 0f, 0f),
-                //});
-
-                //Game.Entity.ShowPlayer(new PlayerData(1002, 10003)
-                //{
-                //    Position = new Vector3(2f, 0f, 0f),
-                //});
-
-                Game.Entity.ShowEntity(typeof(Player_Normal), "Ai_Player", new PlayerData(1001, 0)
+            {            
+                Game.Entity.ShowEntity(typeof(Player), "Ai_Player", new PlayerData(1001, 0)
                 {
                     Position = new Vector3(0f, 0f, 0f),
                 });
 
-                Game.Entity.ShowEntity(typeof(Hero103), "Hero_103", new HeroData(1002, 0,null)
+                Game.Entity.ShowEntity(typeof(Hero103), "Hero_103", new HeroData(1002, 0, null)
                 {
                     Position = new Vector3(2f, 0f, 0f),
-                });
-
-                //Game.Entity.ShowEntity(typeof(Hero103), "Hero_103", new HeroData(1002, 0,null)
-                //{
-                //    Position = new Vector3(2f, 0f, 0f),
-                //});
-
-                //Game.Entity.ShowEnemy(new EnemyData(Game.Entity.GenerateSerialId(), 10001)
-                //{
-                //    Position = new Vector3(2f, 0f, 0f),
-                //});
-            }             
+                });           
+            }
         }
 
         protected override void OnLeave(ProcedureOwner procedureOwner, bool isShutdown)
@@ -98,14 +76,8 @@ namespace MDDSkillEngine
 
             for (int i = 0; i < uGuiForms.Count; i++)
             {
-                if (Game.UI.HasUIForm(uGuiForms[i]))
-                {
-                    Game.UI.CloseUIForm(uGuiForms[i]);
-                }
-                    
+                Game.UI.CloseUIForm(uGuiForms[i]);
             }
-
-            Game.Select.isWork = false;
         }
 
         #region 技能需要实体预载预实例
@@ -126,7 +98,7 @@ namespace MDDSkillEngine
             if (Colid == 0)
                 return;
 
-            Game.Entity.ShowCollider(new ColliderData(Game.Entity.GenerateSerialId(), Colid,null)
+            Game.Entity.ShowCollider(new ColliderData(Game.Entity.GenerateSerialId(), Colid, null)
             {
                 Position = Vector3.zero,
                 IsPreLoad = true
@@ -139,9 +111,9 @@ namespace MDDSkillEngine
 
             DRSkill[] dRSkills = dtSkill.GetAllDataRows();
 
-            
+
             for (int i = 0; i < dRSkills.Length; i++)
-            {              
+            {
                 for (int j = 0; j < dRSkills[i].EffectAsset.Count; j++)
                 {
                     yield return new WaitForEndOfFrame();
@@ -196,9 +168,9 @@ namespace MDDSkillEngine
 
             if (varBoolean.Value == false)
                 return;
-                      
-            ChangeState(procedureOwner,GetType());
-        }    
+
+            ChangeState(procedureOwner, GetType());
+        }
     }
 
 

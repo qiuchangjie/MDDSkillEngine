@@ -81,6 +81,9 @@ namespace MDDSkillEngine
 
         private void OnClickLeft(CallbackContext ctx)
         {
+            if (!isWork)
+                return;
+
             if (SelectUtility.MouseRayCastByLayer(1 << 8 | 1 << 11, out RaycastHit hit))
             {
                 MDDGameFramework.Runtime.Entity entity = hit.transform.GetComponent<MDDGameFramework.Runtime.Entity>();
@@ -95,6 +98,9 @@ namespace MDDSkillEngine
 
         private void OnClickRight(CallbackContext ctx)
         {
+            if (!isWork)
+                return;
+
             if (SelectUtility.MouseRayCastByLayer(1 << 8 | 1 << 11, out RaycastHit hit))
             {
                 MDDGameFramework.Runtime.Entity entity = hit.transform.GetComponent<MDDGameFramework.Runtime.Entity>();

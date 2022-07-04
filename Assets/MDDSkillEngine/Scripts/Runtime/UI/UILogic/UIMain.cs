@@ -48,12 +48,15 @@ namespace MDDSkillEngine
 
         private void BackToLogin()
         {
-            //Game.Procedure.GetFsm().Blackboard();
+            Game.Procedure.GetFsm().Blackboard.Set<VarInt32>("NextSceneId", 1);
         }
 
         private void QuitApplication()
         {
-
+            Application.Quit();
+#if UNITY_EDITOR
+            UnityEditor.EditorApplication.isPlaying = false;
+#endif
         }
 
 

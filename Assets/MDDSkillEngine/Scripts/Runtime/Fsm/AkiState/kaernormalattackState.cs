@@ -57,7 +57,7 @@ namespace MDDSkillEngine
             if (varBoolean.Value == false)
                 return;
 
-            if (Fsm.GetCurrStateName() == "AkiIdleState")
+            if (((MDDFsmState<Entity>)Fsm.CurrentState).StateType == StateType.IDLE)
             {
                 ISkillSystem skillSystem = Game.Skill.GetSkillSystem(Fsm.Owner.Id);
                 skillSystem.SetSkillReleaseResultType(SkillReleaseResultType.PROGRESS);

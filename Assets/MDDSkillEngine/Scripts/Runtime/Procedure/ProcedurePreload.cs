@@ -58,11 +58,9 @@ namespace MDDSkillEngine
                 }
             }
 
-            procedureOwner.SetData<VarInt32>("NextSceneId",2);
-
             if (Game.Procedure.procedureType == ProcedureType.Game)
             {
-                ChangeState<ProcedureLogin>(procedureOwner);
+                Game.Procedure.GetFsm().Blackboard.Set<VarInt32>("NextSceneId", 1);
             }
             else
             {

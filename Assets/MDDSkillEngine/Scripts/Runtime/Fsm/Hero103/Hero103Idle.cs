@@ -20,6 +20,14 @@ namespace MDDSkillEngine
             }
         }
 
+        public override StateType StateType
+        {
+            get
+            {
+                return StateType.IDLE;
+            }
+        }
+
         protected override void OnInit(IFsm<Entity> fsm)
         {
             base.OnInit(fsm);

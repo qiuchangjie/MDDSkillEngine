@@ -19,6 +19,14 @@ namespace MDDSkillEngine
         private float ChangeTime;
         private bool isChange;
 
+        public override StateType StateType
+        {
+            get
+            {
+                return StateType.Control;
+            }
+        }
+
         protected override void OnInit(IFsm<Entity> fsm)
         {
             base.OnInit(fsm);
@@ -75,6 +83,10 @@ namespace MDDSkillEngine
         {
             VarBoolean varBoolean = (VarBoolean)newValue;
 
+
+
+            //可以根据需求自定跳转条件
+
             if (varBoolean.Value == false)
             {
                 if (Fsm.CurrentState == this)
@@ -83,9 +95,12 @@ namespace MDDSkillEngine
                 }
                 return;
             }
-               
 
-            //可以根据需求自定跳转条件
+            if (((MDDFsmState<Entity>)Fsm.CurrentState).StateType == StateType.Control)
+            {
+                return;
+            }
+
             ChangeState(Fsm, GetType());
         }
 

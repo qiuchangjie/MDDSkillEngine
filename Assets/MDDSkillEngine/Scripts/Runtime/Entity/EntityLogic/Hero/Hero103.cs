@@ -133,6 +133,11 @@ namespace MDDSkillEngine
             }
         }
 
+        /// <summary>
+        /// 时间缩放适配函数
+        /// </summary>
+        /// <param name="type"></param>
+        /// <param name="newValue"></param>
         public override void ObservingPlayableSpeed(Blackboard.Type type, Variable newValue)
         {
             base.ObservingPlayableSpeed(type, newValue);

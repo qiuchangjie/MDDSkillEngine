@@ -8,6 +8,8 @@ namespace MDDSkillEngine
     public class ProcedureLogin : MDDProcedureBase
     {
 
+        int? formID;
+
         protected override void OnInit(ProcedureOwner procedureOwner)
         {
             base.OnInit(procedureOwner);
@@ -18,12 +20,19 @@ namespace MDDSkillEngine
         {
             base.OnEnter(procedureOwner);
 
-            Game.UI.OpenUIForm(UIFormId.Login);
+            formID = Game.UI.OpenUIForm(UIFormId.Login);
         }
 
         protected override void OnUpdate(ProcedureOwner procedureOwner, float elapseSeconds, float realElapseSeconds)
         {
             base.OnUpdate(procedureOwner, elapseSeconds, realElapseSeconds);
+        }
+
+        protected override void OnLeave(ProcedureOwner procedureOwner, bool isShutdown)
+        {
+            base.OnLeave(procedureOwner, isShutdown);
+
+            Game.UI.CloseUIForm((int)formID);
         }
     }
 }
