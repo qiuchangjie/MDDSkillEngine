@@ -61,20 +61,29 @@ namespace MDDSkillEngine
         protected override void OnInit(object userData)
         {
             base.OnInit(userData);
-            
+                                      
+        }
+
+
+        protected override void OnShow(object userData)
+        {
+            base.OnShow(userData);
+
+            Name = "Aki__";
+
             //实体级输入绑定
             Game.Input.Control.Heros_Normal.S.performed += Use_S;
 
             //组件初始化
-            Game.Buff.CreatBuffSystem(this.Entity.Id.ToString(),this);
-            Game.Fsm.CreateFsm<Entity, AkiStateAttribute>(this);       
+            Game.Buff.CreatBuffSystem(this.Entity.Id.ToString(), this);
+            Game.Fsm.CreateFsm<Entity, AkiStateAttribute>(this);
             Game.Skill.CreateSkillSystem<Player>(this);
 
-          
+
             //事件
             Game.Event.Subscribe(SelectEntityEventArgs.EventId, SetIsPlaying);
             Game.Event.Subscribe(SelectAttackEntityEventArgs.EventId, SetAttack);
-                     
+
             //ui
             UIAbilities u = Game.UI.GetUIForm(UIFormId.Ablities) as UIAbilities;
             u.SetEntity(this);
@@ -95,33 +104,30 @@ namespace MDDSkillEngine
             skillSystem.AddSkill(10017);
             skillSystem.AddSkill(10018);
 
+            IFsm<Entity> fsm = Game.Fsm.GetFsm<Entity>(Entity.Id.ToString());
+            fsm.Start<AkiIdleState>();
+
+            Game.HpBar.ShowHPBar(this, 1, 1);
+            Game.Select.InitPlayer(this);
+
             PlayerData = userData as PlayerData;
             if (PlayerData == null)
             {
                 Log.Error("PlayerData is invalid.");
                 return;
-            }         
-        }
-
-
-        protected override void OnShow(object userData)
-        {
-            base.OnShow(userData);
-
-            Name = "Aki__";
-
-            IFsm<Entity> fsm = Game.Fsm.GetFsm<Entity>(Entity.Id.ToString());
-
-            fsm.Start<AkiIdleState>();
-
-            Game.HpBar.ShowHPBar(this, 1, 1);
-            Game.Select.InitPlayer(this);
+            }
         }
 
         protected override void OnHide(bool isShutdown, object userData)
         {
             base.OnHide(isShutdown, userData);
 
+            PlayerData = null;
+
+
+            Game.Buff.RemoveBuffSystem(Id.ToString());
+            Game.Fsm.DestroyFsm<Entity>(Id.ToString());
+            Game.Skill.RemoveSkillSystem(Id);
 
             Game.HpBar.HideHPBar(this);
             Game.Event.Unsubscribe(SelectEntityEventArgs.EventId, SetIsPlaying);

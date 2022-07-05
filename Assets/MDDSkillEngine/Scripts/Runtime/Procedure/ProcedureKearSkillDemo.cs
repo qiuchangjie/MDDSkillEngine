@@ -58,12 +58,12 @@ namespace MDDSkillEngine
 
             if (Keyboard.current.cKey.wasPressedThisFrame)
             {            
-                Game.Entity.ShowEntity(typeof(Player), "Ai_Player", new PlayerData(1001, 0)
+                Game.Entity.ShowEntity(typeof(Player), "Ai_Player", new PlayerData(1003, 0)
                 {
                     Position = new Vector3(0f, 0f, 0f),
                 });
 
-                Game.Entity.ShowEntity(typeof(Hero103), "Hero_103", new HeroData(1002, 0, null)
+                Game.Entity.ShowEntity(typeof(Hero103), "Hero_103", new HeroData(1004, 0, null)
                 {
                     Position = new Vector3(2f, 0f, 0f),
                 });           
@@ -74,9 +74,15 @@ namespace MDDSkillEngine
         {
             base.OnLeave(procedureOwner, isShutdown);
 
+            Game.Select.isWork = false;
+
             for (int i = 0; i < uGuiForms.Count; i++)
             {
-                Game.UI.CloseUIForm(uGuiForms[i]);
+                if (Game.UI.HasUIForm(uGuiForms[i]))
+                {
+                    Game.UI.CloseUIForm(uGuiForms[i]);
+                }
+                
             }
         }
 

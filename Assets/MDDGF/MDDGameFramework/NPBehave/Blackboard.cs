@@ -128,7 +128,23 @@ namespace MDDGameFramework
 
                 ReferencePool.Release(item.Value);
             }
-        
+
+            foreach (Notification notification in notificationsDispatch)
+            {
+                if (!this.observers.ContainsKey(notification.key))
+                {
+                    //                Debug.Log("1 do not notify for key:" + notification.key + " value: " + notification.value);
+                    continue;
+                }
+
+                List<System.Action<Type, Variable>> observers = GetObserverList(this.observers, notification.key);
+
+                for (int i = observers.Count - 1; i >= 0; i--)
+                {
+                    RemoveObserver(notification.key, observers[i]);
+                }             
+            }
+
             data.Clear();
             observers.Clear();
             isNotifiyng = false;

@@ -6,7 +6,7 @@ namespace MDDSkillEngine
 {
     public class SkillSystem<T> : ISkillSystem, IReference where T : Entity
     {
-        private Dictionary<int, Skill> skillDic;
+        protected Dictionary<int, Skill> skillDic;
 
         /// <summary>
         /// 位置映射表
@@ -14,7 +14,7 @@ namespace MDDSkillEngine
         /// 用于临时存储技能在技能ui上的位置信息
         /// <skillid, index>
         /// </summary>
-        private Dictionary<int, int> skillIndex;
+        protected Dictionary<int, int> skillIndex;
 
         /// <summary>
         /// 技能系统关联的公共黑板
@@ -47,14 +47,14 @@ namespace MDDSkillEngine
 
         public SkillSystem()
         {
-            skillDic = new Dictionary<int, Skill>();
-            skillIndex = new Dictionary<int, int>() 
-            {
-                {0, 0},
-                {1, 0},                    
-                {2, 0},
-                {3, 0},
-            };           
+            //skillDic = new Dictionary<int, Skill>();
+            //skillIndex = new Dictionary<int, int>() 
+            //{
+            //    {0, 0},
+            //    {1, 0},                    
+            //    {2, 0},
+            //    {3, 0},
+            //};           
         }
 
 
@@ -163,7 +163,7 @@ namespace MDDSkillEngine
             else
             {
                 SetSkillReleaseResultType(SkillReleaseResultType.PROGRESS);
-                Log.Error("{0}Skill{1}未关联state", LogConst.Skill, id);
+                Log.Info("{0}Skill{1}未关联state", LogConst.Skill, id);
             }
 
             Game.Event.Fire(this, ReleaseSkillEventArgs.Create(this, id));
@@ -274,9 +274,7 @@ namespace MDDSkillEngine
         }
 
         public void Clear()
-        {
-            m_Owner = null;
-
+        {        
             if (m_PublicBlackboard != null)
             {
                 ReferencePool.Release(m_PublicBlackboard);
@@ -285,9 +283,13 @@ namespace MDDSkillEngine
           
             foreach (var v in skillDic)
             {
+                IDataTable<DRSkill> dtSkill = Game.DataTable.GetDataTable<DRSkill>();
+                DRSkill drSkill = dtSkill.GetDataRow(v.Key);
+                Game.NPBehave.RemoveBehaviourTree(new NameNamePair(drSkill.AssetName, m_Owner.Id.ToString()));
                 ReferencePool.Release(v.Value);
             }
 
+            m_Owner = null;
             skillDic = null;
         }
     }

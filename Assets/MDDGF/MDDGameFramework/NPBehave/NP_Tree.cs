@@ -61,8 +61,12 @@ namespace MDDGameFramework
 
         public virtual void Clear()
         {
-            ReferencePool.Release(Blackboard);
-
+            if (m_MainRoot != null)
+            {
+                ReferencePool.Release(Blackboard);
+                m_MainRoot.Cancel();                
+            }
+               
             for (int i = 0; i < node_Tree.Count; i++)
             {
                 ReferencePool.Release(node_Tree[i]);

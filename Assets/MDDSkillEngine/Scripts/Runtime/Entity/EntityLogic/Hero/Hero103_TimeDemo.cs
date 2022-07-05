@@ -200,6 +200,9 @@ namespace MDDSkillEngine
                 case EntityNormalState.FLYSKY:
                     Game.Fsm.GetFsm<Entity>(Id.ToString()).SetData<VarBoolean>(typeof(Hero103FlyUp).Name, b);
                     break;
+                case EntityNormalState.SPACEWALK:
+                    Game.Fsm.GetFsm<Entity>(Id.ToString()).SetData<VarBoolean>(typeof(Hero103SpaceWalk).Name, b);
+                    break;
             }
         }
 

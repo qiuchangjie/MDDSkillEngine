@@ -73,7 +73,7 @@ namespace MDDGameFramework
         public void RemoveBuffSystem(string name)
         {
             if (m_BuffSystems.TryGetValue(name, out BuffSystem buffsystem))
-            {
+            {       
                 ReferencePool.Release(buffsystem);
                 m_BuffSystems.Remove(name);
                 

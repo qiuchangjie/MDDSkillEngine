@@ -62,17 +62,7 @@ namespace MDDSkillEngine
         {
             base.OnInit(userData);
 
-            //实体级输入绑定
-            Game.Input.Control.Heros_Normal.S.performed += Use_S;
-
-            //组件初始化
-            Game.Buff.CreatBuffSystem(this.Entity.Id.ToString(), this);
-            Game.Fsm.CreateFsm<Entity, Hero103Attribute>(this);
-            Game.Skill.CreateSkillSystem<Entity>(this);
-
-            //事件
-            Game.Event.Subscribe(SelectEntityEventArgs.EventId, SetIsPlaying);
-            Game.Event.Subscribe(SelectAttackEntityEventArgs.EventId, SetAttack);
+           
 
             //ui
             //UIAbilities u = Game.UI.GetUIForm(UIFormId.Ablities) as UIAbilities;
@@ -93,6 +83,18 @@ namespace MDDSkillEngine
 
             Name = "Hero103";
 
+            //实体级输入绑定
+            Game.Input.Control.Heros_Normal.S.performed += Use_S;
+
+            //组件初始化
+            Game.Buff.CreatBuffSystem(this.Entity.Id.ToString(), this);
+            Game.Fsm.CreateFsm<Entity, Hero103Attribute>(this);
+            Game.Skill.CreateSkillSystem<Entity>(this);
+
+            //事件
+            Game.Event.Subscribe(SelectEntityEventArgs.EventId, SetIsPlaying);
+            Game.Event.Subscribe(SelectAttackEntityEventArgs.EventId, SetAttack);
+
             if (PlayerData.m_Owner != null)
             {
                 Game.Entity.AttachEntity(Id, PlayerData.m_Owner.Id);
@@ -111,6 +113,9 @@ namespace MDDSkillEngine
         {
             base.OnHide(isShutdown, userData);
 
+            Game.Buff.RemoveBuffSystem(Id.ToString());
+            Game.Fsm.DestroyFsm<Entity>(Id.ToString());
+            Game.Skill.RemoveSkillSystem(Id);
 
             Game.HpBar.HideHPBar(this);
             Game.Event.Unsubscribe(SelectEntityEventArgs.EventId, SetIsPlaying);

@@ -104,9 +104,15 @@ namespace MDDGameFramework
 
         public void RemoveBuff(BuffBase buf)
         {
-            buf.OnFininsh(this);
-            buffs.Remove(buf);
-            ReferencePool.Release(buf);
+            for (int i = buffs.Count - 1; i >= 0; i--)
+            {
+                if (buffs[i] == buf)
+                {
+                    buffs[i].OnFininsh(this);
+                    ReferencePool.Release(buffs[i]);
+                    buffs.RemoveAt(i);
+                }
+            }
         }
 
         public void RemoveBuff(object from)
@@ -212,9 +218,11 @@ namespace MDDGameFramework
         {
             m_TempBuffs.Clear();
 
-            foreach (var v in buffs)
+            for (int i = buffs.Count - 1; i >= 0; i--)
             {
-                RemoveBuff(v);
+                buffs[i].OnFininsh(this);
+                ReferencePool.Release(buffs[i]);
+                buffs.RemoveAt(i);
             }
 
             buffs.Clear();
@@ -260,10 +268,8 @@ namespace MDDGameFramework
 
         public void Clear()
         {
-            foreach (var item in buffs)
-            {
-                ReferencePool.Release(item);
-            }
+
+            ClearAllBuff();
 
             buffs.Clear();
             m_Owner = null;

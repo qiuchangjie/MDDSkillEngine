@@ -19,14 +19,20 @@ namespace MDDSkillEngine
         {
             KealSkillSystem skillSystem = ReferencePool.Acquire<KealSkillSystem>();
             skillSystem.m_Owner = Owner as Player;
+            skillSystem.skillDic = new Dictionary<int, Skill>();
+            skillSystem.skillIndex = new Dictionary<int, int>()
+            {
+                {0, 0},
+                {1, 0},
+                {2, 0},
+                {3, 0},
+            };
             return skillSystem;
         }
 
         public void UpdateKealBuffQueue(BuffBase buff)
         {
-            ISkillSystem skillSystem = Game.Skill.GetSkillSystem(1001);
-
-            Blackboard blackboard = skillSystem.GetPubBlackboard();
+            Blackboard blackboard = this.GetPubBlackboard();
             int length;
             length = buffQueue.Count;
 

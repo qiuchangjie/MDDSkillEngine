@@ -115,7 +115,9 @@ namespace MDDSkillEngine
                 if (skillSystem.GetPubBlackboard() == null)
                 {
                     Blackboard blackboard = Blackboard.Create(kaelBlackboard.BBValues, root.Clock);
+                    //设置公共黑板
                     skillSystem.SetBlackboard(blackboard);
+                    //设置技能黑板
                     root.SetBlackBoard(Blackboard.Create(nP.BBValues, blackboard, root.Clock));
                     Log.Info("{0}设置公共黑板成功", LogConst.NPBehave);
                 }
@@ -156,7 +158,7 @@ namespace MDDSkillEngine
                 Log.Error("行为树文件：{0} 读取失败", entityAssetName);
             }
 
-            if (m_GraphDic.Count != 0)
+            if (m_GraphDic.ContainsKey(entityAssetName))
             {
                 return;
             }

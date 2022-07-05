@@ -62,6 +62,18 @@ namespace MDDSkillEngine
         {
             base.OnInit(userData);
 
+           
+
+         
+        }
+
+
+        protected override void OnShow(object userData)
+        {
+            base.OnShow(userData);
+
+            Name = "Aki__";
+
             //实体级输入绑定
             Game.Input.Control.Heros_Normal.S.performed += Use_S;
 
@@ -79,24 +91,16 @@ namespace MDDSkillEngine
             UIAbilities u = Game.UI.GetUIForm(UIFormId.Ablities) as UIAbilities;
             u.SetEntity(this);
 
+            IFsm<Entity> fsm = Game.Fsm.GetFsm<Entity>(Entity.Id.ToString());
+
+            fsm.Start<AkiIdleState>();
+
             PlayerData = userData as PlayerData;
             if (PlayerData == null)
             {
                 Log.Error("PlayerData is invalid.");
                 return;
             }
-        }
-
-
-        protected override void OnShow(object userData)
-        {
-            base.OnShow(userData);
-
-            Name = "Aki__";
-
-            IFsm<Entity> fsm = Game.Fsm.GetFsm<Entity>(Entity.Id.ToString());
-
-            fsm.Start<AkiIdleState>();
 
             Game.HpBar.ShowHPBar(this, 1, 1);
             Game.Select.InitPlayer(this);
@@ -106,6 +110,12 @@ namespace MDDSkillEngine
         {
             base.OnHide(isShutdown, userData);
 
+            PlayerData = null;
+
+
+            Game.Buff.RemoveBuffSystem(Id.ToString());
+            Game.Fsm.DestroyFsm<Entity>(Id.ToString());
+            Game.Skill.RemoveSkillSystem(Id);
 
             Game.HpBar.HideHPBar(this);
             Game.Event.Unsubscribe(SelectEntityEventArgs.EventId, SetIsPlaying);
