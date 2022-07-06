@@ -13,7 +13,8 @@
         "UnityEngine.InputSystem",
         "Unity.InputSystem",
         "OdinSerializer",
-        "Sirenix.OdinInspector"
+        "Sirenix.OdinInspector",
+        "Cinemachine"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

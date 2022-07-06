@@ -143,6 +143,8 @@ namespace MDDSkillEngine
             //    buffSystem.RemoveAllBuff();
             //}
 
+            Game.Input.Control.Heros_Normal.S.performed -= Use_S;
+
             Game.Buff.RemoveBuffSystem(Id.ToString());
             Game.Fsm.DestroyFsm<Entity>(Id.ToString());
             Game.Skill.RemoveSkillSystem(Id);

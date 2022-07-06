@@ -224,8 +224,6 @@ namespace MDDGameFramework
                 ReferencePool.Release(buffs[i]);
                 buffs.RemoveAt(i);
             }
-
-            buffs.Clear();
         }
 
         internal override void AddBuff(string buffName, object from,object userData=null)
@@ -271,6 +269,7 @@ namespace MDDGameFramework
 
             ClearAllBuff();
 
+            m_PlayableSpeed = 1f;
             buffs.Clear();
             m_Owner = null;
             m_TempBuffs.Clear();

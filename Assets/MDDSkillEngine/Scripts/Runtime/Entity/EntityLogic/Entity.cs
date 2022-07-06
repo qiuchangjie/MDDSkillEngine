@@ -97,7 +97,21 @@ namespace MDDSkillEngine
         protected override void OnRecycle()
         {
             base.OnRecycle();
+            if (CachedAnimancer != null)
+            {
+                CachedAnimancer.Playable.Speed = 1f;
+            }
 
+            if(Rigidbody!=null)
+            {
+                Rigidbody.velocity = Vector3.zero;
+                Rigidbody.angularVelocity = Vector3.zero;   
+            }
+
+            if (CacheMove != null)
+            {
+                CacheMove.PlayableSpeed = 1;
+            }
             blackboard.RemoveObserver("PlayableSpeed", CacheAction);
         }
 
@@ -118,8 +132,10 @@ namespace MDDSkillEngine
             CachedTransform.localRotation = m_EntityData.Rotation;
             CachedTransform.localScale = m_EntityData.LocalScale;
 
+            blackboard.Set<VarFloat>("PlayableSpeed", 1);
             blackboard.AddObserver("PlayableSpeed",CacheAction);
 
+           
             wasDuration = 0;
 
             if (m_EntityData.IsPreLoad)
@@ -191,7 +207,7 @@ namespace MDDSkillEngine
 
                 if (CacheMove != null)
                 {
-                    CacheMove.speed = varFloat.Value;
+                    CacheMove.PlayableSpeed = varFloat.Value;
                 }
             }           
         }

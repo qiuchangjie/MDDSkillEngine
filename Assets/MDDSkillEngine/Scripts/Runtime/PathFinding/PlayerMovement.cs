@@ -13,7 +13,19 @@ namespace MDDSkillEngine
 
         public Seeker seeker;
 
-        public Entity player;
+        public Entity player
+        {
+            get
+            {
+                if (m_player == null)
+                {
+                    m_player=GetComponent<Entity>();
+                }
+                return m_player;
+            }
+        }
+
+        public Entity m_player;
 
         public Transform tr;
 
@@ -201,7 +213,7 @@ namespace MDDSkillEngine
 
         private void Start()
         {
-            player = GetComponent<Entity>();
+            m_player = GetComponent<Entity>();
             seeker.pathCallback += OnPathComplete;
             startHasRun = true;
             Init();
@@ -325,6 +337,7 @@ namespace MDDSkillEngine
             Log.Info("寻路结束");
 
             interpolator.SetPath(null);
+
 
             player.SetState(EntityNormalState.RUN,false);
         }

@@ -134,6 +134,8 @@ namespace MDDSkillEngine
             Game.Fsm.DestroyFsm<Entity>(Id.ToString());
             Game.Skill.RemoveSkillSystem(Id);
 
+            Game.Input.Control.Heros_Normal.S.performed -= Use_S;
+
             Game.HpBar.HideHPBar(this);
             Game.Event.Unsubscribe(SelectEntityEventArgs.EventId, SetIsPlaying);
             Game.Event.Unsubscribe(SelectAttackEntityEventArgs.EventId, SetAttack);

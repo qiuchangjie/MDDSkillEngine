@@ -47,6 +47,7 @@ GameObject:
   - component: {fileID: 7330711302637377850}
   - component: {fileID: -3026045131328193265}
   - component: {fileID: 8153232071386298889}
+  - component: {fileID: 2539206215249114900}
   m_Layer: 11
   m_Name: Hero_103
   m_TagString: Untagged
@@ -868,6 +869,29 @@ MonoBehaviour:
   repathRate: 0.5
   enableRotation: 1
   switchPathInterpolationSpeed: 5
+--- !u!114 &2539206215249114900
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 313282169146293908}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b090bec917bbe4c3bbc612ef13f7c4a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 1
+  useRaycasting: 1
+  mask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  thickRaycast: 0
+  thickRaycastRadius: 0
+  use2DPhysics: 0
+  raycastOffset: {x: 0, y: 0, z: 0}
+  useGraphRaycasting: 0
+  quality: 3
 --- !u!1 &372960670890594168
 GameObject:
   m_ObjectHideFlags: 0

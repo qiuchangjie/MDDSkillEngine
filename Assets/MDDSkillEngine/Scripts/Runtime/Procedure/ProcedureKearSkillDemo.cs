@@ -30,10 +30,12 @@ namespace MDDSkillEngine
         {
             base.OnEnter(procedureOwner);
 
-            hander = PreLoadSkillAsset().Start((b) =>
-            {
-                ReferencePool.Release(hander);
-            });
+            //hander = PreLoadSkillAsset().Start((b) =>
+            //{
+            //    ReferencePool.Release(hander);
+            //});
+
+            Create().Start();
 
             Game.NPBehave.GetHelper().PreLoad();
 
@@ -41,7 +43,7 @@ namespace MDDSkillEngine
 
             uGuiForms.Add((int)Game.UI.OpenUIForm(UIFormId.Blackboard));
             uGuiForms.Add((int)Game.UI.OpenUIForm(UIFormId.Ablities));
-            uGuiForms.Add((int)Game.UI.OpenUIForm(UIFormId.SkillList));
+            //uGuiForms.Add((int)Game.UI.OpenUIForm(UIFormId.SkillList));
             uGuiForms.Add((int)Game.UI.OpenUIForm(UIFormId.Drag));
             uGuiForms.Add((int)Game.UI.OpenUIForm(UIFormId.Main));
 
@@ -56,18 +58,36 @@ namespace MDDSkillEngine
             base.OnUpdate(procedureOwner, elapseSeconds, realElapseSeconds);
 
 
-            if (Keyboard.current.cKey.wasPressedThisFrame)
-            {            
-                Game.Entity.ShowEntity(typeof(Player), "Ai_Player", new PlayerData(1003, 0)
-                {
-                    Position = new Vector3(0f, 0f, 0f),
-                });
+            //if (Keyboard.current.cKey.wasPressedThisFrame)
+            //{            
+            //    Game.Entity.ShowEntity(typeof(Player), "Ai_Player", new PlayerData(1003, 0)
+            //    {
+            //        Position = new Vector3(0f, 0f, 0f),
+            //    });
 
-                Game.Entity.ShowEntity(typeof(Hero103), "Hero_103", new HeroData(1004, 0, null)
-                {
-                    Position = new Vector3(2f, 0f, 0f),
-                });           
-            }
+            //    Game.Entity.ShowEntity(typeof(Hero103), "Hero_103", new HeroData(1004, 0, null)
+            //    {
+            //        Position = new Vector3(2f, 0f, 0f),
+            //    });           
+            //}
+        }
+
+        private IEnumerator Create()
+        {
+            yield return YieldHelper.WaitForSeconds(2f);
+
+
+            Game.Entity.ShowEntity(typeof(Player), "Ai_Player", new PlayerData(1003, 0)
+            {
+                Position = new Vector3(0f, 0f, 0f),
+            });
+
+            Game.Entity.ShowEntity(typeof(Hero103), "Hero_103", new HeroData(1004, 0, null)
+            {
+                Position = new Vector3(2f, 0f, 0f),
+            });
+
+
         }
 
         protected override void OnLeave(ProcedureOwner procedureOwner, bool isShutdown)

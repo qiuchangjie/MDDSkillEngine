@@ -30,10 +30,12 @@ namespace MDDSkillEngine
         {
             base.OnEnter(procedureOwner);
 
-            hander = PreLoadSkillAsset().Start((b) =>
-            {
-                ReferencePool.Release(hander);
-            });
+            //hander = PreLoadSkillAsset().Start((b) =>
+            //{
+            //    ReferencePool.Release(hander);
+            //});
+
+            Create().Start();
 
             Game.NPBehave.GetHelper().PreLoad();
 
@@ -58,40 +60,46 @@ namespace MDDSkillEngine
             base.OnUpdate(procedureOwner, elapseSeconds, realElapseSeconds);
 
 
-            if (Keyboard.current.cKey.wasPressedThisFrame)
-            {
-                //Game.Entity.ShowPlayer(new PlayerData(1001, 10003)
-                //{
-                //    Position = new Vector3(0f, 0f, 0f),
-                //});
+            //if (Keyboard.current.cKey.wasPressedThisFrame)
+            //{
+            //    //Game.Entity.ShowPlayer(new PlayerData(1001, 10003)
+            //    //{
+            //    //    Position = new Vector3(0f, 0f, 0f),
+            //    //});
 
-                //Game.Entity.ShowPlayer(new PlayerData(1002, 10003)
-                //{
-                //    Position = new Vector3(2f, 0f, 0f),
-                //});
+            //    //Game.Entity.ShowPlayer(new PlayerData(1002, 10003)
+            //    //{
+            //    //    Position = new Vector3(2f, 0f, 0f),
+            //    //});
 
-                Game.Entity.ShowEntity(typeof(Player_Normal), "Ai_Player", new PlayerData(1001, 0)
-                {
-                    Position = new Vector3(0f, 0f, 0f),
-                });
+               
 
-                Game.Entity.ShowEntity(typeof(Hero103), "Hero_103", new HeroData(1002, 0,null)
-                {
-                    Position = new Vector3(2f, 0f, 0f),
-                });
+            //    //Game.Entity.ShowEntity(typeof(Hero103), "Hero_103", new HeroData(1002, 0,null)
+            //    //{
+            //    //    Position = new Vector3(2f, 0f, 0f),
+            //    //});
 
-                //Game.Entity.ShowEntity(typeof(Hero103), "Hero_103", new HeroData(1002, 0,null)
-                //{
-                //    Position = new Vector3(2f, 0f, 0f),
-                //});
-
-                //Game.Entity.ShowEnemy(new EnemyData(Game.Entity.GenerateSerialId(), 10001)
-                //{
-                //    Position = new Vector3(2f, 0f, 0f),
-                //});
-            }             
+            //    //Game.Entity.ShowEnemy(new EnemyData(Game.Entity.GenerateSerialId(), 10001)
+            //    //{
+            //    //    Position = new Vector3(2f, 0f, 0f),
+            //    //});
+            //}             
         }
 
+        private IEnumerator Create()
+        {
+            yield return YieldHelper.WaitForSeconds(2f);
+
+            Game.Entity.ShowEntity(typeof(Player_Normal), "Ai_Player", new PlayerData(1001, 0)
+            {
+                Position = new Vector3(0f, 0f, 0f),
+            });
+
+            Game.Entity.ShowEntity(typeof(Hero103), "Hero_103", new HeroData(1002, 0, null)
+            {
+                Position = new Vector3(2f, 0f, 0f),
+            });
+        }
         protected override void OnLeave(ProcedureOwner procedureOwner, bool isShutdown)
         {
             base.OnLeave(procedureOwner, isShutdown);
@@ -140,16 +148,16 @@ namespace MDDSkillEngine
 
             
             for (int i = 0; i < dRSkills.Length; i++)
-            {              
+            {
+                yield return YieldHelper.WaitForEndOfFrame;
+                
                 for (int j = 0; j < dRSkills[i].EffectAsset.Count; j++)
                 {
-                    yield return new WaitForEndOfFrame();
                     PreInitEffect(dRSkills[i].EffectAsset[j]);
                 }
 
                 for (int j = 0; j < dRSkills[i].ColliderEntity.Count; j++)
                 {
-                    yield return new WaitForEndOfFrame();
                     PreInitCol(dRSkills[i].ColliderEntity[j]);
                 }
 
@@ -175,7 +183,6 @@ namespace MDDSkillEngine
                     {
                         for (int k = 0; k < numList[j]; k++)
                         {
-                            yield return new WaitForEndOfFrame();
                             PreInitEffect(idList[j]);
                         }
                     }
@@ -184,7 +191,6 @@ namespace MDDSkillEngine
                 idList.Clear();
             }
 
-            yield return new WaitForSecondsRealtime(0.5f);
         }
 
         #endregion

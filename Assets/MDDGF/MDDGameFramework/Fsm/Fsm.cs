@@ -316,6 +316,7 @@ namespace MDDGameFramework
             m_CurrentState = null;
             m_CurrentStateTime = 0f;
             m_IsDestroyed = true;
+            m_PlayableSpeed = 1f;
         }
 
         /// <summary>

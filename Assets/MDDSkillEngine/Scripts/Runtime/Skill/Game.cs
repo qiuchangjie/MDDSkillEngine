@@ -118,6 +118,12 @@ namespace MDDSkillEngine
             private set;
         }
 
+        public static CameraComponent Camera
+        {
+            get;
+            private set;
+        }
+
         private void InitMDDComponent()
         {
             Buff = MDDGameEntry.GetComponent<BuffComponent>();
@@ -138,6 +144,7 @@ namespace MDDSkillEngine
             Skill = MDDGameEntry.GetComponent<SkillComponent>();
             Input = MDDGameEntry.GetComponent<InputSystemComponent>();
             Coroutine = MDDGameEntry.GetComponent<CoroutineComponent>();
+            Camera = MDDGameEntry.GetComponent<CameraComponent>();
         }
     }
 }
