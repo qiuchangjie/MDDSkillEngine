@@ -30,6 +30,8 @@ namespace MDDSkillEngine
 
         private void SetAttack(object sender, GameEventArgs e)
         {
+            return;
+
             SelectAttackEntityEventArgs n = (SelectAttackEntityEventArgs)e;
 
             if (n.entity == this)

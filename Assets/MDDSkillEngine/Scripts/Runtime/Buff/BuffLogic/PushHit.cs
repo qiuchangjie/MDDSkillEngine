@@ -82,7 +82,7 @@ namespace MDDSkillEngine
             base.OnFixedUpdate(buffSystem, elapseSeconds, realElapseSeconds);
             Entity entity = Target as Entity;
             Log.Error("{0}pushing", LogConst.Buff);
-            entity.Rigidbody.AddRelativeForce(hitData.HitDir * drBuff.Specializedfields[0] * elapseSeconds, ForceMode.Impulse);
+            entity.Rigidbody.AddForce(hitData.HitDir * drBuff.Specializedfields[0] * elapseSeconds, ForceMode.Impulse);
         }
 
 

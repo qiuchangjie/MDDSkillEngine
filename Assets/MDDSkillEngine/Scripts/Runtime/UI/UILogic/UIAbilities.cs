@@ -74,6 +74,7 @@ namespace MDDSkillEngine
                         for (int i = 0; i < kaerablitiesSlots.Count; i++)
                         {
                             kaerablitiesSlots[i].gameObject.SetActive(true);
+                            kaerablitiesSlots[i].Init(kaerablitiesSlots[i].m_SkillSystem, kaerablitiesSlots[i].SkillID);
                         }
                     }
                     else

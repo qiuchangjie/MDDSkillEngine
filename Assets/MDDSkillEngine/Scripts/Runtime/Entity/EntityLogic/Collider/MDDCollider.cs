@@ -26,6 +26,19 @@ namespace MDDSkillEngine
             data = userData as ColliderData;
             base.OnShow(userData);
 
+            //碰撞体层级设置
+            if (data.Owner != null)
+            {
+                if (data.Owner.gameObject.layer == LayerMask.NameToLayer("player"))
+                {
+                    gameObject.layer = LayerMask.NameToLayer("Collider");
+                }
+                else if (data.Owner.gameObject.layer == LayerMask.NameToLayer("Enemy"))
+                {
+                    gameObject.layer = LayerMask.NameToLayer("ColliderEnemy");
+                }
+            }
+
             Collider Col = GetComponent<Collider>();
 
             if (Col is BoxCollider)
@@ -78,12 +91,14 @@ namespace MDDSkillEngine
                 return;
             }
 
-            Vector3 hitPos = other.ClosestPoint(CachedTransform.position);
+            Vector3 hitPos = other.ClosestPoint(transform.position);
+
+            Vector3 hitDir = (new Vector3(entity.transform.position.x, 0, entity.transform.position.z) - new Vector3(transform.position.x, 0f, transform.position.z)).normalized;
 
             if (data.buffName == "")
-                Game.Buff.AddBuff(entity.Id.ToString(), "NormalHit", entity, data.Owner, HitData.Create(this, entity, hitPos, this.transform.forward, EffectName: data.HitEffectName));
+                Game.Buff.AddBuff(entity.Id.ToString(), "NormalHit", entity, data.Owner, HitData.Create(this, entity, hitPos, hitDir, EffectName: data.HitEffectName));
             else
-                Game.Buff.AddBuff(entity.Id.ToString(), data.buffName, entity, data.Owner, HitData.Create(this, entity, hitPos, this.transform.forward, EffectName: data.HitEffectName));
+                Game.Buff.AddBuff(entity.Id.ToString(), data.buffName, entity, data.Owner, HitData.Create(this, entity, hitPos, hitDir, EffectName: data.HitEffectName));
         }
     }
 

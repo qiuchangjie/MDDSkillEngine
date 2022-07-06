@@ -101,8 +101,7 @@ namespace MDDSkillEngine
                 if (Game.UI.HasUIForm(uGuiForms[i]))
                 {
                     Game.UI.CloseUIForm(uGuiForms[i]);
-                }
-                    
+                }                  
             }
 
             Game.Select.isWork = false;

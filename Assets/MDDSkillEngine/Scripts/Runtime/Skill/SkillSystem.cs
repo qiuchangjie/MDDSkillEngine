@@ -47,14 +47,7 @@ namespace MDDSkillEngine
 
         public SkillSystem()
         {
-            //skillDic = new Dictionary<int, Skill>();
-            //skillIndex = new Dictionary<int, int>() 
-            //{
-            //    {0, 0},
-            //    {1, 0},                    
-            //    {2, 0},
-            //    {3, 0},
-            //};           
+            
         }
 
 

@@ -59,6 +59,9 @@ namespace MDDSkillEngine
             From = null;
             Target = null;
             HitPoint = Vector3.zero;
+            HitDir = Vector3.zero;
+            EffectName = "";
+            HitForce = 0;
         }
     }
 }

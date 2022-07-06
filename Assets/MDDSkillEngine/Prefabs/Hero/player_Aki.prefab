@@ -7807,6 +7807,7 @@ GameObject:
   - component: {fileID: 3678973921348063314}
   - component: {fileID: 2514765801324056538}
   - component: {fileID: 6444846251423863140}
+  - component: {fileID: 3303556627263568546}
   m_Layer: 8
   m_Name: player_Aki
   m_TagString: Untagged
@@ -7930,6 +7931,7 @@ MonoBehaviour:
   interpolatePathSwitches: 1
   rotationSpeed: 10
   orientation: 0
+  PlayableSpeed: 1
   repathRate: 0.2
   enableRotation: 1
   switchPathInterpolationSpeed: 5
@@ -8322,7 +8324,19 @@ MonoBehaviour:
       Entry: 4
       Data: 0.25
     - Name: _Events
+      Entry: 7
+      Data: 12|Animancer.AnimancerEvent+Sequence+Serializable, Animancer
+    - Name: _Names
       Entry: 6
+      Data: 
+    - Name: _NormalizedTimes
+      Entry: 6
+      Data: 
+    - Name: _Callbacks
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
       Data: 
     - Name: _Clip
       Entry: 10
@@ -8347,7 +8361,7 @@ MonoBehaviour:
       Data: die
     - Name: $v
       Entry: 7
-      Data: 12|Animancer.ClipState+Transition, Animancer
+      Data: 13|Animancer.ClipState+Transition, Animancer
     - Name: _FadeDuration
       Entry: 4
       Data: 0.25
@@ -8377,7 +8391,7 @@ MonoBehaviour:
       Data: Idle_A
     - Name: $v
       Entry: 7
-      Data: 13|Animancer.ClipState+Transition, Animancer
+      Data: 14|Animancer.ClipState+Transition, Animancer
     - Name: _FadeDuration
       Entry: 4
       Data: 0.25
@@ -8407,7 +8421,7 @@ MonoBehaviour:
       Data: Idle_Atk
     - Name: $v
       Entry: 7
-      Data: 14|Animancer.ClipState+Transition, Animancer
+      Data: 15|Animancer.ClipState+Transition, Animancer
     - Name: _FadeDuration
       Entry: 4
       Data: 0.25
@@ -8437,7 +8451,7 @@ MonoBehaviour:
       Data: Idle_B
     - Name: $v
       Entry: 7
-      Data: 15|Animancer.ClipState+Transition, Animancer
+      Data: 16|Animancer.ClipState+Transition, Animancer
     - Name: _FadeDuration
       Entry: 4
       Data: 0.25
@@ -8467,7 +8481,7 @@ MonoBehaviour:
       Data: Idle_C
     - Name: $v
       Entry: 7
-      Data: 16|Animancer.ClipState+Transition, Animancer
+      Data: 17|Animancer.ClipState+Transition, Animancer
     - Name: _FadeDuration
       Entry: 4
       Data: 0.25
@@ -8497,7 +8511,7 @@ MonoBehaviour:
       Data: Jump
     - Name: $v
       Entry: 7
-      Data: 17|Animancer.ClipState+Transition, Animancer
+      Data: 18|Animancer.ClipState+Transition, Animancer
     - Name: _FadeDuration
       Entry: 4
       Data: 0.25
@@ -8527,7 +8541,7 @@ MonoBehaviour:
       Data: Run
     - Name: $v
       Entry: 7
-      Data: 18|Animancer.ClipState+Transition, Animancer
+      Data: 19|Animancer.ClipState+Transition, Animancer
     - Name: _FadeDuration
       Entry: 4
       Data: 0.25
@@ -8557,7 +8571,7 @@ MonoBehaviour:
       Data: Run_L
     - Name: $v
       Entry: 7
-      Data: 19|Animancer.ClipState+Transition, Animancer
+      Data: 20|Animancer.ClipState+Transition, Animancer
     - Name: _FadeDuration
       Entry: 4
       Data: 0.25
@@ -8587,7 +8601,7 @@ MonoBehaviour:
       Data: Run_R
     - Name: $v
       Entry: 7
-      Data: 20|Animancer.ClipState+Transition, Animancer
+      Data: 21|Animancer.ClipState+Transition, Animancer
     - Name: _FadeDuration
       Entry: 4
       Data: 0.25
@@ -8617,7 +8631,7 @@ MonoBehaviour:
       Data: SS_C
     - Name: $v
       Entry: 7
-      Data: 21|Animancer.ClipState+Transition, Animancer
+      Data: 22|Animancer.ClipState+Transition, Animancer
     - Name: _FadeDuration
       Entry: 4
       Data: 0.25
@@ -8647,7 +8661,7 @@ MonoBehaviour:
       Data: SS_L2
     - Name: $v
       Entry: 7
-      Data: 22|Animancer.ClipState+Transition, Animancer
+      Data: 23|Animancer.ClipState+Transition, Animancer
     - Name: _FadeDuration
       Entry: 4
       Data: 0.25
@@ -8677,7 +8691,7 @@ MonoBehaviour:
       Data: SS_R
     - Name: $v
       Entry: 7
-      Data: 23|Animancer.ClipState+Transition, Animancer
+      Data: 24|Animancer.ClipState+Transition, Animancer
     - Name: _FadeDuration
       Entry: 4
       Data: 0.25
@@ -8707,7 +8721,7 @@ MonoBehaviour:
       Data: Walk_back
     - Name: $v
       Entry: 7
-      Data: 24|Animancer.ClipState+Transition, Animancer
+      Data: 25|Animancer.ClipState+Transition, Animancer
     - Name: _FadeDuration
       Entry: 4
       Data: 0.25
@@ -8737,7 +8751,7 @@ MonoBehaviour:
       Data: Walk_back_skirt
     - Name: $v
       Entry: 7
-      Data: 25|Animancer.ClipState+Transition, Animancer
+      Data: 26|Animancer.ClipState+Transition, Animancer
     - Name: _FadeDuration
       Entry: 4
       Data: 0.25
@@ -8767,7 +8781,7 @@ MonoBehaviour:
       Data: Walk_L
     - Name: $v
       Entry: 7
-      Data: 26|Animancer.ClipState+Transition, Animancer
+      Data: 27|Animancer.ClipState+Transition, Animancer
     - Name: _FadeDuration
       Entry: 4
       Data: 0.25
@@ -8797,7 +8811,7 @@ MonoBehaviour:
       Data: Walk_R
     - Name: $v
       Entry: 7
-      Data: 27|Animancer.ClipState+Transition, Animancer
+      Data: 28|Animancer.ClipState+Transition, Animancer
     - Name: _FadeDuration
       Entry: 4
       Data: 0.25
@@ -8827,7 +8841,7 @@ MonoBehaviour:
       Data: Walk_skirt
     - Name: $v
       Entry: 7
-      Data: 28|Animancer.ClipState+Transition, Animancer
+      Data: 29|Animancer.ClipState+Transition, Animancer
     - Name: _FadeDuration
       Entry: 4
       Data: 0.25
@@ -8857,7 +8871,7 @@ MonoBehaviour:
       Data: Walk_skirt_L
     - Name: $v
       Entry: 7
-      Data: 29|Animancer.ClipState+Transition, Animancer
+      Data: 30|Animancer.ClipState+Transition, Animancer
     - Name: _FadeDuration
       Entry: 4
       Data: 0.25
@@ -8887,7 +8901,7 @@ MonoBehaviour:
       Data: Walk_skirt_R
     - Name: $v
       Entry: 7
-      Data: 30|Animancer.ClipState+Transition, Animancer
+      Data: 31|Animancer.ClipState+Transition, Animancer
     - Name: _FadeDuration
       Entry: 4
       Data: 0.25
@@ -8917,16 +8931,16 @@ MonoBehaviour:
       Data: Normal
     - Name: $v
       Entry: 7
-      Data: 31|Animancer.ClipState+Transition, Animancer
+      Data: 32|Animancer.ClipState+Transition, Animancer
     - Name: _FadeDuration
       Entry: 4
       Data: 0.25
     - Name: _Events
       Entry: 7
-      Data: 32|Animancer.AnimancerEvent+Sequence+Serializable, Animancer
+      Data: 33|Animancer.AnimancerEvent+Sequence+Serializable, Animancer
     - Name: _Names
       Entry: 7
-      Data: 33|System.String[], mscorlib
+      Data: 34|System.String[], mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -8938,7 +8952,7 @@ MonoBehaviour:
       Data: 
     - Name: _NormalizedTimes
       Entry: 7
-      Data: 34|System.Single[], mscorlib
+      Data: 35|System.Single[], mscorlib
     - Name: 
       Entry: 14
       Data: 0
@@ -8950,7 +8964,7 @@ MonoBehaviour:
       Data: 
     - Name: _Callbacks
       Entry: 7
-      Data: 35|UnityEngine.Events.UnityEvent[], UnityEngine.CoreModule
+      Data: 36|UnityEngine.Events.UnityEvent[], UnityEngine.CoreModule
     - Name: 
       Entry: 12
       Data: 0
@@ -8986,12 +9000,24 @@ MonoBehaviour:
       Data: Cutepose
     - Name: $v
       Entry: 7
-      Data: 36|Animancer.ClipState+Transition, Animancer
+      Data: 37|Animancer.ClipState+Transition, Animancer
     - Name: _FadeDuration
       Entry: 4
       Data: 0.25
     - Name: _Events
+      Entry: 7
+      Data: 38|Animancer.AnimancerEvent+Sequence+Serializable, Animancer
+    - Name: _Names
       Entry: 6
+      Data: 
+    - Name: _NormalizedTimes
+      Entry: 6
+      Data: 
+    - Name: _Callbacks
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
       Data: 
     - Name: _Clip
       Entry: 10
@@ -9015,3 +9041,19 @@ MonoBehaviour:
       Entry: 8
       Data: 
   animid: Aki
+--- !u!54 &3303556627263568546
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5144886476383702360}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 84
+  m_CollisionDetection: 0

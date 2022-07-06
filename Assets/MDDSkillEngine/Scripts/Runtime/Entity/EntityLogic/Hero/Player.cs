@@ -9,10 +9,14 @@ using static UnityEngine.InputSystem.InputAction;
 
 namespace MDDSkillEngine
 {
+    /// <summary>
+    /// 用作卡尔脚本
+    /// </summary>
     public class Player : TargetableObject
     {
         PlayerData PlayerData = null;
         private bool IsPlaying = false;
+       
 
         private void SetIsPlaying(object sender,GameEventArgs e)
         {
@@ -88,6 +92,7 @@ namespace MDDSkillEngine
             UIAbilities u = Game.UI.GetUIForm(UIFormId.Ablities) as UIAbilities;
             u.SetEntity(this);
 
+            //卡尔技能装配
             ISkillSystem skillSystem = Game.Skill.GetSkillSystem(Id);
             skillSystem.AddSkill(10004, 0);
             skillSystem.AddSkill(10005, 2);

@@ -133,7 +133,6 @@ namespace MDDGameFramework
             {
                 if (!this.observers.ContainsKey(notification.key))
                 {
-                    //                Debug.Log("1 do not notify for key:" + notification.key + " value: " + notification.value);
                     continue;
                 }
 

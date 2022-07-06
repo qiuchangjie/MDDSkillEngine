@@ -181,7 +181,7 @@ MonoBehaviour:
   - {x: 0, y: 0, z: 0}
   - {x: 0, y: 0, z: 0}
   rmRotations:
-  - {x: 0, y: 0, z: 0, w: 1}
+  - {x: -0, y: -0, z: -0, w: 1}
   - {x: -0, y: -0, z: -0, w: 1}
   - {x: -0, y: -0, z: -0, w: 1}
   - {x: -0, y: -0, z: -0, w: 1}
@@ -437,7 +437,7 @@ MonoBehaviour:
   _animationData:
     _animatedParameters: []
   _length: 2
-  ColliderName: NormalBoxCollider
+  ColliderName: NormalCapsuleCollider
   ColliderLogic: MDDCollider
   Speed: 0
   AddBuffName: PushHit
@@ -451,7 +451,7 @@ MonoBehaviour:
   localScale: {x: 1, y: 1, z: 1}
   boundSize: {x: 1, y: 1, z: 1}
   boundCenter: {x: 0, y: 0, z: 0}
-  radius: 1
+  radius: 1.3
   height: 1
   path: {fileID: 2860201414688878766}
   useSpeed: 0
@@ -1067,7 +1067,7 @@ MonoBehaviour:
   EffectName: KaerShengbo
   pat: {fileID: 0}
   PlayableSpeed: 1
-  localeftPostion: {x: 0, y: 0, z: 0}
+  localeftPostion: {x: 0, y: 0, z: 20}
   localRotation: {x: -0, y: -0, z: -0, w: 1}
   localScale: {x: 1, y: 1, z: 1}
   path: {fileID: 1426060463439021549}

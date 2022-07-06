@@ -81,11 +81,12 @@ namespace MDDSkillEngine
 
             Vector3 hitPos = other.ClosestPoint(CachedTransform.position);
 
+            Vector3 hitDir = new Vector3(hitPos.x, 0f, hitPos.z) - new Vector3(data.Owner.CachedTransform.position.x, 0, data.Owner.CachedTransform.position.z);
+
             if (data.buffName == "")
-                Game.Buff.AddBuff(entity.Id.ToString(), "NormalHit", entity, data.Owner, HitData.Create(this, entity, hitPos, this.transform.forward));
+                Game.Buff.AddBuff(entity.Id.ToString(), "NormalHit", entity, data.Owner, HitData.Create(this, entity, hitPos, hitDir, EffectName: data.HitEffectName));
             else
-                Game.Buff.AddBuff(entity.Id.ToString(), data.buffName, entity, data.Owner, HitData.Create(this, entity, hitPos,
-                    this.transform.forward, data.HitEffectName));
+                Game.Buff.AddBuff(entity.Id.ToString(), data.buffName, entity, data.Owner, HitData.Create(this, entity, hitPos, hitDir, EffectName: data.HitEffectName));
         }
 
 
