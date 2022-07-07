@@ -168,7 +168,7 @@ MonoBehaviour:
       Entry: 8
       Data: 
   graph: {fileID: 11400000}
-  position: {x: -824, y: -392}
+  position: {x: -760, y: -312}
   ports:
     keys:
     - input
@@ -484,7 +484,7 @@ MonoBehaviour:
       Entry: 8
       Data: 
   graph: {fileID: 11400000}
-  position: {x: -840, y: -696}
+  position: {x: -760, y: -520}
   ports:
     keys:
     - input
@@ -707,7 +707,7 @@ MonoBehaviour:
       Entry: 8
       Data: 
   graph: {fileID: 11400000}
-  position: {x: -840, y: 88}
+  position: {x: -760, y: -136}
   ports:
     keys:
     - input
@@ -1249,7 +1249,7 @@ MonoBehaviour:
       Entry: 8
       Data: 
   graph: {fileID: 11400000}
-  position: {x: -1576, y: 200}
+  position: {x: -1560, y: 248}
   ports:
     keys:
     - input

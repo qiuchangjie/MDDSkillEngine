@@ -6,6 +6,17 @@ namespace MDDGameFramework.Runtime
 {
     public class Skill : NP_Tree
     {
+        public Skill()
+        {
+            
+        }
+
+        public static Skill Create()
+        {
+            Skill skill = ReferencePool.Acquire<Skill>();
+
+            return skill;
+        }
 
         public override void Init(Root root)    
         {

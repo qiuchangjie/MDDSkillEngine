@@ -55,9 +55,7 @@ namespace MDDSkillEngine
                 Log.Error("{0}hitbuff 目标丢失", LogConst.Buff);
             }
 
-            IFsm<Entity> fsm = Game.Fsm.GetFsm<Entity>(entity.Id.ToString());
-
-            fsm.Blackboard.Set<VarBoolean>(typeof(AiDamageState).Name,true);
+            entity.SetState(EntityNormalState.ATTACKED,true);
 
             Game.Entity.ShowEffect(typeof(Effect), hitData.EffectName ,new EffectData(Game.Entity.GenerateSerialId(), 0)
             {

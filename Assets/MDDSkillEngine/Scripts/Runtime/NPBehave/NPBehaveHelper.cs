@@ -54,7 +54,7 @@ namespace MDDSkillEngine
             //思路是把数据从xnode剥离出来就轻量无数倍
             //剥离出来的数据实例还可以池化进一步减少GC
             NPBehaveGraph nP = (NPBehaveGraph)NP.Copy();
-            Skill skill = new Skill();
+            Skill skill = Skill.Create();
             Root root = null;
             foreach (var v in nP.nodes)
             {

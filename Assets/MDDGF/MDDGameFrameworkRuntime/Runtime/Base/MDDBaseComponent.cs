@@ -13,7 +13,7 @@ namespace MDDGameFramework.Runtime
         private string m_TextHelperTypeName = "MDDGameFramework.Runtime.DefaultTextHelper";
 
         [SerializeField]
-        private string m_VersionHelperTypeName = "UnityGameFramework.Runtime.DefaultVersionHelper";
+        private string m_VersionHelperTypeName = "MDDGameFramework.Runtime.DefaultVersionHelper";
 
         [SerializeField]
         private string m_LogHelperTypeName = "MDDGameFramework.Runtime.DefaultLogHelper";
@@ -22,7 +22,7 @@ namespace MDDGameFramework.Runtime
         private string m_CompressionHelperTypeName = "MDDGameFramework.Runtime.DefaultCompressionHelper";
 
         [SerializeField]
-        private string m_JsonHelperTypeName = "UnityGameFramework.Runtime.DefaultJsonHelper";
+        private string m_JsonHelperTypeName = "MDDGameFramework.Runtime.DefaultJsonHelper";
 
         [SerializeField]
         private string m_BuffFactoryTypeName = "MDDSkillEngine.BuffFactoryHelper";

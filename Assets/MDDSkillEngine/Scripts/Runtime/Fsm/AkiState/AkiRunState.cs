@@ -76,8 +76,17 @@ namespace MDDSkillEngine
                 return;
             }
 
-           
-            ChangeState(Fsm, GetType());
+            ISkillSystem skillSystem = Game.Skill.GetSkillSystem(Fsm.Owner.Id);
+
+            if (skillSystem.GetSkillReleaseResultType() == SkillReleaseResultType.NONE)
+            {
+                ChangeState(Fsm, GetType());
+            }
+            else
+            {
+                skillSystem.SetSkillReleaseResultType(SkillReleaseResultType.STOP);
+                ChangeState(Fsm, GetType());
+            }
         }
     }
 }

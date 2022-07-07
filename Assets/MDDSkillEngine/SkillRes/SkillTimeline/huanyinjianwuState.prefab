@@ -48,17 +48,17 @@ MonoBehaviour:
   _updateMode: 0
   _defaultWrapMode: 0
   _defaultStopMode: 0
-  _playbackSpeed: 0.5
+  _playbackSpeed: 0.3
   _explicitActiveLayers: 0
   _activeLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  _targetType: 2
+  _targetType: 0
   groups:
   - {fileID: 7232431185629851885}
-  _length: 1
-  _viewTimeMin: -0.72154784
-  _viewTimeMax: 1.4206308
+  _length: 1.5000001
+  _viewTimeMin: -0.5132412
+  _viewTimeMax: 1.8635782
 --- !u!1 &2882366116594116339
 GameObject:
   m_ObjectHideFlags: 0
@@ -132,7 +132,7 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  _startTime: 0.20000002
+  _startTime: 0
   _animationData:
     _animatedParameters: []
   _length: 0
@@ -211,7 +211,7 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  _startTime: 0.20000002
+  _startTime: 0
   _animationData:
     _animatedParameters: []
   _length: 0
@@ -237,7 +237,7 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  _startTime: 0.5833334
+  _startTime: 1.4666667
   _animationData:
     _animatedParameters: []
   _length: 0
@@ -341,6 +341,13 @@ GameObject:
   - component: {fileID: 3378478145511216618}
   - component: {fileID: 3378478145511216617}
   - component: {fileID: 1999051077788113825}
+  - component: {fileID: 297117417597528624}
+  - component: {fileID: 7412706533367683802}
+  - component: {fileID: 1831758284232488323}
+  - component: {fileID: 5297600552142784386}
+  - component: {fileID: 2665715278133415581}
+  - component: {fileID: 7984843500139301079}
+  - component: {fileID: 5540253560633314789}
   m_Layer: 0
   m_Name: Animator Track
   m_TagString: Untagged
@@ -381,6 +388,13 @@ MonoBehaviour:
   _actionClips:
   - {fileID: 3378478145511216617}
   - {fileID: 1999051077788113825}
+  - {fileID: 297117417597528624}
+  - {fileID: 7412706533367683802}
+  - {fileID: 1831758284232488323}
+  - {fileID: 5297600552142784386}
+  - {fileID: 2665715278133415581}
+  - {fileID: 7984843500139301079}
+  - {fileID: 5540253560633314789}
   _customHeight: 300
   mask: {fileID: 0}
   blendMode: 0
@@ -421,8 +435,40 @@ MonoBehaviour:
   - {x: 0, y: 0, z: 0}
   - {x: 0, y: 0, z: 0}
   - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
   rmRotations:
   - {x: 0, y: 0, z: 0, w: 1}
+  - {x: -0, y: -0, z: -0, w: 1}
+  - {x: -0, y: -0, z: -0, w: 1}
+  - {x: -0, y: -0, z: -0, w: 1}
+  - {x: -0, y: -0, z: -0, w: 1}
+  - {x: -0, y: -0, z: -0, w: 1}
+  - {x: -0, y: -0, z: -0, w: 1}
+  - {x: -0, y: -0, z: -0, w: 1}
+  - {x: -0, y: -0, z: -0, w: 1}
+  - {x: -0, y: -0, z: -0, w: 1}
+  - {x: -0, y: -0, z: -0, w: 1}
+  - {x: -0, y: -0, z: -0, w: 1}
+  - {x: -0, y: -0, z: -0, w: 1}
+  - {x: -0, y: -0, z: -0, w: 1}
+  - {x: -0, y: -0, z: -0, w: 1}
+  - {x: -0, y: -0, z: -0, w: 1}
+  - {x: -0, y: -0, z: -0, w: 1}
   - {x: -0, y: -0, z: -0, w: 1}
   - {x: -0, y: -0, z: -0, w: 1}
   - {x: -0, y: -0, z: -0, w: 1}
@@ -492,9 +538,9 @@ MonoBehaviour:
         m_PostInfinity: 2
         m_RotationOrder: 4
       _scriptExpression: 
-  _length: 0.6833334
+  _length: 0.15
   _blendIn: 0
-  _blendOut: 0.13333344
+  _blendOut: 0.03333333
   animationClip: {fileID: 7400000, guid: 8bafdcd44e3f81a49b836567ce6b6017, type: 3}
   clipOffset: 0
   clipWrapMode: 0
@@ -526,7 +572,7 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  _startTime: 0.54999995
+  _startTime: 0.116666675
   _animationData:
     _animatedParameters:
     - _serializedData: '{"parameterName":"steerLocalRotation","declaringTypeName":"Slate.ActionClips.PlayAnimatorClip","transformHierarchyPath":"","parameterType":2}'
@@ -543,9 +589,9 @@ MonoBehaviour:
         m_PostInfinity: 2
         m_RotationOrder: 4
       _scriptExpression: 
-  _length: 0.45000002
-  _blendIn: 0.13333344
-  _blendOut: 0.13333333
+  _length: 0.16666669
+  _blendIn: 0.03333333
+  _blendOut: 0.03333336
   animationClip: {fileID: 7400000, guid: 3e2cf120e49d5394c9178923b58fa920, type: 3}
   clipOffset: 0
   clipWrapMode: 0
@@ -553,7 +599,364 @@ MonoBehaviour:
   playbackSpeed: 1
   startingTransformsMode: 0
   transformSpace: 0
-  startingPosition: {x: 0.7361205, y: 0, z: 0.7286821}
+  startingPosition: {x: 0, y: 0, z: 0}
+  startingRotation: {x: -0, y: 0, z: 0}
+  steerLocalRotation: {x: 0, y: 0}
+--- !u!114 &297117417597528624
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3378478145511216615}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4792578f693c06841a5b299345830d63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  _startTime: 0.25
+  _animationData:
+    _animatedParameters:
+    - _serializedData: '{"parameterName":"steerLocalRotation","declaringTypeName":"Slate.ActionClips.PlayAnimatorClip","transformHierarchyPath":"","parameterType":2}'
+      _isDisabled: 0
+      _curves:
+      - serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      - serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      _scriptExpression: 
+  _length: 0.2
+  _blendIn: 0.03333336
+  _blendOut: 0.016666621
+  animationClip: {fileID: 7400000, guid: 7e3caa69ef39f8041858a3af4ca11844, type: 2}
+  clipOffset: 0
+  clipWrapMode: 0
+  clipWeight: 1
+  playbackSpeed: 1
+  startingTransformsMode: 0
+  transformSpace: 0
+  startingPosition: {x: 0, y: 0, z: 0}
+  startingRotation: {x: -0, y: 0, z: 0}
+  steerLocalRotation: {x: 0, y: 0}
+--- !u!114 &7412706533367683802
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3378478145511216615}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4792578f693c06841a5b299345830d63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  _startTime: 0.43333337
+  _animationData:
+    _animatedParameters:
+    - _serializedData: '{"parameterName":"steerLocalRotation","declaringTypeName":"Slate.ActionClips.PlayAnimatorClip","transformHierarchyPath":"","parameterType":2}'
+      _isDisabled: 0
+      _curves:
+      - serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      - serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      _scriptExpression: 
+  _length: 0.1833334
+  _blendIn: 0.016666621
+  _blendOut: 0.03333342
+  animationClip: {fileID: 7400000, guid: cf4bcbb805791b84dbf7e78895b18faa, type: 2}
+  clipOffset: 0
+  clipWrapMode: 0
+  clipWeight: 1
+  playbackSpeed: 1
+  startingTransformsMode: 0
+  transformSpace: 0
+  startingPosition: {x: 0, y: 0, z: 0}
+  startingRotation: {x: -0, y: 0, z: 0}
+  steerLocalRotation: {x: 0, y: 0}
+--- !u!114 &1831758284232488323
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3378478145511216615}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4792578f693c06841a5b299345830d63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  _startTime: 0.5833334
+  _animationData:
+    _animatedParameters:
+    - _serializedData: '{"parameterName":"steerLocalRotation","declaringTypeName":"Slate.ActionClips.PlayAnimatorClip","transformHierarchyPath":"","parameterType":2}'
+      _isDisabled: 0
+      _curves:
+      - serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      - serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      _scriptExpression: 
+  _length: 0.25
+  _blendIn: 0.03333342
+  _blendOut: 0.0333333
+  animationClip: {fileID: 7400000, guid: 280c4f1a94a1aa348a73e1c4f08d4387, type: 2}
+  clipOffset: 0
+  clipWrapMode: 0
+  clipWeight: 1
+  playbackSpeed: 1
+  startingTransformsMode: 0
+  transformSpace: 0
+  startingPosition: {x: 0, y: 0, z: 0}
+  startingRotation: {x: -0, y: 0, z: 0}
+  steerLocalRotation: {x: 0, y: 0}
+--- !u!114 &5297600552142784386
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3378478145511216615}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4792578f693c06841a5b299345830d63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  _startTime: 0.8000001
+  _animationData:
+    _animatedParameters:
+    - _serializedData: '{"parameterName":"steerLocalRotation","declaringTypeName":"Slate.ActionClips.PlayAnimatorClip","transformHierarchyPath":"","parameterType":2}'
+      _isDisabled: 0
+      _curves:
+      - serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      - serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      _scriptExpression: 
+  _length: 0.19999993
+  _blendIn: 0.0333333
+  _blendOut: 0.0333333
+  animationClip: {fileID: 7400000, guid: 3e2cf120e49d5394c9178923b58fa920, type: 3}
+  clipOffset: 0
+  clipWrapMode: 0
+  clipWeight: 1
+  playbackSpeed: 1
+  startingTransformsMode: 0
+  transformSpace: 0
+  startingPosition: {x: 0, y: 0, z: 0}
+  startingRotation: {x: -0, y: 0, z: 0}
+  steerLocalRotation: {x: 0, y: 0}
+--- !u!114 &2665715278133415581
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3378478145511216615}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4792578f693c06841a5b299345830d63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  _startTime: 0.9666667
+  _animationData:
+    _animatedParameters:
+    - _serializedData: '{"parameterName":"steerLocalRotation","declaringTypeName":"Slate.ActionClips.PlayAnimatorClip","transformHierarchyPath":"","parameterType":2}'
+      _isDisabled: 0
+      _curves:
+      - serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      - serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      _scriptExpression: 
+  _length: 0.13333333
+  _blendIn: 0.0333333
+  _blendOut: 0.0333333
+  animationClip: {fileID: 7400000, guid: e95ad56891bb7cf4ab615f708c644d3c, type: 2}
+  clipOffset: 0
+  clipWrapMode: 0
+  clipWeight: 1
+  playbackSpeed: 1
+  startingTransformsMode: 0
+  transformSpace: 0
+  startingPosition: {x: 0, y: 0, z: 0}
+  startingRotation: {x: -0, y: 0, z: 0}
+  steerLocalRotation: {x: 0, y: 0}
+--- !u!114 &7984843500139301079
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3378478145511216615}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4792578f693c06841a5b299345830d63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  _startTime: 1.0666667
+  _animationData:
+    _animatedParameters:
+    - _serializedData: '{"parameterName":"steerLocalRotation","declaringTypeName":"Slate.ActionClips.PlayAnimatorClip","transformHierarchyPath":"","parameterType":2}'
+      _isDisabled: 0
+      _curves:
+      - serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      - serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      _scriptExpression: 
+  _length: 0.25
+  _blendIn: 0.0333333
+  _blendOut: 0.0333333
+  animationClip: {fileID: 7400000, guid: fa696b72fbef5e54db8c4787e0cc2787, type: 3}
+  clipOffset: 0
+  clipWrapMode: 0
+  clipWeight: 1
+  playbackSpeed: 1
+  startingTransformsMode: 0
+  transformSpace: 0
+  startingPosition: {x: 0, y: 0, z: 0}
+  startingRotation: {x: -0, y: 0, z: 0}
+  steerLocalRotation: {x: 0, y: 0}
+--- !u!114 &5540253560633314789
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3378478145511216615}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4792578f693c06841a5b299345830d63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  _startTime: 1.2833334
+  _animationData:
+    _animatedParameters:
+    - _serializedData: '{"parameterName":"steerLocalRotation","declaringTypeName":"Slate.ActionClips.PlayAnimatorClip","transformHierarchyPath":"","parameterType":2}'
+      _isDisabled: 0
+      _curves:
+      - serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      - serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      _scriptExpression: 
+  _length: 0.2166667
+  _blendIn: 0.0333333
+  _blendOut: 0.0333333
+  animationClip: {fileID: 7400000, guid: 3e2cf120e49d5394c9178923b58fa920, type: 3}
+  clipOffset: 0
+  clipWrapMode: 0
+  clipWeight: 1
+  playbackSpeed: 1
+  startingTransformsMode: 0
+  transformSpace: 0
+  startingPosition: {x: 0, y: 0, z: 0}
   startingRotation: {x: -0, y: 0, z: 0}
   steerLocalRotation: {x: 0, y: 0}
 --- !u!1 &3434212522798387710
@@ -589,6 +992,8 @@ Transform:
   - {fileID: 1007091786322199534}
   - {fileID: 8183742346437641864}
   - {fileID: 2503991307436626136}
+  - {fileID: 4771340295620010383}
+  - {fileID: 2585758842192732432}
   m_Father: {fileID: 192856560614531560}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -606,7 +1011,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _tracks:
   - {fileID: 6259407564336725206}
+  - {fileID: 2172815650982180791}
   - {fileID: 4834773990415758771}
+  - {fileID: 9022707027497159770}
   - {fileID: 8382713012444369176}
   - {fileID: 2238054730856486535}
   - {fileID: 3378478145511216618}
@@ -631,7 +1038,16 @@ GameObject:
   m_Component:
   - component: {fileID: 2503991307436626136}
   - component: {fileID: 6259407564336725206}
-  - component: {fileID: 5956461252720143417}
+  - component: {fileID: 9107482174708926218}
+  - component: {fileID: 8009041771434933083}
+  - component: {fileID: 6093188277450897582}
+  - component: {fileID: 5387643691029267780}
+  - component: {fileID: 8277097485975909170}
+  - component: {fileID: 5979753829082784722}
+  - component: {fileID: 7592280163100822127}
+  - component: {fileID: 2072107327932085915}
+  - component: {fileID: 7001260859150047760}
+  - component: {fileID: 2988282490953415757}
   m_Layer: 0
   m_Name: "\u78B0\u649E\u4F53\u8F68\u9053"
   m_TagString: Untagged
@@ -670,10 +1086,19 @@ MonoBehaviour:
   _active: 1
   _isLocked: 0
   _actionClips:
-  - {fileID: 5956461252720143417}
+  - {fileID: 9107482174708926218}
+  - {fileID: 8009041771434933083}
+  - {fileID: 6093188277450897582}
+  - {fileID: 5387643691029267780}
+  - {fileID: 8277097485975909170}
+  - {fileID: 5979753829082784722}
+  - {fileID: 7592280163100822127}
+  - {fileID: 2072107327932085915}
+  - {fileID: 7001260859150047760}
+  - {fileID: 2988282490953415757}
   _customHeight: 300
   _icon: {fileID: 0}
---- !u!114 &5956461252720143417
+--- !u!114 &9107482174708926218
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -694,29 +1119,502 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  _startTime: 0.21666668
+  _startTime: 0
   _animationData:
     _animatedParameters: []
-  _length: 1.1260322
-  ColliderName: NormalBoxCollider
-  ColliderLogic: NormalMoveCollider
+  _length: 0.15
+  ColliderName: NormalCapsuleCollider
+  ColliderLogic: MDDCollider
   Speed: 0
   AddBuffName: NormalHit
-  EffectName: Hit
+  EffectName: shunxieff2
   col: {fileID: 0}
   m_SphereCollider: {fileID: 0}
   m_CapsuleCollider: {fileID: 0}
   m_Collider: {fileID: 0}
-  localeftPostion: {x: -0.14091825, y: 0, z: 7.395523}
-  localRotation: {x: 0, y: 0, z: 0, w: 1}
-  localScale: {x: 1, y: 1, z: 1}
+  localeftPostion: {x: 0, y: 0.65, z: 0.52}
+  localRotation: {x: -0, y: -0, z: -0, w: 1}
+  localScale: {x: 2, y: 1, z: 2}
   boundSize: {x: 1, y: 1, z: 1}
   boundCenter: {x: 0, y: 0, z: 0}
   radius: 1
   height: 1
-  path: {fileID: 2218856397312163239}
-  useSpeed: 1
-  speed: 2.56
+  path: {fileID: 0}
+  useSpeed: 0
+  speed: 3
+--- !u!114 &8009041771434933083
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3676808733166676256}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 588eafea20dc9ef47b93a25e5d679b23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  _startTime: 0.15
+  _animationData:
+    _animatedParameters: []
+  _length: 0.15
+  ColliderName: NormalCapsuleCollider
+  ColliderLogic: MDDCollider
+  Speed: 0
+  AddBuffName: NormalHit
+  EffectName: shunxieff2
+  col: {fileID: 0}
+  m_SphereCollider: {fileID: 0}
+  m_CapsuleCollider: {fileID: 0}
+  m_Collider: {fileID: 0}
+  localeftPostion: {x: 0, y: 0.65, z: 0.96}
+  localRotation: {x: -0, y: -0, z: -0, w: 1}
+  localScale: {x: 2, y: 1, z: 2}
+  boundSize: {x: 1, y: 1, z: 1}
+  boundCenter: {x: 0, y: 0, z: 0}
+  radius: 1
+  height: 1
+  path: {fileID: 0}
+  useSpeed: 0
+  speed: 3
+--- !u!114 &6093188277450897582
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3676808733166676256}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 588eafea20dc9ef47b93a25e5d679b23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  _startTime: 0.3
+  _animationData:
+    _animatedParameters: []
+  _length: 0.13333336
+  ColliderName: NormalCapsuleCollider
+  ColliderLogic: MDDCollider
+  Speed: 0
+  AddBuffName: NormalHit
+  EffectName: shunxieff
+  col: {fileID: 0}
+  m_SphereCollider: {fileID: 0}
+  m_CapsuleCollider: {fileID: 0}
+  m_Collider: {fileID: 0}
+  localeftPostion: {x: 0, y: 0.65, z: 0.96}
+  localRotation: {x: -0, y: -0, z: -0, w: 1}
+  localScale: {x: 2, y: 1, z: 2}
+  boundSize: {x: 1, y: 1, z: 1}
+  boundCenter: {x: 0, y: 0, z: 0}
+  radius: 1
+  height: 1
+  path: {fileID: 0}
+  useSpeed: 0
+  speed: 3
+--- !u!114 &5387643691029267780
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3676808733166676256}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 588eafea20dc9ef47b93a25e5d679b23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  _startTime: 0.43333337
+  _animationData:
+    _animatedParameters: []
+  _length: 0.16666666
+  ColliderName: NormalCapsuleCollider
+  ColliderLogic: MDDCollider
+  Speed: 0
+  AddBuffName: NormalHit
+  EffectName: shunxieff
+  col: {fileID: 0}
+  m_SphereCollider: {fileID: 0}
+  m_CapsuleCollider: {fileID: 0}
+  m_Collider: {fileID: 0}
+  localeftPostion: {x: 0, y: 0.65, z: 0.96}
+  localRotation: {x: -0, y: -0, z: -0, w: 1}
+  localScale: {x: 2, y: 1, z: 2}
+  boundSize: {x: 1, y: 1, z: 1}
+  boundCenter: {x: 0, y: 0, z: 0}
+  radius: 1
+  height: 1
+  path: {fileID: 0}
+  useSpeed: 0
+  speed: 3
+--- !u!114 &8277097485975909170
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3676808733166676256}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 588eafea20dc9ef47b93a25e5d679b23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  _startTime: 0.6
+  _animationData:
+    _animatedParameters: []
+  _length: 0.13333333
+  ColliderName: NormalCapsuleCollider
+  ColliderLogic: MDDCollider
+  Speed: 0
+  AddBuffName: NormalHit
+  EffectName: shunxieff2
+  col: {fileID: 0}
+  m_SphereCollider: {fileID: 0}
+  m_CapsuleCollider: {fileID: 0}
+  m_Collider: {fileID: 0}
+  localeftPostion: {x: 0, y: 0.65, z: 0.96}
+  localRotation: {x: 0, y: 0, z: 0, w: 1}
+  localScale: {x: 2, y: 1, z: 2}
+  boundSize: {x: 1, y: 1, z: 1}
+  boundCenter: {x: 0, y: 0, z: 0}
+  radius: 1
+  height: 1
+  path: {fileID: 0}
+  useSpeed: 0
+  speed: 3
+--- !u!114 &5979753829082784722
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3676808733166676256}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 588eafea20dc9ef47b93a25e5d679b23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  _startTime: 0.73333335
+  _animationData:
+    _animatedParameters: []
+  _length: 0.13333333
+  ColliderName: NormalCapsuleCollider
+  ColliderLogic: MDDCollider
+  Speed: 0
+  AddBuffName: NormalHit
+  EffectName: shunxieff
+  col: {fileID: 0}
+  m_SphereCollider: {fileID: 0}
+  m_CapsuleCollider: {fileID: 0}
+  m_Collider: {fileID: 0}
+  localeftPostion: {x: 0, y: 0.65, z: 0.96}
+  localRotation: {x: 0, y: 0, z: 0, w: 1}
+  localScale: {x: 2, y: 1, z: 2}
+  boundSize: {x: 1, y: 1, z: 1}
+  boundCenter: {x: 0, y: 0, z: 0}
+  radius: 1
+  height: 1
+  path: {fileID: 0}
+  useSpeed: 0
+  speed: 3
+--- !u!114 &7592280163100822127
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3676808733166676256}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 588eafea20dc9ef47b93a25e5d679b23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  _startTime: 0.8666667
+  _animationData:
+    _animatedParameters: []
+  _length: 0.13333333
+  ColliderName: NormalCapsuleCollider
+  ColliderLogic: MDDCollider
+  Speed: 0
+  AddBuffName: NormalHit
+  EffectName: shunxieff2
+  col: {fileID: 0}
+  m_SphereCollider: {fileID: 0}
+  m_CapsuleCollider: {fileID: 0}
+  m_Collider: {fileID: 0}
+  localeftPostion: {x: 0, y: 0.65, z: 0.96}
+  localRotation: {x: 0, y: 0, z: 0, w: 1}
+  localScale: {x: 2, y: 1, z: 2}
+  boundSize: {x: 1, y: 1, z: 1}
+  boundCenter: {x: 0, y: 0, z: 0}
+  radius: 1
+  height: 1
+  path: {fileID: 0}
+  useSpeed: 0
+  speed: 3
+--- !u!114 &2072107327932085915
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3676808733166676256}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 588eafea20dc9ef47b93a25e5d679b23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  _startTime: 1
+  _animationData:
+    _animatedParameters: []
+  _length: 0.16666675
+  ColliderName: NormalCapsuleCollider
+  ColliderLogic: MDDCollider
+  Speed: 0
+  AddBuffName: NormalHit
+  EffectName: shunxieff
+  col: {fileID: 0}
+  m_SphereCollider: {fileID: 0}
+  m_CapsuleCollider: {fileID: 0}
+  m_Collider: {fileID: 0}
+  localeftPostion: {x: 0, y: 0.65, z: 0.96}
+  localRotation: {x: 0, y: 0, z: 0, w: 1}
+  localScale: {x: 2, y: 1, z: 2}
+  boundSize: {x: 1, y: 1, z: 1}
+  boundCenter: {x: 0, y: 0, z: 0}
+  radius: 1
+  height: 1
+  path: {fileID: 0}
+  useSpeed: 0
+  speed: 3
+--- !u!114 &7001260859150047760
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3676808733166676256}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 588eafea20dc9ef47b93a25e5d679b23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  _startTime: 1.1666667
+  _animationData:
+    _animatedParameters: []
+  _length: 0.15
+  ColliderName: NormalCapsuleCollider
+  ColliderLogic: MDDCollider
+  Speed: 0
+  AddBuffName: NormalHit
+  EffectName: shunxieff
+  col: {fileID: 0}
+  m_SphereCollider: {fileID: 0}
+  m_CapsuleCollider: {fileID: 0}
+  m_Collider: {fileID: 0}
+  localeftPostion: {x: 0, y: 0.65, z: 0.96}
+  localRotation: {x: 0, y: 0, z: 0, w: 1}
+  localScale: {x: 2, y: 1, z: 2}
+  boundSize: {x: 1, y: 1, z: 1}
+  boundCenter: {x: 0, y: 0, z: 0}
+  radius: 1
+  height: 1
+  path: {fileID: 0}
+  useSpeed: 0
+  speed: 3
+--- !u!114 &2988282490953415757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3676808733166676256}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 588eafea20dc9ef47b93a25e5d679b23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  _startTime: 1.3166667
+  _animationData:
+    _animatedParameters: []
+  _length: 0.15
+  ColliderName: NormalCapsuleCollider
+  ColliderLogic: MDDCollider
+  Speed: 0
+  AddBuffName: NormalHit
+  EffectName: shunxieff2
+  col: {fileID: 0}
+  m_SphereCollider: {fileID: 0}
+  m_CapsuleCollider: {fileID: 0}
+  m_Collider: {fileID: 0}
+  localeftPostion: {x: 0, y: 0.65, z: 0.96}
+  localRotation: {x: 0, y: 0, z: 0, w: 1}
+  localScale: {x: 2, y: 1, z: 2}
+  boundSize: {x: 1, y: 1, z: 1}
+  boundCenter: {x: 0, y: 0, z: 0}
+  radius: 1
+  height: 1
+  path: {fileID: 0}
+  useSpeed: 0
+  speed: 3
+--- !u!1 &3681741688113013956
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2585758842192732432}
+  - component: {fileID: 9022707027497159770}
+  - component: {fileID: 476847937665174222}
+  m_Layer: 0
+  m_Name: "\u7ED3\u675F\u72B6\u6001\u8F68\u9053\u8F68\u9053"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2585758842192732432
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3681741688113013956}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1578699025862464819}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &9022707027497159770
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3681741688113013956}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80e9332f674c1234f98dfeebb14dbf58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _name: "\u7ED3\u675F\u72B6\u6001\u8F68\u9053\u8F68\u9053"
+  _color: {r: 1, g: 1, b: 1, a: 1}
+  _active: 1
+  _isLocked: 0
+  _actionClips:
+  - {fileID: 476847937665174222}
+  _customHeight: 300
+  _icon: {fileID: 0}
+--- !u!114 &476847937665174222
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3681741688113013956}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b68320d1eab4b341a71288dc6b591eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  _startTime: 1.4666667
+  _animationData:
+    _animatedParameters: []
+  _length: 0
 --- !u!1 &4811968143746247710
 GameObject:
   m_ObjectHideFlags: 0
@@ -877,7 +1775,11 @@ GameObject:
   m_Component:
   - component: {fileID: 8183742346437641864}
   - component: {fileID: 4834773990415758771}
-  - component: {fileID: 67098858}
+  - component: {fileID: 1701640335513003914}
+  - component: {fileID: 5654782256143132111}
+  - component: {fileID: 1688977282677739632}
+  - component: {fileID: 6294684088883612525}
+  - component: {fileID: 1715184827790993562}
   m_Layer: 0
   m_Name: "\u7279\u6548\u8F68\u9053"
   m_TagString: Untagged
@@ -916,10 +1818,14 @@ MonoBehaviour:
   _active: 1
   _isLocked: 0
   _actionClips:
-  - {fileID: 67098858}
+  - {fileID: 1701640335513003914}
+  - {fileID: 5654782256143132111}
+  - {fileID: 1688977282677739632}
+  - {fileID: 6294684088883612525}
+  - {fileID: 1715184827790993562}
   _customHeight: 300
   _icon: {fileID: 0}
---- !u!114 &67098858
+--- !u!114 &1701640335513003914
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -940,16 +1846,382 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  _startTime: 0.21666668
+  _startTime: 0
   _animationData:
     _animatedParameters: []
-  _length: 2.8081927
-  EffectName: KaerShengbo
+  _length: 0.20000002
+  EffectName: daoguang_green_1
   pat: {fileID: 0}
   PlayableSpeed: 1
-  localeftPostion: {x: -0.14498472, y: 0, z: 7.319234}
-  localRotation: {x: 0, y: 0, z: 0, w: 1}
-  localScale: {x: 1, y: 1, z: 1}
-  path: {fileID: 4596429897108265496}
-  useSpeed: 1
-  speed: 2.52
+  localeftPostion: {x: 0, y: 0.451, z: 0}
+  localRotation: {x: -0, y: -0, z: 0.14858618, w: 0.98889947}
+  localScale: {x: 0.5, y: 0.5, z: 0.5}
+  path: {fileID: 0}
+  useSpeed: 0
+  speed: 3
+--- !u!114 &5654782256143132111
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7315056354201300008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 483d42241718b7547b50464f7294571f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  _startTime: 0.3
+  _animationData:
+    _animatedParameters: []
+  _length: 0.18333334
+  EffectName: daoguang_green_1
+  pat: {fileID: 0}
+  PlayableSpeed: 1
+  localeftPostion: {x: -0.44, y: 0.33, z: -0.3}
+  localRotation: {x: -0, y: -0, z: -0.25460202, w: 0.967046}
+  localScale: {x: 0.5, y: 0.5, z: 0.5}
+  path: {fileID: 0}
+  useSpeed: 0
+  speed: 3
+--- !u!114 &1688977282677739632
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7315056354201300008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 483d42241718b7547b50464f7294571f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  _startTime: 0.6
+  _animationData:
+    _animatedParameters: []
+  _length: 0.20000002
+  EffectName: daoguang_green_1
+  pat: {fileID: 0}
+  PlayableSpeed: 1
+  localeftPostion: {x: 0, y: 1.183, z: 0}
+  localRotation: {x: -0, y: -0, z: 0.9890416, w: 0.14763683}
+  localScale: {x: 0.5, y: 0.5, z: 0.5}
+  path: {fileID: 0}
+  useSpeed: 0
+  speed: 3
+--- !u!114 &6294684088883612525
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7315056354201300008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 483d42241718b7547b50464f7294571f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  _startTime: 0.8666667
+  _animationData:
+    _animatedParameters: []
+  _length: 0.20000002
+  EffectName: daoguang_green_1
+  pat: {fileID: 0}
+  PlayableSpeed: 1
+  localeftPostion: {x: 0, y: 0.451, z: 0}
+  localRotation: {x: -0, y: -0, z: 0.14858618, w: 0.98889947}
+  localScale: {x: 0.5, y: 0.5, z: 0.5}
+  path: {fileID: 0}
+  useSpeed: 0
+  speed: 3
+--- !u!114 &1715184827790993562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7315056354201300008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 483d42241718b7547b50464f7294571f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  _startTime: 1.1666667
+  _animationData:
+    _animatedParameters: []
+  _length: 0.18333334
+  EffectName: daoguang_green_1
+  pat: {fileID: 0}
+  PlayableSpeed: 1
+  localeftPostion: {x: 0, y: 0, z: 0}
+  localRotation: {x: -0, y: -0, z: -0, w: 1}
+  localScale: {x: 0.5, y: 0.5, z: 0.5}
+  path: {fileID: 0}
+  useSpeed: 0
+  speed: 3
+--- !u!1 &8962023698977187300
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4771340295620010383}
+  - component: {fileID: 2172815650982180791}
+  - component: {fileID: 8420253685916466000}
+  - component: {fileID: 5627678201196388346}
+  - component: {fileID: 9114712110339617083}
+  - component: {fileID: 6672593994827394628}
+  - component: {fileID: 4164063938768745404}
+  m_Layer: 0
+  m_Name: "\u7279\u6548\u8F68\u9053"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4771340295620010383
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8962023698977187300}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1578699025862464819}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2172815650982180791
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8962023698977187300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7eca0a5576517cb4aa0b9d28161de00f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _name: "\u7279\u6548\u8F68\u9053"
+  _color: {r: 1, g: 1, b: 1, a: 1}
+  _active: 1
+  _isLocked: 0
+  _actionClips:
+  - {fileID: 8420253685916466000}
+  - {fileID: 5627678201196388346}
+  - {fileID: 9114712110339617083}
+  - {fileID: 6672593994827394628}
+  - {fileID: 4164063938768745404}
+  _customHeight: 300
+  _icon: {fileID: 0}
+--- !u!114 &8420253685916466000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8962023698977187300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 483d42241718b7547b50464f7294571f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  _startTime: 0.15
+  _animationData:
+    _animatedParameters: []
+  _length: 0.20000002
+  EffectName: daoguang_green_1
+  pat: {fileID: 0}
+  PlayableSpeed: 1
+  localeftPostion: {x: 0, y: 1.183, z: 0}
+  localRotation: {x: -0, y: -0, z: 0.9890416, w: 0.14763683}
+  localScale: {x: 0.5, y: 0.5, z: 0.5}
+  path: {fileID: 0}
+  useSpeed: 0
+  speed: 3
+--- !u!114 &5627678201196388346
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8962023698977187300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 483d42241718b7547b50464f7294571f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  _startTime: 0.43333337
+  _animationData:
+    _animatedParameters: []
+  _length: 0.20000002
+  EffectName: daoguang_green_1
+  pat: {fileID: 0}
+  PlayableSpeed: 1
+  localeftPostion: {x: 0, y: 0.451, z: 0}
+  localRotation: {x: -0, y: -0, z: 0.14858618, w: 0.98889947}
+  localScale: {x: 0.5, y: 0.5, z: 0.5}
+  path: {fileID: 0}
+  useSpeed: 0
+  speed: 3
+--- !u!114 &9114712110339617083
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8962023698977187300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 483d42241718b7547b50464f7294571f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  _startTime: 0.73333335
+  _animationData:
+    _animatedParameters: []
+  _length: 0.18333334
+  EffectName: daoguang_green_1
+  pat: {fileID: 0}
+  PlayableSpeed: 1
+  localeftPostion: {x: 0, y: 0, z: 0}
+  localRotation: {x: -0, y: -0, z: -0, w: 1}
+  localScale: {x: 0.5, y: 0.5, z: 0.5}
+  path: {fileID: 0}
+  useSpeed: 0
+  speed: 3
+--- !u!114 &6672593994827394628
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8962023698977187300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 483d42241718b7547b50464f7294571f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  _startTime: 1
+  _animationData:
+    _animatedParameters: []
+  _length: 0.20000002
+  EffectName: daoguang_green_1
+  pat: {fileID: 0}
+  PlayableSpeed: 1
+  localeftPostion: {x: 0, y: 1.183, z: 0}
+  localRotation: {x: -0, y: -0, z: 0.9890416, w: 0.14763683}
+  localScale: {x: 0.5, y: 0.5, z: 0.5}
+  path: {fileID: 0}
+  useSpeed: 0
+  speed: 3
+--- !u!114 &4164063938768745404
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8962023698977187300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 483d42241718b7547b50464f7294571f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  _startTime: 1.3166667
+  _animationData:
+    _animatedParameters: []
+  _length: 0.1833334
+  EffectName: daoguang_green_1
+  pat: {fileID: 0}
+  PlayableSpeed: 1
+  localeftPostion: {x: 0, y: 1.16, z: 0}
+  localRotation: {x: -0, y: -0, z: 0.99733365, w: -0.07297704}
+  localScale: {x: 0.5, y: 0.5, z: 0.5}
+  path: {fileID: 0}
+  useSpeed: 0
+  speed: 3

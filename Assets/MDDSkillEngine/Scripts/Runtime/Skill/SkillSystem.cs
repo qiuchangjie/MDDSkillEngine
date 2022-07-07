@@ -6,6 +6,9 @@ namespace MDDSkillEngine
 {
     public class SkillSystem<T> : ISkillSystem, IReference where T : Entity
     {
+        /// <summary>
+        /// 角色已经添加的技能库
+        /// </summary>
         protected Dictionary<int, Skill> skillDic;
 
         /// <summary>
@@ -33,6 +36,7 @@ namespace MDDSkillEngine
                 return m_Owner;
             }
         }
+
 
         public virtual Dictionary<int, int> SkillIndex
         {
@@ -66,7 +70,10 @@ namespace MDDSkillEngine
             return sys;
         }
 
-
+        /// <summary>
+        /// 向技能系统中添加技能
+        /// </summary>
+        /// <param name="skillId"></param>
         public void AddSkill(int skillId)
         {
             Skill skill = SkillFactory.AcquireSkill(skillId, m_Owner as Entity);
@@ -86,6 +93,11 @@ namespace MDDSkillEngine
             Game.Event.Fire(this, AddSkillEventArgs.Create(this, skillId, -1));
         }
 
+        /// <summary>
+        /// 向技能系统中添加技能
+        /// </summary>
+        /// <param name="skillId"></param>
+        /// <param name="index"></param>
         public void AddSkill(int skillId, int index)
         {
             Skill skill = SkillFactory.AcquireSkill(skillId, m_Owner as Entity);
@@ -107,7 +119,11 @@ namespace MDDSkillEngine
 
 
 
-
+        /// <summary>
+        /// 获取一个技能
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public Skill GetSkill(int id)
         {
             Skill skill;
@@ -266,6 +282,10 @@ namespace MDDSkillEngine
             m_PublicBlackboard = blackboard;
         }
 
+        /// <summary>
+        /// 技能系统回收
+        /// 回收的同时也要连带技能行为树的回收
+        /// </summary>
         public void Clear()
         {        
             if (m_PublicBlackboard != null)

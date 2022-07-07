@@ -177,6 +177,9 @@ namespace MDDSkillEngine
                 case EntityNormalState.SPACEWALK:
                     Game.Fsm.GetFsm<Entity>(Id.ToString()).SetData<VarBoolean>(typeof(Hero103SpaceWalk).Name, b);
                     break;
+                case EntityNormalState.ATTACKED:
+                    Game.Fsm.GetFsm<Entity>(Id.ToString()).SetData<VarBoolean>(typeof(Hero103Attacked).Name, b);
+                    break;
             }
         }
 

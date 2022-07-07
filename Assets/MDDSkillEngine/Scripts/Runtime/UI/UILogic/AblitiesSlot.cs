@@ -45,10 +45,6 @@ namespace MDDSkillEngine
             }
             else
             {
-                if (SkillID != 0)
-                    m_SkillSystem.GetSkillBlackboard(SkillID).RemoveObserver("cd", Observing);
-
-
                 IDataTable<DRSkill> dtSkill = Game.DataTable.GetDataTable<DRSkill>();
                 DRSkill drSkill = dtSkill.GetDataRow(skillid);               
                 m_SkillSystem = skillSystem;
@@ -84,10 +80,6 @@ namespace MDDSkillEngine
         {
             if (skillSystem == M_SkillSystem)
                 return;
-
-            //if (SkillID != 0)
-            //    m_SkillSystem.GetSkillBlackboard(SkillID).RemoveObserver("cd", Observing);
-
 
             Init(skillSystem, skillSystem.SkillIndex[index]);                    
         }
