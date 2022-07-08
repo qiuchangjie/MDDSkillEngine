@@ -77,7 +77,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "\u9B3C\u6CE3\u9B3C\u624B\u8DF3\U0001F44E\u8E29"
+  m_Text: ACTDemo
 --- !u!1 &1751178243138895704
 GameObject:
   m_ObjectHideFlags: 0
