@@ -45,6 +45,17 @@ namespace MDDSkillEngine
             }
             else
             {
+                if (m_SkillSystem != null)
+                {
+                    if (skillSystem is KealSkillSystem)
+                    {
+                        if (skillid != 0)
+                        {
+                            m_SkillSystem.GetSkillBlackboard(SkillID).RemoveObserver("cd", Observing);
+                        }
+                    }
+                }
+
                 IDataTable<DRSkill> dtSkill = Game.DataTable.GetDataTable<DRSkill>();
                 DRSkill drSkill = dtSkill.GetDataRow(skillid);               
                 m_SkillSystem = skillSystem;
